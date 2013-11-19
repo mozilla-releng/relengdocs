@@ -1,0 +1,8 @@
+This is a conversion of the docs from pure reST format to Shinx format.
+
+To get a very similar view to the original, use::
+
+    make singlehtml
+
+There are still a few formatting issues around the database sections.
+The individual database files do not show up at the correct level.
