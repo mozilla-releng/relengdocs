@@ -80,6 +80,12 @@ maxchanges
 postrun.py
 ----------
 
+postrun.py is run after most jobs. It is reponsible for creating the text
+log for the job, uploading it to ftp, updating the `status database`_ and
+pushing the final notification events to pulse.
+
+http://hg.mozilla.org/build/buildbotcustom/file/default/bin/postrun.py
+
 
 ---------
 Databases
