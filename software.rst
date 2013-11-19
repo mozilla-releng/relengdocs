@@ -1,8 +1,8 @@
-========
 Software
 ========
 
---------
+.. _buildbot:
+
 buildbot
 --------
 
@@ -18,7 +18,9 @@ slave deployment
 
 https://wiki.mozilla.org/ReleaseEngineering/Landing_Buildbot_Master_Changes
 
-----------
+.. _pushlog:
+.. _`hg pushlog`:
+
 hg pushlog
 ----------
 Mozilla maintains a record of when changes are pushed into various
@@ -31,8 +33,8 @@ automated systems.
 
 
 .. _pushlog.py hook: http://hg.mozilla.org/hgcustom/hghooks/file/15e5831ab26b/mozhghooks/pushlog.py
+.. _`buildbot schedulers`:
 
--------------------
 buildbot schedulers
 -------------------
 Buildbot schedulers are objects that are responsible for creating new
@@ -63,7 +65,8 @@ coalescing
 .. _built-in schedulers:
    http://hg.mozilla.org/build/buildbot/file/d1b15ab18f40/master/buildbot/schedulers
 
---------
+.. _HgPoller:
+
 HgPoller
 --------
 http://hg.mozilla.org/build/buildbotcustom/file/a9f6adc7dcbb/changes/hgpoller.py
@@ -76,19 +79,14 @@ mergepushchanges
 
 maxchanges
 
-----------
+.. _`postrun.py`:
+
 postrun.py
 ----------
 
 
----------
-Databases
----------
+.. _TBPL:
 
-.. include:: schedulerdb.rst
-.. include:: statusdb.rst
-
-----
 TBPL
 ----
 https://wiki.mozilla.org/Sheriffing/TBPL
@@ -108,7 +106,8 @@ https://hg.mozilla.org/webtools/tbpl/
 
 treeherder
 
---------
+.. _buildapi:
+
 buildapi
 --------
 http://hg.mozilla.org/build/buildapi
@@ -116,15 +115,23 @@ http://hg.mozilla.org/build/buildapi
 https://wiki.mozilla.org/ReleaseEngineering/BuildAPI
 
 
------------
 Cloud tools
 -----------
 http://hg.mozilla.org/build/cloud-tools/
 
 aws_watch_pending
-=================
+~~~~~~~~~~~~~~~~~
 http://hg.mozilla.org/build/cloud-tools/file/1e02720fa840/aws/aws_watch_pending.py
 
 aws_stop_idle
-=============
+~~~~~~~~~~~~~
 http://hg.mozilla.org/build/cloud-tools/file/1e02720fa840/aws/aws_stop_idle.py
+
+.. _hg.mozilla.org: https://hg.mozilla.org
+
+Databases
+---------
+
+.. .. include:: schedulerdb.rst
+.. .. include:: statusdb.rst
+
