@@ -135,6 +135,24 @@ http://hg.mozilla.org/build/cloud-tools/file/1e02720fa840/aws/aws_stop_idle.py
 
 .. _hg.mozilla.org: https://hg.mozilla.org
 
+VCS Sync tools
+--------------
+
+
+.. index:: single: vcs2vcs; legacy
+
+legacy
+~~~~~~
+
+The legacy (first implementation) code is in:
+    http://hg.mozilla.org/users/hwine_mozilla.com/repo-sync-tools/
+
+The legacy configurations are in:
+    http://hg.mozilla.org/users/hwine_mozilla.com/repo-sync-configs/
+
+Documentation is in the code repository, a rendered version of the
+latest is at https://people.mozilla.org/~hwine/tmp/vcs2vcs/index.html
+
 Databases
 ---------
 
