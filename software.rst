@@ -116,7 +116,9 @@ treeherder
 
 buildapi
 --------
-http://hg.mozilla.org/build/buildapi
+http://hg.mozilla.org/build/buildapi (`buildapi docs`_)
+
+.. _`buildapi docs`: projects/moz-releng-buildapi/
 
 https://wiki.mozilla.org/ReleaseEngineering/BuildAPI
 
