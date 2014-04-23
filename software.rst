@@ -62,8 +62,22 @@ per-product scheduling
 
 coalescing
 
+Commonly Used Built-In Schedulers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+`Periodic`_:
+    Runs a build at a certain interval, starting at time of builder
+    creation (scheduler startup).
+
+`Nightly`_:
+    Runs a build at a specific time.
+
 .. _built-in schedulers:
-   http://hg.mozilla.org/build/buildbot/file/d1b15ab18f40/master/buildbot/schedulers
+   http://hg.mozilla.org/build/buildbot/file/production-0.8/master/buildbot/schedulers
+.. _`Periodic`:
+    http://hg.mozilla.org/build/buildbot/file/production-0.8/master/buildbot/schedulers/timed.py#l66
+.. _`Nightly`:
+    http://hg.mozilla.org/build/buildbot/file/production-0.8/master/buildbot/schedulers/timed.py#l119
 
 .. _HgPoller:
 
