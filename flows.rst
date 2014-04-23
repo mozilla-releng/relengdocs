@@ -1,6 +1,8 @@
 Flows
 =====
 
+.. _from-checkin-to-tbpl:
+
 Firefox builds: from checkin to TBPL
 ------------------------------------
 

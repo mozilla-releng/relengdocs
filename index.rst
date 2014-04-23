@@ -16,6 +16,7 @@ Contents:
    software.rst
    schedulerdb.rst
    statusdb.rst
+   bootcamp.rst
 
 .. toctree::
    :hidden:
