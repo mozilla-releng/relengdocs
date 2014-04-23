@@ -97,7 +97,7 @@ Balrog
 Example Walk Throughs
 -------------------------
 
-From checkin to a build being triggered
+From checkin to build being triggered
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Now it is time to expand on part of our :ref:`flow <from-checkin-to-tbpl>`. We are going to look at how we configure Buildbot to monitor for changes pushed to
@@ -320,7 +320,9 @@ now we give a name to our builder based on platform and add it to a given produc
                 pf['stage_product'], []).append(builder_name)
 
 we then set up our change_source so that every time a cset is pushed to the current repo of which was passed to generateBranchObjects (eg:
-config['repo_path'] could point to hg.m.o/projects/cedar), our schedulers we define can pick up the change and start the appropriate builds (c['builders'])::
+config['repo_path'] could point to hg.m.o/projects/cedar), our schedulers we define can pick up the change and start the appropriate builds (c['builders'])
+
+to do this, we use :ref:`HgPoller` mentioned in :ref:`flow <from-checkin-to-tbpl>`::
 
             branchObjects['change_source'].append(HgPoller(
                 hgURL=config['hgurl'],
@@ -332,18 +334,21 @@ config['repo_path'] could point to hg.m.o/projects/cedar), our schedulers we def
             ))
 
 time for the schedulers! Here we are basically saying when there is a push to the repo matching the scheduler_class's 'branch', trigger all the builders with
-the names from the scheduler_classes's 'builderNames'::
+the names from the Scheduler's 'builderNames'::
+
 
             # schedulers
             # this one gets triggered by the HG Poller
             for product, product_builders in buildersByProduct.items():
-                branchObjects['schedulers'].append(scheduler_class(
+                branchObjects['schedulers'].append(Scheduler(
                     name=scheduler_name_prefix + "-" + product,
                     branch=config.get("poll_repo", config['repo_path']),
                     builderNames=product_builders,
                     fileIsImportant=fileIsImportant,
                     **extra_args
                 ))
+
+note - check here for more on our :ref:`buildbot schedulers`.
 
 last but not least, the 'builders'. Above we defined the names (strings) of the builders. Now we will create actual buildbot builders that are associated with
 those names so the schedulers actually have a builder to call::
