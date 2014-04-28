@@ -13,6 +13,7 @@ If you are new to Buildbot, please follow this excellent tutorial:  `Buildbot in
 up lost or want more information on Buildbot itself, check out the full `Buildbot Docs`_.
 
 Buildbot automates the following repetitive process:
+
 1. recognizing when changes land in your application's source code
 2. building/installing your software against changed source code across all supported platforms
 3. running tests on the newly build software
@@ -21,6 +22,7 @@ Buildbot automates the following repetitive process:
 By no means is it restricted to this but that's a general use case of Buildbot.
 
 Now let's take a practical example in Mozilla where this would apply:
+
 1. A developer pushes a commit to the mozilla-central repo.
 2. Firefox is then installed on all our supported versions of Windows, Mac os x, Linux, and Android.
 3. All tests and profiling suites (mochitests, reftests, talos, etc) are then ran against each newly build Firefox.

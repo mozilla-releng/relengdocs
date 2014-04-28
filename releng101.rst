@@ -6,14 +6,14 @@ What is this?
 
 * a primer for understanding the Mozilla Release Engineering system. It strips down our infrastructure into bare essentials
 * a series of 'walk-throughs' to help connect our concepts, technologies, environments, and src code
-* provides code stripped down snippets that represent real source from our repos.
+* provides stripped down snippets that represent real source from our repos.
 
 What this is not
 ----------------
 
 * documentation. We are moving with a strong emphasize to documenting our logic in the src itself. These are tutorials that can not be
   expressed in the code
-* explanation of technologies we use. Each walk-through will explain how we use technologies but will point to :ref:`software`_ for overviews
+* explanation of technologies we use. Each walk-through will explain how we use technologies but will point to :ref:`software` for overviews
 * an in depth coverage of all our special edge cases, variants, conditions, and the like.
 
 I hope this provides
@@ -37,29 +37,32 @@ To get the ball rolling, below are a collection of materials that will help prov
 The Walk-through series at a glance
 -----------------------------------
 
-1. `From checkin to builds being triggered`_ -- a tour through Buildbot
-2. `Building Firefox in automation`_ -- harnessing Mozharness
-3. `Setting up and configuring our machine pools`_ -- becoming the master of Puppet
-4. `Monitoring and nagging when things go wrong`_ -- keeping an eye on our machines with BuildAPI, SlaveAPI, Slave Health, and Nagios
-5. `Integrating the Cloud`_ -- a look at our Cloud Tools
-6. `Release Process`_ -- explains why we hold the title of 'Release Engineers'
-7. `Handling version updates`_ -- Balrog to the rescue
-8. `Serving your own machines`_ -- loaning and allocating our machines through Selve-serve
-9. `Syncing with HG and Git`_ -- understanding vcs-sync
-10. `Where to go from here`_ -- tips on exploring our infrastructure: wikis, bugzilla, mxr, emails, irc, etc
-11. `A look into the future`_ -- what's up and coming: taskcluster, relengAPI, etc
+1. `From checkin to builds being triggered`_ - a tour through Buildbot
+2. `Building Firefox in automation`_ - harnessing Mozharness
+3. `Setting up and configuring our machines`_ - becoming the master of Puppet
+4. `Monitoring and nagging when things go wrong`_ - keeping an eye on our machines with BuildAPI, SlaveAPI, Slave Health, and Nagios
+5. `Integrating the Cloud`_ - a look at our Cloud Tools
+6. `Release Process`_ - explains why we hold the title of 'Release Engineers'
+7. `Handling application updates`_ - Balrog to the rescue
+8. `Serving your own machines`_ - loaning and allocating our machines through Selve-serve
+9. `Syncing with HG and Git`_ - understanding vcs-sync
+10. `Where to go from here`_ - tips on exploring our infrastructure: wikis, bugzilla, mxr, emails, irc, etc
+11. `A look into the future`_ - what's up and coming: taskcluster, relengAPI, etc
 
 
 From checkin to builds being triggered
 --------------------------------------
 
 * Software:
-  + Buildbot -- If you are new to Buildbot, please see :ref:`Buildbot Overview`_
+
+  + Buildbot - If you are new to Buildbot, please see :ref:`Buildbot`
 * Repos:
+
   + http://hg.mozilla.org/build/buildbotcustom/
   + http://hg.mozilla.org/build/buildbot-configs/
   + http://hg.mozilla.org/build/mozharness/ <- no code examples but we will see Buildbot mention scripts from
 * Purpose:
+
   + expanding on :ref:`flow <from-checkin-to-tbpl>`, we are going to look at how we configure Buildbot. From monitoring changes pushed to known
     repos to assigning slaves on each of our platforms the job of compiling specified revisions of source, this walk-through will show you the core parts of our
     buildbot logic. Note this only looks at the 'compile/build' jobs we do from :ref:`TBPL` and not the test jobs.
@@ -708,117 +711,110 @@ Building Firefox in automation
 
 
 (TODO)
+
 * Software:
+
   + Mozharness
 * Repos:
-  + 
 * Purpose:
-  + 
 
 Setting up and configuring our machines
 ---------------------------------------
 
+(TODO)
 
 * Software:
+
   + Puppet
 * Repos:
-  + 
 * Purpose:
-  + 
 
 Monitoring and nagging when things go wrong
 -------------------------------------------
 
 
 (TODO)
+
 * Software:
+
   + BuildAPI
   + SlaveAPI
   + Slave Health
   + Nagios
 * Repos:
-  + 
 * Purpose:
-  + 
 
 Integrating the Cloud
 ---------------------
 
 
 (TODO)
+
 * Software:
+
   + Cloud Tools
 * Repos:
-  + 
 * Purpose:
-  + 
+
 
 Release Process
 ---------------
 
-
 (TODO)
+
 * Software:
-  + 
 * Repos:
-  + 
 * Purpose:
-  + 
 
 Handling application updates
 ----------------------------
 
-
 (TODO)
+
 * Software:
+
   + Balrog
 * Repos:
-  + 
 * Purpose:
-  + 
 
 Serving your own machines
 -------------------------
 
-
 (TODO)
+
 * Software:
+
   +  Self-serve
 * Repos:
-  + 
 * Purpose:
-  + 
 
 Syncing with HG and Git
 -----------------------
 
-
 (TODO)
+
 * Software:
+
   + vcs-sync
 * Repos:
-  + 
 * Purpose:
-  + 
 
 Where to go from here
 ---------------------
-
 
 (TODO)
 
 A look into the future
 ----------------------
 
-
 (TODO)
+
 * Software:
+
   + treeherder
   + taskcluster
 * Repos:
-  + 
 * Purpose:
-  + 
 
 
 .. _Release Engineering as a Force Multiplier: https://www.youtube.com/watch?v=7j0NDGJVROI
