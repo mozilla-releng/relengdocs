@@ -1,125 +1,86 @@
-Bootcamp
-========
+Releng 101
+==========
 
 What is this?
 -------------
 
-This is a primer for understanding the Mozilla Release Engineering system. It strips down our major components into bare essentials.
+* a primer for understanding the Mozilla Release Engineering system. It strips down our infrastructure into bare essentials.
+* a series of 'walk-throughs' to help connect our concepts, technologies, environments, and src code.
+* provides code stripped down snippets that represent real source from our repos.
 
-The Goal
---------
+What this is not
+----------------
 
-* explain the core technologies by:
-
-  - going into more detail of our :ref:`flow <from-checkin-to-tbpl>`
-  - providing a quick tutorial on each technology
-
-* explain how we use those technologies with:
-
-  - their relation between one another
-  - how the code fits in
+* documentation. We are moving with a strong emphasize to documenting our logic in the src itself. These are tutorials that can not be
+  expressed in the code itself.
+* explanation of technologies we use. Each walk-through will explain how we use technologies but will point to `software`_ for overviews
+* an in depth coverage of all our special edge cases, variants, conditions, and the like.
 
 I hope this provides
 --------------------
 
 1. a life jacket for Mozilla Releng contributors and new-hires
-2. promotion for Release Engineering and how it can be a genuinely cutting edge, rewarding field of development
-3. a bridge between the abstract concepts and the physical code
-4. some grounding for exploring our code base
+2. a bridge between the abstract concepts and the physical code
+3. confidence for exploring every dark corner of our releng universe
 
 Releng in a Nutshell
 --------------------
 
+To get the ball rolling, below are a collection of materials that will help provide a Releng Overview
+
 * `Release Engineering as a Force Multiplier`_ -- John O'Duinn's Keynote at ICSE 2013
 * `Keep Calm and Ship It`_ -- Mozilla Releng through John Zeller's 2012 intern presentation
 * `Mozilla's cloud and in-house continuous integration`_ -- Armen Zambrano's Releng Conf 2014 talk on recent cloud integration
-* `Planet Releng`_ -- an aggregate of all Mozilla Releng's blogs
+* `Planet Releng`_ -- an aggregate of all Mozilla Releng's blog sites
+* `Day 1 Checklist`_ -- some tips to setting up your laptop and environment
 
-Core Technologies
------------------
 
-Buildbot
-~~~~~~~~
-
-As a prerequisite to following along, I will make the assumption you have at least gone explored this tutorial: `Buildbot in 5 min`_. Saying that, if you end
-up lost or want more information on Buildbot itself, check out the full `Buildbot Docs`_.
-
-What Does Buildbot Do?
-""""""""""""""""""""""
-
-Buildbot automates the following repetitive process:
-1. recognizing when changes land in your application's source code
-2. building/installing your software against changed source code across all supported platforms
-3. running tests on the newly build software
-4. storing the output and results (status) of how everything went.
-
-By no means is it restricted to this but that's a general use case of Buildbot.
-
-Now let's take a practical example in Mozilla where this would apply:
-1. A developer pushes a commit to the mozilla-central repo.
-2. Firefox is then installed on all supported versions of Windows, Mac os x, Linux, and Android.
-3. All tests and profiling suites (mochitests, reftests, talos, etc) are then ran against every newly built Firefox
-4. Logs are uploaded to :ref:`TBPL`, with status of how everything went.
-
-Buildbot is very powerful and also flexible. Being both of those results in it providing you with some core tools that are powerful while leaving you to
-configure exactly how you want things set up. This is where the majority of Mozilla Releng code has, traditionally, been focused on.
-
-Buildbot has a concept of masters and slaves. As the names imply, the masters are the brains, and the slaves are the headless chickens who are told what to do.
-
-Let’s take a simple scenario. You have a few machines with Buildbot installed and you designate them as “Buildbot Slaves”. You then install Buildbot on another
-machine and make it a "Buildbot Master". The master and slaves connect and the master will eventually do
-things like ‘hey slave, install Firefox against this revision of source’. Slaves don’t know how to do this and it will be up to the master to communicate how that’s done
-with specific commands(steps). Generally, Buildbot Masters are configured so that they know how to do everything: what repos to watch, how to prioritize and
-schedule builds, what slaves it has in its control and what builds they are capable of building.
-
-Mozharness
-~~~~~~~~~~
-(TODO)
-
-Puppet
-~~~~~~
-(TODO)
-
-Cloud Tools
+The Roadmap
 ~~~~~~~~~~~
-(TODO)
 
-VCS Sync Tools
-~~~~~~~~~~~~~~
-(TODO)
+1. `From checkin to builds being triggered`_ -- a tour through Buildbot
+2. `Building Firefox in automation`_ -- harnessing Mozharness
+3. `Setting up and configuring our machine pools`_ -- becoming the master of Puppet
+4. `Monitoring and nagging when things go wrong`_ -- keeping an eye on our machines with BuildAPI, SlaveAPI, Slave Health, and Nagios
+5. `Integrating the Cloud`_ -- a look at our Cloud Tools
+6. `Release Process`_ -- explains why we hold the title of 'Release Engineers'
+7. `Handling version updates`_ -- Balrog to the rescue
+8. `Serving your own machines`_ -- loaning and allocating our machines through Selve-serve
+9. `Syncing with HG and Git`_ -- understanding vcs-sync
+10. `Where to go from here`_ -- tips on exploring our infrastructure: wikis, bugzilla, mxr, emails, irc, etc
+11. `A look into the future`_ -- what's up and coming: taskcluster, relengAPI, etc
 
-Balrog
-~~~~~~
-(TODO)
-
-... and many more!
-
-Example Walk Throughs
--------------------------
+The Walkthroughs
+~~~~~~~~~~~~~~~~
 
 From checkin to build being triggered
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+"""""""""""""""""""""""""""""""""""""
 
-Now it is time to expand on part of our :ref:`flow <from-checkin-to-tbpl>`. We are going to look at how we configure Buildbot to monitor for changes pushed to
-our known repos all the way to assigning slaves on each of our platforms the task of compiling the newest revisions of source. Note this only looks at the
-'compile/build' jobs we do from :ref:`TBPL` and not the test jobs.
-
-We will be using code from three repos:
-
-* http://hg.mozilla.org/build/buildbotcustom/
-* http://hg.mozilla.org/build/buildbot-configs/
-* http://hg.mozilla.org/build/mozharness/ <- no code examples but we will see Buildbot mention scripts from it later in this section
+* Technology:
+  + Buildbot -- If you are new to Buildbot, please see :ref:`Buildbot Overview`_
+* Repos:
+  + http://hg.mozilla.org/build/buildbotcustom/
+  + http://hg.mozilla.org/build/buildbot-configs/
+  + http://hg.mozilla.org/build/mozharness/ <- no code examples but we will see Buildbot mention scripts from
+* Purpose:
+  + expanding on :ref:`flow <from-checkin-to-tbpl>`, we are going to look at how we configure Buildbot. From monitoring changes pushed to known
+    repos to assigning slaves on each of our platforms the job of compiling specified revisions of source, this walk-through will show you the core parts of our
+    buildbot logic. Note this only looks at the 'compile/build' jobs we do from :ref:`TBPL` and not the test jobs.
 
 First, let’s create a Buildbot Master:
 
-We have scripts that will set up a machine to be a fully functioning master. This will link files from the above repos to a buildbot master dir. Which links it
-makes depends on the master we are setting up. For example, in our production environment, we have some masters that only deal with getting slaves to run tests
-on one platform like Linux. We have other masters that only schedule and prioritize which builds need to be run. There are many more masters with specific tasks
-in production.
+We have scripts that will set up a machine to be a fully functioning master. They will install deps, set up environments, and link files from the above repos to
+a buildbot master dir. Which links it makes depends on the master we are setting up. For example, in our production environment, we have some masters that only
+deal with getting slaves to run tests on one platform like Linux. We have other masters that only schedule and prioritize which builds need to be run. There are
+many more masters with specific tasks.
 
-Rather than looking at each of these, we will be looking at a master from our staging setup. A staging master encompasses all our logic in each from our
+Rather than looking at each of these, we will be touching on a master from our staging setup. A staging master encompasses all our logic in each from our
 production masters. You can think of this as the universal setup and is easier to grep while learning. In fact, you can mimic this setup on your own machine
-locally. I highly recommend doing this so you can navigate the code yourself.
+locally. I highly recommend doing this so you can navigate the code yourself and veer off track as you get curious.
+
+* WARNING: If you follow along with files in our repos, you will notice they are much more complex. They contain logic for handling builders and schedulers that are
+  beyond our 'build a generic version of Firefox on each one of our platforms' releng 101 session. For example: we ignore all our debug, nightly, l10n, PGO,
+  non-unified, no-profiling, valgrind, and xulrunner build variants.
 
 To set up a staging master on your own machine, follow these instructions: `set up a staging local master`_
 
@@ -151,23 +112,16 @@ Let's look at the Build Master dir::
     -rw-r--r--  1 jlund  staff   977K 19 Apr 17:52 twistd.log
 
 
-* note: I am not including the directories for all the 'builders' the master knows how to run or any release* b2g* thunderbird* stuff.
+* Note: I am not including the directories for all the 'builders' the master knows how to run or any release* b2g* thunderbird* stuff.
 
 All Buildbot Masters have a ‘master.cfg’ file. This file's content boils down to a "BuildmasterConfig” dict that tells Buildbot everything it should do and how.
 From the above dir tree output, you can see 'master.cfg' is a link to a file from one of our two Buildbot repos:
 '../buildbot-configs/mozilla/universal_master_sqlite.cfg'. <- our staging master.cfg
 
-* Navigation tip: buildbot-configs/mozilla/* represents all our Build Master logic while buildbot-configs/mozilla-tests/* holds Test Master logic. 'buildbot-configs/mozilla2' and 'buildbot-configs/calendar' and 'buildbot-configs/seamonkey' can largely be ignored for learning purposes.
+* Navigation tip: buildbot-configs/mozilla/* represents all our Build Master logic while buildbot-configs/mozilla-tests/* holds Test Master logic.
+  'buildbot-configs/mozilla2' and 'buildbot-configs/calendar' and 'buildbot-configs/seamonkey' can largely be ignored for learning purposes.
 
 universal_master_sqlite.cfg will be our first file we look at.
-
-* FAIR WARNING:
-
-  - the code below will not run on its own. Being only snippets, it does not represent line for line of our actual code base.
-  - our code base is changes rapidly. The snippets below will surely get out of date.
-  - If you follow along with files in our repos, you will notice they are much more complex. They contain logic for handling builders and schedulers that are
-    beyond our 'build a generic version of Firefox on each one of our platforms' bootcamp session. For example: we ignore all our debug, nightly, l10n, PGO,
-    non-unified, no-profiling, valgrind, and xulrunner build variants.
 
 First things first, let's start populating Buildmasterconfig::
 
@@ -175,7 +129,8 @@ First things first, let's start populating Buildmasterconfig::
     c = BuildmasterConfig
 
 We have some items in master_localconfig that we will copy over. master_localconfig is a link to 'buildbot-configs/mozilla/build_localconfig.py'
-build_localconfig will define some BuildmasterConfig items that are unique to our local master setup. Let's grab those items::
+build_localconfig will define some BuildmasterConfig items that are unique to our locally specific master setup. eg: these keys could be for what url and
+port the master uses to connect with slaves. Let's grab those items::
 
     for key, value in master_localconfig.BuildmasterConfig.items():
         if key in c:
@@ -183,27 +138,15 @@ build_localconfig will define some BuildmasterConfig items that are unique to ou
         else:
             c[key] = value
 
-Next up is our QueueDir objs. To understand that, see `queue directories`_. But for the purpose of the block below, we are defining steps to run after we run
-builds. These post run steps are explained in :ref:`postrun.py`. Notice we add this to our `status`_ key::
-
-    # Create our QueueDir objects
-    # This is reloaded in buildbotcustom.misc
-    from mozilla_buildtools.queuedir import QueueDir
-    commandsQueue = QueueDir('commands', '%s/commands' % master_localconfig.QUEUEDIR)
-    from buildbotcustom.status.queued_command import QueuedCommandHandler
-    c['status'].append(QueuedCommandHandler(
-        command=[sys.executable, os.path.join(os.path.dirname(buildbotcustom.__file__), 'bin', 'postrun.py'), '-c', os.path.abspath(os.path.join(os.curdir, 'postrun.cfg'))],
-        queuedir=commandsQueue,
-    ))
-
-Now let's grab the bread and butter. 'config.py' separates all of the differences between building Mozilla products across each branch and each platform within each branch.
+Now let's grab the bread and butter, our main config file. 'config.py' separates all of the differences between building Mozilla products across each platform
+within each `branch`_ (branch being a separate repo in most cases).
 
 Again, it's worth noting that the config below in this circumstance will represent our Build Master's config. This is a link to
 'buildbot-configs/mozilla/config.py'. That link will differ for our Test Masters but the logic flow will stay largely the same::
 
     from config import BRANCHES, PROJECTS
 
-an extremely simple example of what BRANCHES will look like is::
+an extremely simple example of what BRANCHES will look like::
 
     BRANCHES = {
         'mozilla-central': {
@@ -245,15 +188,15 @@ We will look at 'buildbot-configs/mozilla/config.py' in more detail later, but i
 There is also thunderbird_config and b2g_config that behave similarly and possess their own BRANCHES.
 
 Earlier we took master_localconfig's BuildmasterConfig for specific master config items. master_localconfig also dictates which BRANCHES we will use to
-install/compile against. Unlike config.py, where every branch resides that is known to releng, build_localconfig.py will dictate which branches are enabled and
+install/compile against. Unlike config.py, where every branch that is known to releng resides, build_localconfig.py will dictate which branches are enabled and
 which are disabled for the specific Master. build_localconfig will decide this by either its set of defaults or by referencing against a JSON file called
 master_config.json. master_config.json is not inside our repos but is generated during `set up a staging local master`_. You can see it in our dir tree from
-above. Let's grab the branches it says the master should use::
+above. Let's grab the branches it considers enabled (active) so the master knows what to use::
 
     from master_localconfig import ACTIVE_BRANCHES, ACTIVE_PROJECTS, SLAVES
 
 ACTIVE_BRANCHES and ACTIVE_PROJECTS are just a list of strings representing what is enabled. SLAVES is a list of dicts representing what 'slaves' this master
-will know it can use at its disposal for running certain builders. Again we are only worrying about BRANCHES.
+will know it can use at its disposal for running certain builders. Again we are only worrying about ACTIVE_BRANCHES.
 
 We will now create an object to track all the builders, status, change_source, and schedulers that makes up our Build Master. These are the core concepts in
 Buildbot that should be familiar after going over `Buildbot in 5 min`_.
@@ -262,8 +205,8 @@ This obj will be called buildObjects::
 
     buildObjects = {'builders': [], 'status': [], 'change_source': [], 'schedulers': []}
 
-buildObjects is extended via generating methods. Using config.py's BRANCHES, we pass only the ones that are enabled in master_localconfig's ACTIVE_BRANCHES to
-generateBranchObjects() and generateBranchObjects() will create builders, schedulers, etc based upon the BRANCHES[branch] being passed::
+buildObjects is extended via generating methods. Using config.py's BRANCHES, we pass only the ones that are enabled via master_localconfig's ACTIVE_BRANCHES to
+generateBranchObjects() and generateBranchObjects() will create builders, schedulers, etc based upon those BRANCHES[branch] being passed::
 
     for branch in ACTIVE_BRANCHES:
         branchObjects = generateBranchObjects(BRANCHES[branch], branch,
@@ -320,7 +263,8 @@ now we give a name to our builder based on platform and add it to a given produc
                 pf['stage_product'], []).append(builder_name)
 
 we then set up our change_source so that every time a cset is pushed to the current repo of which was passed to generateBranchObjects (eg:
-config['repo_path'] could point to hg.m.o/projects/cedar), our schedulers we define can pick up the change and start the appropriate builds (c['builders'])
+config['repo_path'] == hg.m.o/projects/cedar), our schedulers we define can pick up the change and start the appropriate builds (c['builders']['the appropriate
+build'])
 
 to do this, we use :ref:`HgPoller` mentioned in :ref:`flow <from-checkin-to-tbpl>`::
 
@@ -333,9 +277,8 @@ to do this, we use :ref:`HgPoller` mentioned in :ref:`flow <from-checkin-to-tbpl
                 pollInterval=pollInterval,
             ))
 
-time for the schedulers! Here we are basically saying when there is a push to the repo matching the scheduler_class's 'branch', trigger all the builders with
+time for the schedulers! Here we are basically saying when there is a push to the repo matching the Scheduler()'s 'branch', trigger all the builders with
 the names from the Scheduler's 'builderNames'::
-
 
             # schedulers
             # this one gets triggered by the HG Poller
@@ -351,7 +294,7 @@ the names from the Scheduler's 'builderNames'::
 note - check here for more on our :ref:`buildbot schedulers`.
 
 last but not least, the 'builders'. Above we defined the names (strings) of the builders. Now we will create actual buildbot builders that are associated with
-those names so the schedulers actually have a builder to call::
+those names so the schedulers will actually have a builder to call::
 
             for platform in enabled_platforms:
                 branchObjects['builders'].extend(
@@ -383,8 +326,8 @@ platform level. Below we use that to define what our builder does::
         base_builder_dir = '%s-%s' % (name, platform)
 
 Buildbot Builders are made up of a series of cmds (build steps). That series (a factory) is associated with a Builder. So you can think of a Builder as
-something with a name, a string that matches our a scheduler's known buildername, a factory, and some other important data like what slaves are
-capable of running this builder
+something with a name that is a string that cooresponds with a buildername from a scheduler, a factory, and some other important data like what slaves are
+capable of running the respective builder.
 
 let's look at the factory::
 
@@ -410,13 +353,13 @@ let's look at the factory::
                 )
                 return factory
 
-For our mozharness factory, we use the ScriptFactory class to set out a few setup cmds, the main script we want to call, and then some tear down cmds. Remember
+For our factory, we use the ScriptFactory class to set out a few setup cmds, the main script we want to call, and then some tear down cmds. Remember
 cmds being BuildSteps in Buildbot world.
 
 Let's look at a snippet of ScriptFactory Quickly. You can find it where we keep other factories: buildbotcustom/process/factory.py
 
-Remember factories are a way to pre-define a bunch of cmds that a buildbot master will tell a buildbot slave to run once a change_source triggers a
-scheduler to trigger a builder on a slave::
+Remember factories encapsulate a series of pre-defined cmds that a buildbot master will tell a buildbot slave to run sequentially, once a change_source (cset
+lands on a repo), triggers a scheduler to trigger a builder with that factory::
 
     class ScriptFactory(RequestSortingBuildFactory):
 
@@ -504,9 +447,25 @@ and that's it for the factory and list of cmds. We pass that factory to the buil
         # finally let's return which builders we did so we know what's left to do!
         return desktop_mh_builders
 
-That is it for misc.py's generateBranchObjects()
+We have reached the end of misc.py's generateBranchObjects()
 
-Back in our universal_master_sqlite.py, we can finish up by extending our BuildmasterConfig with all the 'builders' 'status' 'change_source' and 'schedulers' we generated from generateBranchObjects()::
+Back in our universal_master_sqlite.py, we finish up with adding logic to how we define the steps to run after a job completes. This will contain logic to
+parsing if the job was a success, failure, etc and also concat the job's steps into one log that is uploaded and fed to TBPL. These post run steps are explained
+in :ref:`postrun.py`. Notice we add this to our `status`_ key
+
+Here we also mention our QueueDir objs. To understand that, see `queue directories`_::
+
+    # Create our QueueDir objects
+    # This is reloaded in buildbotcustom.misc
+    from mozilla_buildtools.queuedir import QueueDir
+    commandsQueue = QueueDir('commands', '%s/commands' % master_localconfig.QUEUEDIR)
+    from buildbotcustom.status.queued_command import QueuedCommandHandler
+    buildObjects['status'].append(QueuedCommandHandler(
+        command=[sys.executable, os.path.join(os.path.dirname(buildbotcustom.__file__), 'bin', 'postrun.py'), '-c', os.path.abspath(os.path.join(os.curdir, 'postrun.cfg'))],
+        queuedir=commandsQueue,
+    ))
+
+We can finish up by extending our BuildmasterConfig with all the 'builders' 'status' 'change_source' and 'schedulers' we generated from generateBranchObjects()::
 
     c['builders'].extend(buildObjects['builders'])
     c['status'].extend(buildObjects['status'])
@@ -517,12 +476,12 @@ Phew! That's the end of that file. We can consider Buildbot to be 'configured'. 
 
 You might be thinking "wait, I still haven't seen any of our logic for actually 'compiling' Firefox from source."
 
-And that's true! Up to this point, we have only gone over the logic from 'a user checking in' to 'a buildbot master triggering a build on a slave from eavh of  our
-platforms to start building Firefox'. Everything involved on the slave end (the script we defined in ScriptFactory) we have yet to see. But that is for
-part two of this tutorial: "Using Mozharness to build Firefox". Stay tuned!
+And that's true! Up to this point, we have only gone over the logic from 'a user checking in a cset' to 'a buildbot master triggering build jobs on a slave
+from each of our platforms.'. Everything involved on with how to build firefox (the script we defined in ScriptFactory) we have yet to see. But
+that is for walk-through 2: `Building Firefox in automation`_
 
 Recap -- the full code from examples above
--------------------------------------------
+''''''''''''''''''''''''''''''''''''''''''
 
 buildbot-configs/mozilla/universal_master_sqlite.cfg::
 
@@ -746,6 +705,63 @@ buildbotcustom/process/factory.py::
                 force_disconnect=do_disconnect,
                 env=self.env,
             ))
+
+Building Firefox in automation
+""""""""""""""""""""""""""""""
+
+
+Setting up and configuring our machine pools
+""""""""""""""""""""""""""""""""""""""""""""
+
+(TODO)
+
+Monitoring and nagging when things go wrong
+"""""""""""""""""""""""""""""""""""""""""""
+
+(TODO)
+
+
+Integrating the Cloud
+"""""""""""""""""""""
+
+(TODO)
+
+
+Release Process
+"""""""""""""""
+
+(TODO)
+
+
+Handling version updates
+""""""""""""""""""""""""
+
+(TODO)
+
+
+Serving your own machines
+"""""""""""""""""""""""""
+
+(TODO)
+
+
+Syncing with HG and Git
+"""""""""""""""""""""""
+
+(TODO)
+
+
+Where to go from here
+"""""""""""""""""""""
+
+(TODO)
+
+
+A look into the future
+""""""""""""""""""""""
+
+(TODO)
+
 
 .. _Release Engineering as a Force Multiplier: https://www.youtube.com/watch?v=7j0NDGJVROI
 .. _Keep Calm and Ship It: https://air.mozilla.org/intern-presentation-zeller/

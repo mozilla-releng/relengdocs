@@ -3,8 +3,39 @@ Software
 
 .. _buildbot:
 
-buildbot
+Buildbot
 --------
+
+Buildbot Overview
+~~~~~~~~~~~~~~~~~
+
+If you are new to Buildbot, please follow this excellent tutorial:  `Buildbot in 5 min`_. If you end
+up lost or want more information on Buildbot itself, check out the full `Buildbot Docs`_.
+
+Buildbot automates the following repetitive process:
+1. recognizing when changes land in your application's source code
+2. building/installing your software against changed source code across all supported platforms
+3. running tests on the newly build software
+4. storing the output and results (status) of how everything went.
+
+By no means is it restricted to this but that's a general use case of Buildbot.
+
+Now let's take a practical example in Mozilla where this would apply:
+1. A developer pushes a commit to the mozilla-central repo.
+2. Firefox is then installed on all our supported versions of Windows, Mac os x, Linux, and Android.
+3. All tests and profiling suites (mochitests, reftests, talos, etc) are then ran against each newly build Firefox.
+4. Logs are uploaded to :ref:`TBPL`, with status of how everything went.
+
+Buildbot has a concept of masters and slaves. As the names imply, the masters are the brains, and the slaves are the headless chickens who are told what to do.
+
+Let’s take a simple scenario. You have a few machines with Buildbot installed and you construct them as “Buildbot Slaves”. Then, on another machine, you
+construct a "Buildbot Master". The master and slaves connect and the master will eventually do things like ‘hey slave, install Firefox against this revision of
+source’. Slaves don’t know how to do this and it will be up to the master to communicate how that’s done with specific commands(steps). Generally, Buildbot
+Masters are configured so that they know how to do everything: what repos to watch, how to prioritize and schedule builds, what slaves it has in its control and
+what builds they are capable of building.
+
+Mozilla Releng and Buildbot
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 RelEng is currently using a patched version of buildbot 0.8.2. Our
 repository is located at http://hg.mozilla.org/build/buildbot.
@@ -20,6 +51,7 @@ https://wiki.mozilla.org/ReleaseEngineering/Landing_Buildbot_Master_Changes
 
 .. _pushlog:
 .. _`hg pushlog`:
+
 
 hg pushlog
 ----------
@@ -174,4 +206,6 @@ Databases
 
 .. .. include:: schedulerdb.rst
 .. .. include:: statusdb.rst
+.. _Buildbot Docs: http://docs.buildbot.net
+.. _Buildbot in 5 min: http://docs.buildbot.net/current/tutorial/fiveminutes.html
 
