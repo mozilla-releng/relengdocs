@@ -4,16 +4,16 @@ Releng 101
 What is this?
 -------------
 
-* a primer for understanding the Mozilla Release Engineering system. It strips down our infrastructure into bare essentials.
-* a series of 'walk-throughs' to help connect our concepts, technologies, environments, and src code.
+* a primer for understanding the Mozilla Release Engineering system. It strips down our infrastructure into bare essentials
+* a series of 'walk-throughs' to help connect our concepts, technologies, environments, and src code
 * provides code stripped down snippets that represent real source from our repos.
 
 What this is not
 ----------------
 
 * documentation. We are moving with a strong emphasize to documenting our logic in the src itself. These are tutorials that can not be
-  expressed in the code itself.
-* explanation of technologies we use. Each walk-through will explain how we use technologies but will point to `software`_ for overviews
+  expressed in the code
+* explanation of technologies we use. Each walk-through will explain how we use technologies but will point to :ref:`software`_ for overviews
 * an in depth coverage of all our special edge cases, variants, conditions, and the like.
 
 I hope this provides
@@ -32,11 +32,10 @@ To get the ball rolling, below are a collection of materials that will help prov
 * `Keep Calm and Ship It`_ -- Mozilla Releng through John Zeller's 2012 intern presentation
 * `Mozilla's cloud and in-house continuous integration`_ -- Armen Zambrano's Releng Conf 2014 talk on recent cloud integration
 * `Planet Releng`_ -- an aggregate of all Mozilla Releng's blog sites
-* `Day 1 Checklist`_ -- some tips to setting up your laptop and environment
 
 
-The Roadmap
-~~~~~~~~~~~
+The Walk-through series at a glance
+-----------------------------------
 
 1. `From checkin to builds being triggered`_ -- a tour through Buildbot
 2. `Building Firefox in automation`_ -- harnessing Mozharness
@@ -50,13 +49,11 @@ The Roadmap
 10. `Where to go from here`_ -- tips on exploring our infrastructure: wikis, bugzilla, mxr, emails, irc, etc
 11. `A look into the future`_ -- what's up and coming: taskcluster, relengAPI, etc
 
-The Walkthroughs
-~~~~~~~~~~~~~~~~
 
-From checkin to build being triggered
-"""""""""""""""""""""""""""""""""""""
+From checkin to builds being triggered
+--------------------------------------
 
-* Technology:
+* Software:
   + Buildbot -- If you are new to Buildbot, please see :ref:`Buildbot Overview`_
 * Repos:
   + http://hg.mozilla.org/build/buildbotcustom/
@@ -707,60 +704,121 @@ buildbotcustom/process/factory.py::
             ))
 
 Building Firefox in automation
-""""""""""""""""""""""""""""""
+------------------------------
 
-
-Setting up and configuring our machine pools
-""""""""""""""""""""""""""""""""""""""""""""
 
 (TODO)
+* Software:
+  + Mozharness
+* Repos:
+  + 
+* Purpose:
+  + 
+
+Setting up and configuring our machines
+---------------------------------------
+
+
+* Software:
+  + Puppet
+* Repos:
+  + 
+* Purpose:
+  + 
 
 Monitoring and nagging when things go wrong
-"""""""""""""""""""""""""""""""""""""""""""
+-------------------------------------------
+
 
 (TODO)
-
+* Software:
+  + BuildAPI
+  + SlaveAPI
+  + Slave Health
+  + Nagios
+* Repos:
+  + 
+* Purpose:
+  + 
 
 Integrating the Cloud
-"""""""""""""""""""""
+---------------------
+
 
 (TODO)
-
+* Software:
+  + Cloud Tools
+* Repos:
+  + 
+* Purpose:
+  + 
 
 Release Process
-"""""""""""""""
+---------------
+
 
 (TODO)
+* Software:
+  + 
+* Repos:
+  + 
+* Purpose:
+  + 
 
+Handling application updates
+----------------------------
 
-Handling version updates
-""""""""""""""""""""""""
 
 (TODO)
-
+* Software:
+  + Balrog
+* Repos:
+  + 
+* Purpose:
+  + 
 
 Serving your own machines
-"""""""""""""""""""""""""
+-------------------------
+
 
 (TODO)
-
+* Software:
+  +  Self-serve
+* Repos:
+  + 
+* Purpose:
+  + 
 
 Syncing with HG and Git
-"""""""""""""""""""""""
+-----------------------
+
 
 (TODO)
-
+* Software:
+  + vcs-sync
+* Repos:
+  + 
+* Purpose:
+  + 
 
 Where to go from here
-"""""""""""""""""""""
+---------------------
+
 
 (TODO)
-
 
 A look into the future
-""""""""""""""""""""""
+----------------------
+
 
 (TODO)
+* Software:
+  + treeherder
+  + taskcluster
+* Repos:
+  + 
+* Purpose:
+  + 
 
 
 .. _Release Engineering as a Force Multiplier: https://www.youtube.com/watch?v=7j0NDGJVROI
@@ -773,3 +831,4 @@ A look into the future
 .. _queue directories: https://wiki.mozilla.org/ReleaseEngineering/Queue_directories
 .. _status: http://docs.buildbot.net/current/tutorial/fiveminutes.html#status-targets
 .. _printing config.py: https://wiki.mozilla.org/ReleaseEngineering:TestingTechniques#config.py_is_executable.21
+.. _branch: https://wiki.mozilla.org/Releases/Branches

@@ -16,7 +16,7 @@ Contents:
    software.rst
    schedulerdb.rst
    statusdb.rst
-   bootcamp.rst
+   releng101.rst
 
 .. toctree::
    :hidden:
