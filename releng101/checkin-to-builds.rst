@@ -1,7 +1,7 @@
 .. _Checkin-To-Builds:
 
-From checkin to builds being triggered
-======================================
+From a change on a repo to builds being triggered
+=================================================
 
 * Software:
 
@@ -11,7 +11,7 @@ From checkin to builds being triggered
   + http://hg.mozilla.org/build/buildbotcustom/
   + http://hg.mozilla.org/build/buildbot-configs/
   + http://hg.mozilla.org/build/mozharness/ <- no code examples but we will see Buildbot mention scripts from
-* Purpose:
+* Purpose of walk-through:
 
   + expanding on :ref:`flow <from-checkin-to-tbpl>`, we are going to look at how we configure Buildbot. From monitoring changes pushed to known
     repos to assigning slaves on each of our platforms the job of compiling specified revisions of source, this walk-through will show you the core parts of our
@@ -657,10 +657,6 @@ buildbotcustom/process/factory.py::
             ))
 
 
-.. _Release Engineering as a Force Multiplier: https://www.youtube.com/watch?v=7j0NDGJVROI
-.. _Keep Calm and Ship It: https://air.mozilla.org/intern-presentation-zeller/
-.. _Mozilla's cloud and in-house continuous integration: https://air.mozilla.org/problems-and-cutting-costs-for-mozillas-hybrid-ec2-in-house-continuous-integration/
-.. _Planet Releng: http://planet.mozilla.org/releng/
 .. _Buildbot Docs: http://docs.buildbot.net
 .. _Buildbot in 5 min: http://docs.buildbot.net/current/tutorial/fiveminutes.html
 .. _set up a staging local master: https://wiki.mozilla.org/ReleaseEngineering/How_To/Setup_Personal_Development_Master#Setup.2FRunning_local_master_scheduler_on_laptop_-_not_dev-master
