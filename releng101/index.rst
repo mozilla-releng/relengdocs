@@ -37,7 +37,10 @@ To get the ball rolling, below are a collection of materials that will help prov
 The Walk-through series at a glance
 -----------------------------------
 
-1. :ref:`Checkin-To-Builds` - a tour through Buildbot -> `last updated<https://github.com/mozilla/build-relengdocs/commits/master/releng101/checkin-to-builds.rst>`_
+1. :ref:`Checkin-To-Builds` - a tour through Buildbot (`latest update`__ if your not reading this online.)
+
+__ https://github.com/mozilla/build-relengdocs/commits/master/releng101/checkin-to-builds.rst
+
 2. *Building Firefox in automation* - harnessing Mozharness
 3. *Setting up and configuring our machines* - becoming the master of Puppet
 4. *Monitoring and nagging when things go wrong* - keeping an eye on our machines with BuildAPI, SlaveAPI, Slave Health, and Nagios

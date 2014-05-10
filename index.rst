@@ -30,6 +30,8 @@ Contents:
 
     adding_repo_to_releng_rtfd_account.rst
     maintaining_these_docs.rst
+    releng101/checkin-to-builds.rst
+    tobewritten.rst
 
 
 Indices and tables
@@ -40,5 +42,7 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+* :ref:`tobewritten`
 
 .. vim: nospell :

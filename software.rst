@@ -74,18 +74,19 @@ automated systems.
 buildbot schedulers
 -------------------
 Buildbot schedulers are objects that are responsible for creating new
-`build requests`_. Some usual examples of this are creating the requests to
-do builds in response to a developer push, or doing nightly builds on a
-timer.
+:ref:`build requests`. Some usual examples of this are creating the
+requests to do builds in response to a developer push, or doing nightly
+builds on a timer.
 
 Schedulers themselves are run sequentially in a loop on the `buildbot
 master`. They are generally run on a timer, or if a new buildbot change is
 added to the master.
 
-Schedulers that use push information generally look in the `scheduler
-database`_ for new changes since last time the scheduler ran. If there are
-any new changes that are applicable, the scheduler then creates new rows in
-the buildrequests table of the `scheduler database`_.
+Schedulers that use push information generally look in the
+:ref:`scheduler database` for new changes since last time the scheduler
+ran. If there are any new changes that are applicable, the scheduler
+then creates new rows in the buildrequests table of the :ref:`scheduler
+database`.
 
 In addition to the `built-in schedulers`_, RelEng maintains many custom
 buildbot schedulers.
@@ -135,8 +136,8 @@ postrun.py
 ----------
 
 postrun.py is run after most jobs. It is reponsible for creating the text
-log for the job, uploading it to ftp, updating the `status database`_ and
-pushing the final notification events to pulse.
+log for the job, uploading it to ftp, updating the :ref:`status
+database` and pushing the final notification events to pulse.
 
 http://hg.mozilla.org/build/buildbotcustom/file/default/bin/postrun.py
 

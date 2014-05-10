@@ -21,8 +21,10 @@ Column documentation:
     masters poll the table looking for pending jobs for builders they have
     enabled.
 
+.. index:: builderPriority
+
 - `priority`: this affects the order in which pending build requests are
-    processed. See `builderPriority`_
+    processed. See :ref:`builderPriority`
 
 - `claimed_at`: this is a unix timestamp. masters update this field
     periodically as a job is running. It is *not* when the job starts. If a
