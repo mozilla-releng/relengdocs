@@ -30,7 +30,11 @@ import os
 # ones.
 extensions = [
     #'sphinx.ext.intersphinx',
+    'sphinx.ext.todo',
 ]
+
+# turn on todo output
+todo_include_todos = True
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

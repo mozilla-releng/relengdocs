@@ -24,7 +24,10 @@ Column documentation:
 .. index:: builderPriority
 
 - `priority`: this affects the order in which pending build requests are
-    processed. See :ref:`builderPriority`
+    processed. See :ref:`builderPriority<builderPriority>`
+
+    .. todo:: Write up builder priority
+        Include link to definitions, and intended usage.
 
 - `claimed_at`: this is a unix timestamp. masters update this field
     periodically as a job is running. It is *not* when the job starts. If a

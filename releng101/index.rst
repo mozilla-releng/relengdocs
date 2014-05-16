@@ -41,6 +41,8 @@ The Walk-through series at a glance
 
 __ https://github.com/mozilla/build-relengdocs/commits/master/releng101/checkin-to-builds.rst
 
+.. todo:: Write the rest of these.
+
 2. *Building Firefox in automation* - harnessing Mozharness
 3. *Setting up and configuring our machines* - becoming the master of Puppet
 4. *Monitoring and nagging when things go wrong* - keeping an eye on our machines with BuildAPI, SlaveAPI, Slave Health, and Nagios
