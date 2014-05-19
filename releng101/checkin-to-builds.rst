@@ -428,7 +428,7 @@ You might be thinking "wait, I still haven't seen any of our logic for actually 
 
 And that's true! Up to this point, we have only gone over the logic from 'a user checking in a cset' to 'a buildbot master triggering build jobs on a slave
 from each of our platforms.'. Everything involved on with how to build firefox (the script we defined in ScriptFactory) we have yet to see. But
-that is for walk-through 2: :ref:`Building Firefox in automation`
+that is for walk-through 2: :ref:`Building Firefox in automation<Building Firefox in automation>`
 
 Recap -- the full code from examples above
 ------------------------------------------

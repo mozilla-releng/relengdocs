@@ -11,7 +11,6 @@ Here is Mozilla's Release Engineering Group's more technical
 documentation. You might also be interested in our `main web site`_.
 
 .. _`main web site`: https://wiki.mozilla.org/Release
-    - 
 
 Contents:
 
