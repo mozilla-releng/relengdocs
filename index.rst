@@ -23,6 +23,7 @@ Contents:
    schedulerdb.rst
    statusdb.rst
    releng101/index.rst
+   coding.rst
 
 .. toctree::
     :hidden:
