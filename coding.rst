@@ -73,7 +73,10 @@ opportunities.
 
     - If your app works as a blueprint, we have more flexibility in
       deployment options. That is a good thing.
-    - Examples include relengapi, ship it
+    - Examples include relengapi, ship it, balrog
+    - common flask extensions include:
+
+        - `flask-wtf`_ for form validation
 
 - Pylons has been used.
 
@@ -98,3 +101,5 @@ something like this, ask around.
 
         - Build/test on commit requirements
         - Operations documentation.
+
+.. _`flask-wtf`: https://flask-wtf.readthedocs.org/
