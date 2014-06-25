@@ -24,6 +24,7 @@ Contents:
    statusdb.rst
    releng101/index.rst
    coding.rst
+   jobs_not_starting.rst
 
 .. toctree::
     :hidden:
