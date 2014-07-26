@@ -30,6 +30,7 @@ Contents:
     :hidden:
 
     adding_repo_to_releng_rtfd_account.rst
+    adding_docs_to_existing_code.rst
     maintaining_these_docs.rst
     releng101/checkin-to-builds.rst
     tobewritten.rst
