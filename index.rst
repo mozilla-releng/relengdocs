@@ -18,6 +18,7 @@ Contents:
    :maxdepth: 3
 
    flows.rst
+   release_workflows/index.rst
    hosts.rst
    software.rst
    schedulerdb.rst

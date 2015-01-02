@@ -31,6 +31,7 @@ import os
 extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
+    'sphinxcontrib.actdiag',
 ]
 
 # turn on todo output
