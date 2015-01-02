@@ -462,8 +462,7 @@ snippet of BaseConfig mozharness/base/config.py::
 Like BaseLogger, BaseScript will instantiate BaseConfig and attach itself as an attr so you won't
 have to call BaseConfig directly.
 
-* Wondering what your config will look like if you only inherit from BaseScript and don't extend
-your script with any CLI or config files::
+* Wondering what your config will look like if you only inherit from BaseScript and don't extend your script with any CLI or config files::
 
      # defaults
      {'append_to_log': False,  # whether you want to start your log files cleanly or append to prev run
@@ -494,8 +493,7 @@ What happens is when you call BaseScript.run_and_exit(), Mozharness will run thr
 the list and look for a corresponding method within scope of your script class. e.g. when we get to
 the 'clone' action in self.actions, BaseScript will look for self.clone() and execute that method.
 
-* note about actions names: when the action name uses a hyphen, e.g. 'run-tests',
-BaseScript will replace the '-' with a '_' so it will look for self.run_tests().
+* note about actions names: when the action name uses a hyphen, e.g. 'run-tests', BaseScript will replace the '-' with a '_' so it will look for self.run_tests().
 
 In addition to running actions, BaseScript also has an overall status: self.return_code. This value
 can be manipulated as the script runs so you can keep track of how your script did if you do not
@@ -766,9 +764,9 @@ Here's some things you can do:
 
     1. BaseMixin provides a number of great helper methods and default actions. Poke through them e.g. run_command is your subprocess friend; it may be long but it should be able to handle all  of your external commands you need to run
 
-    2. outside of BaseMixin, there is a ton of other mixins and base classes you can use for extending the actions at your disposal. Peek in mozharness/base/* and mozharness/mozilla/*. You'll likely find methods for achieving your requirements so you don't even need to impl any new actions. e.g. create_virtualenv(), clone(), setup_mock(), download_file(), make_gaia()
+    2. outside of BaseMixin, there is a ton of other mixins and base classes you can use for extending the actions at your disposal. Peek in mozharness/base/* and mozharness/mozilla/* . You'll likely find methods for achieving your requirements so you don't even need to impl any new actions. e.g. create_virtualenv(), clone(), setup_mock(), download_file(), make_gaia()
 
-    3. check out the actual scripts/*. Mozharness is used for ~90% of all our jobs done in tbpl/treeherder. Want to correlate a script to one of those jobs? Open up a log, and grep the mozharness call, likely 'scripts/' or look for the starting log output (timestamp and log level at the start of each line)
+    3. check out the actual scripts/* . Mozharness is used for ~90% of all our jobs done in tbpl/treeherder. Want to correlate a script to one of those jobs? Open up a log, and grep the mozharness call, likely 'scripts/' or look for the starting log output (timestamp and log level at the start of each line)
 
     4. take a look at the mozharness FAQ https://developer.mozilla.org/en-US/docs/Mozharness_FAQ
 
