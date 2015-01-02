@@ -34,6 +34,11 @@ extensions = [
     'sphinxcontrib.actdiag',
 ]
 
+actdiag_html_image_format = 'SVG'
+on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
+if not on_rtd:
+    actdiag_debug = True
+
 # turn on todo output
 todo_include_todos = True
 
