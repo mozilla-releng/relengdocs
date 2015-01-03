@@ -1,8 +1,10 @@
-This is a conversion of the docs from pure reST format to Sphinx format.
+This repository has some of the more technical, and volatile internal
+documentation for Firefox Release Engineering.
 
-To get a very similar view to the original, use::
+Rendered versions of the documentation may be viewed at:
+  http://moz-releng-docs.readthedocs.org/en/latest/
 
-    make singlehtml
+Note on building locally: you may need to install the modules listed in 
+rtfd-requirements.txt.
 
-There are still a few formatting issues around the database sections.
-The individual database files do not show up at the correct level.
+

@@ -1,6 +1,6 @@
 Firefox GA Release
 ==================
-..
+.. seealso:: :ref:`Disclaimer <workflow_disclaimer>`
 
 .. actdiag::
     :desctable:

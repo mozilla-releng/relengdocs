@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Release Workflows with Handoffs
-===============================
+Release Workflows with Inter-Team Handoffs
+==========================================
 
 Contents:
 
@@ -14,13 +14,13 @@ Contents:
     fx_ga_release.rst
     fx_beta_release.rst
 
-:ref:`search`
+.. _workflow_disclaimer:
+.. caution:: **NOT AUTHORITATIVE**
 
-..
-    Indices and tables
-    ==================
+    The authoritative procedures are maintained by each team. Where any
+    discrepancies are noticed, the official procedures (which may
+    include release specific changes) are authoritative.
 
-    * :ref:`genindex`
-    * :ref:`modindex`
-    * :ref:`search`
-
+For Release Engineering, the authoritative procedures are listed as
+`checklists <https://wiki.mozilla.org/Releases/RelEngChecklist>`_
+in the main wiki.
