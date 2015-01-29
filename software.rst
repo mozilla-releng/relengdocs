@@ -13,7 +13,6 @@ Buildbot Overview
 
 If you are new to Buildbot, please follow this excellent tutorial:  `Buildbot in 5 min`_. If you end
 up lost or want more information on Buildbot itself, check out the full `Buildbot Docs`_.
-ss
 Buildbot automates the following repetitive process:
 
 1. recognizing when changes land in your application's source code
