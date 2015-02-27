@@ -146,38 +146,37 @@ Mozharness
 ----------
 
 Mozharness is a configuration driven script harness. It is a Script harness in that it knows
-how to automate some set of tasks. The scripts tend to not know if you are running on windows or
-linux, nor does it know much about what tests or commands you need to run. The scripts get their
-those varying details from a corresponding config (hence it being driven by configuration).
+how to automate a set of tasks. The scripts tend to not to need to know if you are running on Windows or
+Linux, nor does it know much about what tests or commands you need to run. The scripts get those
+varying details from a corresponding config (hence it being driven by configuration).
 
-Let's take a more concrete example of why you might use Mozharness. Say you have a new
-test suite that you want to start running against every new checkin of desktop
-Firefox across all our release and project branches. You know at a high level you need to do a
-number of things each time you run the tests:
+Let's take a more concrete example of why you might use Mozharness. Let's say you have a new
+test suite that you want to start running against every new checkin of Firefox
+desktop across our continous integration for our various repositories.
+You know at a high level you need to do a number of things each time you run the tests:
 
-    1. clear a work space so you are starting off fresh
-    2. clone some repo that provides you with the tests you are going to call
-    3. download a binary of firefox to test against
-    4. the tests are in python and have some dependencies so you need to create a virtualenv and install some modules
-    5. run the tests against the binary
-    6. parse the output and interpret the return code
-    7. log the results and and report some sort of overall status
+    1. Clear a work space so you are starting off fresh
+    2. Clone some repository that provides you with the tests you are going to call
+    3. Download a binary of Firefox to test against
+    4. The tests are in python and have some dependencies so you need to create a virtualenv and install some modules
+    5. Run the tests against the binary
+    6. Parse the output and interpret the return code
+    7. Log the results and and report some sort of overall status
 
-Doing this for say just 10.8 osx with mozilla-central against your local machine and known static
-paths/packages might be pretty straight forward but what happens when you need to support 6
-different platforms, a dozen branches, a staging and production environment, and a varying set of
-build types: pgo, debug, asan, etc.
+Doing this for 10.8 OS X with mozilla-central in your local machine and with known static
+paths/packages might be pretty straight forward, however, this becomes a bit more complicated
+when you need to support X different platforms, over a dozen repositories, and a varying set of
+build types (e.g. pgo, debug, asan, etc).
 
 Supporting all those variants can quickly make a script harness turn into a bag of snakes. I am
-going to prove that by creating a new script for Mozharness can simplify this and, through
-the process, provide a outline of the core of mozharness and how you might go about creating or
-adding to an existing script for your own needs. I encourage you to follow along, identifying the
-concepts with actual mozharness code.
+going to prove this by creating a new script for Mozharness which can simplify this and, through
+the process, provide an outline of the core modules of mozharness and how you might go about creating or
+adding to an existing script for your own needs. I encourage you to follow along and identify the
+core concepts with some mozharness coding.
 
 So grab a copy of mozharness and let's begin:
-
-the official repo location: http://hg.mozilla.org/build/mozharness/
-a mirror of the repo for git users: https://github.com/mozilla/build-mozharness
+The official repository location: http://hg.mozilla.org/build/mozharness
+A mirror of the repo for git users: https://github.com/mozilla/build-mozharness
 
 The File Structure::
 
@@ -292,10 +291,10 @@ snippet of BaseLogger mozharness/base/log.py::
                 raise SystemExit(exit_code)
 
 So how do we avail of this if we don't call methods from it? LogMixin class provides helper methods
-for things like log(msg, level) or,  even simpler, self.{level}(msg) as in: self.info(msg) or
+for things like log(msg, level) or, even simpler, self.{level}(msg) as in: self.info(msg) or
 self.error(msg) and BaseLogger inherits those methods. These are the ones you will likely use the most.
 
-* a note about self.fatal(msg) or self.log(msg, FATAL): these methods will also cause the script to halt and exit
+* A note about self.fatal(msg) or self.log(msg, FATAL): these methods will also cause the script to halt and exit
 
 snippet of LogMixin mozharness/base/log.py::
 
