@@ -180,18 +180,18 @@ A mirror of the repo for git users: https://github.com/mozilla/build-mozharness
 
 The File Structure::
 
-    ├── configs -> where all config files live that are used against individual scripts
-    ├── docs
-    ├── examples
-    ├── external_tools
-    ├── mozfile
-    ├── mozharness
-    │   ├── base -> the core of mozharness and common tools for extending scripts
-    │   └── mozilla -> common tools for extending scripts that are specific to Mozilla's needs
-    ├── mozinfo
-    ├── mozprocess
-    ├── scripts -> where all the callable scripts go
-    ├── test
+    |-- configs -> where all config files live that are used against individual scripts
+    |-- docs
+    |-- examples
+    |-- external_tools
+    |-- mozfile
+    |-- mozharness
+    |   |-- base -> the core of mozharness and common tools for extending scripts
+    |   `-- mozilla -> common tools for extending scripts that are specific to Mozilla's needs
+    |-- mozinfo
+    |-- mozprocess
+    |-- scripts -> where all the callable scripts go
+    `-- test
 
 
 Before we get to the scripts, I'd like to cover three classes that each correspond to a
