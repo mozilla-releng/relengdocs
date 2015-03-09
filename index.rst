@@ -15,7 +15,7 @@ documentation. You might also be interested in our `main web site`_.
 Contents:
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
 
    flows.rst
    release_workflows/index.rst
