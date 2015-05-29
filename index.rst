@@ -25,8 +25,9 @@ Contents:
    schedulerdb.rst
    statusdb.rst
    releng101/index.rst
-   coding.rst
    jobs_not_starting.rst
+   best-practices/index
+   architecture/index
 
 .. toctree::
     :hidden:
