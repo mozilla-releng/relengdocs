@@ -1,7 +1,7 @@
 Audience
 ========
 
-The audience for this chapter on architecture is release engineering contributors (including employees, of course).
+The audience for this chapter on architecture is releng contributors (including employees, of course).
 This is not meant specifically for users of releng services or for the general public.
 
 Architecture documentation is a great way to detect architectural bugs.

@@ -26,8 +26,8 @@ Contents:
    statusdb.rst
    releng101/index.rst
    jobs_not_starting.rst
-   best-practices/index
-   architecture/index
+   best-practices/index.rst
+   architecture/index.rst
 
 .. toctree::
     :hidden:
