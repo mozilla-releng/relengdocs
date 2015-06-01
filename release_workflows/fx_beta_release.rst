@@ -2,9 +2,9 @@ Firefox Beta Release
 ====================
 .. seealso:: :ref:`Disclaimer <workflow_disclaimer>`
 
+..  :caption: Beta Releases
 .. actdiag::
     :desctable:
-    :caption: Beta Releases
     :alt: Inter-team handoffs for Public Releases
     :name: Figure3
 
