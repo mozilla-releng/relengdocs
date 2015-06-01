@@ -6,11 +6,11 @@ Release Engineering Procedures
 
 Procedures that don't easily fit elsewhere.
 
-.. toctree::
+.. toctree:: 
     :maxdepth: 2
 
     TCW_Process.rst
     TCW_RelEng.rst
-
+    Transitioning.rst
 
 .. vim: nospell :
