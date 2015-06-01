@@ -2,9 +2,9 @@ Firefox GA Release
 ==================
 .. seealso:: :ref:`Disclaimer <workflow_disclaimer>`
 
+.. :caption: GA Releases
 .. actdiag::
     :desctable:
-    :caption: GA Releases
     :alt: Inter-team handoffs for Public Releases
     :name: Figure1
 
