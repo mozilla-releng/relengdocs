@@ -87,12 +87,12 @@ __ https://wiki.mozilla.org/Releases/RelEngChecklist#Release_2
     Apply throttling
 .. _throttle_setting: https://wiki.mozilla.org/Release:Release_Automation_on_Mercurial:Updates_through_Shipping#How_to_throttle
 
-.. |push_snippets| replace:: **Manual email from RelMgmt initiates** |br|
+.. |push_snippets| replace:: **Manual email from RelMgmt** *and* **completion of update_verify initiates** |br|
     Deploy the updater artifacts to the production release site. End
     users will be offered updates at this point.
-.. _push_snippets: https://wiki.mozilla.org/Release:Release_Automation_on_Mercurial:Updates#Push_snippets
+.. _push_snippets: https://wiki.mozilla.org/Release:Release_Automation_on_Mercurial:Updates_through_Shipping#Publish_in_Balrog
 
-.. |post_release| replace::  **Manual email from QE initiates** |br|
+.. |post_release| replace:: **Manual email from QE initiates** |br|
     Do final clean up of the release, including making visible on the
     FTP servers.
 .. _post_release: https://wiki.mozilla.org/Release:Release_Automation_on_Mercurial:Updates_through_Shipping#Desktop_post-release
@@ -131,7 +131,7 @@ __ https://wiki.mozilla.org/Releases/RelEngChecklist#Release_2
 .. |qe_1| replace:: **initiated by automated email** |br|
     QE tests all produced artifacts, obtained via internal links.
 
-.. |qe_2| replace::  **initiated by automated email** |br|
+.. |qe_2| replace:: **initiated by automated email** |br|
     QE verifies installers are properly accessible, and updates are
     served via normal mechanisms.
 .. |qe_3| replace:: **Manual email from RelEng initiates** |br|

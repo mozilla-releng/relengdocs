@@ -79,12 +79,12 @@ __ https://wiki.mozilla.org/Releases/RelEngChecklist#Release_2
 .. _push_to_mirrors: https://wiki.mozilla.org/Release:Release_Automation_on_Mercurial:Updates#Push_to_mirrors
 
 
-.. |push_snippets| replace:: **Manual email from QE initiates** |br|
+.. |push_snippets| replace:: **Manual email from QE** *and* **Completion of update_verify initiates** |br|
     Deploy the updater artifacts to the production release site. End
     users will be offered updates at this point.
-.. _push_snippets: https://wiki.mozilla.org/Release:Release_Automation_on_Mercurial:Updates#Push_snippets
+.. _push_snippets: https://wiki.mozilla.org/Release:Release_Automation_on_Mercurial:Updates_through_Shipping#Publish_in_Balrog
 
-.. |post_release| replace::  **Manual email from QE initiates** |br|
+.. |post_release| replace:: **Manual email from QE initiates** |br|
     Do final clean up of the release, including making visible on the
     FTP servers.
 .. _post_release: https://wiki.mozilla.org/Release:Release_Automation_on_Mercurial:Updates_through_Shipping#Desktop_post-release
