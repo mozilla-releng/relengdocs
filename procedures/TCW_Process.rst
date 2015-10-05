@@ -77,7 +77,7 @@ __ https://wiki.mozilla.org/Platform/2013-10-15
 * *No later than end-of-day Wednesday preceding the downtime, email
   announcement, cross posted to the appropriate engineering lists, will
   be sent out.* (Typically, that is dev-planning, dev-tree-management,
-  dev-platform, dev-b2g, dev-gaia.)
+  dev-platform, dev-fxos.)
 
 Execution of TCW
 ================
