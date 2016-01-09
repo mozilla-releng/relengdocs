@@ -24,6 +24,9 @@ Wednesday Before
 |_| Double check all bugs to be included, make sure you know how to
 recover from potential issues. The CAB__ list is the "source of truth".
 
+|_| make sure you are in the Owners group within
+https://github.com/mozilla-b2g/gaia/settings/collaboration
+
 __ https://docs.google.com/a/mozilla.com/spreadsheet/ccc?key=0AuW-f5fEg7u4dGN0QUE1NERiNVdjSjZoN1RxWVRrWnc#gid=4
 
 Day of TCW
@@ -59,6 +62,11 @@ scheduled start of TCW.
 closing" TCW, select all the open branches and add the message "TCW in
 process, devs need to handle their own restarts", and "open" them saving
 state.)
+
+|_| In addition, we need to actually close Gaia. You need to be in the Owners group.
+Go the Github settings page and remove the Chefs and Cooks teams from the
+collaborators listing: https://github.com/mozilla-b2g/gaia/settings/collaboration
+Once the TCW is completed, they can be re-added to "open" Gaia once again.
 
 When TCW Done, Before Opening Trees
 ===================================
