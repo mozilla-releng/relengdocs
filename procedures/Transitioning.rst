@@ -53,7 +53,7 @@ which require that status need to be check and revoked. Legend:
     +----+-----+----+------------------------------------------------------+
     | X  | X   | X  | AWS console access                                   |
     +----+-----+----+------------------------------------------------------+
-    | X  | X   |    | releng LDAP bits (IT bug)                            |
+    | X  | X   |    | releng LDAP bits (IT bug) releng & vpn_releng        |
     +----+-----+----+------------------------------------------------------+
     | X  |     |    | unassign any resources in slavealloc                 |
     +----+-----+----+------------------------------------------------------+
