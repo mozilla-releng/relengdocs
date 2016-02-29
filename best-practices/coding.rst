@@ -86,6 +86,24 @@ opportunities.
 
     - Examples include buildbot
 
+Libraries & Tools
+=================
+
+In general, the following libraries should be used when there is no
+compelling reason to use something else. Over time, these will likely
+change.
+
+Date & Time:
+   arrow_
+Github Integration:
+   github3_
+HTTP/HTTPS:
+   requests_
+
+.. _arrow:  http://crsmithdev.com/arrow/
+.. _github3: http://github3py.readthedocs.org/en/master/index.html
+.. _requests: http://docs.python-requests.org/en/master/
+
 Futures
 =======
 
