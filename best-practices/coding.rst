@@ -94,11 +94,11 @@ compelling reason to use something else. Over time, these will likely
 change.
 
 Date & Time:
-   arrow_
+   :index:`arrow_ <triple: Date; Time; Python>`
 Github Integration:
-   github3_
+   :index:`github3_ <pair: Github; Python>`
 HTTP/HTTPS:
-   requests_
+   :index:`requests_ <pair: URL; Python>`
 
 .. _arrow:  http://crsmithdev.com/arrow/
 .. _github3: http://github3py.readthedocs.org/en/master/index.html
