@@ -70,6 +70,8 @@ which require that status need to be check and revoked. Legend:
     +----+-----+----+------------------------------------------------------+
     | X  | X   |    | Google Drive RelEng folder access                    |
     +----+-----+----+------------------------------------------------------+
+    | X  | X   |    | Release google calendar                              |
+    +----+-----+----+------------------------------------------------------+
     | X  | X   |    | Release google group                                 |
     +----+-----+----+------------------------------------------------------+
     | X  |     |    | other Google Drive documents [#gd_docs]_             |
