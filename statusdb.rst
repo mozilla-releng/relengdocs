@@ -13,7 +13,7 @@ finished jobs
 When jobs complete, their information is stored into the status db.
 
 Status of finished jobs is published to
-http://builddata.pub.build.mozilla.org/buildjson/ from buildapi. TBPL
+http://builddata.pub.build.mozilla.org/buildjson/ from buildapi. Treeherder
 consumes http://builddata.pub.build.mozilla.org/buildjson/builds-4hr.js.gz
 to find when jobs have completed.
 

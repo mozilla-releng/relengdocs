@@ -13,9 +13,9 @@ From a change on a repo to builds being triggered
   + http://hg.mozilla.org/build/mozharness/ <- no code examples but we will see Buildbot mention scripts from
 * Purpose of walk-through:
 
-  + expanding on :ref:`flow <from-checkin-to-tbpl>`, we are going to look at how we configure Buildbot. From monitoring changes pushed to known
+  + expanding on :ref:`flow <from-checkin-to-treeherder>`, we are going to look at how we configure Buildbot. From monitoring changes pushed to known
     repos to assigning slaves on each of our platforms the job of compiling specified revisions of source, this walk-through will show you the core parts of our
-    buildbot logic. Note this only looks at the 'compile/build' jobs we do from :ref:`TBPL` and not the test jobs.
+    buildbot logic. Note this only looks at the 'compile/build' jobs we do from :ref:`Treeherder` and not the test jobs.
 
 First, let’s create a Buildbot Master:
 
@@ -216,7 +216,7 @@ we then set up our change_source so that every time a cset is pushed to the curr
 config['repo_path'] == hg.m.o/projects/cedar), our schedulers we define can pick up the change and start the appropriate builds (c['builders']['the appropriate
 build'])
 
-to do this, we use :ref:`HgPoller` mentioned in :ref:`flow <from-checkin-to-tbpl>`::
+to do this, we use :ref:`HgPoller` mentioned in :ref:`flow <from-checkin-to-treeherder>`::
 
             branchObjects['change_source'].append(HgPoller(
                 hgURL=config['hgurl'],
@@ -400,7 +400,7 @@ and that's it for the factory and list of cmds. We pass that factory to the buil
 We have reached the end of misc.py's generateBranchObjects()
 
 Back in our universal_master_sqlite.py, we finish up with adding logic to how we define the steps to run after a job completes. This will contain logic to
-parsing if the job was a success, failure, etc and also concat the job's steps into one log that is uploaded and fed to TBPL. These post run steps are explained
+parsing if the job was a success, failure, etc and also concat the job's steps into one log that is uploaded and fed to Treeherder. These post run steps are explained
 in :ref:`postrun.py`. Notice we add this to our `status`_ key
 
 Here we also mention our QueueDir objs. To understand that, see `queue directories`_::
