@@ -82,9 +82,9 @@ __ https://secure.pub.build.mozilla.org/buildapi/pending
 __ https://secure.pub.build.mozilla.org/buildapi/running
 __ https://secure.pub.build.mozilla.org/buildapi/recent
 
-|_| Check `tbpl`__ to ensure it is up.
+|_| Check `Treeherder`__ to ensure it is up.
 
-__ https://tbpl.mozilla.org/
+__ https://treeherder.mozilla.org/
 
 .. |_| raw:: html
 

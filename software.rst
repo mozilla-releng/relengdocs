@@ -28,7 +28,7 @@ Now let's take a practical example in Mozilla where this would apply:
 1. A developer pushes a commit to the mozilla-central repo.
 2. Firefox is then installed on all our supported versions of Windows, Mac os x, Linux, and Android.
 3. All tests and profiling suites (mochitests, reftests, talos, etc) are then ran against each newly build Firefox.
-4. Logs are uploaded to :ref:`TBPL`, with status of how everything went.
+4. Logs are uploaded to :ref:`Treeherder`, with status of how everything went.
 
 Buildbot has a concept of masters and slaves. As the names imply, the masters are the brains, and the slaves are the headless chickens who are told what to do.
 
@@ -765,7 +765,7 @@ Here's some things you can do:
 
     2. outside of BaseMixin, there is a ton of other mixins and base classes you can use for extending the actions at your disposal. Peek in mozharness/base/* and mozharness/mozilla/* . You'll likely find methods for achieving your requirements so you don't even need to impl any new actions. e.g. create_virtualenv(), clone(), setup_mock(), download_file(), make_gaia()
 
-    3. check out the actual scripts/* . Mozharness is used for ~90% of all our jobs done in tbpl/treeherder. Want to correlate a script to one of those jobs? Open up a log, and grep the mozharness call, likely 'scripts/' or look for the starting log output (timestamp and log level at the start of each line)
+    3. check out the actual scripts/* . Mozharness is used for ~90% of all our jobs done in treeherder. Want to correlate a script to one of those jobs? Open up a log, and grep the mozharness call, likely 'scripts/' or look for the starting log output (timestamp and log level at the start of each line)
 
     4. take a look at the mozharness FAQ https://developer.mozilla.org/en-US/docs/Mozharness_FAQ
 
@@ -778,26 +778,20 @@ tearing down actions, decorating pre_config_lock() to manipulate self.config bef
 whole script run, and passing more than one config file to a single script run. However I think
 that goes beyond the requirements for navigating or contributing to the Mozharness code base.
 
-.. _TBPL:
+.. _Treeherder:
 
-TBPL
-----
-https://wiki.mozilla.org/Sheriffing/TBPL
+Treeherder
+----------
+https://wiki.mozilla.org/Auto-tools/Projects/Treeherder
 
-https://tbpl.mozilla.org/
+https://treeherder.mozilla.org/
 
-https://wiki.mozilla.org/Tinderboxpushlog
+https://treeherder.readthedocs.org/
 
-https://hg.mozilla.org/webtools/tbpl/file/tip/README
-
-https://wiki.mozilla.org/TbplWebsiteDoc
+https://github.com/mozilla/treeherder
 
 ?showall=1
 ?jobname=foo
-
-https://hg.mozilla.org/webtools/tbpl/
-
-treeherder
 
 .. _buildapi:
 

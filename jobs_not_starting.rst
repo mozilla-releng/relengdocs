@@ -7,7 +7,7 @@ starting properly. This document is an attempt to guide debugging efforts.
 "jobs not starting" can mean a few things.
 
 1. jobs are pending_, but not running. In this case the jobs are visible as
-   pending on TBPL_  or elsewhere.
+   pending on Treeherder_  or elsewhere.
 
 2. jobs aren't being scheduled properly. In this case, the jobs aren't
    visible as pending anywhere. Their triggers appear to be working, but
@@ -108,7 +108,7 @@ for this include:
 
 
 .. _pending: :ref:`pending jobs`
-.. _TBPL: :ref:`TBPL`
+.. _Treeherder: :ref:`Treeherder`
 .. _allthethings.json: http://builddata.pub.build.mozilla.org/reports/allthethings.json
 .. _production-masters.json: http://hg.mozilla.org/build/tools/raw-file/default/buildfarm/maintenance/production-masters.json
 .. _jacuzzi'ed builders: http://jacuzzi-allocator.pub.build.mozilla.org/v1/builders/
