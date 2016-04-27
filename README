@@ -2,7 +2,7 @@ This repository has some of the more technical, and volatile internal
 documentation for Firefox Release Engineering.
 
 Rendered versions of the documentation may be viewed at:
-  http://moz-releng-docs.readthedocs.org/en/latest/
+  http://moz-releng-docs.readthedocs.io/en/latest/
 
 Note on building locally: you may need to install the modules listed in 
 rtfd-requirements.txt.

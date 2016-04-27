@@ -786,7 +786,7 @@ https://wiki.mozilla.org/Auto-tools/Projects/Treeherder
 
 https://treeherder.mozilla.org/
 
-https://treeherder.readthedocs.org/
+https://treeherder.readthedocs.io/
 
 https://github.com/mozilla/treeherder
 
@@ -799,7 +799,7 @@ buildapi
 --------
 http://hg.mozilla.org/build/buildapi (`buildapi docs`_)
 
-.. _`buildapi docs`: http://moz-releng-docs.readthedocs.org/projects/moz-releng-buildapi
+.. _`buildapi docs`: http://moz-releng-docs.readthedocs.io/projects/moz-releng-buildapi
 
 https://wiki.mozilla.org/ReleaseEngineering/BuildAPI
 

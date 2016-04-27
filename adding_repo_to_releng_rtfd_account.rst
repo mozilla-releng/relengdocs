@@ -65,4 +65,4 @@ Assign maintainers to the repo on RTFD
 - Add the |rtfd| user names to be admins of this repo's documents
 
 .. |rtfd| replace:: `rtfd.org`_
-.. _`rtfd.org`: http://moz-releng-docs.readthedocs.org/
+.. _`rtfd.org`: http://moz-releng-docs.readthedocs.io/

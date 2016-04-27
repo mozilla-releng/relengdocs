@@ -101,7 +101,7 @@ HTTP/HTTPS:
    :index:`requests_ <pair: URL; Python>`
 
 .. _arrow:  http://crsmithdev.com/arrow/
-.. _github3: http://github3py.readthedocs.org/en/master/index.html
+.. _github3: http://github3py.readthedocs.io/en/master/index.html
 .. _requests: http://docs.python-requests.org/en/master/
 
 Futures
@@ -120,4 +120,4 @@ something like this, ask around.
         - Build/test on commit requirements
         - Operations documentation.
 
-.. _`flask-wtf`: https://flask-wtf.readthedocs.org/
+.. _`flask-wtf`: https://flask-wtf.readthedocs.io/
