@@ -22,12 +22,11 @@ Wednesday Before
 :ref:`planning procedure`.
 
 |_| Double check all bugs to be included, make sure you know how to
-recover from potential issues. The CAB__ list is the "source of truth".
+recover from potential issues. The CAB list is the "source of truth".
 
 |_| make sure you are in the Owners group within
 https://github.com/mozilla-b2g/gaia/settings/collaboration
 
-__ https://docs.google.com/a/mozilla.com/spreadsheet/ccc?key=0AuW-f5fEg7u4dGN0QUE1NERiNVdjSjZoN1RxWVRrWnc#gid=4
 
 Day of TCW
 ==========
@@ -43,11 +42,11 @@ __ https://nagios.mozilla.org/releng-scl3/cgi-bin/tac.cgi
 __ https://secure.pub.build.mozilla.org/builddata/reports/slave_health/index.html
 
 |_| (optional) post message in IRC channels in advance. Usually #mobile,
-#b2g, #developers, #releng, and #gaia. Sample::
+#fxos, #developers, and #releng. Sample::
 
     REMINDER - Trees close in about 1 hour for https://bugzil.la/1087431
 
-|_| Pull up local copies of all bugs and the etherpad, in case of
+|_| Pull up local copies of all bugs and the spreadsheet, in case of
 network issues (planned, or unplanned)
 
 |_| Log in to the primary and backup IRC channels, see `IT IRC usage`__,
