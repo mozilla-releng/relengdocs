@@ -22,11 +22,15 @@ both a member of the RelEng team and an employee.
 
 The table below lists all the permissions, and which requirements are required
 to have that permission. When a person no longer has a specific status, all permissions
-which require that status need to be check and revoked. Legend:
+which require that status need to be check and revoked. (Refer to the
+`day one`_ page for details on permissions.) Legend:
 
 |   RE:  Release Engineering team member
 |   Emp: Mozilla Corporation employee
 |   CM:  Contributing community Member
+
+
+.. _`day one`: https://wiki.mozilla.org/ReleaseEngineering/Day_1_Checklist
 
     +----+-----+----+------------------------------------------------------------------------------------------------------------------------+
     | RE | Emp | CM | Permission                                                                                                             |
@@ -95,12 +99,15 @@ Password List
 .. [#passwords]
 
     Almost all passwords are now shared via gpg encrypted files. To get a
-    list of passwords shared with a user, use `this script
-    <https://hg.mozilla.org/build/braindump/file/default/utils/list-gpg-recipients>`_
-    to identify the passwords which need to be changed. Also, add the
-    departing user's id to the `alumni.json
-    <http://hg.mozilla.org/build/braindump/file/default/utils/alumni.json>`_
-    file.
+    list of passwords shared with a user, use the
+    "``scripts/who_knows_what``" script to identify passwords that
+    should be changed.
+    Also, add the
+    departing user's id to the "``scripts/alumni.json``" file.
+
+    .. note:: access to the repo requires both membership in both the
+      ``vpn_git_internal`` (or ``vpn_releng``) and either (``relops`` or
+      ``releng``).
 
 .. [#mozbuild]
 
