@@ -23,4 +23,6 @@ Contents:
 
 For Release Engineering, the authoritative procedures are listed as
 `checklists <https://wiki.mozilla.org/Releases/RelEngChecklist>`_
-in the main wiki.
+in the main wiki. See also the `release warrior
+<https://github.com/mozilla/releasewarrior/blob/master/how-tos/relpro.md>`_
+documentation and diagrams.
