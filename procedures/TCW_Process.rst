@@ -44,6 +44,12 @@ assignments done at least one week in advance of the TCW.
 * A calendar of next two TCWs will be maintained, including tracker
   bugs.
 
+    - The master schedule is driven off the `official release`_
+      schedule. Usually, TCW is the 3rd Saturday after Firefox release,
+      but may be the 4th with pre-arrangement.
+    - The chosen date is configured in Service Now, and is visible on
+      the `approved changes`_ calendar.
+
 * No later than 2 Fridays preceding the TCW (8 days), the composite
   time line will be established and documented in a spreadsheet This
   ensures accurate information can be provided at various engineering
@@ -54,6 +60,10 @@ assignments done at least one week in advance of the TCW.
         The tracking bug summary should be updated with the planned
         start and completion times of the TCW.
 
+    .. note:: Early Viewing
+
+        An early view of what has been requested for the next TCW can be
+        seen via the `TCW Requests`_ link into Service Now.
 
 * No later than end-of-day Wednesday preceding the downtime, email
   announcement, cross posted to the appropriate engineering lists, will
@@ -93,3 +103,6 @@ The MOC administers the TCW. In general, the following generally occur:
 See :ref:`detailed checklist<TCW_Releng>` for actions to be taken.
 
 .. _CAB: https://mana.mozilla.org/wiki/display/MOC/Change+Advisory+Board
+.. _approved changes: https://mozilla.service-now.com/sys_report_template.do?jvar_report_id=dee1b20913c5aa00472ed2f18144b068&jvar_selected_tab=myReports&jvar_report_home_query=
+.. _official release: https://wiki.mozilla.org/RapidRelease/Calendar
+.. _TCW Requests: https://mozilla.service-now.com/nav_to.do?uri=%2Fsys_report_template.do%3Fjvar_report_id%3D012b81bbdb0e26006c3fb1c0ef9619e1%26jvar_selected_tab%3DmyReports%26jvar_list_order_by%3D%26jvar_list_sort_direction%3D%26sysparm_reportquery%3D%26jvar_search_created_by%3D%26jvar_search_table%3D%26jvar_search_report_sys_id%3D%26jvar_report_home_query%3D
