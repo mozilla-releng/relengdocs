@@ -68,7 +68,9 @@ which require that status need to be check and revoked. (Refer to the
     +----+-----+----+------------------------------------------------------------------------------------------------------------------------+
     | X  | X   |    | github ownership roles [#github]_                                                                                      |
     +----+-----+----+------------------------------------------------------------------------------------------------------------------------+
-    | X  | X   | X  | github write access                                                                                                    |
+    | X  |     |    | hg.mozilla.org special access [#hgmo]_                                                                                 |
+    +----+-----+----+------------------------------------------------------------------------------------------------------------------------+
+    | X  | X   | X  | github write access (review)                                                                                           |
     +----+-----+----+------------------------------------------------------------------------------------------------------------------------+
     | X  |     |    | releng/build bugzilla group access [#bugzilla]_                                                                        |
     +----+-----+----+------------------------------------------------------------------------------------------------------------------------+
@@ -156,6 +158,12 @@ Miscellaneous Systems
 
 These systems are unique, so you may need to refer to other
 documentation for instructions.
+
+.. [#hgmo]
+
+    There are some hand maintained white lists for push permissions to
+    certain branches. (E.g. puppet production) Changes need to be
+    approved by a RelEng/RelOps manager.
 
 .. [#github]
 
