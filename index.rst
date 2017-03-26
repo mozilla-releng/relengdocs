@@ -28,6 +28,7 @@ Contents:
    jobs_not_starting.rst
    best-practices/index.rst
    architecture/index.rst
+   future/index.rst
 
 .. toctree::
     :hidden:
