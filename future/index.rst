@@ -26,6 +26,15 @@ We can combine nightly, release, and PGO builds into a single type, "shippable" 
 
 Let's run depend builds on push and shippable builds periodically on integration branches.  On Try, either should be choosable using try syntax.  On release branches, let's build shippable builds on push and ignore depend opt builds.
 
+Local depend signing
+--------------------
+
+Currently, we use the signing servers for depend signing, except on Android, where the Android tools create throwaway dev keys and sign any otherwise unsigned apk during packaging.
+
+We're theorizing we might be able to do the same with other signing types, though key generation may be too time- and resource- costly.  Sharing of untrusted depend keys may be a way to solve this.
+
+We could potentially use `docker-signing-server <https://github.com/escapewindow/docker-signing-server>`__ as a way to achieve this for everything but dmg signing.  This would allow the workflow to be closer to the nightly/release workflow.
+
 Guidelines
 ~~~~~~~~~~
 
