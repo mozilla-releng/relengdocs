@@ -17,6 +17,15 @@ to sign mac binaries on linux, that allows us to use the same linux
 signing servers. This may require porting some mac tools to linux; we're
 leaning towards rust.
 
+"Shippable" builds
+------------------
+
+Currently, we have depend builds which prioritize speed, and nightly/release builds which prioritize correctness.
+
+We can combine nightly, release, and PGO builds into a single type, "shippable" builds.  These can run on any branch at the schedule of our choosing.  They're only shipped when we choose to promote these to the appropriate channel.  These will be clobber, PGO, multilocale, branded, etc.
+
+Let's run depend builds on push and shippable builds periodically on integration branches.  On Try, either should be choosable using try syntax.  On release branches, let's build shippable builds on push and ignore depend opt builds.
+
 Guidelines
 ~~~~~~~~~~
 
