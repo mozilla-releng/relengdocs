@@ -17,6 +17,7 @@ benefit from specific additions.
 Wednesday Before
 ================
 
+|_| Ensure the decision on "hard close" vs. "soft close" has been made.
 
 |_| Make sure all communications have gone out from the
 :ref:`planning procedure`.
@@ -31,7 +32,7 @@ Day of TCW
 |_| Check and screenshot various dashboards to see what is current "normal".
 
     - |_| Check `nagios service dashboard`__ 
-    - |_| Screenshot `nagios tacktical dashboard`__ 
+    - |_| Screenshot `nagios tactical dashboard`__ 
     - |_| Screenshot `slavehealth`__
 
 __ https://nagios.mozilla.org/releng-scl3/cgi-bin/status.cgi?servicegroup=all&style=summary
@@ -39,7 +40,7 @@ __ https://nagios.mozilla.org/releng-scl3/cgi-bin/tac.cgi
 __ https://secure.pub.build.mozilla.org/builddata/reports/slave_health/index.html
 
 |_| (optional) post message in IRC channels in advance. Usually #mobile,
-#fxos, #developers, and #releng. Sample::
+#developers, and #releng. Sample::
 
     REMINDER - Trees close in about 1 hour for https://bugzil.la/1087431
 
@@ -54,10 +55,14 @@ __ https://mana.mozilla.org/wiki/display/SYSADMIN/IRC+use+within+IT
 |_| Touch base with the MOC "on duty" person about 15 minutes before
 scheduled start of TCW.
 
-|_| Close the trees with the tracker bug URL mentioned. (For "non-tree
-closing" TCW, select all the open branches and add the message "TCW in
-process, devs need to handle their own restarts", and "open" them saving
-state.)
+|_| Close the trees with the tracker bug URL mentioned. (For "soft tree
+closing" TCW:
+
+    - |_| Hard close autoland first.
+
+    - |_| Select all the open branches and add the message "TCW in
+      process, devs need to handle their own restarts", and "open" them
+      saving state.
 
 When TCW Done, Before Opening Trees
 ===================================
@@ -76,6 +81,10 @@ __ https://secure.pub.build.mozilla.org/buildapi/recent
 |_| Check `Treeherder`__ to ensure it is up.
 
 __ https://treeherder.mozilla.org/
+
+|_| Reopen regular trees.
+
+|_| Reopen autoland (if closed for this TCW).
 
 .. |_| raw:: html
 

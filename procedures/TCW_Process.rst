@@ -41,19 +41,16 @@ assignments done at least one week in advance of the TCW.
     - Assistance needed (specifically). E.g. "zeus expert" or "buildapi
       expert"
 
-* A calendar of next two TCWs will be maintained, including tracker
-  bugs.
+* There is no official calendar of potential TCW dates (in part because
+  there is no official calendar of release dates). A TCW date is
+  calculated as follows:
 
     - The master schedule is driven off the `official release`_
       schedule. Usually, TCW is the 3rd Saturday after Firefox release,
-      but may be the 4th with pre-arrangement.
-    - The chosen date is configured in Service Now, and is visible on
-      the `approved changes`_ calendar.
+      but may be the 4th with pre-arrangement with Release Management.
 
 * No later than 2 Fridays preceding the TCW (8 days), the composite
-  time line will be established and documented in a spreadsheet This
-  ensures accurate information can be provided at various engineering
-  meetings the week prior to the TCW.
+  time line will be established and documented in a spreadsheet.
 
     .. note:: Tracking Bug
 
@@ -65,14 +62,21 @@ assignments done at least one week in advance of the TCW.
         An early view of what has been requested for the next TCW can be
         seen via the `TCW Requests`_ link into Service Now.
 
-* No later than end-of-day Wednesday preceding the downtime, email
-  announcement, cross posted to the appropriate engineering lists, will
-  be sent out. (Typically, that is dev-planning, dev-tree-management,
-  dev-platform, dev-fxos.)
+* As soon as the list of activities is determined, RelEng can make a
+  determination whether the TCW can use a "soft close" or a "hard
+  close".
+
+* No later than end-of-day Wednesday preceding the downtime, RelEng
+  constructs an email
+  announcement, based on the text posted on `internal status`_ by MOC.
+  That email is cross posted to the appropriate engineering lists.
+  (Currently, that is dev-planning, dev-tree-management,
+  dev-platform.)
 
   .. note:: RelEng Contact Posts to Newsgroups
 
-      The MOC will publish an email describing the changes, but they do
+      The MOC will publish a note on the internal status page describing
+      the changes. However, they do
       not have posting privilages to the newsgroups. Therfore the RelEng
       contact person posts (forwards) on the MOC's behalf, adding any
       addition information (such as "soft close" status). Even if the
@@ -106,3 +110,4 @@ See :ref:`detailed checklist<TCW_Releng>` for actions to be taken.
 .. _approved changes: https://mozilla.service-now.com/sys_report_template.do?jvar_report_id=dee1b20913c5aa00472ed2f18144b068&jvar_selected_tab=myReports&jvar_report_home_query=
 .. _official release: https://wiki.mozilla.org/RapidRelease/Calendar
 .. _TCW Requests: https://mozilla.service-now.com/nav_to.do?uri=%2Fsys_report_template.do%3Fjvar_report_id%3D012b81bbdb0e26006c3fb1c0ef9619e1%26jvar_selected_tab%3DmyReports%26jvar_list_order_by%3D%26jvar_list_sort_direction%3D%26sysparm_reportquery%3D%26jvar_search_created_by%3D%26jvar_search_table%3D%26jvar_search_report_sys_id%3D%26jvar_report_home_query%3D
+.. _Internal Status: https://mozilla2.statuspage.io/
