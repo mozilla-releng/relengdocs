@@ -17,6 +17,8 @@ benefit from specific additions.
 Wednesday Before
 ================
 
+|_| Review any notes_ or bugs_ from prior TCWs that may be relevant.
+
 |_| Ensure the decision on "hard close" vs. "soft close" has been made.
 
 |_| Make sure all communications have gone out from the
@@ -85,6 +87,21 @@ __ https://treeherder.mozilla.org/
 |_| Reopen regular trees.
 
 |_| Reopen autoland (if closed for this TCW).
+
+|_| Update notes_ and file bugs_ as appropriate to capture any issues.
+Invite all TCW participants to do the same.
+
+Next Business Day
+=================
+
+|_| Review any notes_ or bugs_, and ensure they have enough context.
+
+|_| File Bugzilla tickets for any work that must be done. Put a link to
+the Bugzilla ticket in the GitHub issue, but do not close the issue
+until the bug is fixed.
+
+.. _notes: https://github.com/mozilla-releng/TCW-history/wiki
+.. _bugs: https://github.com/mozilla-releng/TCW-history/issues
 
 .. |_| raw:: html
 
