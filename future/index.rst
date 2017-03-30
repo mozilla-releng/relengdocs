@@ -20,6 +20,8 @@ leaning towards rust.
 "Shippable" builds
 ------------------
 
+`bug 1352113 <https://bugzilla.mozilla.org/show_bug.cgi?id=1352113>`__
+
 Currently, we have depend builds which prioritize speed, and nightly/release builds which prioritize correctness.
 
 We can combine nightly, release, and PGO builds into a single type, "shippable" builds.  These can run on any branch at the schedule of our choosing.  They're only shipped when we choose to promote these to the appropriate channel.  These will be clobber, PGO, multilocale, branded, etc.
