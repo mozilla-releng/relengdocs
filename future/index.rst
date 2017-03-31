@@ -37,6 +37,23 @@ We're theorizing we might be able to do the same with other signing types, thoug
 
 We could potentially use `docker-signing-server <https://github.com/escapewindow/docker-signing-server>`__ as a way to achieve this for everything but dmg signing.  This would allow the workflow to be closer to the nightly/release workflow.
 
+Partial updates
+---------------
+
+We should generate partial updates on Beta and Release for every version back
+to the previous watershed.  We know that smaller updates help users update
+faster. We also know that users on old versions will tend to go through a
+watershed release. By generating partial updates as far back as that watershed
+release, we can make sure that we're giving hte best possible updates to all
+users.
+
+Canonical list of watershed releases
+------------------------------------
+
+We should publish a list of which releases were watersheds to enable other
+automation to make smarter decisions. The watershed data should include
+branch-specific information, buildids, applicable platforms, etc.
+
 Guidelines
 ~~~~~~~~~~
 
