@@ -20,16 +20,13 @@ following criteria, mostly based on deployment tool needs:
 
     Deployed via repository checkout:
         - Must be in either hg.mozilla.org (historical home), or
-          git.mozilla.org (if git client installed on target).
-        - Examples include buildbot code.
+          github.com (if git client installed on target).
 
     Deployed via puppet:
         - Source should be in separate repository with documentation,
           tests, and other goodness.
-        - Source repository should be \*.mozilla.org server.
+        - Source repository should be \*.mozilla.org server or github.
 
-            - Historically, some were (only) in end user repos on
-              github.
         - Only a file (or other artifact) produced from the source
           repository should be deployed by puppet. Puppet only changes
           are discouraged.
@@ -59,7 +56,7 @@ Configuration Formats
 
 At the moment, the bulk of our tooling uses:
 
-    - python syntax & constructs (buildbot)
+    - python syntax & constructs
     - JSON (for host descriptions, web APIs)
     - INI format (git, hg)
 
@@ -81,10 +78,6 @@ opportunities.
 - Pylons has been used.
 
     - Examples include buildapi
-
-- Twisted
-
-    - Examples include buildbot
 
 Libraries & Tools
 =================

@@ -17,15 +17,11 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   flows.rst
    release_workflows/index.rst
    procedures/index.rst
    hosts.rst
    software.rst
-   schedulerdb.rst
-   statusdb.rst
    releng101/index.rst
-   jobs_not_starting.rst
    best-practices/index.rst
    architecture/index.rst
    future/index.rst
@@ -36,7 +32,6 @@ Contents:
     adding_repo_to_releng_rtfd_account.rst
     adding_docs_to_existing_code.rst
     maintaining_these_docs.rst
-    releng101/checkin-to-builds.rst
     tobewritten.rst
 
 
