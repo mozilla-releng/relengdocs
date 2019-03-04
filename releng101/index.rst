@@ -37,22 +37,17 @@ To get the ball rolling, below are a collection of materials that will help prov
 The Walk-through series at a glance
 -----------------------------------
 
-1. :ref:`Checkin-To-Builds` - a tour through Buildbot (`latest update`__ if your not reading this online.)
+.. todo:: Write these.
 
-__ https://github.com/mozilla/build-relengdocs/commits/master/releng101/checkin-to-builds.rst
-
-.. todo:: Write the rest of these.
-
-2. *Building Firefox in automation* - harnessing Mozharness
+1. *Checkin-To-Builds* - to be written for taskcluster
+2. *Building Firefox in automation*
 3. *Setting up and configuring our machines* - becoming the master of Puppet
-4. *Monitoring and nagging when things go wrong* - keeping an eye on our machines with BuildAPI, SlaveAPI, Slave Health, and Nagios
+4. *Monitoring and nagging when things go wrong* - keeping an eye on our machines
 5. *Integrating the Cloud* - a look at our Cloud Tools
 6. *Release Process* - explains why we hold the title of 'Release Engineers'
 7. *Handling application updates* - Balrog to the rescue
-8. *Serving your own machines* - loaning and allocating our machines through Selve-serve
-9. *Syncing with HG and Git* - understanding vcs-sync
-10. *Where to go from here* - tips on exploring our infrastructure: wikis, bugzilla, mxr, emails, irc, etc
-11. *A look into the future* - what's up and coming: taskcluster, relengAPI, etc
+8. *Where to go from here* - tips on exploring our infrastructure: wikis, bugzilla, emails, irc, slack, etc
+9. *A look into the future* - what's up and coming
 
 
     Template for new pages:

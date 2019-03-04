@@ -56,7 +56,7 @@ Configuration Formats
 
 At the moment, the bulk of our tooling uses:
 
-    - python syntax & constructs (buildbot)
+    - python syntax & constructs
     - JSON (for host descriptions, web APIs)
     - INI format (git, hg)
 
@@ -78,10 +78,6 @@ opportunities.
 - Pylons has been used.
 
     - Examples include buildapi
-
-- Twisted
-
-    - Examples include buildbot
 
 Libraries & Tools
 =================
