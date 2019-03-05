@@ -4,7 +4,6 @@ documentation for Firefox Release Engineering.
 Rendered versions of the documentation may be viewed at:
   http://moz-releng-docs.readthedocs.io/en/latest/
 
-Note on building locally: you may need to install the modules listed in 
+Note on building locally: you may need to install the modules listed in
 rtfd-requirements.txt.
-
 
