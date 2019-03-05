@@ -2,8 +2,15 @@
 .. index:: 
     single: Testing Autograph
 
+Testing Autograph
+=================
+
+We currently use `Autograph`_ to sign our files with a number of our signing
+formats. Occasionally the autograph team will ask us to test to make sure
+things are working properly.
+
 Testing Autograph Stage
-=======================
+-----------------------
 
 We currently use `Autograph`_ to sign our files with a number of our signing
 formats. In CI, we point at autograph-prod, to avoid having autograph-stage
@@ -15,7 +22,7 @@ and want us to verify that it still works for us. Here's how.
 .. _autograph-stage mar signing test:
 
 Autograph-stage mar signing test
---------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 There is a tier 3 task that doesn't run automatically. This task,
 ``mar-signing-autograph-stage-linux64-nightly/opt``, can be added to a push
@@ -51,33 +58,29 @@ that the signature matches the autograph-stage mar public key. Report back to
 .. _Autograph: https://mana.mozilla.org/wiki/display/SVCOPS/Autograph
 
 Testing Autograph Prod
-======================
+----------------------
 
-Once we roll out to prod, we want to make sure it still works.
+Once we roll out to prod, we want to make sure everything still works.
 
 .. _autograph-prod mar signing test:
 
 Autograph-prod mar signing test
--------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To test autograph-prod mar-signing, find a recent (but ideally not the
-most-recent) nightly graph. Find a mar-signing task in that graph. To rerun it
-via the `taskcluster-cli`_::
+most-recent) nightly graph. Find a mar-signing task in that graph.
 
-    # find the task id via treeherder
-    #  - click on the task
-    #  - find the taskId on the lower left
-    tc-signin
-    taskcluster task rerun -- <TASK_ID>
-
-To rerun it via treeherder::
+To retrigger it via treeherder:
 
     - sign in to `mozilla-central treeherder`_ (top right of the page)
     - click on the task
     - find the ``...`` menu in the lower left of the page, click on it
     - choose ``Custom Action``
-    - choose ``Rerun``
+    - choose ``Retrigger``
     - click ``Trigger`` in the lower right
+
+(A retrigger here is preferable to a rerun, because it won't affect chain of
+trust verification for the rest of the graph.)
 
 Make sure this task runs green. If it goes green, then the task signed the
 mar file(s) via autograph-prod, and verified the signature matches the
