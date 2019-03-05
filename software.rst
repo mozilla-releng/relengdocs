@@ -29,6 +29,7 @@ useful to developers, and the json format which is more useful for
 automated systems.
 
 .. _pushlog.py hook: http://hg.mozilla.org/hgcustom/hghooks/file/15e5831ab26b/mozhghooks/pushlog.py
+.. _hg.mozilla.org: https://hg.mozilla.org
 
 Mozharness
 ----------

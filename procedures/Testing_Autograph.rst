@@ -1,8 +1,7 @@
-.. _Testing_Autograph_Stage:
+.. _Testing_Autograph:
 .. index:: 
-    single: Testing Autograph-stage
+    single: Testing Autograph
 
-=======================
 Testing Autograph Stage
 =======================
 
@@ -13,10 +12,10 @@ changes or availability affect production CI, nightlies, or releases.
 However, sometimes the Autograph team needs to make changes to autograph-stage,
 and want us to verify that it still works for us. Here's how.
 
-.. _mar signing test:
+.. _autograph-stage mar signing test:
 
-Mar Signing test
-================
+Autograph-stage mar signing test
+--------------------------------
 
 There is a tier 3 task that doesn't run automatically. This task,
 ``mar-signing-autograph-stage-linux64-nightly/opt``, can be added to a push
@@ -50,4 +49,39 @@ that the signature matches the autograph-stage mar public key. Report back to
 ``#autograph`` on irc that it has passed.
 
 .. _Autograph: https://mana.mozilla.org/wiki/display/SVCOPS/Autograph
+
+Testing Autograph Prod
+======================
+
+Once we roll out to prod, we want to make sure it still works.
+
+.. _autograph-prod mar signing test:
+
+Autograph-prod mar signing test
+-------------------------------
+
+To test autograph-prod mar-signing, find a recent (but ideally not the
+most-recent) nightly graph. Find a mar-signing task in that graph. To rerun it
+via the `taskcluster-cli`_::
+
+    # find the task id via treeherder
+    #  - click on the task
+    #  - find the taskId on the lower left
+    tc-signin
+    taskcluster task rerun -- <TASK_ID>
+
+To rerun it via treeherder::
+
+    - sign in to `mozilla-central treeherder`_ (top right of the page)
+    - click on the task
+    - find the ``...`` menu in the lower left of the page, click on it
+    - choose ``Custom Action``
+    - choose ``Rerun``
+    - click ``Trigger`` in the lower right
+
+Make sure this task runs green. If it goes green, then the task signed the
+mar file(s) via autograph-prod, and verified the signature matches the
+public key.
+
+.. _taskcluster-cli: https://github.com/taskcluster/taskcluster-cli
 .. _mozilla-central treeherder: https://treeherder.mozilla.org/#/jobs?repo=mozilla-central
