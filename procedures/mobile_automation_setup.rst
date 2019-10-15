@@ -2,9 +2,7 @@ How to automate nightly Google Play deployments
 ===============================================
 
 These instructions define how to set up an Android product for nightly
-deployment to the Google Play store. Additionally, to enable testing of
-this automation before it's accepted, this documentation will guide how
-to set up a staging pipeline.
+deployments to the Google Play store.
 
 Throughout this document, wherever the term ``$product`` is used,
 substitute your product's name in (replacing spaces with hyphens), e.g.:
@@ -16,12 +14,8 @@ we'll tell it that we'll need those scopes to run our builds.
 Taskcluster will just verify that the scopes we're using dynamically
 match between the build and the hook that starts the build.
 
-Note: we will soon move scope administration to
-`ci-admin <https://hg.mozilla.org/build/ci-admin/>`__ rather than
-administrating them in the live Taskcluster website.
-
 1.  Request signing keys (example bug for
-    ```reference-browser`` <https://bugzilla.mozilla.org/show_bug.cgi?id=1508761>`__).
+    `reference-browser <https://bugzilla.mozilla.org/show_bug.cgi?id=1508761>`__).
     Confirm with the app's team what the "signature algorithm" and
     "digest algorithm" should be, and include that information in the
     ticket.
@@ -32,100 +26,62 @@ administrating them in the live Taskcluster website.
 
 2.  Clone the product's repository
 
-    -  While doing "staging" runs, it's easiest to use your ``master``
-       branch so that checking it out for builds is straightforward.
+3.  Add ``.taskcluster.yml`` in the root of the repository. This file
+    tells Taskcluster what to do upon github events happening (push,
+    pr, release, etc). Since we're going to want to run ``taskgraph``
+    to decide what tasks to run, we can take a ``.taskcluster.yml`` from
+    a similarly-configured repository, like `fenix
+    example <https://github.com/mozilla-mobile/fenix/blob/master/.taskcluster.yml>`__)
 
-3.  Add ``.taskcluster.yml`` in the root of the repository if it doesn't
-    exist, and add a task for cron jobs. (```fenix``
-    example\` <https://github.com/mozilla-mobile/fenix/blob/master/.taskcluster.yml>`__)
+    -  Update repository and treeherder references to refer to your project,
+       rather than ``fenix``.
 
-    1. Update the ``event.repository.html_url`` checks to use the
-       correct repo URL
-    2. Update scopes to be relevant for your product
-    3. Update the apks in ``payload.command`` so that the paths match
-       your product
-    4. Update ``payload.image`` so that a compatible docker image is
-       used
-    5. Update ``metadata`` for your product
+4.  Implement ``taskgraph`` configuration for the repository. See the
+    `Fenix configuration <https://github.com/mozilla-mobile/fenix/tree/master/taskcluster>`__.
+    You'll need to implement the following parts:
 
-4.  In ``automation/taskcluster``, add ``decision_task_nightly.py``,
-    ``schedule_nightly_graph.py`` and ``lib/tasks.py`` that will perform
-    most of the automation wiring. (```fenix``
-    examples <https://github.com/mozilla-mobile/fenix/blob/master/automation/taskcluster/>`__)
+    -  Define tasks in YAML in ``taskcluster/ci/``
+    -  Define transforms in ``taskcluster/$project_taskgraph/transforms/`` which operate
+       on the tasks defined in the YAML
+    -  Define any custom loaders in ``taskcluster/$project_taskgraph/loader/`` (this is
+       useful in cases like needing to generate a dynamic number of tasks based on an
+       external source, like ``gradle`` or a ``.buildconfig.yml`` file)
+    -  Define ``Dockerfiles`` in ``taskcluster/docker/``
 
-    1. ``schedule_nightly_graph.py`` is mostly good as-is, but I'd
-       recommend a once-over to make sure there's nothing Fenix-specific
-    2. Quite a few changes in the others: scopes, repositories, docker
-       image
-    3. There may be other useful tools in ``fenix``'s
-       ``automation/taskcluster`` directory, such as ``gradle``
-       functions or data structures to represent Android variants
-    4. Once the rest of the infrastructure is set up, you can lean on
-       "staging builds" to be confident that everything is configured
-       correctly
+5.  If you have schedule-based automation, create cron hook
+    (copy from the `fenix hook <https://tools.taskcluster.net/hooks/project-releng/cron-task-mozilla-mobile-fenix>`__)
 
-5.  Create staging hook (e.g.:
-    ```fenix-nightly-staging`` <https://taskcluster-web.netlify.com/hooks/project-mobile/fenix-nightly-staging>`__)
+    -  You'll need to update the references from ``fenix``
+    -  Additionally, define a ``.cron.yml``, like `fenix <https://github.com/mozilla-mobile/fenix/blob/master/.cron.yml>`__
+    -  Create some hooks to force-trigger some cron tasks for testing. For example, `fenix has one for forcing nightlies
+       <https://tools.taskcluster.net/hooks/project-releng/cron-task-mozilla-mobile-fenix%2Fnightly>`__
 
-    1. Go to `Hooks <https://taskcluster-web.netlify.com/hooks>`__
-    2. Click "Create Hook" at the bottom-right of the page
-    3. ``HookGroupId`` is "project-mobile"
-    4. ``HookId`` is ``$product-nightly-staging`` (e.g.:
-       ``fenix-nightly-staging``)
-    5. ``Name`` is "$product Nightly Builds (staging)"
-    6. Add a ``Description`` if it can be more descriptive than the
-       ``Name``
-    7. ``Owner`` is different for each product, ask the product's team
-       which email address they'd like to receive build failure
-       notifications from
-    8. Use the template from
-       ```fenix-nightly`` <https://taskcluster-web.netlify.com/hooks/project-mobile/fenix-nightly>`__
-       with some modifications:
+        Note that the hook URL has a ``%2F`` instead of a slash - this is due to a bug with the Taskcluster tools page loading the wrong hook
 
-       1. Use the correct ``payload.image``
-       2. Update the ``payload.command`` to clone and run the correct
-          repository
-       3. Update the ``metadata``
-       4. ``scopes`` should be ``assume:hook-id:project-mobile/$hookId``
-          (using the ``HookId`` you defined above)
 
-6.  Do the same thing, but for non-staging nightlies (e.g.:
-    ```fenix-nightly`` <https://taskcluster-web.netlify.com/hooks/project-mobile/fenix-nightly>`__):
+6.  Create and update permissions in ``ci-configuration``.
 
-    1. ``HookId`` should be ``$product-nightly``
-    2. ``Name`` should not end with "(staging)"
-    3. Copy the task template from the staging hook, with some
-       modifications
+    1. Install ``ci-admin`` if you haven't already
 
-       1. Remove the ``--staging`` parameter from ``payload.command``
-       2. Update ``metadata`` to remove anything mentioning "staging"
-       3. Update the scope to assume from the non-staging hook's role
+        1. ``hg clone https://hg.mozilla.org/ci/ci-admin/``
+        2. Set up a ``virtualenv`` and install dependencies
 
-7.  Create the role for the staging hook (e.g.:
-    ```fenix-nightly-staging`` <https://taskcluster-web.netlify.com/auth/roles/hook-id%3Aproject-mobile%2Ffenix-nightly-staging>`__)
+    1. ``hg clone https://hg.mozilla.org/ci/ci-configuration/``
+    2. Update ``projects.yml`` and ``grants.yml`` to add permissions for ``$project``
+    3. Submit your patch for review with `moz-phab <https://github.com/mozilla-conduit/review>`__
+    4. Once it's landed, update to the new revision and apply it
 
-    1. Go to `Roles <https://taskcluster-web.netlify.com/auth/roles>`__
-    2. ``RoleId`` should be idential to your staging hook's ``HookId``,
-       but prefixed with ``hook-id:`` (e.g.:
-       ``hook-id:project-mobile/fenix-nightly-staging``)
-    3. ``Description`` should be something like "Hook for building,
-       signing and uploading (staging) Nightly versions of $product"
-    4. Add all the scopes you'll need to fulfill the requirements in you
-       ``.taskcluster.yml`` file (when ``is_mozilla_mobile_repo`` is
-       ``false``)
+        1. ``ci-admin diff --environment=production``
+        2. If there's no surprises in the diff, apply it: ``ci-admin apply --environment=production``
+        3. If the diff has unexpected contents, you can adjust the ``diff`` and ``apply`` operations with the ``--grep`` flag:
 
-8.  Do the same thing, but for non-staging nightlies (e.g.:
-    ```fenix-nightly`` <https://taskcluster-web.netlify.com/auth/roles/hook-id%3Aproject-mobile%2Ffenix-nightly>`__)
-
-    1. Remove mentions of "staging" from each field
-    2. Make sure that all scopes are provided to fulfill requirements in
-       ``.taskcluster.yml`` (when ``is_mozilla_mobile_repo`` is
-       ``true``)
+            ``ci-admin diff --environment=production --grep "AwsProvisionerWorkerType=mobile-\d-b-firefox-tv"``
 
 9.  Update ``scriptworker`` (`example for
     ``fenix`` <https://github.com/mozilla-releng/scriptworker/pull/298>`__)
 
-    1. Add your product to ``_ALLOWED_MOBILE_GITHUB_OWNERS``
+    1. Update ``scriptworker/constants.py`` with entries for your product. Search for
+       locations where "fenix" or "firefox-tv" were set up, and add your product accordingly
     2. In a separate commit, bump the minor version and add a changelog
        entry
        (`example <https://github.com/mozilla-releng/scriptworker/commit/55626556eaf3aebdcf6aba408757bc39b76a941a>`__)
@@ -143,7 +99,7 @@ administrating them in the live Taskcluster website.
           scriptworker repos)
        6. ``rm -rf dist && python setup.py sdist bdist_wheel`` build the
           package
-       7. Publish to ``Pypi``:
+       7. Publish to PyPI:
 
           1. ``gpg --list-secret-keys --keyid-format long`` to get your
              GPG identity (it's the bit after "sec rsaxxxx/"). An
@@ -153,7 +109,7 @@ administrating them in the live Taskcluster website.
              first)
 
 10. Update configuration in
-    ```build-puppet`` <https://github.com/mozilla-releng/build-puppet/>`__
+    `build-puppet <https://github.com/mozilla-releng/build-puppet/>`__
 
     1. Locate signing secrets (dep signing username and password, prod
        signing username and password, Google Play service account and
@@ -172,7 +128,7 @@ administrating them in the live Taskcluster website.
 
        3. For these two lines, the secrets we want to put in hiera are
           the username and password (the second and third item)
-       4. Later, in step 19, you'll have been emailed a Google Play
+       4. Later, in step 18, you'll have been emailed a Google Play
           service account and key. However, for now, we're going to use
           a dummy value (the string "dummy") as placeholders for these
           values
@@ -291,30 +247,34 @@ administrating them in the live Taskcluster website.
              -  The ``product_names`` list includes ``$product``
              -  ``package_names`` includes your app's package name
              -  ``service_account`` set to "dummy"
-             -  ``google_credentials_file`` doesn't overlap with other
+             -  ``credentials_file`` doesn't overlap with other
                 file names in ``mobile-dep`` - the convention is
                 ``${root}/$product.p12``
              -  ``certificate_alias`` is ``$product``
              -  ``digest_algorithm`` matches your algorithm from step 1
              -  Checks that aren't relevant to your product are skipped
+             -  Any other necessary properties are set (look at existing config for other
+                products to see what the potential options are)
 
-          3. In ``$pushapk_scriptworker_env`` for ``mobile-dep``, add a
+          3. In ``$pushapk_scriptworker_env`` for ``mobile-prod``, add a
              dictionary to ``$product_config`` such that:
 
              -  The ``product_names`` list includes ``$product``
              -  If you will have multiple apps on Google Play (e.g.:
                 nightly app, beta app, production app), use the ``apps``
-                block. Otherwise, set ``map_channels_to_tracks`` to
-                ``true`` and use ``single_app_config``
+                block. Otherwise, set ``override_channel_model`` to
+                ``single_google_app`` and use ``app`` (see Focus for an example)
              -  ``package_names`` includes your app's package name
              -  ``service_account`` set to
                 ``$google_play_accounts['$product(-$channel)']['service_account']``
-             -  ``google_credentials_file`` doesn't overlap with other
+             -  ``credentials_file`` doesn't overlap with other
                 file names in ``mobile-prod`` - the convention is
                 ``${root}/$product(_$channel).p12``
              -  ``certificate_alias`` is ``$product``
              -  ``digest_algorithm`` matches your algorithm from step 1
              -  Checks that aren't relevant to your product are skipped
+             -  Any other necessary properties are set (look at existing config for other
+                products to see what the potential options are)
 
        3. In ``manifests/init.pp``
 
@@ -338,62 +298,18 @@ administrating them in the live Taskcluster website.
 
 11. Commit and push your ``build-puppet`` changes, make a PR
 
-12. Test your automation with staging releases
+12. Once step 11's PR is approved, merge the ``build-puppet`` PR
 
-    1. Synchronize your changes with the "dep" workers
-
-       1. Confirm with the releng team that nobody is using the dep
-          signing or pushapk workers
-       2. SSH into the puppet master
-       3. Follow the `instructions for setting up a puppet
-          environment <https://wiki.mozilla.org/ReleaseEngineering/PuppetAgain/HowTo/Set_up_a_user_environment>`__
-
-          1. Start with the `git
-             section <https://wiki.mozilla.org/ReleaseEngineering/PuppetAgain/HowTo/Set_up_a_user_environment#Git>`__
-
-             -  Don't forget to checkout the branch you just pushed in
-                step 11
-
-          2. Then `master machine
-             setup <https://wiki.mozilla.org/ReleaseEngineering/PuppetAgain/HowTo/Set_up_a_user_environment#On_the_master_machine>`__
-          3. Then
-             `pin <https://wiki.mozilla.org/ReleaseEngineering/PuppetAgain/HowTo/Set_up_a_user_environment#Pinning>`__
-             both the pushapk worker
-             (``dep-m-pushapkworker-1.srv.releng.use1.mozilla.com``) and
-             the signing worker
-             (``dep-m-signing-linux-1.srv.releng.use1.mozilla.com``)
-          4. For both the workers, SSH into them and `synchronize them
-             with the environment you just
-             created <https://wiki.mozilla.org/ReleaseEngineering/PuppetAgain/HowTo/Set_up_a_user_environment#On_the_worker_node.28s.29>`__
-
-    2. In `Hooks <https://taskcluster-web.netlify.com/hooks>`__, go to
-       the staging hook you created earlier
-    3. Run a staging build
-
-       1. Click "Trigger Hook" at the bottom of the page
-       2. Under "Last Fired Result" (near the top), click the link
-       3. Once the build is finished, go to the log, scroll to the
-          bottom and copy the generated ID (to the right of the "RESULT"
-          text)
-       4. Go to `Task
-          Groups <https://taskcluster-web.netlify.com/tasks/groups>`__
-          and search with the value you copied
-
-    4. Once all builds are passing, your automation is working!
-
-13. Once step 11's PR is approved and the build is working in step 12,
-    merge the ``build-puppet`` PR
-
-14. Verify with app's team how ``versionCode`` should be set up. Perhaps
+13. Verify with app's team how ``versionCode`` should be set up. Perhaps
     by date like
-    ```fenix`` <https://github.com/mozilla-mobile/fenix/blob/master/automation/gradle/versionCode.gradle>`__?
+    `fenix <https://github.com/mozilla-mobile/fenix/blob/master/automation/gradle/versionCode.gradle>`__?
 
     -  Note that if there's multiple build types, they need different
        version codes. In the case of
-       ```fenix`` <https://github.com/mozilla-mobile/fenix/blob/master/app/build.gradle#L50-L52>`__,
+       `fenix <https://github.com/mozilla-mobile/fenix/blob/master/app/build.gradle#L50-L52>`__,
        ``x86`` builds have the version code incremented by 1.
 
-15. When the Google Play product is being set up, an officially-signed
+14. When the Google Play product is being set up, an officially-signed
     build with a version code of 1 needs to be built. So, the main
     automation PR for the product will need to be stunted: it needs to
     produce APKs with a version code of 1, and it should have pushing to
@@ -402,15 +318,15 @@ administrating them in the live Taskcluster website.
 
     1. Change the version code to be set to 1. If the product uses the
        same version-code-by-date schema as ``fenix``, then edit
-       ```versionCode.gradle`` <https://github.com/mozilla-mobile/fenix/pull/156/files#diff-63606bb315fadc051f73a54767849985R41>`__
+       `versionCode.gradle <https://github.com/mozilla-mobile/fenix/pull/156/files#diff-63606bb315fadc051f73a54767849985R41>`__
     2. `Disable the creation of the task that pushes to Google
        Play <https://github.com/mozilla-mobile/fenix/pull/156/files#diff-73e51d972c105de5122ec559909980daR123>`__
     3. Create the PR
     4. Once approved, merge the PR
 
-16. Verify the apk artifact(s) of the signing task
+15. Verify the apk artifact(s) of the signing task
 
-    1. Trigger the non-staging hook
+    1. Trigger the nightly hook
     2. Once the build finishes, download the apks from the signing task
     3. Using the prod certificate from step 10.iv.a., create a temporary
        keystore:
@@ -429,7 +345,7 @@ administrating them in the live Taskcluster website.
        check that the ``jarsigner`` command shows that the "Signed by"
        ``CN`` is "Throwaway Key"
 
-17. Request both the creation of a Google Play product and for the
+16. Request both the creation of a Google Play product and for the
     credentials to publish to it. Consult with the product team to `fill
     out the requirements for adding an app to Google
     Play <https://wiki.mozilla.org/Release_Management/Adding_a_new_app_on_Google_play>`__.
@@ -441,9 +357,9 @@ administrating them in the live Taskcluster website.
     -  As part of the bug, note that you'll directly send an APK to the
        release management point of contact via Slack
 
-18. Give the first signed APK to the Google Play admins
+17. Give the first signed APK to the Google Play admins
 
-    1. Perform a non-staging build
+    1. Perform a nightly build
     2. Once the signing task is done, grab the APK with the version code
        of 1 (if there's multiple APKs, you probably want the arm one)
 
@@ -454,7 +370,7 @@ administrating them in the live Taskcluster website.
 
     3. Send the APK to release management
 
-19. Once the previous step is done and they've set up a Google Play
+18. Once the previous step is done and they've set up a Google Play
     product, put the associated secrets in Hiera
 
     1. Connect to VPN and SSH into the puppet master
@@ -489,17 +405,17 @@ administrating them in the live Taskcluster website.
     7. ``shred -u $p12file`` wherever you decrypted it on your machine
        (you may need to install ``shred``)
 
-20. Perform a new PR that un-stunts the changes from step 15 `Fenix
+19. Perform a new PR that un-stunts the changes from step 15 `Fenix
     example <https://github.com/mozilla-mobile/fenix/pull/161>`__
 
     -  Version code should be generated according to how the team
        requested in step 14
     -  The task that pushes to Google Play should no longer be disabled
 
-21. Once the PR from the last step is merged, trigger the non-staging
-    nightly task, verify that it uploads to Google Play
+20. Once the PR from the last step is merged, trigger the nightly task, verify
+    that it uploads to Google Play
 
-22. Update the ``$product-nightly`` hook, adding a schedule of
+21. Update the ``$product-nightly`` hook, adding a schedule of
     ``0 12 * * *`` (make it fire daily)
 
     -  Ensure that the hook is triggered automatically by waiting a day,
