@@ -73,7 +73,8 @@ match between the build and the hook that starts the build.
 
         1. ``ci-admin diff --environment=production``
         2. If there's no surprises in the diff, apply it: ``ci-admin apply --environment=production``
-        3. If the diff has unexpected contents, you can adjust the ``diff`` and ``apply`` operations with the ``--grep`` flag:
+        3. If the diff contains changes other than the hooks and permissions you added, you can adjust the ``diff``
+           and ``apply`` operations with the ``--grep`` flag:
 
             ``ci-admin diff --environment=production --grep "AwsProvisionerWorkerType=mobile-\d-b-firefox-tv"``
 
