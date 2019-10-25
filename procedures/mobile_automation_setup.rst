@@ -48,18 +48,7 @@ match between the build and the hook that starts the build.
        external source, like ``gradle`` or a ``.buildconfig.yml`` file)
     -  Define ``Dockerfiles`` in ``taskcluster/docker/``
 
-5.  If you have schedule-based automation, create cron hook
-    (copy from the `fenix hook <https://tools.taskcluster.net/hooks/project-releng/cron-task-mozilla-mobile-fenix>`__)
-
-    -  You'll need to update the references from ``fenix``
-    -  Additionally, define a ``.cron.yml``, like `fenix <https://github.com/mozilla-mobile/fenix/blob/master/.cron.yml>`__
-    -  Create some hooks to force-trigger some cron tasks for testing. For example, `fenix has one for forcing nightlies
-       <https://tools.taskcluster.net/hooks/project-releng/cron-task-mozilla-mobile-fenix%2Fnightly>`__
-
-        Note that the hook URL has a ``%2F`` instead of a slash - this is due to a bug with the Taskcluster tools page loading the wrong hook
-
-
-6.  Create and update permissions in ``ci-configuration``.
+5.  Create and update permissions in ``ci-configuration``.
 
     1. Install ``ci-admin`` if you haven't already
 
@@ -68,6 +57,9 @@ match between the build and the hook that starts the build.
 
     1. ``hg clone https://hg.mozilla.org/ci/ci-configuration/``
     2. Update ``projects.yml`` and ``grants.yml`` to add permissions for ``$project``
+
+        - If you have schedule-based automation, add the ``taskgraph-cron`` feature and set ``cron_targets`` in ``projects.yml``. Additionally, create
+          a ``.cron.yml`` file to your repository like the one in `fenix <https://github.com/mozilla-mobile/fenix/blob/master/.cron.yml>`__
     3. Submit your patch for review with `moz-phab <https://github.com/mozilla-conduit/review>`__
     4. Once it's landed, update to the new revision and apply it
 
@@ -78,7 +70,7 @@ match between the build and the hook that starts the build.
 
             ``ci-admin diff --environment=production --grep "AwsProvisionerWorkerType=mobile-\d-b-firefox-tv"``
 
-9.  Update ``scriptworker`` (`example for
+6.  Update ``scriptworker`` (`example for
     ``fenix`` <https://github.com/mozilla-releng/scriptworker/pull/298>`__)
 
     1. Update ``scriptworker/constants.py`` with entries for your product. Search for
@@ -109,7 +101,7 @@ match between the build and the hook that starts the build.
              upload to Pypi (you may need to ``pip install twine``
              first)
 
-10. Update configuration in
+7. Update configuration in
     `build-puppet <https://github.com/mozilla-releng/build-puppet/>`__
 
     1. Locate signing secrets (dep signing username and password, prod
@@ -297,11 +289,11 @@ match between the build and the hook that starts the build.
 
           1. From step 9, update the version of ``scriptworker``
 
-11. Commit and push your ``build-puppet`` changes, make a PR
+8. Commit and push your ``build-puppet`` changes, make a PR
 
-12. Once step 11's PR is approved, merge the ``build-puppet`` PR
+9. Once step 11's PR is approved, merge the ``build-puppet`` PR
 
-13. Verify with app's team how ``versionCode`` should be set up. Perhaps
+10. Verify with app's team how ``versionCode`` should be set up. Perhaps
     by date like
     `fenix <https://github.com/mozilla-mobile/fenix/blob/master/automation/gradle/versionCode.gradle>`__?
 
@@ -310,7 +302,7 @@ match between the build and the hook that starts the build.
        `fenix <https://github.com/mozilla-mobile/fenix/blob/master/app/build.gradle#L50-L52>`__,
        ``x86`` builds have the version code incremented by 1.
 
-14. When the Google Play product is being set up, an officially-signed
+11. When the Google Play product is being set up, an officially-signed
     build with a version code of 1 needs to be built. So, the main
     automation PR for the product will need to be stunted: it needs to
     produce APKs with a version code of 1, and it should have pushing to
@@ -325,7 +317,7 @@ match between the build and the hook that starts the build.
     3. Create the PR
     4. Once approved, merge the PR
 
-15. Verify the apk artifact(s) of the signing task
+12. Verify the apk artifact(s) of the signing task
 
     1. Trigger the nightly hook
     2. Once the build finishes, download the apks from the signing task
@@ -346,7 +338,7 @@ match between the build and the hook that starts the build.
        check that the ``jarsigner`` command shows that the "Signed by"
        ``CN`` is "Throwaway Key"
 
-16. Request both the creation of a Google Play product and for the
+13. Request both the creation of a Google Play product and for the
     credentials to publish to it. Consult with the product team to `fill
     out the requirements for adding an app to Google
     Play <https://wiki.mozilla.org/Release_Management/Adding_a_new_app_on_Google_play>`__.
@@ -358,7 +350,7 @@ match between the build and the hook that starts the build.
     -  As part of the bug, note that you'll directly send an APK to the
        release management point of contact via Slack
 
-17. Give the first signed APK to the Google Play admins
+14. Give the first signed APK to the Google Play admins
 
     1. Perform a nightly build
     2. Once the signing task is done, grab the APK with the version code
@@ -371,7 +363,7 @@ match between the build and the hook that starts the build.
 
     3. Send the APK to release management
 
-18. Once the previous step is done and they've set up a Google Play
+15. Once the previous step is done and they've set up a Google Play
     product, put the associated secrets in Hiera
 
     1. Connect to VPN and SSH into the puppet master
@@ -406,17 +398,17 @@ match between the build and the hook that starts the build.
     7. ``shred -u $p12file`` wherever you decrypted it on your machine
        (you may need to install ``shred``)
 
-19. Perform a new PR that un-stunts the changes from step 15 `Fenix
+16. Perform a new PR that un-stunts the changes from step 15 `Fenix
     example <https://github.com/mozilla-mobile/fenix/pull/161>`__
 
     -  Version code should be generated according to how the team
        requested in step 14
     -  The task that pushes to Google Play should no longer be disabled
 
-20. Once the PR from the last step is merged, trigger the nightly task, verify
+17. Once the PR from the last step is merged, trigger the nightly task, verify
     that it uploads to Google Play
 
-21. Update the ``$product-nightly`` hook, adding a schedule of
+18. Update the ``$product-nightly`` hook, adding a schedule of
     ``0 12 * * *`` (make it fire daily)
 
     -  Ensure that the hook is triggered automatically by waiting a day,
