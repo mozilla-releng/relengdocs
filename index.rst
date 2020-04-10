@@ -25,6 +25,7 @@ Contents:
    best-practices/index.rst
    architecture/index.rst
    future/index.rst
+   releng_changelog
 
 .. toctree::
     :hidden:
@@ -33,6 +34,7 @@ Contents:
     adding_docs_to_existing_code.rst
     maintaining_these_docs.rst
     tobewritten.rst
+    CODE_OF_CONDUCT
 
 
 Indices and tables

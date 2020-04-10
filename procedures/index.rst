@@ -13,5 +13,6 @@ Procedures that don't easily fit elsewhere.
     TCW_Process.rst
     TCW_RelEng.rst
     Transitioning.rst
+    mobile_automation_setup
 
 .. vim: nospell :
