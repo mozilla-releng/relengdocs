@@ -1,3 +1,5 @@
 # packages needed for building on rtfd.org
 
+recommonmark>=0.6
+Sphinx>=3
 sphinxcontrib-actdiag
