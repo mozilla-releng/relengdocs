@@ -6,6 +6,14 @@ This page best serves the people that have previously been into the releaseduty 
 
 _**As releaseduty squirrels are the ones with the best context when it comes to releases, they are the ones to edit this page and amend it accordingly. Keep in mind that changes should be in compliance with the other pieces of documentation.**_
 
+## During 75.0 >= 2020-04-06
+### Changed
+- Changelog moved to [rtd](https://moz-releng-docs.readthedocs.io/en/latest/releng_changelog.html)
+- Mac Notarization is now single-zip instead of multi-account due to [bug 1620697](https://bugzilla.mozilla.org/show_bug.cgi?id=1620697). This may slow down the success case by a few minutes, but reduce or remove the multi-hour manual-intervention failure case.
+
+### Fixed
+- Scriptworker now catches a number of `asyncio.TimeoutError`s, and should be more robust.
+
 ## During 73.0 >= 2020-02-10
 ### Changed
 - py38 rollout for scriptworkers, tooltool, balrog, and other release services
