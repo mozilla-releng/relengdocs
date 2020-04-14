@@ -368,7 +368,7 @@ match between the build and the hook that starts the build.
 
     1. Connect to VPN and SSH into the puppet master
     2. Encrypt the ``service_account`` (you'll have been emailed or
-       slack'd a google service account: it looks like an email address
+       slacked a google service account: it looks like an email address
        that ends in ``gserviceaccount.com``)
 
        -  ``sudo eyaml encrypt --pkcs7-private-key /etc/hiera/keys/private_key.pem --pkcs7-public-key /etc/hiera/keys/public_key.pem --output examples -p -l 'service_account'``

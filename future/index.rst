@@ -44,7 +44,7 @@ We should generate partial updates on Beta and Release for every version back
 to the previous watershed.  We know that smaller updates help users update
 faster. We also know that users on old versions will tend to go through a
 watershed release. By generating partial updates as far back as that watershed
-release, we can make sure that we're giving hte best possible updates to all
+release, we can make sure that we're giving the best possible updates to all
 users.
 
 Canonical list of watershed releases
