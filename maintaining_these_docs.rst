@@ -20,7 +20,7 @@ Building the docs locally
 #. Create a python virtualenv
 #. ``pip install -r rtfd-requirements.txt``
 #. ``make html`` will build the docs locally. Verify any changes by viewing ``_build/html/index.html``
-#. Any new docs should be directly or indirectly linked to from ``index.rst``. (For example, if ``index.rst`` contains ``releng101/index.rst`` in its toctree, and the new doc is in the ``releng101/index.rst`` toctree, then the new doc is succesfully indirectly linked.)
+#. Any new docs should be directly or indirectly linked to from ``index.rst``. (For example, if ``index.rst`` contains ``releng101/index.rst`` in its toctree, and the new doc is in the ``releng101/index.rst`` toctree, then the new doc is successfully indirectly linked.)
 #. We support both markdown ``.md`` and reStructuredText ``.rst`` files. The former may be simpler to write and use; the latter have more powerful linking and nesting capabilities. See the `Sphinx docs <https://www.sphinx-doc.org/en/stable/>`_ for documentation.
 
 Documenting Source Code

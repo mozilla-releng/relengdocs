@@ -26,7 +26,7 @@ _**As releaseduty squirrels are the ones with the best context when it comes to 
 - mergeduty processed is back to two stages like it used to be before Quantum: beta -> release in the first iteration
 while central -> beta and bumping central in the second week
 - l10n bumper for central is moving to taskcluster cron shortly; will uplift to beta and esr68 later
-- switched to GCP scriptworkers in all gecko trees (incliding esr68)
+- switched to GCP scriptworkers in all gecko trees (including esr68)
 - after TCW of 9th Nov, switched to GCP scriptworkers in `comm` repos too, but also Github mobile projects
 - secrets are now managed in `sops`, no longer in `hiera`
 - decommissioning of the AWS infrastructure
@@ -117,7 +117,7 @@ while central -> beta and bumping central in the second week
 - we track all major changes in this newly added CHANGELOG
 - separate RC docs for both Fennec and Firefox
 - new-style WNP setup, [as documented](https://github.com/mozilla-releng/releasewarrior-2.0/blob/master/docs/release-promotion/desktop/howto-rc.md#add-a-whats-new-page-to-a-firefox-rc).
-- we now have suspport for snaps in `release` channel
+- we now have support for snaps in `release` channel
 
 ### Changed
 - old release promotion based on [releasetasks](https://github.com/mozilla/releasetasks/) is dead. Everything is in-tree scheduled now. Changes are riding the trains.
