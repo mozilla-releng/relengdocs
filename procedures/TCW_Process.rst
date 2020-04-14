@@ -77,7 +77,7 @@ assignments done at least one week in advance of the TCW.
 
       The MOC will publish a note on the internal status page describing
       the changes. However, they do
-      not have posting privilages to the newsgroups. Therfore the RelEng
+      not have posting privileges to the newsgroups. Therefore the RelEng
       contact person posts (forwards) on the MOC's behalf, adding any
       addition information (such as "soft close" status). Even if the
       MOC email is sent to everyone, we still post to newsgroups to
@@ -97,7 +97,7 @@ The MOC administers the TCW. In general, the following generally occur:
 * Communication channels defined. Usually irc (#moc),
   backup irc (freenode #mozilla-it), Vidyo (MOC) if needed.
 
-* Designated person to run the TCW. Usually the oncall MOC staffer.
+* Designated person to run the TCW. Usually the on-call MOC staffer.
 
 * Spreadsheet is kept current with status, including times.
 

@@ -30,7 +30,7 @@ directory, run::
 If you happen to have an early stage project, without a python module
 directory yet, GOOD FOR YOU!!! You'll just do the normal
 ``sphinx-quickstart``. Please keep the defaults, except for 'autodoc'
-and 'viewcode' (say 'Y'es to both)::
+and 'viewcode' (say 'Y'/Yes to both)::
 
     sphinx-quickstart docs
 

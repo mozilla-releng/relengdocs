@@ -40,8 +40,8 @@ Linux, nor does it know much about what tests or commands you need to run. The s
 varying details from a corresponding config (hence it being driven by configuration).
 
 Let's take a more concrete example of why you might use Mozharness. Let's say you have a new
-test suite that you want to start running against every new checkin of Firefox
-desktop across our continous integration for our various repositories.
+test suite that you want to start running against every new check-in of Firefox
+desktop across our continuous integration for our various repositories.
 You know at a high level you need to do a number of things each time you run the tests:
 
     1. Clear a work space so you are starting off fresh
@@ -371,7 +371,7 @@ your configuration (self.config), and your actions used for the script (self.act
 should be familiar about logging and configuration so let's discuss actions.
 
 Actions express the list of steps for a job on a given run. Think 'remove tree',
-'clone something', 'run this test suite', 'clean up'. Essetially self.actions is a list:
+'clone something', 'run this test suite', 'clean up'. Essentially self.actions is a list:
 
      ['clobber', 'clone', 'run-tests', 'clean-up']
 
