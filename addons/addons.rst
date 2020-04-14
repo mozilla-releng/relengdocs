@@ -13,7 +13,7 @@ Terminology:
 Background
 ----------
 
-Langauge packs now need to be signed (as of Gecko 60.1esr/61.0) to be
+Language packs now need to be signed (as of Gecko 60.1esr/61.0) to be
 run inside of Firefox. In order to do that our release process submits
 every language pack to AMO for signing.
 
@@ -36,12 +36,12 @@ correlate them with our release process.
 Process
 ~~~~~~~
 
--  Firefox, for every code checkin, builds an English (US) copy that is
+-  Firefox, for every code check-in, builds an English (US) copy that is
    suitable for shipping to end users, as part of this build we generate
    the en-US language pack.
 -  Once Release Management indicates we want to build a release, we
    kickoff the ‘promote’ phase of the release process, which starts the
-   Localized Repackages, which generate each langauges language pack.
+   Localized Repackages, which generate each languages language pack.
 -  The language packs get sent off to AMO on an addon submission task,
    this task submits and retries while it waits for AMO to sign the
    langpacks. Timing out (with a signal to retry the task) if needed.
@@ -107,7 +107,7 @@ new language pack will not be listed for this version of Firefox.
 In order to make it listed we need a new build number (on a new
 buildid), relman may be ok with waiting for another RC, or they may be
 ok letting the new locale stay off AMO for the release cycle (until a
-dot release), this is mostly a value judgement on which path forward.
+dot release), this is mostly a value judgment on which path forward.
 
 Screenshots relevant to above
 -----------------------------

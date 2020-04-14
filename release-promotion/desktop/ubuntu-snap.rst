@@ -1,9 +1,9 @@
 (Ubuntu) Snap
 =============
 
-Snap is a package format supported by Canonical. It’s targeted to
-support every Linux distribution but it’s mainly available on Ubuntu at
-the moment. We’ve made Firefox publicly available on
+Snap is a package format supported by Canonical. It's targeted to
+support every Linux distribution but it's mainly available on Ubuntu at
+the moment. We've made Firefox publicly available on
 https://snapcraft.io/firefox since Firefox 59.0.
 
 Channels used
@@ -14,53 +14,38 @@ Store). For more explanation about them, see
 https://docs.snapcraft.io/reference/channels. Release promotion
 automatically uploads to these tracks:
 
-+----------------------------------------+--------------------+--------+
-| Brand name                             | Track              | Notes  |
-+========================================+====================+========+
-| Firefox                                | ``candidate``      | A      |
-|                                        |                    | human  |
-|                                        |                    | has to |
-|                                        |                    | ma     |
-|                                        |                    | nually |
-|                                        |                    | p      |
-|                                        |                    | romote |
-|                                        |                    | the    |
-|                                        |                    | Snap   |
-|                                        |                    | to the |
-|                                        |                    | ``st   |
-|                                        |                    | able`` |
-|                                        |                    | c      |
-|                                        |                    | hannel |
-+----------------------------------------+--------------------+--------+
-| Firefox Beta                           | ``beta``           |        |
-+----------------------------------------+--------------------+--------+
-| Firefox Developer Edition              | N/A                | Not    |
-|                                        |                    | sup    |
-|                                        |                    | ported |
-|                                        |                    | yet    |
-+----------------------------------------+--------------------+--------+
-| Firefox Nightly                        | N/A                | Not    |
-|                                        |                    | sup    |
-|                                        |                    | ported |
-|                                        |                    | yet    |
-+----------------------------------------+--------------------+--------+
-| Firefox ESR                            | ``esr`` aka        | We     |
-|                                        | ``esr/stable``     | plan   |
-|                                        |                    | to use |
-|                                        |                    | ``esr  |
-|                                        |                    | /candi |
-|                                        |                    | date`` |
-|                                        |                    | wh     |
-|                                        |                    | enever |
-|                                        |                    | the    |
-|                                        |                    | next   |
-|                                        |                    | major  |
-|                                        |                    | ESR    |
-|                                        |                    | v      |
-|                                        |                    | ersion |
-|                                        |                    | comes  |
-|                                        |                    | out    |
-+----------------------------------------+--------------------+--------+
++----------------------------------------+--------------------+--------------+
+| Brand name                             | Track              | Notes        |
++========================================+====================+==============+
+| Firefox                                | ``candidate``      | A human      |
+|                                        |                    | has to       |
+|                                        |                    | manually     |
+|                                        |                    | promote      |
+|                                        |                    | the Snap     |
+|                                        |                    | to the       |
+|                                        |                    | ``stable``   |
+|                                        |                    | channel      |
++----------------------------------------+--------------------+--------------+
+| Firefox Beta                           | ``beta``           |              |
++----------------------------------------+--------------------+--------------+
+| Firefox Developer Edition              | N/A                | Not          |
+|                                        |                    | supported    |
+|                                        |                    | yet          |
++----------------------------------------+--------------------+--------------+
+| Firefox Nightly                        | N/A                | Not          |
+|                                        |                    | supported    |
+|                                        |                    | yet          |
++----------------------------------------+--------------------+--------------+
+| Firefox ESR                            | ``esr`` aka        | We plan      |
+|                                        | ``esr/stable``     | to use       |
+|                                        |                    | ``esr        |
+|                                        |                    | /candidate`` |
+|                                        |                    | whenever     |
+|                                        |                    | the next     |
+|                                        |                    | major ESR    |
+|                                        |                    | version      |
+|                                        |                    | comes out    |
++----------------------------------------+--------------------+--------------+
 
 Promote a snap to the ``stable`` channel
 ----------------------------------------
@@ -79,7 +64,7 @@ When?
 
 Because, there is no roll out mechanism, Snaps are shipped to the entire
 population of a given channel. Unlike Google Play, we can roll back
-users to previous version, if needed. However, downgrades aren’t
+users to previous version, if needed. However, downgrades aren't
 supported internally in Firefox. Based on these facts, we should ship
 when we have enough data of the stability on Linux.
 
@@ -90,8 +75,8 @@ The easy way: via web interface
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Connect to https://dashboard.snapcraft.io/snaps/firefox/. Your
-   credentials will be asked, your 2FA code too. If it doesn’t, ‘select
-   “Always” for “Require an authentication device”, and click “Update”’
+   credentials will be asked, your 2FA code too. If it doesn't, 'select
+   “Always” for “Require an authentication device”, and click “Update”'
    like explained `on this
    page <https://help.ubuntu.com/community/SSO/FAQs/2FA#How_do_I_add_a_new_authentication_device_and_start_using_2-factor_authentication.3F>`__.
 2. On the left side, click on the release you want to ship.
@@ -107,8 +92,8 @@ The more complete one: via command line
    ``docker pull snapcore/snapcraft:stable``, then
    ``docker run -ti snapcore/snapcraft:stable bash``
 2. ``snapcraft login``. Your credentials will be asked, your 2FA code
-   too. If it doesn’t, ‘select “Always” for “Require an authentication
-   device”, and click “Update”’ like explained `on this
+   too. If it doesn't, 'select “Always” for “Require an authentication
+   device”, and click “Update”' like explained `on this
    page <https://help.ubuntu.com/community/SSO/FAQs/2FA#How_do_I_add_a_new_authentication_device_and_start_using_2-factor_authentication.3F>`__.
 3. ``snapcraft status firefox`` outputs something like:
 
@@ -126,7 +111,7 @@ The more complete one: via command line
 
 1. Note the revision of the ``latest/candidate`` (aka ``candidate``)
    snap. In this example: ``97``
-2. If you don’t see the version you are expecting, list all available
+2. If you don't see the version you are expecting, list all available
    revisions by running ``snapcraft list-revisions firefox | head``
 3. ``snapcraft release firefox $REVISION stable``, ``$REVISION`` being
    the number found in the previous (e.g.: ``97``).

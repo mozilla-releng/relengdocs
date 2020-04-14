@@ -11,7 +11,7 @@ while the Fennec counterpart land to
 * Extended Support Releases follow-up from the relevant ESR repo, such as `mozilla-esr68 <https://hg.mozilla.org/releases/mozilla-esr68/>`__
 * Release and Release Candidates are built from `mozilla-release <https://hg.mozilla.org/releases/mozilla-release/>`__ repository
 
-How are those repositories kept in sync? That’s ``MergeDuty`` and is
+How are those repositories kept in sync? That's ``MergeDuty`` and is
 part of the ``releaseduty`` responsibility.
 
 Overview of Procedure
@@ -60,7 +60,7 @@ Historical context of this procedure:
 Originally, the ``m-c`` -> ``m-b`` was done a week after ``m-b`` ->
 ``m-r``. Starting at ``Firefox 57``, Release Management wanted to ship
 DevEdition ``b1`` week before the planned mozilla-beta merge day. This
-meant Releng had to merge both repos at the same time. With 71.0, we’re
+meant Releng had to merge both repos at the same time. With 71.0, we're
 back to the initial workflow with merging ``m-b`` -> ``m-r`` in the
 first week and then ``m-c`` -> ``m-b`` in the follow-up week.
 
@@ -71,7 +71,7 @@ Set up mergeduty trello tracking board
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Rather than extend Releasewarrior with more complexity, the idea here is
-to try Trello and use Templated cards for todo tracking.
+to try Trello and use Template cards for todo tracking.
 
 To track human tasks and issues during merges, we use the following
 `trello board <https://trello.com/b/AyyFAEbS/mergeduty-tasks>`__.
@@ -90,7 +90,7 @@ To track human tasks and issues during merges, we use the following
       ``move all cards in this list`` to the
       ``Archived Postmortem Action Items`` list
 
-**Now prep the board for this cycle’s planned merges**:
+**Now prep the board for this cycle's planned merges**:
 
 -  For each card in the ``Templates`` list, select the card then under
    Actions, choose ``Copy`` and put in the ``Merge Tasks`` list
@@ -103,7 +103,7 @@ To track human tasks and issues during merges, we use the following
 **For each merge task**:
 
 As you go through the steps documented below, update the checklists
-within the cards under ``Merge Tasks``. This helps with handoff and
+within the cards under ``Merge Tasks``. This helps with hand-off and
 tracking state.
 
 As issues arise, add a card under the ``Merge Issues`` list. Associate
@@ -121,27 +121,27 @@ During the postmortem, if any action items come up, track those in the
 File tracking migration bug
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-File a tracking migration bug if there isn’t one (e.g. `bug
+File a tracking migration bug if there isn't one (e.g. `bug
 1412962 <https://bugzilla.mozilla.org/show_bug.cgi?id=1412962>`__)
 
 Run staging releases
 ~~~~~~~~~~~~~~~~~~~~
 
 In order to prepare a smooth ``b1`` and ``RC``, staging releases are to
-be run in the week before the mergeday day 1. In order for this to
-happen, we’re using `staging releases submitted to
+be run in the week before the mergeduty day 1. In order for this to
+happen, we're using `staging releases submitted to
 try <https://firefox-source-docs.mozilla.org/tools/try/selectors/release.html>`__.
 
 **For central to beta migration**
 
 -  hop on ``central`` repository
--  make sure you’re up to date with the tip of the repo
+-  make sure you're up to date with the tip of the repo
 -  ``mach try release --version <future-version.0b1> --migration central-to-beta --tasks release-sim``
 
 **For beta to release migration**
 
 -  hop on ``beta`` repository
--  make sure you’re up to date with the tip of the repo
+-  make sure you're up to date with the tip of the repo
 -  ``mach try release --version <future-version.0> --migration beta-to-release --tasks release-sim``
 
 These will create try pushes that look-alike the repos once they are
@@ -157,14 +157,14 @@ releases in `Balrog
 staging <https://balrog-admin-static-stage.stage.mozaws.net/>`__.
 
 Ideally staging releases are triggered both on *Monday/Tuesday* but also
-on *Thursday/Friday* to ensure that we’re up to date with all the
+on *Thursday/Friday* to ensure that we're up to date with all the
 patches that Sheriffs are landing before the ``RC`` week.
 
-Once the staging releases are being triggered, it’s highly recommended
-that at least a comment is being dropped to Sherrifs team
+Once the staging releases are being triggered, it's highly recommended
+that at least a comment is being dropped to Sheriffs team
 (e.g. ``Aryx``) to let them know these are happening in order to: \*
 avoid stepping on each others toes as they may run staging releases as
-well \* make sure we’re up-to-date to recent patches that they may be
+well \* make sure we're up-to-date to recent patches that they may be
 aware of
 
 :warning:
@@ -246,14 +246,14 @@ receive the WNP on the Tuesday prior to the ship date.
    should always aim to chain this bug to our main mergeduty tracking
    bug. That is, block the WNP bug against the
    ``tracking XXX migration day``. If not already, please do so. This
-   way, it’s easier to find deps and nagivate via bugs.
+   way, it's easier to find deps and navigate via bugs.
 2. By the Friday prior to merge day, the l10n (most likely
    ``Peiying Mo [:CocoMo]``) team will have posted the final list of
    locales for whatsnewpage. Double-check with them again to make sure
    that is the final list. The list of locales comes in two forms:
    attachment in bug directly to be ``hg import``\ ed, but also as a
-   comment. Make sure to double-check they match as that’s generated
-   automatically and sometimes there could be fallouts resulting in
+   comment. Make sure to double-check they match as that's generated
+   automatically and sometimes there could be fallout resulting in
    mismatches.
 3. Update the `in-tree whatsnewpage list of
    locales <https://hg.mozilla.org/mozilla-central/file/tip/browser/config/whats_new_page.yml>`__
@@ -270,7 +270,7 @@ receive the WNP on the Tuesday prior to the ship date.
       approval-mozilla-beta? flag similar to
       `this <https://bugzilla.mozilla.org/show_bug.cgi?id=1616636#c7>`__
    5. ensure someone from sheriffs or relman uplift this to Beta before
-      Monday’s merge and RC go-to-build
+      Monday's merge and RC go-to-build
 
 Release Merge Day - part I
 --------------------------
@@ -305,7 +305,7 @@ Merge beta to release
    push: true
 
 :warning:
-   It’s not unlikely for the push to take between 10-20 minutes to complete.
+   It's not unlikely for the push to take between 10-20 minutes to complete.
 
 :warning:
    If an issue comes up during this phase, you may not be able to run
@@ -366,7 +366,7 @@ Merge central to beta
    push: true
 
 :warning:
-   It’s not unlikely for the push to take between 10-20 minutes to complete.
+   It's not unlikely for the push to take between 10-20 minutes to complete.
 
 1. Upon successful run, ``mozilla-beta`` should get a version bump and
    branding changes consisting of a ``commit`` like
@@ -404,8 +404,8 @@ to run l10n bumper on ``mozilla-beta``. It takes a few min to run
 because of the robustcheckouts, even though they are sparse. The job
 queries Treestatus for trees status so it will **fail** if the trees are
 still closed. It is safe to rerun in case of failure. It requires that
-the mozilla-beta merge push is visible on the hg webheads. So either
-wait a few min after the ``m-c`` => ``m-b`` push step or verify it’s
+the mozilla-beta merge push is visible on the hg web-heads. So either
+wait a few min after the ``m-c`` => ``m-b`` push step or verify it's
 visible on
 `mozilla-beta <https://hg.mozilla.org/releases/mozilla-beta>`__.
 
@@ -449,8 +449,8 @@ one <https://hg.mozilla.org/releases/mozilla-esr68/rev/2d43ffaa9d1adf29b71f0b735
 Push your changes generated by the no-op trial run:
 
 1. Follow the `general steps <#general-steps>`__ - (As of 2020/04 this
-   action hasn’t yet been uplifted to release or esr68, consider using
-   using ``mozilla-central``\ ’s action, as the payload controls where
+   action hasn't yet been uplifted to release or esr68, consider using
+   using ``mozilla-central``\ 's action, as the payload controls where
    the effects land)
 2. Insert the following payload and click submit.
 
@@ -514,8 +514,8 @@ Update wiki versions
 Bump Nightly version in ShipIt
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-ShipIt currently hardcodes the version of Nightly that’s being released.
-It doesn’t automatically updated because it would need to know when a
+ShipIt currently hard-codes the version of Nightly that's being released.
+It doesn't automatically updated because it would need to know when a
 new nightly was available, not just when the version had been updated
 in-tree. Everything up to merging this pull request can be done early,
 but the PR must not be merged before the first nightly has been built
@@ -523,7 +523,7 @@ and published with the new version.
 
 1. ``git clone git@github.com:mozilla-releng/shipit.git``
 2. ``git checkout -b nightly_version_bump_${version}``
-3. Edit FIREFOX_NIGHTLY’s major version in
+3. Edit FIREFOX_NIGHTLY's major version in
    https://github.com/mozilla-releng/shipit/blob/master/api/src/shipit_api/common/config.py#L48
 4. Commit, and submit a pull request
 5. Merge the pull request *after* a new nightly version has been pushed

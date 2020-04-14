@@ -16,10 +16,10 @@ the taskcluster task results are important. These tests verify that the
 modules are all compatible with each other, with the caveat that the
 ``nodownload`` packages may be ignored.
 
-Upstream pins that don’t match latest
+Upstream pins that don't match latest
 -------------------------------------
 
-For upstream pins that don’t match latest, we need to find the version
+For upstream pins that don't match latest, we need to find the version
 that will work. For example, the test revealed the error
 
 ::
@@ -83,7 +83,7 @@ there may be something wrong.
 Downloading the wrong wheel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Wheels are preferable for installation, but our download script doesn’t
+Wheels are preferable for installation, but our download script doesn't
 cover downloading all the versions of every wheel we need.
 
 For instance, sometimes a wheel is good for any python or platform. For
@@ -91,9 +91,9 @@ example, ``urllib3-1.24-py2.py3-none-any.whl`` is good for python2 or
 python3, for any platform on any architecture. If the wheel contains
 compiled code, it may be more restrictive. For example,
 ``yarl-1.2.6-cp36-cp36m-manylinux1_x86_64.whl`` is compiled for cpython
-3.6, linux, on 64bit intel type CPUs. If we’re on a different python
+3.6, linux, on 64bit intel type CPUs. If we're on a different python
 (3.7, 3.5), a different platform (mac), or different architecture (arm
-or 32 bit), pip won’t use that wheel.
+or 32 bit), pip won't use that wheel.
 
 If pip is complaining about not finding a matching file, one way to
 debug is
@@ -103,10 +103,10 @@ debug is
 -  for python2, ``cd /data/python/packages``; for python3,
    ``cd /data/python/packages-3.x``
 
--  look for the package name that’s missing. Note that pip will treat a
+-  look for the package name that's missing. Note that pip will treat a
    dash ``-`` the same as an underscore ``_`` in the package name, so
    ``python-jose`` is the same module as ``python_jose``, for example.
-   If we’re missing, say, the mac wheel (we only have a ``manylinux1``
+   If we're missing, say, the mac wheel (we only have a ``manylinux1``
    wheel for that module + version), we should download it:
 
 -  search for the module name on `pypi <https://pypi.org/>`__
@@ -114,7 +114,7 @@ debug is
 -  click on the correct module,
    e.g. `yarl <https://pypi.org/project/yarl/>`__
 
--  if the latest version doesn’t match the version we want, find it in
+-  if the latest version doesn't match the version we want, find it in
    the release history, e.g. `yarl release
    history <https://pypi.org/project/yarl/#history>`__; click on the
    correct version
@@ -141,7 +141,7 @@ Other download problems
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 There may be download problems if we point at a version or module that
-doesn’t exist on pypi. The fix here probably involves creating a new PR
+doesn't exist on pypi. The fix here probably involves creating a new PR
 to point to the right module version, and merging it.
 
 “stuck” installs
@@ -152,13 +152,13 @@ issue, or other.
 
 First, is this affecting an entire class of machines, or just one
 machine? This is hard to tell when dealing with singleton pools, but if
-all signing scriptworkers are fine except for one, then it’s likely a
+all signing scriptworkers are fine except for one, then it's likely a
 machine issue. If all signing scriptworkers are throwing an error during
-puppetizing, then it’s probably a puppet issue.
+puppetizing, then it's probably a puppet issue.
 
-Puppet’s ``pip`` logging can be a bit terse, but it shows you the
-commandline used. If you log into an affected machine and try to run
-that ``pip`` command manually, you may get a better sense of what’s
+Puppet's ``pip`` logging can be a bit terse, but it shows you the
+command-line used. If you log into an affected machine and try to run
+that ``pip`` command manually, you may get a better sense of what's
 wrong, possibly adding the ``-v`` option to be more verbose, e.g.
 
 ::
@@ -166,21 +166,21 @@ wrong, possibly adding the ``-v`` option to be more verbose, e.g.
    # You want to be su'ed as the user that owns /builds/scriptworker, probably cltbld or cltsign
    /builds/scriptworker/bin/pip -v install --no-deps --no-index  --find-links=https://releng-puppet1.srv.releng.usw2.mozilla.com/python/packages-3.x --trusted-host releng-puppet1.srv.releng.usw2.mozilla.com --find-links=https://releng-puppet1.srv.releng.mdc1.mozilla.com/python/packages-3.x --trusted-host releng-puppet1.srv.releng.mdc1.mozilla.com --find-links=https://releng-puppet2.srv.releng.mdc1.mozilla.com/python/packages-3.x --trusted-host releng-puppet2.srv.releng.mdc1.mozilla.com --find-links=https://releng-puppet2.srv.releng.mdc2.mozilla.com/python/packages-3.x --trusted-host releng-puppet2.srv.releng.mdc2.mozilla.com --find-links=https://releng-puppet1.srv.releng.mdc2.mozilla.com/python/packages-3.x --trusted-host releng-puppet1.srv.releng.mdc2.mozilla.com --find-links=https://releng-puppet1.srv.releng.use1.mozilla.com/python/packages-3.x --trusted-host releng-puppet1.srv.releng.use1.mozilla.com urllib3==1.24
 
-If there’s a compile issue, we may need to grab a wheel or add system
+If there's a compile issue, we may need to grab a wheel or add system
 packages. We may want to delay this update at this time.
 
-If there’s a dependency problem, we may need a new PR that fixes. The
+If there's a dependency problem, we may need a new PR that fixes. The
 taskcluster tests in the puppet PR may miss this if it involves a
 ``# pyup: nodownload`` module.
 
-If there’s a configuration problem, hopefully it’s clear by poking
-around the machine. If it’s pinned to an env, that may be part of it. I
-found a virtualenv that wouldn’t allow upgrading a package because
+If there's a configuration problem, hopefully it's clear by poking
+around the machine. If it's pinned to an env, that may be part of it. I
+found a virtualenv that wouldn't allow upgrading a package because
 someone installed the previous version as ``root``, so ``cltbld``
-couldn’t update. a ``chown -R cltbld /builds/scriptworker/lib`` fixed
+couldn't update. a ``chown -R cltbld /builds/scriptworker/lib`` fixed
 it.
 
-There may be other failure cases; let’s update this list as we find
+There may be other failure cases; let's update this list as we find
 them.
 
 signing server
@@ -197,4 +197,4 @@ The list of people who can ssh in is `here
 Success
 =======
 
-When everything puppetizes successfully, we’re good!
+When everything puppetizes successfully, we're good!

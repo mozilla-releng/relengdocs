@@ -11,7 +11,7 @@ Understanding release promotion
 -  the original release workflow diagram before Buildbot -> Taskcluster
    migration, as to November 2015, can be found
    `here <https://www.lucidchart.com/documents/view/b733c8be-e607-445f-824a-f3353c287294>`__
--  the up-to-date version of it, as to September 2016, is itteratively
+-  the up-to-date version of it, as to September 2016, is iteratively
    divided in two. First graph depicts the logic pieces and all tasks in
    Taskcluster, but lacks the dependencies between the tasks within the
    graph, and can be found
@@ -48,7 +48,7 @@ Actions for Desktop related releases
 why
 ~~~
 
--  some releases don’t automatically push releases to the releases dir
+-  some releases don't automatically push releases to the releases dir
    automatically. They instead wait on a human decision (sign off) to
    dictate when candidates dir looks good and we are ready to copy/push
    to releases dir
@@ -74,7 +74,7 @@ how
 
 -  Desktop Firefox ESRs
 
-   -  ESR x.y.Z (ie chemspills/regression fixes) releases can use the
+   -  ESR x.y.Z (i.e. chemspills/regression fixes) releases can use the
       jobs in the existing graph.
 
       -  get the taskid for the task named
@@ -84,7 +84,7 @@ how
       -  To resolve the human decision task run the following:
          ``taskcluster task complete $TASK_ID``
 
-   -  ESR x.y.0 releases (ie scheduled) use two taskcluster graphs,
+   -  ESR x.y.0 releases (i.e. scheduled) use two taskcluster graphs,
       because the push+shipping tasks will usually timeout in the
       original graph between building and release day. Pushing to
       releases happens in a graph 2 and will start once graph 2 is
@@ -151,7 +151,7 @@ how
    -  RelMan is responsible for reviewing the scheduled change to ensure
       that the shipping time is correct and to authorize that the
       release may be shipped. If circumstances change (eg, we discover a
-      bug we’re not willing to ship) after they sign off, they must
+      bug we're not willing to ship) after they sign off, they must
       revoke their signoff in Balrog.
 
 example
@@ -161,7 +161,7 @@ After the Scheduled Change has been created, the Balrog UI will look
 something like: |scheduled change without signoffs|
 
 When RelEng reviews it they will look at the Mapping, Fallback Mapping,
-and Backgound Rate (circled above). If everything looks good to them,
+and Background Rate (circled above). If everything looks good to them,
 they will click on the “Signoff as…” button and be presented with a
 dialog like: |signoff modal dialog|
 
@@ -270,8 +270,8 @@ Intermittent failures
 If a task failed because of an intermittent failure (e.g.: network
 error, timeout), ``rerun`` it manually via `taskcluster
 cli <https://github.com/taskcluster/taskcluster-cli/>`__. Some tasks
-don’t have automatic reruns set, but they do have 5 retries left. Thanks
-to reruns, you don’t need to retrigger a task (which would have meant to
+don't have automatic reruns set, but they do have 5 retries left. Thanks
+to reruns, you don't need to retrigger a task (which would have meant to
 reschedule the remaining subgraph).
 
 Flushing caches
@@ -282,9 +282,9 @@ remove the older builds from the CDN caches. For instance in Firefox
 beta 46.0b5 we built builds 1 through 5 but we only ship build5. See
 `Bug 1391843 <https://bugzil.la/1391843>`__ - Please purge CDN caches
 for firefox and devedition 56.0b4 as an example. After filing the bug as
-P1, it’s highly recommended you follow up with the `mana
+P1, it's highly recommended you follow up with the `mana
 docs <https://mana.mozilla.org/wiki/display/SVCOPS/Contacting+Cloud+Operations>`__
-to contact CloudOps by email as well as they don’t always pay attention
+to contact CloudOps by email as well as they don't always pay attention
 to P1 bugs.
 
 Working around Signoffs in Balrog
@@ -300,22 +300,22 @@ Note that even if you are a full fledged administrator, you yourself
 cannot make more than one Signoff on any given Scheduled Change. This is
 by design - we do not want a single account to be able make changes to
 protected Products or Channels. If you are certain you need to
-workaround the Signoffs, here’s how: \* Find another person with some
+workaround the Signoffs, here's how: \* Find another person with some
 permissions in Balrog, and who is up to speed on the change you intend
 to make. \* Grant them the Role that you need to complete the Required
 Signoffs (through https://aus4-admin.mozilla.org/permissions). \* Have
 them make a Signoff with that Role.
 
-As a concrete example, let’s say we required 1 relman, 1 releng, and 1
-qe signoff for Firefox release channel changes. Late on a Saturday night
+As a concrete example, let's say we required 1 relman, 1 releng, and 1
+QE signoff for Firefox release channel changes. Late on a Saturday night
 we discover a massive crash that requires us to shut off updates. Liz
 gets in contact with Kim to ask that this happen. Kim Schedules the
 necessary change in Balrog (which implicitly satisfies the releng
 signoff), and Liz signs off for relman. Because it is the weekend, and
 there was no planned work, QE is unavailable. Kim gets in contact with
-Aki, grants him the “qe” role, and Aki makes a Signoff under the “qe”
-Role, which fulfills the Signoff requirements. Kim then removes Aki’s
-“qe” Role.
+Aki, grants him the “QE” role, and Aki makes a Signoff under the “QE”
+Role, which fulfills the Signoff requirements. Kim then removes Aki's
+“QE” Role.
 
 Creating a clone of a task using a different revision
 -----------------------------------------------------

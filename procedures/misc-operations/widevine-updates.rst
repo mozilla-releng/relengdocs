@@ -1,7 +1,7 @@
 Widevine updates
 ================
 
-Widevine is a system addon allowing Firefox user to read DRM’d content
+Widevine is a system addon allowing Firefox user to read DRM'd content
 (like Netflix). We provide updates via Balrog.
 
 When
@@ -38,21 +38,19 @@ Old schema (< 1.4.9.X)
 
 For instance: 1.4.9.1088.
 
-+----+----------+-----------------------------------------------------+
-| D  | Name     | Notes                                               |
-| ig |          |                                                     |
-| it |          |                                                     |
-+====+==========+=====================================================+
-| 1  | Major    | It has always been 1, so far                        |
-+----+----------+-----------------------------------------------------+
-| 4  | Module   | Significant changes must happen on the Firefox side |
-+----+----------+-----------------------------------------------------+
-| 9  | I        | If this number changes, some Firefox internals must |
-|    | nterface | be changed                                          |
-+----+----------+-----------------------------------------------------+
-| 10 | Revision | This number keeps increasing even if the other      |
-| 88 |          | numbers got bumped                                  |
-+----+----------+-----------------------------------------------------+
++-------+-----------+-----------------------------------------------------+
+| Digit | Name      | Notes                                               |
++=======+===========+=====================================================+
+| 1     | Major     | It has always been 1, so far                        |
++-------+-----------+-----------------------------------------------------+
+| 4     | Module    | Significant changes must happen on the Firefox side |
++-------+-----------+-----------------------------------------------------+
+| 9     | Interface | If this number changes, some Firefox internals must |
+|       |           | be changed                                          |
++-------+-----------+-----------------------------------------------------+
+| 10    | Revision  | This number keeps increasing even if the other      |
+| 88    |           | numbers got bumped                                  |
++-------+-----------+-----------------------------------------------------+
 
 If the API level (or higher) is bumped, please check with the Media team
 what Firefox is able to run this Widevine.
@@ -79,7 +77,7 @@ Unlike Firefox, no automation creates a blob. Nor do we have a script
 blob. The easiest way to do this is to download the most previous
 release blob,
 e.g.\ `Widevine-1.4.9.1088 <https://aus4-admin.mozilla.org/releases#Widevine-1.4.9.1088>`__.
-Then open in an editor. It’s small and should be like:
+Then open in an editor. It's small and should be like:
 
 .. code:: json
 
@@ -156,10 +154,10 @@ Unlike Firefox updates, Widevine ones all happen in the same channel
 users are given a new widevine based on their Firefox version. For
 instance: if we provide a new widevine to 62.0 at the time 62.0b15
 ships, then users with 62.0b1-b14 will also get this version. Make sure
-with the media team these betas are compatible! In the case it’s not,
-please remember Firefox doesn’t send which beta it’s on to Balrog. You
+with the media team these betas are compatible! In the case it's not,
+please remember Firefox doesn't send which beta it's on to Balrog. You
 have to filter out based on the version **and** the buildID (the buildID
-alone doesn’t work if a 61 dot release happens afterwards).
+alone doesn't work if a 61 dot release happens afterwards).
 
 In the end, a rule looks that filters on both like this one: |Balrog
 rule|
@@ -172,8 +170,8 @@ to production. A widevine request to balrog is like this one:
 https://aus5.mozilla.org/update/3/GMP/62.0/20180802174131/WINNT_x86_64-msvc-x64/en-US/nightlytest/default/default/default/update.xml
 
 :warning:
-  Reminder: In this URL, 62.0 can’t be 62.0b14. Even though it
-  works from Balrog’s point of view, Firefox doesn’t send this piece of
+  Reminder: In this URL, 62.0 can't be 62.0b14. Even though it
+  works from Balrog's point of view, Firefox doesn't send this piece of
   data.
 
 .. |Balrog rule| image:: /procedures/misc-operations/widevine-balrog-rule.png

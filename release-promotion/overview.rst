@@ -51,7 +51,7 @@ Hand Off
 
 If a scheduled release has not completed its Promote graph (and Push
 graph if devedition/beta) prior releaseduty signing off. An explicit
-handoff describing describing release state should be sent to individual
+hand-off describing describing release state should be sent to individual
 folks in releng that are scheduled to come online next or will be around
 for a while after you. #mozbuild in Slack is best. A release@m.c email
 would be useful too.

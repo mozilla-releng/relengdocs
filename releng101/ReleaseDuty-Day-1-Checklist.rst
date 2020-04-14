@@ -1,7 +1,7 @@
 Release Duty Day 1 Checklist
 ============================
 
-If you’re reading this page it means that you’re ramping up as an
+If you're reading this page it means that you're ramping up as an
 official releaseduty squirrel within Mozilla RelEng, so please allow us
 to give you a warm welcome!
 
@@ -32,25 +32,18 @@ The automation status is sent by email, and very spammy.
 Meetings are usually conducted using
 `Vidyo <https://mana.mozilla.org/wiki/display/SD/Vidyo>`__
 
-IRC Channels
-~~~~~~~~~~~~
+Matrix Channels
+~~~~~~~~~~~~~~~
 
-Join Mozilla’s IRC network using either the `public
-documentation <https://wiki.mozilla.org/IRC>`__ or if you have an LDAP
-account, you can also use
-`IRCCloud <https://mana.mozilla.org/wiki/display/SD/IRCCloud+Account+Setup>`__
+Join Mozilla's Matrix network using information from `the wiki <https://wiki.mozilla.org/Matrix>`__
 
 You ought to be present and pay attention to conversations happening in:
 
--  \**_#ci*\* (where CIduty team helps with various hiccups that infra
-   might enocunter))
--  **#releaseduty** (main RelEng dedicated communication channel for
+-  **#sheriffs:mozilla.org** (where CIDuty team helps with various hiccups that infra
+   might encounter))
+-  **#releaseduty:mozilla.org** (main RelEng dedicated communication channel for
    releaseduty)
--  **#release-drivers** (where QE and RelMan usually coordinate)
--  **#relman** (optional - about to be retired soon, where RelMan hangs
-   out around usually)
--  **#tbdrivers** (optional - where TB drivers discuss Thunderbird
-   releases)
+-  **#firefox-ci:mozilla.org**
 
 Email
 ~~~~~
@@ -84,19 +77,19 @@ Engineering <https://calendar.google.com/calendar/embed?src=mozilla.com_2d323433
 (so that you attend the weekly post-mortem meeting) - `Releases
 Scheduling <https://calendar.google.com/calendar/embed?src=mozilla.com_dbq84anr9i8tcnmhabatstv5co@group.calendar.google.com>`__
 (so that you can attend the Tuesday/Thursday channel meetings. You can
-add it following RelMan’s
+add it following RelMan's
 `docs <https://wiki.mozilla.org/Release_Management#Calendar_Updating>`__)
-– If their instructions don’t work, try to the “Add to Google Calendar”
+– If their instructions don't work, try to the “Add to Google Calendar”
 button at the `web version of the
 calendar <https://calendar.google.com/calendar/embed?src=mozilla.com_dbq84anr9i8tcnmhabatstv5co@group.calendar.google.com>`__.
 
-**If you join a calendar and it’s blank, you may need to delete it and
+**If you join a calendar and it's blank, you may need to delete it and
 get a calendar invitation from an existing subscriber**
 
 Documents
 ~~~~~~~~~
 
-There’s a simplified documentation for mid-betas and release checklists
+There's a simplified documentation for mid-betas and release checklists
 to ease the steps needed to happen. If not already, duplicate an
 existing sheet in this `google docs
 checklist <https://docs.google.com/spreadsheets/d/1hhYtmyLc0GEk_NaK45KjRvhyppw7s7YSpC9xudaQZgo/edit#gid=1158959417>`__
@@ -121,8 +114,8 @@ to do your job, you need to be granted access to a bare minimum:
 -  SSH access to ``buildbot-master01.bb.releng.use1.mozilla.com``.
 
 There are a few more other places where access is needed (such as
-`bouncer <https://bounceradmin.mozilla.com/admin/>`__, etc) but we’re
-trying to keep those access-list short so addings can be done in time
+`bouncer <https://bounceradmin.mozilla.com/admin/>`__, etc) but we're
+trying to keep those access-list short so adding can be done in time
 depending on necessities.
 
 Installing Tools
@@ -159,7 +152,7 @@ interface <https://github.com/taskcluster/taskcluster-cli>`__
    you to get temporary client credentials. By default this is valid for
    24 hours. **The command will display two ``export`` commands you must
    copy/paste into your shell**
--  Familiarise yourself with the subcommands, starting with
+-  Familiarize yourself with the subcommands, starting with
    ``taskcluster help``
 
 Firefox bookmarks
@@ -178,19 +171,19 @@ These bookmarklets should help you view tasks and taskgroups in Firefox.
 -  Name: ``stop`` Location: ``javascript:stop();``
 
    -  This can be used to stop further loading in the Task Group
-      Inspector. It shouldn’t be used when actively monitoring (ie:
+      Inspector. It shouldn't be used when actively monitoring (i.e.:
       watching for failures), but it can greatly speed things up if
-      you’re using it for other reasons. Be sure to wait for the initial
+      you're using it for other reasons. Be sure to wait for the initial
       tasks to load before you use it.
 
 Now if you go to your URL bar, you can type ``task TASKID`` or
-``taskgroup TASKGROUPID`` and you’ll go to that task or taskgroup in the
+``taskgroup TASKGROUPID`` and you'll go to that task or taskgroup in the
 inspector.
 
 After ReleaseDuty
 -----------------
 
-After your tour of releaseduty, it’s customary to spend 1-2 weeks fixing
+After your tour of releaseduty, it's customary to spend 1-2 weeks fixing
 release automation issues. Check the `Release Automation Improvements
 trello
 board <https://trello.com/b/BqnBcfXX/release-automation-improvements>`__
@@ -231,7 +224,7 @@ Other useful resources
 Glossary
 --------
 
--  WNP - The “What’s New Page” can be set to appear after an upgrade, to
+-  WNP - The “What's New Page” can be set to appear after an upgrade, to
    tell end-users of any changes in the browser they should be aware of.
 -  FF - Firefox
 -  TB - Thunderbird
@@ -245,18 +238,18 @@ FAQ
 
 RelMan submits a new release from
 `here <https://shipit.mozilla-releng.net/>`__, another RelMan reviews
-that and once it hits ‘Ready’ + ‘Do eeaat’ the release enters the
-‘Reviewed’ section and waits to be run. Since there’s a
+that and once it hits 'Ready' + 'Do eeaat' the release enters the
+'Reviewed' section and waits to be run. Since there's a
 ``release-runner.sh`` script running in a loop on
 `bm81 <https://hg.mozilla.org/build/puppet/file/default/manifests/moco-nodes.pp#l598>`__,
-there’s a max window of 60 seconds till the job gets its share,
-following which it enters the ‘Running/Complete’ table where we can
+there's a max window of 60 seconds till the job gets its share,
+following which it enters the 'Running/Complete' table where we can
 observe its state. The “Reviewed” tab goes to “No pending release” yet
 again.
 
 2. *What does release-promotion refer to?*
 
-‘Release promotion’ is simply the idea that we take an already existing
+'Release promotion' is simply the idea that we take an already existing
 CI build from (e.g. beta) and promote that to being the build we
 release/ship to users. Prior to this approach, we had always rebuilt
 Firefox at the start of each new release. Long story short, release
@@ -276,26 +269,26 @@ Web. Hence, every six weeks the following merges take place:
 `mozilla-central <http://hg.mozilla.org/mozilla-central/>`__ =>
 `mozilla-beta <http://hg.mozilla.org/releases/mozilla-beta/>`__
 
-We used to have an intermediate branch named ‘aurora’ in between central
+We used to have an intermediate branch named 'aurora' in between central
 and beta but that was brought to end-of-life during April-May 2017.
-Instead, early beta releases are branded as ‘DevEdition’.
+Instead, early beta releases are branded as 'DevEdition'.
 
 4. *What is a partner repack change for FF?*
 
 Partner repacks refer to 3rd party customized branded versions of
 Firefox that Mozilla is taking care of for some of its clients. With
 some exceptions, most of the partner reconfigs lie under private
-repositories. Mostly, the partner repacks don’t need too much of RelEng
+repositories. Mostly, the partner repacks don't need too much of RelEng
 interference as all bits are held under private git repos and are
 directly handled by the partnering companies
 
 5. *Is there calendar-based release scheduled for Thunderbird as for
    Firefox?*
 
-No. It’s irregular. Conversations happen on #tbdrivers and TB mailing
+No. It's irregular. Conversations happen on #tbdrivers and TB mailing
 list and they trigger their release in Ship-it.
 
-6. *Why don’t I see update_verify_beta for dot releases?*
+6. *Why don't I see update_verify_beta for dot releases?*
 
 From time to time, a handful of issues precipitate a dot release. When
 that happens, its behavior slightly varies from a normal release. A
@@ -307,7 +300,7 @@ testing phase we ship the RC on the beta channel and then on the release
 channel, following which we merge the code for the next release cycle so
 that the beta release bumps its version. In the lights of this logic, a
 dot release (e.g. 43.0.1 or 44.0.1) happens a certain amount of time
-after the official release. For that reason, a dot release can’t be
+after the official release. For that reason, a dot release can't be
 tested in beta channel as the at-that-moment beta version is greater
 than the dot release version, hence the updater would refuse to
 downgrade. Therefore, there is only one cycle of update_verify for dot
@@ -315,7 +308,7 @@ releases (update_verify_release == update_verify in this case).
 
 7. *Is there explicit signoff from RelMan for DevEdition builds?*
 
-No, after b1, there isn’t signoff from RelMan on DevEdition builds. QA
+No, after b1, there isn't signoff from RelMan on DevEdition builds. QA
 only verifies the DevEdition builds every two weeks. With the exception
 of b1, and assuming all the tasks complete as expected, the DevEdition
 builds should be shipped at the same time as we receive signoff for the

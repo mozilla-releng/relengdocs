@@ -20,7 +20,7 @@ happens in a cycle: - We only ship Devedition ``X.b1`` and ``X.b2`` for
 the beta cycle. For the final push to the ``aurora`` channel, we wait
 for *Relman* consent. - Starting with b3 we ship ``Firefox`` along with
 ``Devedition``. For the final push to ``beta`` and ``aurora``
-respectively, we wait for *QA* consent and we’re pushing them together
+respectively, we wait for *QA* consent and we're pushing them together
 as soon as the QA signs-off for ``Firefox``. - **Disclaimer!** Once
 every two weeks, QA signs-off for Devedition *after* we ship the
 release. As counter-clockwise as it may sound, this makes sense given
@@ -33,7 +33,7 @@ Background
 ``releases``, ``mirrors`` and ``CDN`` are different terms for the same
 concept - the CDN from which shipped releases are served.
 
-In the new taskcluster release promotion for Fx59+, pushing doesn’t
+In the new taskcluster release promotion for Fx59+, pushing doesn't
 happen automatically in ship-it (yet). We can `address
 this <https://trello.com/c/vOP7fml4/282-update-releaserunner3-to-automatically-run-the-push-flavor-rather-than-promote-for-certain-release-types>`__.
 Until then, all pushing will be manually triggered.
@@ -74,7 +74,7 @@ Examples: -
 - ``[desktop] Please push Firefox 52.4.1esr to the esr-cdntest channel``
 
 This subject is free-text and may not always be the same format, but
-will have the same information in. You shouldn’t expect to see these
+will have the same information in. You shouldn't expect to see these
 emails for ``devedition`` or ``beta`` as they update the releases
 directory automatically.
 
@@ -99,7 +99,7 @@ How
    UI <https://shipit.mozilla-releng.net/>`__.
 
 -  Find the graphid in the Ship-it v2 UI. Every phase is linked to the
-   corresponding graph after it’s scheduled.
+   corresponding graph after it's scheduled.
 
 Ship the release
 ----------------
@@ -115,8 +115,8 @@ When
 ~~~~
 
 An email will arrive to the release-signoff mailing list asking for a
-release to be pushed to the appropriate channel, such as ‘release’ for
-major releases, ‘beta’ for betas, and so on. (For thunderbird, the mail
+release to be pushed to the appropriate channel, such as 'release' for
+major releases, 'beta' for betas, and so on. (For thunderbird, the mail
 will be to the thunderbird-drivers list).
 
 Examples -
@@ -134,7 +134,7 @@ How
    UI <https://shipit.mozilla-releng.net/>`__.
 
 -  Find the graphid in the Ship-it v2 UI. Every phase is linked to the
-   corresponding graph after it’s scheduled.
+   corresponding graph after it's scheduled.
 
 -  Announce to release-signoff that the release is live
 
@@ -226,7 +226,7 @@ and update the three locations for the
 product.
 
 In each location, update two version values, and adjust the buildN to
-shipping build. For now it’s normal to serve these from the candidates
+shipping build. For now it's normal to serve these from the candidates
 directory.
 
 For example, Mac changes from

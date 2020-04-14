@@ -17,7 +17,7 @@ error.
 A note on rerunning action tasks
 ================================
 
-Ocassionally action tasks fail for various reasons (e.g. scope issues).
+Occasionally action tasks fail for various reasons (e.g. scope issues).
 Whenever the fix is done and you’re ready to rerun the action task, make
 sure you cancel the previous run first. Otherwise, you’ll end up with
 duplicates tasks within the same graph (e.g. ``push`` phase run twice

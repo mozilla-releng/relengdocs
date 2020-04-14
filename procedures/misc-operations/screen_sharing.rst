@@ -4,12 +4,12 @@ Sharing your terminal
 Introduction
 ------------
 
-During some tasks it’s useful to have more than one person present to
+During some tasks it's useful to have more than one person present to
 check commands before they are entered. This may be due to the severity
 of an event and the risk if the commands are incorrect, or may be as
 straightforward as running a tutorial.
 
-While Vidyo can share screens (in the display sense), it’s often not the
+While Vidyo can share screens (in the display sense), it's often not the
 clearest for sharing a terminal window.
 
 Screen
@@ -38,7 +38,7 @@ places at once. ``acladd`` adds specific usernames to the list of
 accounts allowed to connect to a screen session ``screen -L`` starts a
 screen window with logging enabled.
 
-If you don’t want this configuration for every screen session, this can
+If you don't want this configuration for every screen session, this can
 also be saved as a separate configuration file, and screen run with
 ``screen -c configfile``
 
@@ -63,7 +63,7 @@ As the other user:
 With ``-L`` the output logs of the screen shell will be saved in the
 current working directory as ``screenlog.0`` with incrementing integers
 if the file already exists. If you have colors turned on in your shell,
-remember that you can use ``less -R`` to view this logfile and render
+remember that you can use ``less -R`` to view this log file and render
 the colors, instead of wading through pages of terminal coding.
 
 Tmux
@@ -73,7 +73,7 @@ Single user, multiple connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If two people are using a shared account, such as ``cltbld``, then tmux
-doesn’t require any setup.
+doesn't require any setup.
 
 To create a session:
 

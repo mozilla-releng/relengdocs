@@ -22,7 +22,7 @@ Differences between Firefox RC and non-RC
    4. ``ship_firefox``
 
    We may repeat the first two several times if there are issues we
-   don’t want to ship the real release with.
+   don't want to ship the real release with.
 
 ship-rc
 -------
@@ -34,7 +34,7 @@ How
    UI <https://shipit.mozilla-releng.net/>`__.
 
 -  Find the graphid in the Ship-it v2 UI. Every phase is linked to the
-   corresponding graph after it’s scheduled.
+   corresponding graph after it's scheduled.
 
 push
 ----
@@ -48,7 +48,7 @@ How
    UI <https://shipit.mozilla-releng.net/>`__.
 
 -  Find the graphid in the Ship-it v2 UI. Every phase is linked to the
-   corresponding graph after it’s scheduled.
+   corresponding graph after it's scheduled.
 
 ship
 ----
@@ -64,8 +64,8 @@ When
 ~~~~
 
 An email will arrive to the release-signoff mailing list asking for a
-release to be pushed to the appropriate channel, such as ‘release’ for
-major releases, ‘beta’ for betas, and so on.
+release to be pushed to the appropriate channel, such as 'release' for
+major releases, 'beta' for betas, and so on.
 
 Examples -
 ``[desktop] Please push Firefox 57.0 (build#4) to the release channel (25%)``
@@ -79,7 +79,7 @@ How
    UI <https://shipit.mozilla-releng.net/>`__.
 
 -  Find the graphid in the Ship-it v2 UI. Every phase is linked to the
-   corresponding graph after it’s scheduled.
+   corresponding graph after it's scheduled.
 
 -  Announce to release-signoff that the release is live
 

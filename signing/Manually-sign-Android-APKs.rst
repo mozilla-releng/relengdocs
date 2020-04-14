@@ -5,7 +5,7 @@ Currently, two products may need manually signing:
 
 -  Firefox Rocket
 -  Firefox Focus for Android. :warning: This product has two APKs: one
-   is Focus, the other for the german-speaking population: Klar.
+   is Focus, the other for the German-speaking population: Klar.
 
 Requirements
 ------------
@@ -19,7 +19,7 @@ structure of the APK archive, which breaks the Zip optimization.
       ``brew tap caskroom/cask``)
 
       -  then run ``sdkmanager --list`` and install build-tools,
-         e.g. ``sdkmanager 'build-tools;27.0.3'``. It’ll show up in
+         e.g. ``sdkmanager 'build-tools;27.0.3'``. It'll show up in
          e.g. ``/usr/local/share/android-sdk/build-tools/27.0.3/zipalign``
 
    -  Ubuntu: ``apt install android-sdk``
@@ -40,14 +40,14 @@ First Steps
 To sign an APK
 --------------
 
-You will need to repeat this for each APK, feel free to optimise by
+You will need to repeat this for each APK, feel free to optimize by
 downloading all at once, just be careful of filenames when copy/pasting
 commands.
 
 1. Download unsigned APK(s).
 
    -  Right-click the attachment in bugzilla and click ‘Copy Link
-      Location’
+      Location'
    -  ``wget -O unsigned.apk <pasted url>``
 
 2. Set environment variables:
@@ -71,9 +71,9 @@ commands.
    -  Focus/Klar is under the name ``signing-server-focus``
    -  Rocket is under the name ``signing-server-rocket``
 
-4. ``jarsigner -keystore "$keystore" unsigned.apk "$alias"`` You’ll be
+4. ``jarsigner -keystore "$keystore" unsigned.apk "$alias"`` You'll be
    asked for the password in the previous step. The Klar APK uses the
-   same certificate alias/password as ``focus``. You’ll also get an
+   same certificate alias/password as ``focus``. You'll also get an
    expected warning:
 
    ::
@@ -94,7 +94,7 @@ After all the signing
 ---------------------
 
 1. Fetch signed APK(s) on your local machine. You will need to copy the
-   files to your own user account in order to ``scp`` them, as you can’t
+   files to your own user account in order to ``scp`` them, as you can't
    directly reach the ``cltsign`` user.
 
 2. Optimize the APKs for Google Play, and verify. For each APK:
@@ -104,16 +104,16 @@ After all the signing
       zipalign -v 4 signed.apk signed-aligned.apk
       zipalign -c -v 4 signed-aligned.apk
 
-3. Attach the signed and aligned APKs to the bug using the ‘attach file’
+3. Attach the signed and aligned APKs to the bug using the 'attach file'
    feature in bugzilla.
 
 Troubleshooting
 ---------------
 
-Can’t sign APKs
+Can't sign APKs
 ~~~~~~~~~~~~~~~
 
-Sometimes, APKs aren’t correctly formatted. For instance, CI may have
+Sometimes, APKs aren't correctly formatted. For instance, CI may have
 already signed an APK with a dev key. In this case, you may see:
 
 .. code:: sh
@@ -136,6 +136,6 @@ Then you can resume signing.
 Future
 ------
 
-We already have a github repo with taskcluster release builds. It’s not
-trivial, but it’s possible we could add CoT and auto-sign these release
+We already have a github repo with taskcluster release builds. It's not
+trivial, but it's possible we could add CoT and auto-sign these release
 builds.
