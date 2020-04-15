@@ -16,25 +16,39 @@ Contents:
 
 .. toctree::
    :maxdepth: 2
+   :caption: Overview and Procedures
 
-   release_workflows/index.rst
-   procedures/index.rst
-   hosts.rst
-   software.rst
    releng101/index.rst
-   best-practices/index.rst
-   architecture/index.rst
-   future/index.rst
-   releng_changelog
+   releng101/ReleaseDuty-Day-1-Checklist.md
+   Cross-team workflows <release_workflows/index.rst>
+   procedures/index.rst
+
 
 .. toctree::
-    :hidden:
+   :maxdepth: 2
+   :caption: Documentation and Articles
+   :glob:
 
-    adding_repo_to_releng_rtfd_account.rst
-    adding_docs_to_existing_code.rst
-    maintaining_these_docs.rst
-    tobewritten.rst
-    CODE_OF_CONDUCT
+   architecture/index.rst
+   best-practices/index.rst
+   future/index.rst
+   hosts.rst
+   releng_changelog
+   software.rst
+   addons/addons.rst
+   Balrog & Updates <balrog/index.rst>
+   Signing <signing/index.rst>
+   Release Promotion <release-promotion/overview.rst>
+
+.. toctree::
+   :caption: Meta
+   :hidden:
+
+   CODE_OF_CONDUCT
+   Add a new repo to docs <adding_repo_to_releng_rtfd_account.rst>
+   Add existing repo to docs <adding_docs_to_existing_code.rst>
+   maintaining_these_docs.rst
+   tobewritten.rst
 
 
 Indices and tables
