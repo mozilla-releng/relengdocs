@@ -1,8 +1,11 @@
+Manually Generate Partials
+==========================
+
 Based on
 https://wiki.mozilla.org/ReleaseEngineering/How_To/Generate_partial_updates
 
 When?
-=====
+-----
 
 Under some circumstances, users may be `stranded on old
 releases <https://telemetry.mozilla.org/update-orphaning/>`__. In this
@@ -15,7 +18,7 @@ are being generated, possibly only some of the platforms (which are
 win32 and win64 in this tutorial)
 
 How?
-====
+----
 
 1. build/tools changes
 ----------------------
