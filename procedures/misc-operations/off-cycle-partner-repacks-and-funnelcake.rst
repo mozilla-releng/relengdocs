@@ -1,8 +1,11 @@
+Off-Cycle Partner Repacks and Funnelcakes
+=========================================
+
 Original docs are
 `here <https://mana.mozilla.org/wiki/display/RelEng/Partner+Repack+Creation>`__.
 
 Background
-==========
+----------
 
 We repackage Firefox for partners. Occasionally we’ll have a new study
 (funnelcake) or a new partner or partner config that happens after a
@@ -10,7 +13,7 @@ release is built, but before the next release is scheduled to be built,
 and we need to repack that partner off-cycle.
 
 When?
-=====
+-----
 
 We’ll get a bug for a new partner repack or funnelcake, in the Release
 Engineering :: Custom Release Requests component in Bugzilla.
@@ -29,7 +32,7 @@ until the release is complete, or inform releaseduty to ignore the extra
 tasks.
 
 How?
-====
+----
 
 These are the steps on how to trigger the
 repack/signing/repackage/repackage-signing/beetmover tasks for partner
@@ -143,7 +146,7 @@ releases do not require this work, and automating respins is covered by
    ``Checking softonic softonic-010 full installer     https://download.mozilla.org/?product=partner-firefox-release-softonic-softonic-010-latest&os=win64&lang=en-US     HTTP/1.1 302 Found     Location: https://download-installer.cdn.mozilla.net/pub/firefox/releases/partners/softonic/softonic-010/69.0.1/win64/en-US/Firefox%20Setup%2069.0.1.exe     HTTP/2 200    ...``
 
 Future
-======
+------
 
 In the future, we can use `action
 hooks <https://bugzilla.mozilla.org/show_bug.cgi?id=1415868>`__ for

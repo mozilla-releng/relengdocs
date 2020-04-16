@@ -9,7 +9,7 @@ It may be a good idea to read through this document before making
 changes.
 
 Get the PR into good shape
-==========================
+--------------------------
 
 The first part is to get the PR in good shape. For these PRs especially,
 the taskcluster task results are important. These tests verify that the
@@ -47,7 +47,7 @@ If we leave this, we may never be able to update either. If we catch
 this, we can try updating both ``module`` and ``module2``.
 
 When to land
-============
+------------
 
 Because of the nature of our puppet deployments, we may see hiccups in
 services during puppet deployment. For instance, if we update the
@@ -60,7 +60,7 @@ want to merge when we have time to monitor the puppet mail and help deal
 with fallout.
 
 Landing
-=======
+-------
 
 When we land, CIDuty will monitor treeherder and puppet mail. It may be
 a good idea for us to keep an eye on ``#ci`` and puppet mail as well. If
