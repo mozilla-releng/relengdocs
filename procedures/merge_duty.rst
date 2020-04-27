@@ -197,7 +197,7 @@ mozilla-beta->mozilla-release migration no-op trial run
 .. code:: yaml
 
    force-dry-run: true
-   merge_flavor: beta-to-release
+   behavior: beta-to-release
    push: true
 
 mozilla-central->mozilla-beta migration no-op trial run
@@ -209,7 +209,7 @@ mozilla-central->mozilla-beta migration no-op trial run
 .. code:: yaml
 
    force-dry-run: true
-   merge_flavor: central-to-beta
+   behavior: central-to-beta
    push: true
 
 mozilla-esr bump no-op trial run
@@ -221,7 +221,7 @@ mozilla-esr bump no-op trial run
 .. code:: yaml
 
    force-dry-run: true
-   merge_flavor: bump-esr
+   behavior: bump-esr
    push: true
 
 Diff should be similar to `this
@@ -301,7 +301,7 @@ Merge beta to release
 .. code:: yaml
 
    force-dry-run: false
-   merge_flavor: beta-to-release
+   behavior: beta-to-release
    push: true
 
 :warning:
@@ -362,7 +362,7 @@ Merge central to beta
 .. code:: yaml
 
    force-dry-run: false
-   merge_flavor: central-to-beta
+   behavior: central-to-beta
    push: true
 
 :warning:
