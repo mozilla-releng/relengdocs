@@ -10,6 +10,8 @@ Procedures that don't easily fit elsewhere.
     :maxdepth: 2
     :glob:
 
+    doing_a_firefox_release.rst
+    release_duty.rst
     merge_duty.rst
     merge_new_esr_branch.rst
     Testing_Autograph.rst

@@ -18,8 +18,6 @@ Contents:
    :maxdepth: 2
    :caption: Overview and Procedures
 
-   releng101/index.rst
-   releng101/ReleaseDuty-Day-1-Checklist.md
    Cross-team workflows <release_workflows/index.rst>
    procedures/index.rst
 
