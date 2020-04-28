@@ -1,5 +1,5 @@
-How to set up a new ESR branch
-==============================
+Merge Duty for major ESR bump
+=============================
 
 Intro
 -----

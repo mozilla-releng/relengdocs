@@ -1,5 +1,5 @@
-(Ubuntu) Snap
-=============
+Desktop Snap Releases
+=====================
 
 Snap is a package format supported by Canonical. It's targeted to
 support every Linux distribution but it's mainly available on Ubuntu at

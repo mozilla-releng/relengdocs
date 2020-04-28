@@ -1,6 +1,16 @@
 Release Duty
 ============
 
+Contents:
+
+.. toctree::
+    :maxdepth: 1
+    :glob:
+
+    desktop/*
+    mobile/*
+    merge-duty/*
+
 Releaseduty is a role within the Release Engineering team. It is conducted on a rolling rotation matching one person
 against one release cycle (currently 4 weeks). Below you will find a description of the expectations and resources
 needed to do the role.
@@ -167,6 +177,49 @@ Teams
 *  `Release Management <https://wiki.mozilla.org/Release_Management>`__ (Relman)
 *  `Quality Assurance <https://wiki.mozilla.org/QA>`__ (QA / QE) and their `testing notes <https://quality.mozilla.org/>`__
 
+Hand Off
+--------
+
+If a scheduled release has not completed its graphs prior releaseduty signing
+off, an explicit hand-off describing describing release state should be sent to
+individual folks in releng that are scheduled to come online next or will be
+around for a while after you. #mozbuild in Slack is best. A release@m.c email
+would be useful too.
+
+Escalation
+----------
+
+If a release is blocked. The normal flow is to:
+
+1. confirm issue
+2. determine what service, task kind, infrastructure, or external
+   dependency is involved
+3. file a ticket
+4. determine which team(s) and person(s) should be escalated.
+
+   a. Searching phonebook is useful for org and ownership charts.
+   b. bugzilla and github history
+   c. source code history
+
+5. escalate in the appropriate Slack and Matrix channel(s). At a minimum,
+   #releaseduy@matrix.
+6. determine who is available to help based on above. What hours they
+   work, who is their manager, etc
+7. ask for help if you can’t determine the above.
+
+Good resources within releng:
+
+-  general release configuration (taskgraph): tomprince/callek
+-  scopes / ciadmin: tomprince/mtabara
+-  chainoftrust (cot): aki
+-  scriptworker (general): aki/jlorenzo
+-  beetmoverscript / bouncer / artifact related: mtabara
+-  signing / signingscript / autograph: aki/catlee
+-  balrog / balrogscript / updates related: bhearsum/nthomas
+-  l10n / treescript / addonscript: callek
+-  pushapkscript / mozapkpublisher: jlorenzo
+-  shipit / shipitscript: rail
+
 Other useful resources
 ----------------------
 
@@ -238,3 +291,22 @@ release in the ../releases/FUTURE/ dir. See `future release support <../releases
 8. *How do I coordinate with marketing on release day?*
 
 Join the #release-coordination channel on Mozilla Slack
+
+9. What is cdntest and localtest?
+
+``-cdntest`` and ``-localtest`` channels serve releases from the releases
+directory (mirrors or CDN) or candidates directory depending on the release and
+channel. They are testing channels used before we serve from the *real* update
+channel, but they use the *actual files* that will be served once a release is
+published.
+
+10. What's the difference between Firefox and DevEdition?
+
+In the beta cycle, ``Firefox`` and ``Devedition`` are different products
+built based on the same in-tree revision. Their functionality is the
+same but branding options differ. 
+
+11. What do the terms ``releases directory``, ``mirrors`` and ``CDN`` mean?
+
+``releases directory``, ``mirrors`` and ``CDN`` are different terms for the same
+concept - the CDN from which shipped releases are served.

@@ -1,4 +1,4 @@
-MergeDuty
+Merge Duty
 =========
 
 All code changes to Firefox land in the
