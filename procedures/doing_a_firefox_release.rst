@@ -40,11 +40,11 @@ Release ETA - If you are asked to give a "Release ETA", you do not need to fill 
 
 Partials - partials should be auto populated. The list of partials are previous released versions that users are using
 currently that we want to provide a special update to that is small in download size and is a diff of the user's current
-version and the new version of Firefox you are about to create and ship. The autopopulated versions are usually based on
+version and the new version of Firefox you are about to create and ship. The auto-populated versions are usually based on
 which versions are currently the most used by users.
 
 A note on release promotion: Releases do not create new builds of Firefox. Instead, the automation will take existing
-builds from the revision that was created and built when that revesion was pushed (checked in). We refer to this as
+builds from the revision that was created and built when that revision was pushed (checked in). We refer to this as
 "Release Promotion". For that reason, the revision must have builds started or complete and  associated with the target
 revision. To see the builds of a given pushed revision, use `Treeherder <https://treeherder.mozilla.org>`_.
 
@@ -53,12 +53,12 @@ times we have had to create and recreate a release prior to shipping it to users
 automation fails or or Firefox fails to pass QA.
 
 Once the form is filled out, click `Start tracking it`. Note this does not actually kick off any release automation. It
-merely primes the relaese in Shipit so that you can start triggering the various phases.
+merely primes the release in Shipit so that you can start triggering the various phases.
 
 Trigger the phases of the release
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-After creating a release in Shipit, you can see it via the "Relaeses" tab. From that tab, you can initiate a phase. For
+After creating a release in Shipit, you can see it via the "Releases" tab. From that tab, you can initiate a phase. For
 most products, there are three phases: "promote", "push", and "ship".
 
 Promote - as mentioned above, Shipit and release automation do not actually create any new Firefox builds. It instead
@@ -67,7 +67,7 @@ of release automation that does just that. Common tasks in this phase are signin
 builds, uploading build artifacts to a staging location on `http://archive.mozilla.org/` (S3), staging the release on
 our update server, Balrog, and running install and update testing.
 
-Push - This phase takes all the build artifacs that were promoted and uploaded to the staging location on archive.m.o
+Push - This phase takes all the build artifacts that were promoted and uploaded to the staging location on archive.m.o
 and pushes (copies) them to a final archive.m.o directory. It will also do some final update testing.
 
 Ship - This final phase will make the release live and available on mozilla.org and start serving updates to existing
@@ -81,9 +81,10 @@ through the `Taskcluster's Task Monitor UI <https://firefox-ci-tc.services.mozil
 an eye on these tasks. If any of them fail, escalate it to the :ref:`Release Engineering team <release-duty-teams>` via
 the proper :ref:`communications <release-duty-communication>`
 
-4. Signing off in Balrog
+Signing off in Balrog
+^^^^^^^^^^^^^^^^^^^^^
 
- If the channel you are releasing is `Beta` or a mobile product, no further
+If the channel you are releasing is `Beta` or a mobile product, no further
 action is required. If you are shipping a `ESR` or `Release` release, you also
 need to sign off in Balrog itself via the `Balrog Admin UI <https://balrog.services.mozilla.com>`_
 
@@ -137,7 +138,7 @@ Taskcluster
 Firefox is released via the same tooling that's used to build and test Firefox. We use our Mozilla in-house continuous
 integration (CI) platform `Taskcluster <https://docs.taskcluster.net/docs>`_ to drive the tasks and workers. The main
 service in this platform is the Taskcluster Queue. The queue takes requests of tasks and coordinates with a pool of
-workers to actually conduct the task work. The various schedulding and dependency logic is defined in `taskgraph
+workers to actually conduct the task work. The various scheduling and dependency logic is defined in `taskgraph
 <https://firefox-source-docs.mozilla.org/taskcluster/taskgraph.html>`_. The workers are trusted, locked down, and owned
 by Release Engineering. They are `scriptworker <https://github.com/mozilla-releng/scriptworker>`_ based and the various
 implementations live `here <https://github.com/mozilla-releng/scriptworker-scripts>`_
