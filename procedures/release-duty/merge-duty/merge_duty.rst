@@ -1,5 +1,5 @@
 Merge Duty
-=========
+==========
 
 All code changes to Firefox land in the
 `mozilla-central <https://hg.mozilla.org/mozilla-central>`__ repository

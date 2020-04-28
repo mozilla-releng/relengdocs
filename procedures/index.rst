@@ -1,8 +1,8 @@
 .. _releng_procedures:
 
-==============================
+==========
 Procedures
-==============================
+==========
 
 Procedures that don't easily fit elsewhere.
 
