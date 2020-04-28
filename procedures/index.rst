@@ -1,7 +1,7 @@
 .. _releng_procedures:
 
 ==============================
-Release Engineering Procedures
+Procedures
 ==============================
 
 Procedures that don't easily fit elsewhere.
@@ -11,9 +11,7 @@ Procedures that don't easily fit elsewhere.
     :glob:
 
     doing_a_firefox_release.rst
-    release_duty.rst
-    merge_duty.rst
-    merge_new_esr_branch.rst
+    release-duty/index.rst
     Testing_Autograph.rst
     TCW_Process.rst
     TCW_RelEng.rst

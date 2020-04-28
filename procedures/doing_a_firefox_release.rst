@@ -20,6 +20,7 @@ High level
 1. Connect to Shipit.
 2. Initiate a new release
 3. Trigger the various phases of the release
+4. Sign off in Balrog
 
 Connect to the VPN
 ^^^^^^^^^^^^^^^^^^
@@ -70,9 +71,7 @@ Push - This phase takes all the build artifacs that were promoted and uploaded t
 and pushes (copies) them to a final archive.m.o directory. It will also do some final update testing.
 
 Ship - This final phase will make the release live and available on mozilla.org and start serving updates to existing
-users via our updae server Balrog. If the channel you are releasing is `Beta`, no further action is required. If you are
-shipping a `ESR` or `Release` release, you also need to sign off in Balrog itself via the `Balrog Admin UI
-<https://balrog.services.mozilla.com/>`_. See `Types of releases <#typesofreleases>`_ below for more.
+users via our update server Balrog.. See `Types of releases <#typesofreleases>`_ below for more.
 
 In most cases, you would trigger each phase individually, one at a time. Note: by design, it is possible to only click a
 later phase and Shipit is smart enough to backfill tasks from uninitiated earlier phases.
@@ -82,22 +81,37 @@ through the `Taskcluster's Task Monitor UI <https://firefox-ci-tc.services.mozil
 an eye on these tasks. If any of them fail, escalate it to the :ref:`Release Engineering team <release-duty-teams>` via
 the proper :ref:`communications <release-duty-communication>`
 
-How these taskcluster tasks are scheduled. Shipit uses Taskcluster actions and the "taskgraph" tool to schedule what
+4. Signing off in Balrog
+
+ If the channel you are releasing is `Beta` or a mobile product, no further
+action is required. If you are shipping a `ESR` or `Release` release, you also
+need to sign off in Balrog itself via the `Balrog Admin UI <https://balrog.services.mozilla.com>`_
+
+To guard against bad actors and compromised credentials we require that
+any changes to primary release channels (beta, release, ESR) in Balrog
+are signed off by at least two people.
+
+After the scheduled change has been created by the “updates” task in the "ship"
+phase that was triggered in Shipit, and prior to the desired release publish
+time.
+
+-  In context of the other rules, eg
+
+   -  Firefox release:
+      https://balrog.services.mozilla.com/rules?product=Firefox&channel=release&onlyScheduledChanges=1
+   -  Firefox ESR:
+      https://balrog.services.mozilla.com/rules?product=Firefox&channel=esr&onlyScheduledChanges=1
+
+Further details and examples can be found on the [[Balrog page|Balrog
+and Scheduled Changes]]
+
+How these taskcluster tasks are scheduled
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Shipit uses Taskcluster actions and the "taskgraph" tool to schedule what
 tasks are needed in each phase. Taskcluster uses special release workers that are under Release Engineering control and
 locked down to do the actual work. See `Source and under the hood <#Sourceandunderthehood>`_ below for more details.
 
-Types of releases
------------------
-
-Automatic Betas
-^^^^^^^^^^^^^^^
-
-TODO
-
-Release Candidates
-^^^^^^^^^^^^^^^^^^
-
-TODO
 
 Other Release Management Tasks
 ------------------------------

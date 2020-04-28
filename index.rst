@@ -29,14 +29,13 @@ Contents:
 
    architecture/index.rst
    best-practices/index.rst
-   future/index.rst
    hosts.rst
-   releng_changelog
    software.rst
    addons/addons.rst
    Balrog & Updates <balrog/index.rst>
    Signing <signing/index.rst>
-   Release Promotion <release-promotion/overview.rst>
+   releng_changelog
+   future/index.rst
 
 .. toctree::
    :caption: Meta
