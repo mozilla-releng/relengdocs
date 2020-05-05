@@ -93,6 +93,7 @@ How to get VPN access
 First you need to be connected to the Mozilla VPN. See the `mana page <https://mana.mozilla.org/wiki/display/SD/VPN>`
 for how to get set up and started with connecting to the VPN.
 
+
 How to get Ship-it access
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -240,8 +241,8 @@ FAQ ---
 'Release promotion' is simply the idea that we take an already existing CI build from (e.g. beta) and promote that to
 being the build we release/ship to users. Prior to this approach, we had always rebuilt Firefox at the start of each new
 release. Long story short, release promotion entails taking an existing set of builds that have already been triggered
-and passed QA and “promoting” them to be used as a release candidate. More on promotion can be found on our wiki `here
-<https://wiki.mozilla.org/ReleaseEngineering/Release_build_promotion>`__
+and passed QA and “promoting” them to be used as a release candidate. More on promotion can be found on our docs `here
+<https://firefox-source-docs.mozilla.org/taskcluster/release-promotion.html#in-depth-relpro-guide>`__
 
 2. *What is the train model?*
 

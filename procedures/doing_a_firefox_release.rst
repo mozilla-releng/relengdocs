@@ -55,6 +55,8 @@ automation fails or or Firefox fails to pass QA.
 Once the form is filled out, click `Start tracking it`. Note this does not actually kick off any release automation. It
 merely primes the release in Shipit so that you can start triggering the various phases.
 
+For more on how to create a release in Shipit, including UI screenshots, see `Relman's documentation <https://wiki.mozilla.org/Release_Management/Release_Process_Checklist_Documentation#Release_Tasks>`_
+
 Trigger the phases of the release
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -81,6 +83,8 @@ through the `Taskcluster's Task Monitor UI <https://firefox-ci-tc.services.mozil
 an eye on these tasks. If any of them fail, escalate it to the :ref:`Release Engineering team <release-duty-teams>` via
 the proper :ref:`communications <release-duty-communication>`
 
+For more on how to trigger phases of a release in Shipit, including UI screenshots, see `Relman's documentation <https://wiki.mozilla.org/Release_Management/Release_Process_Checklist_Documentation#Release_Tasks>`_
+
 Signing off in Balrog
 ^^^^^^^^^^^^^^^^^^^^^
 
@@ -106,6 +110,8 @@ time.
 Further details and examples can be found on the [[Balrog page|Balrog
 and Scheduled Changes]]
 
+For more on how to sign off of a Balrog channel/rule change, including UI screenshots, see `Relman's documentation <https://wiki.mozilla.org/Release_Management/Release_Process_Checklist_Documentation#Release_Tasks>`_
+
 How these taskcluster tasks are scheduled
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -117,7 +123,7 @@ locked down to do the actual work. See `Source and under the hood <#Sourceandund
 Other Release Management Tasks
 ------------------------------
 
-TODO
+Release MGMT have a number of tasks and coordination items they need to address with each release. See an example of the `76 release checklist <https://docs.google.com/spreadsheets/d/1wRSzUShqVrg0O_5fa2Mr611R-DjhpcFk6swJvScj_mQ/edit#gid=221890705>`_
 
 Escalating issues and communications
 ------------------------------------

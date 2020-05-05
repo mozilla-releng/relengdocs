@@ -123,51 +123,9 @@ File a tracking migration bug if there isn't one (e.g. `bug
 Run staging releases
 ~~~~~~~~~~~~~~~~~~~~
 
-In order to prepare a smooth ``b1`` and ``RC``, staging releases are to
-be run in the week before the mergeduty day 1. In order for this to
-happen, we're using `staging releases submitted to
-try <https://firefox-source-docs.mozilla.org/tools/try/selectors/release.html>`__.
+NOTE: we are actively trying to make regular staging release runs part of Sheriff work. They already create staging CI pushes on try. Once they start adding a staging release on top of the CI staging try push, we no longer need to do this step
 
-**For central to beta migration**
-
--  hop on ``central`` repository
--  make sure you're up to date with the tip of the repo
--  ``mach try release --version <future-version.0b1> --migration central-to-beta --tasks release-sim``
-
-**For beta to release migration**
-
--  hop on ``beta`` repository
--  make sure you're up to date with the tip of the repo
--  ``mach try release --version <future-version.0> --migration beta-to-release --tasks release-sim``
-
-These will create try pushes that look-alike the repos once they are
-merged. Once the decision tasks of the newly created CI graphs are
-green, staging releases can be created off of them via the
-`shipit-staging <https://shipit.staging.mozilla-releng.net/>`__
-instance.
-
-One caveat here is the list of partials that needs to be filled-in.
-:warning: The partials need to exist in
-`S3 <http://ftp.stage.mozaws.net/pub/firefox/releases/>`__ and be valid
-releases in `Balrog
-staging <https://balrog-admin-static-stage.stage.mozaws.net/>`__.
-
-Ideally staging releases are triggered both on *Monday/Tuesday* but also
-on *Thursday/Friday* to ensure that we're up to date with all the
-patches that Sheriffs are landing before the ``RC`` week.
-
-Once the staging releases are being triggered, it's highly recommended
-that at least a comment is being dropped to Sheriffs team
-(e.g. ``Aryx``) to let them know these are happening in order to: \*
-avoid stepping on each others toes as they may run staging releases as
-well \* make sure we're up-to-date to recent patches that they may be
-aware of
-
-:warning:
-   Allow yourself enough time to wait for these staging releases
-   to be completed. Since they are running in ``try``, they have the lowest
-   priority even on the staging workers so it usually takes longer for them
-   to complete.
+:ref:`how to a staging release against a merge simulation CI try push <staging-release>`
 
 Do migration no-op trial runs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
