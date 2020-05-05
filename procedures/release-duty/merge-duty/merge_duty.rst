@@ -27,8 +27,6 @@ nearly three weeks, with *three* major days of activity:
       board <#set-up-mergeduty-trello-tracking-board>`__
    -  `File tracking migration bug <#file-tracking-migration-bug>`__
    -  `Run staging releases <#run-staging-releases>`__
-   -  `Access and setup the merge remote
-      instance <#access-and-setup-the-merge-remote-instance>`__
    -  `Do migration no-op trial runs <#do-migration-no-op-trial-runs>`__
    -  `Sanity check no blocking migration
       bugs <#sanity-check-no-blocking-migration-bugs>`__
@@ -48,8 +46,6 @@ nearly three weeks, with *three* major days of activity:
    -  `Run l10n bumper <#run-the-l10n-bumper>`__
    -  `Tag central and bump versions <#tag-central-and-bump-versions>`__
    -  `Bump mozilla-esr <#bump-esr-version>`__
-   -  `Turn off merge
-      instance <#turn-off-the-long-living-merge-instance>`__
    -  `Reply to RelMan that procedure is
       completed <#reply-to-relman-central-bump-completed>`__
    -  `Update wiki versions <#update-wiki-versions>`__
@@ -197,7 +193,7 @@ mozilla-beta->mozilla-release migration no-op trial run
 .. code:: yaml
 
    force-dry-run: true
-   merge_flavor: beta-to-release
+   behavior: beta-to-release
    push: true
 
 mozilla-central->mozilla-beta migration no-op trial run
@@ -209,7 +205,7 @@ mozilla-central->mozilla-beta migration no-op trial run
 .. code:: yaml
 
    force-dry-run: true
-   merge_flavor: central-to-beta
+   behavior: central-to-beta
    push: true
 
 mozilla-esr bump no-op trial run
@@ -221,7 +217,7 @@ mozilla-esr bump no-op trial run
 .. code:: yaml
 
    force-dry-run: true
-   merge_flavor: bump-esr
+   behavior: bump-esr
    push: true
 
 Diff should be similar to `this
@@ -301,7 +297,7 @@ Merge beta to release
 .. code:: yaml
 
    force-dry-run: false
-   merge_flavor: beta-to-release
+   behavior: beta-to-release
    push: true
 
 :warning:
@@ -362,7 +358,7 @@ Merge central to beta
 .. code:: yaml
 
    force-dry-run: false
-   merge_flavor: central-to-beta
+   behavior: central-to-beta
    push: true
 
 :warning:
