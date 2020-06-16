@@ -465,20 +465,25 @@ Update wiki versions
    -  `The current
       cycle <https://wiki.mozilla.org/index.php?title=Template:CURRENT_CYCLE>`__
 
-Bump Nightly version in ShipIt
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Bump Nightly version and release dates in ShipIt
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-ShipIt currently hard-codes the version of Nightly that's being released.
-It doesn't automatically updated because it would need to know when a
-new nightly was available, not just when the version had been updated
-in-tree. Everything up to merging this pull request can be done early,
-but the PR must not be merged before the first nightly has been built
-and published with the new version.
+ShipIt currently hard-codes the version of Nightly that's being released, as
+well as the release dates.
+
+It doesn't get automatically updated because it would need to know when a new
+nightly was available, not just when the version had been updated in-tree.
+Everything up to merging this pull request can be done early, but the PR must
+not be merged before the first nightly has been built and published with the
+new version.
 
 1. ``git clone git@github.com:mozilla-releng/shipit.git``
 2. ``git checkout -b nightly_version_bump_${version}``
 3. Edit FIREFOX_NIGHTLY's major version in
    https://github.com/mozilla-releng/shipit/blob/master/api/src/shipit_api/common/config.py#L48
-4. Commit, and submit a pull request
-5. Merge the pull request *after* a new nightly version has been pushed
+4. Edit the known dates at  
+   https://github.com/mozilla-releng/shipit/blob/master/api/src/shipit_api/common/config.py#L54-L59
+   Especially `NEXT_RELEASE_DATE` `LAST_RELEASE_DATE` `NEXT_MERGE_DATE` `LAST_MERGE_DATE`
+5. Commit, and submit a pull request
+6. Merge the pull request *after* a new nightly version has been pushed
    to CDNs
