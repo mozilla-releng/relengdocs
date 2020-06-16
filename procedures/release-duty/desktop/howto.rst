@@ -28,7 +28,7 @@ release is stuck.
 
 Release Candidate(RC) week and Beta 1: beta1 releases are initiated manually by
 Release Management. Automatic betas can be disabled via Shipit. See Shipit
-documentation (TODO add link and docs) for disabling and renabling automatic
+documentation (TODO add link and docs) for disabling and re-enabling automatic
 betas via the Shipit UI. When we create a Release Candidate (see below), we
 close mozilla-beta via Treestatus which stops developers from landing patches
 on the Beta based repository. We keep it closed for one week and Relman disable
@@ -70,7 +70,7 @@ Balrog here (TODO add URL or docs)
 ESR and Dot Releases
 ^^^^^^^^^^^^^^^^^^^^
 
-ESR and dot releases releases are similiarly all initiated and triggered by
+ESR and dot releases releases are similarly all initiated and triggered by
 Release Management. Dot releases are releases on the release channel that are
 not full new major version based changes. e.g. 76.0.1 vs 76.0. In other words,
 they are not RC based releases. releaseduty is expected to monitor the graphs
