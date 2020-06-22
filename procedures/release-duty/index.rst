@@ -36,6 +36,17 @@ tools
 Communication
 -------------
 
+Slack Channels
+~~~~~~~~~~~~~~~
+
+Join Mozilla's Slack network using information from `the wiki <https://wiki.mozilla.org/NDA-Slack>`__
+
+You ought to be present and pay attention to conversations happening in:
+
+* **#releaseduty-mobile** (where `mobile` and other Github releng-backedup automation projects's teams raise issues)
+* **#releng-notifications** (where automation notifications are going, useful to know the state of our automation infrastructure state)
+* **#taskcluster-cloudops** (where CloudOps double-checks with RelEng whether it's safe to deploy changes or not on their side)
+
 Matrix Channels
 ~~~~~~~~~~~~~~~
 
@@ -229,7 +240,7 @@ Other useful resources
 Glossary
 --------
 
-*  WNP - The “What's New Page” can be set to appear after an upgrade, to tell end-users of any changes in the browser they should be aware of. 
+*  WNP - The “What's New Page” can be set to appear after an upgrade, to tell end-users of any changes in the browser they should be aware of.
 *  FF - Firefox
 *  TB - Thunderbird
 *  b1, b2, etc - beta release 1, beta release 2, etc
@@ -305,7 +316,7 @@ published.
 
 In the beta cycle, ``Firefox`` and ``Devedition`` are different products
 built based on the same in-tree revision. Their functionality is the
-same but branding options differ. 
+same but branding options differ.
 
 11. What do the terms ``releases directory``, ``mirrors`` and ``CDN`` mean?
 
