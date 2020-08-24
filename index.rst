@@ -36,6 +36,7 @@ Contents:
    Signing <signing/index.rst>
    releng_changelog
    future/index.rst
+   machine-users.rst
 
 .. toctree::
    :caption: Meta
