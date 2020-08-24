@@ -214,3 +214,25 @@ Symptoms: Some langpack submissions fail, but some succeed. Reruns work after so
 Workaround: Rerun each failed task after waiting some time. Contact AMO about rate limiting for our user.
 
 Current fix: Our current addonscript AMO user is supposed to bypass rate limiting checks. This should work unless something changes or breaks.
+
+Intermittent errors
+~~~~~~~~~~~~~~~~~~~
+
+2020.08.24: a `langpack task <https://firefox-ci-tc.services.mozilla.com/tasks/J_VRZ2YWRU2Iyfwarovc3A/runs/0>`_ ran out of retries for ``bg`` and ``az``. A rerun fixed it::
+
+    addonscript.exceptions.SignatureError: Expected 1 file. Got (0) full response:
+    {
+        'guid': 'langpack-bg@devedition.mozilla.org',
+        'active': False,
+        'automated_signing': True,
+        'url': 'https://addons.mozilla.org/api/v3/addons/langpack-bg@devedition.mozilla.org/versions/81.0buildid20200824150741/uploads/43e64895a06348c588b088ef218ec211/',
+        'files': [],
+        'passed_review': False,
+        'pk': '43e64895a06348c588b088ef218ec211',
+        'processed': False,
+        'reviewed': False,
+        'valid': False,
+        'validation_results': None,
+        'validation_url': 'https://addons.mozilla.org/en-US/developers/upload/43e64895a06348c588b088ef218ec211',
+        'version': '81.0buildid20200824150741'
+    }
