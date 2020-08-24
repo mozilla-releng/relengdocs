@@ -6,6 +6,15 @@ This page best serves the people that have previously been into the releaseduty 
 
 _**As releaseduty squirrels are the ones with the best context when it comes to releases, they are the ones to edit this page and amend it accordingly. Keep in mind that changes should be in compliance with the other pieces of documentation.**_
 
+## During 81.0 >= 2020-08-24
+### Changed
+- L10n bumper will look at the hg pushlog for the default revision, rather than Elmo. If we need to pin a previous revision due to bustage, land a change updating the revision and changing `pin` to `true` for that locale.
+- ESR68 l10n bumper disabled.
+
+## During 80.0 >= 2020-07-27
+### Changed
+- Lots of accounts disabled; watch for fallout!
+
 ## During 75.0 >= 2020-04-06
 ### Changed
 - Changelog moved to [rtd](https://moz-releng-docs.readthedocs.io/en/latest/releng_changelog.html)
