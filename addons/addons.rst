@@ -173,3 +173,44 @@ section <#how-to-handle-new-languages-for-release>`__ ### 20 |Success|
 .. |Adjust Human URL 1| image:: /addons/media/Screenshot_18.png
 .. |Adjust Human URL 2| image:: /addons/media/Screenshot_19.png
 .. |Success| image:: /addons/media/Screenshot_20.png
+
+Troubleshooting
+---------------
+
+These are the various ways in which addonscript can generally break when communicating with AMO. Because this initial draft is being written without directly seeing examples of bustage, the descriptions may be a bit rough. We can fill out "this error message means *this*" as we encounter them.
+
+The initial meeting notes are `here <https://docs.google.com/document/d/1ANA-bJYHeWUTsU4wHMykZK73kqd_rdzkG3daWFGUUIw/edit#>`_.
+
+Firefox version is not known
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Symptoms: TBD
+
+Workaround: The AMO team submits new Firefox versions ahead of time.
+
+Future fix: AMO team plans to add a privileged API for releng to create new versions.
+
+Submitting a listed langpack for the first time
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Symptoms: TBD
+
+Workaround: log in to AMO and submit the langpack through the website. This process will require adding some metadata that cannot currently be submitted through the API: license, version, etc.
+
+This is `documented above <#how-to-handle-new-languages-for-release>`_.
+
+Issues:
+
+-  `error on submitting a new addon as channel=listed via the api #12709 <https://github.com/mozilla/addons-server/issues/12709>`_
+-  `Add an API for releng to submit entirely new locales #15353 <https://github.com/mozilla/addons-server/issues/15353>`_
+
+Future fix: add an API for releng to submit new locales, or auto-detect the user and langpack and do the right thing.
+
+Submitting addons can be rate-limited
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Symptoms: Some langpack submissions fail, but some succeed. Reruns work after some time has passed.
+
+Workaround: Rerun each failed task after waiting some time. Contact AMO about rate limiting for our user.
+
+Current fix: Our current addonscript AMO user is supposed to bypass rate limiting checks. This should work unless something changes or breaks.
