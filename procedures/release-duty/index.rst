@@ -221,16 +221,16 @@ If a release is blocked. The normal flow is to:
 
 Good resources within releng:
 
--  general release configuration (taskgraph): tomprince/callek
--  scopes / ciadmin: tomprince/mtabara
+-  general release configuration (taskgraph): aki/jlorenzo
+-  scopes / ciadmin: jlorenzo/mtabara
 -  chainoftrust (cot): aki
 -  scriptworker (general): aki/jlorenzo
--  beetmoverscript / bouncer / artifact related: mtabara
+-  beetmoverscript / bouncer / artifact related: mtabara/aki
 -  signing / signingscript / autograph: aki/catlee
--  balrog / balrogscript / updates related: bhearsum/nthomas
--  l10n / treescript / addonscript: callek
--  pushapkscript / mozapkpublisher: jlorenzo
--  shipit / shipitscript: rail
+-  balrog / balrogscript / updates related: bhearsum/mtabara
+-  l10n / treescript / addonscript: aki/mtabara
+-  pushapkscript / mozapkpublisher: jlorenzo/mtabara
+-  shipit / shipitscript: bhearsum/jlorenzo
 
 Other useful resources
 ----------------------
