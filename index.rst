@@ -29,6 +29,7 @@ Contents:
 
    architecture/index.rst
    best-practices/index.rst
+   taskcluster/index.rst
    hosts.rst
    software.rst
    addons/addons.rst
