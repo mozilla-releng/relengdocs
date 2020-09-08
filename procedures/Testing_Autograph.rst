@@ -28,6 +28,25 @@ There is a tier 3 task that doesn't run automatically. This task,
 ``mar-signing-autograph-stage-linux64-nightly/opt``, can be added to a push
 that has run nightly builds and repackage tasks.
 
+With indexes
+^^^^^^^^^^^^
+
+First, go to `the latest Firefox desktop index <https://firefox-ci-tc.services.mozilla.com/tasks/index/gecko.v2.mozilla-central.latest.taskgraph/decision-nightly-desktop>`_. Click on ``View Task``. Click on ``Task Group`` at the top left to go to the taskgroup view.
+
+Make sure you're signed in, then click on the three dots in the lower right hand corner. ``Add new jobs``. Add ``mar-signing-autograph-stage-linux64-shippable/opt`` to the list of tasks in the input so it looks like::
+
+    tasks: [mar-signing-autograph-stage-linux64-shippable/opt]
+    times: 1
+
+Click ``Add new jobs`` in the lower left. Once the task finishes, click on the log. You'll see a line like::
+
+    [task 2020-09-08T20:12:48.698Z] Creating task with taskId Z6FmfYVCRpOimAafnoziKQ for mar-signing-autograph-stage-linux64-shippable/opt
+
+In which case, check task ``Z6FmfYVCRpOimAafnoziKQ`` for status. Report back to the bug.
+
+With treeherder
+^^^^^^^^^^^^^^^
+
 First, go to `mozilla-central treeherder`_. Make sure you're logged in
 (top right).
 
