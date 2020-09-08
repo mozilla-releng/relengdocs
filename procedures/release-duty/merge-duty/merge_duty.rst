@@ -26,7 +26,7 @@ nearly three weeks, with *three* major days of activity:
    -  `Set up mergeduty trello tracking
       board <#set-up-mergeduty-trello-tracking-board>`__
    -  `File tracking migration bug <#file-tracking-migration-bug>`__
-   -  `Turn off beta l10n bumper on RC day`__
+   -  `Turn off beta l10n bumper on RC day <#turn-off-beta-l10n-bumper-on-rc-day>`__
    -  `Run staging releases <#run-staging-releases>`__
    -  `Do migration no-op trial runs <#do-migration-no-op-trial-runs>`__
    -  `Sanity check no blocking migration
