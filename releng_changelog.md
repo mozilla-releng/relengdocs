@@ -10,6 +10,7 @@ _**As releaseduty squirrels are the ones with the best context when it comes to 
 ### Changed
 - L10n bumper will look at the hg pushlog for the default revision, rather than Elmo. If we need to pin a previous revision due to bustage, land a change updating the revision and changing `pin` to `true` for that locale.
 - ESR68 l10n bumper disabled.
+- partner builds moved from b8 to b5 to adjust for shorter release cycles
 
 ## During 80.0 >= 2020-07-27
 ### Changed
