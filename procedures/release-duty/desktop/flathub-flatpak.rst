@@ -8,15 +8,11 @@ https://flathub.org/apps/details/org.mozilla.firefox since Firefox 74.0.
 Channels used
 -------------
 
-As of September, 2020 we build and publish two flatpaks: \* mozilla-beta
-flatpak that is published to the Flathub ``beta`` channel. This does not
-have an UI and is used by ~1K users. It’s mainly for testing purposes \*
-mozilla-release flatpak that is published to the Flathub ``stable``
-channel[2]. This is the main flatpak that users get.
-
-In order to publish to both channels, we use the flatpak
-scriptworker[3]. The procedure to push is the same for both channels,
-only the ``token`` value depends. Both of them are baked in our SOPS.
+As of September, 2020 we build and publish two flatpaks:
+- mozilla-beta flatpak that is published to the Flathub ``beta`` channel. This does not
+have an UI and is used by ~1K users. It’s mainly for testing purposes
+- mozilla-release flatpak that is published to the Flathub ``stable``
+channel. This is the main flatpak that users get.
 
 The flatpak store (Flathub) comes with the concept of tracks (à la
 Google Play Store). Release promotion automatically uploads to these
@@ -45,7 +41,7 @@ As of September 2020, the Flatpak doesn’t have a formal UI to make
 changes to the flatpaks via authorized credentials. Most of the
 applications shipped to Flathub are done so as part of the Flathub’s CI
 on Github. Firefox is among the very few applications that are being
-shipped directly from our automation via Flathub’s API.
+shipped from our automation via Flathub’s API.
 
 For any urgent changes, Flathub administrators have leverage and can be
 contacted to help. Details on how to contact them ca be found in the
