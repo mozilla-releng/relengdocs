@@ -24,6 +24,10 @@ _**As releaseduty squirrels are the ones with the best context when it comes to 
 ### Fixed
 - Scriptworker now catches a number of `asyncio.TimeoutError`s, and should be more robust.
 
+## During 73.0 >= 2020-03-10
+### Added
+- added support for shipping Firefox Flatpaks to [Flathub](https://flathub.org/apps/details/org.mozilla.firefox)
+
 ## During 73.0 >= 2020-02-10
 ### Changed
 - py38 rollout for scriptworkers, tooltool, balrog, and other release services
