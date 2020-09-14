@@ -23,8 +23,6 @@ nearly three weeks, with *three* major days of activity:
 
 -  Do the prep work a week before the merge
 
-   -  `Set up mergeduty trello tracking
-      board <#set-up-mergeduty-trello-tracking-board>`__
    -  `File tracking migration bug <#file-tracking-migration-bug>`__
    -  `Turn off beta l10n bumper on RC day <#turn-off-beta-l10n-bumper-on-rc-day>`__
    -  `Run staging releases <#run-staging-releases>`__
@@ -64,57 +62,6 @@ first week and then ``m-c`` -> ``m-b`` in the follow-up week.
 Do the prep work a week before the merge
 ----------------------------------------
 
-Set up mergeduty trello tracking board
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Rather than extend Releasewarrior with more complexity, the idea here is
-to try Trello and use Template cards for todo tracking.
-
-To track human tasks and issues during merges, we use the following
-`trello board <https://trello.com/b/AyyFAEbS/mergeduty-tasks>`__.
-
-**First, ensure the board is clean**:
-
--  In the ``Merge Tasks`` list, select
-   ``Archive all cards in this list``
--  Sanity check that all items in ``Postmortem Issues`` and
-   ``Postmortem Action Items`` lists have been resolved then:
-
-   -  In the ``Postmortem Issues`` list, select
-      ``move all cards in this list`` to the
-      ``Archived Postmortem Issues`` list
-   -  In the ``Postmortem Action Items`` list, select
-      ``move all cards in this list`` to the
-      ``Archived Postmortem Action Items`` list
-
-**Now prep the board for this cycle's planned merges**:
-
--  For each card in the ``Templates`` list, select the card then under
-   Actions, choose ``Copy`` and put in the ``Merge Tasks`` list
--  For each newly copied card in the ``Merge Tasks`` list
-
-   -  Add the people on mergeduty to the members list
-   -  Set a deadline for each that correspond with the current `merge
-      schedule <https://calendar.google.com/calendar/embed?src=bW96aWxsYS5jb21fZGJxODRhbnI5aTh0Y25taGFiYXRzdHY1Y29AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ>`__
-
-**For each merge task**:
-
-As you go through the steps documented below, update the checklists
-within the cards under ``Merge Tasks``. This helps with hand-off and
-tracking state.
-
-As issues arise, add a card under the ``Merge Issues`` list. Associate
-with bugs where appropriate. Use labels for issues. Each issue should
-either be ``Resolved`` or ``Unresolved`` and some ``Resolved`` issues
-may be also labeled as ``Future Threats``.
-
-**For postmortems**:
-
-After merge days, schedule a postmortem (or use current releaseduty
-postmortem) and move all issues to the ``Postmortem Issues`` list.
-During the postmortem, if any action items come up, track those in the
-``Postmortem Action Items`` list.
-
 File tracking migration bug
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -146,7 +93,7 @@ General steps
 
 1. Go to
    `Treeherder <https://treeherder.mozilla.org/>`__.
-2. Select the repo depending on the merge you want to perform (central, beta or the ESR one). 
+2. Select the repo depending on the merge you want to perform (central, beta or the ESR one).
 3. On the latest push, click on the down arrow at the top right corner.
 4. Select “Custom push action…”
 5. Choose ``merge-automation``
@@ -490,7 +437,7 @@ new version.
 2. ``git checkout -b nightly_version_bump_${version}``
 3. Edit FIREFOX_NIGHTLY's major version in
    https://github.com/mozilla-releng/shipit/blob/master/api/src/shipit_api/common/config.py#L48
-4. Edit the known dates at  
+4. Edit the known dates at
    https://github.com/mozilla-releng/shipit/blob/master/api/src/shipit_api/common/config.py#L54-L59
    Especially `NEXT_RELEASE_DATE` `LAST_RELEASE_DATE` `NEXT_MERGE_DATE` `LAST_MERGE_DATE`
 5. Commit, and submit a pull request
