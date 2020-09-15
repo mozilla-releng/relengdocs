@@ -5,15 +5,21 @@ As of June 26, 2019, we started signing mac builds on the mac
 notarization pool (Fx69). These tasks also notarize the signed builds,
 and create signed pkg installers.
 
-Machines
---------
+Machine and maintenance
+-----------------------
 
-A machine list is
+The machine list is
 `here <https://github.com/escapewindow/scriptworker-scripts/wiki/machines>`__.
 
 We’re working on adding deployment support to
 `ronin-puppet <https://github.com/mozilla-platform-ops/ronin_puppet/>`__.
-Currently we need to ssh in to debug and deploy fixes.
+We want to be able to fully automate rollout, from imaging to rollout. We also want to be able to bump dependency versions in ronin-puppet and have it Just Work. The todo list for those is `here <https://github.com/mozilla-releng/scriptworker-scripts/wiki/mac-todo>`__.
+
+Until then, use these links:
+
+- `testing iscript <https://github.com/mozilla-releng/scriptworker-scripts/wiki/Testing-iscript>`__
+- `manual rollout with puppet <https://github.com/mozilla-releng/scriptworker-scripts/wiki/Manual-Rollout-with-Puppet>`__ for prod and tb-prod
+- `manual rollout <https://github.com/mozilla-releng/scriptworker-scripts/wiki/manual-rollout>`__ for dep, until `bug 1648845 <https://bugzilla.mozilla.org/show_bug.cgi?id=1648845>`__ is fixed.
 
 General workflow
 ----------------
