@@ -125,3 +125,17 @@ How to manually push a snap to the store, in case automation failed?
 3. If you forgot ``--release`` in the previous command, you can still
    use ``snap release [...]`` (see previous paragraph) to make the snap
    available to a channel.
+
+Refresh macaroons credentials
+-----------------------------
+
+Snaps operate via `macaroons`_ to authenticate requests against the
+Store. These are used by k8s ``pushsnap`` scriptworkers to perform
+operations with the snaps.
+
+When the macaroons token expiry, they need to be refreshed. Specific
+instructions on how to do that lie within the ``ubuntu-store.txt`` in
+the private repo.
+
+.. _macaroons: https://dashboard.snapcraft.io/docs/api/macaroon.html
+
