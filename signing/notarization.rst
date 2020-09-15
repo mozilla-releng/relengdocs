@@ -24,17 +24,41 @@ Until then, use these links:
 General workflow
 ----------------
 
-IScript will:
+In the ``mac_notarize`` behavior, iScript will:
 
 -  extract the files from a dmg
 -  sign widevine and omnija (autograph signing)
 -  sign mac, without the mac signing servers
--  create a zipfile of the .app files
+-  create .pkg installers and sign them
+-  create a zipfile of the .app and .pkg files
 -  send that zipfile to Apple for notarization
 -  poll Apple for notarization status
 -  on success, “staple” the notarization to the app
 -  create tarballs of the .app files
--  create .pkg installers and sign them
+
+However, we would often have issues in the polling step or otherwise end up wasting expensive signing worker cycles just sitting there idle.
+
+To remedy this, we split notarization into three behaviors: ``mac_notarize_part_1``,
+``notarization_poller``, and ``mac_notarize_part_3``.
+
+In the ``mac_notarize_part_1`` behavior, iScript will:
+
+- extract the files from a dmg
+- sign widevine and omnija (autograph signing)
+- sign mac, without the mac signign servers
+- create a zipfile of the .app and .pkg files
+- send that zipfile to Apple for notarization
+- create tarballs of the .app files, unstapled
+- upload the tarballs and .pkg files as artifacts, as well as a uuids json file.
+
+In the ``notarization_poller`` task, ``notarization_poller`` will download the
+uuids json file from the ``part_1`` task, and poll Apple. If they all return
+complete, the task goes green. Otherwise the task will fail or throw an exception.
+
+In the ``mac_notarize_part_3`` behavior, iScript will:
+
+- download the tarballs and .pkg files from ``part_1``, staple the notarization,
+  and upload
 
 Debugging
 ---------
@@ -51,12 +75,12 @@ everywhere. Generally a rerun has fixed this issue.
 Escalation
 ----------
 
-Aki, Nick, and Simon know notarization the best, and can help debug.
+Aki knows notarization the best, and can help debug.
 
 Links
 -----
 
 -  https://github.com/escapewindow/scriptworker-scripts/wiki/Testing-iscript
 -  https://github.com/escapewindow/scriptworker-scripts/wiki/manual-rollout
+-  https://github.com/escapewindow/scriptworker-scripts/wiki/manual-rollout-with-puppet
 -  https://github.com/escapewindow/scriptworker-scripts/wiki/machines
--  https://trello.com/b/kyBE2ZIt/mac-notary
