@@ -413,3 +413,47 @@ match between the build and the hook that starts the build.
 
     -  Ensure that the hook is triggered automatically by waiting a day,
        then checking the hook or indexes
+
+How to set up taskgraph for mobile
+==================================
+
+Setting up taskgraph for mobile is similar to setting up taskgraph for any
+standalone project, especially github standalone projects: install
+`taskgraph <https://hg.mozilla.org/ci/taskgraph>`__ in a virtualenv.
+
+However, you also need to install ``gradle``.
+
+On mac, using homebrew:
+
+1. Install jdk8::
+
+    brew tap homebrew/cask
+    brew cask install homebrew/cask-versions/adoptopenjdk8
+
+2. Install android-sdk::
+
+    brew cask install android-sdk
+
+3. Install gradle::
+
+    brew install gradle
+
+4. Make sure you're pointing to the right java::
+
+    # in your .zshrc or .bashrc
+    export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
+
+    # After sourcing that file, you should get the following version:
+    # > $JAVA_HOME/bin/java -version
+    # openjdk version "1.8.0_265"
+    # OpenJDK Runtime Environment (AdoptOpenJDK)(build 1.8.0_265-b01)
+    # OpenJDK 64-Bit Server VM (AdoptOpenJDK)(build 25.265-b01, mixed mode)
+
+5. test it::
+
+    # In, say, an android-components clone, this should work:
+    ./gradlew tasks --scan
+
+    # And taskgraph optimized should return hundreds of tasks:
+    # (You need https://hg.mozilla.org/build/braindump/ cloned)
+    taskgraph optimized -p ../braindump/taskcluster/taskgraph-diff/params-android-components/main-repo-release.yml | wc -l
