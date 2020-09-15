@@ -32,7 +32,7 @@ Contents:
    taskcluster/index.rst
    hosts.rst
    software.rst
-   addons/addons.rst
+   addons/index.rst
    Balrog & Updates <balrog/index.rst>
    Signing <signing/index.rst>
    releng_changelog
