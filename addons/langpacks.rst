@@ -1,5 +1,5 @@
-Addon Submission Pipeline
-=========================
+Langpack Submission Pipeline
+============================
 
 Terminology:
 ------------
