@@ -195,6 +195,6 @@ The list of people who can ssh in is `here
 ($shortlist) <https://github.com/mozilla-releng/build-puppet/blob/master/manifests/moco-config.pp#L196-L212>`__
 
 Success
-=======
+-------
 
 When everything puppetizes successfully, we're good!
