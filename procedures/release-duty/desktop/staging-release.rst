@@ -13,7 +13,7 @@ See the :ref:`production documentation for how to get Shipit and VPN access <rel
 How-to
 ^^^^^^
 
-In order to prepare a smooth ``b1`` and ``RC``, staging releases should 
+In order to prepare a smooth ``b1`` and ``RC``, staging releases should
 be run weekly or at least one week before RC week. In order for this to
 happen, we're using `staging releases submitted to
 try <https://firefox-source-docs.mozilla.org/tools/try/selectors/release.html>`__.
@@ -58,3 +58,62 @@ aware of
    to be completed. Since they are running in ``try``, they have the lowest
    priority even on the staging workers so it usually takes longer for them
    to complete.
+
+Staging scriptworkers
+^^^^^^^^^^^^^^^^^^^^^
+
+**Reusing builds from a recent release**
+
+We often need to work around a single specific scriptworker, whether
+that entails changing the in-tree code or the ``*script`` itself. While
+triggering staging releases is a valid solution, it is often an
+expensive one as it triggers an entire graph. In order to be more
+efficient, one can use the `scriptworker selector`_ which aims to run a
+selection of scriptworker tasks against builds from a recent release.
+
+There are a number of preset groups of tasks to run. This can be found
+`here`_ but it get also be extended for other tasks/products. To get the
+list of task sets, along with the list of tasks they will run:
+
+::
+
+   mach try scriptworker list
+
+The selector defaults to using tasks from the most recent beta, to use
+tasks from a different release, pass ``--release-type <release-type>``:
+
+::
+
+   mach try scriptworker --release-type release linux-signing
+
+**Override workertype**
+
+One could even extend the aforementioned behavior by also overriding the
+worker type to use. This is particularly useful for staging releases
+against the DEV scriptworker environment. Most of the workerType configs
+we have in-tree are configured as: \* level-3 for production \* level-1
+for fake-production \* level-1-dev for dev
+
+But the latter is not present in-tree by default so it needs to be
+amended. More information on this can be found in the
+`scriptworker-scripts documentation`_. One can either manually change
+tha kind of the task to that specific worker-type, or can simply pass an
+argument to aforementioned command to make the replacement,
+e.g. ``mach try scriptworker TASK-TYPE --release-type beta --worker-override <alias>=<suffix>``,
+where ``TASK-TYPE`` is chosen from one of the
+``mach try scriptworker list`` returns and ``alias`` comes from the
+taskcluster ci config `file`_)
+
+For example, running the beetmover jobs against the most recent beta
+release, but on the DEV worker-type:
+
+::
+
+   mach try scriptworker beetmover-candidates --release-type beta --worker-override beetmover=gecko-1-beetmover-dev
+
+.. _scriptworker selector: https://firefox-source-docs.mozilla.org/tools/try/selectors/scriptworker.html?highlight=scriptworker
+.. _here: https://hg.mozilla.org/mozilla-central/file/tip/tools/tryselect/selectors/scriptworker.py#l18
+.. _scriptworker-scripts documentation: https://scriptworker-scripts.readthedocs.io/en/latest/scriptworkers-dev.html
+.. _file: https://hg.mozilla.org/mozilla-central/file/tip/taskcluster/ci/config.yml#l437
+
+
