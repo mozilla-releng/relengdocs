@@ -64,22 +64,20 @@ Staging scriptworkers
 
 **Reusing builds from a recent release**
 
-We often need to work around a single specific scriptworker, whether
+Outside of mergeduty, during development cycles, we often need to work around a single specific scriptworker, whether
 that entails changing the in-tree code or the ``*script`` itself. While
 triggering staging releases is a valid solution, it is often an
-expensive one as it triggers an entire graph. In order to be more
+expensive one as it generates an entire graph. In order to be more
 efficient, one can use the `scriptworker selector`_ which aims to run a
-selection of scriptworker tasks against builds from a recent release.
-
-There are a number of preset groups of tasks to run. This can be found
-`here`_ but it get also be extended for other tasks/products. To get the
-list of task sets, along with the list of tasks they will run:
+selection of scriptworker tasks against builds from a recent release. There are a number of
+preset groups of tasks to run. The list is configured `here`_ and it get be extended for
+other tasks/products. To get the list of task sets, along with the list of tasks they will run:
 
 ::
 
    mach try scriptworker list
 
-The selector defaults to using tasks from the most recent beta, to use
+The selector defaults to using tasks from the most recent beta.To use
 tasks from a different release, pass ``--release-type <release-type>``:
 
 ::
@@ -88,23 +86,21 @@ tasks from a different release, pass ``--release-type <release-type>``:
 
 **Override workertype**
 
-One could even extend the aforementioned behavior by also overriding the
+One can extend the aforementioned behavior by overriding the
 worker type to use. This is particularly useful for staging releases
 against the DEV scriptworker environment. Most of the workerType configs
-we have in-tree are configured as: \* level-3 for production \* level-1
-for fake-production \* level-1-dev for dev
+we have in-tree are configured as ``level-{1,3}`` for fake/production and ``level-1-dev``
+for dev.
 
 But the latter is not present in-tree by default so it needs to be
 amended. More information on this can be found in the
 `scriptworker-scripts documentation`_. One can either manually change
-tha kind of the task to that specific worker-type, or can simply pass an
+the intree kind's config to that specific worker-type, or can simply pass an
 argument to aforementioned command to make the replacement,
 e.g. ``mach try scriptworker TASK-TYPE --release-type beta --worker-override <alias>=<suffix>``,
 where ``TASK-TYPE`` is chosen from one of the
 ``mach try scriptworker list`` returns and ``alias`` comes from the
-taskcluster ci config `file`_)
-
-For example, running the beetmover jobs against the most recent beta
+taskcluster ci config `file`_). For example, running the beetmover jobs against the most recent beta
 release, but on the DEV worker-type:
 
 ::
