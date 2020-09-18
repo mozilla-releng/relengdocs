@@ -25,3 +25,25 @@ Procedure
 .. image:: /procedures/media/apple_account_holder.png
 
 4. To be continued...
+
+
+Responding to Employee Departures
+=================================
+
+Context
+-------
+
+When an employee leaves the company we must remove them from Mozilla's Apple Developer account. There is
+a mailing list that is updated when this happens (ask someone for details), so we don't need to go
+seek out this information ourselves.
+
+Procedure
+---------
+
+1. Log in to the Apple Developer Account with the Apple Agent account.
+
+2. Go to the ``People`` section of App Store Connect: https://appstoreconnect.apple.com/access/users
+
+3. Search the user list for both the departing employees first name, last name, and e-mail address (they may have one or more accounts - so be careful).
+
+4. Reply to the e-mail stating whether or not apple accounts were removed, eg: "2 apple developer accounts removed" or "no apple developer accounts found"
