@@ -20,6 +20,7 @@ Until then, use these links:
 - `testing iscript <https://github.com/mozilla-releng/scriptworker-scripts/wiki/Testing-iscript>`__
 - `manual rollout with puppet <https://github.com/mozilla-releng/scriptworker-scripts/wiki/Manual-Rollout-with-Puppet>`__ for prod and tb-prod
 - `manual rollout <https://github.com/mozilla-releng/scriptworker-scripts/wiki/manual-rollout>`__ for dep, until `bug 1648845 <https://bugzilla.mozilla.org/show_bug.cgi?id=1648845>`__ is fixed.
+- `mac maintenance <https://github.com/mozilla-releng/scriptworker-scripts/wiki/mac-maintenance>`__ for how to update deps, restart scriptworker, and wipe machines.
 
 General workflow
 ----------------
