@@ -299,8 +299,8 @@ Merge central to beta
 Re-opening the tree(s)
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Ask Sheriffs and RelMan to re-open trees (either ``open`` or
-``approval-only``) so that **l10n bumper can run**.
+`Reopen the mozilla-beta tree <https://treestatus.mozilla-releng.net/static/ui/treestatus/show/mozilla-beta>`__
+by restoring the previous state so that **l10n bumper can run**.
 
 Run the l10n bumper
 ~~~~~~~~~~~~~~~~~~~
@@ -437,9 +437,8 @@ new version.
 2. ``git checkout -b nightly_version_bump_${version}``
 3. Edit FIREFOX_NIGHTLY's major version in
    https://github.com/mozilla-releng/shipit/blob/master/api/src/shipit_api/common/config.py#L48
-4. Edit the known dates at
+4. Edit the `LAST` and `NEXT` known dates (all 6 of them) at
    https://github.com/mozilla-releng/shipit/blob/master/api/src/shipit_api/common/config.py#L54-L59
-   Especially `NEXT_RELEASE_DATE` `LAST_RELEASE_DATE` `NEXT_MERGE_DATE` `LAST_MERGE_DATE`
 5. Commit, and submit a pull request
 6. Merge the pull request *after* a new nightly version has been pushed
    to CDNs
