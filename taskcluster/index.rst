@@ -21,5 +21,6 @@ Specifically for the FirefoxCI cluster.
     :glob:
 
     uploading_an_image
+    troubleshooting_workers
 
 .. vim: nospell :
