@@ -83,3 +83,35 @@ have been superceded by the new ``esr*`` rules.
 .. |platform-deprecation| image:: /procedures/release-duty/desktop/platform-deprecation.png
 .. |watershed| image:: /procedures/release-duty/desktop/watershed.png
 
+
+The Snap case
+-------------
+
+In addition to Balrog, you need to update the Snap store too. For more information about Snap,
+see `ubuntu-snap <ubuntu-snap.rst>`__. Steps:
+
+1. ``docker pull snapcore/snapcraft:stable``
+2. ``docker run -ti snapcore/snapcraft:stable``
+3. ``snapcraft login``. If you don't have credentials, use the team account.
+4. ``snapcraft status firefox`` You should see this kind of output::
+
+    Track    Arch    Channel    Version      Revision
+    esr      amd64   stable     78.3.0esr-1  426
+                    candidate  78.2.0esr-1  413
+                    beta       ^            ^
+                    edge       ^            ^
+    latest   amd64   stable     80.0.1-1     418
+                    candidate  81.0-2       425
+                    beta       82.0b1-1     427
+                    edge       ^            ^
+
+
+5. ``snapcraft close firefox esr/candidate`` and you will get::
+
+    Track    Arch    Channel    Version      Revision
+    esr      amd64   stable     78.3.0esr-1  426
+                    candidate  ^            ^
+                    beta       ^            ^
+                    edge       ^            ^
+
+    The esr/candidate channel is now closed.
