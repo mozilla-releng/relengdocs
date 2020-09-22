@@ -115,3 +115,56 @@ see `ubuntu-snap <ubuntu-snap.rst>`__. Steps:
                     edge       ^            ^
 
     The esr/candidate channel is now closed.
+
+
+Bouncer and EOL'ing the old ESR branch
+--------------------------------------
+
+This includes a couple of things, before and after building/shipping X.3.0esr.
+
+Before GTB of the X.3.0esr release
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. The new ESR branch needs to become the new default in a couple of
+   places. (e.g. UV configs, Snap configs and bouncer aliases). For
+   example, when we switched over to ESR78.3.0, we had to land `this`_
+   on esr78 branch, in advance, to make sure the 78.3.0esr becomes both
+   the ``current-esr`` and ``next-esr`` release returned by bedrock, we
+   update the right Snap, etc.
+
+2. The old ESR branch can be wiped off from
+   central/beta/release/esr(NEW_ESR). During the 78.3.0 for example, we
+   landed a patch similar to
+   `this <https://phabricator.services.mozilla.com/D88618>`__ to remove
+   all occurrences of esr68 and adjust configuration.
+
+After X.3.0esr is shipped
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. Ship-it holds information that gets propagated to `product-details`_
+   which is consumed dynamically by a bunch of places such as
+   `bedrock`_. So whenever we move to the new ESR, while EOL-ing the old
+   one, we also need to update the configurations in Ship-it. When
+   78.3.0esr was released, we amended Ship-it `here`_.
+
+2. Cron jobs in the new ESR branch need to have their configs adjusted
+   so that they query against the correct value in bouncer. Until we
+   branch ESR again, both current/next esr releases will point to a
+   singular release so it needs to be properly updated to reflect the
+   one one. For example once we shipped esr78, we pushed
+   `this <https://phabricator.services.mozilla.com/D88619>`__ on esr78.
+
+3. EOL-ing the old ESR branch. Once X.3.0 is shipped, we can stop
+   generating CI for the old branch. That includes removing all the cron
+   jobs, including but not limited to: periodic updates, nightlies,
+   bouncer checks, searchfox, etc. For retiring and EOL-ing esr68 we’ve
+   landed `this <https://phabricator.services.mozilla.com/D90994>`__.
+
+4. Make sure to close the old ESR branch in `TreeStatus`_ as planned
+   closure.
+
+.. _this: https://phabricator.services.mozilla.com/D88591
+.. _product-details: https://product-details.mozilla.org/1.0/firefox_versions.json
+.. _bedrock: https://product-details.mozilla.org/1.0/firefox_versions.json
+.. _here: https://github.com/mozilla-releng/shipit/pull/458
+.. _TreeStatus: https://treestatus.mozilla-releng.net/static/ui/treestatus/
