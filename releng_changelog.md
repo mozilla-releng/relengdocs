@@ -13,6 +13,7 @@ _**As releaseduty squirrels are the ones with the best context when it comes to 
 - partner builds moved from b8 to b5 to adjust for shorter release cycles
 - partner attributions landed
 - balrog v2 submission
+- ESR68 EOL
 
 ## During 80.0 >= 2020-07-27
 ### Changed
