@@ -5,3 +5,4 @@ Best Practices
     :maxdepth: 2
 
     coding
+    documentation
