@@ -307,6 +307,12 @@ Run the l10n bumper
 
 Run ``l10n-bumper`` against beta:
 
+In theory, this happened during central-to-beta merges after 2020.09.30.
+Verify that ``browser/locales/l10n-changesets.json`` has revisions, not
+``default``, and/or verify that the merge task has l10n-bump in the logs.
+
+Old docs:
+
 We now have automated cron jobs in Taskcluster to perform this step for
 us. Trigger `this
 hook <https://firefox-ci-tc.services.mozilla.com/hooks/project-releng/cron-task-releases-mozilla-beta%2Fl10n-bumper>`__
