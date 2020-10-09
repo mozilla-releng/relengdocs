@@ -146,7 +146,7 @@ interface <https://github.com/taskcluster/taskcluster-cli>`__
 * Download an appropriate binary from `here <https://github.com/taskcluster/taskcluster-cli#installation>`__
 *  Copy the binary somewhere useful, such as somewhere in your `$PATH <http://www.linfo.org/path_env_var.html>`__
 *  Make it executable, if using Mac or Linux: ``chmod a+x /path/to/taskcluster``
-*  Run ``taskcluster signin``  open a browser window and allow you to get temporary client credentials. By default this is valid for 24 hours. **The command will display two ``export`` commands you must copy/paste into your shell**
+*  Run ``taskcluster signin``  to open a browser window and allow you to get temporary client credentials. By default this is valid for 24 hours. **The command will display two ``export`` commands you must copy/paste into your shell**
 *  Familiarize yourself with the subcommands, starting with ``taskcluster help``
 
 
