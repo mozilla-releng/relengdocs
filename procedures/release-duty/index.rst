@@ -134,20 +134,66 @@ the Balrog admin user list and attached to the `releng` role. Also have someone 
 Tooling for debugging and rerunning tasks
 -----------------------------------------
 
+Note many of the task-related operations can be conducted through Treeherder such as rerunning/retriggering a task.
+There is also a command line tool that can be used instead of the UI.
+
 taskcluster
 ~~~~~~~~~~~
 
 Release tasks are usually run through `Taskcluster <https://docs.taskcluster.net/>`__, which has a useful `Command-line
 interface <https://github.com/taskcluster/taskcluster-cli>`__
 
-* Download an appropriate binary from https://github.com/taskcluster/taskcluster-cli#installation
-*  Copy the binary somewhere useful, such as somewhere in your ```$PATH`` <http://www.linfo.org/path_env_var.html>`__
+* Download an appropriate binary from `here <https://github.com/taskcluster/taskcluster-cli#installation>`__
+*  Copy the binary somewhere useful, such as somewhere in your `$PATH <http://www.linfo.org/path_env_var.html>`__
 *  Make it executable, if using Mac or Linux: ``chmod a+x /path/to/taskcluster``
-*  ``taskcluster signin``
-* this will open a browser window and allow you to get temporary client credentials. By default this is valid for 24 hours. **The command will display two ``export`` commands you must copy/paste into your shell**
+*  Run ``taskcluster signin``  open a browser window and allow you to get temporary client credentials. By default this is valid for 24 hours. **The command will display two ``export`` commands you must copy/paste into your shell**
 *  Familiarize yourself with the subcommands, starting with ``taskcluster help``
 
-Note many of the `taskcluster` CLI commands can be conducted through Treeherder such as rerunning a task.
+
+in-bulk taskcluster operations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Sometimes operations need to be performed against a bulk of tasks. In
+order to do that, RelEng has developed a handful of scripts to ease the
+operations. They lie around in the ``braindump`` repository.
+
+::
+
+   hg clone https://hg.mozilla.org/build/braindump/
+   cd braindump/taskcluster
+   mkvirtualenv workspace
+   pip install taskcluster
+
+Follow `this resource <https://github.com/taskcluster/taskcluster/tree/main/clients/client-shell#installation>`__ to download the ``taskcluster-cli`` tool or read
+the previous section.
+
+Once ``taskcluster-cli`` is installed, ensure right env vars are set,
+login and operate the tasks.
+
+::
+
+   export TASKCLUSTER_ROOT_URL='https://firefox-ci-tc.services.mozilla.com/'
+   eval taskcluster signin
+   python tc-filter.py --graph-id <group-task-id> --state failed --action rerun
+
+To speed things up even more, one can add this to ``zshrc`` for an alias
+to reduce the scopes and time-limit of the signin:
+
+::
+
+   tc-relduty=$'eval `TASKCLUSTER_ROOT_URL=https://firefox-ci-tc.services.mozilla.com/ taskcluster signin --expires 1h -s "queue:rerun-task:*\nqueue:cancel-task:*"`'
+
+
+graph inspection
+~~~~~~~~~~~~~~~~
+Inspecting a task group from the UI can sometimes be heavy for the browser. Instead, one can use a script to watch the graph progress locally via poll & sleep. In the same braindump
+aforementioned directory, there is a graph-progress script that can be run like:
+
+::
+
+   bash graph-progress.sh <TASK-GROUP-ID>
+
+::
 
 Firefox bookmarks
 ~~~~~~~~~~~~~~~~~
