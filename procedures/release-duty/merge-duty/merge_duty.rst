@@ -25,7 +25,6 @@ nearly three weeks, with *three* major days of activity:
 
    -  `File tracking migration bug <#file-tracking-migration-bug>`__
    -  `Turn off beta l10n bumper on RC day <#turn-off-beta-l10n-bumper-on-rc-day>`__
-   -  `Run staging releases <#run-staging-releases>`__
    -  `Do migration no-op trial runs <#do-migration-no-op-trial-runs>`__
    -  `Sanity check no blocking migration
       bugs <#sanity-check-no-blocking-migration-bugs>`__
@@ -74,13 +73,6 @@ Turn off beta l10n bumper on RC day
 Write a patch against mozilla-beta that removes `this line <https://hg.mozilla.org/releases/mozilla-beta/file/5e8e24da4af86d6f67e6145397bcb5e27dc09d89/.cron.yml#l287>`__. This patch should only land on mozilla-beta, not mozilla-central. This patch should land before RC GTB.
 
 The rationale: we no longer have Elmo for localization signoffs. Let's turn off the automatic bumper on first RC, and only update l10n-changesets manually if needed. By leaving central untouched, we will reenable beta l10n-bumper on central-to-beta merge day.
-
-Run staging releases
-~~~~~~~~~~~~~~~~~~~~
-
-NOTE: we are actively trying to make regular staging release runs part of Sheriff work. They already create staging CI pushes on try. Once they start adding a staging release on top of the CI staging try push, we no longer need to do this step
-
-:ref:`how to a staging release against a merge simulation CI try push <staging-release>`
 
 Do migration no-op trial runs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
