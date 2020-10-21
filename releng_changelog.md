@@ -91,7 +91,7 @@ while central -> beta and bumping central in the second week
 
 ### During 62.0 >= 2018-06-26
 
-### Changed
+#### Changed
 - switched to Ship-it v2 for beta releases
 
 #### Added
