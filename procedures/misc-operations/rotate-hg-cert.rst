@@ -9,7 +9,8 @@ The hg.m.o cert will next expire on 2021.10.31, and every year thereafter. We ne
 2020 links
 ----------
 
-`Bug 1668017 <https://bugzilla.mozilla.org/show_bug.cgi?id=1668017>`_ is the original cert rotation bug. `Bug 1670712 <https://bugzilla.mozilla.org/show_bug.cgi?id=1670712>`_ and `bug 1671731 <https://bugzilla.mozilla.org/show_bug.cgi?id=1671731#c2>`_ track some of the fallout.
+- `Bug 1668017 <https://bugzilla.mozilla.org/show_bug.cgi?id=1668017>`_ is the original cert rotation bug.
+- `Bug 1670712 <https://bugzilla.mozilla.org/show_bug.cgi?id=1670712>`_ and `bug 1671731 <https://bugzilla.mozilla.org/show_bug.cgi?id=1671731#c2>`_ track some of the fallout.
 
 Steps
 -----
