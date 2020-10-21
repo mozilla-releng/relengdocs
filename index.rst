@@ -38,6 +38,7 @@ Contents:
    releng_changelog
    future/index.rst
    machine-users.rst
+   troubleshooting.rst
 
 .. toctree::
    :caption: Meta
