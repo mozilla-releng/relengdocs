@@ -193,7 +193,6 @@ aforementioned directory, there is a graph-progress script that can be run like:
 
    bash graph-progress.sh <TASK-GROUP-ID>
 
-::
 
 Firefox bookmarks
 ~~~~~~~~~~~~~~~~~
