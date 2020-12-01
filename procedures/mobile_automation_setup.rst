@@ -454,3 +454,19 @@ On mac, using homebrew:
     # And taskgraph optimized should return hundreds of tasks:
     # (You need https://hg.mozilla.org/build/braindump/ cloned)
     taskgraph optimized -p ../braindump/taskcluster/taskgraph-diff/params-android-components/main-repo-release.yml | wc -l
+
+5. For ``taskgraph-gen.py`` to work, you'll also need to set ``ANDROID_SDK_ROOT``::
+
+    # in your .zshrc or .bashrc
+    export ANDROID_SDK_ROOT=/usr/local/Caskroom/android-sdk/4333796
+
+6. You'll need a py2 virtualenv with taskgraph, glean-parser, and mozilla-version as well. To run ``taskgraph-gen.py``::
+
+    # set $TGDIR to the braindump/taskcluster directory path
+    TGDIR=..
+
+    # Fenix
+    $TGDIR/taskgraph-diff/taskgraph-gen.py --halt-on-failure --overwrite --params-dir $TGDIR/taskgraph-diff/params-fenix --full fenix-clean 2>&1 | tee out
+
+    # Android-Components
+    $TGDIR/taskgraph-diff/taskgraph-gen.py --halt-on-failure --overwrite --params-dir $TGDIR/taskgraph-diff/params-android-components --full ac-clean 2>&1 | tee out
