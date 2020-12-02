@@ -100,7 +100,7 @@ a bare minimum:
 How to get VPN access
 ~~~~~~~~~~~~~~~~~~~~~
 
-First you need to be connected to the Mozilla VPN. See the `mana page <https://mana.mozilla.org/wiki/display/SD/VPN>`
+First you need to be connected to the Mozilla VPN. See the `mana page <https://mana.mozilla.org/wiki/display/SD/VPN>`__
 for how to get set up and started with connecting to the VPN.
 
 
@@ -111,7 +111,7 @@ You need to be added to the `vpn_cloudops_shipit` LDAP group, as well as be adde
 config. Both of these can be done by filing a ticket requesting access.
 
 File an Release Engineering bug under the `Applications: Shipit (backend)
-<https://bugzilla.mozilla.org/enter_bug.cgi?format=__default__&cloned_bug_id=1626312&product=Release%20Engineering&component=Applications%3A%20Shipit%20%28backend%29>`
+<https://bugzilla.mozilla.org/enter_bug.cgi?format=__default__&cloned_bug_id=1626312&product=Release%20Engineering&component=Applications%3A%20Shipit%20%28backend%29>`__
 component requesting to be granted shipit access.
 
 Have someone in `Release Engineering <#teams>`__ to vouch for you in the bug.
@@ -203,7 +203,7 @@ These bookmarklets should help you view tasks and taskgroups in Firefox.
 *  Name: ``task inspector`` Location: `https://tools.taskcluster.net/tasks/%s <https://tools.taskcluster.net/tasks/%s>`__ ; Keyword: ``task``
 *  Name: ``taskgroup inspector`` Location: `https://tools.taskcluster.net/groups/%s <https://tools.taskcluster.net/groups/%s>`__ ; Keyword: ``taskgroup``
 *  Name: ``stop`` Location: ``javascript:stop();``
-   *  This can be used to stop further loading in the Task Group Inspector. It shouldn't be used when actively monitoring (i.e.: watching for failures), but it can greatly speed things up if you're using it for other reasons. Be sure to wait for the initial tasks to load before you use it.
+  *  This can be used to stop further loading in the Task Group Inspector. It shouldn't be used when actively monitoring (i.e.: watching for failures), but it can greatly speed things up if you're using it for other reasons. Be sure to wait for the initial tasks to load before you use it.
 
 Now if you go to your URL bar, you can type ``task TASKID`` or ``taskgroup TASKGROUPID`` and you'll go to that task or
 taskgroup in the inspector.
@@ -220,7 +220,8 @@ Miscellaneous
 
 *  Bugzilla issues regarding specific releases/WNP are filed under `Release Engineering:Releases <https://bugzilla.mozilla.org/enter_bug.cgi?product=Release%20Engineering&component=Releases>`__
 *  Issues regarding automation are filed under `Release Engineering:Release Automation <https://bugzilla.mozilla.org/enter_bug.cgi?product=Release%20Engineering&component=Release%20Automation>`__
-*  The `releng_changelog.md <https://github.com/mozilla/build-relengdocs/blob/master/releng_changelog.md>` in the `build-relengdocs <https://github.com/mozilla/build-relengdocs/tree/master>` repository contains a summary of larger changes made during the duty cycle.
+*  The `releng_changelog.md <https://github.com/mozilla/build-relengdocs/blob/master/releng_changelog.md>`__ in the `build-relengdocs <https://github.com/mozilla/build-relengdocs/tree/master>`__
+   repository contains a summary of larger changes made during the duty cycle.
 
 .. _release-duty-teams:
 
@@ -256,16 +257,16 @@ If a release is blocked. The normal flow is to:
 
 Good resources within releng:
 
--  general release configuration (taskgraph): aki/jlorenzo
--  scopes / ciadmin: jlorenzo/mtabara
+-  general release configuration (taskgraph): aki
+-  scopes / ciadmin: mtabara
 -  chainoftrust (cot): aki
--  scriptworker (general): aki/jlorenzo
+-  scriptworker (general): aki
 -  beetmoverscript / bouncer / artifact related: mtabara/aki
--  signing / signingscript / autograph: aki/catlee
+-  signing / signingscript / autograph: aki
 -  balrog / balrogscript / updates related: bhearsum/mtabara
 -  l10n / treescript / addonscript: aki/mtabara
--  pushapkscript / mozapkpublisher: jlorenzo/mtabara
--  shipit / shipitscript: bhearsum/jlorenzo
+-  pushapkscript / mozapkpublisher: mtabara
+-  shipit / shipitscript: bhearsum
 
 Other useful resources
 ----------------------
@@ -334,7 +335,7 @@ shipped at the same time as we receive signoff for the corresponding desktop bui
 
 Join the #release-coordination channel on Mozilla Slack
 
-8. What is cdntest and localtest?
+8. *What is cdntest and localtest?*
 
 ``-cdntest`` and ``-localtest`` channels serve releases from the releases
 directory (mirrors or CDN) or candidates directory depending on the release and
@@ -342,19 +343,19 @@ channel. They are testing channels used before we serve from the *real* update
 channel, but they use the *actual files* that will be served once a release is
 published.
 
-9. What's the difference between Firefox and DevEdition?
+9. *What's the difference between Firefox and DevEdition?*
 
 In the beta cycle, ``Firefox`` and ``Devedition`` are different products
 built based on the same in-tree revision. Their functionality is the
 same but branding options differ.
 
-10. What do the terms ``releases directory``, ``mirrors`` and ``CDN`` mean?
+10. *What do the terms ``releases directory``, ``mirrors`` and ``CDN`` mean?*
 
 ``releases directory``, ``mirrors`` and ``CDN`` are different terms for the same
 concept - the CDN from which shipped releases are served.
 
-11. What does 'watershed' mean?
+11. *What does ``watershed`` mean?*
 
-Watershed refers to a situation when we release a new version of a product
+``watershed`` refers to a situation when we release a new version of a product
 (Firefox 57), but users on an older version (Firefox 53) are not able to update.
-This is a watershed and we would need to ensure we don't serve invalid updates.
+This is a ``watershed`` and we would need to ensure we don't serve invalid updates.
