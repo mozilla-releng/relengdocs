@@ -64,7 +64,6 @@ Email
 As ReleaseDuty you need to *subscribe* to certain mailing lists:
 
 *  All types of sign-offs and approvals should go to `release signoff mailing list <https://mail.mozilla.org/listinfo/release-signoff>`__
-*  All releng automation emails should go to `release-automation-notifications <https://groups.google.com/a/mozilla.com/forum/?hl=en#!forum/release-automation-notifications>`__
 *  All discussion topics should go to `release drivers mailing list <https://mail.mozilla.org/listinfo/release-drivers>`__
 
 These other mailing lists will likely have useful discussions and information:
@@ -212,9 +211,7 @@ taskgroup in the inspector.
 After ReleaseDuty
 -----------------
 
-After your tour of releaseduty, it's customary to spend 1-2 weeks fixing release automation issues. Check the `Release
-Automation Improvements trello board <https://trello.com/b/BqnBcfXX/release-automation-improvements>`__ trello board for
-ideas of what to work on and to add new items as you discover them.
+After your tour of releaseduty, it's customary to fix any documentation or automation issues discovered.
 
 Ensure the next duty cycle have signed up to any phabricator reviews, such as the periodic file updates reviews.
 
@@ -223,16 +220,9 @@ Miscellaneous
 
 *  Bugzilla issues regarding specific releases/WNP are filed under `Release Engineering:Releases <https://bugzilla.mozilla.org/enter_bug.cgi?product=Release%20Engineering&component=Releases>`__
 *  Issues regarding automation are filed under `Release Engineering:Release Automation <https://bugzilla.mozilla.org/enter_bug.cgi?product=Release%20Engineering&component=Release%20Automation>`__
-*  The CHANGELOG in the build-relengdocs repository contains a summary of larger changes made during the duty cycle.
+*  The `releng_changelog.md <https://github.com/mozilla/build-relengdocs/blob/master/releng_changelog.md>` in the `build-relengdocs <https://github.com/mozilla/build-relengdocs/tree/master>` repository contains a summary of larger changes made during the duty cycle.
 
 .. _release-duty-teams:
-
-Teams
------
-
-*  `Release Engineering <https://wiki.mozilla.org/ReleaseEngineering>`__ (Releng)
-*  `Release Management <https://wiki.mozilla.org/Release_Management>`__ (Relman)
-*  `Quality Assurance <https://wiki.mozilla.org/QA>`__ (QA / QE) and their `testing notes <https://quality.mozilla.org/>`__
 
 Hand Off
 --------
@@ -240,7 +230,7 @@ Hand Off
 If a scheduled release has not completed its graphs prior releaseduty signing
 off, an explicit hand-off describing describing release state should be sent to
 individual folks in releng that are scheduled to come online next or will be
-around for a while after you. #mozbuild in Slack is best. A release@m.c email
+around for a while after you. #releaseduty in Matrix is best. A release@m.c email
 would be useful too.
 
 Escalation
@@ -340,16 +330,11 @@ No, after b1, there isn't signoff from RelMan on DevEdition builds. QA only veri
 weeks. With the exception of b1, and assuming all the tasks complete as expected, the DevEdition builds should be
 shipped at the same time as we receive signoff for the corresponding desktop builds.
 
-7. *How should I inform the ReleaseDuty team of recent changes in automation that may impact an upcoming release?*
-
-You can mention it to the current ReleaseDuty folks in the #releaseduty channel. Please also add it to the upcoming
-release in the ../releases/FUTURE/ dir. See `future release support <../releases/FUTURE/README.md>`__ for more details.
-
-8. *How do I coordinate with marketing on release day?*
+7. *How do I coordinate with marketing on release day?*
 
 Join the #release-coordination channel on Mozilla Slack
 
-9. What is cdntest and localtest?
+8. What is cdntest and localtest?
 
 ``-cdntest`` and ``-localtest`` channels serve releases from the releases
 directory (mirrors or CDN) or candidates directory depending on the release and
@@ -357,13 +342,19 @@ channel. They are testing channels used before we serve from the *real* update
 channel, but they use the *actual files* that will be served once a release is
 published.
 
-10. What's the difference between Firefox and DevEdition?
+9. What's the difference between Firefox and DevEdition?
 
 In the beta cycle, ``Firefox`` and ``Devedition`` are different products
 built based on the same in-tree revision. Their functionality is the
 same but branding options differ.
 
-11. What do the terms ``releases directory``, ``mirrors`` and ``CDN`` mean?
+10. What do the terms ``releases directory``, ``mirrors`` and ``CDN`` mean?
 
 ``releases directory``, ``mirrors`` and ``CDN`` are different terms for the same
 concept - the CDN from which shipped releases are served.
+
+11. What does 'watershed' mean?
+
+Watershed refers to a situation when we release a new version of a product
+(Firefox 57), but users on an older version (Firefox 53) are not able to update.
+This is a watershed and we would need to ensure we don't serve invalid updates.
