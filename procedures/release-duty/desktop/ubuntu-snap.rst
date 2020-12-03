@@ -88,9 +88,10 @@ The easy way: via web interface
 The more complete one: via command line
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Install ``snapcraft``. The simplest way is to
+1. Install ``snapcraft``. The simplest way is via `docker <https://hub.docker.com/r/snapcore/snapcraft/>`__:
    ``docker pull snapcore/snapcraft:stable``, then
    ``docker run -ti snapcore/snapcraft:stable bash``
+   * alternatively: ``apt-get install snapcraft``
 2. ``snapcraft login``. Your credentials will be asked, your 2FA code
    too. If it doesn't, 'select “Always” for “Require an authentication
    device”, and click “Update”' like explained `on this

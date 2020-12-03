@@ -27,9 +27,11 @@ all the operational tasks to make sure the release workflow is as smooth as poss
 While this role can get quite disruptive, we prefer this approach of assigning the responsibility to a small set of
 people who will own all the tasks, while we shield the others in Release Engineering from interruptions.
 
-Being ReleaseDuty means a couple of things: - Communication and coordination with other teams - Handle all incoming
-releases - Fix and debug any potential errors in the automation - Develop and improve the Release Automation process and
-tools
+Being ReleaseDuty means a couple of things:
+ * Communication and coordination with other teams
+ * Handle all incoming releases
+ * Fix and debug any potential errors in the automation
+ * Develop and improve the Release Automation process and tools
 
 .. _release-duty-communication:
 
@@ -63,15 +65,14 @@ Email
 
 As ReleaseDuty you need to *subscribe* to certain mailing lists:
 
-*  All types of sign-offs and approvals should go to `release signoff mailing list <https://mail.mozilla.org/listinfo/release-signoff>`__
-*  All releng automation emails should go to `release-automation-notifications <https://groups.google.com/a/mozilla.com/forum/?hl=en#!forum/release-automation-notifications>`__
-*  All discussion topics should go to `release drivers mailing list <https://mail.mozilla.org/listinfo/release-drivers>`__
+ * All types of sign-offs and approvals should go to `release signoff mailing list <https://mail.mozilla.org/listinfo/release-signoff>`__
+ * All discussion topics should go to `release drivers mailing list <https://mail.mozilla.org/listinfo/release-drivers>`__
 
 These other mailing lists will likely have useful discussions and information:
-* `RelEng internal mailing list <release@mozilla.com>`__
-* `Thunderbird release drivers mailing list <https://mail.mozilla.org/listinfo/thunderbird-drivers>`__
-* `release-automation-notifications-thunderbird mailing list <https://mail.mozilla.org/listinfo/release-automation-notifications-thunderbird>`__
-* (optional) `release-automation-notifications-dev mailing list <https://groups.google.com/a/mozilla.com/forum/#!forum/release-automation-notifications-dev>`__
+ * `RelEng internal mailing list <release@mozilla.com>`__
+ * `Thunderbird release drivers mailing list <https://mail.mozilla.org/listinfo/thunderbird-drivers>`__
+ * `release-automation-notifications-thunderbird mailing list <https://mail.mozilla.org/listinfo/release-automation-notifications-thunderbird>`__
+ * (optional) `release-automation-notifications-dev mailing list <https://groups.google.com/a/mozilla.com/forum/#!forum/release-automation-notifications-dev>`__
 
 Meetings and Calendars
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -79,8 +80,8 @@ Meetings and Calendars
 Regular meetings are a vital part of making sure all the teams are kept informed and consulted during the release
 process. To view those meetings in your calendar you need to subscribe/be added to the following calendars:
 
-* `Public- Release Engineering <https://calendar.google.com/calendar/embed?src=mozilla.com_2d32343333353036312d393737%40resource.calendar.google.com>`__ (so that you attend the weekly post-mortem meeting)
-* `Releases Scheduling <https://calendar.google.com/calendar/embed?src=mozilla.com_dbq84anr9i8tcnmhabatstv5co@group.calendar.google.com>`__ (so that you can attend the Tuesday/Thursday channel meetings. You can add it following RelMan's `docs <https://wiki.mozilla.org/Release_Management#Calendar_Updating>`__) – If their instructions don't work, try to the “Add to Google Calendar” button at the `web version of the calendar <https://calendar.google.com/calendar/embed?src=mozilla.com_dbq84anr9i8tcnmhabatstv5co@group.calendar.google.com>`__.
+ * `Public- Release Engineering <https://calendar.google.com/calendar/embed?src=mozilla.com_2d32343333353036312d393737%40resource.calendar.google.com>`__ (so that you attend the weekly post-mortem meeting)
+ * `Releases Scheduling <https://calendar.google.com/calendar/embed?src=mozilla.com_dbq84anr9i8tcnmhabatstv5co@group.calendar.google.com>`__ (so that you can attend the Tuesday/Thursday channel meetings. You can add it following RelMan's `docs <https://wiki.mozilla.org/Release_Management#Calendar_Updating>`__) – If their instructions don't work, try to the “Add to Google Calendar” button at the `web version of the calendar <https://calendar.google.com/calendar/embed?src=mozilla.com_dbq84anr9i8tcnmhabatstv5co@group.calendar.google.com>`__.
 
 **If you join a calendar and it's blank, you may need to delete it and get a calendar invitation from an existing
 subscriber**
@@ -93,15 +94,15 @@ Permissions
 Several tools for managing releases are protected or private. In order to do your job, you need to be granted access to
 a bare minimum:
 
-*  Access to the `VPN <https://mana.mozilla.org/wiki/display/SD/VPN>`__
-*  A `Bugzilla <https://bugzilla.mozilla.org/>`__ account
-*  Read/Write access to `Balrog <https://balrog.services.mozilla.com/>`__ -
-* Read/Write access to `Ship-it v2 <https://shipit.mozilla-releng.net/>`__
+ * Access to the `VPN <https://mana.mozilla.org/wiki/display/SD/VPN>`__
+ * A `Bugzilla <https://bugzilla.mozilla.org/>`__ account
+ * Read/Write access to `Balrog <https://balrog.services.mozilla.com/>`__
+ * Read/Write access to `Ship-it v2 <https://shipit.mozilla-releng.net/>`__
 
 How to get VPN access
 ~~~~~~~~~~~~~~~~~~~~~
 
-First you need to be connected to the Mozilla VPN. See the `mana page <https://mana.mozilla.org/wiki/display/SD/VPN>`
+First you need to be connected to the Mozilla VPN. See the `mana page <https://mana.mozilla.org/wiki/display/SD/VPN>`__
 for how to get set up and started with connecting to the VPN.
 
 
@@ -112,7 +113,7 @@ You need to be added to the `vpn_cloudops_shipit` LDAP group, as well as be adde
 config. Both of these can be done by filing a ticket requesting access.
 
 File an Release Engineering bug under the `Applications: Shipit (backend)
-<https://bugzilla.mozilla.org/enter_bug.cgi?format=__default__&cloned_bug_id=1626312&product=Release%20Engineering&component=Applications%3A%20Shipit%20%28backend%29>`
+<https://bugzilla.mozilla.org/enter_bug.cgi?format=__default__&cloned_bug_id=1626312&product=Release%20Engineering&component=Applications%3A%20Shipit%20%28backend%29>`__
 component requesting to be granted shipit access.
 
 Have someone in `Release Engineering <#teams>`__ to vouch for you in the bug.
@@ -143,11 +144,11 @@ taskcluster
 Release tasks are usually run through `Taskcluster <https://docs.taskcluster.net/>`__, which has a useful `Command-line
 interface <https://github.com/taskcluster/taskcluster-cli>`__
 
-* Download an appropriate binary from `here <https://github.com/taskcluster/taskcluster-cli#installation>`__
-*  Copy the binary somewhere useful, such as somewhere in your `$PATH <http://www.linfo.org/path_env_var.html>`__
-*  Make it executable, if using Mac or Linux: ``chmod a+x /path/to/taskcluster``
-*  Run ``taskcluster signin``  to open a browser window and allow you to get temporary client credentials. By default this is valid for 24 hours. **The command will display two ``export`` commands you must copy/paste into your shell**
-*  Familiarize yourself with the subcommands, starting with ``taskcluster help``
+ * Download an appropriate binary from `here <https://github.com/taskcluster/taskcluster-cli#installation>`__
+ * Copy the binary somewhere useful, such as somewhere in your `$PATH <http://www.linfo.org/path_env_var.html>`__
+ * Make it executable, if using Mac or Linux: ``chmod a+x /path/to/taskcluster``
+ * Run ``taskcluster signin``  to open a browser window and allow you to get temporary client credentials. By default this is valid for 24 hours. **The command will display two ``export`` commands you must copy/paste into your shell**
+ * Familiarize yourself with the subcommands, starting with ``taskcluster help``
 
 
 in-bulk taskcluster operations
@@ -199,12 +200,13 @@ Firefox bookmarks
 
 These bookmarklets should help you view tasks and taskgroups in Firefox.
 
-*  Go to Bookmarks -> Show All Bookmarks
-*  Gear symbol -> New Bookmark
-*  Name: ``task inspector`` Location: `https://tools.taskcluster.net/tasks/%s <https://tools.taskcluster.net/tasks/%s>`__ ; Keyword: ``task``
-*  Name: ``taskgroup inspector`` Location: `https://tools.taskcluster.net/groups/%s <https://tools.taskcluster.net/groups/%s>`__ ; Keyword: ``taskgroup``
-*  Name: ``stop`` Location: ``javascript:stop();``
-   *  This can be used to stop further loading in the Task Group Inspector. It shouldn't be used when actively monitoring (i.e.: watching for failures), but it can greatly speed things up if you're using it for other reasons. Be sure to wait for the initial tasks to load before you use it.
+ * Go to Bookmarks -> Show All Bookmarks
+ * Gear symbol -> New Bookmark
+ * Name: ``task inspector`` Location: `https://tools.taskcluster.net/tasks/%s <https://tools.taskcluster.net/tasks/%s>`__ ; Keyword: ``task``
+ * Name: ``taskgroup inspector`` Location: `https://tools.taskcluster.net/groups/%s <https://tools.taskcluster.net/groups/%s>`__ ; Keyword: ``taskgroup``
+ * Name: ``stop`` Location: ``javascript:stop();``
+
+  * This can be used to stop further loading in the Task Group Inspector. It shouldn't be used when actively monitoring (i.e.: watching for failures), but it can greatly speed things up if you're using it for other reasons. Be sure to wait for the initial tasks to load before you use it.
 
 Now if you go to your URL bar, you can type ``task TASKID`` or ``taskgroup TASKGROUPID`` and you'll go to that task or
 taskgroup in the inspector.
@@ -212,27 +214,21 @@ taskgroup in the inspector.
 After ReleaseDuty
 -----------------
 
-After your tour of releaseduty, it's customary to spend 1-2 weeks fixing release automation issues. Check the `Release
-Automation Improvements trello board <https://trello.com/b/BqnBcfXX/release-automation-improvements>`__ trello board for
-ideas of what to work on and to add new items as you discover them.
+After your tour of releaseduty, In the past it was  customary to fix any documentation 
+or automation issues discovered.  Now make sure you file any bugs so issues can be included
+in a future sprint or work cycle.
 
 Ensure the next duty cycle have signed up to any phabricator reviews, such as the periodic file updates reviews.
 
 Miscellaneous
 -------------
 
-*  Bugzilla issues regarding specific releases/WNP are filed under `Release Engineering:Releases <https://bugzilla.mozilla.org/enter_bug.cgi?product=Release%20Engineering&component=Releases>`__
-*  Issues regarding automation are filed under `Release Engineering:Release Automation <https://bugzilla.mozilla.org/enter_bug.cgi?product=Release%20Engineering&component=Release%20Automation>`__
-*  The CHANGELOG in the build-relengdocs repository contains a summary of larger changes made during the duty cycle.
+ * Bugzilla issues regarding specific releases/WNP are filed under `Release Engineering:Release Requests <https://bugzilla.mozilla.org/enter_bug.cgi?format=__default__&product=Release%20Engineering&component=Release%20Requests>`__
+ * Issues regarding automation are filed under `Release Engineering:Release Automation <https://bugzilla.mozilla.org/enter_bug.cgi?product=Release%20Engineering&component=Release%20Automation>`__
+ * The `releng_changelog.md <https://github.com/mozilla/build-relengdocs/blob/master/releng_changelog.md>`__ in the `build-relengdocs <https://github.com/mozilla/build-relengdocs/tree/master>`__
+   repository contains a summary of larger changes made during the duty cycle.
 
 .. _release-duty-teams:
-
-Teams
------
-
-*  `Release Engineering <https://wiki.mozilla.org/ReleaseEngineering>`__ (Releng)
-*  `Release Management <https://wiki.mozilla.org/Release_Management>`__ (Relman)
-*  `Quality Assurance <https://wiki.mozilla.org/QA>`__ (QA / QE) and their `testing notes <https://quality.mozilla.org/>`__
 
 Hand Off
 --------
@@ -240,7 +236,7 @@ Hand Off
 If a scheduled release has not completed its graphs prior releaseduty signing
 off, an explicit hand-off describing describing release state should be sent to
 individual folks in releng that are scheduled to come online next or will be
-around for a while after you. #mozbuild in Slack is best. A release@m.c email
+around for a while after you. #releaseduty in Matrix is best. A release@m.c email
 would be useful too.
 
 Escalation
@@ -265,17 +261,16 @@ If a release is blocked. The normal flow is to:
 7. ask for help if you can’t determine the above.
 
 Good resources within releng:
-
--  general release configuration (taskgraph): aki/jlorenzo
--  scopes / ciadmin: jlorenzo/mtabara
--  chainoftrust (cot): aki
--  scriptworker (general): aki/jlorenzo
--  beetmoverscript / bouncer / artifact related: mtabara/aki
--  signing / signingscript / autograph: aki/catlee
--  balrog / balrogscript / updates related: bhearsum/mtabara
--  l10n / treescript / addonscript: aki/mtabara
--  pushapkscript / mozapkpublisher: jlorenzo/mtabara
--  shipit / shipitscript: bhearsum/jlorenzo
+ * general release configuration (taskgraph): aki
+ * scopes / ciadmin: mtabara
+ * chainoftrust (cot): aki
+ * scriptworker (general): aki
+ * beetmoverscript / bouncer / artifact related: mtabara/aki
+ * signing / signingscript / autograph: aki
+ * balrog / balrogscript / updates related: bhearsum/mtabara
+ * l10n / treescript / addonscript: aki/mtabara
+ * pushapkscript / mozapkpublisher: mtabara
+ * shipit / shipitscript: bhearsum
 
 Other useful resources
 ----------------------
@@ -303,7 +298,8 @@ and passed QA and “promoting” them to be used as a release candidate. More o
 2. *What is the train model?*
 
 Since 2012 Mozilla moved to a fixed-schedule release model, otherwise known as the Train Model, in which we released
-Firefox every six weeks to get features and updates to users faster and move at the speed of the Web. Hence, every six
+Firefox every six weeks to get features and updates to users faster and move at the speed of the Web. In 2020 Mozilla
+switched to releasing every four weeks, hence, every four
 weeks the following merges take place: `mozilla-beta <http://hg.mozilla.org/releases/mozilla-beta/>`__ =>
 `mozilla-release <http://hg.mozilla.org/releases/mozilla-release/>`__ `mozilla-central
 <http://hg.mozilla.org/mozilla-central/>`__ => `mozilla-beta <http://hg.mozilla.org/releases/mozilla-beta/>`__
@@ -340,16 +336,11 @@ No, after b1, there isn't signoff from RelMan on DevEdition builds. QA only veri
 weeks. With the exception of b1, and assuming all the tasks complete as expected, the DevEdition builds should be
 shipped at the same time as we receive signoff for the corresponding desktop builds.
 
-7. *How should I inform the ReleaseDuty team of recent changes in automation that may impact an upcoming release?*
-
-You can mention it to the current ReleaseDuty folks in the #releaseduty channel. Please also add it to the upcoming
-release in the ../releases/FUTURE/ dir. See `future release support <../releases/FUTURE/README.md>`__ for more details.
-
-8. *How do I coordinate with marketing on release day?*
+7. *How do I coordinate with marketing on release day?*
 
 Join the #release-coordination channel on Mozilla Slack
 
-9. What is cdntest and localtest?
+8. *What is cdntest and localtest?*
 
 ``-cdntest`` and ``-localtest`` channels serve releases from the releases
 directory (mirrors or CDN) or candidates directory depending on the release and
@@ -357,13 +348,19 @@ channel. They are testing channels used before we serve from the *real* update
 channel, but they use the *actual files* that will be served once a release is
 published.
 
-10. What's the difference between Firefox and DevEdition?
+9. *What's the difference between Firefox and DevEdition?*
 
 In the beta cycle, ``Firefox`` and ``Devedition`` are different products
 built based on the same in-tree revision. Their functionality is the
 same but branding options differ.
 
-11. What do the terms ``releases directory``, ``mirrors`` and ``CDN`` mean?
+10. *What do the terms ``releases directory``, ``mirrors`` and ``CDN`` mean?*
 
 ``releases directory``, ``mirrors`` and ``CDN`` are different terms for the same
 concept - the CDN from which shipped releases are served.
+
+11. *What does ``watershed`` mean?*
+
+``watershed`` refers to a situation when we release a new version of a product
+(Firefox 57), but users on an older version (Firefox 53) are not able to update.
+This is a ``watershed`` and we would need to ensure we don't serve invalid updates.
