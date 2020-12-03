@@ -88,7 +88,7 @@ The Snap case
 -------------
 
 In addition to Balrog, you need to update the Snap store too. For more information about Snap,
-see `ubuntu-snap <ubuntu-snap.rst>`__. Steps:
+see `ubuntu-snap <ubuntu-snap.html>`__. Steps:
 
 1. ``docker pull snapcore/snapcraft:stable``
 2. ``docker run -ti snapcore/snapcraft:stable``
