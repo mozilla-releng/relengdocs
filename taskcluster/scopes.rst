@@ -54,7 +54,7 @@ We encode levels in workerType/workerPool names, and in other scopes that should
 Docker- and Generic-Worker scopes
 ---------------------------------
 
-The workers for docker- and generic-worker should be minimal, just enough to register as a given workerType and claim tasks from the queue. They will be granted temporary scopes for each task that they run.
+The scopes for docker- and generic-worker workers should be minimal, just enough to register as a given workerType and claim tasks from the queue. They will be granted temporary scopes for each task that they run.
 
 Scriptworker scopes
 -------------------
@@ -66,4 +66,4 @@ In addition, until we fix `Issue #426 (use temp queue to download artifacts) <ht
 Restricted scopes
 ~~~~~~~~~~~~~~~~~
 
-We define `cot_restricted_scopes <https://github.com/mozilla-releng/scriptworker/blob/dd0eed21354ecfabbe5838ea3cf730ff0630a3dd/src/scriptworker/constants.py#L361-L445>`__ in scriptworker. These are scopes that can only run on specific allowlisted trees or ``tasks_for``.
+We define Chain of Trust `cot_restricted_scopes <https://github.com/mozilla-releng/scriptworker/blob/dd0eed21354ecfabbe5838ea3cf730ff0630a3dd/src/scriptworker/constants.py#L361-L445>`__ in scriptworker. These are scopes that can only run on specific allowlisted trees or ``tasks_for``.
