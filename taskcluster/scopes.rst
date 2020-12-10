@@ -38,6 +38,8 @@ We test, diff, and apply these configuration changes using the `ci-admin repo <h
 Conventions
 -----------
 
+(to flesh out)
+
 Levels
 ~~~~~~
 
@@ -48,13 +50,16 @@ We encode levels in workerType/workerPool names, and in other scopes that should
 Docker- and Generic-Worker scopes
 ---------------------------------
 
+The workers for docker- and generic-worker should be minimal, just enough to register as a given workerType and claim tasks from the queue. They will be granted temporary scopes for each task that they run.
 
 Scriptworker scopes
 -------------------
 
-Private artifacts https://github.com/mozilla-releng/scriptworker/issues/426
+Scriptworker scopes are similar, but each ``*script`` will also define script-specific scopes, like ``project:releng:signing:format:signcode``.
+
+In addition, until we fix `Issue #426 (use temp queue to download artifacts) <https://github.com/mozilla-releng/scriptworker/issues/426>`__, we also need to grant private artifact scopes to the *clientId* as well as the task.
 
 Restricted scopes
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 
-`cot_restricted_scopes <https://github.com/mozilla-releng/scriptworker/blob/dd0eed21354ecfabbe5838ea3cf730ff0630a3dd/src/scriptworker/constants.py#L361-L445>`__
+We define `cot_restricted_scopes <https://github.com/mozilla-releng/scriptworker/blob/dd0eed21354ecfabbe5838ea3cf730ff0630a3dd/src/scriptworker/constants.py#L361-L445>`__ in scriptworker. These are scopes that can only run on specific allowlisted trees or ``tasks_for``.
