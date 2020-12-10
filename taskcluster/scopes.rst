@@ -38,7 +38,11 @@ We test, diff, and apply these configuration changes using the `ci-admin repo <h
 Conventions
 -----------
 
-(to flesh out)
+Groups / teams
+~~~~~~~~~~~~~~
+We try to tie most user scope grants to LDAP. Grants to ``mozilla-group::GROUP`` will assign the scopes to users that belong to that MoCo ldap group. Grants to ``mozillians-group::GROUP`` will grant scopes to users that belong to that Mozillians group (`people.mozilla.org <https://people.mozilla.org>`__).
+
+We also define ``ci-group`` roles like ``project:releng:ci-group:team_moco`` in `this block <https://hg.mozilla.org/ci/ci-configuration/file/307d8717f17e3916ebdfc54e58705230c5cf30a7/grants.yml#l2351>`__.
 
 Levels
 ~~~~~~
