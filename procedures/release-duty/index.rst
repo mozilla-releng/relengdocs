@@ -78,9 +78,8 @@ Meetings and Calendars
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Regular meetings are a vital part of making sure all the teams are kept informed and consulted during the release
-process. To view those meetings in your calendar you need to subscribe/be added to the following calendars:
+process. To view those meetings in your calendar you need to subscribe/be added to the following calendar:
 
- * `Public- Release Engineering <https://calendar.google.com/calendar/embed?src=mozilla.com_2d32343333353036312d393737%40resource.calendar.google.com>`__ (so that you attend the weekly post-mortem meeting)
  * `Releases Scheduling <https://calendar.google.com/calendar/embed?src=mozilla.com_dbq84anr9i8tcnmhabatstv5co@group.calendar.google.com>`__ (so that you can attend the Tuesday/Thursday channel meetings. You can add it following RelMan's `docs <https://wiki.mozilla.org/Release_Management#Calendar_Updating>`__) – If their instructions don't work, try to the “Add to Google Calendar” button at the `web version of the calendar <https://calendar.google.com/calendar/embed?src=mozilla.com_dbq84anr9i8tcnmhabatstv5co@group.calendar.google.com>`__.
 
 **If you join a calendar and it's blank, you may need to delete it and get a calendar invitation from an existing
