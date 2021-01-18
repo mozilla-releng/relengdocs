@@ -129,9 +129,9 @@ Make sure the bug that tracks the migration has no blocking items.
 Land whatsnewpage list of locales
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**TODO** - this needs to change, as the process no longer assumes this,
-but apply them; the l10n drivers provide the final list of locales to
-receive the WNP on the Tuesday prior to the ship date.
+**As of 84.0 this is no longer the case. Please double-check with
+RelMan whether this still needs attention** - the l10n drivers provide the
+final list of locales to receive the WNP on the Tuesday prior to the ship date.
 
 1. For each release, there should already be a bug flying around named
    ``Setup WNP for users coming from < X and receiving the X release``.
