@@ -24,7 +24,6 @@ nearly three weeks, with *three* major days of activity:
 -  Do the prep work a week before the merge
 
    -  `File tracking migration bug <#file-tracking-migration-bug>`__
-   -  `Turn off beta l10n bumper on RC day <#turn-off-beta-l10n-bumper-on-rc-day>`__
    -  `Do migration no-op trial runs <#do-migration-no-op-trial-runs>`__
    -  `Sanity check no blocking migration
       bugs <#sanity-check-no-blocking-migration-bugs>`__
@@ -66,13 +65,6 @@ File tracking migration bug
 
 File a tracking migration bug if there isn't one (e.g. `bug
 1412962 <https://bugzilla.mozilla.org/show_bug.cgi?id=1412962>`__)
-
-Turn off beta l10n bumper on RC day
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Write a patch against mozilla-beta that removes `this line <https://hg.mozilla.org/releases/mozilla-beta/file/5e8e24da4af86d6f67e6145397bcb5e27dc09d89/.cron.yml#l287>`__. This patch should only land on mozilla-beta, not mozilla-central. This patch should land before RC GTB.
-
-The rationale: we no longer have Elmo for localization signoffs. Let's turn off the automatic bumper on first RC, and only update l10n-changesets manually if needed. By leaving central untouched, we will reenable beta l10n-bumper on central-to-beta merge day.
 
 Do migration no-op trial runs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
