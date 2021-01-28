@@ -1,12 +1,13 @@
-Turning on CI tests for a new configuration
-============================================
+Turning on Firefox tests for a new configuration
+==================================================
 
-You are ready to go with turning on tests for a new config.  Once you get to this stage,
+You are ready to go with turning on Firefox tests for a new config.  Once you get to this stage,
 you will have seen a try push with all the tests running (many not green) to verify some tests
 pass and there are enough machines available to run tests.
 
 For the purpose of this document, assume you are tasked with upgrading Windows 10 OS from 1803 -> 1903.
 To simplify this we can call this `windows_1903`, and we need to:
+
  * push to try
  * analyze test failures
  * disable tests in manifests
@@ -36,6 +37,7 @@ There are a few exceptions here:
       ``./mach try fuzzy --no-artifact -q 'test-windows fission --rebuild 5``
   * new OS/hardware (i.e. aarch64, os upgrade), you need to reference the new hardware, typically this is with ``--worker-override``:
       ``./mach try fuzzy --no-artifact -q 'test-windows --rebuild 5 --worker-override t-win10-64=t-win10-64-1903``
+
     * the risk here is a scenario where hardware is limited, then ``--rebuild 5`` will create too many tasks and some will expire.
     * in low hardware situations, either run a subset of tests (i.e. web-platform-tests, mochitest), or ``--rebuild 2`` and repeat.
 
@@ -109,6 +111,7 @@ mentally plan on 3 iterations of this, where each iteration has fewer failures.
 
 Once you get a full push to show no persistent failures, it is time to land those changes and turn on the new tests.
 There is a large risk here that the longer you take to find all failures, the greater the chance of:
+
   * bitrot of your patch
   * new tests being added which could fail on your config
   * other edits to tests/tools which could affect your new config

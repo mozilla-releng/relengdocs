@@ -20,7 +20,7 @@ Contents:
 
    Cross-team workflows <release_workflows/index.rst>
    procedures/index.rst
-   new_config.rst
+   gecko_tests/new_config.rst
 
 
 .. toctree::
@@ -40,6 +40,7 @@ Contents:
    future/index.rst
    machine-users.rst
    troubleshooting.rst
+   gecko_tests/index.rst
 
 .. toctree::
    :caption: Meta
