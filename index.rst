@@ -39,6 +39,7 @@ Contents:
    future/index.rst
    machine-users.rst
    troubleshooting.rst
+   gecko_tests/index.rst
 
 .. toctree::
    :caption: Meta
