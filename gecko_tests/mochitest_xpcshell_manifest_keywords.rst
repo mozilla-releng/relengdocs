@@ -19,7 +19,7 @@ The test will download the build's ``target.mozinfo.json``, then update the mozi
 How to add a keyword
 --------------------
 
-The easiest route may be to patch mozinfo. For example, for Apple Silicon, we can add an ``apple_silicon`` keyword with a patch like this:
+The easiest route may be to patch `mozinfo <https://firefox-source-docs.mozilla.org/mozbase/mozinfo.html>`__. For example, for Apple Silicon, we can add an ``apple_silicon`` keyword with a patch like this:
 
 .. code-block:: diff
 
