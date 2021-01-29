@@ -8,6 +8,8 @@ Throughout this document, wherever the term ``$product`` is used,
 substitute your product's name in (replacing spaces with hyphens), e.g.:
 ``reference-browser`` or ``fenix``.
 
+Ideally, we shouldn't use the below docs, but instead use pushapk in taskgraph.
+
 Note: we don't need to explicitly "create" scopes in Taskcluster. We'll
 simply tell Taskcluster that our hook *has* some scopes, then later
 we'll tell it that we'll need those scopes to run our builds.
@@ -102,7 +104,7 @@ match between the build and the hook that starts the build.
              first)
 
 7. Update configuration in
-    `build-puppet <https://github.com/mozilla-releng/build-puppet/>`__
+    `scriptworker-scripts <https://github.com/mozilla-releng/scriptworker-scripts/>`__
 
     1. Locate signing secrets (dep signing username and password, prod
        signing username and password, Google Play service account and
@@ -119,179 +121,20 @@ match between the build and the hook that starts the build.
           -  Example: "dep" line would be:
              ``["http://<snip>", "signingscript_fenix_dep", "<snip>", ["autograph_apk"], "autograph"]``
 
-       3. For these two lines, the secrets we want to put in hiera are
+       3. For these two lines, the secrets we want to put in sops are
           the username and password (the second and third item)
        4. Later, in step 18, you'll have been emailed a Google Play
           service account and key. However, for now, we're going to use
           a dummy value (the string "dummy") as placeholders for these
           values
 
-    2. Add secrets to ``hiera``
+    2. Add secrets to ``SOPS``
 
-       1. Connect to VPN
-       2. SSH into ``releng-puppet2.srv.releng.mdc1.mozilla.com``
-       3. ``sudo cp /etc/hiera/secrets.eyaml /etc/hiera/secrets.eyaml.$username-$date``
-          (substituting in your username and the date in the format
-          ``YYYYMMDD``, like ``20181231``) to back up the hiera secrets
-          file
-       4. For each secret, `encrypt
-          it <https://wiki.mozilla.org/ReleaseEngineering/PuppetAgain/Secrets#Using_EYAML>`__
-          with
-          ``sudo eyaml encrypt --pkcs7-private-key /etc/hiera/keys/private_key.pem --pkcs7-public-key /etc/hiera/keys/public_key.pem --output examples -p -l '$lookupkey'``
-          (it prompts you to paste the secret). The "lookup key" is
-          different for each secret we put in Hiera:
+       1. TODO
 
-          -  The autograph username's lookup key will be:
-             ``autograph_$product_$level_username`` (e.g.:
-             ``autograph_fenix_dep_username`` or
-             ``autograph_fenix_prod_username``)
-          -  The autograph password's lookup key will be
-             ``autograph_$product_$level_password`` (e.g.:
-             ``autograph_fenix_prod_password``)
+8. Commit and push your ``SOPS`` and scriptworker-scripts changes, make a PR
 
-             -  Note that "autograph" uses the term "rel" when we use
-                the term "prod" - make sure the lookup key of your
-                secrets uses our terminology of "prod"!
-
-          -  The google service account's lookup key is
-             ``service_account``
-          -  The google play p12 file's lookup key is ``certificate``
-
-       5. ``sudo vi /etc/hiera/secrets.eyaml``
-       6. Look for the equivalent ``fenix`` secrets (Use the ``/`` to
-          search, then type "fenix", then "enter", hitting ``n`` each
-          time you want to step forward) and place your new products
-          secrets in the same way
-
-          -  For the two Google Play credentials, you may need to paste
-             the encrypted secret in an IDE and space-indent it to the
-             same level so it matches the indentation of the other
-             Google Play credentials in the file
-
-       7. Save (``:x``, enter) to save the file
-       8. Disconnect from the puppet master
-
-    3. In ``modules/signing_scriptworker``
-
-       1. You should've received signing credentials from step 1. Print
-          out the decrypted file you received:
-          ``gpg -d <file from step 1>``
-       2. With the output, find the "prod creds" section, and copy the
-          line where the second array item ends in "_dep" (this is the
-          dep autograph config)
-       3. Edit ``templates/dep-passwords-mobile.json.erb``. Add a new
-          scope section in the format
-          ``project:mobile:$product:releng:signing:cert:dep-signing``
-
-          1. Paste the dep autograph config (remove the trailing comma,
-             if any)
-          2. Replace the second item in that list you pasted so that,
-             instead of having the autograph username, it has
-             ``<%= scope.function_secret(["autograph_$product_dep_username"]) %>``
-             (so it fetches from ``hiera``)
-          3. Replace the third item in that list you pasted so that,
-             instead of having the autograph password, it has
-             ``<%= scope.function_secret(["autograph_$product_dep_password"]) %>``
-             (so it fetches from ``hiera``)
-
-       4. Edit ``templates/passwords-mobile.json.erb``. Add a new scope
-          section in the format
-          ``project:mobile:$product:releng:signing:cert:release-signing``
-
-          1. Paste the prod autograph config (remove the trailing comma,
-             if any)
-          2. Replace the second item in that list you pasted so that,
-             instead of having the autograph username, it has
-             ``<%= scope.function_secret(["autograph_$product_prod_username"]) %>``
-             (so it fetches from ``hiera``)
-          3. Replace the third item in that list you pasted so that,
-             instead of having the autograph password, it has
-             ``<%= scope.function_secret(["autograph_$product_prod_password"]) %>``
-             (so it fetches from ``hiera``)
-
-       5. Edit ``manifests/settings.pp``, adding the new scope prefix
-          ``project:mobile:$product:releng:signing:`` to the
-          ``scope_prefixes`` property of both ``mobile-dep`` and
-          ``mobile-prod``
-       6. In ``files/requirements.txt``
-
-          1. From step 9, update the version of ``scriptworker``
-
-    4. In ``modules/pushapk_scriptworker``
-
-       1. From step 1, you should have received two certificates (one
-          for dep, and one for prod). They start with
-          ``---BEGIN CERTIFICATE---`` and end with
-          ``---END CERTIFICATE---``, and were probably sent in the
-          gpg-encrypted text file with the autograph credentials. For
-          each of these, copy them, remove any indentation they may
-          have, and put them both in the ``files`` directory of
-          ``pushapk_scriptworker`` with the names ``$product_dep.pem``
-          and ``$product_release.pem``
-       2. In ``manifests/settings.pp``
-
-          1. In ``$_env_configs`` for ``mobile-dep`` and
-             ``mobile-prod``, add the new scope prefix
-             ``project:mobile:$product:releng:googleplay:product:`` to
-             the ``scope_prefixes`` property
-          2. In ``$pushapk_scriptworker_env`` for ``mobile-dep``, add a
-             dictionary to ``$product_config`` such that:
-
-             -  The ``product_names`` list includes ``$product``
-             -  ``package_names`` includes your app's package name
-             -  ``service_account`` set to "dummy"
-             -  ``credentials_file`` doesn't overlap with other
-                file names in ``mobile-dep`` - the convention is
-                ``${root}/$product.p12``
-             -  ``certificate_alias`` is ``$product``
-             -  ``digest_algorithm`` matches your algorithm from step 1
-             -  Checks that aren't relevant to your product are skipped
-             -  Any other necessary properties are set (look at existing config for other
-                products to see what the potential options are)
-
-          3. In ``$pushapk_scriptworker_env`` for ``mobile-prod``, add a
-             dictionary to ``$product_config`` such that:
-
-             -  The ``product_names`` list includes ``$product``
-             -  If you will have multiple apps on Google Play (e.g.:
-                nightly app, beta app, production app), use the ``apps``
-                block. Otherwise, set ``override_channel_model`` to
-                ``single_google_app`` and use ``app`` (see Focus for an example)
-             -  ``package_names`` includes your app's package name
-             -  ``service_account`` set to
-                ``$google_play_accounts['$product(-$channel)']['service_account']``
-             -  ``credentials_file`` doesn't overlap with other
-                file names in ``mobile-prod`` - the convention is
-                ``${root}/$product(_$channel).p12``
-             -  ``certificate_alias`` is ``$product``
-             -  ``digest_algorithm`` matches your algorithm from step 1
-             -  Checks that aren't relevant to your product are skipped
-             -  Any other necessary properties are set (look at existing config for other
-                products to see what the potential options are)
-
-       3. In ``manifests/init.pp``
-
-          1. For both ``mobile-dep`` and ``mobile-prod``, add an entry
-             for each app on Google Play
-
-       4. In ``manifests/jarsigner_init.pp``, for both ``mobile-dep``
-          and ``mobile-prod``:
-
-          1. Set a variable at the top of the section that points to the
-             relevant certificate location
-          2. Add an entry to the ``file`` block so that, at the
-             certificate location, the source of the correct ``pem``
-             file is copied in
-          3. Add an entry to the ``java_ks`` block for your product,
-             setting ``certificate`` to your certificate location
-
-       5. In ``files/requirements.txt``
-
-          1. From step 9, update the version of ``scriptworker``
-
-8. Commit and push your ``build-puppet`` changes, make a PR
-
-9. Once step 11's PR is approved, merge the ``build-puppet`` PR
+9. Once step 8's PR is approved, merge the ``scriptworker-scripts`` PR
 
 10. Verify with app's team how ``versionCode`` should be set up. Perhaps
     by date like
@@ -364,39 +207,7 @@ match between the build and the hook that starts the build.
     3. Send the APK to release management
 
 15. Once the previous step is done and they've set up a Google Play
-    product, put the associated secrets in Hiera
-
-    1. Connect to VPN and SSH into the puppet master
-    2. Encrypt the ``service_account`` (you'll have been emailed or
-       slacked a google service account: it looks like an email address
-       that ends in ``gserviceaccount.com``)
-
-       -  ``sudo eyaml encrypt --pkcs7-private-key /etc/hiera/keys/private_key.pem --pkcs7-public-key /etc/hiera/keys/public_key.pem --output examples -p -l 'service_account'``
-
-    3. The google play p12 key is a binary file, so needs a couple more
-       steps to be
-       `encrypted <https://wiki.mozilla.org/ReleaseEngineering/PuppetAgain/Secrets#Using_EYAML>`__:
-
-       1. In a new terminal, decrypt the p12 key (it should've been
-          encrypted with your GPG key when sent to you via Slack or
-          email)
-       2. ``scp`` the file to the server:
-          ``scp $p12file releng-puppet2.srv.releng.mdc1.mozilla.com:~``
-       3. SSH into the puppet master
-       4. ``sudo eyaml encrypt --pkcs7-private-key /etc/hiera/keys/private_key.pem --pkcs7-public-key /etc/hiera/keys/public_key.pem --output examples -f $p12file -l 'certificate'``
-
-    4. ``sudo cp /etc/hiera/secrets.eyaml /etc/hiera/secrets.eyaml.$username``,
-       substituting your username in to back up the hiera secrets file
-    5. ``sudo vi /etc/hiera/secrets.eyaml``, replace the dummy
-       ``service_account`` and ``certificate`` values
-
-       -  Reminder to properly indent these values to match other Google
-          Play credentials in the file
-
-    6. ``shred -u $p12file`` to securely clean up the plaintext p12 key
-       on the puppet master
-    7. ``shred -u $p12file`` wherever you decrypted it on your machine
-       (you may need to install ``shred``)
+    product, put the associated secrets in SOPS
 
 16. Perform a new PR that un-stunts the changes from step 15 `Fenix
     example <https://github.com/mozilla-mobile/fenix/pull/161>`__
@@ -413,6 +224,11 @@ match between the build and the hook that starts the build.
 
     -  Ensure that the hook is triggered automatically by waiting a day,
        then checking the hook or indexes
+
+How to test release graphs in mobile
+====================================
+
+Use the `staging android-components <https://github.com/mozilla-releng/staging-android-components>`__ and `staging fenix <https://github.com/mozilla-releng/staging-fenix>`__ repos, along with `staging shipit <https://shipit.staging.mozilla-releng.net/>`__.
 
 How to set up taskgraph for mobile
 ==================================
