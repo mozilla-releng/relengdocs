@@ -11,5 +11,6 @@ Gecko tests documentation
     :glob:
 
     mochitest_xpcshell_manifest_keywords
+    reftest_manifest_keywords
 
 .. vim: nospell :

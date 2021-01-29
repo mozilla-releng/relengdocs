@@ -83,9 +83,11 @@ This part of the process can seem tedious and is difficult to automate without m
 
 The code sheriffs have been using `this documentation <https://wiki.mozilla.org/Auto-tools/Projects/Stockwell/disable-recommended>`__ for training and reference when they disable intermittents.
 
+First you need to add a keyword to be available in the manifest (e.g. ``skip-if = windows_1903``).
+
 There are many exceptions, the bulk of the work will fall into one of 4 categories:
- 1) manifestparser: \*.ini (mochitest*, firefox-ui, marionette, xpcshell) easy to edit by adding a ``fail-if = windows_1903 # <comment>``, a few exceptions here
- 2) reftest: \*.list (reftest, crashtest) need to add a ``fuzzy-if(windows_1903, A, B)``, this is more specific
+ 1) `manifestparser <mochitest_xpcshell_manifest_keywords>`_: \*.ini (mochitest*, firefox-ui, marionette, xpcshell) easy to edit by adding a ``fail-if = windows_1903 # <comment>``, a few exceptions here
+ 2) `reftest <reftest_manifest_keywords>`_: \*.list (reftest, crashtest) need to add a ``fuzzy-if(windows_1903, A, B)``, this is more specific
  3) web-platform-test: testing/web-platform/meta/\*\*.ini (wpt, wpt-reftest, etc.) need to edit/add testing/web-platform/meta/<path>/<testname>.ini, and add expected results 
  4) other (compiled tests, jsreftest, etc.) edit source code, ask for help
 
@@ -97,7 +99,6 @@ To find the proper manifest, it is typically <path>/<harness>.[ini|list].
 There are exceptions and if in doubt use searchfox.org/ to find the manifest which contains the testname.
 
 Once you have the manifest, open it in an editor, and search for the exact test name (there could be similar named tests).
-
 
 Rerun try push, repeat as necessary
 -------------------------------------
