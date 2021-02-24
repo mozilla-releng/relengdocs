@@ -16,7 +16,8 @@ Procedures that don't easily fit elsewhere.
     TCW_Process.rst
     TCW_RelEng.rst
     Transitioning.rst
-    mobile_automation_setup
+    mobile_automation_setup.rst
+    apple_store_administration.rst
     misc-operations/*
 
 .. vim: nospell :
