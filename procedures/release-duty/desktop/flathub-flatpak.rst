@@ -52,7 +52,7 @@ private repo within the ``flathub-store.txt`` file.
 
 In order to publish to both channels, we use the flatpak
 `scriptworker`_. The procedure to push is the same for both channels.
-When the tokens expires, one needs to refresh it. Specific instructions on how
+When the token expires, one needs to refresh it. Specific instructions on how
 to do that lie within the ``flathub-store.yml`` in the SOPS global releng repo.
 
 .. _scriptworker: https://github.com/mozilla-releng/scriptworker-scripts/tree/master/pushflatpakscript
