@@ -23,7 +23,7 @@ nearly three weeks, with *three* major days of activity:
 
 -  Do the prep work a week before the merge
 
-   -  `File tracking migration bug <#file-tracking-migration-bug>`__
+   -  `Assign to yourself the migration bug <#assign-migration-bug>`__
    -  `Do migration no-op trial runs <#do-migration-no-op-trial-runs>`__
    -  `Sanity check no blocking migration
       bugs <#sanity-check-no-blocking-migration-bugs>`__
@@ -47,6 +47,7 @@ nearly three weeks, with *three* major days of activity:
       completed <#reply-to-relman-central-bump-completed>`__
    -  `Update wiki versions <#update-wiki-versions>`__
    -  `Bump Nightly version in ShipIt <#bump-nightly-shipit>`__
+   -  `Close migration bug, file one for the next release <#file-tracking-migration-bug>`__
 
 Historical context of this procedure:
 
@@ -60,11 +61,12 @@ first week and then ``m-c`` -> ``m-b`` in the follow-up week.
 Do the prep work a week before the merge
 ----------------------------------------
 
-File tracking migration bug
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Assign to yourself the migration bug
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-File a tracking migration bug if there isn't one (e.g. `bug
-1412962 <https://bugzilla.mozilla.org/show_bug.cgi?id=1412962>`__)
+A tracking migration bug should've already been filed - please assign that to yourself. If there isn't one (e.g. `bug
+1694412 <https://bugzilla.mozilla.org/show_bug.cgi?id=1694412>`__), please contact the last
+releaseduty owner and file one. You can find more of this in `Release owners <https://wiki.mozilla.org/Release_Management/Release_owners>`__.
 
 Do migration no-op trial runs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -283,8 +285,8 @@ Merge central to beta
 Re-opening the tree(s)
 ~~~~~~~~~~~~~~~~~~~~~~
 
-`Reopen the mozilla-beta tree <https://treestatus.mozilla-releng.net/static/ui/treestatus/show/mozilla-beta>`__
-by restoring the previous state so that **l10n bumper can run**.
+`Restore mozilla-beta tree <https://treestatus.mozilla-releng.net/static/ui/treestatus/show/mozilla-beta>`__
+to its previous state (`approval-required`) so that **l10n bumper can run**.
 
 Verify the l10n bumper output
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -417,3 +419,8 @@ new version.
 5. Commit, and submit a pull request
 6. Merge the pull request *after* a new nightly version has been pushed
    to CDNs
+
+Close migration bug, file one for the next release
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Once release is out of the door on Tuesday, close the existing bug tracking this release, from `initial step <#assign-migration-bug>`__ and clone that bug into a similar one,
+tracking the next release. Please CC all the RelEng team. One can find the next release date in `Release owners <https://wiki.mozilla.org/Release_Management/Release_owners>`__.
