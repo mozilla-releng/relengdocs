@@ -391,7 +391,8 @@ Update wiki versions
 -  `RELEASE_VERSION <https://wiki.mozilla.org/Template:Version/Gecko/release/current>`__
 -  `Next release
    date <https://wiki.mozilla.org/index.php?title=Template:NextReleaseDate>`__.
-   This updates
+   This can be found in the `release calendar
+   <https://wiki.mozilla.org/Release_Management/Calendar>`. This updates
 
    -  `The next ship
       date <https://wiki.mozilla.org/index.php?title=Template:FIREFOX_SHIP_DATE>`__
