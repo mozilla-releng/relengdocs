@@ -275,9 +275,13 @@ Merge central to beta
    `this <https://hg.mozilla.org/releases/mozilla-beta/rev/13d947f127a76828e19d8bb7f8f6353a7b3a0f6e>`__
    and a ``tag`` like
    `this <https://hg.mozilla.org/releases/mozilla-beta/rev/a6981603097c54950b3a00a6e7aa95f532947482>`__
-2. In the same time ``mozilla-central`` should get a tag like
+2. Verify that ``browser/locales/l10n-changesets.json`` has revisions, not
+   ``default``, and/or verify that the merge task has l10n-bump in the logs.
+   The diff should look like `this
+   <https://hg.mozilla.org/releases/mozilla-beta/rev/7564379b690bb9c24cb9a7a4bbb2552c9724c147>`__
+3. In the same time ``mozilla-central`` should get a tag like
    `this <https://hg.mozilla.org/mozilla-central/rev/6d98cc745df58e544a8d71c131f060fc2c460d83>`__
-3. Verify changesets are visible on `hg
+4. Verify changesets are visible on `hg
    pushlog <https://hg.mozilla.org/releases/mozilla-beta/pushloghtml>`__
    and
    `Treeherder <https://treeherder.mozilla.org/#/jobs?repo=mozilla-beta>`__.
@@ -293,14 +297,6 @@ Re-opening the tree(s)
 
 `Reopen the mozilla-beta tree <https://treestatus.mozilla-releng.net/static/ui/treestatus/show/mozilla-beta>`__
 by restoring the previous state so that **l10n bumper can run**.
-
-Verify the l10n bumper output
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-In theory, this happened during central-to-beta merges after 2020.09.30.
-Verify that ``browser/locales/l10n-changesets.json`` has revisions, not
-``default``, and/or verify that the merge task has l10n-bump in the logs.
-The diff should look like `this <https://hg.mozilla.org/releases/mozilla-beta/rev/7564379b690bb9c24cb9a7a4bbb2552c9724c147>`__
 
 Tag central and bump versions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
