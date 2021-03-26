@@ -236,3 +236,12 @@ Intermittent errors
         'validation_url': 'https://addons.mozilla.org/en-US/developers/upload/43e64895a06348c588b088ef218ec211',
         'version': '81.0buildid20200824150741'
     }
+
+Refresh AMO API keys
+~~~~~~~~~~~~~~~~~~~~
+In order to submit the langpacks, we use API tokens from the addon
+`scriptworker`_. The procedure to push is the same for both staging and production.
+When the token needs to be refreshed, specific instructions on how
+to do that lie within the ``amo-langpacks.yml`` in the SOPS global releng repo.
+
+.. _scriptworker: https://github.com/mozilla-releng/scriptworker-scripts/tree/master/addonscript
