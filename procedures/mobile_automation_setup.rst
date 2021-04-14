@@ -240,21 +240,32 @@ standalone project, especially github standalone projects: install
 ⚠️ You shouldn't install ``gradle`` globally on your system. The `./gradlew` scripts in each mobile repo define
 specific gradle versions and are in charge of installing it locally.
 
-On mac, using homebrew:
-
 1. Install jdk8::
 
+    # On mac with homebrew
     brew tap homebrew/cask
     brew cask install homebrew/cask-versions/adoptopenjdk8
 
+    # On Ubuntu
+    sudo apt install openjdk-8-jdk
+
 2. Install android-sdk::
 
+    # On mac with homebrew
     brew cask install android-sdk
+
+    # On Ubuntu
+    sudo apt install android-sdk
 
 3. Make sure you're pointing to the right java::
 
-    # in your .zshrc or .bashrc
+    # In your .zshrc or .bashrc:
+    # On mac
     export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
+
+    # On Ubuntu follow symlinks to find JAVA_HOME
+    ls -l `which java`
+    export JAVA_HOME=<JAVA_HOME>
 
     # After sourcing that file, you should get the following version:
     # > $JAVA_HOME/bin/java -version
@@ -262,21 +273,37 @@ On mac, using homebrew:
     # OpenJDK Runtime Environment (AdoptOpenJDK)(build 1.8.0_265-b01)
     # OpenJDK 64-Bit Server VM (AdoptOpenJDK)(build 25.265-b01, mixed mode)
 
-4. test it::
+4. You'll also need to set ``ANDROID_SDK_ROOT``::
 
-    # In, say, an android-components clone, this should work:
-    ./gradlew tasks --scan
-
-    # And taskgraph optimized should return hundreds of tasks:
-    # (You need https://hg.mozilla.org/build/braindump/ cloned)
-    taskgraph optimized -p ../braindump/taskcluster/taskgraph-diff/params-android-components/main-repo-release.yml | wc -l
-
-5. For ``taskgraph-gen.py`` to work, you'll also need to set ``ANDROID_SDK_ROOT``::
-
-    # in your .zshrc or .bashrc
+    # In your .zshrc or .bashrc:
+    # On mac
     export ANDROID_SDK_ROOT=/usr/local/Caskroom/android-sdk/4333796
 
-6. You'll need a py2 virtualenv with taskgraph, glean-parser, and mozilla-version as well. To run ``taskgraph-gen.py``::
+    # On Ubuntu
+    export ANDROID_SDK_ROOT=/usr/lib/android-sdk
+
+5. Test it::
+
+    # In, say, an android-components or fenix clone, this should work:
+    ./gradlew tasks --scan
+
+6. You'll need a Python 2 virtualenv with taskgraph, glean-parser, and mozilla-version as well::
+
+    virtualenv fenix  # or whatever the repo name
+    pushd ../taskgraph  # assuming taskgraph is cloned in the same dir
+    python setup.py install
+    popd
+    pip install mozilla-version glean-parser<1
+
+    # Verify taskgraph optimized returns tasks (You need https://hg.mozilla.org/build/braindump/ cloned)
+    # android-components
+    taskgraph optimized -p ../braindump/taskcluster/taskgraph-diff/params-android-components/main-repo-release.yml
+
+    # fenix
+    taskgraph optimized -p ../braindump/taskcluster/taskgraph-diff/params-fenix/main-repo-push.yml
+
+
+7. To run ``taskgraph-gen.py``::
 
     # set $TGDIR to the braindump/taskcluster directory path
     TGDIR=..
