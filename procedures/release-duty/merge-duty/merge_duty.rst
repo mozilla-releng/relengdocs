@@ -83,6 +83,9 @@ General steps
 3. On the latest push, click on the down arrow at the top right corner.
 4. Select “Custom push action…”
 5. Choose ``merge-automation``
+6. In Treeherder, you'll see a new push show up in Treeherder in the repo you will be merging to. It can take a few minutes for the push and task to appear. 
+7. Click on the merge or bump tasks (not the Gecko decision task). A job details panel will pop up and from there you'll find a link to the diff file in the artifacts tab.
+
 
 mozilla-beta->mozilla-release migration no-op trial run
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -264,13 +267,14 @@ Merge central to beta
 :warning:
    It's not unlikely for the push to take between 10-20 minutes to complete.
 
-1. Upon successful run, ``mozilla-beta`` should get a version bump and
+1. Upon a successful run, ``mozilla-beta`` should get a version bump and
    branding changes consisting of a ``commit`` like
    `this <https://hg.mozilla.org/releases/mozilla-beta/rev/13d947f127a76828e19d8bb7f8f6353a7b3a0f6e>`__
    and a ``tag`` like
-   `this <https://hg.mozilla.org/releases/mozilla-beta/rev/a6981603097c54950b3a00a6e7aa95f532947482>`__
+   `this <https://hg.mozilla.org/releases/mozilla-beta/rev/a6981603097c54950b3a00a6e7aa95f532947482>`__.
+   Click the first HG revision link (left side under date and timestamp) for the merge push to verify this.
 2. Verify that ``browser/locales/l10n-changesets.json`` has revisions, not
-   ``default``, and/or verify that the merge task has l10n-bump in the logs.
+   ``default``, and/or verify that the merge task has l10n-bump in the logs. You'll need to click on the second HG revision link (commit message will be something like "no bug - Bumping Firefox |10n...") to verify this.
    The diff should look like `this
    <https://hg.mozilla.org/releases/mozilla-beta/rev/7564379b690bb9c24cb9a7a4bbb2552c9724c147>`__
 3. In the same time ``mozilla-central`` should get a tag like
