@@ -15,9 +15,9 @@ ship a newly-localized Firefox in a different language, RelEng gets involved.
 In order for that to happen, the l10n team adds the corresponding builds as a
 pre-requisite. Then, they likely ping releaseduty: PR like `this`_ or
 `this <https://github.com/mozilla-releng/product-details/pull/9>`__ are
-opened against Product-details.
+opened against Product-details. TODO for releaseduty:
 
-TODO for releaseduty:
+
 - double-check that the PR is listing another
 locale in the ``public/1.0/languages.json`` file. See samples PRs like `this`_ or
 `this <https://github.com/mozilla-releng/product-details/pull/9>`__ from the past
