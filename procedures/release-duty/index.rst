@@ -8,6 +8,7 @@ Contents:
     :glob:
 
     desktop/*
+    faq/*
     mobile/*
     merge-duty/*
 
@@ -213,7 +214,7 @@ taskgroup in the inspector.
 After ReleaseDuty
 -----------------
 
-After your tour of releaseduty, In the past it was  customary to fix any documentation 
+After your tour of releaseduty, In the past it was  customary to fix any documentation
 or automation issues discovered.  Now make sure you file any bugs so issues can be included
 in a future sprint or work cycle.
 
