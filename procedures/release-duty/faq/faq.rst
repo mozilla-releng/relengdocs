@@ -18,13 +18,9 @@ pre-requisite. Then, they likely ping releaseduty: PR like `this`_ or
 opened against Product-details. TODO for releaseduty:
 
 
-- double-check that the PR is listing another
-locale in the ``public/1.0/languages.json`` file. See samples PRs like `this`_ or
-`this <https://github.com/mozilla-releng/product-details/pull/9>`__ from the past
-- review and merge the PR, either directly into ``production``
-or via ``main`` and then follow-up with a push to ``production``
-- wait for the Taskcluster CI to run successfully. Behind the scenes, the CI is
-cloning the repo resources and pushes them to a S3 bucket
+- double-check that the PR is listing another locale in the ``public/1.0/languages.json`` file. See samples PRs like `this`_ or `this <https://github.com/mozilla-releng/product-details/pull/9>`__ from the past
+- review and merge the PR, either directly into ``production`` or via ``main`` and then follow-up with a push to ``production``
+- wait for the Taskcluster CI to run successfully. Behind the scenes, the CI is cloning the repo resources and pushes them to a S3 bucket
 - once the CI is green, trigger the Product-Details rebuild via Ship-it: |product-details-rebuild|
 
 .. _Product details: https://product-details.mozilla.org/1.0/
