@@ -7,41 +7,23 @@ Intro
 This manual describes how to set up a new ESR branch. The same process
 can be applied for any branch set up, with slight modifications.
 
-Example tracking bug: `Bug 1334535 - tracking bug for build and release
-of Firefox
-52.0esr <https://bugzilla.mozilla.org/show_bug.cgi?id=1334535>`__
+Example tracking bug: `Bug 1644817 - [meta] Support ESR78
+<https://bugzilla.mozilla.org/show_bug.cgi?id=esr78>`__
 
 Internal changes
 ----------------
 
 This section covers changes to buildbot-configs and tools.
 
-See `Bug
-1339832 <https://bugzilla.mozilla.org/show_bug.cgi?id=1339832>`__ for
-the details and example changes.
-
-Some highlights:
-
--  Explicitly list the platforms (and use lock_platforms) since we don’t
-   ship ESR to all mozilla-central/release platforms (android, for
-   example)
--  Copy mozilla-beta configs, compare them to the previous ESR release
-   and check if you understand what they stand for
+See `Bug 1646588 <https://bugzilla.mozilla.org/show_bug.cgi?id=1646588>`__
+for the details and example changes.
 
 tools changes
 ~~~~~~~~~~~~~
 
 -  copy the old patcher config, so we can generate partial updates
-   against the previous ESR release.
--  since the config patch introduces new configuration file(s) which are
-   needed to be symlinked on the build/scheduler masters there is a need
-   for a fabric methods to create the links
-
-It’s important that the buildbot-configs changes are landed and in
-production prior to adding the symlinks and adjusting
-production-masters.json. When you land these two changes you must
-immediately run the fabric method to put the symlinks in place to ensure
-the masters will continue to function correctly.
+   against the previous ESR release. (Not sure if this applies anymore?)
+-  add new esr lines to l10n cross-channel `here <https://hg.mozilla.org/integration/autoland/rev/8bcf35827a03386d64e4b89b5b3136bb848b77fe#l1.42>`__ and `here <https://hg.mozilla.org/integration/autoland/rev/8bcf35827a03386d64e4b89b5b3136bb848b77fe#l1.55>`__.
 
 External systems
 ----------------
@@ -57,6 +39,8 @@ Tasks
 Below is the list of bugs filed as a part of the ESR52 cycle. Go through
 the list and verify that they are still valid for this ESR cycle and
 clone them if needed.
+
+(We may want to look at the dependencies for the `esr78 cycle <https://bugzilla.mozilla.org/show_bug.cgi?id=1644817>`__ for a more recent set.)
 
 +---------------------------+------------------------------------------+
 | Bug                       | Title                                    |
@@ -169,6 +153,8 @@ changes that the script generated:
 
    ESR_VERSION=51
    # checkout mozharness from the gecko tree using archiver
+   # (We may want to just use mozharness in-tree if we have a mozilla-unified
+   #  clone handy)
    wget https://hg.mozilla.org/build/tools/raw-file/default/buildfarm/utils/archiver_client.py
    python archiver_client.py mozharness --destination mozharness-esr$ESR_VERSION \
      --repo releases/mozilla-esr$ESR_VERSION --rev default --debug
