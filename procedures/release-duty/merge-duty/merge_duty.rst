@@ -28,8 +28,6 @@ nearly three weeks, with *three* major days of activity:
    -  `Do migration no-op trial runs <#do-migration-no-op-trial-runs>`__
    -  `Sanity check no blocking migration
       bugs <#sanity-check-no-blocking-migration-bugs>`__
-   -  `Land whatsnewpage list of
-      locales <#land-whatsnewpage-list-of-locales>`__
 
 -  On Merge day:
 
@@ -133,46 +131,6 @@ Sanity check no blocking migration bugs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Make sure the bug that tracks the migration has no blocking items.
-
-Land whatsnewpage list of locales
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-**TODO** - this needs to change, as the process no longer assumes this,
-but apply them; the l10n drivers provide the final list of locales to
-receive the WNP on the Tuesday prior to the ship date.
-
-1. For each release, there should already be a bug flying around named
-   ``Setup WNP for users coming from < X and receiving the X release``.
-   Find it for the current release. e.g. `Bug
-   1523699 <https://bugzilla.mozilla.org/show_bug.cgi?id=1523699>`__. We
-   should always aim to chain this bug to our main mergeduty tracking
-   bug. That is, block the WNP bug against the
-   ``tracking XXX migration day``. If not already, please do so. This
-   way, it's easier to find deps and navigate via bugs.
-2. By the Friday prior to merge day, the l10n (most likely
-   ``Peiying Mo [:CocoMo]``) team will have posted the final list of
-   locales for whatsnewpage. Double-check with them again to make sure
-   that is the final list. The list of locales comes in two forms:
-   attachment in bug directly to be ``hg import``\ ed, but also as a
-   comment. Make sure to double-check they match as that's generated
-   automatically and sometimes there could be fallout resulting in
-   mismatches.
-3. Update the `in-tree whatsnewpage list of
-   locales <https://hg.mozilla.org/mozilla-central/file/tip/browser/config/whats_new_page.yml>`__
-   on central and request an uplift of that to beta. Similar to `this
-   patch <https://hg.mozilla.org/mozilla-central/rev/55c218c9489b>`__.
-   It will uplift to release when the merge happens on Monday
-
-   1. On development machine, update
-      ``browser/config/whats_new_page.yml`` with the list of locales
-      from the bug
-   2. Commit the change and create Phabricator patch request as usual
-   3. Once the patch request is approved, land the patch via lando
-   4. In Bugzilla edit the phabricator attachment and add a
-      approval-mozilla-beta? flag similar to
-      `this <https://bugzilla.mozilla.org/show_bug.cgi?id=1616636#c7>`__
-   5. ensure someone from sheriffs or relman uplift this to Beta before
-      Monday's merge and RC go-to-build
 
 Release Merge Day - part I
 --------------------------
@@ -362,8 +320,8 @@ using an action payload such as:
    force-dry-run: false
    push: true
    behavior: bump-esr
-   to-branch: esr88
-   to-repo: https://hg.mozilla.org/releases/mozilla-esr88
+   to-branch: esr78
+   to-repo: https://hg.mozilla.org/releases/mozilla-esr78
 
 1. Upon successful run, ``mozilla-esr${VERSION}`` should get a
    ``commit`` like
