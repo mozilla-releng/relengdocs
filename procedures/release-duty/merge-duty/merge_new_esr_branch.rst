@@ -32,12 +32,11 @@ Odd problems
 ------------
 
 mozilla-version needed an `update <https://github.com/mozilla-releng/mozilla-version/commit/3d9f3361505fbb485ea6103c2be6e2a8a4d41ec1>`__.
- * remember to push mozilla-version changes to production branch, don't leave on master only
+ * remember to push shipit changes that contain mozilla-version update to production branch, don't leave on master only
  * remember to update `treescript <https://github.com/mozilla-releng/scriptworker-scripts/commit/d0ffb3c1c0095798c50e0f126e47280404b720ed>`__
  * remember to merge scriptworker-script (treescript) changes to production and let the ci-change bot complete
 
-UVNEXT* tasks (update verify next) will fail until the first build is complete
- * also need a balrog rule here for updating from previous esr (i.e. esr78 -> esr91)
+UVNEXT* tasks (update verify next) will fail (run in promote phase) unless proper balrog (esr-localtest-next) rule exists
 
 
 Merge
