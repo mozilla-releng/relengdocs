@@ -140,3 +140,12 @@ the private repo.
 
 .. _macaroons: https://dashboard.snapcraft.io/docs/api/macaroon.html
 
+
+Refreshing collaborators
+------------------------
+
+Every now and then we need to curate the list of contributors that can handle
+the snaps. In order to for one to do so, please use the main RelEng account credentials
+and hop on the `collaborators`_ page and make those adjustements.
+
+.. _collaborators: https://dashboard.snapcraft.io/snaps/firefox/collaboration/
