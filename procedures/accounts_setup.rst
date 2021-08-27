@@ -1,3 +1,6 @@
+Accounts Setup
+==============
+
 Here is a list of accounts and access needed to be successful in Release Engineering
 
 General:
@@ -12,7 +15,7 @@ General:
  * 2FA?
 
 Release Duty:
- * ?
+ * `Release duty rotation <https://wiki.mozilla.org/Release_Management/Release_owners>`
 
 Mailing Lists:
  * follow instructions at `day1 <https://wiki.mozilla.org/ReleaseEngineering/Day_1_Checklist#Communication>`_

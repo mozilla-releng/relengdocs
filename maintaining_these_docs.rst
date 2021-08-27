@@ -17,6 +17,7 @@ We likely need to go through these docs and clean up.
 
 Building the docs locally
 -------------------------
+#. Git clone the `build-relengdocs repository <https://github.com/mozilla/build-relengdocs>`
 #. Create a python virtualenv
 #. ``pip install -r rtfd-requirements.txt``
 #. ``make html`` will build the docs locally. Verify any changes by viewing ``_build/html/index.html``
