@@ -243,21 +243,21 @@ specific gradle versions and are in charge of installing it locally.
 1. Install jdk8::
 
     # On mac with homebrew
-    brew tap homebrew/cask
-    brew cask install homebrew/cask-versions/adoptopenjdk8
+    brew install --cask homebrew/cask-versions/adoptopenjdk8
 
     # On Ubuntu
     sudo apt install openjdk-8-jdk
+⚠️ Currently projects like Focus and Fenix need Java 11 to run, so you might need to install that version and set your $JAVA_HOME to that version.
 
 2. Install android-sdk::
 
     # On mac with homebrew
-    brew cask install android-sdk
+    brew install --cask android-sdk
 
     # On Ubuntu
     sudo apt install android-sdk
 
-3. Make sure you're pointing to the right java::
+3. Make sure you're pointing to the right java (depending on what version gradle requires)::
 
     # In your .zshrc or .bashrc:
     # On mac
@@ -282,12 +282,27 @@ specific gradle versions and are in charge of installing it locally.
     # On Ubuntu
     export ANDROID_SDK_ROOT=/usr/lib/android-sdk
 
-5. Test it::
+5. You'll need to accept all licenses before you can build the app:
+   # on mac
+   cd /usr/local/Caskroom/android-sdk/4333796
+   yes | sdkmanager --licenses
+
+   ⚠️ If you hit this error: "Exception in thread "main" java.lang.NoClassDefFoundError: javax/xml/bind/annotation/XmlSchema"
+   you might need to either switch to java8 to accept the licenses and if that doesn't work then run:
+   yes | sdkmanager --update 
+   # to accepts licenses for the sdkmanager itself
+
+   yes | sdkmanager --licenses 
+   # to accepts new licenses not previously accepted
+
+   Additional troubleshooting tips can be found on `this stack overflow thread <https://stackoverflow.com/questions/38096225/automatically-accept-all-sdk-licences>`
+
+6. Test it::
 
     # In, say, an android-components or fenix clone, this should work:
     ./gradlew tasks --scan
 
-6. You'll need a Python 2 virtualenv with taskgraph, glean-parser, and mozilla-version as well::
+7. You'll need a Python 3 virtualenv with taskgraph, glean-parser, and mozilla-version as well::
 
     virtualenv fenix  # or whatever the repo name
     pushd ../taskgraph  # assuming taskgraph is cloned in the same dir
@@ -303,7 +318,7 @@ specific gradle versions and are in charge of installing it locally.
     taskgraph optimized -p ../braindump/taskcluster/taskgraph-diff/params-fenix/main-repo-push.yml
 
 
-7. To run ``taskgraph-gen.py``::
+8. To run ``taskgraph-gen.py``::
 
     # set $TGDIR to the braindump/taskcluster directory path
     TGDIR=..
@@ -313,3 +328,5 @@ specific gradle versions and are in charge of installing it locally.
 
     # Android-Components
     $TGDIR/taskgraph-diff/taskgraph-gen.py --halt-on-failure --overwrite --params-dir $TGDIR/taskgraph-diff/params-android-components --full ac-clean 2>&1 | tee out
+
+9. To test taskgraph changes without braindump, run `taskgraph target-graph -p parameters.yml`. But you might need to go into an existing task in taskcluster and download a parameters artifact.

@@ -4,6 +4,12 @@ documentation for Firefox Release Engineering.
 Rendered versions of the documentation may be viewed at:
   http://moz-releng-docs.readthedocs.io/en/latest/
 
-Note on building locally: you may need to install the modules listed in
-rtfd-requirements.txt.
+1. Create a python virtualenv
+
+2. ``pip install -r rtfd-requirements.txt``
+
+3. ``make html`` will build the docs locally and confirm that nothing in the toctree is broken. 
+Verify any changes by viewing _build/html/index.html
+
+Note: Any new docs should be directly or indirectly linked to from index.rst. (For example, if index.rst contains balrog/index.rst in its toctree, and the new doc is in the balrog/index.rst toctree, then the new doc is successfully indirectly linked.)
 
