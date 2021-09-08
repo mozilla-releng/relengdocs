@@ -381,7 +381,8 @@ It doesn't get automatically updated because it would need to know when a new
 nightly was available, not just when the version had been updated in-tree.
 Everything up to merging this pull request can be done early, but the PR must
 not be merged before the first nightly has been built and published with the
-new version.
+new version. However, it does need to be merged and deployed to `production <https://github.com/mozilla-releng/shipit#production>` 
+as soon as reasonably possible after nightly is built. Note: the product details API needs to be manually updated by pressing the gear icon in shipit
 
 1. ``git clone git@github.com:mozilla-releng/shipit.git``
 2. ``git checkout -b nightly_version_bump_${version}``
