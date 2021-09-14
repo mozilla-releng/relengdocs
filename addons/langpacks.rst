@@ -59,6 +59,9 @@ How To…
 How to handle New Languages for Release
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Context: the underlying issue for this lies within `issue-15353`_ and is on the roadmap to be fixed by the AMO team.
+Some related work is happening in H2 2021.
+
 -  Once the promote phase is kicked off, any new language packs will
    fail the addon submission task, and require human intervention.
 -  Go to the failed task, and look for its dependency on a nightly-l10n
@@ -244,4 +247,5 @@ In order to submit the langpacks, we use API tokens from the addon
 When the token needs to be refreshed, specific instructions on how
 to do that lie within the ``amo-langpacks.yml`` in the SOPS global releng repo.
 
+.. _issue-15353: https://github.com/mozilla/addons-server/issues/15353
 .. _scriptworker: https://github.com/mozilla-releng/scriptworker-scripts/tree/master/addonscript
