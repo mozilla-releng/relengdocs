@@ -1,4 +1,4 @@
-.. _mochitest_xpcshell_manifest_keywords:
+.. _reftest_xpcshell_manifest_keywords:
 
 Adding a keyword to reftest style manifests
 ====================================================
