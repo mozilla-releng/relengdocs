@@ -29,16 +29,9 @@ author = 'Mozilla Release Engineering'
 extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
-    'sphinxcontrib.actdiag',
     'sphinxcontrib.spelling',
     'recommonmark',
 ]
-
-# actdiag
-actdiag_html_image_format = 'SVG'
-on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
-if not on_rtd:
-    actdiag_debug = True
 
 spelling_word_list_filename = ['releng_wordlist.txt']
 
