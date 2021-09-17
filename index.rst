@@ -18,7 +18,6 @@ Contents:
    :maxdepth: 2
    :caption: Overview and Procedures
 
-   Cross-team workflows <release_workflows/index.rst>
    procedures/index.rst
    gecko_tests/new_config.rst
 
