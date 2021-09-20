@@ -1,7 +1,7 @@
 Release Duty
 ============
 
-Contents:
+More detailed information on specific ReleaseDuty topics:
 
 .. toctree::
     :maxdepth: 1
@@ -11,17 +11,17 @@ Contents:
     mobile/*
     merge-duty/*
 
-Releaseduty is a role within the Release Engineering team. It is conducted on a rolling rotation matching one person
+ReleaseDuty is a role within the Release Engineering team. It is conducted on a rolling rotation matching one person
 against one release cycle (currently 4 weeks). Below you will find a description of the expectations and resources
 needed to do the role.
 
 Expectations
 ------------
 
-If you're reading this, it means you're ramping up as an official releaseduty squirrel within Mozilla RelEng, so please
+If you're reading this, it means you're ramping up as an official ReleaseDuty squirrel within Mozilla RelEng, so please
 allow us to give you a warm welcome!
 
-The role mainly involves handling all the coordination and communication with other `teams <#teams>`__ as well as doing
+The role mainly involves handling all the coordination and communication with other teams as well as doing
 all the operational tasks to make sure the release workflow is as smooth as possible.
 
 While this role can get quite disruptive, we prefer this approach of assigning the responsibility to a small set of
@@ -65,25 +65,21 @@ Email
 
 As ReleaseDuty you need to *subscribe* to certain mailing lists:
 
- * All types of sign-offs and approvals should go to `release signoff mailing list <https://mail.mozilla.org/listinfo/release-signoff>`__
- * All discussion topics should go to `release drivers mailing list <https://mail.mozilla.org/listinfo/release-drivers>`__
-
-These other mailing lists will likely have useful discussions and information:
+These mailing lists will likely have useful discussions and information:
  * `RelEng internal mailing list <release@mozilla.com>`__
- * `Thunderbird release drivers mailing list <https://mail.mozilla.org/listinfo/thunderbird-drivers>`__
- * `release-automation-notifications-thunderbird mailing list <https://mail.mozilla.org/listinfo/release-automation-notifications-thunderbird>`__
  * (optional) `release-automation-notifications-dev mailing list <https://groups.google.com/a/mozilla.com/forum/#!forum/release-automation-notifications-dev>`__
 
 Meetings and Calendars
 ~~~~~~~~~~~~~~~~~~~~~~
 
+See the `Release owners <https://wiki.mozilla.org/Release_Management/Release_owners>`__ list to determine who is ReleaseDuty for each release.
+
 Regular meetings are a vital part of making sure all the teams are kept informed and consulted during the release
-process. To view those meetings in your calendar you need to subscribe/be added to the following calendar:
+process, although ReleaseDuty does not routinely attend these meetings. To view those meetings in your calendar you need to subscribe to the following calendar:
 
- * `Releases Scheduling <https://calendar.google.com/calendar/embed?src=mozilla.com_dbq84anr9i8tcnmhabatstv5co@group.calendar.google.com>`__ (so that you can attend the Tuesday/Thursday channel meetings. You can add it following RelMan's `docs <https://wiki.mozilla.org/Release_Management#Calendar_Updating>`__) – If their instructions don't work, try to the “Add to Google Calendar” button at the `web version of the calendar <https://calendar.google.com/calendar/embed?src=mozilla.com_dbq84anr9i8tcnmhabatstv5co@group.calendar.google.com>`__.
+ * `Releases Scheduling <https://calendar.google.com/calendar/embed?src=mozilla.com_dbq84anr9i8tcnmhabatstv5co@group.calendar.google.com>`__ (You can add it following RelMan's `docs <https://wiki.mozilla.org/Release_Management#Calendar_Updating>`__) – If their instructions don't work, try to the “Add to Google Calendar” button at the `web version of the calendar <https://calendar.google.com/calendar/embed?src=mozilla.com_dbq84anr9i8tcnmhabatstv5co@group.calendar.google.com>`__.
 
-**If you join a calendar and it's blank, you may need to delete it and get a calendar invitation from an existing
-subscriber**
+**If you join a calendar and it's blank, you may need to delete it and get a calendar invitation from an existing subscriber**
 
 .. _release-duty-permissions:
 
@@ -115,7 +111,7 @@ File an Release Engineering bug under the `Applications: Shipit (backend)
 <https://bugzilla.mozilla.org/enter_bug.cgi?format=__default__&cloned_bug_id=1626312&product=Release%20Engineering&component=Applications%3A%20Shipit%20%28backend%29>`__
 component requesting to be granted shipit access.
 
-Have someone in `Release Engineering <#teams>`__ to vouch for you in the bug.
+Have someone in Release Engineering vouch for you in the bug.
 
 
 How to get Balrog access
@@ -125,7 +121,7 @@ Similar to Shipit, you need to be added to the `balrog` and `vpn_balrog` LDAP gr
 and attach you to the `releng` role through the Balrog admin UI.
 
 For VPN group access, file a ticket with IT similar to `this one <https://bugzilla.mozilla.org/enter_bug.cgi?format=__default__&cloned_bug_id=1565283&product=Infrastructure%20%26%20Operations&component=Infrastructure%3A%20LDAP>`_.
-Have someone in `Release Engineering <#teams>`__ to vouch for you in the bug.
+Have someone in Release Engineering vouch for you in the bug.
 
 Next, file a Github issue within the `Balrog repo <https://github.com/mozilla-releng/balrog/issues>`_. Ask to be added to
 the Balrog admin user list and attached to the `releng` role. Also have someone vouch for you.
@@ -213,7 +209,7 @@ taskgroup in the inspector.
 After ReleaseDuty
 -----------------
 
-After your tour of releaseduty, In the past it was  customary to fix any documentation 
+After your tour of ReleaseDuty, in the past it was customary to fix any documentation
 or automation issues discovered.  Now make sure you file any bugs so issues can be included
 in a future sprint or work cycle.
 
@@ -249,7 +245,7 @@ If a release is blocked. The normal flow is to:
 3. file a ticket
 4. determine which team(s) and person(s) should be escalated.
 
-   a. Searching phonebook is useful for org and ownership charts.
+   a. Searching the People Directory is useful for org and ownership charts.
    b. bugzilla and github history
    c. source code history
 
