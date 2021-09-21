@@ -65,6 +65,9 @@ Email
 
 As ReleaseDuty you need to *subscribe* to certain mailing lists:
 
+ * All types of sign-offs and approvals should go to `release signoff mailing list <https://groups.google.com/a/mozilla.org/g/release-signoff/>`__
+ * All discussion topics should go to `release drivers mailing list <https://groups.google.com/a/mozilla.org/g/release-drivers>`__
+
 These mailing lists will likely have useful discussions and information:
  * `RelEng internal mailing list <release@mozilla.com>`__
  * (optional) `release-automation-notifications-dev mailing list <https://groups.google.com/a/mozilla.com/forum/#!forum/release-automation-notifications-dev>`__
