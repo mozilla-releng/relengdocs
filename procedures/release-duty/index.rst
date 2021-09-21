@@ -63,13 +63,12 @@ You ought to be present and pay attention to conversations happening in:
 Email
 ~~~~~
 
-As ReleaseDuty you need to *subscribe* to certain mailing lists:
+Please join the following groups to stay on top of the communication regarding the releases:
 
  * All types of sign-offs and approvals should go to `release signoff mailing list <https://groups.google.com/a/mozilla.org/g/release-signoff/>`__
  * All discussion topics should go to `release drivers mailing list <https://groups.google.com/a/mozilla.org/g/release-drivers>`__
-
-These mailing lists will likely have useful discussions and information:
  * `RelEng internal mailing list <release@mozilla.com>`__
+ * `Thunderbird release drivers mailing list <https://groups.google.com/a/mozilla.org/g/thunderbird-drivers>`__
  * (optional) `release-automation-notifications-dev mailing list <https://groups.google.com/a/mozilla.com/forum/#!forum/release-automation-notifications-dev>`__
 
 Meetings and Calendars
@@ -110,7 +109,7 @@ How to get Ship-it access
 You need to be added to the `vpn_cloudops_shipit` LDAP group, as well as be added to the allowedlist in the shipit
 config. Both of these can be done by filing a ticket requesting access.
 
-File an Release Engineering bug under the `Applications: Shipit (backend)
+File a Release Engineering bug under the `Applications: Shipit (backend)
 <https://bugzilla.mozilla.org/enter_bug.cgi?format=__default__&cloned_bug_id=1626312&product=Release%20Engineering&component=Applications%3A%20Shipit%20%28backend%29>`__
 component requesting to be granted shipit access.
 
