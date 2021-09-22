@@ -247,6 +247,7 @@ specific gradle versions and are in charge of installing it locally.
 
     # On Ubuntu
     sudo apt install openjdk-8-jdk
+
 ⚠️ Currently projects like Focus and Fenix need Java 11 to run, so you might need to install that version and set your $JAVA_HOME to that version.
 
 2. Install android-sdk::

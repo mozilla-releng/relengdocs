@@ -232,7 +232,7 @@ Merge central to beta
    `this <https://hg.mozilla.org/releases/mozilla-beta/rev/a6981603097c54950b3a00a6e7aa95f532947482>`__.
    Click the first HG revision link (left side under date and timestamp) for the merge push to verify this.
 2. Verify that ``browser/locales/l10n-changesets.json`` has revisions, not
-   ``default``, and/or verify that the merge task has l10n-bump in the logs. You'll need to click on the second HG revision link (commit message will be something like "no bug - Bumping Firefox |10n...") to verify this.
+   ``default``, and/or verify that the merge task has l10n-bump in the logs. You'll need to click on the second HG revision link (commit message will be something like ``"no bug - Bumping Firefox |10n..."``) to verify this.
    The diff should look like `this
    <https://hg.mozilla.org/releases/mozilla-beta/rev/7564379b690bb9c24cb9a7a4bbb2552c9724c147>`__
 3. In the same time ``mozilla-central`` should get a tag like

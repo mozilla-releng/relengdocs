@@ -1,4 +1,4 @@
-.. _troubleshooting_workers:
+.. _troubleshooting_expirations:
 
 Troubleshooting Expirations Notifications
 =========================================
