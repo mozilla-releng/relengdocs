@@ -12,7 +12,7 @@ As of this writing (2021.09.21) Gecko actions are all defined in the [actions di
 
 ## Testing Release Promotion actions
 
-The Release Promotion action exists in multiple repositories ([Gecko, for example](https://searchfox.org/mozilla-central/source/taskcluster/taskgraph/actions/release_promotion.py), or [Fenix](https://github.com/mozilla-mobile/fenix/blob/main/taskcluster/fenix_taskgraph/release_promotion.py)), and tends to be customized for each product. Each follows similar patterns, however. For instance, each follows the [☃ model](https://docs.google.com/presentation/d/1xCQZfLzCto0faO2AHXIsL-Xr-SsL2NnAVqSGbWGEcrg/edit?usp=sharing). Each consists of various `phases`, e.g. `build`, `promote`, `push`, and `ship` for Gecko releases.
+The Release Promotion action exists in multiple repositories ([Gecko, for example](https://searchfox.org/mozilla-central/source/taskcluster/taskgraph/actions/release_promotion.py), or [Fenix](https://github.com/mozilla-mobile/fenix/blob/main/taskcluster/fenix_taskgraph/release_promotion.py)), and tends to be customized for each product. Each follows similar patterns, however. For instance, each follows the [☃ model](https://docs.google.com/presentation/d/1xCQZfLzCto0faO2AHXIsL-Xr-SsL2NnAVqSGbWGEcrg/edit?usp=sharing). Each consists of various `flavors`, which tend to involve a `phase` (e.g. `build`, `promote`, `push`, and `ship` for Gecko releases), sometimes a `product` (`devedition` vs `firefox`), and sometimes a variant, e.g. `promote_firefox_rc` or `push_devedition`.
 
 ### Replicating an existing release graph
 
