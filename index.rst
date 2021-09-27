@@ -15,7 +15,7 @@ documentation. You might also be interested in our `main web site`_.
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 4
    :caption: Overview and Procedures
 
    procedures/index.rst
@@ -23,7 +23,7 @@ Contents:
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 4
    :caption: Documentation and Articles
    :glob:
 
