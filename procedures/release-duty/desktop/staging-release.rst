@@ -1,5 +1,9 @@
 .. _staging-release:
 
+We have a number of tasks that _only_ run on Betas, Releases, and ESRs. Because of this, these tasks are at high risk of failure when we uplift a new Gecko version to `mozilla-beta`. Many scriptworkers fall into this category, but certain verification jobs, like update verify, are also notably included.
+
+When making changes to tasks like this staging releases are the most effective way to ensure that your changes are correct, and haven't regressed anything.
+
 Run staging releases
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -40,11 +44,7 @@ just ensure you are using the staging instance
 (https://shipit.staging.mozilla-releng.net).
 
 One caveat here is the list of partials that needs to be filled-in.
-:warning: The partials need to exist in
-`S3 <http://ftp.stage.mozaws.net/pub/firefox/releases/>`__ and be valid
-releases in `Balrog
-staging <https://balrog-admin-static-stage.stage.mozaws.net/>`__.
-
+:warning: The partials need to exist in Ship It dev, Balrog stage, as well as the _production_ archive.mozilla.org server. There's a `helper script in the braindump repository <https://hg.mozilla.org/build/braindump/file/tip/releases-related/just-give-me-partials.sh>` that will help you find previous releases that meet this criteria.
 
 Once the staging releases are being triggered, it's highly recommended
 that at least a comment is being dropped to Sheriffs team
