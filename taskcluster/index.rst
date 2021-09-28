@@ -26,7 +26,7 @@ Specifically for the FirefoxCI cluster.
     troubleshooting_workers
     taskcluster_cli
     rerun_vs_retrigger
-    testing_actions.md
+    testing_relpro.md
     scopes
 
 .. vim: nospell :

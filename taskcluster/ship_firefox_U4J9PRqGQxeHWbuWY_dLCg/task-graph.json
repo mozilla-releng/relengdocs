@@ -1,0 +1,903 @@
+{
+  "BRO0mmGASc6lInLTZrtgfA": {
+    "attributes": {
+      "always_target": false,
+      "job_try_name": "javascript",
+      "kind": "source-test",
+      "retrigger": true,
+      "run_on_projects": [],
+      "shipping_phase": "ship",
+      "shipping_product": "firefox"
+    },
+    "dependencies": {},
+    "description": "Builds a JavaScript codeql database",
+    "if_dependencies": [],
+    "kind": "source-test",
+    "label": "source-test-codeql-javascript",
+    "optimization": null,
+    "soft_dependencies": [],
+    "task": {
+      "created": {
+        "relative-datestamp": "0 seconds"
+      },
+      "deadline": {
+        "relative-datestamp": "1 day"
+      },
+      "dependencies": [
+        "DxHnUlWwSla9XUAou0R0tg",
+        "ZZx2q_sfSPykHsci5iWnCg",
+        "a8-sTSLqQ0SlaWjoAMJfFA"
+      ],
+      "expires": {
+        "relative-datestamp": "4 days"
+      },
+      "extra": {
+        "index": {
+          "rank": 0
+        },
+        "notify": {
+          "email": {
+            "content": "firefox 92.0.1 build1/mozilla-release linux64 codeql-javascript status",
+            "subject": "firefox 92.0.1 build1/mozilla-release linux64 codeql-javascript status"
+          }
+        },
+        "parent": "U4J9PRqGQxeHWbuWY_dLCg",
+        "treeherder": {
+          "collection": {
+            "all": true
+          },
+          "jobKind": "other",
+          "machine": {
+            "platform": "codeql"
+          },
+          "symbol": "linux64-js",
+          "tier": 2
+        },
+        "treeherder-platform": "codeql/all"
+      },
+      "metadata": {
+        "description": "Builds a JavaScript codeql database ([Treeherder job](https://treeherder.mozilla.org/#/jobs?repo=mozilla-release&revision=d7bbc5812f7f36a9378165fffd7a058ddb0118ec&selectedTaskRun=BRO0mmGASc6lInLTZrtgfA))",
+        "name": "source-test-codeql-javascript",
+        "owner": "ryanvm@gmail.com",
+        "source": "https://hg.mozilla.org/releases/mozilla-release/file/d7bbc5812f7f36a9378165fffd7a058ddb0118ec/taskcluster/ci/source-test"
+      },
+      "payload": {
+        "artifacts": {
+          "public/codeql/codeql-db-javascript.tar.xz": {
+            "expires": {
+              "relative-datestamp": "4 days"
+            },
+            "path": "/builds/worker/codeql-db-javascript.tar.xz",
+            "type": "file"
+          }
+        },
+        "cache": {
+          "gecko-level-3-checkouts-hg58-v3-ce115c4ec883f2e4f154": "/builds/worker/checkouts"
+        },
+        "command": [
+          "/builds/worker/bin/run-task",
+          "--gecko-checkout=/builds/worker/checkouts/gecko",
+          "--fetch-hgfingerprint",
+          "--task-cwd",
+          "/builds/worker/checkouts/gecko",
+          "--",
+          "bash",
+          "-cx",
+          "taskcluster/scripts/misc/generate-codeql-db-javascript.sh"
+        ],
+        "env": {
+          "GECKO_BASE_REPOSITORY": "https://hg.mozilla.org/mozilla-unified",
+          "GECKO_HEAD_REPOSITORY": "https://hg.mozilla.org/releases/mozilla-release",
+          "GECKO_HEAD_REV": "d7bbc5812f7f36a9378165fffd7a058ddb0118ec",
+          "GECKO_PATH": "/builds/worker/checkouts/gecko",
+          "HG_STORE_PATH": "/builds/worker/checkouts/hg-store",
+          "MOZ_AUTOMATION": "1",
+          "MOZ_FETCHES": "[{\"artifact\": \"public/build/node.tar.zst\", \"extract\": true, \"task\": \"DxHnUlWwSla9XUAou0R0tg\"}, {\"artifact\": \"public/codeql.zip\", \"extract\": true, \"task\": \"a8-sTSLqQ0SlaWjoAMJfFA\"}]",
+          "MOZ_FETCHES_DIR": "fetches",
+          "MOZ_SCM_LEVEL": "3",
+          "SCCACHE_DISABLE": "1",
+          "TASKCLUSTER_CACHES": "/builds/worker/checkouts",
+          "TASKCLUSTER_VOLUMES": "/builds/worker/checkouts;/builds/worker/tooltool-cache;/builds/worker/workspace"
+        },
+        "features": {
+          "allowPtrace": true,
+          "taskclusterProxy": true
+        },
+        "image": {
+          "path": "public/image.tar.zst",
+          "taskId": "ZZx2q_sfSPykHsci5iWnCg",
+          "type": "task-image"
+        },
+        "maxRunTime": 86400,
+        "onExitStatus": {
+          "purgeCaches": [
+            72
+          ],
+          "retry": [
+            72
+          ]
+        }
+      },
+      "priority": "highest",
+      "provisionerId": "gecko-3",
+      "routes": [
+        "notify.email.tom@mozilla.com.on-completed",
+        "notify.email.freddy@mozilla.com.on-completed",
+        "notify.email.tom@mozilla.com.on-failed",
+        "notify.email.freddy@mozilla.com.on-failed",
+        "notify.email.tom@mozilla.com.on-exception",
+        "notify.email.freddy@mozilla.com.on-exception",
+        "tc-treeherder.v2.mozilla-release.d7bbc5812f7f36a9378165fffd7a058ddb0118ec"
+      ],
+      "scopes": [
+        "secrets:get:project/taskcluster/gecko/hgfingerprint",
+        "secrets:get:project/taskcluster/gecko/hgmointernal",
+        "docker-worker:feature:allowPtrace",
+        "docker-worker:cache:gecko-level-3-checkouts-hg58-v3-ce115c4ec883f2e4f154"
+      ],
+      "tags": {
+        "createdForUser": "ryanvm@gmail.com",
+        "kind": "source-test",
+        "label": "source-test-codeql-javascript",
+        "os": "linux",
+        "retrigger": "true",
+        "worker-implementation": "docker-worker"
+      },
+      "workerType": "b-linux-xlarge"
+    },
+    "task_id": "BRO0mmGASc6lInLTZrtgfA"
+  },
+  "DyHake-ASjSIMrIaeo8gUg": {
+    "attributes": {
+      "always_target": false,
+      "kind": "release-flatpak-push",
+      "required_signoffs": [
+        "mar-signing"
+      ],
+      "run_on_projects": [],
+      "shipping_phase": "ship",
+      "shipping_product": "firefox"
+    },
+    "dependencies": {},
+    "description": "Pushes Flatpaks onto Flathub",
+    "if_dependencies": [],
+    "kind": "release-flatpak-push",
+    "label": "release-flatpak-push-firefox",
+    "optimization": null,
+    "soft_dependencies": [],
+    "task": {
+      "created": {
+        "relative-datestamp": "0 seconds"
+      },
+      "deadline": {
+        "relative-datestamp": "1 day"
+      },
+      "dependencies": [
+        "cP4P_noYQfyLRKBBfR2SFQ"
+      ],
+      "expires": {
+        "relative-datestamp": "1 year"
+      },
+      "extra": {
+        "index": {
+          "rank": 0
+        },
+        "parent": "U4J9PRqGQxeHWbuWY_dLCg",
+        "treeherder": {
+          "collection": {
+            "opt": true
+          },
+          "groupName": "Flatpak image generation",
+          "groupSymbol": "Flatpak",
+          "jobKind": "build",
+          "machine": {
+            "platform": "linux64"
+          },
+          "symbol": "push",
+          "tier": 2
+        },
+        "treeherder-platform": "linux64/opt"
+      },
+      "metadata": {
+        "description": "Pushes Flatpaks onto Flathub ([Treeherder job](https://treeherder.mozilla.org/#/jobs?repo=mozilla-release&revision=d7bbc5812f7f36a9378165fffd7a058ddb0118ec&selectedTaskRun=DyHake-ASjSIMrIaeo8gUg))",
+        "name": "release-flatpak-push-firefox",
+        "owner": "ryanvm@gmail.com",
+        "source": "https://hg.mozilla.org/releases/mozilla-release/file/d7bbc5812f7f36a9378165fffd7a058ddb0118ec/taskcluster/ci/release-flatpak-push"
+      },
+      "payload": {
+        "channel": "stable",
+        "upstreamArtifacts": [
+          {
+            "paths": [
+              "public/build/target.flatpak.tar.xz"
+            ],
+            "taskId": "cP4P_noYQfyLRKBBfR2SFQ",
+            "taskType": "build"
+          }
+        ]
+      },
+      "priority": "highest",
+      "provisionerId": "scriptworker-k8s",
+      "routes": [
+        "tc-treeherder.v2.mozilla-release.d7bbc5812f7f36a9378165fffd7a058ddb0118ec"
+      ],
+      "scopes": [
+        "project:releng:flathub:firefox:stable"
+      ],
+      "tags": {
+        "createdForUser": "ryanvm@gmail.com",
+        "kind": "release-flatpak-push",
+        "label": "release-flatpak-push-firefox",
+        "retrigger": "false"
+      },
+      "workerType": "gecko-3-pushflatpak"
+    },
+    "task_id": "DyHake-ASjSIMrIaeo8gUg"
+  },
+  "Ihln2v1YTkS45qxSPakuQA": {
+    "attributes": {
+      "always_target": false,
+      "kind": "release-balrog-scheduling",
+      "required_signoffs": [
+        "mar-signing"
+      ],
+      "run_on_projects": [],
+      "shipping_phase": "ship",
+      "shipping_product": "firefox"
+    },
+    "dependencies": {},
+    "description": "Schedule Firefox publishing in balrog",
+    "if_dependencies": [],
+    "kind": "release-balrog-scheduling",
+    "label": "release-balrog-scheduling-firefox",
+    "optimization": null,
+    "soft_dependencies": [],
+    "task": {
+      "created": {
+        "relative-datestamp": "0 seconds"
+      },
+      "deadline": {
+        "relative-datestamp": "1 day"
+      },
+      "dependencies": [
+        "AuUDbN3aRdOYioxwtL1m9A",
+        "Dnk3ZwoJTiiTVvnT7s3ESg",
+        "DqlOXseTRhWBFniSY07Qfw",
+        "GaDqcdO_S4u0Fa4MyoaO6w",
+        "KZMtYBUOQy6SbWr8jFsOjQ",
+        "Lgk6-zoHSgm7hdKVeaxg4Q",
+        "Lrq2lxd6Q9CCpJbun8vFyw",
+        "MMvxuPY5SkOrcnQ8-AsxKQ",
+        "MjkIhPAoQLeqRuJS6qfFPQ",
+        "OTLa0iVUSouYXB-r1Itubw",
+        "Qx6owf9gSDCNtqrklXbHvA",
+        "R_Lqj98rQOOibxGnuKEnVw",
+        "TyMWBRleS36mC8c6mBb-tw",
+        "XKVCl_L2SXOvNcYlj7fkOg",
+        "XuC34eKlQxK33-O94D6QQQ",
+        "YaH3FSxbSK-QmUIP5Kybag",
+        "ZT6zCkkESbWpWXiA-bIFTQ",
+        "ZcE7wHw6Smmy4GzxzxMf0A",
+        "Zj09_EEFSmyRbclsoubJvg",
+        "byO57l_kTbuVWtJD7d_VfQ",
+        "e6vG2p-iTE6HxNmSZs96Xw",
+        "fR9muXbpS0qxSukiW89Faw",
+        "fpweRznKTHmC3cAMxCtw_Q"
+      ],
+      "expires": {
+        "relative-datestamp": "1 year"
+      },
+      "extra": {
+        "index": {
+          "rank": 1632327115
+        },
+        "parent": "U4J9PRqGQxeHWbuWY_dLCg",
+        "treeherder": {
+          "collection": {
+            "opt": true
+          },
+          "groupName": "Release promotion",
+          "groupSymbol": "Rel",
+          "jobKind": "build",
+          "machine": {
+            "platform": "firefox-release"
+          },
+          "symbol": "BSFx",
+          "tier": 1
+        },
+        "treeherder-platform": "firefox-release/opt"
+      },
+      "metadata": {
+        "description": "Schedule Firefox publishing in balrog ([Treeherder job](https://treeherder.mozilla.org/#/jobs?repo=mozilla-release&revision=d7bbc5812f7f36a9378165fffd7a058ddb0118ec&selectedTaskRun=Ihln2v1YTkS45qxSPakuQA))",
+        "name": "release-balrog-scheduling-firefox",
+        "owner": "ryanvm@gmail.com",
+        "source": "https://hg.mozilla.org/releases/mozilla-release/file/d7bbc5812f7f36a9378165fffd7a058ddb0118ec/taskcluster/ci/release-balrog-scheduling"
+      },
+      "payload": {
+        "behavior": "schedule",
+        "build_number": 1,
+        "product": "firefox",
+        "publish_rules": [
+          145
+        ],
+        "release_eta": "2021-09-23T13:00:00.000Z",
+        "version": "92.0.1"
+      },
+      "priority": "highest",
+      "provisionerId": "scriptworker-k8s",
+      "routes": [
+        "tc-treeherder.v2.mozilla-release.d7bbc5812f7f36a9378165fffd7a058ddb0118ec"
+      ],
+      "scopes": [
+        "project:releng:balrog:server:release"
+      ],
+      "tags": {
+        "createdForUser": "ryanvm@gmail.com",
+        "kind": "release-balrog-scheduling",
+        "label": "release-balrog-scheduling-firefox",
+        "retrigger": "false"
+      },
+      "workerType": "gecko-3-balrog"
+    },
+    "task_id": "Ihln2v1YTkS45qxSPakuQA"
+  },
+  "U-k_i1ZbRwCGYIIYnuW8dQ": {
+    "attributes": {
+      "always_target": false,
+      "kind": "release-version-bump",
+      "required_signoffs": [
+        "mar-signing"
+      ],
+      "run_on_projects": [],
+      "shipping_phase": "ship",
+      "shipping_product": "firefox"
+    },
+    "dependencies": {},
+    "description": "Release Promotion version bump/tag",
+    "if_dependencies": [],
+    "kind": "release-version-bump",
+    "label": "release-version-bump-firefox",
+    "optimization": null,
+    "soft_dependencies": [],
+    "task": {
+      "created": {
+        "relative-datestamp": "0 seconds"
+      },
+      "deadline": {
+        "relative-datestamp": "1 day"
+      },
+      "dependencies": [
+        "YzWx36w_QzGP1xtHeVN64Q"
+      ],
+      "expires": {
+        "relative-datestamp": "1 year"
+      },
+      "extra": {
+        "index": {
+          "rank": 1632327115
+        },
+        "parent": "U4J9PRqGQxeHWbuWY_dLCg",
+        "treeherder": {
+          "collection": {
+            "opt": true
+          },
+          "groupName": "Release promotion",
+          "groupSymbol": "Rel",
+          "jobKind": "build",
+          "machine": {
+            "platform": "firefox-release"
+          },
+          "symbol": "VerBump",
+          "tier": 1
+        },
+        "treeherder-platform": "firefox-release/opt"
+      },
+      "metadata": {
+        "description": "Release Promotion version bump/tag ([Treeherder job](https://treeherder.mozilla.org/#/jobs?repo=mozilla-release&revision=d7bbc5812f7f36a9378165fffd7a058ddb0118ec&selectedTaskRun=U-k_i1ZbRwCGYIIYnuW8dQ))",
+        "name": "release-version-bump-firefox",
+        "owner": "ryanvm@gmail.com",
+        "source": "https://hg.mozilla.org/releases/mozilla-release/file/d7bbc5812f7f36a9378165fffd7a058ddb0118ec/taskcluster/ci/release-version-bump"
+      },
+      "payload": {
+        "actions": [
+          "tag",
+          "version_bump",
+          "push"
+        ],
+        "dontbuild": true,
+        "tag_info": {
+          "revision": "d7bbc5812f7f36a9378165fffd7a058ddb0118ec",
+          "tags": [
+            "FIREFOX_92_0_1_RELEASE"
+          ]
+        },
+        "version_bump_info": {
+          "files": [
+            "browser/config/version.txt",
+            "browser/config/version_display.txt",
+            "config/milestone.txt"
+          ],
+          "next_version": "92.0.2"
+        }
+      },
+      "priority": "highest",
+      "provisionerId": "scriptworker-k8s",
+      "routes": [
+        "tc-treeherder.v2.mozilla-release.d7bbc5812f7f36a9378165fffd7a058ddb0118ec"
+      ],
+      "scopes": [],
+      "tags": {
+        "createdForUser": "ryanvm@gmail.com",
+        "kind": "release-version-bump",
+        "label": "release-version-bump-firefox",
+        "retrigger": "false"
+      },
+      "workerType": "gecko-3-tree"
+    },
+    "task_id": "U-k_i1ZbRwCGYIIYnuW8dQ"
+  },
+  "V5YtVwrPSEikUw55wMiHLg": {
+    "attributes": {
+      "always_target": false,
+      "kind": "release-mark-as-shipped",
+      "required_signoffs": [
+        "mar-signing"
+      ],
+      "run_on_projects": [],
+      "shipping_phase": "ship",
+      "shipping_product": "firefox"
+    },
+    "dependencies": {
+      "release-balrog-scheduling-firefox": "Ihln2v1YTkS45qxSPakuQA",
+      "release-bouncer-aliases-firefox": "amce3U7NT9SAgJGXeLbwTQ",
+      "release-version-bump-firefox": "U-k_i1ZbRwCGYIIYnuW8dQ"
+    },
+    "description": "mark release as shipped in Ship-It",
+    "if_dependencies": [],
+    "kind": "release-mark-as-shipped",
+    "label": "release-mark-as-shipped-firefox",
+    "optimization": null,
+    "soft_dependencies": [],
+    "task": {
+      "created": {
+        "relative-datestamp": "0 seconds"
+      },
+      "deadline": {
+        "relative-datestamp": "1 day"
+      },
+      "dependencies": [
+        "Ihln2v1YTkS45qxSPakuQA",
+        "U-k_i1ZbRwCGYIIYnuW8dQ",
+        "amce3U7NT9SAgJGXeLbwTQ"
+      ],
+      "expires": {
+        "relative-datestamp": "1 year"
+      },
+      "extra": {
+        "index": {
+          "rank": 0
+        },
+        "parent": "U4J9PRqGQxeHWbuWY_dLCg"
+      },
+      "metadata": {
+        "description": "mark release as shipped in Ship-It",
+        "name": "release-mark-as-shipped-firefox",
+        "owner": "ryanvm@gmail.com",
+        "source": "https://hg.mozilla.org/releases/mozilla-release/file/d7bbc5812f7f36a9378165fffd7a058ddb0118ec/taskcluster/ci/release-mark-as-shipped"
+      },
+      "payload": {
+        "release_name": "Firefox-92.0.1-build1"
+      },
+      "priority": "highest",
+      "provisionerId": "scriptworker-k8s",
+      "routes": [],
+      "scopes": [
+        "project:releng:ship-it:server:production",
+        "project:releng:ship-it:action:mark-as-shipped"
+      ],
+      "tags": {
+        "createdForUser": "ryanvm@gmail.com",
+        "kind": "release-mark-as-shipped",
+        "label": "release-mark-as-shipped-firefox",
+        "retrigger": "false"
+      },
+      "workerType": "gecko-3-shipit"
+    },
+    "task_id": "V5YtVwrPSEikUw55wMiHLg"
+  },
+  "a_JAksL_QiS8Gcw7y59GsA": {
+    "attributes": {
+      "accepted-mar-channel-ids": "firefox-mozilla-release",
+      "always_target": false,
+      "build_platform": "linux64",
+      "build_type": "codeql-cpp",
+      "kind": "build",
+      "mar-channel-id": "firefox-mozilla-release",
+      "run_on_projects": [],
+      "shipping_phase": "ship",
+      "shipping_product": "firefox",
+      "update-channel": "release"
+    },
+    "dependencies": {},
+    "description": "Builds a C++ codeql database",
+    "if_dependencies": [],
+    "kind": "build",
+    "label": "build-linux64/codeql-cpp",
+    "optimization": null,
+    "soft_dependencies": [],
+    "task": {
+      "created": {
+        "relative-datestamp": "0 seconds"
+      },
+      "deadline": {
+        "relative-datestamp": "1 day"
+      },
+      "dependencies": [
+        "DkGvnvnwR9m6Xp6KzKExvA",
+        "DxHnUlWwSla9XUAou0R0tg",
+        "K0GQ7VepRxirTne1MLo5Vg",
+        "NYQgHieJTLmRdWS0w7nhMg",
+        "O58ReRLbRm-uOyAYugsU8g",
+        "Ou5tW48cSwCSon6mAeBigA",
+        "Uvlcpld0RP65l9AAd5vOuw",
+        "ZXEeYXLmQuCmeELpMfD6Xw",
+        "ZZx2q_sfSPykHsci5iWnCg",
+        "a8-sTSLqQ0SlaWjoAMJfFA",
+        "blBNpq-4Q42tQTGewRrltQ",
+        "dqzBBOStTJuDrXLN_3zv7Q"
+      ],
+      "expires": {
+        "relative-datestamp": "4 days"
+      },
+      "extra": {
+        "chainOfTrust": {
+          "inputs": {
+            "docker-image": "ZZx2q_sfSPykHsci5iWnCg"
+          }
+        },
+        "index": {
+          "rank": 0
+        },
+        "notify": {
+          "email": {
+            "content": "firefox 92.0.1 build1/mozilla-release linux64 codeql-cpp status",
+            "subject": "firefox 92.0.1 build1/mozilla-release linux64 codeql-cpp status"
+          }
+        },
+        "parent": "U4J9PRqGQxeHWbuWY_dLCg",
+        "treeherder": {
+          "collection": {
+            "all": true
+          },
+          "jobKind": "other",
+          "machine": {
+            "platform": "codeql"
+          },
+          "symbol": "linux64-cpp",
+          "tier": 2
+        },
+        "treeherder-platform": "codeql/all"
+      },
+      "metadata": {
+        "description": "Builds a C++ codeql database ([Treeherder job](https://treeherder.mozilla.org/#/jobs?repo=mozilla-release&revision=d7bbc5812f7f36a9378165fffd7a058ddb0118ec&selectedTaskRun=a_JAksL_QiS8Gcw7y59GsA))",
+        "name": "build-linux64/codeql-cpp",
+        "owner": "ryanvm@gmail.com",
+        "source": "https://hg.mozilla.org/releases/mozilla-release/file/d7bbc5812f7f36a9378165fffd7a058ddb0118ec/taskcluster/ci/build"
+      },
+      "payload": {
+        "artifacts": {
+          "public/build": {
+            "expires": {
+              "relative-datestamp": "4 days"
+            },
+            "path": "/builds/worker/artifacts/",
+            "type": "directory"
+          },
+          "public/codeql/codeql-db-cpp.tar.xz": {
+            "expires": {
+              "relative-datestamp": "4 days"
+            },
+            "path": "/builds/worker/codeql-db-cpp.tar.xz",
+            "type": "file"
+          },
+          "public/logs": {
+            "expires": {
+              "relative-datestamp": "4 days"
+            },
+            "path": "/builds/worker/logs/",
+            "type": "directory"
+          }
+        },
+        "cache": {
+          "gecko-level-3-checkouts-hg58-v3-ce115c4ec883f2e4f154": "/builds/worker/checkouts",
+          "gecko-level-3-tooltool-cache-v3-ce115c4ec883f2e4f154": "/builds/worker/tooltool-cache"
+        },
+        "command": [
+          "/builds/worker/bin/run-task",
+          "--gecko-checkout=/builds/worker/checkouts/gecko",
+          "--fetch-hgfingerprint",
+          "--",
+          "bash",
+          "-cx",
+          "${GECKO_PATH}/taskcluster/scripts/misc/generate-codeql-db-cpp.sh"
+        ],
+        "env": {
+          "ACCEPTED_MAR_CHANNEL_IDS": "firefox-mozilla-release",
+          "EXTRA_MOZHARNESS_CONFIG": "{\"mozconfig_variant\": \"debug\", \"objdir\": \"obj-build\", \"update_channel\": \"release\"}",
+          "GECKO_BASE_REPOSITORY": "https://hg.mozilla.org/mozilla-unified",
+          "GECKO_HEAD_REPOSITORY": "https://hg.mozilla.org/releases/mozilla-release",
+          "GECKO_HEAD_REV": "d7bbc5812f7f36a9378165fffd7a058ddb0118ec",
+          "GECKO_PATH": "/builds/worker/checkouts/gecko",
+          "HG_STORE_PATH": "/builds/worker/checkouts/hg-store",
+          "JOB_SCRIPT": "taskcluster/scripts/misc/generate-codeql-db-cpp.sh",
+          "MAR_CHANNEL_ID": "firefox-mozilla-release",
+          "MH_BRANCH": "mozilla-release",
+          "MH_BUILD_POOL": "taskcluster",
+          "MH_CUSTOM_BUILD_VARIANT_CFG": "debug",
+          "MOZHARNESS_ACTIONS": "build",
+          "MOZHARNESS_CONFIG": "builds/releng_base_firefox.py builds/releng_base_linux_64_builds.py",
+          "MOZHARNESS_SCRIPT": "mozharness/scripts/fx_desktop_build.py",
+          "MOZ_AUTOMATION": "1",
+          "MOZ_BUILD_DATE": "20210922161155",
+          "MOZ_FETCHES": "[{\"artifact\": \"public/build/binutils.tar.xz\", \"extract\": true, \"task\": \"K0GQ7VepRxirTne1MLo5Vg\"}, {\"artifact\": \"public/build/cbindgen.tar.xz\", \"extract\": true, \"task\": \"O58ReRLbRm-uOyAYugsU8g\"}, {\"artifact\": \"public/build/clang.tar.zst\", \"extract\": true, \"task\": \"dqzBBOStTJuDrXLN_3zv7Q\"}, {\"artifact\": \"public/build/dump_syms.tar.xz\", \"extract\": true, \"task\": \"blBNpq-4Q42tQTGewRrltQ\"}, {\"artifact\": \"public/build/nasm.tar.bz2\", \"extract\": true, \"task\": \"DkGvnvnwR9m6Xp6KzKExvA\"}, {\"artifact\": \"public/build/node.tar.zst\", \"extract\": true, \"task\": \"DxHnUlWwSla9XUAou0R0tg\"}, {\"artifact\": \"public/build/rust-size.tar.xz\", \"extract\": true, \"task\": \"Uvlcpld0RP65l9AAd5vOuw\"}, {\"artifact\": \"public/build/rustc.tar.zst\", \"extract\": true, \"task\": \"NYQgHieJTLmRdWS0w7nhMg\"}, {\"artifact\": \"public/build/sysroot-x86_64-linux-gnu.tar.zst\", \"extract\": true, \"task\": \"ZXEeYXLmQuCmeELpMfD6Xw\"}, {\"artifact\": \"public/build/wasi-sysroot.tar.xz\", \"extract\": true, \"task\": \"Ou5tW48cSwCSon6mAeBigA\"}, {\"artifact\": \"public/codeql.zip\", \"extract\": true, \"task\": \"a8-sTSLqQ0SlaWjoAMJfFA\"}]",
+          "MOZ_FETCHES_DIR": "fetches",
+          "MOZ_SCM_LEVEL": "3",
+          "MOZ_SOURCE_CHANGESET": "d7bbc5812f7f36a9378165fffd7a058ddb0118ec",
+          "MOZ_SOURCE_REPO": "https://hg.mozilla.org/releases/mozilla-release",
+          "NEED_XVFB": "true",
+          "PERFHERDER_EXTRA_OPTIONS": "cpp",
+          "PYTHONUNBUFFERED": "1",
+          "SCCACHE_DISABLE": "1",
+          "TASKCLUSTER_CACHES": "/builds/worker/checkouts;/builds/worker/tooltool-cache",
+          "TASKCLUSTER_VOLUMES": "/builds/worker/checkouts;/builds/worker/tooltool-cache;/builds/worker/workspace",
+          "TOOLTOOL_CACHE": "/builds/worker/tooltool-cache",
+          "UPLOAD_DIR": "/builds/worker/artifacts/",
+          "WORKSPACE": "/builds/worker/workspace"
+        },
+        "features": {
+          "allowPtrace": true,
+          "chainOfTrust": true,
+          "taskclusterProxy": true
+        },
+        "image": {
+          "path": "public/image.tar.zst",
+          "taskId": "ZZx2q_sfSPykHsci5iWnCg",
+          "type": "task-image"
+        },
+        "maxRunTime": 86400,
+        "onExitStatus": {
+          "purgeCaches": [
+            72
+          ],
+          "retry": [
+            4,
+            72
+          ]
+        }
+      },
+      "priority": "highest",
+      "provisionerId": "gecko-3",
+      "routes": [
+        "notify.email.tom@mozilla.com.on-completed",
+        "notify.email.freddy@mozilla.com.on-completed",
+        "index.gecko.v2.mozilla-release.latest.firefox.linux64-codeql-cpp",
+        "index.gecko.v2.mozilla-release.pushdate.2021.09.22.20210922161155.firefox.linux64-codeql-cpp",
+        "index.gecko.v2.mozilla-release.pushdate.2021.09.22.latest.firefox.linux64-codeql-cpp",
+        "index.gecko.v2.mozilla-release.pushlog-id.2663.firefox.linux64-codeql-cpp",
+        "index.gecko.v2.mozilla-release.revision.d7bbc5812f7f36a9378165fffd7a058ddb0118ec.firefox.linux64-codeql-cpp",
+        "tc-treeherder.v2.mozilla-release.d7bbc5812f7f36a9378165fffd7a058ddb0118ec"
+      ],
+      "scopes": [
+        "secrets:get:project/taskcluster/gecko/hgfingerprint",
+        "secrets:get:project/taskcluster/gecko/hgmointernal",
+        "project:releng:services/tooltool/api/download/public",
+        "docker-worker:feature:allowPtrace",
+        "docker-worker:cache:gecko-level-3-checkouts-hg58-v3-ce115c4ec883f2e4f154",
+        "docker-worker:cache:gecko-level-3-tooltool-cache-v3-ce115c4ec883f2e4f154"
+      ],
+      "tags": {
+        "createdForUser": "ryanvm@gmail.com",
+        "kind": "build",
+        "label": "build-linux64/codeql-cpp",
+        "os": "linux",
+        "retrigger": "false",
+        "worker-implementation": "docker-worker"
+      },
+      "workerType": "b-linux-xlarge"
+    },
+    "task_id": "a_JAksL_QiS8Gcw7y59GsA"
+  },
+  "amce3U7NT9SAgJGXeLbwTQ": {
+    "attributes": {
+      "always_target": false,
+      "kind": "release-bouncer-aliases",
+      "required_signoffs": [
+        "mar-signing"
+      ],
+      "run_on_projects": [],
+      "shipping_phase": "ship",
+      "shipping_product": "firefox"
+    },
+    "dependencies": {},
+    "description": "Update bouncer aliases job",
+    "if_dependencies": [],
+    "kind": "release-bouncer-aliases",
+    "label": "release-bouncer-aliases-firefox",
+    "optimization": null,
+    "soft_dependencies": [],
+    "task": {
+      "created": {
+        "relative-datestamp": "0 seconds"
+      },
+      "deadline": {
+        "relative-datestamp": "1 day"
+      },
+      "dependencies": [
+        "DqlOXseTRhWBFniSY07Qfw"
+      ],
+      "expires": {
+        "relative-datestamp": "1 year"
+      },
+      "extra": {
+        "index": {
+          "rank": 1632327115
+        },
+        "parent": "U4J9PRqGQxeHWbuWY_dLCg",
+        "treeherder": {
+          "collection": {
+            "opt": true
+          },
+          "groupName": "Release promotion",
+          "groupSymbol": "Rel",
+          "jobKind": "test",
+          "machine": {
+            "platform": "firefox-release"
+          },
+          "symbol": "BncAlias",
+          "tier": 1
+        },
+        "treeherder-platform": "firefox-release/opt"
+      },
+      "metadata": {
+        "description": "Update bouncer aliases job ([Treeherder job](https://treeherder.mozilla.org/#/jobs?repo=mozilla-release&revision=d7bbc5812f7f36a9378165fffd7a058ddb0118ec&selectedTaskRun=amce3U7NT9SAgJGXeLbwTQ))",
+        "name": "release-bouncer-aliases-firefox",
+        "owner": "ryanvm@gmail.com",
+        "source": "https://hg.mozilla.org/releases/mozilla-release/file/d7bbc5812f7f36a9378165fffd7a058ddb0118ec/taskcluster/ci/release-bouncer-aliases"
+      },
+      "payload": {
+        "aliases_entries": {
+          "firefox-latest": "Firefox-92.0.1",
+          "firefox-latest-ssl": "Firefox-92.0.1-SSL",
+          "firefox-msi-latest-ssl": "Firefox-92.0.1-msi-SSL",
+          "firefox-pkg-latest-ssl": "Firefox-92.0.1-pkg-SSL",
+          "firefox-stub": "Firefox-92.0.1-stub",
+          "partner-firefox-release-chipde-cliqz-latest": "Firefox-92.0.1-chipde-cliqz",
+          "partner-firefox-release-chipde-cliqz-stub": "Firefox-92.0.1-chipde-cliqz-stub",
+          "partner-firefox-release-mailru-mailru-latest": "Firefox-92.0.1-mailru-mailru",
+          "partner-firefox-release-mailru-mailru-stub": "Firefox-92.0.1-mailru-mailru-stub",
+          "partner-firefox-release-mailru-okru-latest": "Firefox-92.0.1-mailru-okru",
+          "partner-firefox-release-mailru-okru-stub": "Firefox-92.0.1-mailru-okru-stub",
+          "partner-firefox-release-softonic-softonic-004-latest": "Firefox-92.0.1-softonic-softonic-004",
+          "partner-firefox-release-softonic-softonic-004-stub": "Firefox-92.0.1-softonic-softonic-004-stub",
+          "partner-firefox-release-softonic-softonic-005-latest": "Firefox-92.0.1-softonic-softonic-005",
+          "partner-firefox-release-softonic-softonic-005-stub": "Firefox-92.0.1-softonic-softonic-005-stub",
+          "partner-firefox-release-softonic-softonic-006-latest": "Firefox-92.0.1-softonic-softonic-006",
+          "partner-firefox-release-softonic-softonic-006-stub": "Firefox-92.0.1-softonic-softonic-006-stub",
+          "partner-firefox-release-softonic-softonic-008-latest": "Firefox-92.0.1-softonic-softonic-008",
+          "partner-firefox-release-softonic-softonic-008-stub": "Firefox-92.0.1-softonic-softonic-008-stub",
+          "partner-firefox-release-softonic-softonic-009-latest": "Firefox-92.0.1-softonic-softonic-009",
+          "partner-firefox-release-softonic-softonic-009-stub": "Firefox-92.0.1-softonic-softonic-009-stub",
+          "partner-firefox-release-softonic-softonic-010-latest": "Firefox-92.0.1-softonic-softonic-010",
+          "partner-firefox-release-softonic-softonic-010-stub": "Firefox-92.0.1-softonic-softonic-010-stub",
+          "partner-firefox-release-softonic-softonic-011-latest": "Firefox-92.0.1-softonic-softonic-011",
+          "partner-firefox-release-softonic-softonic-011-stub": "Firefox-92.0.1-softonic-softonic-011-stub",
+          "partner-firefox-release-softonic-softonic-012-latest": "Firefox-92.0.1-softonic-softonic-012",
+          "partner-firefox-release-softonic-softonic-012-stub": "Firefox-92.0.1-softonic-softonic-012-stub",
+          "partner-firefox-release-yandex-yandex-drp-latest": "Firefox-92.0.1-yandex-yandex-drp",
+          "partner-firefox-release-yandex-yandex-drp-stub": "Firefox-92.0.1-yandex-yandex-drp-stub",
+          "partner-firefox-release-yandex-yandex-portals-latest": "Firefox-92.0.1-yandex-yandex-portals",
+          "partner-firefox-release-yandex-yandex-portals-stub": "Firefox-92.0.1-yandex-yandex-portals-stub",
+          "partner-firefox-release-yandex-yandex-ru-latest": "Firefox-92.0.1-yandex-yandex-ru",
+          "partner-firefox-release-yandex-yandex-ru-mz-latest": "Firefox-92.0.1-yandex-yandex-ru-mz",
+          "partner-firefox-release-yandex-yandex-ru-mz-stub": "Firefox-92.0.1-yandex-yandex-ru-mz-stub",
+          "partner-firefox-release-yandex-yandex-ru-stub": "Firefox-92.0.1-yandex-yandex-ru-stub",
+          "partner-firefox-release-yandex-yandex-tr-latest": "Firefox-92.0.1-yandex-yandex-tr",
+          "partner-firefox-release-yandex-yandex-tr-stub": "Firefox-92.0.1-yandex-yandex-tr-stub",
+          "partner-firefox-release-yandex-yandex-ua-latest": "Firefox-92.0.1-yandex-yandex-ua",
+          "partner-firefox-release-yandex-yandex-ua-stub": "Firefox-92.0.1-yandex-yandex-ua-stub"
+        }
+      },
+      "priority": "highest",
+      "provisionerId": "scriptworker-k8s",
+      "routes": [
+        "tc-treeherder.v2.mozilla-release.d7bbc5812f7f36a9378165fffd7a058ddb0118ec"
+      ],
+      "scopes": [
+        "project:releng:bouncer:action:aliases",
+        "project:releng:bouncer:server:production"
+      ],
+      "tags": {
+        "createdForUser": "ryanvm@gmail.com",
+        "kind": "release-bouncer-aliases",
+        "label": "release-bouncer-aliases-firefox",
+        "retrigger": "false"
+      },
+      "workerType": "gecko-3-bouncer"
+    },
+    "task_id": "amce3U7NT9SAgJGXeLbwTQ"
+  },
+  "b_my-wu4T96Ky598OXBLsA": {
+    "attributes": {
+      "always_target": false,
+      "kind": "release-notify-ship",
+      "required_signoffs": [
+        "mar-signing"
+      ],
+      "run_on_projects": [],
+      "shipping_phase": "ship",
+      "shipping_product": "firefox"
+    },
+    "dependencies": {
+      "release-balrog-scheduling-firefox": "Ihln2v1YTkS45qxSPakuQA",
+      "release-bouncer-aliases-firefox": "amce3U7NT9SAgJGXeLbwTQ",
+      "release-mark-as-shipped-firefox": "V5YtVwrPSEikUw55wMiHLg",
+      "release-version-bump-firefox": "U-k_i1ZbRwCGYIIYnuW8dQ"
+    },
+    "description": "Sends email to release-drivers telling release was shipped.",
+    "if_dependencies": [],
+    "kind": "release-notify-ship",
+    "label": "release-notify-ship-firefox",
+    "optimization": null,
+    "soft_dependencies": [],
+    "task": {
+      "created": {
+        "relative-datestamp": "0 seconds"
+      },
+      "deadline": {
+        "relative-datestamp": "1 day"
+      },
+      "dependencies": [
+        "Ihln2v1YTkS45qxSPakuQA",
+        "U-k_i1ZbRwCGYIIYnuW8dQ",
+        "V5YtVwrPSEikUw55wMiHLg",
+        "amce3U7NT9SAgJGXeLbwTQ"
+      ],
+      "expires": {
+        "relative-datestamp": "1 year"
+      },
+      "extra": {
+        "index": {
+          "rank": 0
+        },
+        "notify": {
+          "email": {
+            "content": "firefox 92.0.1 build1/mozilla-release updates are ready for signoff in Balrog!",
+            "subject": "firefox 92.0.1 build1/mozilla-release updates are ready for signoff in Balrog!"
+          }
+        },
+        "parent": "U4J9PRqGQxeHWbuWY_dLCg"
+      },
+      "metadata": {
+        "description": "Sends email to release-drivers telling release was shipped.",
+        "name": "release-notify-ship-firefox",
+        "owner": "ryanvm@gmail.com",
+        "source": "https://hg.mozilla.org/releases/mozilla-release/file/d7bbc5812f7f36a9378165fffd7a058ddb0118ec/taskcluster/ci/release-notify-ship"
+      },
+      "payload": {},
+      "priority": "highest",
+      "provisionerId": "built-in",
+      "routes": [
+        "notify.email.release-signoff@mozilla.org.on-completed"
+      ],
+      "scopes": [],
+      "tags": {
+        "createdForUser": "ryanvm@gmail.com",
+        "kind": "release-notify-ship",
+        "label": "release-notify-ship-firefox",
+        "retrigger": "false"
+      },
+      "workerType": "succeed"
+    },
+    "task_id": "b_my-wu4T96Ky598OXBLsA"
+  }
+}
