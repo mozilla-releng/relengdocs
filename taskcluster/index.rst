@@ -24,6 +24,8 @@ Specifically for the FirefoxCI cluster.
 
     uploading_an_image
     troubleshooting_workers
+    taskcluster_cli
+    rerun_vs_retrigger
     scopes
 
 .. vim: nospell :
