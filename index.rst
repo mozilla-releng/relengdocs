@@ -15,6 +15,15 @@ documentation. You might also be interested in our `main web site`_.
 Contents:
 
 .. toctree::
+   :caption: Other Useful Documentation
+
+   Balrog <https://mozilla-balrog.readthedocs.io/en/latest/index.html>
+   Scriptworker <https://scriptworker.readthedocs.io/en/latest/index.html>
+   Scriptworker Scripts <https://scriptworker-scripts.readthedocs.io/en/latest/index.html>
+   Treeherder <https://treeherder.readthedocs.io/>
+
+
+.. toctree::
    :maxdepth: 4
    :caption: Overview and Procedures
 
