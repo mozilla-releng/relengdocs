@@ -132,7 +132,7 @@ Make sure the bug that tracks the migration has no blocking items.
 Release Merge Day - part I
 --------------------------
 
-**When**: Wait for go from relman to release-signoff@mozilla.com. Relman
+**When**: Wait for go from relman to release-drivers@mozilla.org. Relman
 might want to do the migration in two steps. Read the email to
 understand which migration you are suppose to do, and then wait for
 second email. For date, see `Release Scheduling
@@ -201,7 +201,7 @@ Reply to the migration request with the template:
 Release Merge Day - part II - a week after Merge day
 ----------------------------------------------------
 
-**When**: Wait for go from relman to release-signoff@mozilla.com. For
+**When**: Wait for go from relman to release-drivers@mozilla.org. For
 date, see `Release Scheduling
 calendar <https://calendar.google.com/calendar/embed?src=bW96aWxsYS5jb21fZGJxODRhbnI5aTh0Y25taGFiYXRzdHY1Y29AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ>`__
 or check with relman
