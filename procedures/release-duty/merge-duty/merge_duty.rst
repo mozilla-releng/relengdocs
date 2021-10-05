@@ -110,6 +110,10 @@ mozilla-central->mozilla-beta migration no-op trial run
 mozilla-esr bump no-op trial run
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+mozilla-esr branches evolve over time: Today (October 2021), mozilla-esr91 is
+the current esr, and that is used in the discussion below; in the future, you
+may need to substitute a different esr version number.
+
 1. Follow the `general steps <#general-steps>`__ hopping on `esr91 <https://treeherder.mozilla.org/#/jobs?repo=mozilla-esr91>`__
 2. Insert the following payload and click submit.
 
