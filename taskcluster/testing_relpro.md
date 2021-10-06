@@ -27,7 +27,17 @@ However, Release Promotion calls the [`taskgraph_decision`](https://searchfox.or
 
 The Release Promotion action exists in multiple repositories ([Gecko, for example](https://searchfox.org/mozilla-central/source/taskcluster/gecko_taskgraph/actions/release_promotion.py), or [Fenix](https://github.com/mozilla-mobile/fenix/blob/main/taskcluster/fenix_taskgraph/release_promotion.py)), and tends to be customized for each product. Each follows similar patterns, however. For instance, each follows the [☃ model](https://docs.google.com/presentation/d/1xCQZfLzCto0faO2AHXIsL-Xr-SsL2NnAVqSGbWGEcrg/edit?usp=sharing). Each consists of various `flavors`, which tend to involve a `phase` (e.g. `build`, `promote`, `push`, and `ship` for Gecko releases), sometimes a `product` (`devedition` vs `firefox`), and sometimes a variant, e.g. `promote_firefox_rc` or `push_devedition`.
 
-### Replicating an existing release graph
+These are defined in [`taskcluster/ci/config.yml`](https://searchfox.org/mozilla-central/rev/a9ef6ad97d2d5f96d5ed51eda38f1a02700ccff7/taskcluster/ci/config.yml#210).
+
+### Replicating an existing release graph locally
+
+To run `[./mach] taskgraph test-action-callback`, we need a `taskId`, a `taskGroupId`, a parameters.yml, and an input.yml.
+
+#### input.yml
+
+To replicate the input of a previously scheduled task, check the [task definition](relpro/promote_firefox_NpcI7tFfSDmYVyPNzkYMKw/task.json). We embed it in `task.payload.env.ACTION_INPUT`, and in a more useable format in `task.extra.action.context.input`.
+
+(There is a [helper script](relpro/helpers/yaml_input_from_task_json.py) that will open a `task.json` in the current directory, and print the input in yaml format to STDOUT. With that, the input looks like [this](relpro/promote_firefox_NpcI7tFfSDmYVyPNzkYMKw/input.yml).)
 
 ### Example promotion test
 
