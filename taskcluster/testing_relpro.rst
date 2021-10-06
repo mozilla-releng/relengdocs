@@ -95,16 +95,16 @@ To run ``[./mach] taskgraph test-action-callback``, we need a
 input.yml
 ^^^^^^^^^
 
-To replicate the input of a previously scheduled task, check the `task
-definition <relpro/promote_firefox_NpcI7tFfSDmYVyPNzkYMKw/task.json>`__.
+To replicate the input of a previously scheduled task, check the :download:`task
+definition <relpro/promote_firefox_NpcI7tFfSDmYVyPNzkYMKw/task.json>`.
 We embed it in ``task.payload.env.ACTION_INPUT``, and in a more useable
 format in ``task.extra.action.context.input``.
 
-(There is a `helper
-script <relpro/helpers/yaml_input_from_task_json.py>`__ that will open a
+(There is a :download:`helper
+script <relpro/helpers/yaml_input_from_task_json.py>` that will open a
 ``task.json`` in the current directory, and print the input in yaml
 format to STDOUT. With that, the input looks like
-`this <relpro/promote_firefox_NpcI7tFfSDmYVyPNzkYMKw/input.yml>`__.)
+:download:`this <relpro/promote_firefox_NpcI7tFfSDmYVyPNzkYMKw/input.yml>`.)
 
 Example promotion test
 ~~~~~~~~~~~~~~~~~~~~~~
