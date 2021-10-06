@@ -92,8 +92,7 @@ Replicating an existing release graph locally
 To run ``[./mach] taskgraph test-action-callback``, we need a
 ``taskId``, a ``taskGroupId``, a parameters.yml, and an input.yml.
 
-input.yml
-^^^^^^^^^
+For the ``taskId`` and ``taskGroupId``, 
 
 To replicate the input of a previously scheduled task, check the :download:`task
 definition <relpro/promote_firefox_NpcI7tFfSDmYVyPNzkYMKw/task.json>`.
