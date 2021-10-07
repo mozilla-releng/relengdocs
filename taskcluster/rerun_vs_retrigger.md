@@ -40,3 +40,7 @@ For Apple Notarization, sometimes we have to use a `rerun (force)`:
 - `notarization-poller` polls Apple, but that times out.
 
 We have the capability of letting the notarization poller run for 10+ hours until the notarization service is finally ready, but in many cases, simply resubmitting the build will result in a faster turnaround. In this case, `rerun (force)` the `notarization-part-1` task, then `rerun` the poller task once the part 1 task finishes.
+
+## Release tasks with broken dependencies: cancel + rerun
+
+If a release task fails repeatably, but for some reason shouldn't actually block the release (the bustage is somehow expected, and none of the artifacts are used by downstream tasks), it's possible to let the dependent tasks run anyway with a `cancel` followed by `rerun`, after making sure all other dependencies completed successfully.
