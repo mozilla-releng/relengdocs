@@ -56,7 +56,7 @@ Join Mozilla's Matrix network using information from `the wiki <https://wiki.moz
 
 You ought to be present and pay attention to conversations happening in:
 
-*  **#sheriffs:mozilla.org** (where CIDuty team helps with various hiccups that infra might encounter))
+* **#sheriffs:mozilla.org** (where CIDuty team helps with various hiccups that infra might encounter))
 * **#releaseduty:mozilla.org** (main RelEng dedicated communication channel for releaseduty)
 * **#firefox-ci:mozilla.org**
 
@@ -113,7 +113,7 @@ File a Release Engineering bug under the `Applications: Shipit (backend)
 <https://bugzilla.mozilla.org/enter_bug.cgi?format=__default__&cloned_bug_id=1626312&product=Release%20Engineering&component=Applications%3A%20Shipit%20%28backend%29>`__
 component requesting to be granted shipit access.
 
-Have someone in Release Engineering vouch for you in the bug.
+Replace the email in the Summary field and have someone in Release Engineering vouch for you in the bug.
 
 
 How to get Balrog access
@@ -139,13 +139,16 @@ taskcluster
 ~~~~~~~~~~~
 
 Release tasks are usually run through `Taskcluster <https://docs.taskcluster.net/>`__, which has a useful `Command-line
-interface <https://github.com/taskcluster/taskcluster-cli>`__
+interface <https://github.com/taskcluster/taskcluster/tree/main/clients/client-shell#readme>`__
 
- * Download an appropriate binary from `here <https://github.com/taskcluster/taskcluster-cli#installation>`__
- * Copy the binary somewhere useful, such as somewhere in your `$PATH <http://www.linfo.org/path_env_var.html>`__
- * Make it executable, if using Mac or Linux: ``chmod a+x /path/to/taskcluster``
- * Run ``taskcluster signin``  to open a browser window and allow you to get temporary client credentials. By default this is valid for 24 hours. **The command will display two ``export`` commands you must copy/paste into your shell**
- * Familiarize yourself with the subcommands, starting with ``taskcluster help``
+To get started with the CLI:
+
+  * Download the appropriate binary for your OS (Mac or Linux)
+  * Copy the binary somewhere useful, such as somewhere in your `$PATH <http://www.linfo.org/path_env_var.html>`_ such as ``/usr/local/bin/taskcluster``
+  * Make it executable ``chmod a+x /path/to/taskcluster``
+  * Export the root URL ``export TASKCLUSTER_ROOT_URL='https://firefox-ci-tc.services.mozilla.com/'`` 
+  * Run ``taskcluster signin``  to open a browser window and allow you to get temporary client credentials. By default this is valid for 24 hours. **The command will display two** ``export`` **commands you must copy/paste into your shell**
+  * Familiarize yourself with the subcommands, starting with ``taskcluster help``
 
 
 in-bulk taskcluster operations
@@ -174,7 +177,7 @@ login and operate the tasks.
    eval taskcluster signin
    python tc-filter.py --graph-id <group-task-id> --state failed --action rerun
 
-To speed things up even more, one can add this to ``zshrc`` for an alias
+To speed things up even more, one can add this to ``~/.zshrc`` (or your shell's rc file) for an alias
 to reduce the scopes and time-limit of the signin:
 
 ::
@@ -197,13 +200,22 @@ Firefox bookmarks
 
 These bookmarklets should help you view tasks and taskgroups in Firefox.
 
- * Go to Bookmarks -> Show All Bookmarks
- * Gear symbol -> New Bookmark
- * Name: ``task inspector`` Location: `https://tools.taskcluster.net/tasks/%s <https://tools.taskcluster.net/tasks/%s>`__ ; Keyword: ``task``
- * Name: ``taskgroup inspector`` Location: `https://tools.taskcluster.net/groups/%s <https://tools.taskcluster.net/groups/%s>`__ ; Keyword: ``taskgroup``
- * Name: ``stop`` Location: ``javascript:stop();``
+ * Go to Bookmarks -> Manage Bookmarks
+ * Gear symbol -> Add Bookmark
+ * Add the following bookmarks:
+  
+ | Name: ``task inspector``
+ | Location: ``https://firefox-ci-tc.services.mozilla.com/tasks/%s``
+ | Keyword: ``task``
+ 
+ | Name: ``taskgroup inspector``
+ | Location: ``https://firefox-ci-tc.services.mozilla.com/groups/%s``
+ | Keyword: ``taskgroup``
 
-  * This can be used to stop further loading in the Task Group Inspector. It shouldn't be used when actively monitoring (i.e.: watching for failures), but it can greatly speed things up if you're using it for other reasons. Be sure to wait for the initial tasks to load before you use it.
+ | Name: ``stop``
+ | Location: ``javascript:stop();``
+
+ * ``stop`` can be used to stop further loading in the Task Group Inspector. It shouldn't be used when actively monitoring (i.e.: watching for failures), but it can greatly speed things up if you're using it for other reasons. Be sure to wait for the initial tasks to load before you use it.
 
 Now if you go to your URL bar, you can type ``task TASKID`` or ``taskgroup TASKGROUPID`` and you'll go to that task or
 taskgroup in the inspector.
@@ -231,7 +243,7 @@ Hand Off
 --------
 
 If a scheduled release has not completed its graphs prior releaseduty signing
-off, an explicit hand-off describing describing release state should be sent to
+off, an explicit hand-off describing release state should be sent to
 individual folks in releng that are scheduled to come online next or will be
 around for a while after you. #releaseduty in Matrix is best. A release@m.c email
 would be useful too.
@@ -251,8 +263,8 @@ If a release is blocked. The normal flow is to:
    b. bugzilla and github history
    c. source code history
 
-5. escalate in the appropriate Slack and Matrix channel(s). At a minimum,
-   #releaseduy@matrix.
+5. escalate in the appropriate Slack and Matrix channel(s). 
+   At a minimum, `#releaseduty in Matrix <https://matrix.to/#/#releaseduty:mozilla.org>`__
 6. determine who is available to help based on above. What hours they
    work, who is their manager, etc
 7. ask for help if you can’t determine the above.
@@ -300,6 +312,8 @@ switched to releasing every four weeks, hence, every four
 weeks the following merges take place: `mozilla-beta <http://hg.mozilla.org/releases/mozilla-beta/>`__ =>
 `mozilla-release <http://hg.mozilla.org/releases/mozilla-release/>`__ `mozilla-central
 <http://hg.mozilla.org/mozilla-central/>`__ => `mozilla-beta <http://hg.mozilla.org/releases/mozilla-beta/>`__
+ 
+*Also:* `whattrainisitnow.com <https://whattrainisitnow.com/>`__
 
 We used to have an intermediate branch named 'aurora' in between central and beta but that was brought to end-of-life
 during April-May 2017.  Instead, early beta releases are branded as 'DevEdition'.
@@ -335,7 +349,7 @@ shipped at the same time as we receive signoff for the corresponding desktop bui
 
 7. *How do I coordinate with marketing on release day?*
 
-Join the #release-coordination channel on Mozilla Slack
+Join the **#release-coordination** channel on Mozilla Slack
 
 8. *What is cdntest and localtest?*
 
@@ -356,7 +370,7 @@ same but branding options differ.
 ``releases directory``, ``mirrors`` and ``CDN`` are different terms for the same
 concept - the CDN from which shipped releases are served.
 
-11. *What does ``watershed`` mean?*
+11. *What does* ``watershed`` *mean?*
 
 ``watershed`` refers to a situation when we release a new version of a product
 (Firefox 57), but users on an older version (Firefox 53) are not able to update.
