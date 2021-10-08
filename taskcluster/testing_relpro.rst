@@ -92,8 +92,6 @@ Replicating an existing release graph locally
 To run ``[./mach] taskgraph test-action-callback``, we need a
 ``taskId``, a ``taskGroupId``, a parameters.yml, and an input.yml.
 
-For the ``taskId`` and ``taskGroupId``, 
-
 To replicate the input of a previously scheduled task, check the :download:`task
 definition <relpro/promote_firefox_NpcI7tFfSDmYVyPNzkYMKw/task.json>`.
 We embed it in ``task.payload.env.ACTION_INPUT``, and in a more useable
@@ -105,8 +103,31 @@ script <relpro/helpers/yaml_input_from_task_json.py>` that will open a
 format to STDOUT. With that, the input looks like
 :download:`this <relpro/promote_firefox_NpcI7tFfSDmYVyPNzkYMKw/input.yml>`.)
 
+For the ``taskId`` and ``taskGroupId``, use the ``taskId`` of the task you're
+replicating, e.g. ``NpcI7tFfSDmYVyPNzkYMKw`` for the above ``promote_firefox`` task.
+
+For the parameters, you want the decision task's ``parameters.yml``, though
+the task-you're-replicating's ``parameters.yml`` will work as well. Essentially,
+we'll be reading parameters from this file, and replacing values in it based
+on the input.
+
+In theory this is all you'll need, but some projects (e.g. Gecko), we'll block
+on a taskcluster-proxy fetch of a github token from taskcluster-secrets to read
+some private Github repository information, or the like. There are three possible
+ways around that.
+
+Let's get into an example promotion test.
+
 Example promotion test
 ~~~~~~~~~~~~~~~~~~~~~~
+
+```
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='taskcluster', port=80): Max retries exceeded with url: /secrets/v1/secret/project/releng/gecko/build/level-3/partner-github-api (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x121e5cda0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known',))
+```
+
+```
+RuntimeError: Could not get Github API token to lookup partner data
+```
 
 Advanced usage
 ~~~~~~~~~~~~~~
