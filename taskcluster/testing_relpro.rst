@@ -121,16 +121,68 @@ Let's get into an example promotion test.
 Example promotion test
 ~~~~~~~~~~~~~~~~~~~~~~
 
-```
-requests.exceptions.ConnectionError: HTTPConnectionPool(host='taskcluster', port=80): Max retries exceeded with url: /secrets/v1/secret/project/releng/gecko/build/level-3/partner-github-api (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x121e5cda0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known',))
-```
+Let's say we want to replicate :download:`promote_firefox 92.0.1 task
+NpcI7tFfSDmYVyPNzkYMKw <relpro/promote_firefox_NpcI7tFfSDmYVyPNzkYMKw/task.json>`.
 
-```
-RuntimeError: Could not get Github API token to lookup partner data
-```
+The ``GECKO_HEAD_REV``, various indexes, ``metadata.source``, etc. all point at
+`revision d7bbc5812f7f36a9378165fffd7a058ddb0118ec <https://hg.mozilla.org/releases/mozilla-release/rev/d7bbc5812f7f36a9378165fffd7a058ddb0118ec>`__. We don't **have** to use
+that revision; in fact, we may explicitly choose to use a different revision if
+we're trying to fix something that's busted in the release graph (see :ref:`advanced-relpro-usage` below). In fact, because we renamed `taskgraph to gecko_taskgraph <https://bugzilla.mozilla.org/show_bug.cgi?id=1732723>`__, let's use latest mozilla-central, ``798c43651cb145ef813aa9ece37b6d965afc315f``, just so the below links aren't all broken: ::
 
-Advanced usage
-~~~~~~~~~~~~~~
+    # in mozilla-unified
+    hg up -r 798c43651cb145ef813aa9ece37b6d965afc315f
+
+We already downloaded the :download:`task.json <relpro/promote_firefox_NpcI7tFfSDmYVyPNzkYMKw/task.json>`
+either from this repo, or from
+`taskcluster <https://firefox-ci-tc.services.mozilla.com/tasks/NpcI7tFfSDmYVyPNzkYMKw>`__
+and converted it to :download:`input.yaml <relpro/promote_firefox_NpcI7tFfSDmYVyPNzkYMKw/input.yml>`.
+We can also grab the decision task parameters.yml from
+:download:`here <relpro/decision_K_iM4y8xTyqsVKSAcZjzWQ/parameters.yml>` or from the
+`task <https://firefox-ci-tc.services.mozilla.com/tasks/K_iM4y8xTyqsVKSAcZjzWQ#artifacts>`__.
+
+So if we downloaded the ``parameters.yml`` and ``input.yml`` into ``mozilla-unified`` our command would be: ::
+
+    ./mach taskgraph test-action-callback --task-id NpcI7tFfSDmYVyPNzkYMKw \
+    --task-group-id NpcI7tFfSDmYVyPNzkYMKw --input input.yml \
+    --parameters parameters.yml release-promotion
+
+At which point we get the following error: ::
+
+    <snip>
+    requests.exceptions.ConnectionError: HTTPConnectionPool(host='taskcluster', port=80):
+    Max retries exceeded with url: /secrets/v1/secret/project/releng/gecko/build/level-3/partner-github-api
+    (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x121e5cda0>:
+    Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known',))
+    <snip>
+    RuntimeError: Could not get Github API token to lookup partner data
+
+Why is that? Because `here <https://hg.mozilla.org/mozilla-central/file/798c43651cb145ef813aa9ece37b6d965afc315f/taskcluster/gecko_taskgraph/util/partners.py#l163>`__ we're hardcoding a taskcluster secrets API call through the taskcluster proxy (``http://taskcluster:80``), and we don't have taskcluster-proxy running locally. (In fact, we're not even looking for ``os.environ.get("TASKCLUSTER_PROXY_URL", "http://taskcluster")``; we're `hardcoding the url root <https://hg.mozilla.org/mozilla-central/file/798c43651cb145ef813aa9ece37b6d965afc315f/taskcluster/gecko_taskgraph/util/partners.py#l138>`__.)
+
+We do allow for setting ``os.environ.get("GITHUB_API_TOKEN")`` to skip this call, though. This token will need read access to the `mozilla-partners github private repos <https://github.com/mozilla-partners/>`__. One way is to go to `the level-3 secret <https://firefox-ci-tc.services.mozilla.com/secrets/project%2Freleng%2Fgecko%2Fbuild%2Flevel-3%2Fpartner-github-api>`__, copy it, export it as ``GITHUB_API_TOKEN`` in your shell (please don't leak this secret anywhere public), and re-run the above ``./mach taskgraph test-action-callback`` command.
+
+Now we get this error: ::
+
+    Traceback (most recent call last):
+      File "/Users/asasaki/src/gecko/mozilla-unified/taskcluster/gecko_taskgraph/main.py", line 712, in test_action_callback
+        test=True,
+      File "/Users/asasaki/src/gecko/mozilla-unified/taskcluster/gecko_taskgraph/actions/registry.py", line 351, in trigger_action_callback
+        cb(Parameters(**parameters), graph_config, input, task_group_id, task_id)
+      File "/Users/asasaki/src/gecko/mozilla-unified/taskcluster/gecko_taskgraph/actions/release_promotion.py", line 408, in release_promotion_action
+        taskgraph_decision({"root": graph_config.root_dir}, parameters=parameters)
+      File "/Users/asasaki/src/gecko/mozilla-unified/taskcluster/gecko_taskgraph/decision.py", line 200, in taskgraph_decision
+        decision_task_id = os.environ["TASK_ID"]
+      File "/Users/asasaki/.pyenv/versions/3.6.10/lib/python3.6/os.py", line 669, in __getitem__
+        raise KeyError(key) from None
+    KeyError: 'TASK_ID'
+
+Progress is a new error message :) This is from `this hardcode <https://hg.mozilla.org/mozilla-central/file/798c43651cb145ef813aa9ece37b6d965afc315f/taskcluster/gecko_taskgraph/decision.py#l200>`__ in ``taskgraph_decision``. Let's ``export TASK_ID=NpcI7tFfSDmYVyPNzkYMKw`` and rerun.
+
+(I probably want to rerun through these steps after `this patch <https://phabricator.services.mozilla.com/D128001>`__ lands.)
+
+.. _advanced-relpro-usage:
+
+Advanced relpro usage
+~~~~~~~~~~~~~~~~~~~~~
 
 ``rebuild_kinds`` and ``do_not_optimize``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
