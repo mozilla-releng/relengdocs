@@ -177,7 +177,7 @@ Now we get this error: ::
 
 Progress is a new error message :) This is from `this hardcode <https://hg.mozilla.org/mozilla-central/file/798c43651cb145ef813aa9ece37b6d965afc315f/taskcluster/gecko_taskgraph/decision.py#l200>`__ in ``taskgraph_decision``. Let's ``export TASK_ID=NpcI7tFfSDmYVyPNzkYMKw`` and rerun.
 
-This time, we finish. After five plus minutes of output about "Generating tasks" and the like, we output the various task definitions to ``STDOUT``. Once that finishes, inspect the disk: we've created a ``docker-contexts`` directory and an ``artifacts`` directory. The ``parameters.yml``, ``label-to-taskid.json``, ``task-graph.json``, etc. artifacts show how we would have created the release graph, given these parameters, input, and code revision.
+This time, we finish. After five plus minutes of output about "Generating tasks" and the like, we output the various task definitions to ``STDOUT``. Once that finishes, inspect the disk: we've created a ``docker-contexts`` directory and an ``artifacts`` directory. The ``parameters.yml``, ``label-to-taskid.json``, ``task-graph.json``, etc. artifacts show how we would have created the release graph, given these parameters, input, and code revision. We can diff these against the actual run relpro action task's artifacts if we want to see how we've changed things.
 
 .. _advanced-relpro-usage:
 
@@ -187,8 +187,65 @@ Advanced relpro usage
 ``rebuild_kinds`` and ``do_not_optimize``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+These two options allow for force-rebuilding certain tasks.
+
+``rebuild_kinds`` refers to a task `kind <https://firefox-source-docs.mozilla.org/taskcluster/kinds.html?highlight=kind>`__ that we want to make sure we rebuild. We use this in the `promote_firefox_partner_repack <https://hg.mozilla.org/mozilla-central/file/32a3cf57dd4396e123ebbba2f894e540528d0781/taskcluster/ci/config.yml#l220>`__ release promotion flavor; by listing the various ``release-partner-repack*`` kinds as ``rebuild_kinds``, we can:
+
+- use the exact same input for a given ``promote`` graph, adding the previous ``promote`` graph to the ``previous_graph_ids`` so we optimize away all the tasks in our new graph with the ``existing_tasks`` in the previous promote graph,
+- except we add the ``rebuild_kinds``, which means we end up just rebuilding the tasks with those kinds.
+
+The same is true for ``do_not_optimize``, except that refers to labels of tasks that we want to explicitly rerun, not task kinds.
+
 Using multiple revisions
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
+As mentioned above, we can use a separate revision to create our new relpro graph.
+You may want to do this if, for instance, you're fixing a bug in the graph.
+
+We essentially:
+
+- grab the parameters from the on-push decision task, and modify them in the action,
+- grab the ``label_to_taskid.json`` files from each of the previous ``previous_graph_ids``, and apply them in order (last takes precedence. So if we have 3 ``previous_graph_ids``, and graphs 1 and 2 both contain a ``linux64-foo/opt`` task, we'll take the ``taskId`` of ``linux64-foo/opt`` from graph 2. This means we'll use it as a dependency, and potentially download and use artifacts from it, in our generated graph).
+
+In this way, if our ``previous_graph_ids`` is then:
+
+- The new revision's on-push decision ``taskId``, then
+- the original revision's on-push decision ``taskId``, then
+- any other ``previous_graph_ids`` (e.g. promote, push), in order,
+
+then for any on-push tasks, we'll take the ``taskId``'s from the original ``on-push`` graph, unless the new revision added new task labels.
+
 Using the tested input to craft a custom release graph
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You have the input you want to use, and the revision you want to run it against.
+Now how do you trigger it? Two ways.
+
+First, we can use the Taskcluster UI.
+
+First, we need to find the decision task. You'll need to know the trust domain and what repo and revision we used; then you can find the decision task at a url like `<https://firefox-ci-tc.services.mozilla.com/tasks/index/gecko.v2.mozilla-release.revision.08b69dc588fbdd88334ebcb6fa303eec95176cd6.taskgraph/decision>`__.
+
+Is that there? Great! Click on ``view task`` to find the Decision task, and ``Task group`` at the top left to go to the task group view.
+
+.. figure:: relpro/decision_K_iM4y8xTyqsVKSAcZjzWQ/tc-task-group-link.png
+   :alt: Task Group Link
+
+   Task Group link
+
+Once there, make sure you're logged in (top right), then click the three dots in the lower right. A menu like the below will show up:
+
+.. figure:: relpro/decision_K_iM4y8xTyqsVKSAcZjzWQ/tc-relpro.png
+   :alt: Taskcluster UI Release Promotion action
+
+   Taskcluster UI Release Promotion action
+
+Then you fill in your input in the left hand box and click on ``Release Promotion`` in the lower right. Boom! Click on the ``taskId`` that pops up to follow along.
+
+Alternately, you can use Treeherder. First, find your repo and commit. Make sure you're logged in in the top right. At the top right of your commit, you'll find a down arrow; click that, and choose ``Custom Push Action``.
+
+.. figure:: relpro/decision_K_iM4y8xTyqsVKSAcZjzWQ/treeherder-custom-push-action.png
+   :alt: Treeherder UI Custom Push action
+
+   Treeherder UI Custom Push action
+
+Choose ``release-promotion`` from the dropdown, paste in your input in the left hand column, and ``Trigger``. Click on the ``taskId`` that pops up to follow along.
