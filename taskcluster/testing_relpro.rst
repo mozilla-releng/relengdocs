@@ -127,10 +127,10 @@ NpcI7tFfSDmYVyPNzkYMKw <relpro/promote_firefox_NpcI7tFfSDmYVyPNzkYMKw/task.json>
 The ``GECKO_HEAD_REV``, various indexes, ``metadata.source``, etc. all point at
 `revision d7bbc5812f7f36a9378165fffd7a058ddb0118ec <https://hg.mozilla.org/releases/mozilla-release/rev/d7bbc5812f7f36a9378165fffd7a058ddb0118ec>`__. We don't **have** to use
 that revision; in fact, we may explicitly choose to use a different revision if
-we're trying to fix something that's busted in the release graph (see :ref:`advanced-relpro-usage` below). In fact, because we renamed `taskgraph to gecko_taskgraph <https://bugzilla.mozilla.org/show_bug.cgi?id=1732723>`__, let's use latest mozilla-central, ``798c43651cb145ef813aa9ece37b6d965afc315f``, just so the below links aren't all broken: ::
+we're trying to fix something that's busted in the release graph (see :ref:`advanced-relpro-usage` below). In fact, because we renamed `taskgraph to gecko_taskgraph <https://bugzilla.mozilla.org/show_bug.cgi?id=1732723>`__ and ``test-action-callback`` was busted on central for that and other reasons, let's use the revision where ``test-action-callback`` was fixed, ``761973acc29f07810eb24b1a87347b4281d4aab5``: ::
 
     # in mozilla-unified
-    hg up -r 798c43651cb145ef813aa9ece37b6d965afc315f
+    hg up -r 761973acc29f07810eb24b1a87347b4281d4aab5
 
 We already downloaded the :download:`task.json <relpro/promote_firefox_NpcI7tFfSDmYVyPNzkYMKw/task.json>`
 either from this repo, or from
@@ -177,7 +177,7 @@ Now we get this error: ::
 
 Progress is a new error message :) This is from `this hardcode <https://hg.mozilla.org/mozilla-central/file/798c43651cb145ef813aa9ece37b6d965afc315f/taskcluster/gecko_taskgraph/decision.py#l200>`__ in ``taskgraph_decision``. Let's ``export TASK_ID=NpcI7tFfSDmYVyPNzkYMKw`` and rerun.
 
-(I probably want to rerun through these steps after `this patch <https://phabricator.services.mozilla.com/D128001>`__ lands.)
+This time, we finish. After five plus minutes of output about "Generating tasks" and the like, we output the various task definitions to ``STDOUT``. Once that finishes, inspect the disk: we've created a ``docker-contexts`` directory and an ``artifacts`` directory. The ``parameters.yml``, ``label-to-taskid.json``, ``task-graph.json``, etc. artifacts show how we would have created the release graph, given these parameters, input, and code revision.
 
 .. _advanced-relpro-usage:
 
