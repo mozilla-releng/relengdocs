@@ -12,6 +12,13 @@ are defined per action), parameters, and taskId/taskGroupId commandline
 options. You can run ``[./mach] taskgraph test-action-callback --help``
 for more information.
 
+(To find the schema, either go to the action itself, e.g. `gecko release promotion aciton schema <https://hg.mozilla.org/mozilla-central/file/d51a3f4602303979556ca1962d0fb271304e86fc/taskcluster/gecko_taskgraph/actions/release_promotion.py#l86>`__, or find the schema on the right hand side of the UI when :ref:`using-the-input`:
+
+.. figure:: relpro/decision_K_iM4y8xTyqsVKSAcZjzWQ/treeherder-input-schema.png
+   :alt: Treeherder UI Action Input Schema
+
+   Treeherder UI Action Input Schema
+
 A successful ``[./mach] taskgraph test-action-callback`` run will create
 an ``artifacts`` directory in the current working directory (or
 ``cwd``), which is the base of the repo. This ``artifacts`` directory
@@ -214,6 +221,8 @@ In this way, if our ``previous_graph_ids`` is then:
 - any other ``previous_graph_ids`` (e.g. promote, push), in order,
 
 then for any on-push tasks, we'll take the ``taskId``'s from the original ``on-push`` graph, unless the new revision added new task labels.
+
+.. _using-the-input:
 
 Using the tested input to craft a custom release graph
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
