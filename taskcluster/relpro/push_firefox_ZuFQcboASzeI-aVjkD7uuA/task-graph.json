@@ -1,0 +1,2925 @@
+{
+  "AAAlW4d3R0CN7vsqDBxkAw": {
+    "attributes": {
+      "accepted-mar-channel-ids": "firefox-mozilla-release",
+      "always_target": false,
+      "artifact_map": "taskcluster/taskgraph/manifests/fennec_geckoview.yml",
+      "build_platform": "android-arm-shippable-lite",
+      "build_type": "opt",
+      "kind": "beetmover-geckoview",
+      "mar-channel-id": "firefox-mozilla-release",
+      "run_on_hg_branches": [
+        "^GECKOVIEW_\\d+_RELBRANCH$"
+      ],
+      "run_on_projects": [
+        "mozilla-release"
+      ],
+      "shippable": true,
+      "shipping_phase": "build",
+      "shipping_product": "fennec",
+      "signed": true,
+      "update-channel": "release"
+    },
+    "dependencies": {},
+    "description": "Beetmover submission for geckoviewandroid-arm-shippable-lite/opt'",
+    "if_dependencies": [],
+    "kind": "beetmover-geckoview",
+    "label": "beetmover-geckoview-android-arm-shippable-lite/opt",
+    "optimization": null,
+    "soft_dependencies": [],
+    "task": {
+      "created": {
+        "relative-datestamp": "0 seconds"
+      },
+      "deadline": {
+        "relative-datestamp": "1 day"
+      },
+      "dependencies": [
+        "MUaU4NZaRoSp4wFVT7E_GA",
+        "bCpaBb-DSvaMpDI2NaiYSw"
+      ],
+      "expires": {
+        "relative-datestamp": "1 year"
+      },
+      "extra": {
+        "index": {
+          "rank": 0
+        },
+        "parent": "ZuFQcboASzeI-aVjkD7uuA",
+        "treeherder": {
+          "collection": {
+            "opt": true
+          },
+          "jobKind": "build",
+          "machine": {
+            "platform": "android-4-1-armv7-shippable-lite"
+          },
+          "symbol": "BM-gv",
+          "tier": 2
+        },
+        "treeherder-platform": "android-4-1-armv7-shippable-lite/opt"
+      },
+      "metadata": {
+        "description": "Beetmover submission for geckoviewandroid-arm-shippable-lite/opt' ([Treeherder job](https://treeherder.mozilla.org/#/jobs?repo=mozilla-release&revision=d7bbc5812f7f36a9378165fffd7a058ddb0118ec&selectedTaskRun=AAAlW4d3R0CN7vsqDBxkAw))",
+        "name": "beetmover-geckoview-android-arm-shippable-lite/opt",
+        "owner": "ryanvm@gmail.com",
+        "source": "https://hg.mozilla.org/releases/mozilla-release/file/d7bbc5812f7f36a9378165fffd7a058ddb0118ec/taskcluster/ci/beetmover-geckoview"
+      },
+      "payload": {
+        "appVersion": "92.0.1",
+        "artifactMap": [
+          {
+            "locale": "en-US",
+            "paths": {
+              "public/build/maven/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155-javadoc.jar": {
+                "checksums_path": "geckoview-armeabi-v7a-92.0.20210922161155-javadoc.jar",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155-javadoc.jar"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155-javadoc.jar.md5": {
+                "checksums_path": "geckoview-armeabi-v7a-92.0.20210922161155-javadoc.jar.md5",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155-javadoc.jar.md5"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155-javadoc.jar.sha1": {
+                "checksums_path": "geckoview-armeabi-v7a-92.0.20210922161155-javadoc.jar.sha1",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155-javadoc.jar.sha1"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155-sources.jar": {
+                "checksums_path": "geckoview-armeabi-v7a-92.0.20210922161155-sources.jar",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155-sources.jar"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155-sources.jar.md5": {
+                "checksums_path": "geckoview-armeabi-v7a-92.0.20210922161155-sources.jar.md5",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155-sources.jar.md5"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155-sources.jar.sha1": {
+                "checksums_path": "geckoview-armeabi-v7a-92.0.20210922161155-sources.jar.sha1",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155-sources.jar.sha1"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155.aar": {
+                "checksums_path": "geckoview-armeabi-v7a-92.0.20210922161155.aar",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155.aar"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155.aar.md5": {
+                "checksums_path": "geckoview-armeabi-v7a-92.0.20210922161155.aar.md5",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155.aar.md5"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155.aar.sha1": {
+                "checksums_path": "geckoview-armeabi-v7a-92.0.20210922161155.aar.sha1",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155.aar.sha1"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155.pom": {
+                "checksums_path": "geckoview-armeabi-v7a-92.0.20210922161155.pom",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155.pom"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155.pom.md5": {
+                "checksums_path": "geckoview-armeabi-v7a-92.0.20210922161155.pom.md5",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155.pom.md5"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155.pom.sha1": {
+                "checksums_path": "geckoview-armeabi-v7a-92.0.20210922161155.pom.sha1",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155.pom.sha1"
+                ]
+              }
+            },
+            "taskId": "MUaU4NZaRoSp4wFVT7E_GA"
+          },
+          {
+            "locale": "en-US",
+            "paths": {
+              "public/build/maven/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155-javadoc.jar.asc": {
+                "checksums_path": "geckoview-armeabi-v7a-92.0.20210922161155-javadoc.jar.asc",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155-javadoc.jar.asc"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155-sources.jar.asc": {
+                "checksums_path": "geckoview-armeabi-v7a-92.0.20210922161155-sources.jar.asc",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155-sources.jar.asc"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155.aar.asc": {
+                "checksums_path": "geckoview-armeabi-v7a-92.0.20210922161155.aar.asc",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155.aar.asc"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155.pom.asc": {
+                "checksums_path": "geckoview-armeabi-v7a-92.0.20210922161155.pom.asc",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155.pom.asc"
+                ]
+              }
+            },
+            "taskId": "bCpaBb-DSvaMpDI2NaiYSw"
+          }
+        ],
+        "artifact_id": "geckoview-armeabi-v7a",
+        "build_number": 1,
+        "maxRunTime": 600,
+        "next_version": "92.0.2",
+        "releaseProperties": {
+          "appName": "geckoview",
+          "appVersion": "92.0.1",
+          "branch": "mozilla-release",
+          "buildid": "20210922161155"
+        },
+        "upload_date": 1632327115,
+        "upstreamArtifacts": [
+          {
+            "paths": [
+              "public/build/maven/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155-javadoc.jar",
+              "public/build/maven/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155-javadoc.jar.md5",
+              "public/build/maven/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155-javadoc.jar.sha1",
+              "public/build/maven/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155-sources.jar",
+              "public/build/maven/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155-sources.jar.md5",
+              "public/build/maven/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155-sources.jar.sha1",
+              "public/build/maven/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155.aar",
+              "public/build/maven/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155.aar.md5",
+              "public/build/maven/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155.aar.sha1",
+              "public/build/maven/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155.pom",
+              "public/build/maven/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155.pom.md5",
+              "public/build/maven/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155.pom.sha1"
+            ],
+            "taskId": "MUaU4NZaRoSp4wFVT7E_GA",
+            "taskType": "build"
+          },
+          {
+            "paths": [
+              "public/build/maven/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155-javadoc.jar.asc",
+              "public/build/maven/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155-sources.jar.asc",
+              "public/build/maven/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155.aar.asc",
+              "public/build/maven/org/mozilla/geckoview/geckoview-armeabi-v7a/92.0.20210922161155/geckoview-armeabi-v7a-92.0.20210922161155.pom.asc"
+            ],
+            "taskId": "bCpaBb-DSvaMpDI2NaiYSw",
+            "taskType": "signing"
+          }
+        ],
+        "version": "92.0.20210922161155"
+      },
+      "priority": "highest",
+      "provisionerId": "scriptworker-k8s",
+      "routes": [
+        "tc-treeherder.v2.mozilla-release.d7bbc5812f7f36a9378165fffd7a058ddb0118ec"
+      ],
+      "scopes": [
+        "project:releng:beetmover:bucket:maven-production",
+        "project:releng:beetmover:action:push-to-maven"
+      ],
+      "tags": {
+        "createdForUser": "ryanvm@gmail.com",
+        "kind": "beetmover-geckoview",
+        "label": "beetmover-geckoview-android-arm-shippable-lite/opt",
+        "retrigger": "false"
+      },
+      "workerType": "gecko-3-beetmover"
+    },
+    "task_id": "AAAlW4d3R0CN7vsqDBxkAw"
+  },
+  "DqlOXseTRhWBFniSY07Qfw": {
+    "attributes": {
+      "always_target": false,
+      "build_platform": "linux64",
+      "build_type": "opt",
+      "kind": "release-bouncer-check",
+      "required_signoffs": [
+        "mar-signing"
+      ],
+      "run_on_projects": [],
+      "shipping_phase": "push",
+      "shipping_product": "firefox"
+    },
+    "dependencies": {
+      "firefox-push-to-release": "YzWx36w_QzGP1xtHeVN64Q"
+    },
+    "description": "release bouncer check",
+    "if_dependencies": [],
+    "kind": "release-bouncer-check",
+    "label": "release-bouncer-check-firefox",
+    "optimization": null,
+    "soft_dependencies": [],
+    "task": {
+      "created": {
+        "relative-datestamp": "0 seconds"
+      },
+      "deadline": {
+        "relative-datestamp": "1 day"
+      },
+      "dependencies": [
+        "JXDiQKecSk-1xJKGGqDg0g",
+        "YzWx36w_QzGP1xtHeVN64Q"
+      ],
+      "expires": {
+        "relative-datestamp": "1 year"
+      },
+      "extra": {
+        "index": {
+          "rank": 1632327115
+        },
+        "parent": "ZuFQcboASzeI-aVjkD7uuA",
+        "treeherder": {
+          "collection": {
+            "opt": true
+          },
+          "groupName": "Release promotion",
+          "groupSymbol": "Rel",
+          "jobKind": "test",
+          "machine": {
+            "platform": "firefox-release"
+          },
+          "symbol": "BncChk",
+          "tier": 1
+        },
+        "treeherder-platform": "firefox-release/opt"
+      },
+      "metadata": {
+        "description": "release bouncer check ([Treeherder job](https://treeherder.mozilla.org/#/jobs?repo=mozilla-release&revision=d7bbc5812f7f36a9378165fffd7a058ddb0118ec&selectedTaskRun=DqlOXseTRhWBFniSY07Qfw))",
+        "name": "release-bouncer-check-firefox",
+        "owner": "ryanvm@gmail.com",
+        "source": "https://hg.mozilla.org/releases/mozilla-release/file/d7bbc5812f7f36a9378165fffd7a058ddb0118ec/taskcluster/ci/release-bouncer-check"
+      },
+      "payload": {
+        "cache": {
+          "gecko-level-3-checkouts-sparse-hg58-v3-ce115c4ec883f2e4f154": "/builds/worker/checkouts"
+        },
+        "command": [
+          "/builds/worker/bin/run-task",
+          "--gecko-checkout=/builds/worker/checkouts/gecko",
+          "--gecko-sparse-profile=build/sparse-profiles/mozharness",
+          "--fetch-hgfingerprint",
+          "--task-cwd",
+          "/builds/worker/checkouts/gecko",
+          "--",
+          "bash",
+          "-cx",
+          "./mach python testing/mozharness/scripts/release/bouncer_check.py --previous-version=91.0 --previous-version=91.0.1 --previous-version=91.0.2 --previous-version=92.0 --config releases/bouncer_firefox_release.py --version=92.0.1"
+        ],
+        "env": {
+          "EXTRA_MOZHARNESS_CONFIG": "{\"bouncer_prefix\": \"https://download.mozilla.org/\"}",
+          "GECKO_BASE_REPOSITORY": "https://hg.mozilla.org/mozilla-unified",
+          "GECKO_HEAD_REPOSITORY": "https://hg.mozilla.org/releases/mozilla-release",
+          "GECKO_HEAD_REV": "d7bbc5812f7f36a9378165fffd7a058ddb0118ec",
+          "GECKO_PATH": "/builds/worker/checkouts/gecko",
+          "HG_STORE_PATH": "/builds/worker/checkouts/hg-store",
+          "MOZ_AUTOMATION": "1",
+          "MOZ_SCM_LEVEL": "3",
+          "SCCACHE_DISABLE": "1",
+          "TASKCLUSTER_CACHES": "/builds/worker/checkouts",
+          "TASKCLUSTER_VOLUMES": "/builds/worker/.cache;/builds/worker/checkouts"
+        },
+        "features": {
+          "allowPtrace": true,
+          "taskclusterProxy": true
+        },
+        "image": {
+          "path": "public/image.tar.zst",
+          "taskId": "JXDiQKecSk-1xJKGGqDg0g",
+          "type": "task-image"
+        },
+        "maxRunTime": 1200,
+        "onExitStatus": {
+          "purgeCaches": [
+            72
+          ],
+          "retry": [
+            72
+          ]
+        }
+      },
+      "priority": "highest",
+      "provisionerId": "gecko-3",
+      "routes": [
+        "index.gecko.v2.mozilla-release.latest.firefox.firefox-release-bouncer-check",
+        "index.gecko.v2.mozilla-release.pushdate.2021.09.22.20210922161155.firefox.firefox-release-bouncer-check",
+        "index.gecko.v2.mozilla-release.pushdate.2021.09.22.latest.firefox.firefox-release-bouncer-check",
+        "index.gecko.v2.mozilla-release.pushlog-id.2663.firefox.firefox-release-bouncer-check",
+        "index.gecko.v2.mozilla-release.revision.d7bbc5812f7f36a9378165fffd7a058ddb0118ec.firefox.firefox-release-bouncer-check",
+        "tc-treeherder.v2.mozilla-release.d7bbc5812f7f36a9378165fffd7a058ddb0118ec"
+      ],
+      "scopes": [
+        "secrets:get:project/taskcluster/gecko/hgfingerprint",
+        "secrets:get:project/taskcluster/gecko/hgmointernal",
+        "docker-worker:feature:allowPtrace",
+        "docker-worker:cache:gecko-level-3-checkouts-sparse-hg58-v3-ce115c4ec883f2e4f154"
+      ],
+      "tags": {
+        "createdForUser": "ryanvm@gmail.com",
+        "kind": "release-bouncer-check",
+        "label": "release-bouncer-check-firefox",
+        "os": "linux",
+        "retrigger": "false",
+        "worker-implementation": "docker-worker"
+      },
+      "workerType": "b-linux"
+    },
+    "task_id": "DqlOXseTRhWBFniSY07Qfw"
+  },
+  "F42BwvsnQ8-uWdWd3NuXWQ": {
+    "attributes": {
+      "accepted-mar-channel-ids": "firefox-mozilla-release",
+      "always_target": false,
+      "artifact_map": "taskcluster/taskgraph/manifests/fennec_geckoview.yml",
+      "build_platform": "android-x86_64-shippable-lite",
+      "build_type": "opt",
+      "kind": "beetmover-geckoview",
+      "mar-channel-id": "firefox-mozilla-release",
+      "run_on_hg_branches": [
+        "^GECKOVIEW_\\d+_RELBRANCH$"
+      ],
+      "run_on_projects": [
+        "mozilla-release"
+      ],
+      "shippable": true,
+      "shipping_phase": "build",
+      "shipping_product": "fennec",
+      "signed": true,
+      "update-channel": "release"
+    },
+    "dependencies": {},
+    "description": "Beetmover submission for geckoviewandroid-x86_64-shippable-lite/opt'",
+    "if_dependencies": [],
+    "kind": "beetmover-geckoview",
+    "label": "beetmover-geckoview-android-x86_64-shippable-lite/opt",
+    "optimization": null,
+    "soft_dependencies": [],
+    "task": {
+      "created": {
+        "relative-datestamp": "0 seconds"
+      },
+      "deadline": {
+        "relative-datestamp": "1 day"
+      },
+      "dependencies": [
+        "AzCzH1BGTAeR7cUN2xC_8A",
+        "WKIcbN4pQAmNWWs-b6T0dw"
+      ],
+      "expires": {
+        "relative-datestamp": "1 year"
+      },
+      "extra": {
+        "index": {
+          "rank": 0
+        },
+        "parent": "ZuFQcboASzeI-aVjkD7uuA",
+        "treeherder": {
+          "collection": {
+            "opt": true
+          },
+          "jobKind": "build",
+          "machine": {
+            "platform": "android-5-0-x86_64-shippable-lite"
+          },
+          "symbol": "BM-gv",
+          "tier": 2
+        },
+        "treeherder-platform": "android-5-0-x86_64-shippable-lite/opt"
+      },
+      "metadata": {
+        "description": "Beetmover submission for geckoviewandroid-x86_64-shippable-lite/opt' ([Treeherder job](https://treeherder.mozilla.org/#/jobs?repo=mozilla-release&revision=d7bbc5812f7f36a9378165fffd7a058ddb0118ec&selectedTaskRun=F42BwvsnQ8-uWdWd3NuXWQ))",
+        "name": "beetmover-geckoview-android-x86_64-shippable-lite/opt",
+        "owner": "ryanvm@gmail.com",
+        "source": "https://hg.mozilla.org/releases/mozilla-release/file/d7bbc5812f7f36a9378165fffd7a058ddb0118ec/taskcluster/ci/beetmover-geckoview"
+      },
+      "payload": {
+        "appVersion": "92.0.1",
+        "artifactMap": [
+          {
+            "locale": "en-US",
+            "paths": {
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155-javadoc.jar": {
+                "checksums_path": "geckoview-x86_64-92.0.20210922161155-javadoc.jar",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155-javadoc.jar"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155-javadoc.jar.md5": {
+                "checksums_path": "geckoview-x86_64-92.0.20210922161155-javadoc.jar.md5",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155-javadoc.jar.md5"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155-javadoc.jar.sha1": {
+                "checksums_path": "geckoview-x86_64-92.0.20210922161155-javadoc.jar.sha1",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155-javadoc.jar.sha1"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155-sources.jar": {
+                "checksums_path": "geckoview-x86_64-92.0.20210922161155-sources.jar",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155-sources.jar"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155-sources.jar.md5": {
+                "checksums_path": "geckoview-x86_64-92.0.20210922161155-sources.jar.md5",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155-sources.jar.md5"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155-sources.jar.sha1": {
+                "checksums_path": "geckoview-x86_64-92.0.20210922161155-sources.jar.sha1",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155-sources.jar.sha1"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155.aar": {
+                "checksums_path": "geckoview-x86_64-92.0.20210922161155.aar",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155.aar"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155.aar.md5": {
+                "checksums_path": "geckoview-x86_64-92.0.20210922161155.aar.md5",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155.aar.md5"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155.aar.sha1": {
+                "checksums_path": "geckoview-x86_64-92.0.20210922161155.aar.sha1",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155.aar.sha1"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155.pom": {
+                "checksums_path": "geckoview-x86_64-92.0.20210922161155.pom",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155.pom"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155.pom.md5": {
+                "checksums_path": "geckoview-x86_64-92.0.20210922161155.pom.md5",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155.pom.md5"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155.pom.sha1": {
+                "checksums_path": "geckoview-x86_64-92.0.20210922161155.pom.sha1",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155.pom.sha1"
+                ]
+              }
+            },
+            "taskId": "WKIcbN4pQAmNWWs-b6T0dw"
+          },
+          {
+            "locale": "en-US",
+            "paths": {
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155-javadoc.jar.asc": {
+                "checksums_path": "geckoview-x86_64-92.0.20210922161155-javadoc.jar.asc",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155-javadoc.jar.asc"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155-sources.jar.asc": {
+                "checksums_path": "geckoview-x86_64-92.0.20210922161155-sources.jar.asc",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155-sources.jar.asc"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155.aar.asc": {
+                "checksums_path": "geckoview-x86_64-92.0.20210922161155.aar.asc",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155.aar.asc"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155.pom.asc": {
+                "checksums_path": "geckoview-x86_64-92.0.20210922161155.pom.asc",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155.pom.asc"
+                ]
+              }
+            },
+            "taskId": "AzCzH1BGTAeR7cUN2xC_8A"
+          }
+        ],
+        "artifact_id": "geckoview-x86_64",
+        "build_number": 1,
+        "maxRunTime": 600,
+        "next_version": "92.0.2",
+        "releaseProperties": {
+          "appName": "geckoview",
+          "appVersion": "92.0.1",
+          "branch": "mozilla-release",
+          "buildid": "20210922161155"
+        },
+        "upload_date": 1632327115,
+        "upstreamArtifacts": [
+          {
+            "paths": [
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155-javadoc.jar",
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155-javadoc.jar.md5",
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155-javadoc.jar.sha1",
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155-sources.jar",
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155-sources.jar.md5",
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155-sources.jar.sha1",
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155.aar",
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155.aar.md5",
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155.aar.sha1",
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155.pom",
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155.pom.md5",
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155.pom.sha1"
+            ],
+            "taskId": "WKIcbN4pQAmNWWs-b6T0dw",
+            "taskType": "build"
+          },
+          {
+            "paths": [
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155-javadoc.jar.asc",
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155-sources.jar.asc",
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155.aar.asc",
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86_64/92.0.20210922161155/geckoview-x86_64-92.0.20210922161155.pom.asc"
+            ],
+            "taskId": "AzCzH1BGTAeR7cUN2xC_8A",
+            "taskType": "signing"
+          }
+        ],
+        "version": "92.0.20210922161155"
+      },
+      "priority": "highest",
+      "provisionerId": "scriptworker-k8s",
+      "routes": [
+        "tc-treeherder.v2.mozilla-release.d7bbc5812f7f36a9378165fffd7a058ddb0118ec"
+      ],
+      "scopes": [
+        "project:releng:beetmover:bucket:maven-production",
+        "project:releng:beetmover:action:push-to-maven"
+      ],
+      "tags": {
+        "createdForUser": "ryanvm@gmail.com",
+        "kind": "beetmover-geckoview",
+        "label": "beetmover-geckoview-android-x86_64-shippable-lite/opt",
+        "retrigger": "false"
+      },
+      "workerType": "gecko-3-beetmover"
+    },
+    "task_id": "F42BwvsnQ8-uWdWd3NuXWQ"
+  },
+  "GdQ7ujycQQy3vT7iXPaBgw": {
+    "attributes": {
+      "accepted-mar-channel-ids": "firefox-mozilla-release",
+      "always_target": false,
+      "artifact_map": "taskcluster/taskgraph/manifests/fennec_geckoview.yml",
+      "build_platform": "android-aarch64-shippable-lite",
+      "build_type": "opt",
+      "kind": "beetmover-geckoview",
+      "mar-channel-id": "firefox-mozilla-release",
+      "run_on_hg_branches": [
+        "^GECKOVIEW_\\d+_RELBRANCH$"
+      ],
+      "run_on_projects": [
+        "mozilla-release"
+      ],
+      "shippable": true,
+      "shipping_phase": "build",
+      "shipping_product": "fennec",
+      "signed": true,
+      "update-channel": "release"
+    },
+    "dependencies": {},
+    "description": "Beetmover submission for geckoviewandroid-aarch64-shippable-lite/opt'",
+    "if_dependencies": [],
+    "kind": "beetmover-geckoview",
+    "label": "beetmover-geckoview-android-aarch64-shippable-lite/opt",
+    "optimization": null,
+    "soft_dependencies": [],
+    "task": {
+      "created": {
+        "relative-datestamp": "0 seconds"
+      },
+      "deadline": {
+        "relative-datestamp": "1 day"
+      },
+      "dependencies": [
+        "Al8KKfzfRgS5xmueW56-Dw",
+        "SgAvUn5ARHyw6Q14XdBvlA"
+      ],
+      "expires": {
+        "relative-datestamp": "1 year"
+      },
+      "extra": {
+        "index": {
+          "rank": 0
+        },
+        "parent": "ZuFQcboASzeI-aVjkD7uuA",
+        "treeherder": {
+          "collection": {
+            "opt": true
+          },
+          "jobKind": "build",
+          "machine": {
+            "platform": "android-5-0-aarch64-shippable-lite"
+          },
+          "symbol": "BM-gv",
+          "tier": 2
+        },
+        "treeherder-platform": "android-5-0-aarch64-shippable-lite/opt"
+      },
+      "metadata": {
+        "description": "Beetmover submission for geckoviewandroid-aarch64-shippable-lite/opt' ([Treeherder job](https://treeherder.mozilla.org/#/jobs?repo=mozilla-release&revision=d7bbc5812f7f36a9378165fffd7a058ddb0118ec&selectedTaskRun=GdQ7ujycQQy3vT7iXPaBgw))",
+        "name": "beetmover-geckoview-android-aarch64-shippable-lite/opt",
+        "owner": "ryanvm@gmail.com",
+        "source": "https://hg.mozilla.org/releases/mozilla-release/file/d7bbc5812f7f36a9378165fffd7a058ddb0118ec/taskcluster/ci/beetmover-geckoview"
+      },
+      "payload": {
+        "appVersion": "92.0.1",
+        "artifactMap": [
+          {
+            "locale": "en-US",
+            "paths": {
+              "public/build/maven/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155-javadoc.jar": {
+                "checksums_path": "geckoview-arm64-v8a-92.0.20210922161155-javadoc.jar",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155-javadoc.jar"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155-javadoc.jar.md5": {
+                "checksums_path": "geckoview-arm64-v8a-92.0.20210922161155-javadoc.jar.md5",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155-javadoc.jar.md5"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155-javadoc.jar.sha1": {
+                "checksums_path": "geckoview-arm64-v8a-92.0.20210922161155-javadoc.jar.sha1",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155-javadoc.jar.sha1"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155-sources.jar": {
+                "checksums_path": "geckoview-arm64-v8a-92.0.20210922161155-sources.jar",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155-sources.jar"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155-sources.jar.md5": {
+                "checksums_path": "geckoview-arm64-v8a-92.0.20210922161155-sources.jar.md5",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155-sources.jar.md5"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155-sources.jar.sha1": {
+                "checksums_path": "geckoview-arm64-v8a-92.0.20210922161155-sources.jar.sha1",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155-sources.jar.sha1"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155.aar": {
+                "checksums_path": "geckoview-arm64-v8a-92.0.20210922161155.aar",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155.aar"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155.aar.md5": {
+                "checksums_path": "geckoview-arm64-v8a-92.0.20210922161155.aar.md5",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155.aar.md5"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155.aar.sha1": {
+                "checksums_path": "geckoview-arm64-v8a-92.0.20210922161155.aar.sha1",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155.aar.sha1"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155.pom": {
+                "checksums_path": "geckoview-arm64-v8a-92.0.20210922161155.pom",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155.pom"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155.pom.md5": {
+                "checksums_path": "geckoview-arm64-v8a-92.0.20210922161155.pom.md5",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155.pom.md5"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155.pom.sha1": {
+                "checksums_path": "geckoview-arm64-v8a-92.0.20210922161155.pom.sha1",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155.pom.sha1"
+                ]
+              }
+            },
+            "taskId": "Al8KKfzfRgS5xmueW56-Dw"
+          },
+          {
+            "locale": "en-US",
+            "paths": {
+              "public/build/maven/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155-javadoc.jar.asc": {
+                "checksums_path": "geckoview-arm64-v8a-92.0.20210922161155-javadoc.jar.asc",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155-javadoc.jar.asc"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155-sources.jar.asc": {
+                "checksums_path": "geckoview-arm64-v8a-92.0.20210922161155-sources.jar.asc",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155-sources.jar.asc"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155.aar.asc": {
+                "checksums_path": "geckoview-arm64-v8a-92.0.20210922161155.aar.asc",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155.aar.asc"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155.pom.asc": {
+                "checksums_path": "geckoview-arm64-v8a-92.0.20210922161155.pom.asc",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155.pom.asc"
+                ]
+              }
+            },
+            "taskId": "SgAvUn5ARHyw6Q14XdBvlA"
+          }
+        ],
+        "artifact_id": "geckoview-arm64-v8a",
+        "build_number": 1,
+        "maxRunTime": 600,
+        "next_version": "92.0.2",
+        "releaseProperties": {
+          "appName": "geckoview",
+          "appVersion": "92.0.1",
+          "branch": "mozilla-release",
+          "buildid": "20210922161155"
+        },
+        "upload_date": 1632327115,
+        "upstreamArtifacts": [
+          {
+            "paths": [
+              "public/build/maven/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155-javadoc.jar",
+              "public/build/maven/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155-javadoc.jar.md5",
+              "public/build/maven/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155-javadoc.jar.sha1",
+              "public/build/maven/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155-sources.jar",
+              "public/build/maven/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155-sources.jar.md5",
+              "public/build/maven/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155-sources.jar.sha1",
+              "public/build/maven/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155.aar",
+              "public/build/maven/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155.aar.md5",
+              "public/build/maven/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155.aar.sha1",
+              "public/build/maven/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155.pom",
+              "public/build/maven/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155.pom.md5",
+              "public/build/maven/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155.pom.sha1"
+            ],
+            "taskId": "Al8KKfzfRgS5xmueW56-Dw",
+            "taskType": "build"
+          },
+          {
+            "paths": [
+              "public/build/maven/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155-javadoc.jar.asc",
+              "public/build/maven/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155-sources.jar.asc",
+              "public/build/maven/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155.aar.asc",
+              "public/build/maven/org/mozilla/geckoview/geckoview-arm64-v8a/92.0.20210922161155/geckoview-arm64-v8a-92.0.20210922161155.pom.asc"
+            ],
+            "taskId": "SgAvUn5ARHyw6Q14XdBvlA",
+            "taskType": "signing"
+          }
+        ],
+        "version": "92.0.20210922161155"
+      },
+      "priority": "highest",
+      "provisionerId": "scriptworker-k8s",
+      "routes": [
+        "tc-treeherder.v2.mozilla-release.d7bbc5812f7f36a9378165fffd7a058ddb0118ec"
+      ],
+      "scopes": [
+        "project:releng:beetmover:bucket:maven-production",
+        "project:releng:beetmover:action:push-to-maven"
+      ],
+      "tags": {
+        "createdForUser": "ryanvm@gmail.com",
+        "kind": "beetmover-geckoview",
+        "label": "beetmover-geckoview-android-aarch64-shippable-lite/opt",
+        "retrigger": "false"
+      },
+      "workerType": "gecko-3-beetmover"
+    },
+    "task_id": "GdQ7ujycQQy3vT7iXPaBgw"
+  },
+  "L9NHu8DnSfqNv0Unsjvlew": {
+    "attributes": {
+      "always_target": false,
+      "kind": "release-notify-push",
+      "required_signoffs": [
+        "mar-signing"
+      ],
+      "run_on_projects": [],
+      "shipping_phase": "push",
+      "shipping_product": "firefox"
+    },
+    "dependencies": {
+      "firefox-push-to-release": "YzWx36w_QzGP1xtHeVN64Q"
+    },
+    "description": "Sends email to release-drivers telling release was pushed.",
+    "if_dependencies": [],
+    "kind": "release-notify-push",
+    "label": "release-notify-push-firefox",
+    "optimization": null,
+    "soft_dependencies": [],
+    "task": {
+      "created": {
+        "relative-datestamp": "0 seconds"
+      },
+      "deadline": {
+        "relative-datestamp": "1 day"
+      },
+      "dependencies": [
+        "YzWx36w_QzGP1xtHeVN64Q"
+      ],
+      "expires": {
+        "relative-datestamp": "1 year"
+      },
+      "extra": {
+        "index": {
+          "rank": 0
+        },
+        "notify": {
+          "email": {
+            "content": "firefox 92.0.1 build1/mozilla-release has been pushed to cdntest",
+            "subject": "firefox 92.0.1 build1/mozilla-release has been pushed to cdntest"
+          }
+        },
+        "parent": "ZuFQcboASzeI-aVjkD7uuA"
+      },
+      "metadata": {
+        "description": "Sends email to release-drivers telling release was pushed.",
+        "name": "release-notify-push-firefox",
+        "owner": "ryanvm@gmail.com",
+        "source": "https://hg.mozilla.org/releases/mozilla-release/file/d7bbc5812f7f36a9378165fffd7a058ddb0118ec/taskcluster/ci/release-notify-push"
+      },
+      "payload": {},
+      "priority": "highest",
+      "provisionerId": "built-in",
+      "routes": [
+        "notify.email.release-signoff@mozilla.org.on-completed"
+      ],
+      "scopes": [],
+      "tags": {
+        "createdForUser": "ryanvm@gmail.com",
+        "kind": "release-notify-push",
+        "label": "release-notify-push-firefox",
+        "retrigger": "false"
+      },
+      "workerType": "succeed"
+    },
+    "task_id": "L9NHu8DnSfqNv0Unsjvlew"
+  },
+  "LdL5K0vnQmGgpLz01iUaIA": {
+    "attributes": {
+      "accepted-mar-channel-ids": "firefox-mozilla-release",
+      "always_target": false,
+      "artifact_map": "taskcluster/taskgraph/manifests/fennec_geckoview.yml",
+      "build_platform": "android-x86-shippable",
+      "build_type": "opt",
+      "kind": "beetmover-geckoview",
+      "mar-channel-id": "firefox-mozilla-release",
+      "run_on_hg_branches": [
+        "^GECKOVIEW_\\d+_RELBRANCH$"
+      ],
+      "run_on_projects": [
+        "mozilla-release"
+      ],
+      "shippable": true,
+      "shipping_phase": "build",
+      "shipping_product": "fennec",
+      "signed": true,
+      "update-channel": "release"
+    },
+    "dependencies": {},
+    "description": "Beetmover submission for geckoviewandroid-x86-shippable/opt'",
+    "if_dependencies": [],
+    "kind": "beetmover-geckoview",
+    "label": "beetmover-geckoview-android-x86-shippable/opt",
+    "optimization": null,
+    "soft_dependencies": [],
+    "task": {
+      "created": {
+        "relative-datestamp": "0 seconds"
+      },
+      "deadline": {
+        "relative-datestamp": "1 day"
+      },
+      "dependencies": [
+        "HCS-PEcuRjmosIvV_VWTpQ",
+        "fTVwEqVPRoqtuChMaZ-kpg"
+      ],
+      "expires": {
+        "relative-datestamp": "1 year"
+      },
+      "extra": {
+        "index": {
+          "rank": 0
+        },
+        "parent": "ZuFQcboASzeI-aVjkD7uuA",
+        "treeherder": {
+          "collection": {
+            "opt": true
+          },
+          "jobKind": "build",
+          "machine": {
+            "platform": "android-5-0-x86-shippable"
+          },
+          "symbol": "BM-gv",
+          "tier": 2
+        },
+        "treeherder-platform": "android-5-0-x86-shippable/opt"
+      },
+      "metadata": {
+        "description": "Beetmover submission for geckoviewandroid-x86-shippable/opt' ([Treeherder job](https://treeherder.mozilla.org/#/jobs?repo=mozilla-release&revision=d7bbc5812f7f36a9378165fffd7a058ddb0118ec&selectedTaskRun=LdL5K0vnQmGgpLz01iUaIA))",
+        "name": "beetmover-geckoview-android-x86-shippable/opt",
+        "owner": "ryanvm@gmail.com",
+        "source": "https://hg.mozilla.org/releases/mozilla-release/file/d7bbc5812f7f36a9378165fffd7a058ddb0118ec/taskcluster/ci/beetmover-geckoview"
+      },
+      "payload": {
+        "appVersion": "92.0.1",
+        "artifactMap": [
+          {
+            "locale": "en-US",
+            "paths": {
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155-javadoc.jar": {
+                "checksums_path": "geckoview-omni-x86-92.0.20210922161155-javadoc.jar",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155-javadoc.jar"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155-javadoc.jar.md5": {
+                "checksums_path": "geckoview-omni-x86-92.0.20210922161155-javadoc.jar.md5",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155-javadoc.jar.md5"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155-javadoc.jar.sha1": {
+                "checksums_path": "geckoview-omni-x86-92.0.20210922161155-javadoc.jar.sha1",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155-javadoc.jar.sha1"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155-sources.jar": {
+                "checksums_path": "geckoview-omni-x86-92.0.20210922161155-sources.jar",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155-sources.jar"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155-sources.jar.md5": {
+                "checksums_path": "geckoview-omni-x86-92.0.20210922161155-sources.jar.md5",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155-sources.jar.md5"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155-sources.jar.sha1": {
+                "checksums_path": "geckoview-omni-x86-92.0.20210922161155-sources.jar.sha1",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155-sources.jar.sha1"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155.aar": {
+                "checksums_path": "geckoview-omni-x86-92.0.20210922161155.aar",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155.aar"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155.aar.md5": {
+                "checksums_path": "geckoview-omni-x86-92.0.20210922161155.aar.md5",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155.aar.md5"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155.aar.sha1": {
+                "checksums_path": "geckoview-omni-x86-92.0.20210922161155.aar.sha1",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155.aar.sha1"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155.pom": {
+                "checksums_path": "geckoview-omni-x86-92.0.20210922161155.pom",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155.pom"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155.pom.md5": {
+                "checksums_path": "geckoview-omni-x86-92.0.20210922161155.pom.md5",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155.pom.md5"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155.pom.sha1": {
+                "checksums_path": "geckoview-omni-x86-92.0.20210922161155.pom.sha1",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155.pom.sha1"
+                ]
+              }
+            },
+            "taskId": "fTVwEqVPRoqtuChMaZ-kpg"
+          },
+          {
+            "locale": "en-US",
+            "paths": {
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155-javadoc.jar.asc": {
+                "checksums_path": "geckoview-omni-x86-92.0.20210922161155-javadoc.jar.asc",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155-javadoc.jar.asc"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155-sources.jar.asc": {
+                "checksums_path": "geckoview-omni-x86-92.0.20210922161155-sources.jar.asc",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155-sources.jar.asc"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155.aar.asc": {
+                "checksums_path": "geckoview-omni-x86-92.0.20210922161155.aar.asc",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155.aar.asc"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155.pom.asc": {
+                "checksums_path": "geckoview-omni-x86-92.0.20210922161155.pom.asc",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155.pom.asc"
+                ]
+              }
+            },
+            "taskId": "HCS-PEcuRjmosIvV_VWTpQ"
+          }
+        ],
+        "artifact_id": "geckoview-omni-x86",
+        "build_number": 1,
+        "maxRunTime": 600,
+        "next_version": "92.0.2",
+        "releaseProperties": {
+          "appName": "geckoview",
+          "appVersion": "92.0.1",
+          "branch": "mozilla-release",
+          "buildid": "20210922161155"
+        },
+        "upload_date": 1632327115,
+        "upstreamArtifacts": [
+          {
+            "paths": [
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155-javadoc.jar",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155-javadoc.jar.md5",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155-javadoc.jar.sha1",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155-sources.jar",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155-sources.jar.md5",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155-sources.jar.sha1",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155.aar",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155.aar.md5",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155.aar.sha1",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155.pom",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155.pom.md5",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155.pom.sha1"
+            ],
+            "taskId": "fTVwEqVPRoqtuChMaZ-kpg",
+            "taskType": "build"
+          },
+          {
+            "paths": [
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155-javadoc.jar.asc",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155-sources.jar.asc",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155.aar.asc",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86/92.0.20210922161155/geckoview-omni-x86-92.0.20210922161155.pom.asc"
+            ],
+            "taskId": "HCS-PEcuRjmosIvV_VWTpQ",
+            "taskType": "signing"
+          }
+        ],
+        "version": "92.0.20210922161155"
+      },
+      "priority": "highest",
+      "provisionerId": "scriptworker-k8s",
+      "routes": [
+        "tc-treeherder.v2.mozilla-release.d7bbc5812f7f36a9378165fffd7a058ddb0118ec"
+      ],
+      "scopes": [
+        "project:releng:beetmover:bucket:maven-production",
+        "project:releng:beetmover:action:push-to-maven"
+      ],
+      "tags": {
+        "createdForUser": "ryanvm@gmail.com",
+        "kind": "beetmover-geckoview",
+        "label": "beetmover-geckoview-android-x86-shippable/opt",
+        "retrigger": "false"
+      },
+      "workerType": "gecko-3-beetmover"
+    },
+    "task_id": "LdL5K0vnQmGgpLz01iUaIA"
+  },
+  "Mf3d4Ro6T5SdxrJieE09Rg": {
+    "attributes": {
+      "accepted-mar-channel-ids": "firefox-mozilla-release",
+      "always_target": false,
+      "artifact_map": "taskcluster/taskgraph/manifests/fennec_geckoview.yml",
+      "build_platform": "android-arm-shippable",
+      "build_type": "opt",
+      "kind": "beetmover-geckoview",
+      "mar-channel-id": "firefox-mozilla-release",
+      "run_on_hg_branches": [
+        "^GECKOVIEW_\\d+_RELBRANCH$"
+      ],
+      "run_on_projects": [
+        "mozilla-release"
+      ],
+      "shippable": true,
+      "shipping_phase": "build",
+      "shipping_product": "fennec",
+      "signed": true,
+      "update-channel": "release"
+    },
+    "dependencies": {},
+    "description": "Beetmover submission for geckoviewandroid-arm-shippable/opt'",
+    "if_dependencies": [],
+    "kind": "beetmover-geckoview",
+    "label": "beetmover-geckoview-android-arm-shippable/opt",
+    "optimization": null,
+    "soft_dependencies": [],
+    "task": {
+      "created": {
+        "relative-datestamp": "0 seconds"
+      },
+      "deadline": {
+        "relative-datestamp": "1 day"
+      },
+      "dependencies": [
+        "F_88GQ5sR4mvKcMEKf2H5g",
+        "alUjnpHpQl-ARDkmMwfA3g"
+      ],
+      "expires": {
+        "relative-datestamp": "1 year"
+      },
+      "extra": {
+        "index": {
+          "rank": 0
+        },
+        "parent": "ZuFQcboASzeI-aVjkD7uuA",
+        "treeherder": {
+          "collection": {
+            "opt": true
+          },
+          "jobKind": "build",
+          "machine": {
+            "platform": "android-5-0-armv7-shippable"
+          },
+          "symbol": "BM-gv",
+          "tier": 2
+        },
+        "treeherder-platform": "android-5-0-armv7-shippable/opt"
+      },
+      "metadata": {
+        "description": "Beetmover submission for geckoviewandroid-arm-shippable/opt' ([Treeherder job](https://treeherder.mozilla.org/#/jobs?repo=mozilla-release&revision=d7bbc5812f7f36a9378165fffd7a058ddb0118ec&selectedTaskRun=Mf3d4Ro6T5SdxrJieE09Rg))",
+        "name": "beetmover-geckoview-android-arm-shippable/opt",
+        "owner": "ryanvm@gmail.com",
+        "source": "https://hg.mozilla.org/releases/mozilla-release/file/d7bbc5812f7f36a9378165fffd7a058ddb0118ec/taskcluster/ci/beetmover-geckoview"
+      },
+      "payload": {
+        "appVersion": "92.0.1",
+        "artifactMap": [
+          {
+            "locale": "en-US",
+            "paths": {
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155-javadoc.jar": {
+                "checksums_path": "geckoview-omni-armeabi-v7a-92.0.20210922161155-javadoc.jar",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155-javadoc.jar"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155-javadoc.jar.md5": {
+                "checksums_path": "geckoview-omni-armeabi-v7a-92.0.20210922161155-javadoc.jar.md5",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155-javadoc.jar.md5"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155-javadoc.jar.sha1": {
+                "checksums_path": "geckoview-omni-armeabi-v7a-92.0.20210922161155-javadoc.jar.sha1",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155-javadoc.jar.sha1"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155-sources.jar": {
+                "checksums_path": "geckoview-omni-armeabi-v7a-92.0.20210922161155-sources.jar",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155-sources.jar"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155-sources.jar.md5": {
+                "checksums_path": "geckoview-omni-armeabi-v7a-92.0.20210922161155-sources.jar.md5",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155-sources.jar.md5"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155-sources.jar.sha1": {
+                "checksums_path": "geckoview-omni-armeabi-v7a-92.0.20210922161155-sources.jar.sha1",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155-sources.jar.sha1"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155.aar": {
+                "checksums_path": "geckoview-omni-armeabi-v7a-92.0.20210922161155.aar",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155.aar"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155.aar.md5": {
+                "checksums_path": "geckoview-omni-armeabi-v7a-92.0.20210922161155.aar.md5",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155.aar.md5"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155.aar.sha1": {
+                "checksums_path": "geckoview-omni-armeabi-v7a-92.0.20210922161155.aar.sha1",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155.aar.sha1"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155.pom": {
+                "checksums_path": "geckoview-omni-armeabi-v7a-92.0.20210922161155.pom",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155.pom"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155.pom.md5": {
+                "checksums_path": "geckoview-omni-armeabi-v7a-92.0.20210922161155.pom.md5",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155.pom.md5"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155.pom.sha1": {
+                "checksums_path": "geckoview-omni-armeabi-v7a-92.0.20210922161155.pom.sha1",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155.pom.sha1"
+                ]
+              }
+            },
+            "taskId": "F_88GQ5sR4mvKcMEKf2H5g"
+          },
+          {
+            "locale": "en-US",
+            "paths": {
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155-javadoc.jar.asc": {
+                "checksums_path": "geckoview-omni-armeabi-v7a-92.0.20210922161155-javadoc.jar.asc",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155-javadoc.jar.asc"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155-sources.jar.asc": {
+                "checksums_path": "geckoview-omni-armeabi-v7a-92.0.20210922161155-sources.jar.asc",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155-sources.jar.asc"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155.aar.asc": {
+                "checksums_path": "geckoview-omni-armeabi-v7a-92.0.20210922161155.aar.asc",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155.aar.asc"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155.pom.asc": {
+                "checksums_path": "geckoview-omni-armeabi-v7a-92.0.20210922161155.pom.asc",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155.pom.asc"
+                ]
+              }
+            },
+            "taskId": "alUjnpHpQl-ARDkmMwfA3g"
+          }
+        ],
+        "artifact_id": "geckoview-omni-armeabi-v7a",
+        "build_number": 1,
+        "maxRunTime": 600,
+        "next_version": "92.0.2",
+        "releaseProperties": {
+          "appName": "geckoview",
+          "appVersion": "92.0.1",
+          "branch": "mozilla-release",
+          "buildid": "20210922161155"
+        },
+        "upload_date": 1632327115,
+        "upstreamArtifacts": [
+          {
+            "paths": [
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155-javadoc.jar",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155-javadoc.jar.md5",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155-javadoc.jar.sha1",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155-sources.jar",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155-sources.jar.md5",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155-sources.jar.sha1",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155.aar",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155.aar.md5",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155.aar.sha1",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155.pom",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155.pom.md5",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155.pom.sha1"
+            ],
+            "taskId": "F_88GQ5sR4mvKcMEKf2H5g",
+            "taskType": "build"
+          },
+          {
+            "paths": [
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155-javadoc.jar.asc",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155-sources.jar.asc",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155.aar.asc",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-armeabi-v7a/92.0.20210922161155/geckoview-omni-armeabi-v7a-92.0.20210922161155.pom.asc"
+            ],
+            "taskId": "alUjnpHpQl-ARDkmMwfA3g",
+            "taskType": "signing"
+          }
+        ],
+        "version": "92.0.20210922161155"
+      },
+      "priority": "highest",
+      "provisionerId": "scriptworker-k8s",
+      "routes": [
+        "tc-treeherder.v2.mozilla-release.d7bbc5812f7f36a9378165fffd7a058ddb0118ec"
+      ],
+      "scopes": [
+        "project:releng:beetmover:bucket:maven-production",
+        "project:releng:beetmover:action:push-to-maven"
+      ],
+      "tags": {
+        "createdForUser": "ryanvm@gmail.com",
+        "kind": "beetmover-geckoview",
+        "label": "beetmover-geckoview-android-arm-shippable/opt",
+        "retrigger": "false"
+      },
+      "workerType": "gecko-3-beetmover"
+    },
+    "task_id": "Mf3d4Ro6T5SdxrJieE09Rg"
+  },
+  "N9K5m7OAQV2Zdy0TR0RhzA": {
+    "attributes": {
+      "always_target": false,
+      "artifact_map": "taskcluster/taskgraph/manifests/fennec_geckoview.yml",
+      "build_platform": "android-geckoview-fat-aar-shippable-lite",
+      "build_type": "opt",
+      "kind": "beetmover-geckoview",
+      "run_on_hg_branches": [
+        "^GECKOVIEW_\\d+_RELBRANCH$"
+      ],
+      "run_on_projects": [
+        "mozilla-release"
+      ],
+      "shippable": true,
+      "shipping_phase": "build",
+      "shipping_product": "fennec",
+      "signed": true,
+      "update-channel": "release"
+    },
+    "dependencies": {},
+    "description": "Beetmover submission for geckoviewandroid-geckoview-fat-aar-shippable-lite/opt'",
+    "if_dependencies": [],
+    "kind": "beetmover-geckoview",
+    "label": "beetmover-geckoview-android-geckoview-fat-aar-shippable-lite/opt",
+    "optimization": null,
+    "soft_dependencies": [],
+    "task": {
+      "created": {
+        "relative-datestamp": "0 seconds"
+      },
+      "deadline": {
+        "relative-datestamp": "1 day"
+      },
+      "dependencies": [
+        "ZE8RtVHWSFSiTcCynNsTfA",
+        "ej_iMD8ZQsWERxEFM2-XbA"
+      ],
+      "expires": {
+        "relative-datestamp": "1 year"
+      },
+      "extra": {
+        "index": {
+          "rank": 0
+        },
+        "parent": "ZuFQcboASzeI-aVjkD7uuA",
+        "treeherder": {
+          "collection": {
+            "opt": true
+          },
+          "jobKind": "build",
+          "machine": {
+            "platform": "android-4-1-geckoview-fat-aar-shippable"
+          },
+          "symbol": "BM-gv",
+          "tier": 2
+        },
+        "treeherder-platform": "android-4-1-geckoview-fat-aar-shippable/opt"
+      },
+      "metadata": {
+        "description": "Beetmover submission for geckoviewandroid-geckoview-fat-aar-shippable-lite/opt' ([Treeherder job](https://treeherder.mozilla.org/#/jobs?repo=mozilla-release&revision=d7bbc5812f7f36a9378165fffd7a058ddb0118ec&selectedTaskRun=N9K5m7OAQV2Zdy0TR0RhzA))",
+        "name": "beetmover-geckoview-android-geckoview-fat-aar-shippable-lite/opt",
+        "owner": "ryanvm@gmail.com",
+        "source": "https://hg.mozilla.org/releases/mozilla-release/file/d7bbc5812f7f36a9378165fffd7a058ddb0118ec/taskcluster/ci/beetmover-geckoview"
+      },
+      "payload": {
+        "appVersion": "92.0.1",
+        "artifactMap": [
+          {
+            "locale": "en-US",
+            "paths": {
+              "public/build/maven/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155-javadoc.jar": {
+                "checksums_path": "geckoview-92.0.20210922161155-javadoc.jar",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155-javadoc.jar"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155-javadoc.jar.md5": {
+                "checksums_path": "geckoview-92.0.20210922161155-javadoc.jar.md5",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155-javadoc.jar.md5"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155-javadoc.jar.sha1": {
+                "checksums_path": "geckoview-92.0.20210922161155-javadoc.jar.sha1",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155-javadoc.jar.sha1"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155-sources.jar": {
+                "checksums_path": "geckoview-92.0.20210922161155-sources.jar",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155-sources.jar"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155-sources.jar.md5": {
+                "checksums_path": "geckoview-92.0.20210922161155-sources.jar.md5",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155-sources.jar.md5"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155-sources.jar.sha1": {
+                "checksums_path": "geckoview-92.0.20210922161155-sources.jar.sha1",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155-sources.jar.sha1"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155.aar": {
+                "checksums_path": "geckoview-92.0.20210922161155.aar",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155.aar"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155.aar.md5": {
+                "checksums_path": "geckoview-92.0.20210922161155.aar.md5",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155.aar.md5"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155.aar.sha1": {
+                "checksums_path": "geckoview-92.0.20210922161155.aar.sha1",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155.aar.sha1"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155.pom": {
+                "checksums_path": "geckoview-92.0.20210922161155.pom",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155.pom"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155.pom.md5": {
+                "checksums_path": "geckoview-92.0.20210922161155.pom.md5",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155.pom.md5"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155.pom.sha1": {
+                "checksums_path": "geckoview-92.0.20210922161155.pom.sha1",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155.pom.sha1"
+                ]
+              }
+            },
+            "taskId": "ZE8RtVHWSFSiTcCynNsTfA"
+          },
+          {
+            "locale": "en-US",
+            "paths": {
+              "public/build/maven/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155-javadoc.jar.asc": {
+                "checksums_path": "geckoview-92.0.20210922161155-javadoc.jar.asc",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155-javadoc.jar.asc"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155-sources.jar.asc": {
+                "checksums_path": "geckoview-92.0.20210922161155-sources.jar.asc",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155-sources.jar.asc"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155.aar.asc": {
+                "checksums_path": "geckoview-92.0.20210922161155.aar.asc",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155.aar.asc"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155.pom.asc": {
+                "checksums_path": "geckoview-92.0.20210922161155.pom.asc",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155.pom.asc"
+                ]
+              }
+            },
+            "taskId": "ej_iMD8ZQsWERxEFM2-XbA"
+          }
+        ],
+        "artifact_id": "geckoview",
+        "build_number": 1,
+        "maxRunTime": 600,
+        "next_version": "92.0.2",
+        "releaseProperties": {
+          "appName": "geckoview",
+          "appVersion": "92.0.1",
+          "branch": "mozilla-release",
+          "buildid": "20210922161155"
+        },
+        "upload_date": 1632327115,
+        "upstreamArtifacts": [
+          {
+            "paths": [
+              "public/build/maven/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155-javadoc.jar",
+              "public/build/maven/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155-javadoc.jar.md5",
+              "public/build/maven/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155-javadoc.jar.sha1",
+              "public/build/maven/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155-sources.jar",
+              "public/build/maven/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155-sources.jar.md5",
+              "public/build/maven/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155-sources.jar.sha1",
+              "public/build/maven/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155.aar",
+              "public/build/maven/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155.aar.md5",
+              "public/build/maven/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155.aar.sha1",
+              "public/build/maven/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155.pom",
+              "public/build/maven/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155.pom.md5",
+              "public/build/maven/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155.pom.sha1"
+            ],
+            "taskId": "ZE8RtVHWSFSiTcCynNsTfA",
+            "taskType": "build"
+          },
+          {
+            "paths": [
+              "public/build/maven/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155-javadoc.jar.asc",
+              "public/build/maven/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155-sources.jar.asc",
+              "public/build/maven/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155.aar.asc",
+              "public/build/maven/org/mozilla/geckoview/geckoview/92.0.20210922161155/geckoview-92.0.20210922161155.pom.asc"
+            ],
+            "taskId": "ej_iMD8ZQsWERxEFM2-XbA",
+            "taskType": "signing"
+          }
+        ],
+        "version": "92.0.20210922161155"
+      },
+      "priority": "highest",
+      "provisionerId": "scriptworker-k8s",
+      "routes": [
+        "tc-treeherder.v2.mozilla-release.d7bbc5812f7f36a9378165fffd7a058ddb0118ec"
+      ],
+      "scopes": [
+        "project:releng:beetmover:bucket:maven-production",
+        "project:releng:beetmover:action:push-to-maven"
+      ],
+      "tags": {
+        "createdForUser": "ryanvm@gmail.com",
+        "kind": "beetmover-geckoview",
+        "label": "beetmover-geckoview-android-geckoview-fat-aar-shippable-lite/opt",
+        "retrigger": "false"
+      },
+      "workerType": "gecko-3-beetmover"
+    },
+    "task_id": "N9K5m7OAQV2Zdy0TR0RhzA"
+  },
+  "NYFB3yYJR2qw7b6b1u8O8w": {
+    "attributes": {
+      "always_target": false,
+      "artifact_map": "taskcluster/taskgraph/manifests/fennec_geckoview.yml",
+      "build_platform": "android-geckoview-fat-aar-shippable",
+      "build_type": "opt",
+      "kind": "beetmover-geckoview",
+      "run_on_hg_branches": [
+        "^GECKOVIEW_\\d+_RELBRANCH$"
+      ],
+      "run_on_projects": [
+        "mozilla-release"
+      ],
+      "shippable": true,
+      "shipping_phase": "build",
+      "shipping_product": "fennec",
+      "signed": true,
+      "update-channel": "release"
+    },
+    "dependencies": {},
+    "description": "Beetmover submission for geckoviewandroid-geckoview-fat-aar-shippable/opt'",
+    "if_dependencies": [],
+    "kind": "beetmover-geckoview",
+    "label": "beetmover-geckoview-android-geckoview-fat-aar-shippable/opt",
+    "optimization": null,
+    "soft_dependencies": [],
+    "task": {
+      "created": {
+        "relative-datestamp": "0 seconds"
+      },
+      "deadline": {
+        "relative-datestamp": "1 day"
+      },
+      "dependencies": [
+        "U_QqpCFgTCqm15VcizuXNw",
+        "XGYRRBP7QPuyECIz4jsTXw"
+      ],
+      "expires": {
+        "relative-datestamp": "1 year"
+      },
+      "extra": {
+        "index": {
+          "rank": 0
+        },
+        "parent": "ZuFQcboASzeI-aVjkD7uuA",
+        "treeherder": {
+          "collection": {
+            "opt": true
+          },
+          "jobKind": "build",
+          "machine": {
+            "platform": "android-5-0-geckoview-fat-aar-shippable"
+          },
+          "symbol": "BM-gv",
+          "tier": 2
+        },
+        "treeherder-platform": "android-5-0-geckoview-fat-aar-shippable/opt"
+      },
+      "metadata": {
+        "description": "Beetmover submission for geckoviewandroid-geckoview-fat-aar-shippable/opt' ([Treeherder job](https://treeherder.mozilla.org/#/jobs?repo=mozilla-release&revision=d7bbc5812f7f36a9378165fffd7a058ddb0118ec&selectedTaskRun=NYFB3yYJR2qw7b6b1u8O8w))",
+        "name": "beetmover-geckoview-android-geckoview-fat-aar-shippable/opt",
+        "owner": "ryanvm@gmail.com",
+        "source": "https://hg.mozilla.org/releases/mozilla-release/file/d7bbc5812f7f36a9378165fffd7a058ddb0118ec/taskcluster/ci/beetmover-geckoview"
+      },
+      "payload": {
+        "appVersion": "92.0.1",
+        "artifactMap": [
+          {
+            "locale": "en-US",
+            "paths": {
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155-javadoc.jar": {
+                "checksums_path": "geckoview-omni-92.0.20210922161155-javadoc.jar",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155-javadoc.jar"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155-javadoc.jar.md5": {
+                "checksums_path": "geckoview-omni-92.0.20210922161155-javadoc.jar.md5",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155-javadoc.jar.md5"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155-javadoc.jar.sha1": {
+                "checksums_path": "geckoview-omni-92.0.20210922161155-javadoc.jar.sha1",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155-javadoc.jar.sha1"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155-sources.jar": {
+                "checksums_path": "geckoview-omni-92.0.20210922161155-sources.jar",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155-sources.jar"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155-sources.jar.md5": {
+                "checksums_path": "geckoview-omni-92.0.20210922161155-sources.jar.md5",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155-sources.jar.md5"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155-sources.jar.sha1": {
+                "checksums_path": "geckoview-omni-92.0.20210922161155-sources.jar.sha1",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155-sources.jar.sha1"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155.aar": {
+                "checksums_path": "geckoview-omni-92.0.20210922161155.aar",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155.aar"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155.aar.md5": {
+                "checksums_path": "geckoview-omni-92.0.20210922161155.aar.md5",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155.aar.md5"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155.aar.sha1": {
+                "checksums_path": "geckoview-omni-92.0.20210922161155.aar.sha1",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155.aar.sha1"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155.pom": {
+                "checksums_path": "geckoview-omni-92.0.20210922161155.pom",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155.pom"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155.pom.md5": {
+                "checksums_path": "geckoview-omni-92.0.20210922161155.pom.md5",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155.pom.md5"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155.pom.sha1": {
+                "checksums_path": "geckoview-omni-92.0.20210922161155.pom.sha1",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155.pom.sha1"
+                ]
+              }
+            },
+            "taskId": "U_QqpCFgTCqm15VcizuXNw"
+          },
+          {
+            "locale": "en-US",
+            "paths": {
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155-javadoc.jar.asc": {
+                "checksums_path": "geckoview-omni-92.0.20210922161155-javadoc.jar.asc",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155-javadoc.jar.asc"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155-sources.jar.asc": {
+                "checksums_path": "geckoview-omni-92.0.20210922161155-sources.jar.asc",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155-sources.jar.asc"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155.aar.asc": {
+                "checksums_path": "geckoview-omni-92.0.20210922161155.aar.asc",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155.aar.asc"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155.pom.asc": {
+                "checksums_path": "geckoview-omni-92.0.20210922161155.pom.asc",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155.pom.asc"
+                ]
+              }
+            },
+            "taskId": "XGYRRBP7QPuyECIz4jsTXw"
+          }
+        ],
+        "artifact_id": "geckoview-omni",
+        "build_number": 1,
+        "maxRunTime": 600,
+        "next_version": "92.0.2",
+        "releaseProperties": {
+          "appName": "geckoview",
+          "appVersion": "92.0.1",
+          "branch": "mozilla-release",
+          "buildid": "20210922161155"
+        },
+        "upload_date": 1632327115,
+        "upstreamArtifacts": [
+          {
+            "paths": [
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155-javadoc.jar",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155-javadoc.jar.md5",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155-javadoc.jar.sha1",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155-sources.jar",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155-sources.jar.md5",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155-sources.jar.sha1",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155.aar",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155.aar.md5",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155.aar.sha1",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155.pom",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155.pom.md5",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155.pom.sha1"
+            ],
+            "taskId": "U_QqpCFgTCqm15VcizuXNw",
+            "taskType": "build"
+          },
+          {
+            "paths": [
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155-javadoc.jar.asc",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155-sources.jar.asc",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155.aar.asc",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni/92.0.20210922161155/geckoview-omni-92.0.20210922161155.pom.asc"
+            ],
+            "taskId": "XGYRRBP7QPuyECIz4jsTXw",
+            "taskType": "signing"
+          }
+        ],
+        "version": "92.0.20210922161155"
+      },
+      "priority": "highest",
+      "provisionerId": "scriptworker-k8s",
+      "routes": [
+        "tc-treeherder.v2.mozilla-release.d7bbc5812f7f36a9378165fffd7a058ddb0118ec"
+      ],
+      "scopes": [
+        "project:releng:beetmover:bucket:maven-production",
+        "project:releng:beetmover:action:push-to-maven"
+      ],
+      "tags": {
+        "createdForUser": "ryanvm@gmail.com",
+        "kind": "beetmover-geckoview",
+        "label": "beetmover-geckoview-android-geckoview-fat-aar-shippable/opt",
+        "retrigger": "false"
+      },
+      "workerType": "gecko-3-beetmover"
+    },
+    "task_id": "NYFB3yYJR2qw7b6b1u8O8w"
+  },
+  "QVW2_YzqTKyMOwVvk1i3AA": {
+    "attributes": {
+      "always_target": false,
+      "kind": "release-notify-av-announce",
+      "required_signoffs": [
+        "mar-signing"
+      ],
+      "run_on_projects": [],
+      "shipping_phase": "push",
+      "shipping_product": "firefox"
+    },
+    "dependencies": {},
+    "description": "Sends email to antivirus vendors telling them that the release is available for scanning.",
+    "if_dependencies": [],
+    "kind": "release-notify-av-announce",
+    "label": "release-notify-av-announce-firefox",
+    "optimization": null,
+    "soft_dependencies": [],
+    "task": {
+      "created": {
+        "relative-datestamp": "0 seconds"
+      },
+      "deadline": {
+        "relative-datestamp": "1 day"
+      },
+      "dependencies": [
+        "FyeyyW-4Q7GfbxdM8s1D4w",
+        "HZDeFu2YQdGrxXn828BW1w",
+        "Ic87Bl41TSqCBJy1ZuSj6A",
+        "L_zHWFuCQ4GN7GA-AB_jWg",
+        "Loz5xGcGS6eJ5dOziJ15TA",
+        "PeHvU2tVTsK2NWoDqO0Tjg",
+        "QID9oM5GSIuoL0PSbip1HQ",
+        "SjTFmcgwSaaFrW06B2bI2Q",
+        "WD8FCiR9SuSfbYzRN_o4GA",
+        "a5b1qh9lRFOgNDUjCeyC0g",
+        "b8LFjgFmRCaXHUBre0y-qg",
+        "c28s7nJaR3io-f5_8rz-QA"
+      ],
+      "expires": {
+        "relative-datestamp": "1 year"
+      },
+      "extra": {
+        "index": {
+          "rank": 0
+        },
+        "notify": {
+          "email": {
+            "content": "Company Name: Mozilla\nContact Department: Release Engineering\nContact email address: release@mozilla.com\nProduct information: firefox 92.0.1\nProduct location: https://releases.mozilla.org/pub/firefox/candidates/92.0.1-candidates/build1/\n",
+            "subject": "Firefox 92.0.1 build1 release"
+          }
+        },
+        "parent": "ZuFQcboASzeI-aVjkD7uuA"
+      },
+      "metadata": {
+        "description": "Sends email to antivirus vendors telling them that the release is available for scanning.",
+        "name": "release-notify-av-announce-firefox",
+        "owner": "ryanvm@gmail.com",
+        "source": "https://hg.mozilla.org/releases/mozilla-release/file/d7bbc5812f7f36a9378165fffd7a058ddb0118ec/taskcluster/ci/release-notify-av-announce"
+      },
+      "payload": {},
+      "priority": "highest",
+      "provisionerId": "built-in",
+      "routes": [
+        "notify.email.av-vendor-release-announce@mozilla.org.on-completed"
+      ],
+      "scopes": [],
+      "tags": {
+        "createdForUser": "ryanvm@gmail.com",
+        "kind": "release-notify-av-announce",
+        "label": "release-notify-av-announce-firefox",
+        "retrigger": "false"
+      },
+      "workerType": "succeed"
+    },
+    "task_id": "QVW2_YzqTKyMOwVvk1i3AA"
+  },
+  "RE3BRDFrR4iUL08aJu6cKQ": {
+    "attributes": {
+      "always_target": false,
+      "kind": "release-final-verify",
+      "required_signoffs": [
+        "mar-signing"
+      ],
+      "run_on_projects": [],
+      "shipping_phase": "push",
+      "shipping_product": "firefox"
+    },
+    "dependencies": {
+      "release-bouncer-check-firefox": "DqlOXseTRhWBFniSY07Qfw"
+    },
+    "description": "final verify",
+    "if_dependencies": [],
+    "kind": "release-final-verify",
+    "label": "release-final-verify-firefox",
+    "optimization": null,
+    "soft_dependencies": [],
+    "task": {
+      "created": {
+        "relative-datestamp": "0 seconds"
+      },
+      "deadline": {
+        "relative-datestamp": "1 day"
+      },
+      "dependencies": [
+        "DqlOXseTRhWBFniSY07Qfw",
+        "IWY8U23RRHeUBSHqAGPeFA",
+        "JXDiQKecSk-1xJKGGqDg0g",
+        "M8dfRIA8QQeIDadZLun_cQ",
+        "O-eKCpyMRHKw3NtJk8TcVg",
+        "UxYn9nK9TCejdxZAE5w_Yg",
+        "W_gKK0hxQGa1XBoAeHSiAw",
+        "cUFIJCAPRUWf3Aqo-EBPpA"
+      ],
+      "expires": {
+        "relative-datestamp": "1 year"
+      },
+      "extra": {
+        "index": {
+          "rank": 1632327115
+        },
+        "parent": "ZuFQcboASzeI-aVjkD7uuA",
+        "treeherder": {
+          "collection": {
+            "opt": true
+          },
+          "groupName": "Release promotion",
+          "groupSymbol": "Rel",
+          "jobKind": "test",
+          "machine": {
+            "platform": "firefox-release"
+          },
+          "symbol": "FV",
+          "tier": 1
+        },
+        "treeherder-platform": "firefox-release/opt"
+      },
+      "metadata": {
+        "description": "final verify ([Treeherder job](https://treeherder.mozilla.org/#/jobs?repo=mozilla-release&revision=d7bbc5812f7f36a9378165fffd7a058ddb0118ec&selectedTaskRun=RE3BRDFrR4iUL08aJu6cKQ))",
+        "name": "release-final-verify-firefox",
+        "owner": "ryanvm@gmail.com",
+        "source": "https://hg.mozilla.org/releases/mozilla-release/file/d7bbc5812f7f36a9378165fffd7a058ddb0118ec/taskcluster/ci/release-final-verify"
+      },
+      "payload": {
+        "cache": {
+          "gecko-level-3-checkouts-sparse-hg58-v3-ce115c4ec883f2e4f154": "/builds/worker/checkouts"
+        },
+        "command": [
+          "/builds/worker/bin/run-task",
+          "--gecko-checkout=/builds/worker/checkouts/gecko",
+          "--gecko-sparse-profile=build/sparse-profiles/update-verify",
+          "--fetch-hgfingerprint",
+          "--task-cwd",
+          "/builds/worker/checkouts/gecko",
+          "--",
+          "bash",
+          "-cx",
+          "tools/update-verify/release/final-verification.sh https://firefox-ci-tc.services.mozilla.com/api/queue/v1/task/cUFIJCAPRUWf3Aqo-EBPpA/artifacts/public/build/update-verify.cfg https://firefox-ci-tc.services.mozilla.com/api/queue/v1/task/IWY8U23RRHeUBSHqAGPeFA/artifacts/public/build/update-verify.cfg https://firefox-ci-tc.services.mozilla.com/api/queue/v1/task/UxYn9nK9TCejdxZAE5w_Yg/artifacts/public/build/update-verify.cfg https://firefox-ci-tc.services.mozilla.com/api/queue/v1/task/O-eKCpyMRHKw3NtJk8TcVg/artifacts/public/build/update-verify.cfg https://firefox-ci-tc.services.mozilla.com/api/queue/v1/task/W_gKK0hxQGa1XBoAeHSiAw/artifacts/public/build/update-verify.cfg https://firefox-ci-tc.services.mozilla.com/api/queue/v1/task/M8dfRIA8QQeIDadZLun_cQ/artifacts/public/build/update-verify.cfg"
+        ],
+        "env": {
+          "GECKO_BASE_REPOSITORY": "https://hg.mozilla.org/mozilla-unified",
+          "GECKO_HEAD_REPOSITORY": "https://hg.mozilla.org/releases/mozilla-release",
+          "GECKO_HEAD_REV": "d7bbc5812f7f36a9378165fffd7a058ddb0118ec",
+          "GECKO_PATH": "/builds/worker/checkouts/gecko",
+          "HG_STORE_PATH": "/builds/worker/checkouts/hg-store",
+          "MOZ_AUTOMATION": "1",
+          "MOZ_SCM_LEVEL": "3",
+          "SCCACHE_DISABLE": "1",
+          "TASKCLUSTER_CACHES": "/builds/worker/checkouts",
+          "TASKCLUSTER_VOLUMES": "/builds/worker/.cache;/builds/worker/checkouts"
+        },
+        "features": {
+          "allowPtrace": true,
+          "taskclusterProxy": true
+        },
+        "image": {
+          "path": "public/image.tar.zst",
+          "taskId": "JXDiQKecSk-1xJKGGqDg0g",
+          "type": "task-image"
+        },
+        "maxRunTime": 7200,
+        "onExitStatus": {
+          "purgeCaches": [
+            72
+          ],
+          "retry": [
+            1,
+            72
+          ]
+        }
+      },
+      "priority": "highest",
+      "provisionerId": "gecko-3",
+      "routes": [
+        "tc-treeherder.v2.mozilla-release.d7bbc5812f7f36a9378165fffd7a058ddb0118ec"
+      ],
+      "scopes": [
+        "secrets:get:project/taskcluster/gecko/hgfingerprint",
+        "secrets:get:project/taskcluster/gecko/hgmointernal",
+        "docker-worker:feature:allowPtrace",
+        "docker-worker:cache:gecko-level-3-checkouts-sparse-hg58-v3-ce115c4ec883f2e4f154"
+      ],
+      "tags": {
+        "createdForUser": "ryanvm@gmail.com",
+        "kind": "release-final-verify",
+        "label": "release-final-verify-firefox",
+        "os": "linux",
+        "retrigger": "false",
+        "worker-implementation": "docker-worker"
+      },
+      "workerType": "b-linux"
+    },
+    "task_id": "RE3BRDFrR4iUL08aJu6cKQ"
+  },
+  "T9xQ6hHhQZm3mL3_76lpYw": {
+    "attributes": {
+      "accepted-mar-channel-ids": "firefox-mozilla-release",
+      "always_target": false,
+      "artifact_map": "taskcluster/taskgraph/manifests/fennec_geckoview.yml",
+      "build_platform": "android-x86-shippable-lite",
+      "build_type": "opt",
+      "kind": "beetmover-geckoview",
+      "mar-channel-id": "firefox-mozilla-release",
+      "run_on_hg_branches": [
+        "^GECKOVIEW_\\d+_RELBRANCH$"
+      ],
+      "run_on_projects": [
+        "mozilla-release"
+      ],
+      "shippable": true,
+      "shipping_phase": "build",
+      "shipping_product": "fennec",
+      "signed": true,
+      "update-channel": "release"
+    },
+    "dependencies": {},
+    "description": "Beetmover submission for geckoviewandroid-x86-shippable-lite/opt'",
+    "if_dependencies": [],
+    "kind": "beetmover-geckoview",
+    "label": "beetmover-geckoview-android-x86-shippable-lite/opt",
+    "optimization": null,
+    "soft_dependencies": [],
+    "task": {
+      "created": {
+        "relative-datestamp": "0 seconds"
+      },
+      "deadline": {
+        "relative-datestamp": "1 day"
+      },
+      "dependencies": [
+        "QMUAiRUNStKxZGeHLucLeA",
+        "cmiQQ6viTYiKS5Rs4u2PqQ"
+      ],
+      "expires": {
+        "relative-datestamp": "1 year"
+      },
+      "extra": {
+        "index": {
+          "rank": 0
+        },
+        "parent": "ZuFQcboASzeI-aVjkD7uuA",
+        "treeherder": {
+          "collection": {
+            "opt": true
+          },
+          "jobKind": "build",
+          "machine": {
+            "platform": "android-4-1-x86-shippable-lite"
+          },
+          "symbol": "BM-gv",
+          "tier": 2
+        },
+        "treeherder-platform": "android-4-1-x86-shippable-lite/opt"
+      },
+      "metadata": {
+        "description": "Beetmover submission for geckoviewandroid-x86-shippable-lite/opt' ([Treeherder job](https://treeherder.mozilla.org/#/jobs?repo=mozilla-release&revision=d7bbc5812f7f36a9378165fffd7a058ddb0118ec&selectedTaskRun=T9xQ6hHhQZm3mL3_76lpYw))",
+        "name": "beetmover-geckoview-android-x86-shippable-lite/opt",
+        "owner": "ryanvm@gmail.com",
+        "source": "https://hg.mozilla.org/releases/mozilla-release/file/d7bbc5812f7f36a9378165fffd7a058ddb0118ec/taskcluster/ci/beetmover-geckoview"
+      },
+      "payload": {
+        "appVersion": "92.0.1",
+        "artifactMap": [
+          {
+            "locale": "en-US",
+            "paths": {
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155-javadoc.jar": {
+                "checksums_path": "geckoview-x86-92.0.20210922161155-javadoc.jar",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155-javadoc.jar"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155-javadoc.jar.md5": {
+                "checksums_path": "geckoview-x86-92.0.20210922161155-javadoc.jar.md5",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155-javadoc.jar.md5"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155-javadoc.jar.sha1": {
+                "checksums_path": "geckoview-x86-92.0.20210922161155-javadoc.jar.sha1",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155-javadoc.jar.sha1"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155-sources.jar": {
+                "checksums_path": "geckoview-x86-92.0.20210922161155-sources.jar",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155-sources.jar"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155-sources.jar.md5": {
+                "checksums_path": "geckoview-x86-92.0.20210922161155-sources.jar.md5",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155-sources.jar.md5"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155-sources.jar.sha1": {
+                "checksums_path": "geckoview-x86-92.0.20210922161155-sources.jar.sha1",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155-sources.jar.sha1"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155.aar": {
+                "checksums_path": "geckoview-x86-92.0.20210922161155.aar",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155.aar"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155.aar.md5": {
+                "checksums_path": "geckoview-x86-92.0.20210922161155.aar.md5",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155.aar.md5"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155.aar.sha1": {
+                "checksums_path": "geckoview-x86-92.0.20210922161155.aar.sha1",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155.aar.sha1"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155.pom": {
+                "checksums_path": "geckoview-x86-92.0.20210922161155.pom",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155.pom"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155.pom.md5": {
+                "checksums_path": "geckoview-x86-92.0.20210922161155.pom.md5",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155.pom.md5"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155.pom.sha1": {
+                "checksums_path": "geckoview-x86-92.0.20210922161155.pom.sha1",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155.pom.sha1"
+                ]
+              }
+            },
+            "taskId": "QMUAiRUNStKxZGeHLucLeA"
+          },
+          {
+            "locale": "en-US",
+            "paths": {
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155-javadoc.jar.asc": {
+                "checksums_path": "geckoview-x86-92.0.20210922161155-javadoc.jar.asc",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155-javadoc.jar.asc"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155-sources.jar.asc": {
+                "checksums_path": "geckoview-x86-92.0.20210922161155-sources.jar.asc",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155-sources.jar.asc"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155.aar.asc": {
+                "checksums_path": "geckoview-x86-92.0.20210922161155.aar.asc",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155.aar.asc"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155.pom.asc": {
+                "checksums_path": "geckoview-x86-92.0.20210922161155.pom.asc",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155.pom.asc"
+                ]
+              }
+            },
+            "taskId": "cmiQQ6viTYiKS5Rs4u2PqQ"
+          }
+        ],
+        "artifact_id": "geckoview-x86",
+        "build_number": 1,
+        "maxRunTime": 600,
+        "next_version": "92.0.2",
+        "releaseProperties": {
+          "appName": "geckoview",
+          "appVersion": "92.0.1",
+          "branch": "mozilla-release",
+          "buildid": "20210922161155"
+        },
+        "upload_date": 1632327115,
+        "upstreamArtifacts": [
+          {
+            "paths": [
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155-javadoc.jar",
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155-javadoc.jar.md5",
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155-javadoc.jar.sha1",
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155-sources.jar",
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155-sources.jar.md5",
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155-sources.jar.sha1",
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155.aar",
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155.aar.md5",
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155.aar.sha1",
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155.pom",
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155.pom.md5",
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155.pom.sha1"
+            ],
+            "taskId": "QMUAiRUNStKxZGeHLucLeA",
+            "taskType": "build"
+          },
+          {
+            "paths": [
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155-javadoc.jar.asc",
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155-sources.jar.asc",
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155.aar.asc",
+              "public/build/maven/org/mozilla/geckoview/geckoview-x86/92.0.20210922161155/geckoview-x86-92.0.20210922161155.pom.asc"
+            ],
+            "taskId": "cmiQQ6viTYiKS5Rs4u2PqQ",
+            "taskType": "signing"
+          }
+        ],
+        "version": "92.0.20210922161155"
+      },
+      "priority": "highest",
+      "provisionerId": "scriptworker-k8s",
+      "routes": [
+        "tc-treeherder.v2.mozilla-release.d7bbc5812f7f36a9378165fffd7a058ddb0118ec"
+      ],
+      "scopes": [
+        "project:releng:beetmover:bucket:maven-production",
+        "project:releng:beetmover:action:push-to-maven"
+      ],
+      "tags": {
+        "createdForUser": "ryanvm@gmail.com",
+        "kind": "beetmover-geckoview",
+        "label": "beetmover-geckoview-android-x86-shippable-lite/opt",
+        "retrigger": "false"
+      },
+      "workerType": "gecko-3-beetmover"
+    },
+    "task_id": "T9xQ6hHhQZm3mL3_76lpYw"
+  },
+  "UFtAe9kQTF2lHVm0Xky5BQ": {
+    "attributes": {
+      "accepted-mar-channel-ids": "firefox-mozilla-release",
+      "always_target": false,
+      "artifact_map": "taskcluster/taskgraph/manifests/fennec_geckoview.yml",
+      "build_platform": "android-x86_64-shippable",
+      "build_type": "opt",
+      "kind": "beetmover-geckoview",
+      "mar-channel-id": "firefox-mozilla-release",
+      "run_on_hg_branches": [
+        "^GECKOVIEW_\\d+_RELBRANCH$"
+      ],
+      "run_on_projects": [
+        "mozilla-release"
+      ],
+      "shippable": true,
+      "shipping_phase": "build",
+      "shipping_product": "fennec",
+      "signed": true,
+      "update-channel": "release"
+    },
+    "dependencies": {},
+    "description": "Beetmover submission for geckoviewandroid-x86_64-shippable/opt'",
+    "if_dependencies": [],
+    "kind": "beetmover-geckoview",
+    "label": "beetmover-geckoview-android-x86_64-shippable/opt",
+    "optimization": null,
+    "soft_dependencies": [],
+    "task": {
+      "created": {
+        "relative-datestamp": "0 seconds"
+      },
+      "deadline": {
+        "relative-datestamp": "1 day"
+      },
+      "dependencies": [
+        "GZKUcu5ARE-sQT97FAa38w",
+        "f3utgB5ZTEqPc2XOq6ep1g"
+      ],
+      "expires": {
+        "relative-datestamp": "1 year"
+      },
+      "extra": {
+        "index": {
+          "rank": 0
+        },
+        "parent": "ZuFQcboASzeI-aVjkD7uuA",
+        "treeherder": {
+          "collection": {
+            "opt": true
+          },
+          "jobKind": "build",
+          "machine": {
+            "platform": "android-5-0-x86_64-shippable"
+          },
+          "symbol": "BM-gv",
+          "tier": 2
+        },
+        "treeherder-platform": "android-5-0-x86_64-shippable/opt"
+      },
+      "metadata": {
+        "description": "Beetmover submission for geckoviewandroid-x86_64-shippable/opt' ([Treeherder job](https://treeherder.mozilla.org/#/jobs?repo=mozilla-release&revision=d7bbc5812f7f36a9378165fffd7a058ddb0118ec&selectedTaskRun=UFtAe9kQTF2lHVm0Xky5BQ))",
+        "name": "beetmover-geckoview-android-x86_64-shippable/opt",
+        "owner": "ryanvm@gmail.com",
+        "source": "https://hg.mozilla.org/releases/mozilla-release/file/d7bbc5812f7f36a9378165fffd7a058ddb0118ec/taskcluster/ci/beetmover-geckoview"
+      },
+      "payload": {
+        "appVersion": "92.0.1",
+        "artifactMap": [
+          {
+            "locale": "en-US",
+            "paths": {
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155-javadoc.jar": {
+                "checksums_path": "geckoview-omni-x86_64-92.0.20210922161155-javadoc.jar",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155-javadoc.jar"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155-javadoc.jar.md5": {
+                "checksums_path": "geckoview-omni-x86_64-92.0.20210922161155-javadoc.jar.md5",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155-javadoc.jar.md5"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155-javadoc.jar.sha1": {
+                "checksums_path": "geckoview-omni-x86_64-92.0.20210922161155-javadoc.jar.sha1",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155-javadoc.jar.sha1"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155-sources.jar": {
+                "checksums_path": "geckoview-omni-x86_64-92.0.20210922161155-sources.jar",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155-sources.jar"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155-sources.jar.md5": {
+                "checksums_path": "geckoview-omni-x86_64-92.0.20210922161155-sources.jar.md5",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155-sources.jar.md5"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155-sources.jar.sha1": {
+                "checksums_path": "geckoview-omni-x86_64-92.0.20210922161155-sources.jar.sha1",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155-sources.jar.sha1"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155.aar": {
+                "checksums_path": "geckoview-omni-x86_64-92.0.20210922161155.aar",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155.aar"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155.aar.md5": {
+                "checksums_path": "geckoview-omni-x86_64-92.0.20210922161155.aar.md5",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155.aar.md5"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155.aar.sha1": {
+                "checksums_path": "geckoview-omni-x86_64-92.0.20210922161155.aar.sha1",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155.aar.sha1"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155.pom": {
+                "checksums_path": "geckoview-omni-x86_64-92.0.20210922161155.pom",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155.pom"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155.pom.md5": {
+                "checksums_path": "geckoview-omni-x86_64-92.0.20210922161155.pom.md5",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155.pom.md5"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155.pom.sha1": {
+                "checksums_path": "geckoview-omni-x86_64-92.0.20210922161155.pom.sha1",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155.pom.sha1"
+                ]
+              }
+            },
+            "taskId": "f3utgB5ZTEqPc2XOq6ep1g"
+          },
+          {
+            "locale": "en-US",
+            "paths": {
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155-javadoc.jar.asc": {
+                "checksums_path": "geckoview-omni-x86_64-92.0.20210922161155-javadoc.jar.asc",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155-javadoc.jar.asc"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155-sources.jar.asc": {
+                "checksums_path": "geckoview-omni-x86_64-92.0.20210922161155-sources.jar.asc",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155-sources.jar.asc"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155.aar.asc": {
+                "checksums_path": "geckoview-omni-x86_64-92.0.20210922161155.aar.asc",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155.aar.asc"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155.pom.asc": {
+                "checksums_path": "geckoview-omni-x86_64-92.0.20210922161155.pom.asc",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155.pom.asc"
+                ]
+              }
+            },
+            "taskId": "GZKUcu5ARE-sQT97FAa38w"
+          }
+        ],
+        "artifact_id": "geckoview-omni-x86_64",
+        "build_number": 1,
+        "maxRunTime": 600,
+        "next_version": "92.0.2",
+        "releaseProperties": {
+          "appName": "geckoview",
+          "appVersion": "92.0.1",
+          "branch": "mozilla-release",
+          "buildid": "20210922161155"
+        },
+        "upload_date": 1632327115,
+        "upstreamArtifacts": [
+          {
+            "paths": [
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155-javadoc.jar",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155-javadoc.jar.md5",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155-javadoc.jar.sha1",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155-sources.jar",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155-sources.jar.md5",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155-sources.jar.sha1",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155.aar",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155.aar.md5",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155.aar.sha1",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155.pom",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155.pom.md5",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155.pom.sha1"
+            ],
+            "taskId": "f3utgB5ZTEqPc2XOq6ep1g",
+            "taskType": "build"
+          },
+          {
+            "paths": [
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155-javadoc.jar.asc",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155-sources.jar.asc",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155.aar.asc",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-x86_64/92.0.20210922161155/geckoview-omni-x86_64-92.0.20210922161155.pom.asc"
+            ],
+            "taskId": "GZKUcu5ARE-sQT97FAa38w",
+            "taskType": "signing"
+          }
+        ],
+        "version": "92.0.20210922161155"
+      },
+      "priority": "highest",
+      "provisionerId": "scriptworker-k8s",
+      "routes": [
+        "tc-treeherder.v2.mozilla-release.d7bbc5812f7f36a9378165fffd7a058ddb0118ec"
+      ],
+      "scopes": [
+        "project:releng:beetmover:bucket:maven-production",
+        "project:releng:beetmover:action:push-to-maven"
+      ],
+      "tags": {
+        "createdForUser": "ryanvm@gmail.com",
+        "kind": "beetmover-geckoview",
+        "label": "beetmover-geckoview-android-x86_64-shippable/opt",
+        "retrigger": "false"
+      },
+      "workerType": "gecko-3-beetmover"
+    },
+    "task_id": "UFtAe9kQTF2lHVm0Xky5BQ"
+  },
+  "W3vTQ3eMQymEoY8UMe4RnA": {
+    "attributes": {
+      "accepted-mar-channel-ids": "firefox-mozilla-release",
+      "always_target": false,
+      "artifact_map": "taskcluster/taskgraph/manifests/fennec_geckoview.yml",
+      "build_platform": "android-aarch64-shippable",
+      "build_type": "opt",
+      "kind": "beetmover-geckoview",
+      "mar-channel-id": "firefox-mozilla-release",
+      "run_on_hg_branches": [
+        "^GECKOVIEW_\\d+_RELBRANCH$"
+      ],
+      "run_on_projects": [
+        "mozilla-release"
+      ],
+      "shippable": true,
+      "shipping_phase": "build",
+      "shipping_product": "fennec",
+      "signed": true,
+      "update-channel": "release"
+    },
+    "dependencies": {},
+    "description": "Beetmover submission for geckoviewandroid-aarch64-shippable/opt'",
+    "if_dependencies": [],
+    "kind": "beetmover-geckoview",
+    "label": "beetmover-geckoview-android-aarch64-shippable/opt",
+    "optimization": null,
+    "soft_dependencies": [],
+    "task": {
+      "created": {
+        "relative-datestamp": "0 seconds"
+      },
+      "deadline": {
+        "relative-datestamp": "1 day"
+      },
+      "dependencies": [
+        "LbcIEN2wSRqDM3-B_5BnEQ",
+        "MBTW8Q8US--2Tz-uktOyhQ"
+      ],
+      "expires": {
+        "relative-datestamp": "1 year"
+      },
+      "extra": {
+        "index": {
+          "rank": 0
+        },
+        "parent": "ZuFQcboASzeI-aVjkD7uuA",
+        "treeherder": {
+          "collection": {
+            "opt": true
+          },
+          "jobKind": "build",
+          "machine": {
+            "platform": "android-5-0-aarch64-shippable"
+          },
+          "symbol": "BM-gv",
+          "tier": 2
+        },
+        "treeherder-platform": "android-5-0-aarch64-shippable/opt"
+      },
+      "metadata": {
+        "description": "Beetmover submission for geckoviewandroid-aarch64-shippable/opt' ([Treeherder job](https://treeherder.mozilla.org/#/jobs?repo=mozilla-release&revision=d7bbc5812f7f36a9378165fffd7a058ddb0118ec&selectedTaskRun=W3vTQ3eMQymEoY8UMe4RnA))",
+        "name": "beetmover-geckoview-android-aarch64-shippable/opt",
+        "owner": "ryanvm@gmail.com",
+        "source": "https://hg.mozilla.org/releases/mozilla-release/file/d7bbc5812f7f36a9378165fffd7a058ddb0118ec/taskcluster/ci/beetmover-geckoview"
+      },
+      "payload": {
+        "appVersion": "92.0.1",
+        "artifactMap": [
+          {
+            "locale": "en-US",
+            "paths": {
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155-javadoc.jar": {
+                "checksums_path": "geckoview-omni-arm64-v8a-92.0.20210922161155-javadoc.jar",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155-javadoc.jar"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155-javadoc.jar.md5": {
+                "checksums_path": "geckoview-omni-arm64-v8a-92.0.20210922161155-javadoc.jar.md5",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155-javadoc.jar.md5"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155-javadoc.jar.sha1": {
+                "checksums_path": "geckoview-omni-arm64-v8a-92.0.20210922161155-javadoc.jar.sha1",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155-javadoc.jar.sha1"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155-sources.jar": {
+                "checksums_path": "geckoview-omni-arm64-v8a-92.0.20210922161155-sources.jar",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155-sources.jar"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155-sources.jar.md5": {
+                "checksums_path": "geckoview-omni-arm64-v8a-92.0.20210922161155-sources.jar.md5",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155-sources.jar.md5"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155-sources.jar.sha1": {
+                "checksums_path": "geckoview-omni-arm64-v8a-92.0.20210922161155-sources.jar.sha1",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155-sources.jar.sha1"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155.aar": {
+                "checksums_path": "geckoview-omni-arm64-v8a-92.0.20210922161155.aar",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155.aar"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155.aar.md5": {
+                "checksums_path": "geckoview-omni-arm64-v8a-92.0.20210922161155.aar.md5",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155.aar.md5"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155.aar.sha1": {
+                "checksums_path": "geckoview-omni-arm64-v8a-92.0.20210922161155.aar.sha1",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155.aar.sha1"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155.pom": {
+                "checksums_path": "geckoview-omni-arm64-v8a-92.0.20210922161155.pom",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155.pom"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155.pom.md5": {
+                "checksums_path": "geckoview-omni-arm64-v8a-92.0.20210922161155.pom.md5",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155.pom.md5"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155.pom.sha1": {
+                "checksums_path": "geckoview-omni-arm64-v8a-92.0.20210922161155.pom.sha1",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155.pom.sha1"
+                ]
+              }
+            },
+            "taskId": "LbcIEN2wSRqDM3-B_5BnEQ"
+          },
+          {
+            "locale": "en-US",
+            "paths": {
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155-javadoc.jar.asc": {
+                "checksums_path": "geckoview-omni-arm64-v8a-92.0.20210922161155-javadoc.jar.asc",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155-javadoc.jar.asc"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155-sources.jar.asc": {
+                "checksums_path": "geckoview-omni-arm64-v8a-92.0.20210922161155-sources.jar.asc",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155-sources.jar.asc"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155.aar.asc": {
+                "checksums_path": "geckoview-omni-arm64-v8a-92.0.20210922161155.aar.asc",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155.aar.asc"
+                ]
+              },
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155.pom.asc": {
+                "checksums_path": "geckoview-omni-arm64-v8a-92.0.20210922161155.pom.asc",
+                "destinations": [
+                  "maven2/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155.pom.asc"
+                ]
+              }
+            },
+            "taskId": "MBTW8Q8US--2Tz-uktOyhQ"
+          }
+        ],
+        "artifact_id": "geckoview-omni-arm64-v8a",
+        "build_number": 1,
+        "maxRunTime": 600,
+        "next_version": "92.0.2",
+        "releaseProperties": {
+          "appName": "geckoview",
+          "appVersion": "92.0.1",
+          "branch": "mozilla-release",
+          "buildid": "20210922161155"
+        },
+        "upload_date": 1632327115,
+        "upstreamArtifacts": [
+          {
+            "paths": [
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155-javadoc.jar",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155-javadoc.jar.md5",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155-javadoc.jar.sha1",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155-sources.jar",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155-sources.jar.md5",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155-sources.jar.sha1",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155.aar",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155.aar.md5",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155.aar.sha1",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155.pom",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155.pom.md5",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155.pom.sha1"
+            ],
+            "taskId": "LbcIEN2wSRqDM3-B_5BnEQ",
+            "taskType": "build"
+          },
+          {
+            "paths": [
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155-javadoc.jar.asc",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155-sources.jar.asc",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155.aar.asc",
+              "public/build/maven/org/mozilla/geckoview/geckoview-omni-arm64-v8a/92.0.20210922161155/geckoview-omni-arm64-v8a-92.0.20210922161155.pom.asc"
+            ],
+            "taskId": "MBTW8Q8US--2Tz-uktOyhQ",
+            "taskType": "signing"
+          }
+        ],
+        "version": "92.0.20210922161155"
+      },
+      "priority": "highest",
+      "provisionerId": "scriptworker-k8s",
+      "routes": [
+        "tc-treeherder.v2.mozilla-release.d7bbc5812f7f36a9378165fffd7a058ddb0118ec"
+      ],
+      "scopes": [
+        "project:releng:beetmover:bucket:maven-production",
+        "project:releng:beetmover:action:push-to-maven"
+      ],
+      "tags": {
+        "createdForUser": "ryanvm@gmail.com",
+        "kind": "beetmover-geckoview",
+        "label": "beetmover-geckoview-android-aarch64-shippable/opt",
+        "retrigger": "false"
+      },
+      "workerType": "gecko-3-beetmover"
+    },
+    "task_id": "W3vTQ3eMQymEoY8UMe4RnA"
+  },
+  "YzWx36w_QzGP1xtHeVN64Q": {
+    "attributes": {
+      "always_target": false,
+      "kind": "release-beetmover-push-to-release",
+      "required_signoffs": [
+        "mar-signing"
+      ],
+      "run_on_projects": [],
+      "shipping_phase": "push",
+      "shipping_product": "firefox"
+    },
+    "dependencies": {},
+    "description": "Beetmover push to release for 'firefox'",
+    "if_dependencies": [],
+    "kind": "release-beetmover-push-to-release",
+    "label": "firefox-push-to-release",
+    "optimization": null,
+    "soft_dependencies": [],
+    "task": {
+      "created": {
+        "relative-datestamp": "0 seconds"
+      },
+      "deadline": {
+        "relative-datestamp": "1 day"
+      },
+      "dependencies": [
+        "CB8iWK7RQaymMFelUb3W3w",
+        "ECcLQQp9RwW5_8SZsihNYw",
+        "HLozJcpORhKmO7oiiEsH3g",
+        "Juxk5kerQ-Cep3mUkarFBA",
+        "NL3QFd1FQeCrLfdJ7bz8vA",
+        "RyRBO_VISOm-zX4Q6vGWJQ",
+        "fVFCA7K0Qf-Dyz9ZYRRF5w"
+      ],
+      "expires": {
+        "relative-datestamp": "1 year"
+      },
+      "extra": {
+        "index": {
+          "rank": 1632327115
+        },
+        "parent": "ZuFQcboASzeI-aVjkD7uuA",
+        "treeherder": {
+          "collection": {
+            "opt": true
+          },
+          "groupName": "Release promotion",
+          "groupSymbol": "Rel",
+          "jobKind": "build",
+          "machine": {
+            "platform": "firefox-release"
+          },
+          "symbol": "BM-C",
+          "tier": 1
+        },
+        "treeherder-platform": "firefox-release/opt"
+      },
+      "metadata": {
+        "description": "Beetmover push to release for 'firefox' ([Treeherder job](https://treeherder.mozilla.org/#/jobs?repo=mozilla-release&revision=d7bbc5812f7f36a9378165fffd7a058ddb0118ec&selectedTaskRun=YzWx36w_QzGP1xtHeVN64Q))",
+        "name": "firefox-push-to-release",
+        "owner": "ryanvm@gmail.com",
+        "source": "https://hg.mozilla.org/releases/mozilla-release/file/d7bbc5812f7f36a9378165fffd7a058ddb0118ec/taskcluster/ci/release-beetmover-push-to-release"
+      },
+      "payload": {
+        "build_number": 1,
+        "maxRunTime": 600,
+        "partners": [
+          "chipde/cliqz",
+          "mailru/mailru",
+          "mailru/okru",
+          "softonic/softonic-004",
+          "softonic/softonic-005",
+          "softonic/softonic-006",
+          "softonic/softonic-008",
+          "softonic/softonic-009",
+          "softonic/softonic-010",
+          "softonic/softonic-011",
+          "softonic/softonic-012",
+          "yandex/yandex-drp",
+          "yandex/yandex-portals",
+          "yandex/yandex-ru-mz",
+          "yandex/yandex-ru",
+          "yandex/yandex-tr",
+          "yandex/yandex-ua"
+        ],
+        "product": "firefox",
+        "version": "92.0.1"
+      },
+      "priority": "highest",
+      "provisionerId": "scriptworker-k8s",
+      "routes": [
+        "tc-treeherder.v2.mozilla-release.d7bbc5812f7f36a9378165fffd7a058ddb0118ec"
+      ],
+      "scopes": [
+        "project:releng:beetmover:bucket:release",
+        "project:releng:beetmover:action:push-to-releases"
+      ],
+      "tags": {
+        "createdForUser": "ryanvm@gmail.com",
+        "kind": "release-beetmover-push-to-release",
+        "label": "firefox-push-to-release",
+        "retrigger": "false"
+      },
+      "workerType": "gecko-3-beetmover"
+    },
+    "task_id": "YzWx36w_QzGP1xtHeVN64Q"
+  }
+}

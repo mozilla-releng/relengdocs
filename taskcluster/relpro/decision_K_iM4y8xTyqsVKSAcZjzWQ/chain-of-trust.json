@@ -1,0 +1,292 @@
+{
+  "chainOfTrustVersion": 1,
+  "artifacts": {
+    "public/actions.json": {
+      "sha256": "1e62e26561a10d8cf3b734e8ae27c5cde8e10bfc9405662a42114f18e066502f"
+    },
+    "public/full-task-graph.json": {
+      "sha256": "056fd43c67feea22a2377eef0a29dabca67d353c853a55800e0e2119211352d5"
+    },
+    "public/label-to-taskid.json": {
+      "sha256": "4dadf13694f7da951f60eea8ec02cb060fb03722e9850ececed49c62e279e3c3"
+    },
+    "public/manifests-by-task.json.gz": {
+      "sha256": "13bc964c09c58c80e0fc725ea0d0d2fbbfcdfa3ad5d6e31bce848edac17e9214"
+    },
+    "public/parameters.yml": {
+      "sha256": "64f91d44e670d4647ba25fbe6498613114d1fe5197600c3fb4ad8cfa1a421b2a"
+    },
+    "public/runnable-jobs.json": {
+      "sha256": "2d699e95e9ae1453c95e3c160b6edff0e42bde7dcca31bca4c8ffe9c45437d16"
+    },
+    "public/target-tasks.json": {
+      "sha256": "05efe0be63c08d456bd8006ae226f518ba6bf29e0c80502b76c583de15c203a0"
+    },
+    "public/task-graph.json": {
+      "sha256": "54d3dde27d4d42002dfcacb45b36cd18e509ed38d3bc29dc6a5b9c38e87a4e27"
+    },
+    "public/tests-by-manifest.json.gz": {
+      "sha256": "b5d6e37e5b943d93385aa4a210cf23303de87581078e48c9b4e791cd5d51c137"
+    },
+    "public/docker-contexts/android-build.tar.gz": {
+      "sha256": "01f0c1dbd2f03a8a2943e821c68bc7364bf8d31acb2e1d6463e6e8223379b05f"
+    },
+    "public/docker-contexts/condprof.tar.gz": {
+      "sha256": "e01f627e2b3cf59c3ad354e7198c36f75e1cad0bf434f36186ae13609daf7f8e"
+    },
+    "public/docker-contexts/custom-v8.tar.gz": {
+      "sha256": "fd11cb13032a04890ef9438defbc932b9fa9be8afc8bc0f2a7392e8bac6c1192"
+    },
+    "public/docker-contexts/deb10-toolchain-build.tar.gz": {
+      "sha256": "a48cd6f3f6fdb8666dfae865a985614fdf2a1c5d1bfa34b97edfb0cd67f86622"
+    },
+    "public/docker-contexts/debian10-amd64-build.tar.gz": {
+      "sha256": "5202284b298a55841eb64370d8b7b0bb737793acf515dbfe439388cdb1ff03fa"
+    },
+    "public/docker-contexts/debian10-base.tar.gz": {
+      "sha256": "5bbb50055aa8da6a38907e96537060a3d7aa407bdb87c66cca411bae4daff952"
+    },
+    "public/docker-contexts/debian10-packages.tar.gz": {
+      "sha256": "3a3767d0bf008b8222afa37ba1704a9710df5cd3a983147657a0c965bc869c95"
+    },
+    "public/docker-contexts/debian10-raw.tar.gz": {
+      "sha256": "0260525e33879e8e51dca35ce878093be2017003aef3c29afb43146a35c51d05"
+    },
+    "public/docker-contexts/debian10-test-iris.tar.gz": {
+      "sha256": "7da42105011876febbb00ee98cc2138540220e7c6e87d23503e12962eb752781"
+    },
+    "public/docker-contexts/debian10-test.tar.gz": {
+      "sha256": "040d8798e52f38a1402628891ab7bd87125c007d14c41da71983c8cf0fc10965"
+    },
+    "public/docker-contexts/debian8-i386-packages.tar.gz": {
+      "sha256": "9d066b883382a28e8b8121e4da13d52b46d9a0d9f3a83c31c90636abff3a0624"
+    },
+    "public/docker-contexts/debian8-i386-raw.tar.gz": {
+      "sha256": "3826de1bd87620802624664bb79147b6683a05d1b996fbf66cf1e34cc8493023"
+    },
+    "public/docker-contexts/debian8-packages.tar.gz": {
+      "sha256": "8321cd1110b09d1cd15c3286251804e1e7b0430b3e77b9c3c2b0a7243a52991f"
+    },
+    "public/docker-contexts/debian8-raw.tar.gz": {
+      "sha256": "4e950e39915ee8aca026b199f30fc0f3561ea13c417515671eaabd84afc4531b"
+    },
+    "public/docker-contexts/decision.tar.gz": {
+      "sha256": "7d97f4324629ab7628190e73003f8df7361811da0808db51e1f4f7429011d30b"
+    },
+    "public/docker-contexts/diffoscope.tar.gz": {
+      "sha256": "0fef2d00cc53a9500d1448fabde8952a66aa5ffef689cae4290e91b9575afabc"
+    },
+    "public/docker-contexts/fetch.tar.gz": {
+      "sha256": "66c1ffeaf32ded903611959f8f6bd912bedd33ed4b95dc000aaea3e810950a6a"
+    },
+    "public/docker-contexts/firefox-flatpak.tar.gz": {
+      "sha256": "8ffbb6ae9b32862bf444f84132dd149fc872471a7e44bdb7f4afdbc83b8903c3"
+    },
+    "public/docker-contexts/firefox-snap.tar.gz": {
+      "sha256": "fc0c101a7cacad4faae89867c781f4565ef43d412409c74dd3fe541bc00d0c4a"
+    },
+    "public/docker-contexts/funsize-update-generator.tar.gz": {
+      "sha256": "9fcb96544a024b910b49d0f9d12ad396d452ccb171f983e75903e97b464533cc"
+    },
+    "public/docker-contexts/gdb-test.tar.gz": {
+      "sha256": "690ab4e621cd2913dca09eaf0f0ed77ee1ac0a3e01d11a672306e4f035a00026"
+    },
+    "public/docker-contexts/github-sync.tar.gz": {
+      "sha256": "981381fda2db6462b89ca6fd9eb34303c1d493d2dbc7fbcae10070bd9cc882a0"
+    },
+    "public/docker-contexts/image_builder.tar.gz": {
+      "sha256": "e6edd0e8213b7a999a1a7b9d4219007e0f57b1b9899468725fea4e42fcd6f53c"
+    },
+    "public/docker-contexts/index-task.tar.gz": {
+      "sha256": "410b89262bf284ecd6fcbfb395cc693084aba2feea97c8cbf5a7396ec8e06135"
+    },
+    "public/docker-contexts/lint.tar.gz": {
+      "sha256": "c8d22e2d73ac5bfc3d59d3e1cfbe6a9859d897f5b6f24b4e20d20bccdb3f9863"
+    },
+    "public/docker-contexts/mingw32-build.tar.gz": {
+      "sha256": "3a9952d134bb28fb33024c25ba3f4f849926d5f9c05e95f4caa4661a5793bea1"
+    },
+    "public/docker-contexts/partner-repack.tar.gz": {
+      "sha256": "12624a54fafb3dde3618cba93402a0bf87b7cd3ff1ab17214b472118bff937bf"
+    },
+    "public/docker-contexts/periodic-updates.tar.gz": {
+      "sha256": "f2d56b7d3eddb5661e46ba2b14889117169e70d1d771d8f5d9ca9933ad4ccc3e"
+    },
+    "public/docker-contexts/push-to-try.tar.gz": {
+      "sha256": "6f2457bad77c362100d664eb167d798138acb45b8b81fb1ee74042840d046bc8"
+    },
+    "public/docker-contexts/sentry.tar.gz": {
+      "sha256": "98e4203fea1de8d58608db3772a7acf1a12893da25f5bcc93c4a402cb108aaad"
+    },
+    "public/docker-contexts/static-analysis-build.tar.gz": {
+      "sha256": "8aed19f20136d149927565d5b022b7c67b94e0a31807408d520aa63970860e2b"
+    },
+    "public/docker-contexts/system-symbols-mac.tar.gz": {
+      "sha256": "29fc7112a1d90e98a71e50aa9bbeff247d651b030b3b8c7ba9f46a845c091c3d"
+    },
+    "public/docker-contexts/system-symbols-win.tar.gz": {
+      "sha256": "f2522f87b02f3d0fcb5e207d609745895056c5a4d445ec2bd84dee7ef2230a73"
+    },
+    "public/docker-contexts/ubuntu1804-base.tar.gz": {
+      "sha256": "76a9d3828131c7e55cc0c0bc005d1ee6b7b123771a2a25cc524cd97b67f6464c"
+    },
+    "public/docker-contexts/ubuntu1804-i386-packages.tar.gz": {
+      "sha256": "12574e84c287f25cdca6a4a356b859fc845e141fc3c016b9d1cd1eac5d99a618"
+    },
+    "public/docker-contexts/ubuntu1804-i386-raw.tar.gz": {
+      "sha256": "519f06c24e50ddac576e6f06ae78dc8155c519863b58548338cb5072872a6237"
+    },
+    "public/docker-contexts/ubuntu1804-packages.tar.gz": {
+      "sha256": "475e7f931bb32c32ed1c06480cfe0bbf031b41660017f7306546786ed094e491"
+    },
+    "public/docker-contexts/ubuntu1804-raw.tar.gz": {
+      "sha256": "7ec309f59f5a5c88821ce4a34a9d04473f9d8f972f7322ffbef786b165156179"
+    },
+    "public/docker-contexts/ubuntu1804-test-base.tar.gz": {
+      "sha256": "59e25bc652aa0d76ac091d0a8d69f26dcc94d51195c09e75ad4fe88b6745cef6"
+    },
+    "public/docker-contexts/ubuntu1804-test.tar.gz": {
+      "sha256": "f857ab5656a2458601a0aa35e2502b23f614b4fe2146379efbf41b10a95c8a39"
+    },
+    "public/docker-contexts/ubuntu2004-base.tar.gz": {
+      "sha256": "b2d2fd51b189588a67a1f48e5c13c4fa579853053acf263db8e0024c5e940b3b"
+    },
+    "public/docker-contexts/ubuntu2004-packages.tar.gz": {
+      "sha256": "0bc57777448c3567d2d240eb1daa219a4f208bca683c253a319bcc6d6806693f"
+    },
+    "public/docker-contexts/ubuntu2004-raw.tar.gz": {
+      "sha256": "7850109d385bfea22efb5f524ab010efd82609ee961e6099d9ce53d1d3469e47"
+    },
+    "public/docker-contexts/update-verify.tar.gz": {
+      "sha256": "04bba616f03aab1d34a73c4b1723c167086b51d3859ccd7e64c8a142775ba828"
+    },
+    "public/docker-contexts/updatebot.tar.gz": {
+      "sha256": "b14160b9a7672396c15ec7257bbb321fd31c6e376401ee79440cf14d8c663cc9"
+    },
+    "public/docker-contexts/valgrind-build.tar.gz": {
+      "sha256": "b7ea9c6de29af6b2be71044e3d6c4c0623fd39a7c3fdd6a931e27681bfda09da"
+    },
+    "public/docker-contexts/visual-metrics.tar.gz": {
+      "sha256": "7f3f0afc9bbe14dfca2c2f9a610d63890f1ccf2e1874c4c3e0fbbe007f9b0d08"
+    },
+    "public/docker-contexts/webrender.tar.gz": {
+      "sha256": "d2200e746ddfb7938a72536b0fa25fab95037013ba35dca919bb43c79fbf2bb9"
+    },
+    "public/docker-contexts/wgpu.tar.gz": {
+      "sha256": "6032d0d5e58f1b806c4571bb8e0053824ed7f3a48af441dc71b96e2db9e4c3f0"
+    },
+    "public/logs/certified.log": {
+      "sha256": "d49e7fe3bd94e6698c40e81a26935e5ec81da4c175cd01279241a9c62ba461cb"
+    }
+  },
+  "task": {
+    "provisionerId": "gecko-3",
+    "workerType": "decision",
+    "taskQueueId": "gecko-3/decision",
+    "schedulerId": "gecko-level-3",
+    "projectId": "none",
+    "taskGroupId": "K_iM4y8xTyqsVKSAcZjzWQ",
+    "dependencies": [],
+    "requires": "all-completed",
+    "routes": [
+      "tc-treeherder.v2.mozilla-release.d7bbc5812f7f36a9378165fffd7a058ddb0118ec",
+      "index.gecko.v2.mozilla-release.latest.taskgraph.decision",
+      "index.gecko.v2.mozilla-release.revision.d7bbc5812f7f36a9378165fffd7a058ddb0118ec.taskgraph.decision",
+      "index.gecko.v2.mozilla-release.pushlog-id.2663.decision",
+      "notify.email.ryanvm@gmail.com.on-failed",
+      "notify.email.ryanvm@gmail.com.on-exception"
+    ],
+    "priority": "lowest",
+    "retries": 0,
+    "created": "2021-09-22T16:12:22.446Z",
+    "deadline": "2021-09-23T16:12:22.446Z",
+    "expires": "2022-09-22T16:12:22.446Z",
+    "scopes": [
+      "assume:repo:hg.mozilla.org/releases/mozilla-release:branch:default",
+      "queue:route:notify.email.ryanvm@gmail.com.*",
+      "in-tree:hook-action:project-gecko/in-tree-action-3-*",
+      "index:insert-task:gecko.v2.mozilla-release.*"
+    ],
+    "payload": {
+      "env": {
+        "HG_STORE_PATH": "/builds/worker/checkouts/hg-store",
+        "GECKO_HEAD_REF": "d7bbc5812f7f36a9378165fffd7a058ddb0118ec",
+        "GECKO_HEAD_REV": "d7bbc5812f7f36a9378165fffd7a058ddb0118ec",
+        "MOZ_AUTOMATION": "1",
+        "TASKCLUSTER_CACHES": "/builds/worker/checkouts",
+        "GECKO_BASE_REPOSITORY": "https://hg.mozilla.org/mozilla-unified",
+        "GECKO_HEAD_REPOSITORY": "https://hg.mozilla.org/releases/mozilla-release",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "cache": {
+        "gecko-level-3-checkouts-sparse-v2": "/builds/worker/checkouts"
+      },
+      "image": "mozillareleases/gecko_decision:3.0.1@sha256:9964730ed951584e65032bd1d6a2b7ede6d880a8b7aefb72d0d7f82346d834e3",
+      "command": [
+        "/builds/worker/bin/run-task",
+        "--gecko-checkout=/builds/worker/checkouts/gecko",
+        "--gecko-sparse-profile=build/sparse-profiles/taskgraph",
+        "--",
+        "bash",
+        "-cx",
+        "cd /builds/worker/checkouts/gecko && ln -s /builds/worker/artifacts artifacts && ./mach --log-no-times taskgraph decision --pushlog-id='2663' --pushdate='1632327115' --project='mozilla-release' --owner='ryanvm@gmail.com' --level='3' --tasks-for='hg-push' --base-repository=\"$GECKO_BASE_REPOSITORY\" --head-repository=\"$GECKO_HEAD_REPOSITORY\" --head-ref=\"$GECKO_HEAD_REF\" --head-rev=\"$GECKO_HEAD_REV\" \n"
+      ],
+      "features": {
+        "chainOfTrust": true,
+        "taskclusterProxy": true
+      },
+      "artifacts": {
+        "public": {
+          "path": "/builds/worker/artifacts",
+          "type": "directory",
+          "expires": "2022-09-22T16:12:22.446Z"
+        },
+        "public/docker-contexts": {
+          "path": "/builds/worker/checkouts/gecko/docker-contexts",
+          "type": "directory",
+          "expires": "2021-09-29T16:12:22.446Z"
+        }
+      },
+      "maxRunTime": 3600
+    },
+    "metadata": {
+      "name": "Gecko Decision Task",
+      "owner": "ryanvm@gmail.com",
+      "source": "https://hg.mozilla.org/releases/mozilla-release/raw-file/d7bbc5812f7f36a9378165fffd7a058ddb0118ec/.taskcluster.yml",
+      "description": "The task that creates all of the other tasks in the task graph ([Treeherder job](https://treeherder.mozilla.org/#/jobs?repo=mozilla-release&revision=d7bbc5812f7f36a9378165fffd7a058ddb0118ec&selectedTaskRun=K_iM4y8xTyqsVKSAcZjzWQ))"
+    },
+    "tags": {
+      "kind": "decision-task",
+      "createdForUser": "ryanvm@gmail.com"
+    },
+    "extra": {
+      "notify": {
+        "email": {
+          "link": {
+            "href": "https://treeherder.mozilla.org/#/jobs?repo=mozilla-release&revision=d7bbc5812f7f36a9378165fffd7a058ddb0118ec",
+            "text": "Treeherder Jobs"
+          }
+        }
+      },
+      "tasks_for": "hg-push",
+      "treeherder": {
+        "symbol": "D",
+        "machine": {
+          "platform": "gecko-decision"
+        }
+      }
+    }
+  },
+  "taskId": "K_iM4y8xTyqsVKSAcZjzWQ",
+  "runId": 0,
+  "workerGroup": "us-west-2",
+  "workerId": "i-0a3f75afd0ba4b640",
+  "environment": {
+    "publicIpAddress": "54.213.204.197",
+    "privateIpAddress": "10.144.43.212",
+    "imageHash": "sha256:ae7dfd5576c0c7fae91f099e336b5e05144dcff69b705f3cba6b678e751c117e",
+    "instanceId": "i-0a3f75afd0ba4b640",
+    "instanceType": "m5d.xlarge",
+    "region": "us-west-2"
+  }
+}

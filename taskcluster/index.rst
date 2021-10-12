@@ -1,8 +1,8 @@
 .. _taskcluster:
 
-==========================
-Taskcluster Administration
-==========================
+========================================
+Taskcluster Administration and Debugging
+========================================
 
 Specifically for the FirefoxCI cluster.
 
@@ -26,6 +26,7 @@ Specifically for the FirefoxCI cluster.
     troubleshooting_workers
     taskcluster_cli
     rerun_vs_retrigger
+    testing_relpro.md
     scopes
 
 .. vim: nospell :
