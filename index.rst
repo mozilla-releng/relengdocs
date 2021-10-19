@@ -21,6 +21,7 @@ Contents:
    Scriptworker <https://scriptworker.readthedocs.io/en/latest/index.html>
    Scriptworker Scripts <https://scriptworker-scripts.readthedocs.io/en/latest/index.html>
    Treeherder <https://treeherder.readthedocs.io/>
+   Accessing CloudOps' Jenkins <https://github.com/mozilla-services/cloudops-deployment#accessing-jenkins>
 
 
 .. toctree::
