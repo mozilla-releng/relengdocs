@@ -68,8 +68,7 @@ Please join the following groups to stay on top of the communication regarding t
  * All types of sign-offs and approvals should go to `release signoff mailing list <https://groups.google.com/a/mozilla.org/g/release-signoff/>`__
  * All discussion topics should go to `release drivers mailing list <https://groups.google.com/a/mozilla.org/g/release-drivers>`__
  * `RelEng internal mailing list <release@mozilla.com>`__
- * `Thunderbird release drivers mailing list <https://groups.google.com/a/mozilla.org/g/thunderbird-drivers>`__
- * (optional) `release-automation-notifications-dev mailing list <https://groups.google.com/a/mozilla.com/forum/#!forum/release-automation-notifications-dev>`__
+ * `Thunderbird release drivers mailing list <https://groups.google.com/a/mozilla.org/g/thunderbird-drivers>`__ - Click "contact owners and managers" and request permission
 
 Meetings and Calendars
 ~~~~~~~~~~~~~~~~~~~~~~
