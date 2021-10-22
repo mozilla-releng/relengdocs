@@ -35,34 +35,13 @@ which require that status need to be check and revoked. (Refer to the
     +----+-----+----+------------------------------------------------------------------------------------------------------------------------+
     | RE | Emp | CM | Permission                                                                                                             |
     +====+=====+====+========================================================================================================================+
-    | :ref:`password changes:<password_list>`                                                                                                |
-    +----+-----+----+------------------------------------------------------------------------------------------------------------------------+
-    | X  |     |    | access to releng password files [#passwords]_                                                                          |
-    +----+-----+----+------------------------------------------------------------------------------------------------------------------------+
-    | X  | X   |    | #mozbuild password [#mozbuild]_                                                                                        |
-    +----+-----+----+------------------------------------------------------------------------------------------------------------------------+
-    | X  |     |    | bouncer [#special]_                                                                                                    |
+    | X  |     |    | access to releng secrets [#secrets]_                                                                                   |
     +----+-----+----+------------------------------------------------------------------------------------------------------------------------+
     | X  |     |    | balrog [#special]_                                                                                                     |
     +----+-----+----+------------------------------------------------------------------------------------------------------------------------+
-    | X  |     |    | treestatus [#special]_                                                                                                 |
-    +----+-----+----+------------------------------------------------------------------------------------------------------------------------+
-    | X  |     |    | releng etherpad account [#special]_                                                                                    |
-    +----+-----+----+------------------------------------------------------------------------------------------------------------------------+
-    | X  |     |    | cltbld & root slave farm password                                                                                      |
-    +----+-----+----+------------------------------------------------------------------------------------------------------------------------+
-    | X  |     |    | releng puppet masters                                                                                                  |
-    +----+-----+----+------------------------------------------------------------------------------------------------------------------------+
-    | :ref:`compute resources<compute_resources>`                                                                                            |
-    +----+-----+----+------------------------------------------------------------------------------------------------------------------------+
-    | X  | X   | X  | AWS console access                                                                                                     |
-    +----+-----+----+------------------------------------------------------------------------------------------------------------------------+
     | X  | X   |    | releng LDAP bits (IT bug) releng, vpn_releng, RelengWiki, & SysAdminWiki                                               |
     +----+-----+----+------------------------------------------------------------------------------------------------------------------------+
-    | X  |     |    | unassign any resources in slavealloc                                                                                   |
-    +----+-----+----+------------------------------------------------------------------------------------------------------------------------+
-    | X  |     |    | RelEng machine access e.g. puppet,                                                                                     |
-    |    |     |    | scriptworkers, etc. [#ssh_login]_                                                                                      |
+    | X  |     |    | mac signers acces                                                                                                      |
     +----+-----+----+------------------------------------------------------------------------------------------------------------------------+
     | :ref:`miscellaneous systems<misc_systems>`                                                                                             |
     +----+-----+----+------------------------------------------------------------------------------------------------------------------------+
@@ -70,7 +49,7 @@ which require that status need to be check and revoked. (Refer to the
     +----+-----+----+------------------------------------------------------------------------------------------------------------------------+
     | X  |     |    | hg.mozilla.org special access [#hgmo]_                                                                                 |
     +----+-----+----+------------------------------------------------------------------------------------------------------------------------+
-    | X  | X   | X  | github write access (review)                                                                                           |
+    | X  | X   |    | github write access (review)                                                                                           |
     +----+-----+----+------------------------------------------------------------------------------------------------------------------------+
     | X  |     |    | releng/build bugzilla group access [#bugzilla]_                                                                        |
     +----+-----+----+------------------------------------------------------------------------------------------------------------------------+
@@ -80,76 +59,20 @@ which require that status need to be check and revoked. (Refer to the
     +----+-----+----+------------------------------------------------------------------------------------------------------------------------+
     | X  | X   |    | Release google group                                                                                                   |
     +----+-----+----+------------------------------------------------------------------------------------------------------------------------+
-    | X  | X   |    | Release Trello group                                                                                                   |
-    +----+-----+----+------------------------------------------------------------------------------------------------------------------------+
-    | X  |     |    | other Google Drive documents [#gd_docs]_                                                                               |
-    +----+-----+----+------------------------------------------------------------------------------------------------------------------------+
     | X  |     |    | re-assign bugs                                                                                                         |
     +----+-----+----+------------------------------------------------------------------------------------------------------------------------+
-    | X  |     |    | named contact in Nagios escalation chain                                                                               |
-    +----+-----+----+------------------------------------------------------------------------------------------------------------------------+
-    | X  |     |    | Allowed to merge to puppet production [#special]_                                                                      |
-    +----+-----+----+------------------------------------------------------------------------------------------------------------------------+
-
-Detailed Instructions
----------------------
-.. _password_list:
 
 Password List
 ^^^^^^^^^^^^^
 
-.. [#passwords]
+.. [#secrets]
 
-    Almost all passwords are now shared via gpg encrypted files. To get a
-    list of passwords shared with a user, use the
-    "``scripts/who_knows_what``" script to identify passwords that
-    should be changed.
-    Also, add the
-    departing user's id to the "``scripts/alumni.json``" file.
-
-    .. note:: access to the repo requires both membership in both the
-      ``vpn_git_internal`` (or ``vpn_releng``) and either (``relops`` or
-      ``releng``).
-
-.. [#mozbuild]
-
-    To change the password on an IRC channel where you have ops
-    permissions:
-
-        - Make sure user is *not* in #mozbuild, a kick or ban is
-          sometimes necessary (due to auto-reconnect)
-        - ``/msg chanserv set #mozbuild mlock +k newpass``
+    RelEng passwords and other credentials are stored in a `SOPS <https://github.com/mozilla/sops>` repository.
 
 .. [#special]
 
-    Bouncer: change via `bounceradmin.m.c <https://bounceradmin.mozilla.com/admin/auth/user/>`_
+    Balrog: Add ACLs on `the admin UI <https://balrog.services.mozilla.com/users>`
 
-    Balrog: go to permissions from `<https://aus4-admin.mozilla.org/rules.html>`_
-
-    Treestatus: from `users <https://treestatus.mozilla.org/users>`_
-    page.
-
-    Puppet Merge: commit update to `hook
-    <https://hg.mozilla.org/hgcustom/version-control-tools>` and request
-    deploy.
-
-
-.. _compute_resources:
-
-Compute Resources
-^^^^^^^^^^^^^^^^^
-
-In addition to password changes governing access to compute resources, a
-scan of systems must be made to ensure no processes or cron jobs have
-been left running.
-
-.. [#ssh_login]
-
-    These are systems where the user is granted access via their ssh
-    key, either to their user specific account, or to a shared account
-    (such as ``cltbld``). However, these systems have keys deployed via
-    the RelEng puppet servers, which only sync with MoCo ldap
-    via a cron job.
 
 .. _misc_systems:
 
@@ -167,7 +90,7 @@ documentation for instructions.
 
 .. [#github]
 
-    For now, the accounts to check are `mozilla` & `mozilla-b2g`.  Note
+    For now, the accounts to check are `mozilla` & `mozilla-releng`, `mozilla-mobile`, `mozilla-extensions`, and `mozilla-partners`.  Note
     that we're only discussing the ownership role here on RelEng owned
     resources. If the person has ownership rights to repositories due to
     their contributor status, that does not change.
@@ -179,11 +102,6 @@ documentation for instructions.
     `admin
     <https://bugzilla.mozilla.org/editusers.cgi?action=list&matchvalue=login_name&matchstr=&matchtype=substr&grouprestrict=1&groupid=34>`_
     page.
-
-.. [#gd_docs]
-
-  To find documents where exceptional access has been granted, use the
-  script at http://labnol.org/?p=28237
 
 
 Footnotes
