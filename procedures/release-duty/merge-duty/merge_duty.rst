@@ -21,7 +21,7 @@ nearly three weeks, with *three* major days of activity:
 
 -  Do the prep work a week before the merge
 
-   -  `Assign to yourself the migration bug <#assign-migration-bug>`__
+   -  `Assign to yourself the migration bug <#assign-to-yourself-the-migration-bug>`__
    -  `Do migration no-op trial runs <#do-migration-no-op-trial-runs>`__
    -  `Sanity check no blocking migration
       bugs <#sanity-check-no-blocking-migration-bugs>`__
@@ -79,7 +79,7 @@ General steps
 3. On the latest push, click on the down arrow at the top right corner.
 4. Select “Custom push action…”
 5. Choose ``merge-automation``
-6. In Treeherder, you'll see a new push show up in Treeherder in the repo you will be merging to. It can take a few minutes for the push and task to appear. 
+6. In Treeherder, you'll see a new push show up in Treeherder in the repo you will be merging to. It can take a few minutes for the push and task to appear.
 7. Click on the merge or bump tasks (not the Gecko decision task). A job details panel will pop up and from there you'll find a link to the diff file in the artifacts tab.
 
 
@@ -375,7 +375,10 @@ new version.
 4. Edit the `LAST` and `NEXT` known dates (all 6 of them) at
    https://github.com/mozilla-releng/shipit/blob/f3d45d1dd1cc08cc466865f7d39305f1b2edbcf7/api/src/shipit_api/common/config.py#L54-L59
 5. Commit, and submit a pull request
-6. Merge the pull request *after* a new nightly version has been pushed
+6. Attention! Thunderbird follows the same procedure as Firefox so they usually follow-up with a similar PR in the same day. In order
+   to minimize the number of deployments to production, please make sure to deploy both PRs at the same time. If there hasn't been a
+   PR up-to-review yet, please ping/CC https://github.com/jfx2006 in your PR (or ping @rjl in #releaseduty to make them aware.
+7. Merge the pull request(s) *after* a new nightly version has been pushed
    to CDNs: once the new nightly version appears at
    https://archive.mozilla.org/pub/firefox/nightly/latest-mozilla-central/
 
