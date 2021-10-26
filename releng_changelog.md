@@ -15,6 +15,7 @@ _**As releaseduty squirrels are the ones with the best context when it comes to 
 - focus-android releases switched to taskgraph
 - firefox desktop [update-verify watershed](https://bugzilla.mozilla.org/show_bug.cgi?id=1734832)
 - new firefox desktop msix packages
+- update-verify async download [PR](https://phabricator.services.mozilla.com/D129429)
 
 ### During 82.0 >= 2020-09-21
 #### Changed
