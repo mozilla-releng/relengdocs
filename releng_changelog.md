@@ -13,6 +13,7 @@ _**As releaseduty squirrels are the ones with the best context when it comes to 
 ### During 95.0 >= 2021-10-04
 #### Changed
 - focus-android releases switched to taskgraph
+- new firefox desktop balrog watershed
 
 ### During 82.0 >= 2020-09-21
 #### Changed
