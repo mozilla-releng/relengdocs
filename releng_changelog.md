@@ -6,6 +6,14 @@ This page best serves the people that have previously been into the releaseduty 
 
 _**As releaseduty squirrels are the ones with the best context when it comes to releases, they are the ones to edit this page and amend it accordingly. Keep in mind that changes should be in compliance with the other pieces of documentation.**_
 
+### During 96.0 >= 2021-11-01
+#### Changed
+-
+
+### During 95.0 >= 2021-10-04
+#### Changed
+- focus-android releases switched to taskgraph
+
 ### During 82.0 >= 2020-09-21
 #### Changed
 - partner attribution configs landed
