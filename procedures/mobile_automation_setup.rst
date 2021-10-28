@@ -239,26 +239,32 @@ specific gradle versions and are in charge of installing it locally.
 1. Install jdk8::
 
     # On mac with homebrew
-    brew install --cask homebrew/cask-versions/adoptopenjdk8
+    brew install openjdk@8
 
-    # On Ubuntu
+    # On Ubuntu  
     sudo apt install openjdk-8-jdk
 
 ⚠️ Currently projects like Focus and Fenix need Java 11 to run, so you might need to install that version and set your $JAVA_HOME to that version.
 
 2. Install android-sdk::
 
-    # On mac with homebrew
-    brew install --cask android-sdk
-
     # On Ubuntu
     sudo apt install android-sdk
+
+   On mac the only supported way is to install `Android Studio <https://developer.android.com/studio>`__ (also recommended for other OSs) 
+   Once installed, click **More Actions** and open the **SDK Manager**. 
+   Make note of the **Android SDK Location** from this screen. 
+   From the **SDK Tools** tab, install ``Android SDK Command-line Tools``. 
+
 
 3. Make sure you're pointing to the right java (depending on what version gradle requires)::
 
     # In your .zshrc or .bashrc:
     # On mac
     export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
+
+    # If java_home doesn't work, you can use this to get java home instead:
+    java -XshowSettings:properties -version 2>&1 | grep java.home
 
     # On Ubuntu follow symlinks to find JAVA_HOME
     ls -l `which java`
@@ -274,7 +280,7 @@ specific gradle versions and are in charge of installing it locally.
 
     # In your .zshrc or .bashrc:
     # On mac
-    export ANDROID_SDK_ROOT=/usr/local/Caskroom/android-sdk/4333796
+    export ANDROID_SDK_ROOT=~/Library/Android/sdk
 
     # On Ubuntu
     export ANDROID_SDK_ROOT=/usr/lib/android-sdk
