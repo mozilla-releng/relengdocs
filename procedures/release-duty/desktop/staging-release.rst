@@ -14,7 +14,7 @@ To do a staging release, you need to be able to push to try, access to the Mozil
 
 See the :ref:`production documentation for how to get Shipit and VPN access <release-duty-permissions>`.
 
-How-to
+How-To
 ^^^^^^
 
 In order to prepare a smooth ``b1`` and ``RC``, staging releases should
@@ -33,6 +33,8 @@ try <https://firefox-source-docs.mozilla.org/tools/try/selectors/release.html>`_
 -  hop on ``beta`` repository
 -  make sure you're up to date with the tip of the repo
 -  ``mach try release --version <future-version.0> --migration beta-to-release --tasks release-sim``
+
+.. note:: Get ``future-version`` from `shipit-staging <https://shipit.staging.mozilla-releng.net/>`__. Ie.: If the version in shipit is ``94.0b14`` use ``94.0b15``
 
 These will create try pushes that look-alike the repos once they are
 merged. Once the decision tasks of the newly created CI graphs are
