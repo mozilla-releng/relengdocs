@@ -6,7 +6,7 @@
 
 The `dep`, aka `depend` certs, tend to be self-signed or otherwise non-shipping certs. (The name comes from the Netscape days, when `depend` builds were builds that pulled the latest CVS changes on top of the previous build's source without clobbering the objdir; `clobber` builds, which nuked and recloned the tree, were significantly slower but more likely to produce a shippable candidate build.)
 
-We do bake in some of these keys into, say Firefox Nightly to allow for installing addons signed with the dep addon-signing keys, or for installing updates signed with the dep mar-signing key, so these keys aren't fully throwaway, but we tend to not be as concerned about the security of these keys.
+We do bake in some of these keys into, say Firefox Nightly to allow for installing addons signed with the dep addon-signing keys, or for installing updates signed with the dep mar-signing key, or for automated tests to accept a given signature, so these keys aren't fully throwaway, but we tend to not be as concerned about the security of these keys.
 
 Dep key generation varies by key format; we've documented it on the [mana page](https://mana.mozilla.org/wiki/pages/viewpage.action?spaceKey=RelEng&title=Signing#Signing-Acquiringkeys).
 
@@ -40,4 +40,9 @@ Historically, Google required that signing certs for Android applications be lon
 
 This changed with the [Android v3 signature scheme](https://www.xda-developers.com/apk-signature-scheme-v3-key-rotation/), which finally allows for cert rotation. However, older devices don't support v3 signatures, so as long as we want to support these older devices, we still cannot rotate our shipping Android certs.
 
-Caveat: let's get the "which cert should we use" decision right *before* we ship an Android product for the first time, and let's not leak the key or anything that would mandate a key rotation.
+<div class="warning">
+
+**WARNING:**
+
+Let's get the "which cert should we use" decision right *before* we ship an Android product for the first time, and let's not leak the key or anything that would mandate a key rotation.
+</div>
