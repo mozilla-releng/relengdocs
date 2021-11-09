@@ -8,7 +8,7 @@ _**As releaseduty squirrels are the ones with the best context when it comes to 
 
 ### During 96.0 >= 2021-11-01
 #### Changed
--
+- removed pushsnap scriptworker pools
 
 ### During 95.0 >= 2021-10-04
 #### Changed
