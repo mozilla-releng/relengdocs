@@ -59,7 +59,7 @@ the same ``decision_task_id`` task group. The ``Task Group`` link will
 take you to the decision task’s task group.
 
 However, Release Promotion calls the
-```taskgraph_decision`` <https://searchfox.org/mozilla-central/rev/a9ef6ad97d2d5f96d5ed51eda38f1a02700ccff7/taskcluster/gecko_taskgraph/actions/release_promotion.py#408>`__
+`taskgraph_decision <https://searchfox.org/mozilla-central/rev/a9ef6ad97d2d5f96d5ed51eda38f1a02700ccff7/taskcluster/gecko_taskgraph/actions/release_promotion.py#408>`__
 function, which means for a given relpro task with taskId
 ``relpro_task_id``,
 
@@ -91,7 +91,7 @@ releases), sometimes a ``product`` (``devedition`` vs ``firefox``), and
 sometimes a variant, e.g. ``promote_firefox_rc`` or ``push_devedition``.
 
 These are defined in
-```taskcluster/ci/config.yml`` <https://searchfox.org/mozilla-central/rev/a9ef6ad97d2d5f96d5ed51eda38f1a02700ccff7/taskcluster/ci/config.yml#210>`__.
+`taskcluster/ci/config.yml <https://searchfox.org/mozilla-central/rev/a9ef6ad97d2d5f96d5ed51eda38f1a02700ccff7/taskcluster/ci/config.yml#210>`__.
 
 Replicating an existing release graph locally
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
