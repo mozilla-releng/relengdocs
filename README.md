@@ -13,20 +13,21 @@ Rendered versions of the documentation may be viewed at:
 1. Create a Python [virtualenv](https://docs.python.org/3/tutorial/venv.html)
 2. Run:
 
-    pip install -r requirements/dev.txt
+        pip install -r requirements/dev.txt
 
-3. To build the docs locally and start a [livereload]() server, run:
+3. To build the docs locally and start a [livereload](https://github.com/lepture/python-livereload)
+   server, run:
 
-    make livehtml
+        make livehtml
 
-  Verify changes by opening the linked URL in your browser. Further changes will automatically
-  rebuild and refresh your page.
+   Verify changes by opening the linked URL in your browser. Further changes will automatically
+   rebuild and refresh your page.
 
-  Alternatively you can run:
+   Alternatively you can run:
 
-    make html
+        make html
 
-  To build static docs. They will be generated under the `_build/html` directory.
+   to build static docs. They will be generated under the `_build/html` directory.
 
 Note: Any new docs should be directly or indirectly linked to from `index.rst`. (For example, if
 `index.rst` contains `balrog/index.rst` in its
