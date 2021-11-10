@@ -60,14 +60,12 @@ Contents:
    CODE_OF_CONDUCT
    Add a new repo to docs <adding_repo_to_releng_rtfd_account.rst>
    Add existing repo to docs <adding_docs_to_existing_code.rst>
-   maintaining_these_docs.rst
+   Maintaining this Documentation <README.md>
    tobewritten.rst
 
 
 Indices and tables
 ==================
-
-* :ref:`Modifying these docs`
 
 * :ref:`genindex`
 * :ref:`modindex`

@@ -5,8 +5,8 @@
 This repository contains some of the more technical internal documentation for Mozilla Release
 Engineering.
 
-Rendered versions of the documentation may be viewed at:
-  http://moz-releng-docs.readthedocs.io/en/latest/
+Rendered versions of the documentation may be viewed at:<br/>
+[http://moz-releng-docs.readthedocs.io/en/latest/](http://moz-releng-docs.readthedocs.io/en/latest/)
 
 ## Contributing
 
@@ -43,3 +43,8 @@ These docs use [reStructuredText](https://en.wikipedia.org/wiki/ReStructuredText
 * [reStructuredText primer](https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html)
 * [Sphinx roles](https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html)
 * [Sphinx domains](https://www.sphinx-doc.org/en/master/usage/restructuredtext/domains.html)
+
+## Motivation
+
+For the original motivation behind these docs see [RELENG RFC
+0007](https://github.com/mozilla-releng/releng-rfcs/blob/master/rfcs/0007-docs-location.md).
