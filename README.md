@@ -13,13 +13,20 @@ Rendered versions of the documentation may be viewed at:
 1. Create a Python [virtualenv](https://docs.python.org/3/tutorial/venv.html)
 2. Run:
 
-    pip install -r requirements/base.txt
+    pip install -r requirements/dev.txt
 
-3. To build the docs locally, run:
+3. To build the docs locally and start a [livereload]() server, run:
+
+    make livehtml
+
+  Verify changes by opening the linked URL in your browser. Further changes will automatically
+  rebuild and refresh your page.
+
+  Alternatively you can run:
 
     make html
 
-Verify changes by viewing `_build/html/index.html` in your browser.
+  To build static docs. They will be generated under the `_build/html` directory.
 
 Note: Any new docs should be directly or indirectly linked to from `index.rst`. (For example, if
 `index.rst` contains `balrog/index.rst` in its
