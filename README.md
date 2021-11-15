@@ -41,6 +41,7 @@ These docs use [reStructuredText](https://en.wikipedia.org/wiki/ReStructuredText
 [Sphinx](https://www.sphinx-doc.org/en/master/index.html). Here are some reference materials:
 
 * [reStructuredText primer](https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html)
+* [Sphinx directives](https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html)
 * [Sphinx roles](https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html)
 * [Sphinx domains](https://www.sphinx-doc.org/en/master/usage/restructuredtext/domains.html)
 
