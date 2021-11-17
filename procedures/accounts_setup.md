@@ -47,28 +47,33 @@ Steps (for MacOSX - but should be similar for Linux, modulo the installation of 
 
 #### install Google Cloud SDK deps
 ```
-$ `curl https://sdk.cloud.google.com | zsh`
-$ `gcloud init`
+$ curl https://sdk.cloud.google.com | zsh
+$ gcloud init
 ```
 
 #### RelEng currently has two SOPS repositories for holding off secrets.
-`moz-fx-releng-secrets-global` - this is dedicated for RelEng team secrets (3rd party accounts, certificates, etc).
+1. `moz-fx-releng-secrets-global` - this is dedicated for RelEng team secrets (3rd party accounts, certificates, etc).
 Basically it's our own private space for holding off any type of secrets.
-`moz-fx-relengworker-prod-a67d` - this is dedicated for our scriptworkers (https://github.com/mozilla-releng/scriptworker-scripts).
+2. `moz-fx-relengworker-prod-a67d` - this is dedicated for our scriptworkers (https://github.com/mozilla-releng/scriptworker-scripts).
 It's mirrored to CloudOps infrastructure.
 
-#### The one that's most commonly used is the global one. The second one is needed only if a new type of scriptworker is added and/or
+The one that's most commonly used is the global one. The second one is needed only if a new type of scriptworker is added and/or
 we're adjusting existing credentials in the release scriptworkers automation.
+
 #### clone the sops repo somewhere on disk
 ```
 $ gcloud source repos clone releng-secrets-global --project=moz-fx-releng-secrets-global
 $ gcloud source repos clone secrets-sops-relengworker --project=moz-fx-relengworker-prod-a67d
 ```
 #### install sops
+```
 $ brew install sops
+```
 
 #### acquire new user credentials to talk to the Google Cloud API
+```
 gcloud auth application-default login
+```
 
 #### celebrate by operating the sops credentials
 Have a look in the COOKBOOK in the global SOPS repo for more instructions on how to read encrypt/decrypt the files.
