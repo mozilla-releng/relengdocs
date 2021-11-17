@@ -162,20 +162,21 @@ You'll need a few tweaks to your account to get access to everything releng-rela
 * append the aliases, with a leading ':' and enclosed in brackets ('[]') to the "Real Name" field
 * e.g.: "John Doe [:jdoe]"
 
-The product to use is, unsurprisingly, "Release Engineering." There are multiple possible components under that product, so take your best guess or ask for guidance from the team.
+The product to use is "Release Engineering." There are multiple possible components under that product, so take your best guess or ask for guidance from the team.
+TODO - to revisit once we reorg Bugzilla in November 2022.
 
 :warning:
     Please speak with your manager to be added to the [releng-security](https://bugzilla.mozilla.org/page.cgi?id=group_admins.html) confidential group.
 
 ## Mana
 
-Some internal Mozilla systems (IT, HR) are documented on [mana][https://mana.mozilla.org/]. That is behind SSO and you will be granted access to that as soon as LDAP is activated.
+Some internal Mozilla systems (IT, HR) are documented on [mana](https://mana.mozilla.org/). That is behind SSO and you will be granted access to that as soon as LDAP is activated.
 
 ## Future access as you need it
 * You will need acccess to our GCP infrastructure. Talk to your manage to be added to the team-releng@firefox.gcp.mozilla.com. Use a ticket similar to [this](https://mozilla-hub.atlassian.net/browse/SVCSE-136) in CloudOps.
-* RelEng acccess to various infrastructure pieces. File a bug similar to [this](https://bugzilla.mozilla.org/show_bug.cgi?id=1732846) and ask your manager for vouching.
+* RelEng LDAP bits to access various infrastructure pieces. File a bug similar to [this](https://bugzilla.mozilla.org/show_bug.cgi?id=1732846) and ask your manager for vouching.
 * Ship-it - follow procedure in [here](https://moz-releng-docs.readthedocs.io/en/latest/procedures/release-duty/index.html#how-to-get-ship-it-access) to get access.
-* Balrog - follow procedure in [here](https://moz-releng-docs.readthedocs.io/en/latest/procedures/release-duty/index.html#how-to-get-balrog-access) to get access. A similar related bug was 1727341.
+* Balrog - follow procedure in [here](https://moz-releng-docs.readthedocs.io/en/latest/procedures/release-duty/index.html#how-to-get-balrog-access) to get access. A similar related bug was https://bugzilla.mozilla.org/show_bug.cgi?id=1727341.
 * CultureAmp - talk to your manager to set your goals and run the logistics in there for the 1x1 tracking. You'll also need to be added to the RelEng team goals.
 * JIRA - access to JIRA is granted upon SSO access so please make sure to login via the main dashboard. Ask your manager to add you to the RELENG/FFXP boards.
 * Sentry logs - File a bug similar to [this one](https://bugzilla.mozilla.org/show_bug.cgi?id=1731311) to get access to debug various logs in Balrog and more.
