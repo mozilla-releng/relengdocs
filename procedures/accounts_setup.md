@@ -46,8 +46,10 @@ keys needed for various services Release Engineering uses or administers.
 Steps (for MacOSX - but should be similar for Linux, modulo the installation of SOPS):
 
 #### install Google Cloud SDK deps
+```
 $ `curl https://sdk.cloud.google.com | zsh`
 $ `gcloud init`
+```
 
 #### RelEng currently has two SOPS repositories for holding off secrets.
 `moz-fx-releng-secrets-global` - this is dedicated for RelEng team secrets (3rd party accounts, certificates, etc).
@@ -58,9 +60,10 @@ It's mirrored to CloudOps infrastructure.
 #### The one that's most commonly used is the global one. The second one is needed only if a new type of scriptworker is added and/or
 we're adjusting existing credentials in the release scriptworkers automation.
 #### clone the sops repo somewhere on disk
+```
 $ gcloud source repos clone releng-secrets-global --project=moz-fx-releng-secrets-global
 $ gcloud source repos clone secrets-sops-relengworker --project=moz-fx-relengworker-prod-a67d
-
+```
 #### install sops
 $ brew install sops
 
@@ -77,8 +80,10 @@ Have a look in the COOKBOOK in the global SOPS repo for more instructions on how
 The max session for SOPS credentials has been reset to 24h so there's some commands
 that need rerunning in the shell in order to unblock using SOPS.
 
+```
 $ gcloud auth login
 $ gcloud auth application-default login
+```
 
 ### Sharing secrets with a co-worker
 On a side-note, for sharing secrets between employees, [read these docs](https://mana.mozilla.org/wiki/display/SVCOPS/Sharing+a+secret+with+a+coworker).
