@@ -108,10 +108,11 @@ You may eventually want to handle this information, but on day one hundreds of a
 
 #### Mailing lists
 
-You should be added to the release@mozilla.com google group as a new hire. This mailing list is managed by Google groups. Owners of this group will be able to add you. Send a test message to release@m.c to verify that your address has been added/subscribed. Talk to your manager if it is not working.
-You should be added to the releng@mozilla.com google group as a new hire. This mailing list is managed by Google groups. Owners of this group will be able to add you. Send a test message to releng@m.c to verify that your address has been added/subscribed. Talk to your manager if it is not working.
+* You should be added to the release@mozilla.com google group as a new hire. This mailing list is managed by Google groups. Owners of this group will be able to add you. Send a test message to release@m.c to verify that your address has been added/subscribed. Talk to your manager if it is not working.
+* You should be added to the releng@mozilla.com google group as a new hire. This mailing list is managed by Google groups. Owners of this group will be able to add you. Send a test message to releng@m.c to verify that your address has been added/subscribed. Talk to your manager if it is not working.
 
-WARNING: release@m.c can contain security-sensitive information. Do not automatically forward your email to a system that is not under Mozilla's control. Same goes for releng@mozilla.com.
+:warning:
+    release@m.c can contain security-sensitive information. Do not automatically forward your email to a system that is not under Mozilla's control. Same goes for releng@mozilla.com.
 
 ### Calendar
 
@@ -119,7 +120,7 @@ Like mail, we now use [Google calendar](https://www.google.com/calendar/)
 
 You'll want to subscribe to the following public calendars:
 * [RelEng MoCo calendar](https://calendar.google.com/calendar/u/0?cid=bW96aWxsYS5jb21fMmQzMjM0MzMzMzM1MzAzNjMxMmQzOTM3MzdAcmVzb3VyY2UuY2FsZW5kYXIuZ29vZ2xlLmNvbQ)
-* [RelEng MoCo calendar](https://calendar.google.com/calendar/u/0?cid=Y190cWEzaHQ5bXB0ODN1djJzZDJsYjVsaTVva0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t)
+* [RelEng PTO calendar](https://calendar.google.com/calendar/u/0?cid=Y190cWEzaHQ5bXB0ODN1djJzZDJsYjVsaTVva0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t)
 
 Talk to your manager/mentor to get added to the various other private calendars as appropriate.
 
