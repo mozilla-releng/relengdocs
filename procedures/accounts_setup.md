@@ -19,7 +19,7 @@ Once given LDAP and you have created a permanent password, you can use that to l
 * SSH - upload your public ssh key. It is a good idea to generate a separate ssh keypair from your personal one or any other that you have created in the past and use that explicitly for Releng and upload that. Follow this [SSH guidelines](https://wiki.mozilla.org/Security/Guidelines/OpenSSH#OpenSSH_client) doc on how to generate, configure, and use your ssh key.
 * PGP - We use pgp keys to share private information, secrets, and verify that the source came from someone we trust. Generate a keypair for this and upload your public key to https://keys.openpgp.org/ so others can find it. It would be really good if you could have other people sign your key, adding more trust that this key really belongs to you. You can use the the [pgp quickstart](https://mana.mozilla.org/wiki/display/SD/Generating+a+GPG+Public+Key) guide on mana or you can use the The [GNU Privacy Handbook](https://www.gnupg.org/gph/en/manual.html) for reference.
 Also don't forget to add the fingerprint under https://login.mozilla.com/ too. Moreover, you'll have to add your GPG key to Github and Git. This is usuaully optional but is a requirement in some repositories. Follow [these instructions to add your key to Github](https://docs.github.com/en/authentication/managing-commit-signature-verification/adding-a-new-gpg-key-to-your-github-account) and [these instructions to register your key with Git](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key) for more details.
-* VPN - Many of our systems are behind a private network in addition to auth0. Follow the prompts to generate and download an openVPN certificate that you can use to import to your vpn client. See the instructions on how to [install and configure your VPN client](https://mana.mozilla.org/wiki/display/SD/VPN) and help choosing the right client for your platform. Note: macOS and Windows users should use [Viscosity](https://www.sparklabs.com/viscosity/). This application comes with a free 30 day trial. During your trial, your manager can help you create a ServiceNow ticket to get a Viscosity full license.
+* VPN - Many of our systems are behind a private network in addition to auth0. Follow the prompts to generate and download an openVPN certificate that you can use to import to your vpn client. See the instructions on how to [install and configure your VPN client](https://mana.mozilla.org/wiki/display/SD/VPN) and help choosing the right client for your platform. Note: macOS and Windows users should use [Viscosity](https://www.sparklabs.com/viscosity/). This application comes with a free 30 day trial. During your trial, your manager can help you create a JIRA ticket to get a Viscosity full license.
 * MFA - This MFA account is specific to https://login.mozilla.com/duo/ is used for LDAP/auth0 based logins. Follow the instructions to download the Duo Mobile app and create a Mozilla account
 * Mercurial - Most development in releng (and at Mozilla writ-large) is stored in version control using [hg](http://mercurial.selenic.com/). There is an excellent step-by-step guide for setting up and using hg: [Mercurial for Mozillians](https://mozilla-version-control-tools.readthedocs.org/en/latest/hgmozilla/index.html).
 * Phabricator - you'll be granted access to this via SSO
@@ -43,34 +43,31 @@ Please make sure your SSH and GPG keys are up to date in https://people.mozilla.
 In a nutshell, SOPS is a way to track secrets in a Git repository and securely share them with the rest of the team. You'll need to set this up to access credentials and
 keys needed for various services Release Engineering uses or administers.
 
-1. Need to install Google Cloud SDK installer - more informations on this in https://cloud.google.com/sdk/docs/downloads-interactive
-2. Need to install SOPS - more information on this in https://github.com/mozilla/sops/releases
-
 Steps (for MacOSX - but should be similar for Linux, modulo the installation of SOPS):
 
-### install Google Cloud SDK deps
+#### install Google Cloud SDK deps
 $ `curl https://sdk.cloud.google.com | zsh`
 $ `gcloud init`
 
-### RelEng currently has two SOPS repositories for holding off secrets.
+#### RelEng currently has two SOPS repositories for holding off secrets.
 `moz-fx-releng-secrets-global` - this is dedicated for RelEng team secrets (3rd party accounts, certificates, etc).
 Basically it's our own private space for holding off any type of secrets.
 `moz-fx-relengworker-prod-a67d` - this is dedicated for our scriptworkers (https://github.com/mozilla-releng/scriptworker-scripts).
 It's mirrored to CloudOps infrastructure.
 
-### The one that's most commonly used is the global one. The second one is needed only if a new type of scriptworker is added and/or
+#### The one that's most commonly used is the global one. The second one is needed only if a new type of scriptworker is added and/or
 we're adjusting existing credentials in the release scriptworkers automation.
-### clone the sops repo somewhere on disk
+#### clone the sops repo somewhere on disk
 $ gcloud source repos clone releng-secrets-global --project=moz-fx-releng-secrets-global
 $ gcloud source repos clone secrets-sops-relengworker --project=moz-fx-relengworker-prod-a67d
 
-### install sops
+#### install sops
 $ brew install sops
 
-### acquire new user credentials to talk to the Google Cloud API
+#### acquire new user credentials to talk to the Google Cloud API
 gcloud auth application-default login
 
-### celebrate by operating the sops credentials
+#### celebrate by operating the sops credentials
 Have a look in the COOKBOOK in the global SOPS repo for more instructions on how to read encrypt/decrypt the files.
 
 :warning:
@@ -82,9 +79,8 @@ that need rerunning in the shell in order to unblock using SOPS.
 
 $ gcloud auth login
 $ gcloud auth application-default login
-### Sometimes you also need to click on this link and paste that shell code
-$ https://source.developers.google.com/new-password
 
+### Sharing secrets with a co-worker
 On a side-note, for sharing secrets between employees, [read these docs](https://mana.mozilla.org/wiki/display/SVCOPS/Sharing+a+secret+with+a+coworker).
 
 ## Communication:
