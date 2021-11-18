@@ -182,6 +182,46 @@ Some internal Mozilla systems (IT, HR) are documented on [mana](https://mana.moz
 * Sentry logs - File a bug similar to [this one](https://bugzilla.mozilla.org/show_bug.cgi?id=1731311) to get access to debug various logs in Balrog and more.
 * CloudOps Jenkins - File a bug similar to [Bug 1721444](https://bugzilla.mozilla.org/show_bug.cgi?id=1721444) and talk to your manager to get access to Janekins CloudOps to be able to debug. You should already have access to cloudops-infra repo if you've done the Github section above.
 
+## Jumphosts
+
+To access any of Release Engineering, Taskcluster, and Release Operations hosts directly, you will need to go through VPN -> a Jumphost machine -> Separate MFA -> your target host.
+To do that, you and your manager will need to file a ticket against Release Operations and have them send you an invite to add an MFA account on your Duo App.
+Then once you have your Jumphost MFA setup correctly, you will need to have your ssh config to correctly route through the jumphost before trying the target host you want.
+
+Example ssh config (adjust the TODO to match your own configs)
+```
+# Ensure KnownHosts are unreadable if leaked - it is otherwise easier to know which hosts your keys have access to.
+HashKnownHosts yes
+# Host keys the client accepts - order here is honored by OpenSSH
+HostKeyAlgorithms ssh-ed25519-cert-v01@openssh.com,ssh-rsa-cert-v01@openssh.com,ssh-ed25519,ssh-rsa,ecdsa-sha2-nistp256-cert-v01@openssh.com,ecdsa-sha2-nistp521-cert-v01@openssh.com,ecdsa-sha2-nistp384-cert-v01@openssh.com,ecdsa-sha2-nistp521,ecdsa-sha2-nistp384,ecdsa-sha2-nistp256
+
+Host hg.mozilla.org git.mozilla.org
+    User TODO_USERNAME@mozilla.com
+    Compression yes
+    ServerAliveInterval 300
+
+Host *.mozilla.com
+    User TODO_USERNAME
+    IdentityFile ~/.ssh/id_rsa_<TODO_name_of_ssh_private_key>
+    Compression yes
+    ServerAliveInterval 300
+
+Host *.build.mozilla.org
+    Compression yes
+    User cltbld
+    ServerAliveInterval 300
+
+Host rejh?.srv.releng.????.mozilla.com
+    ControlMaster auto
+    ControlPath ~/.ssh/ssh-%C
+    ControlPersist 10m
+    ForwardAgent no
+
+Host *.releng.mdc1.mozilla.com !rejh?.srv.releng.mdc1.mozilla.com
+   ProxyJump rejh1.srv.releng.mdc1.mozilla.com﻿﻿﻿
+```
+
+
 ## Good first touchpoint
 
 Following Releaseduty docs to better understand the release mechanics - https://moz-releng-docs.readthedocs.io/en/latest/procedures/release-duty/index.html
