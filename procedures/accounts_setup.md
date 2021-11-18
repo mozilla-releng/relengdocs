@@ -198,6 +198,7 @@ cn=balrog,ou=groups,dc=mozilla
 cn=inventory,ou=groups,dc=mozilla
 cn=inventory_build,ou=groups,dc=mozilla
 cn=vpn_balrog,ou=groups,dc=mozilla
+cn=vpn_cloudops_shipit,ou=groups,dc=mozilla
 cn=vpn_releng,ou=groups,dc=mozilla
 cn=tooltooleditor,ou=groups,dc=mozilla
 cn=scm_firefoxci,ou=groups,dc=mozilla
