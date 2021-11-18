@@ -174,15 +174,33 @@ Some internal Mozilla systems (IT, HR) are documented on [mana](https://mana.moz
 
 ## Future access as you need it
 * You will need acccess to our GCP infrastructure. Talk to your manage to be added to the team-releng@firefox.gcp.mozilla.com. Use a ticket similar to [this](https://mozilla-hub.atlassian.net/browse/SVCSE-136) in CloudOps.
-* RelEng LDAP bits to access various infrastructure pieces. File a bug similar to [this](https://bugzilla.mozilla.org/show_bug.cgi?id=1732846) and ask your manager for vouching.
 * Ship-it - follow procedure in [here](https://moz-releng-docs.readthedocs.io/en/latest/procedures/release-duty/index.html#how-to-get-ship-it-access) to get access.
 * Balrog - follow procedure in [here](https://moz-releng-docs.readthedocs.io/en/latest/procedures/release-duty/index.html#how-to-get-balrog-access) to get access. A similar related bug was https://bugzilla.mozilla.org/show_bug.cgi?id=1727341.
 * CultureAmp - talk to your manager to set your goals and run the logistics in there for the 1x1 tracking. You'll also need to be added to the RelEng team goals.
 * JIRA - access to JIRA is granted upon SSO access so please make sure to login via the main dashboard. Ask your manager to add you to the RELENG/FFXP boards.
 * Sentry logs - File a bug similar to [this one](https://bugzilla.mozilla.org/show_bug.cgi?id=1731311) to get access to debug various logs in Balrog and more.
 * CloudOps Jenkins - File a bug similar to [Bug 1721444](https://bugzilla.mozilla.org/show_bug.cgi?id=1721444) and talk to your manager to get access to Janekins CloudOps to be able to debug. You should already have access to cloudops-infra repo if you've done the Github section above.
+Once it's properly configured, you'll be able to access it by making some tweaks documented [here](https://github.com/mozilla-services/cloudops-deployment#accessing-jenkins).
 
-## Jumphosts
+### LDAP groups
+* RelEng LDAP flags to access various infrastructure pieces. File a bug similar to [this](https://bugzilla.mozilla.org/show_bug.cgi?id=1732846) and ask your manager for vouching. The flags needed are listed below:
+
+```
+cn=active_scm_firefoxci,ou=groups,dc=mozilla
+cn=all_scm_firefoxci,ou=groups,dc=mozilla
+cn=releng,ou=groups,dc=mozilla
+cn=RelEngWiki,ou=groups,dc=mozilla
+cn=balrog,ou=groups,dc=mozilla
+cn=inventory,ou=groups,dc=mozilla
+cn=inventory_build,ou=groups,dc=mozilla
+cn=vpn_balrog,ou=groups,dc=mozilla
+cn=vpn_releng,ou=groups,dc=mozilla
+cn=tooltooleditor,ou=groups,dc=mozilla
+cn=scm_firefoxci,ou=groups,dc=mozilla
+cn=vpn_releng_loan,ou=groups,dc=mozilla
+```
+
+### Jumphosts
 
 To access any of Release Engineering, Taskcluster, and Release Operations hosts directly, you will need to go through VPN -> a Jumphost machine -> Separate MFA -> your target host.
 To do that, you and your manager will need to file a ticket against Release Operations and have them send you an invite to add an MFA account on your Duo App.
