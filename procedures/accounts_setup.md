@@ -54,7 +54,8 @@ Please file a bug similar to [bug 1726348](https://bugzilla.mozilla.org/show_bug
 2. https://github.com/orgs/mozilla-releng/people
 3. https://github.com/orgs/mozilla-releng/teams/releng/members
 4. https://github.com/orgs/mozilla-mobile/teams/releng/members
-5. https://github.com/mozilla-services/cloudops-infra/ via filing a ticket [here](https://github.com/mozilla-services/github-management/issues/new?assignees=&labels=&template=NewOrgMember.md&title=) similar to [this](https://github.com/mozilla-services/github-management/issues/129).
+5. https://github.com/orgs/mozilla-services/teams/releng/members
+6. https://github.com/mozilla-services/cloudops-infra/ via filing a ticket [here](https://github.com/mozilla-services/github-management/issues/new?assignees=&labels=&template=NewOrgMember.md&title=) similar to [this](https://github.com/mozilla-services/github-management/issues/129).
 
 There are also a handful of git repos hosted directly by Mozilla. Your manager/mentor will let you know if you need access to one of these.
 
@@ -143,6 +144,7 @@ Like mail, we now use [Google calendar](https://www.google.com/calendar/)
 You'll want to subscribe to the following public calendars:
 * [RelEng MoCo calendar](https://calendar.google.com/calendar/u/0?cid=bW96aWxsYS5jb21fMmQzMjM0MzMzMzM1MzAzNjMxMmQzOTM3MzdAcmVzb3VyY2UuY2FsZW5kYXIuZ29vZ2xlLmNvbQ)
 * [RelEng PTO calendar](https://calendar.google.com/calendar/u/0?cid=Y190cWEzaHQ5bXB0ODN1djJzZDJsYjVsaTVva0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t)
+* [Releases Scheduling](https://calendar.google.com/calendar/embed?src=mozilla.com_dbq84anr9i8tcnmhabatstv5co%40group.calendar.google.com&ctz=Europe%2FLondon)
 
 Talk to your manager/mentor to get added to the various other private calendars as appropriate.
 
