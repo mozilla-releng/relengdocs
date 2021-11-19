@@ -293,20 +293,20 @@ specific gradle versions and are in charge of installing it locally.
     # Verify the `sdkmanager` binary is available:
     which sdkmanager
 
-5. You'll need to accept all licenses before you can build the app:
+5. You'll need to accept all licenses before you can build the app::
 
-   # on mac
-   cd /usr/local/Caskroom/android-sdk/4333796
-   yes | sdkmanager --licenses
+    # on mac
+    cd /usr/local/Caskroom/android-sdk/4333796
+    yes | sdkmanager --licenses
 
-   ⚠️ If you hit this error: "Exception in thread "main" java.lang.NoClassDefFoundError: javax/xml/bind/annotation/XmlSchema"
-   you might need to either switch to java8 to accept the licenses and if that doesn't work then run:
+   ⚠️ If you hit this error: ``Exception in thread "main" java.lang.NoClassDefFoundError: javax/xml/bind/annotation/XmlSchema``
+   you might need to either switch to java8 to accept the licenses and if that doesn't work then run::
    
-   yes | sdkmanager --update 
-   # to accept licenses for the sdkmanager itself
+    yes | sdkmanager --update 
+    # to accept licenses for the sdkmanager itself
 
-   yes | sdkmanager --licenses 
-   # to accept new licenses not previously accepted
+    yes | sdkmanager --licenses 
+    # to accept new licenses not previously accepted
 
    Additional troubleshooting tips can be found on `this stack overflow thread <https://stackoverflow.com/questions/38096225/automatically-accept-all-sdk-licences>`
 
