@@ -13,6 +13,24 @@ Moreover, your manager should have already scheduled a 1x1 to go over things (we
 ## Accounts setup
 Here is a list of accounts and access needed to be successful in Release Engineering.
 
+### Bugzilla
+
+Almost everything at Mozilla goes through Bugzilla. [Create a Bugzilla account](https://bugzilla.mozilla.org/createaccount.cgi) if you have not already.
+You'll need a few tweaks to your account to get access to everything releng-related:
+* Add privileges for bugzilla group releng confidential (Can be done by manager or bugzilla admin)
+* Add your comms nickname & ldap username as "aliases" for your account
+* log into bugzilla & follow links "Preferences" -> "Account Information"
+* append the aliases, with a leading ':' and enclosed in brackets ('[]') to the "Real Name" field
+* e.g.: "John Doe [:jdoe]"
+
+The product to use is "Release Engineering." There are multiple possible components under that product, so take your best guess or ask for guidance from the team.
+TODO - to revisit once we reorg Bugzilla in November 2022.
+
+:warning:
+    Please speak with your manager to be added to the [releng-security](https://bugzilla.mozilla.org/page.cgi?id=group_admins.html) confidential group.
+
+### Misc
+
 * SSO - we rely on [auth0](https://auth0.com/) across Mozilla for authentication and [LDAP](https://mana.mozilla.org/wiki/display/SYSADMIN/LDAP+Architecture) for authorization.
 Once given LDAP and you have created a permanent password, you can use that to login to the [portal](https://sso.mozilla.com/). From SSO, you should have links to various services from email, calendar, slack, mana, etc.
 * https://login.mozilla.com/ is where you can change a number of authentication/authorization access bits that you have control over. Each todo in this section assumes you have access to this page.
@@ -155,22 +173,6 @@ Don't be shy about making improvements to releng pages based on your experiences
 
 Google Drive (formerly Google docs) is a preferred way to share things these days. This includes spreadsheets and documents that will change a great deal over time.
 Google Drive access should be enabled with your email account when you start. If you need access to a particular document, talk to the document owner or your manager/mentor.
-
-## Bugzilla
-
-Almost everything at Mozilla goes through Bugzilla. [Create a Bugzilla account](https://bugzilla.mozilla.org/createaccount.cgi) if you have not already.
-You'll need a few tweaks to your account to get access to everything releng-related:
-* Add privileges for bugzilla group releng confidential (Can be done by manager or bugzilla admin)
-* Add your comms nickname & ldap username as "aliases" for your account
-* log into bugzilla & follow links "Preferences" -> "Account Information"
-* append the aliases, with a leading ':' and enclosed in brackets ('[]') to the "Real Name" field
-* e.g.: "John Doe [:jdoe]"
-
-The product to use is "Release Engineering." There are multiple possible components under that product, so take your best guess or ask for guidance from the team.
-TODO - to revisit once we reorg Bugzilla in November 2022.
-
-:warning:
-    Please speak with your manager to be added to the [releng-security](https://bugzilla.mozilla.org/page.cgi?id=group_admins.html) confidential group.
 
 ## Mana
 
