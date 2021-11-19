@@ -274,7 +274,7 @@ specific gradle versions and are in charge of installing it locally.
     # OpenJDK Runtime Environment (AdoptOpenJDK)(build 1.8.0_265-b01)
     # OpenJDK 64-Bit Server VM (AdoptOpenJDK)(build 25.265-b01, mixed mode)
 
-4. You'll also need to set ``ANDROID_SDK_ROOT``::
+4. You'll also need to setup ``ANDROID_SDK_ROOT``::
 
     # In your .zshrc or .bashrc:
     # On mac
@@ -282,19 +282,31 @@ specific gradle versions and are in charge of installing it locally.
 
     # On Ubuntu
     export ANDROID_SDK_ROOT=/usr/lib/android-sdk
+    
+    # For Ubuntu, you'll also need to grab the Android cmdline-tools (which contains sdkmanager).
+    # First download the linux 'cmdline-tools' from here: https://developer.android.com/studio/index.html#downloads
+    # Then:
+    mkdir $ANDROID_SDK_ROOT/cmdline-tools
+    unzip <commandlinetools.zip> -d $ANDROID_SDK_ROOT/cmdline-tools/latest
+    export PATH=$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$PATH
+    
+    # Verify the `sdkmanager` binary is available:
+    which sdkmanager
 
 5. You'll need to accept all licenses before you can build the app:
+
    # on mac
    cd /usr/local/Caskroom/android-sdk/4333796
    yes | sdkmanager --licenses
 
    ⚠️ If you hit this error: "Exception in thread "main" java.lang.NoClassDefFoundError: javax/xml/bind/annotation/XmlSchema"
    you might need to either switch to java8 to accept the licenses and if that doesn't work then run:
+   
    yes | sdkmanager --update 
-   # to accepts licenses for the sdkmanager itself
+   # to accept licenses for the sdkmanager itself
 
    yes | sdkmanager --licenses 
-   # to accepts new licenses not previously accepted
+   # to accept new licenses not previously accepted
 
    Additional troubleshooting tips can be found on `this stack overflow thread <https://stackoverflow.com/questions/38096225/automatically-accept-all-sdk-licences>`
 
