@@ -204,7 +204,7 @@ cn=tooltooleditor,ou=groups,dc=mozilla
 cn=scm_firefoxci,ou=groups,dc=mozilla
 cn=vpn_releng_loan,ou=groups,dc=mozilla
 ```
-
+You can view your LDAP groups by accessing the [SSO info page](https://sso.mozilla.com/info)
 ### Jumphosts
 
 To access any of Release Engineering, Taskcluster, and Release Operations hosts directly, you will need to go through VPN -> a Jumphost machine -> Separate MFA -> your target host.
