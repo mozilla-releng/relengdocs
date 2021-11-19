@@ -144,7 +144,7 @@ For video communication we use Zoom. More details can be found on [mana](https:/
 ### Wiki
 
 Historical pieces of Mozilla information can be found in wiki.
-TODO - ask Heitor for instructions on how to get wiki.m.o account
+Request an account filling out [this form](https://wiki.mozilla.org/Special:RequestAccount). You should receive an email with a password in 1-2 days. If not, [file a bug in bugzilla](https://bugzilla.mozilla.org/enter_bug.cgi?product=Websites&component=wiki.mozilla.org)
 
 ### Docs
 
