@@ -28,7 +28,7 @@ b) Level 2 access is required to land code in the build and project repos. Once 
 c) Level 3 access is required to land code in [mozilla-central](https://hg.mozilla.org/mozilla-central) and its derived integration & release branches. At some point in your Mozilla contribution story, you may need Level 3 access but many contributors never do. Talk to your manager/mentor if you think you need this access. You should already have Level 2 access when you request Level 3
 * Phabricator - you'll be granted access to this via SSO
 The root webview of the Mozilla hg repositories is here: https://hg.mozilla.org/ while most releng code lives in repos under https://hg.mozilla.org/build.
-Please fill out the [Commit Access form](https://www.mozilla.org/en-US/about/governance/policies/commit/access-policy/) and submit it via a bug on file such as [this](TODO help from Heitor here).
+Please fill out the [Commit Access form](https://www.mozilla.org/en-US/about/governance/policies/commit/access-policy/) and submit it via a bug on file such as [this](https://bugzilla.mozilla.org/show_bug.cgi?id=1734247). Make sure to include (comment) your SSH public key and request 2 peers to vouch for you.
 
 ## Git & Github
 Please file a bug similar to [bug 1726348](https://bugzilla.mozilla.org/show_bug.cgi?id=1726348) and include the following teams to be added. Ask for your manager to vouch in the bug for these changes. The teams you need to be added are:
