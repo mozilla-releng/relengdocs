@@ -46,7 +46,11 @@ There are 3 levels of commit access:
     * Level 2 access is required to land code in the build and project repos. Once you have a proven track record of successful patches, you can ask your manager/mentor to vouch for your Level 2 access. Your manager/mentor can also land patches for you until you receive Level 2 access
     * Level 3 access is required to land code in [mozilla-central](https://hg.mozilla.org/mozilla-central) and its derived integration & release branches. At some point in your Mozilla contribution story, you may need Level 3 access but many contributors never do. Talk to your manager/mentor if you think you need this access. You should already have Level 2 access when you request Level 3
 
-* Phabricator - you'll be granted access to this via SSO
+## Phabricator
+
+You will be granted access to this via SSO. Please ask your manager to be added to the following team reviewing aliases:
+* [releng-reviewers](https://phabricator.services.mozilla.com/tag/releng-reviewers/)
+* (optional) [taskgraph-reviewers](https://phabricator.services.mozilla.com/project/view/140/)
 
 The root webview of the Mozilla hg repositories is here: https://hg.mozilla.org/ while most releng code lives in repos under https://hg.mozilla.org/build.
 Please fill out the [Commit Access form](https://www.mozilla.org/en-US/about/governance/policies/commit/access-policy/) and submit it via a bug on file such as [this](https://bugzilla.mozilla.org/show_bug.cgi?id=1734247). Make sure to include (comment) your SSH public key and request 2 peers to vouch for you.
