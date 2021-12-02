@@ -18,6 +18,7 @@ Procedures that don't easily fit elsewhere.
     Transitioning.rst
     accounts_setup
     mobile_automation_setup
+    adding_package_format
     misc-operations/*
 
 .. vim: nospell :
