@@ -41,20 +41,21 @@ Also don't forget to add the fingerprint under [https://login.mozilla.com/](http
 * MFA - More information on Multi-Factor-Authentication can be found in the [Login Portal](https://login.mozilla.com/duo/) which is what we use for LDAP/auth0 based logins. Follow [these](https://mana.mozilla.org/wiki/pages/viewpage.action?pageId=145590267) instructions to download the Duo Mobile app and set it up.
 * Mercurial - Most development in releng (and at Mozilla writ-large) is stored in version control using [hg](http://mercurial.selenic.com/). There is an excellent step-by-step guide for setting up and using hg: [Mercurial for Mozillians](https://mozilla-version-control-tools.readthedocs.org/en/latest/hgmozilla/index.html). More information on this can be found in [here](https://firefox-source-docs.mozilla.org/contributing/vcs/mercurial.html) and [here](https://firefox-source-docs.mozilla.org/contributing/contribution_quickref.html).
 
-There are 3 levels of commit access:
-    * Level 1 access allows you to use the [Try Server](https://wiki.mozilla.org/ReleaseEngineering/TryServer) and setup user repos. As a new contributor, you should request this on day one.
-    * Level 2 access is required to land code in the build and project repos. Once you have a proven track record of successful patches, you can ask your manager/mentor to vouch for your Level 2 access. Your manager/mentor can also land patches for you until you receive Level 2 access
-    * Level 3 access is required to land code in [mozilla-central](https://hg.mozilla.org/mozilla-central) and its derived integration & release branches. At some point in your Mozilla contribution story, you may need Level 3 access but many contributors never do. Talk to your manager/mentor if you think you need this access. You should already have Level 2 access when you request Level 3
-
 ## Phabricator
 
 You will be granted access to this via SSO. Please ask your manager to be added to the following team reviewing aliases:
 * [releng-reviewers](https://phabricator.services.mozilla.com/tag/releng-reviewers/)
 * (optional) [taskgraph-reviewers](https://phabricator.services.mozilla.com/project/view/140/)
 
-The root webview of the Mozilla hg repositories is here: https://hg.mozilla.org/ while most releng code lives in repos under https://hg.mozilla.org/build.
+## Mercurial
+
+The root webview of the Mozilla hg repositories is here: [hg.mozilla.org](https://hg.mozilla.org/) while most releng code lives in repos under [hg.mozilla.org/build](https://hg.mozilla.org/build).
 Please fill out the [Commit Access form](https://www.mozilla.org/en-US/about/governance/policies/commit/access-policy/) and submit it via a bug on file such as [this](https://bugzilla.mozilla.org/show_bug.cgi?id=1734247). Make sure to include (comment) your SSH public key and request 2 peers to vouch for you.
 
+There are 3 levels of commit access:
+    * Level 1 access allows you to use the [Try Server](https://wiki.mozilla.org/ReleaseEngineering/TryServer) and setup user repos. As a new contributor, you should request this on day one.
+    * Level 2 access is required to land code in the build and project repos. Once you have a proven track record of successful patches, you can ask your manager/mentor to vouch for your Level 2 access. Your manager/mentor can also land patches for you until you receive Level 2 access
+    * Level 3 access is required to land code in [mozilla-central](https://hg.mozilla.org/mozilla-central) and its derived integration & release branches. At some point in your Mozilla contribution story, you may need Level 3 access but many contributors never do. Talk to your manager/mentor if you think you need this access. You should already have Level 2 access when you request Level 3
 
 ## Git & Github
 Please file a bug similar to [bug 1726348](https://bugzilla.mozilla.org/show_bug.cgi?id=1726348) and include the following teams to be added. Ask for your manager to vouch in the bug for these changes. The teams you need to be added are:
@@ -63,7 +64,7 @@ Please file a bug similar to [bug 1726348](https://bugzilla.mozilla.org/show_bug
 3. [https://github.com/orgs/mozilla-releng/teams/releng/members](https://github.com/orgs/mozilla-releng/teams/releng/members)
 4. [https://github.com/orgs/mozilla-mobile/teams/releng/members](https://github.com/orgs/mozilla-mobile/teams/releng/members)
 5. [https://github.com/orgs/mozilla-services/teams/releng/members](https://github.com/orgs/mozilla-services/teams/releng/members)
-6. https://github.com/mozilla-services/cloudops-infra/ via filing a ticket [here](https://github.com/mozilla-services/github-management/issues/new?assignees=&labels=&template=NewOrgMember.md&title=) similar to [this](https://github.com/mozilla-services/github-management/issues/129).
+6. [https://github.com/mozilla-services/cloudops-infra](https://github.com/mozilla-services/cloudops-infra) via filing a ticket [here](https://github.com/mozilla-services/github-management/issues/new?assignees=&labels=&template=NewOrgMember.md&title=) similar to [this](https://github.com/mozilla-services/github-management/issues/129).
 
 There are also a handful of git repos hosted directly by Mozilla. Your manager/mentor will let you know if you need access to one of these.
 
@@ -85,7 +86,7 @@ $ gcloud init
 ###### RelEng currently has two SOPS repositories for holding off secrets.
 1. `moz-fx-releng-secrets-global` - this is dedicated for RelEng team secrets (3rd party accounts, certificates, etc).
 Basically it's our own private space for holding off any type of secrets.
-2. `moz-fx-relengworker-prod-a67d` - this is dedicated for our scriptworkers (https://github.com/mozilla-releng/scriptworker-scripts).
+2. `moz-fx-relengworker-prod-a67d` - this is dedicated for our scriptworkers [https://github.com/mozilla-releng/scriptworker-scripts](https://github.com/mozilla-releng/scriptworker-scripts).
 It's mirrored to CloudOps infrastructure.
 
 The one that's most commonly used is the global one. The second one is needed only if a new type of scriptworker is added and/or
@@ -191,7 +192,7 @@ Some internal Mozilla systems (IT, HR) are documented on [mana](https://mana.moz
 * CultureAmp - talk to your manager to set your goals and run the logistics in there for the 1x1 tracking. You'll also need to be added to the RelEng team goals.
 * JIRA - access to JIRA is granted upon SSO access so please make sure to login via the main dashboard. Ask your manager to add you to the RELENG/FFXP boards.
 * Sentry logs - File a bug similar to [this one](https://bugzilla.mozilla.org/show_bug.cgi?id=1731311) to get access to debug various logs in Balrog and more.
-* CloudOps Jenkins - File a bug similar to [Bug 1721444](https://bugzilla.mozilla.org/show_bug.cgi?id=1721444) and talk to your manager to get access to Janekins CloudOps to be able to debug. You should already have access to cloudops-infra repo if you've done the Github section above.
+* CloudOps Jenkins - File a bug similar to [Bug 1721444](https://bugzilla.mozilla.org/show_bug.cgi?id=1721444) and talk to your manager to get access to Janekins CloudOps to be able to debug. You should already have access to [cloudops-infra repo](https://github.com/mozilla-services/cloudops-infra/) if you've done the Github section above.
 Once it's properly configured, you'll be able to access it by making some tweaks documented [here](https://github.com/mozilla-services/cloudops-deployment#accessing-jenkins).
 
 ### LDAP groups
@@ -245,4 +246,4 @@ Host *.build.mozilla.org
 
 ## Good first touchpoint
 
-Following Releaseduty docs to better understand the release mechanics - https://moz-releng-docs.readthedocs.io/en/latest/procedures/release-duty/index.html
+Following Releaseduty docs to better understand the release mechanics - [https://moz-releng-docs.readthedocs.io/en/latest/procedures/release-duty/index.html](https://moz-releng-docs.readthedocs.io/en/latest/procedures/release-duty/index.html)
