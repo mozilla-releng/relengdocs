@@ -39,7 +39,6 @@ Once given LDAP and you have created a permanent password, you can use that to l
 Also don't forget to add the fingerprint under [https://login.mozilla.com/](https://login.mozilla.com/) too. Moreover, you'll have to add your GPG key to Github and Git. This is usuaully optional but is a requirement in some repositories. Follow [these instructions to add your key to Github](https://docs.github.com/en/authentication/managing-commit-signature-verification/adding-a-new-gpg-key-to-your-github-account) and [these instructions to register your key with Git](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key) for more details.
 * VPN - Many of our systems are behind a private network in addition to auth0. Follow the prompts to generate and download an openVPN certificate that you can use to import to your vpn client. See the instructions on how to [install and configure your VPN client](https://mana.mozilla.org/wiki/display/SD/VPN) and help choosing the right client for your platform. Note: macOS and Windows users should use [Viscosity](https://www.sparklabs.com/viscosity/). This application comes with a free 30 day trial. During your trial, your manager can help you create a JIRA ticket to get a Viscosity full license.
 * MFA - More information on Multi-Factor-Authentication can be found in the [Login Portal](https://login.mozilla.com/duo/) which is what we use for LDAP/auth0 based logins. Follow [these](https://mana.mozilla.org/wiki/pages/viewpage.action?pageId=145590267) instructions to download the Duo Mobile app and set it up.
-* Mercurial - Most development in releng (and at Mozilla writ-large) is stored in version control using [hg](http://mercurial.selenic.com/). There is an excellent step-by-step guide for setting up and using hg: [Mercurial for Mozillians](https://mozilla-version-control-tools.readthedocs.org/en/latest/hgmozilla/index.html). More information on this can be found in [here](https://firefox-source-docs.mozilla.org/contributing/vcs/mercurial.html) and [here](https://firefox-source-docs.mozilla.org/contributing/contribution_quickref.html).
 
 ## Phabricator
 
@@ -48,6 +47,8 @@ You will be granted access to this via SSO. Please ask your manager to be added 
 * (optional) [taskgraph-reviewers](https://phabricator.services.mozilla.com/project/view/140/)
 
 ## Mercurial
+
+Most development in releng (and at Mozilla writ-large) is stored in version control using [hg](http://mercurial.selenic.com/). There is an excellent step-by-step guide for setting up and using hg: [Mercurial for Mozillians](https://mozilla-version-control-tools.readthedocs.org/en/latest/hgmozilla/index.html). More information on this can be found in [here](https://firefox-source-docs.mozilla.org/contributing/vcs/mercurial.html) and [here](https://firefox-source-docs.mozilla.org/contributing/contribution_quickref.html).
 
 The root webview of the Mozilla hg repositories is here: [hg.mozilla.org](https://hg.mozilla.org/) while most releng code lives in repos under [hg.mozilla.org/build](https://hg.mozilla.org/build).
 Please fill out the [Commit Access form](https://www.mozilla.org/en-US/about/governance/policies/commit/access-policy/) and submit it via a bug on file such as [this](https://bugzilla.mozilla.org/show_bug.cgi?id=1734247). Make sure to include (comment) your SSH public key and request 2 peers to vouch for you.
@@ -223,35 +224,6 @@ cn=scm_firefoxci,ou=groups,dc=mozilla
 cn=vpn_releng_loan,ou=groups,dc=mozilla
 ```
 You can view your LDAP groups by accessing the [SSO info page](https://sso.mozilla.com/info)
-### Jumphosts
-
-To access any of Release Engineering, Taskcluster, and Release Operations hosts directly, you will need to go through VPN -> Separate MFA -> your target host.
-To do that, you and your manager will need to file a ticket against Release Operations and have them send you an invite to add an MFA account on your Duo App.
-
-Example ssh config (adjust the `TODO` to match your own configs)
-```
-# Ensure KnownHosts are unreadable if leaked - it is otherwise easier to know which hosts your keys have access to.
-HashKnownHosts yes
-# Host keys the client accepts - order here is honored by OpenSSH
-HostKeyAlgorithms ssh-ed25519-cert-v01@openssh.com,ssh-rsa-cert-v01@openssh.com,ssh-ed25519,ssh-rsa,ecdsa-sha2-nistp256-cert-v01@openssh.com,ecdsa-sha2-nistp521-cert-v01@openssh.com,ecdsa-sha2-nistp384-cert-v01@openssh.com,ecdsa-sha2-nistp521,ecdsa-sha2-nistp384,ecdsa-sha2-nistp256
-
-Host hg.mozilla.org git.mozilla.org
-    User TODO_USERNAME@mozilla.com
-    Compression yes
-    ServerAliveInterval 300
-
-Host *.mozilla.com
-    User TODO_USERNAME
-    IdentityFile ~/.ssh/id_rsa_<TODO_name_of_ssh_private_key>
-    Compression yes
-    ServerAliveInterval 300
-
-Host *.build.mozilla.org
-    Compression yes
-    User cltbld
-    ServerAliveInterval 300
-```
-
 
 ## Good first touchpoint
 
