@@ -85,9 +85,9 @@ $ gcloud init
 
 ###### RelEng currently has two SOPS repositories for holding off secrets.
 1. `moz-fx-releng-secrets-global` - this is dedicated for RelEng team secrets (3rd party accounts, certificates, etc).
-Basically it's our own private space for holding off any type of secrets.
+Basically it's our own private space for holding off any type of secrets. Your manager should be able to grant you access to this repo.
 2. `moz-fx-relengworker-prod-a67d` - this is dedicated for our scriptworkers [https://github.com/mozilla-releng/scriptworker-scripts](https://github.com/mozilla-releng/scriptworker-scripts).
-It's mirrored to CloudOps infrastructure.
+It's mirrored to CloudOps infrastructure. This repo is owned by CloudOps, to get access create an issue similar to [SVCSE-242](https://mozilla-hub.atlassian.net/browse/SVCSE-242)
 
 The one that's most commonly used is the global one. The second one is needed only if a new type of scriptworker is added and/or
 we're adjusting existing credentials in the release scriptworkers automation.
@@ -124,17 +124,10 @@ $ gcloud auth application-default login
 ### Sharing secrets with a co-worker
 On a side-note, for sharing secrets between employees, [read these docs](https://mana.mozilla.org/wiki/display/SVCOPS/Sharing+a+secret+with+a+coworker).
 
-## Communication:
+## Communication
 
 ### Mail
 Mozilla mail is handled by Gmail now.
-
-#### Mail filtering
-
-With all that new email, you will want to set up some [filters](https://mail.google.com/mail/u/0/#settings/filters) in Gmail to better handle some of the higher-volume automated mail into a folder.
-You may eventually want to handle this information, but on day one hundreds of automation notifications are not going to be educational.
-
-:warning: Please ask your manager to provide an imperfect but useful set of already existing filters to help handling the load.
 
 #### Mailing lists
 
@@ -142,6 +135,22 @@ You may eventually want to handle this information, but on day one hundreds of a
 * You should be added to the [releng@mozilla.com](releng@mozilla.com) google group as a new hire. This mailing list is managed by Google groups. Owners of this group will be able to add you. Send a test message to releng@m.c to verify that your address has been added/subscribed. Talk to your manager if it is not working.
 
 :warning: release@m.c can contain security-sensitive information. Do not automatically forward your email to a system that is not under Mozilla's control. Same goes for releng@mozilla.com.
+
+#### Mail filtering
+
+With all that new email, you will want to set up some filters in Gmail to handle the higher-volume automated mail.
+You may eventually want to take a look at this information, but on day one hundreds of automation notifications are not going to be educational.
+
+:warning: To mitigate the incoming barrage of automated emails download our imperfect, but useful, set of already existing filters.
+
+1. Download [mailFilters.xml](https://raw.githubusercontent.com/mozilla/build-relengdocs/main/procedures/mailFilters.xml)
+2. Open [Gmail](https://sso.mozilla.com/gmail)
+3. At the top right, click *Settings* and then *See all settings*
+4. Click *Filters and Blocked Addresses*
+5. At the bottom of the page, click *Import filters*
+6. Choose the [mailFilters.xml](https://raw.githubusercontent.com/mozilla/build-relengdocs/main/procedures/mailFilters.xml) file
+7. Click *Open file*
+8. Click *Create filters*
 
 ### Calendar
 
