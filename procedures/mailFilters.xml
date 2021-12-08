@@ -1,0 +1,448 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns='http://www.w3.org/2005/Atom' xmlns:apps='http://schemas.google.com/apps/2006'>
+	<title>Mail Filters</title>
+	<id>tag:mail.google.com,2008:filters:z0000001638554755102*3126485944837840273,z0000001638554755457*0726004786733909326,z0000001638554755736*8835898296722164297,z0000001638554756239*5472197801385164473,z0000001638554756732*4244457594787537754,z0000001638554757207*4409578724961599454,z0000001638554758010*4318529010342490792,z0000001638554758802*6647692300237359970,z0000001638554759317*0394612301482364715,z0000001638554760018*1241295590236322039,z0000001638554760626*4492377855781853612,z0000001638554761253*8394477185074774614,z0000001638554761860*6215951457604207785,z0000001638554762471*4449062124159482645,z0000001638554763101*3238305369826350418,z0000001638554763686*0287011271267243108,z0000001638554764156*1833470602083554380,z0000001638554764932*8650452486089585825,z0000001638554765421*7464124704715977948,z0000001638554766160*1118373404096407975,z0000001638554766642*1020226113024279808,z0000001638554767392*7620061106175605311,z0000001638554767998*0520146544277117776,z0000001638554768466*0190082825206065330,z0000001638554769222*2249775373009785690,z0000001638554769842*4932505281238233054,z0000001638554770305*6786712693681241936,z0000001638554771065*1096777312787141768,z0000001638829921044*5870109326825270088,z0000001638909607145*0923451389359157353,z0000001638914466663*0792571803490805933,z0000001638982771629*0677824226559639619,z0000001638982953090*3505518156143822343</id>
+	<updated>2021-12-08T18:18:40Z</updated>
+	<author>
+		<name>Gabriel Bustamante</name>
+		<email>gbustamante@mozilla.com</email>
+	</author>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:z0000001638554755102*3126485944837840273</id>
+		<updated>2021-12-08T18:18:40Z</updated>
+		<content></content>
+		<apps:property name='from' value='bugzilla-daemon@mozilla.org'/>
+		<apps:property name='label' value='_BugZilla'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='shouldNeverSpam' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:z0000001638554755457*0726004786733909326</id>
+		<updated>2021-12-08T18:18:40Z</updated>
+		<content></content>
+		<apps:property name='from' value='amo-editors@mozilla.org'/>
+		<apps:property name='label' value='Mozilla Addons'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='shouldNeverSpam' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:z0000001638554755736*8835898296722164297</id>
+		<updated>2021-12-08T18:18:40Z</updated>
+		<content></content>
+		<apps:property name='hasTheWord' value='list:(release-automation-notifications-thunderbird.mozilla.org)'/>
+		<apps:property name='label' value='Release Automation Notifications'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='shouldNeverSpam' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:z0000001638554756239*5472197801385164473</id>
+		<updated>2021-12-08T18:18:40Z</updated>
+		<content></content>
+		<apps:property name='hasTheWord' value='list:(&lt;release-automation-notifications-dev.mozilla.com&gt;)'/>
+		<apps:property name='label' value='Release Automation Notifications'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='shouldNeverSpam' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:z0000001638554756732*4244457594787537754</id>
+		<updated>2021-12-08T18:18:40Z</updated>
+		<content></content>
+		<apps:property name='hasTheWord' value='list:(&lt;release-automation-notifications.mozilla.com&gt;)'/>
+		<apps:property name='label' value='Release Automation Notifications'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='shouldNeverSpam' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:z0000001638554757207*4409578724961599454</id>
+		<updated>2021-12-08T18:18:40Z</updated>
+		<content></content>
+		<apps:property name='from' value='balrog-notifier@aus4-admin.mozilla.org'/>
+		<apps:property name='label' value='Balrog updates'/>
+		<apps:property name='shouldMarkAsRead' value='true'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='shouldNeverSpam' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:z0000001638554758010*4318529010342490792</id>
+		<updated>2021-12-08T18:18:40Z</updated>
+		<content></content>
+		<apps:property name='from' value='bugzilla-daemon@mozilla.org'/>
+		<apps:property name='hasTheWord' value='X-Bugzilla-Type: request X-Bugzilla-Flag-Requestee: mtabara@mozilla.com'/>
+		<apps:property name='label' value='_BugZilla/requests'/>
+		<apps:property name='shouldStar' value='true'/>
+		<apps:property name='shouldNeverSpam' value='true'/>
+		<apps:property name='shouldAlwaysMarkAsImportant' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:z0000001638554758802*6647692300237359970</id>
+		<updated>2021-12-08T18:18:40Z</updated>
+		<content></content>
+		<apps:property name='from' value='bugzilla-daemon@mozilla.org'/>
+		<apps:property name='hasTheWord' value='X-Bugzilla-Type: request Mihai Tabara'/>
+		<apps:property name='doesNotHaveTheWord' value='X-Bugzilla-Flag-Requestee:'/>
+		<apps:property name='label' value='_BugZilla/reviewed'/>
+		<apps:property name='shouldStar' value='true'/>
+		<apps:property name='shouldNeverSpam' value='true'/>
+		<apps:property name='shouldAlwaysMarkAsImportant' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:z0000001638554759317*0394612301482364715</id>
+		<updated>2021-12-08T18:18:40Z</updated>
+		<content></content>
+		<apps:property name='from' value='bugzilla-daemon@mozilla.org'/>
+		<apps:property name='hasTheWord' value='X-Bugzilla-Component: Balrog'/>
+		<apps:property name='label' value='_BugZilla/balrog'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='shouldNeverSpam' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:z0000001638554760018*1241295590236322039</id>
+		<updated>2021-12-08T18:18:40Z</updated>
+		<content></content>
+		<apps:property name='to' value='release+mozdef@mozilla.com'/>
+		<apps:property name='label' value='MozDef'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='shouldNeverSpam' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:z0000001638554760626*4492377855781853612</id>
+		<updated>2021-12-08T18:18:40Z</updated>
+		<content></content>
+		<apps:property name='subject' value='{Completed: complete}'/>
+		<apps:property name='hasTheWord' value='list:(&lt;release-automation-notifications.mozilla.com&gt;)'/>
+		<apps:property name='label' value='Release Automation Notifications'/>
+		<apps:property name='shouldMarkAsRead' value='true'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='shouldNeverSpam' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:z0000001638554761253*8394477185074774614</id>
+		<updated>2021-12-08T18:18:40Z</updated>
+		<content></content>
+		<apps:property name='subject' value='{Completed: complete}'/>
+		<apps:property name='hasTheWord' value='list:(&lt;release-automation-notifications-dev.mozilla.com&gt;)'/>
+		<apps:property name='label' value='Release Automation Notifications'/>
+		<apps:property name='shouldMarkAsRead' value='true'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='shouldNeverSpam' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:z0000001638554761860*6215951457604207785</id>
+		<updated>2021-12-08T18:18:40Z</updated>
+		<content></content>
+		<apps:property name='to' value='release+tcstaging@mozilla.com'/>
+		<apps:property name='hasTheWord' value='tcstaging'/>
+		<apps:property name='label' value='Release Automation Notifications/tcstaging'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='shouldNeverSpam' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:z0000001638554762471*4449062124159482645</id>
+		<updated>2021-12-08T18:18:40Z</updated>
+		<content></content>
+		<apps:property name='hasTheWord' value='list:(&lt;release-signoff.mozilla.org&gt;)'/>
+		<apps:property name='label' value='releaseduty'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='shouldNeverSpam' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:z0000001638554763101*3238305369826350418</id>
+		<updated>2021-12-08T18:18:40Z</updated>
+		<content></content>
+		<apps:property name='hasTheWord' value='list:(release-drivers.mozilla.org)'/>
+		<apps:property name='label' value='releaseduty'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='shouldNeverSpam' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:z0000001638554763686*0287011271267243108</id>
+		<updated>2021-12-08T18:18:40Z</updated>
+		<content></content>
+		<apps:property name='hasTheWord' value='list:(thunderbird-drivers.mozilla.org)'/>
+		<apps:property name='label' value='releaseduty'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='shouldNeverSpam' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:z0000001638554764156*1833470602083554380</id>
+		<updated>2021-12-08T18:18:40Z</updated>
+		<content></content>
+		<apps:property name='to' value='release+tc-workers@mozilla.com'/>
+		<apps:property name='hasTheWord' value='list:(&lt;release.mozilla.com&gt;)'/>
+		<apps:property name='shouldTrash' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:z0000001638554764932*8650452486089585825</id>
+		<updated>2021-12-08T18:18:40Z</updated>
+		<content></content>
+		<apps:property name='to' value='release+tc-hooks@mozilla.com'/>
+		<apps:property name='hasTheWord' value='list:(&lt;release.mozilla.com&gt;)'/>
+		<apps:property name='label' value='tc-hooks'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='shouldNeverSpam' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:z0000001638554765421*7464124704715977948</id>
+		<updated>2021-12-08T18:18:40Z</updated>
+		<content></content>
+		<apps:property name='from' value='sentry@sentry.prod.mozaws.net'/>
+		<apps:property name='label' value='Sentry'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='shouldNeverSpam' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:z0000001638554766160*1118373404096407975</id>
+		<updated>2021-12-08T18:18:40Z</updated>
+		<content></content>
+		<apps:property name='to' value='release+failedcron@mozilla.com'/>
+		<apps:property name='hasTheWord' value='list:(&lt;release.mozilla.com&gt;)'/>
+		<apps:property name='label' value='tc-hooks'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='shouldNeverSpam' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:z0000001638554766642*1020226113024279808</id>
+		<updated>2021-12-08T18:18:40Z</updated>
+		<content></content>
+		<apps:property name='to' value='release+aid@mozilla.com'/>
+		<apps:property name='hasTheWord' value='list:(&lt;release.mozilla.com&gt;)'/>
+		<apps:property name='label' value='Apple Developer'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:z0000001638554767392*7620061106175605311</id>
+		<updated>2021-12-08T18:18:40Z</updated>
+		<content></content>
+		<apps:property name='to' value='release+scriptworker-canary@mozilla.com'/>
+		<apps:property name='hasTheWord' value='list:(&lt;release.mozilla.com&gt;)'/>
+		<apps:property name='label' value='releaseduty'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:z0000001638554767998*0520146544277117776</id>
+		<updated>2021-12-08T18:18:40Z</updated>
+		<content></content>
+		<apps:property name='to' value='active-data-maintainers@mozilla.com'/>
+		<apps:property name='label' value='ActiveData'/>
+		<apps:property name='shouldMarkAsRead' value='true'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='shouldNeverSpam' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:z0000001638554768466*0190082825206065330</id>
+		<updated>2021-12-08T18:18:40Z</updated>
+		<content></content>
+		<apps:property name='from' value='jira@jira.mozilla.com'/>
+		<apps:property name='label' value='JIRA'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='shouldNeverSpam' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:z0000001638554769222*2249775373009785690</id>
+		<updated>2021-12-08T18:18:40Z</updated>
+		<content></content>
+		<apps:property name='to' value='accessalerts@mozilla.com'/>
+		<apps:property name='label' value='Access alerts'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='shouldNeverSpam' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:z0000001638554769842*4932505281238233054</id>
+		<updated>2021-12-08T18:18:40Z</updated>
+		<content></content>
+		<apps:property name='from' value='letsconnect@bitrise.io'/>
+		<apps:property name='label' value='Bitrise'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='shouldNeverSpam' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:z0000001638554770305*6786712693681241936</id>
+		<updated>2021-12-08T18:18:40Z</updated>
+		<content></content>
+		<apps:property name='from' value='jira@mozilla-hub.atlassian.net'/>
+		<apps:property name='label' value='JIRA'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='shouldNeverSpam' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:z0000001638554771065*1096777312787141768</id>
+		<updated>2021-12-08T18:18:40Z</updated>
+		<content></content>
+		<apps:property name='to' value='release_appleagent@mozilla.com'/>
+		<apps:property name='label' value='Apple Developer'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='shouldNeverSpam' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:z0000001638829921044*5870109326825270088</id>
+		<updated>2021-12-08T18:18:40Z</updated>
+		<content></content>
+		<apps:property name='to' value='release+phabricator@mozilla.com'/>
+		<apps:property name='label' value='Phabricator'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:z0000001638909607145*0923451389359157353</id>
+		<updated>2021-12-08T18:18:40Z</updated>
+		<content></content>
+		<apps:property name='to' value='release+buildduty@mozilla.com'/>
+		<apps:property name='label' value='buildduty'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:z0000001638914466663*0792571803490805933</id>
+		<updated>2021-12-08T18:18:40Z</updated>
+		<content></content>
+		<apps:property name='to' value='release+addons@mozilla.com'/>
+		<apps:property name='label' value='add-ons'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:z0000001638982771629*0677824226559639619</id>
+		<updated>2021-12-08T18:18:40Z</updated>
+		<content></content>
+		<apps:property name='from' value='notifications@github.com'/>
+		<apps:property name='label' value='GitHub'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:z0000001638982953090*3505518156143822343</id>
+		<updated>2021-12-08T18:18:40Z</updated>
+		<content></content>
+		<apps:property name='from' value='firefoxcitc-taskcluster-noreply@mozilla.com'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='shouldNeverSpam' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+</feed>
