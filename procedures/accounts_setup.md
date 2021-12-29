@@ -132,8 +132,8 @@ Mozilla mail is handled by Gmail now.
 
 #### Mailing lists
 
-* You should be added to the [release@mozilla.com](release@mozilla.com) google group as a new hire. This mailing list is managed by Google groups. Owners of this group will be able to add you. Send a test message to release@m.c to verify that your address has been added/subscribed. Talk to your manager if it is not working.
-* You should be added to the [releng@mozilla.com](releng@mozilla.com) google group as a new hire. This mailing list is managed by Google groups. Owners of this group will be able to add you. Send a test message to releng@m.c to verify that your address has been added/subscribed. Talk to your manager if it is not working.
+* You should be added to the [release@mozilla.com](mailto:release@mozilla.com) google group as a new hire. This mailing list is managed by Google groups. Owners of this group will be able to add you. Send a test message to release@m.c to verify that your address has been added/subscribed. Talk to your manager if it is not working.
+* You should be added to the [releng@mozilla.com](mailto:releng@mozilla.com) google group as a new hire. This mailing list is managed by Google groups. Owners of this group will be able to add you. Send a test message to releng@m.c to verify that your address has been added/subscribed. Talk to your manager if it is not working.
 
 :warning: release@m.c can contain security-sensitive information. Do not automatically forward your email to a system that is not under Mozilla's control. Same goes for releng@mozilla.com.
 
@@ -196,7 +196,7 @@ Google Drive access should be enabled with your email account when you start. If
 Some internal Mozilla systems (IT, HR) are documented on [mana](https://mana.mozilla.org/). That is behind SSO and you will be granted access to that as soon as LDAP is activated.
 
 ## Future access as you need it
-* You will need acccess to our GCP infrastructure. Talk to your manage to be added to the [team-releng@firefox.gcp.mozilla.com](team-releng@firefox.gcp.mozilla.com). Use a ticket similar to [this](https://mozilla-hub.atlassian.net/browse/SVCSE-136) in CloudOps.
+* You will need acccess to our GCP infrastructure. Talk to your manage to be added to the [team-releng@firefox.gcp.mozilla.com](mailto:team-releng@firefox.gcp.mozilla.com). Use a ticket similar to [this](https://mozilla-hub.atlassian.net/browse/SVCSE-136) in CloudOps.
 * Ship-it - follow procedure in [here](https://moz-releng-docs.readthedocs.io/en/latest/procedures/release-duty/index.html#how-to-get-ship-it-access) to get access.
 * Balrog - follow procedure in [here](https://moz-releng-docs.readthedocs.io/en/latest/procedures/release-duty/index.html#how-to-get-balrog-access) to get access. A similar related bug was [bug 1727341](https://bugzilla.mozilla.org/show_bug.cgi?id=1727341).
 * CultureAmp - talk to your manager to set your goals and run the logistics in there for the 1x1 tracking. You'll also need to be added to the RelEng team goals.

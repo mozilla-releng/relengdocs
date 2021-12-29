@@ -8,6 +8,7 @@ _**As releaseduty squirrels are the ones with the best context when it comes to 
 
 ### During 97.0 >= 2021-12-06
 #### Changed
+- l10n-cross-channel-quarantine [now nukes comm/](https://bugzilla.mozilla.org/show_bug.cgi?id=1747280) at the end of the run
 
 ### During 96.0 >= 2021-11-01
 #### Changed
