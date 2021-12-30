@@ -6,3 +6,4 @@ Best Practices
 
     coding
     documentation
+    security
