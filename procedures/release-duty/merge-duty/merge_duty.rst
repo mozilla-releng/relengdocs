@@ -174,7 +174,7 @@ Merge beta to release
 :warning:
    The merge day automation is **not** idempotent.
    The merge automation task may fail and auto-retry (because of a worker shutdown, for instance).
-   If the task retries after updating the state of the repo, it update the state of the repo again, pushing repeated commits.
+   If the task retries after updating the state of the repo, it will update the state of the repo again, pushing repeated commits.
 
 1. Upon successful run, ``mozilla-release`` should get a version bump
    and branding changes consisting of a ``commit`` like
@@ -258,7 +258,7 @@ Merge central to beta
 :warning:
    The merge day automation is **not** idempotent.
    The merge automation task may fail and auto-retry (because of a worker shutdown, for instance).
-   If the task retries after updating the state of the repo, it update the state of the repo again, pushing repeated commits.
+   If the task retries after updating the state of the repo, it will update the state of the repo again, pushing repeated commits.
 
 Re-opening the tree(s)
 ~~~~~~~~~~~~~~~~~~~~~~
