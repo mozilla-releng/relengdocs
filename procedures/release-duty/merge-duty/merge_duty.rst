@@ -171,6 +171,11 @@ Merge beta to release
    this command (or the no-op one) correctly. You may need to publicly
    backout some tags/changesets to get back in a known state.
 
+:warning:
+   The merge day automation is **not** idempotent.
+   The merge automation task may fail and auto-retry (because of a worker shutdown, for instance).
+   If the task retries after updating the state of the repo, it will update the state of the repo again, pushing repeated commits.
+
 1. Upon successful run, ``mozilla-release`` should get a version bump
    and branding changes consisting of a ``commit`` like
    `this <https://hg.mozilla.org/releases/mozilla-release/rev/0eae18af659f087056bce0f62a325e5e595fff72>`__
@@ -249,6 +254,11 @@ Merge central to beta
    The decision task of the resulting pushlog in the ``mozilla-beta``
    might fail in the first place with a timeout. A rerun might solve
    the problem which can be caused by an unlucky slow instance.
+
+:warning:
+   The merge day automation is **not** idempotent.
+   The merge automation task may fail and auto-retry (because of a worker shutdown, for instance).
+   If the task retries after updating the state of the repo, it will update the state of the repo again, pushing repeated commits.
 
 Re-opening the tree(s)
 ~~~~~~~~~~~~~~~~~~~~~~
