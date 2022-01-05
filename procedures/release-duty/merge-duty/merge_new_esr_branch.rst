@@ -14,6 +14,12 @@ of Firefox
 Internal changes
 ----------------
 
+For in-tree changes, grepping for the old `esrXX` (e.g. `on searchfox
+<https://searchfox.org/mozilla-central/search?q=esr91>`__) should be a good
+starting point to figure out the necessary updates.  It can also be
+useful to compare with the changes from the previous ESR bump.
+
+
 External systems
 ----------------
 
