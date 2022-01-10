@@ -172,7 +172,7 @@ Merge beta to release
    backout some tags/changesets to get back in a known state.
 
 :warning:
-   The merge day automation is **not** idempotent.
+   The merge day automation may not be idempotent.
    The merge automation task may fail and auto-retry (because of a worker shutdown, for instance).
    If the task retries after updating the state of the repo, it will update the state of the repo again, pushing repeated commits.
 
@@ -256,7 +256,7 @@ Merge central to beta
    the problem which can be caused by an unlucky slow instance.
 
 :warning:
-   The merge day automation is **not** idempotent.
+   The merge day automation may not be idempotent.
    The merge automation task may fail and auto-retry (because of a worker shutdown, for instance).
    If the task retries after updating the state of the repo, it will update the state of the repo again, pushing repeated commits.
 
