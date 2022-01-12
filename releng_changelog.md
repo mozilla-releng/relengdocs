@@ -11,6 +11,8 @@ _**As releaseduty squirrels are the ones with the best context when it comes to 
 - l10n-cross-channel-quarantine [now nukes comm/](https://bugzilla.mozilla.org/show_bug.cgi?id=1747280) at the end of the run
 - Updated puppet dependencies for mac signers
 - fixed treescript merge-automation to be idempotent
+- [RELENG-659](https://mozilla-hub.atlassian.net/browse/RELENG-659) - Py3 support on xpi/addons and updated the taskcluster version used 
+- Change ShipIt to point to xpi-manifest "main" branch
 
 ### During 96.0 >= 2021-11-01
 #### Changed
