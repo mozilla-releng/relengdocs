@@ -6,14 +6,17 @@ This page best serves the people that have previously been into the releaseduty 
 
 _**As releaseduty squirrels are the ones with the best context when it comes to releases, they are the ones to edit this page and amend it accordingly. Keep in mind that changes should be in compliance with the other pieces of documentation.**_
 
+### During 98.0 >= 2022-01-10
+#### Changed
+- [RELENG-659](https://mozilla-hub.atlassian.net/browse/RELENG-659) - Py3 support on xpi/addons and updated the taskcluster version used 
+- Change ShipIt to point to xpi-manifest "main" branch
+- Deployed new version of iscript to mac signers
+
 ### During 97.0 >= 2021-12-06
 #### Changed
 - l10n-cross-channel-quarantine [now nukes comm/](https://bugzilla.mozilla.org/show_bug.cgi?id=1747280) at the end of the run
 - Updated puppet dependencies for mac signers
 - fixed treescript merge-automation to be idempotent
-- [RELENG-659](https://mozilla-hub.atlassian.net/browse/RELENG-659) - Py3 support on xpi/addons and updated the taskcluster version used 
-- Change ShipIt to point to xpi-manifest "main" branch
-- Deployed new version of iscript to mac signers
 
 ### During 96.0 >= 2021-11-01
 #### Changed
