@@ -13,6 +13,7 @@ _**As releaseduty squirrels are the ones with the best context when it comes to 
 - fixed treescript merge-automation to be idempotent
 - [RELENG-659](https://mozilla-hub.atlassian.net/browse/RELENG-659) - Py3 support on xpi/addons and updated the taskcluster version used 
 - Change ShipIt to point to xpi-manifest "main" branch
+- Deployed new version of iscript to mac signers
 
 ### During 96.0 >= 2021-11-01
 #### Changed
