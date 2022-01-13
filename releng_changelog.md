@@ -17,6 +17,7 @@ _**As releaseduty squirrels are the ones with the best context when it comes to 
 - l10n-cross-channel-quarantine [now nukes comm/](https://bugzilla.mozilla.org/show_bug.cgi?id=1747280) at the end of the run
 - Updated puppet dependencies for mac signers
 - fixed treescript merge-automation to be idempotent
+- refactored the system addons balrog rules
 
 ### During 96.0 >= 2021-11-01
 #### Changed
