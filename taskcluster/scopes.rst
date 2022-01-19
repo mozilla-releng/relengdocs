@@ -33,7 +33,7 @@ Ci-configuration
 
 We grant scopes to clients and roles. These are defined in the `ci-configuration repo <https://hg.mozilla.org/ci/ci-configuration/>`__; view the `README <https://hg.mozilla.org/ci/ci-configuration/file/tip/README.md>`__.
 
-We test, diff, and apply these configuration changes using the `ci-admin repo <https://hg.mozilla.org/ci/ci-admin/>`__; view the `README <https://hg.mozilla.org/ci/ci-admin/file/tip/README.md>`__.
+The ci-configuration repo also contains the `ci-admin` management tool which we use to test, diff, and apply the configuration changes.
 
 Conventions
 -----------
