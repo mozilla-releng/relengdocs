@@ -31,5 +31,6 @@ Specifically for the FirefoxCI cluster.
     testing_relpro.md
     scopes
     known_problems
+    ci_admin
 
 .. vim: nospell :
