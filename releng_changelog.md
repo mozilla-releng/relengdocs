@@ -11,6 +11,7 @@ _**As releaseduty squirrels are the ones with the best context when it comes to 
 - [RELENG-659](https://mozilla-hub.atlassian.net/browse/RELENG-659) - Py3 support on xpi/addons and updated the taskcluster version used 
 - Change ShipIt to point to xpi-manifest "main" branch
 - Deployed new version of iscript to mac signers
+- Deployed balrog v3.12 to production
 
 ### During 97.0 >= 2021-12-06
 #### Changed
