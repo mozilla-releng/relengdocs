@@ -6,6 +6,8 @@ Known Problems
 This page contains some known issues with the FirefoxCI cluster, what they're
 symptoms are and how to resolve them.
 
+.. _actions_tc_yml:
+
 Actions are broken after modifying ``.taskcluster.yml``
 -------------------------------------------------------
 
@@ -22,10 +24,25 @@ Solution
 ~~~~~~~~
 
 Re-run ``ci-admin``. The easiest way is to land a change to the `ci-configuration`_
-repo, though it can also be done manually (TODO: document how to run manually). Upon
+repo, though it can also be done manually (see :ref:`ci-admin`). Upon
 deployment complete in Jenkins (see #releng-notifications), actions will be working
 again.
 
+History
+~~~~~~~
+
+We wanted to avoid action hooks having an intermediary task, a la::
+
+    hook ->
+    intermediary task clones repo, triggers hook task through .taskcluster.yml ->
+    hook task runs the desired action
+
+Instead, we went with::
+
+    hash-named hook with .taskcluster.yml baked in ->
+    hook task runs the desired action
+
+This means that whenever .taskcluster.yml changes, we need to rebuild the hooks.
 
 Missing Scopes after Branch Rename
 ----------------------------------
