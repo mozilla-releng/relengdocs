@@ -50,3 +50,8 @@ Worker-manager slowness
 -----------------------
 
 See :ref:`worker_manager_issues`.
+
+Viewing pending tasks
+---------------------
+
+You can modify `this query <https://sql.telemetry.mozilla.org/queries/78484/source>`__ to search for, say, ``windows10`` to determine why the number of pending has spiked by a thousand tasks.
