@@ -45,3 +45,13 @@ Unquarantining workers
 ----------------------
 
 Go to the worker view, e.g. `mac-v3-signing2 <https://firefox-ci-tc.services.mozilla.com/provisioners/scriptworker-prov-v1/worker-types/signing-mac-v1/workers/mdc1/mac-v3-signing2>`__. Make sure you're logged in (top right). Click on the three dots in the lower right hand corner and update the quarantine. Choose a date in the past and update the quarantine date. The worker should start claiming tasks within a minute or so if it's running and any tasks are pending.
+
+Worker-manager slowness
+-----------------------
+
+See :ref:`worker_manager_issues`.
+
+Viewing pending tasks
+---------------------
+
+You can modify `this query <https://sql.telemetry.mozilla.org/queries/78484/source>`__ to search for, say, ``windows10`` to determine why the number of pending has spiked by a thousand tasks.
