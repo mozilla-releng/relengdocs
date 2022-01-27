@@ -12,6 +12,7 @@ _**As releaseduty squirrels are the ones with the best context when it comes to 
 - Change ShipIt to point to xpi-manifest "main" branch
 - Deployed new version of iscript to mac signers
 - Deployed balrog v3.12 to production
+- Modified mac-signing releng ssh allowlist
 
 ### During 97.0 >= 2021-12-06
 #### Changed
