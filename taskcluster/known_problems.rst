@@ -69,7 +69,7 @@ Workers are spinning up slowly
 
 First, see :ref:`troubleshooting_workers`.
 
-Second, as of 2022.01.26, we have had a number of issues with worker-manager. There is a single process that goes through worker by worker to spin workers up and down on demand. The Azure workers, in particular, take a long time to spin up and down, and these processes block spinning other pools up or down. There's not much we can do here except adjust our idle times, which isn't the ideal solution. Otherwise we wait for the Taskcluster team to fix the issues::
+Second, as of 2022.01.26, we have had a number of issues with worker-manager. There is a single process that goes through worker pool by worker pool to spin workers up and down on demand. The Azure workers, in particular, take a long time to spin up and down, and these processes block spinning other pools up or down. There's not much we can do here except adjust our idle times, which isn't the ideal solution. Otherwise we wait for the Taskcluster team to fix the issues::
 
 1. `Bug 1736329 - gecko-3/decision workers not taking tasks <https://bugzilla.mozilla.org/show_bug.cgi?id=1736329>`__
 2. `Bug 1735411 - windows 2004 test worker backlog (gecko-t/win10-64-2004) <https://bugzilla.mozilla.org/show_bug.cgi?id=1735411>`__
