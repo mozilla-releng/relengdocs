@@ -10,6 +10,7 @@ More detailed information on specific ReleaseDuty topics:
     desktop/*
     mobile/*
     merge-duty/*
+    interrupt-duty
 
 ReleaseDuty is a role within the Release Engineering team. It is conducted on a rolling rotation matching one person
 against one release cycle (currently 4 weeks). Below you will find a description of the expectations and resources
@@ -60,6 +61,20 @@ You ought to be present and pay attention to conversations happening in:
 * **#releaseduty:mozilla.org** (main RelEng dedicated communication channel for releaseduty)
 * **#firefox-ci:mozilla.org**
 * **#tbdrivers:mozilla.org** (This is the Thunderbird release drivers Matrix channel. **@rjl:mozilla.org** (Rob) should be able to invite you)
+
+Relduty Notifications
+~~~~~~~~~~~~~~~~~~~~~
+
+For the duration of ReleaseDuty, you must also add ``relduty`` as a highlighted
+word in both Slack and Matrix.
+
+For Slack, go to ``Preferences -> Notifications``, then add ``relduty`` under
+the ``My keywords`` section.
+
+For Matrix, go to ``Settings -> Notifications``, then under ``Mentions &
+Keywords`` type ``relduty`` in the text box and press the ``Add`` button.
+
+You may remove both keywords once your ReleaseDuty rotation is finished.
 
 Email
 ~~~~~
