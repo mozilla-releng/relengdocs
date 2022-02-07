@@ -6,6 +6,10 @@ This page best serves the people that have previously been into the releaseduty 
 
 _**As releaseduty squirrels are the ones with the best context when it comes to releases, they are the ones to edit this page and amend it accordingly. Keep in mind that changes should be in compliance with the other pieces of documentation.**_
 
+### During 99.0 >= 2022-02-07
+#### Changed
+- 
+
 ### During 98.0 >= 2022-01-10
 #### Changed
 - [RELENG-659](https://mozilla-hub.atlassian.net/browse/RELENG-659) - Py3 support on xpi/addons and updated the taskcluster version used 
