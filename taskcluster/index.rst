@@ -32,5 +32,6 @@ Specifically for the FirefoxCI cluster.
     scopes
     known_problems
     ci_admin
+    tc_staging
 
 .. vim: nospell :
