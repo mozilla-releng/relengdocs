@@ -33,5 +33,6 @@ Specifically for the FirefoxCI cluster.
     known_problems
     ci_admin
     tc_staging
+    how_tasks_are_triggered
 
 .. vim: nospell :
