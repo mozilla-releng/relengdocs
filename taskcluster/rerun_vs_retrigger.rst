@@ -105,7 +105,16 @@ Deadline-exceeded leaf node release tasks
 
 If a release task has failed and passed its (generally 1 day) deadline,
 and it’s a leaf node (e.g., not in the middle of a complex release
-graph) and we still want to run it, we can force retrigger via actions.
+graph) that doesn't depend on any upstream artifacts from previous
+relpro phases, and we still want to run it, we can force retrigger via
+actions.
+
+.. Warning::
+
+   If this is in a post-build phase graph (e.g. promote, push, ship),
+   the retrigger won't know of the existence of the on-push dependencies and
+   will recreate them. This is probably not what you want.
+   You probably want :ref:`advanced-relpro-usage`.
 
 .. Important::
 
@@ -114,8 +123,9 @@ graph) and we still want to run it, we can force retrigger via actions.
    on their output, this can result in a huge mess, and we’re better
    off either going with a build 2 or resorting to
    :ref:`advanced-relpro-usage`. Only use this approach for leaf nodes
-   that don't have downstream dependent tasks that depend on artifacts
-   from the current task, once they've passed their deadline.
+   that don't rely on previous phase artifacts, and don't have
+   downstream dependent tasks that depend on artifacts from the current
+   task, once they've passed their deadline.
 
 -  Go to the task in the taskcluster UI
 -  Make sure you’re logged in, top right
