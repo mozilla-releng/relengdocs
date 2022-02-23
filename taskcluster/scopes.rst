@@ -17,17 +17,6 @@ And the required scopes are::
 
 Then you have the required scopes. However, if you need ``a-little-bit-secret/something-else``, you don't have the required scopes.
 
-Delimiters
-----------
-
-Colons ``:`` are delimiters for the official platform defined scopes and scope prefixes. We also use dashes ``-`` and slashes ``/`` as word delimiters in the user-defined portions of the scope strings. (Also, periods ``.`` for index delimiters.) If you define a scope pattern with a trailing asterisk ``*``, it's best practice to append the asterisk after a word delimiter::
-
-    queue:get-artifact:releng/super-sekrit/*
-
-rather than::
-
-    queue:get-artifact:releng/super-sekrit*
-
 Ci-configuration
 ----------------
 
@@ -37,6 +26,17 @@ The ci-configuration repo also contains the `ci-admin` management tool which we 
 
 Conventions
 -----------
+
+Delimiters
+~~~~~~~~~~
+
+Colons ``:`` are delimiters for the official platform defined scopes and scope prefixes. We also use dashes ``-`` and slashes ``/`` as word delimiters in the user-defined portions of the scope strings. (Also, periods ``.`` for index delimiters.) If you define a scope pattern with a trailing asterisk ``*``, it's best practice to append the asterisk after a word delimiter::
+
+    queue:get-artifact:releng/super-sekrit/*
+
+rather than::
+
+    queue:get-artifact:releng/super-sekrit*
 
 Groups / teams
 ~~~~~~~~~~~~~~
