@@ -100,6 +100,8 @@ the artifacts are used by downstream tasks), it’s possible to let the
 dependent tasks run anyway with a ``cancel`` followed by ``rerun``,
 after making sure all other dependencies completed successfully.
 
+.. _deadline_exceeded_release_task_retrigger:
+
 Deadline-exceeded leaf node release tasks
 -----------------------------------------
 
