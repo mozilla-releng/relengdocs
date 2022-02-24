@@ -1,3 +1,5 @@
+.. _how_tasks_are_triggered:
+
 How Tasks are Triggered
 =======================
 
