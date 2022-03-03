@@ -9,6 +9,7 @@ _**As releaseduty squirrels are the ones with the best context when it comes to 
 ### During 99.0 >= 2022-02-07
 #### Changed
 - Minor [refactor to release_artifacts](https://hg.mozilla.org/integration/autoland/rev/28ac458827ee72c2d212cb8c0796ac907f4268b7) in `gecko_taskgraph`
+- Re-imaged mac-v1-signing3 and mac-v1-signing8. Quarantined mac-v1-signing19 for MozillaVPN work.
 
 ### During 98.0 >= 2022-01-10
 #### Changed
