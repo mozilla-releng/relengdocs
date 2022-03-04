@@ -8,6 +8,10 @@ _**As releaseduty squirrels are the ones with the best context when it comes to 
 
 ### During 99.0 >= 2022-02-07
 #### Changed
+- Internal pypi uploads for numpy/scipy/pillow, bug 1757792
+- Deployed pollbot v1.4.7 to production
+- Deployed balrog v3.14 to production
+- Deployed balrog v3.13 to production
 - Minor [refactor to release_artifacts](https://hg.mozilla.org/integration/autoland/rev/28ac458827ee72c2d212cb8c0796ac907f4268b7) in `gecko_taskgraph`
 - Re-imaged mac-v1-signing3 and mac-v1-signing8. Quarantined mac-v1-signing19 for MozillaVPN work.
 
