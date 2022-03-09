@@ -125,16 +125,44 @@ Monitor the build-decision task
 
 Once this goes green, the logs will link you to the decision task ID.
 
-However, as of 2022.02.14, we're currently hitting the error ``Error calling AWS API: Not authorized for images: [ami-0fd21b9566eba5684]`` in `worker-manager <https://stage.taskcluster.nonprod.cloudops.mozgcp.net/worker-manager/infra%2Fbuild-decision/errors>`__.
+Watch the task group. Ideally whatever you're concerned about (in this case it was docker-worker artifact uploads) will go green.
 
-Searching for that AMI ID, we find `this block <https://hg.mozilla.org/ci/ci-configuration/file/6fe523e45de458bc8127b6c7d92e0582004f0a23/worker-images.yml#l161>`__ which points at `this bug <https://bugzilla.mozilla.org/show_bug.cgi?id=1676214>`__, and raises the following questions:
+Known issues
+------------
 
-- Should we copy AMIs from one account to another?
+Missing AMIs
+~~~~~~~~~~~~
 
-  - Are we even able to copy AMIs from one account to another?
+If you hit an error like ``Error calling AWS API: Not authorized for images: [ami-0fd21b9566eba5684]`` in `worker-manager <https://stage.taskcluster.nonprod.cloudops.mozgcp.net/worker-manager/infra%2Fbuild-decision/errors>`__, we probably need to share AMIs from the production FirefoxCI cluster to the staging cluster.
 
-  - If so, should we copy all AMIs or just the non-trusted ones?
+Pete was able to share them using `these steps <https://mozilla-hub.atlassian.net/browse/FCP-53?focusedCommentId=520218>`__. If we automate this, we may want to use the `ci-config ami list <https://hg.mozilla.org/ci/ci-configuration/file/tip/worker-images.yml>`__ instead. We may future this work, since we may be able to share these AMIs when recreating them, and we may not recreate them frequently before migrating to GCP.
 
-    - Should we be replaying a mozilla-central push or some other branch? Either way we'll need build-decision to run, but by replaying a level 3 repo, we may have to rely on trusted AMIs with the Chain of Trust private key, which we may not want to live in the staging cluster.
+Scriptworkers
+~~~~~~~~~~~~~
 
-  - If not, do we have to generate AMIs in staging that correspond to the fxci ones? How do we know if errors are due to cluster configs or AMI differences?
+We don't have scriptworkers pointed at the staging cluster, nor do we want to create those pools. That means that any scriptworker tasks will expire without being claimed, and downstreams won't run.
+
+Secrets
+~~~~~~~
+
+Some tasks in the m-c graph need secrets to run. I was able to get a set of secrets scopes from taskgraph, as of 2022-02-28::
+
+    secrets:get:gecko/gfx-github-sync/token
+    secrets:get:project/engwf/gecko/3/tokens
+    secrets:get:project/perftest/gecko/level-3/perftest-login
+    secrets:get:project/releng/gecko/build/level-3/*
+    secrets:get:project/releng/gecko/build/level-3/conditioned-profiles
+    secrets:get:project/releng/gecko/build/level-3/conditioned-profiles
+    secrets:get:project/releng/gecko/build/level-3/gecko-docs-upload
+    secrets:get:project/releng/gecko/build/level-3/gecko-generated-sources-upload
+    secrets:get:project/releng/gecko/build/level-3/gecko-symbol-upload
+    secrets:get:project/taskcluster/gecko/hgfingerprint
+    secrets:get:project/taskcluster/gecko/hgmointernal
+
+It's possible we just need the ``gecko/build`` and ``taskcluster/gecko/hg*`` secrets.
+
+`This script <https://hg.mozilla.org/build/braindump/file/tip/taskcluster/copy_secrets_to_staging.py>`__ copies that subset of secrets from fxci to staging. We need to do the following to use it::
+
+- run an RRA to assess the risk
+- make sure we document that the security of the staging cluster is important
+- set the ``NOOP`` boolean to ``False`` in the script
