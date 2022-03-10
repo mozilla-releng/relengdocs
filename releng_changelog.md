@@ -7,6 +7,7 @@ This page best serves the people that have previously been into the releaseduty 
 _**As releaseduty squirrels are the ones with the best context when it comes to releases, they are the ones to edit this page and amend it accordingly. Keep in mind that changes should be in compliance with the other pieces of documentation.**_
 
 ### During 100.0 >= 2022-03-08
+- FirefoxCI cluster upgraded from [43.2.0 -> 44.8.1](https://github.com/taskcluster/taskcluster/blob/main/CHANGELOG.md)
 
 ### During 99.0 >= 2022-02-07
 #### Changed
