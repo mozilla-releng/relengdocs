@@ -46,9 +46,15 @@ Join Mozilla's Slack network using information from `the wiki <https://wiki.mozi
 
 You ought to be present and pay attention to conversations happening in:
 
+* **#proclient-qa-coordination** (where pinebuild promotion requests are made)
 * **#releaseduty-mobile** (where `mobile` and other Github releng-backedup automation projects's teams raise issues)
 * **#releng-notifications** (where automation notifications are going, useful to know the state of our automation infrastructure state)
 * **#taskcluster-cloudops** (where CloudOps double-checks with RelEng whether it's safe to deploy changes or not on their side)
+
+Optionally, you may want to monitor these channels also:
+
+* **#incidents**
+* **#release-coordination**
 
 Matrix Channels
 ~~~~~~~~~~~~~~~
