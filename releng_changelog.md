@@ -9,6 +9,8 @@ _**As releaseduty squirrels are the ones with the best context when it comes to 
 ### During 100.0 >= 2022-03-08
 - FirefoxCI cluster upgraded from [43.2.0 -> 44.8.1](https://github.com/taskcluster/taskcluster/blob/main/CHANGELOG.md)
 - `beetmover-geckoview` jobs (copying geckoview artifacts to maven) now [run as part of the `promote_firefox` graphs](https://bugzilla.mozilla.org/1758507) on release and beta instead of `push_firefox`
+- Switched SENTRY_DSN for Balrog -> sentry.io
+- SHA-256 signing of Windows Installers, bug 1745467
 
 ### During 99.0 >= 2022-02-07
 #### Changed
