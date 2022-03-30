@@ -90,4 +90,22 @@ Taskcluster-github `listens to Github events, directly parses .taskcluster.yml, 
 
 We may want to revisit whether we want the app to do this, or if we want an intermediate `build-decision`_ task in between.
 
+Side note: ``taskcluster_yml_repo``
+-----------------------------------
+
+In `Releng-RFC 36`_ we are trying to enable standard build/test workflows without having to land custom code in a given repository.
+
+One feature we already support in ci-configuration is ``taskcluster_yml_repo``. Before we combined the ci-configuration and ci-admin repos, ci-configuration specified ci-admin as its `taskcluster_yml_project <https://hg.mozilla.org/ci/ci-configuration/file/87e2deddad4df117704e77113aeceff533a5f1d0/projects.yml#l410>`__. We refer to this in the `ciadmin.generate.hg_pushes.make_hook function <https://hg.mozilla.org/ci/ci-configuration/file/7e8c1a39f2b3fb40ca19b0a5da39834fd3f6f32d/src/ciadmin/generate/hg_pushes.py#l20>`__; the `build-decision hg-push cli <https://hg.mozilla.org/ci/ci-configuration/file/7e8c1a39f2b3fb40ca19b0a5da39834fd3f6f32d/build-decision/src/build_decision/cli.py#l52>`__ supports that; the `build_decision.hg_push.build_decision function <https://hg.mozilla.org/ci/ci-configuration/file/7e8c1a39f2b3fb40ca19b0a5da39834fd3f6f32d/build-decision/src/build_decision/hg_push.py#l56>`__ then specifies the ``taskcluster_yml_repo``'s .taskcluster.yml as the URL to use to render the decision task.
+
+This is pretty great: it's already supported; if you download the ``.taskcluster.yml`` from another repo, you can also clone it and use its ``taskcluster/`` directory; and if we didn't mind multiple template repos, we could create a ``taskcluster_yml_repo`` for every build/test workflow we want to support in a generic way.
+
+**However.** There are caveats:
+
+- ``taskcluster_yml_repo`` and ``taskcluster_yml_project`` are only supported in hg.m.o projects. If we want to support these fully across all types of projects, we need to support all of the above ways of triggering decision/action/cron tasks, or the unsupported way won't know how to find the appropriate ``.taskcluster.yml`` file and will fail. We only support the hg-push, build-decision workflow with ``taskcluster_yml_repo`` currently.
+
+- Once we get that working, we have to figure out how we refer to arbitrary repos in the shared ``.taskcluster.yml`` and possibly ``taskcluster.ci.config``. This may be simple: we were able to use ``${repoUrl}`` and ``${push.revision}`` in the `shared ci-admin .tc.yml <https://hg.mozilla.org/ci/ci-admin/file/949eacedadb887cc3ec16b6d42c5217504e9fb40/.taskcluster.yml#l128>`__, but we also listed it under our `taskcluster.ci.config.taskgraph.repositories <https://hg.mozilla.org/ci/ci-admin/file/949eacedadb887cc3ec16b6d42c5217504e9fb40/taskcluster/ci/config.yml#l18>`__. Perhaps this isn't a worry for level 1 repos: `xpi-template doesn't list each downstream repo <https://github.com/mozilla-extensions/xpi-template/blob/9aaf04af8ffcd5eed19d72dfe7e92d78f5c65f76/taskcluster/ci/config.yml#L9-L18>`__, but we needed to in `xpi-manifest <https://github.com/mozilla-extensions/xpi-manifest/blob/55c0e160134ff5e4a90b478ae383f76780bdb014/taskcluster/ci/config.yml#L8-L119>`__.
+
+Depending on the answers to the above, ``taskcluster_yml_repo`` could be a good stopgap solution or a stepping stone on the way to `Releng-RFC 36`_.
+
 .. _`build-decision`: https://hg.mozilla.org/ci/ci-configuration/file/tip/build-decision
+.. _`Releng-RFC 36`: https://github.com/mozilla-releng/releng-rfcs/pull/36
