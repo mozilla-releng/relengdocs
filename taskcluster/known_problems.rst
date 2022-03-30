@@ -62,6 +62,42 @@ Scan the `ci-configuration`_ repo for your project and see if we were granting
 any special scopes to the old branch. If so, update the name to the new
 branch and land.
 
+.. _missing mercurial features:
+
+Missing Mercurial features when Cloning the Repo
+------------------------------------------------
+
+Symptoms
+~~~~~~~~
+
+After updating the version of Mercurial used on newer branches, tasks on older
+branches might start failing with errors like:
+
+.. parsed-literal::
+   abort: repository requires features unknown to this Mercurial: revlog-compression-zstd!
+
+This happens because repos cloned via newer versions of Mercurial are often
+incompatible with older versions of Mercurial. Since workers have a shared
+checkout cache between tasks, if a worker first claims a task on e.g,
+`mozilla-central`, clones the repo, and then claims a task on
+`mozilla-release`, the latter task might fail if it is using an older
+Mercurial.
+
+Solution
+~~~~~~~~
+
+The solution is to increment the cache identifier associated with the checkout
+cache. For example, the Gecko decision tasks use `this cache name`_. Changing
+the name (e.g incrementing `v2` -> `v3`), will ensure workers don't re-use the
+same cache across disparate branches.
+
+The downside to doing this is that tasks on older branches with less traffic
+will have more cache misses, resulting in longer runtimes which could impact
+our ability to ship expediently. To mitigate this, consider backporting the
+image bump that caused the Mercurial upgrade to beta, release and esr branches.
+
+.. _this cache name: https://searchfox.org/mozilla-central/rev/1ca8ea11406642df4a2c6f81f21d683817af568d/.taskcluster.yml#217
+
 .. _worker_manager_issues:
 
 Workers are spinning up slowly
