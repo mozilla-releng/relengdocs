@@ -64,3 +64,11 @@ can load them. The procedure is similar to the one above.
 
 5. Check the digests match (see above)
 6. Land the change in-tree. `See this example <https://github.com/mozilla-mobile/fenix/pull/16361/files#diff-a728f7e52d751b98eafa856e45594533339b44f229d7b83f930df335391e7e15R246>`__
+
+.. warning::
+
+   If uploading an image that bumps the version of Mercurial being used, make
+   sure to bump the `checkout cache version`_. See :ref:`missing Mercurial
+   features` for more information.
+
+.. _checkout cache version: https://searchfox.org/mozilla-central/rev/1ca8ea11406642df4a2c6f81f21d683817af568d/.taskcluster.yml#217
