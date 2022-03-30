@@ -11,6 +11,7 @@ _**As releaseduty squirrels are the ones with the best context when it comes to 
 - `beetmover-geckoview` jobs (copying geckoview artifacts to maven) now [run as part of the `promote_firefox` graphs](https://bugzilla.mozilla.org/1758507) on release and beta instead of `push_firefox`
 - Switched SENTRY_DSN for Balrog -> sentry.io
 - SHA-256 signing of Windows Installers, bug 1745467
+- Treescript merge day CLOBBER datestring
 
 ### During 99.0 >= 2022-02-07
 #### Changed
@@ -20,6 +21,7 @@ _**As releaseduty squirrels are the ones with the best context when it comes to 
 - Deployed balrog v3.13 to production
 - Minor [refactor to release_artifacts](https://hg.mozilla.org/integration/autoland/rev/28ac458827ee72c2d212cb8c0796ac907f4268b7) in `gecko_taskgraph`
 - Re-imaged mac-v1-signing3 and mac-v1-signing8. Quarantined mac-v1-signing19 for MozillaVPN work.
+- Signingscript retries for winsign (timestamp.digicert.com), bug 1590599
 
 ### During 98.0 >= 2022-01-10
 #### Changed
