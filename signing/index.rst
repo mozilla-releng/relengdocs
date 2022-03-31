@@ -14,3 +14,4 @@ Contents:
     rotate_gpg_signing_key
     notarization
     adhoc_signing
+    inventory_and_safe
