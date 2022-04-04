@@ -171,11 +171,6 @@ Merge beta to release
    this command (or the no-op one) correctly. You may need to publicly
    backout some tags/changesets to get back in a known state.
 
-:warning:
-   The merge day automation may not be idempotent.
-   The merge automation task may fail and auto-retry (because of a worker shutdown, for instance).
-   If the task retries after updating the state of the repo, it will update the state of the repo again, pushing repeated commits.
-
 1. Upon successful run, ``mozilla-release`` should get a version bump
    and branding changes consisting of a ``commit`` like
    `this <https://hg.mozilla.org/releases/mozilla-release/rev/0eae18af659f087056bce0f62a325e5e595fff72>`__
@@ -402,3 +397,12 @@ Close migration bug, file one for the next release
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Once release is out of the door on Tuesday, close the existing bug tracking this release, from `initial step <#assign-migration-bug>`__ and clone that bug into a similar one,
 tracking the next release. Please CC all the RelEng team. One can find the next release date in `Release owners <https://wiki.mozilla.org/Release_Management/Release_owners>`__.
+
+
+Historical issues
+-----------------
+
+The merge day automation may not be idempotent
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The merge automation task may fail and auto-retry (because of a worker shutdown, for instance).
+If the task retries after updating the state of the repo, it will update the state of the repo again, pushing repeated commits.
