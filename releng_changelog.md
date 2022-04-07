@@ -8,6 +8,7 @@ _**As releaseduty squirrels are the ones with the best context when it comes to 
 
 
 ### During 101.0 >= 2022-05-03
+- Updated Mac certificates on all prod mac hosts. + Nightly builds now use the same keychain file as release.
 
 
 ### During 100.0 >= 2022-03-08
