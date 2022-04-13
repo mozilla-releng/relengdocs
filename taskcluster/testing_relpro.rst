@@ -35,7 +35,7 @@ As of this writing (2021.10.06) Gecko actions are all defined in the
 `actions
 directory <https://searchfox.org/mozilla-central/source/taskcluster/gecko_taskgraph/actions>`__
 in-Gecko-tree. Standalone taskgraph actions are either defined `in
-taskgraph <https://hg.mozilla.org/ci/taskgraph/file/tip/src/taskgraph/actions>`__
+taskgraph <https://github.com/taskcluster/taskgraph/tree/main/src/taskgraph/actions>`__
 or in each repo (e.g. `Fenix
 relpro <https://github.com/mozilla-mobile/fenix/blob/main/taskcluster/fenix_taskgraph/release_promotion.py>`__)
 
