@@ -1,3 +1,5 @@
+.. _tc_staging:
+
 Taskcluster Staging
 ===================
 
