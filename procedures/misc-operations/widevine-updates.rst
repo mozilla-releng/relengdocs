@@ -74,10 +74,10 @@ Create the blob
 
 Unlike Firefox, no automation creates a blob. Nor do we have a script
 (patch welcome!) to generate one. Therefore we need to create a new
-blob. The easiest way to do this is to download the most recent
-release blob,
-e.g.\ `Widevine-1.4.9.1088 <https://aus4-admin.mozilla.org/releases/Widevine-1.4.9.1088>`__.
-Then open in an editor. It's small and should be like:
+blob based on the most recent release. You can view existing releases at
+https://balrog.services.mozilla.com/releases. Then download the most recent blob:
+e.g.\ `Widevine-4.10.2391.0 <https://aus4-admin.mozilla.org/releases/Widevine-4.10.2391.0>`__.
+and open the downloaded blob in an editor. It's small and should be like:
 
 .. code:: json
 
@@ -141,31 +141,45 @@ Then open in an editor. It's small and should be like:
      }
    }
 
-From the above, edit the ``name``, ``version`` to match the current new
+From the above, edit the ``name`` and ``version`` to match the new
 version. Then under each platform, update the ``hashValue``,
 ``filesize``, and ``fileUrl`` based on the values provided to you in the
 widevine tracking bug. e.g. `bug
-1475260 <https://bugzilla.mozilla.org/show_bug.cgi?id=1475260#c0>`__.
+1758423 <https://bugzilla.mozilla.org/show_bug.cgi?id=1758423>`__.
+Save the new blob as a .json file.
 
-Finally, save that new release blob, upload it to Balrog via the “Add
-new release” button within https://aus4-admin.mozilla.org/releases, and
-save the release blob name to match the new version the blob is based
-on.
+Create the Balrog release
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Create the balrog rule
+Create a new release and upload the new blob to Balrog:
+    - on https://balrog.services.mozilla.com/releases click the “Add new release” button;
+    - on the Create Release page, select "Widevine" as the Product;
+    - on the Create Release page, click "Upload Release" and select the file containing the new release blob;
+    - verify that the new release blob has been uploaded and the "Release" name correctly identifies the release (eg. "Widevine-4.10.2391.0");
+    - on the Create Release page, click "Create Release" button in the lower right to create the release.
+
+Create the Balrog rule
 ~~~~~~~~~~~~~~~~~~~~~~
+
+Create a new rule to use the release you just created:
+    - on https://balrog.services.mozilla.com/rules click the “Add Rule" button
+    - on the Create Rule page, set Product = "Widevine", Channel = "nightlytest" (or as needed), Mapping = the release you just created, Background Rate = 100 (or as needed), and set the Priority as needed, typically the lowest priority for the default rule.
+    - on the Create Rule page, click "Create Rule" button in the lower right to create the rule.
+
+See https://mozilla-balrog.readthedocs.io/en/latest/database.html for
+general guidance on rule matching.
 
 Unlike Firefox updates, Widevine ones all happen in the same channel
 (except for the nightlytest, the internal testing channel). This means
 users are given a new widevine based on their Firefox version. For
-instance: if we provide a new widevine to 62.0 at the time 62.0b15
-ships, then users with 62.0b1-b14 will also get this version. Make sure
+instance: if we provide a new widevine to 98.0 at the time 98.0b15
+ships, then users with 98.0b1-b14 will also get this version. Make sure
 with the media team these betas are compatible! In the case it's not,
 please remember Firefox doesn't send which beta it's on to Balrog. You
 have to filter out based on the version **and** the buildID (the buildID
-alone doesn't work if a 61 dot release happens afterwards).
+alone doesn't work if a 97 dot release happens afterwards).
 
-In the end, a rule looks that filters on both like this one: |Balrog
+In the end, a rule that filters on both looks like this one: |Balrog
 rule|
 
 Testing
@@ -173,10 +187,10 @@ Testing
 
 You can use the nightlytest channel to test changes before sending them
 to production. A widevine request to balrog is like this one:
-https://aus5.mozilla.org/update/3/GMP/62.0/20180802174131/WINNT_x86_64-msvc-x64/en-US/nightlytest/default/default/default/update.xml
+https://aus5.mozilla.org/update/3/GMP/98.0/20180802174131/WINNT_x86_64-msvc-x64/en-US/nightlytest/default/default/default/update.xml
 
 :warning:
-  Reminder: In this URL, 62.0 can't be 62.0b14. Even though it
+  Reminder: In this URL, 98.0 can't be 98.0b14. Even though it
   works from Balrog's point of view, Firefox doesn't send this piece of
   data.
 
