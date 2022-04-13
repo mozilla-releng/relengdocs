@@ -5,6 +5,11 @@ Mozilla has three Taskcluster clusters: firefoxci, staging, and
 community. Release Engineering only deals with the first two; any
 Releng-supported tasks need to run in the firefoxci cluster.
 
+When to run these steps
+-----------------------
+
+Generally, the amount of testing we get in unit tests and the Staging, Community clusters is sufficient. We only really need to test FirefoxCI tasks in Staging for major Taskcluster version upgrades or other significant migrations or changes.
+
 Setup
 -----
 
@@ -77,6 +82,29 @@ You'll need :ref:`taskcluster_cli` for this.
    # Apply changes to the staging taskcluster cluster
    ci-admin apply --environment staging 2>&1 | tee staging.out
 
+Copy secrets to the Staging cluster
+-----------------------------------
+
+Some tasks in the m-c graph need secrets to run. I was able to get a set of secrets scopes from taskgraph, as of 2022-02-28::
+
+    secrets:get:gecko/gfx-github-sync/token
+    secrets:get:project/engwf/gecko/3/tokens
+    secrets:get:project/perftest/gecko/level-3/perftest-login
+    secrets:get:project/releng/gecko/build/level-3/*
+    secrets:get:project/releng/gecko/build/level-3/conditioned-profiles
+    secrets:get:project/releng/gecko/build/level-3/conditioned-profiles
+    secrets:get:project/releng/gecko/build/level-3/gecko-docs-upload
+    secrets:get:project/releng/gecko/build/level-3/gecko-generated-sources-upload
+    secrets:get:project/releng/gecko/build/level-3/gecko-symbol-upload
+    secrets:get:project/taskcluster/gecko/hgfingerprint
+    secrets:get:project/taskcluster/gecko/hgmointernal
+
+It's possible we just need the ``gecko/build`` and ``taskcluster/gecko/hg*`` secrets.
+
+`This script <https://hg.mozilla.org/build/braindump/file/tip/taskcluster/copy_secrets_to_staging.py>`__ copies that subset of secrets from fxci to staging. We need to do the following to use it::
+
+- set the ``NOOP`` boolean to ``False`` in the script
+
 Run fxci to send mozilla-central tasks to the staging cluster
 -------------------------------------------------------------
 
@@ -141,28 +169,3 @@ Scriptworkers
 ~~~~~~~~~~~~~
 
 We don't have scriptworkers pointed at the staging cluster, nor do we want to create those pools. That means that any scriptworker tasks will expire without being claimed, and downstreams won't run.
-
-Secrets
-~~~~~~~
-
-Some tasks in the m-c graph need secrets to run. I was able to get a set of secrets scopes from taskgraph, as of 2022-02-28::
-
-    secrets:get:gecko/gfx-github-sync/token
-    secrets:get:project/engwf/gecko/3/tokens
-    secrets:get:project/perftest/gecko/level-3/perftest-login
-    secrets:get:project/releng/gecko/build/level-3/*
-    secrets:get:project/releng/gecko/build/level-3/conditioned-profiles
-    secrets:get:project/releng/gecko/build/level-3/conditioned-profiles
-    secrets:get:project/releng/gecko/build/level-3/gecko-docs-upload
-    secrets:get:project/releng/gecko/build/level-3/gecko-generated-sources-upload
-    secrets:get:project/releng/gecko/build/level-3/gecko-symbol-upload
-    secrets:get:project/taskcluster/gecko/hgfingerprint
-    secrets:get:project/taskcluster/gecko/hgmointernal
-
-It's possible we just need the ``gecko/build`` and ``taskcluster/gecko/hg*`` secrets.
-
-`This script <https://hg.mozilla.org/build/braindump/file/tip/taskcluster/copy_secrets_to_staging.py>`__ copies that subset of secrets from fxci to staging. We need to do the following to use it::
-
-- run an RRA to assess the risk
-- make sure we document that the security of the staging cluster is important
-- set the ``NOOP`` boolean to ``False`` in the script
