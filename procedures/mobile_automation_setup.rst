@@ -231,7 +231,7 @@ How to set up taskgraph for mobile
 
 Setting up taskgraph for mobile is similar to setting up taskgraph for any
 standalone project, especially github standalone projects: install
-`taskgraph <https://hg.mozilla.org/ci/taskgraph>`__ in a virtualenv.
+`taskgraph <https://github.com/taskcluster/taskgraph>`__ in a virtualenv.
 
 ⚠️ You shouldn't install ``gradle`` globally on your system. The `./gradlew` scripts in each mobile repo define
 specific gradle versions and are in charge of installing it locally.
