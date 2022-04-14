@@ -9,7 +9,7 @@ _**As releaseduty squirrels are the ones with the best context when it comes to 
 
 ### During 101.0 >= 2022-05-03
 - Updated Mac certificates on all prod mac hosts. + Nightly builds now use the same keychain file as release.
-
+- FirefoxCI cluster upgraded from Taskcluster 44.8.4 to 44.11.1; Postgres DB instance doubled in RAM.
 
 ### During 100.0 >= 2022-03-08
 - Deployed Balrog v3.16 to production
