@@ -1,14 +1,14 @@
 Widevine updates
 ================
 
-Widevine is a system addon allowing Firefox user to read DRM'd content
+Widevine is a system addon allowing Firefox users to read DRM'd content
 (like Netflix). We provide updates via Balrog.
 
 When
 ----
 
 The request comes from the media team. They usually file a bug like
-`this one. <https://bugzilla.mozilla.org/show_bug.cgi?id=1475260>`__
+`this one. <https://bugzilla.mozilla.org/show_bug.cgi?id=1758423>`__
 
 Sometimes updates must be done because Google (the owner of Widevine)
 deprecates a version that still may be used by a supported Firefox
@@ -74,46 +74,49 @@ Create the blob
 
 Unlike Firefox, no automation creates a blob. Nor do we have a script
 (patch welcome!) to generate one. Therefore we need to create a new
-blob. The easiest way to do this is to download the most previous
-release blob,
-e.g.\ `Widevine-1.4.9.1088 <https://aus4-admin.mozilla.org/releases#Widevine-1.4.9.1088>`__.
-Then open in an editor. It's small and should be like:
+blob based on the most recent release. You can view existing releases at
+https://balrog.services.mozilla.com/releases. Then download the most recent blob:
+e.g.\ `Widevine-4.10.2391.0 <https://aus4-admin.mozilla.org/releases/Widevine-4.10.2391.0>`__.
+and open the downloaded blob in an editor. It's small and should be like:
 
 .. code:: json
 
    {
      "hashFunction": "sha512",
-     "name": "Widevine-1.4.9.1088",
+     "name": "Widevine-4.10.2391.0",
      "product": "Widevine",
      "schema_version": 1000,
      "vendors": {
        "gmp-widevinecdm": {
          "platforms": {
+           "Darwin_aarch64-gcc3": {
+             "fileUrl": "https://redirector.gvt1.com/edgedl/widevine-cdm/4.10.2391.0-mac-arm64.zip",
+             "filesize": 6511203,
+             "hashValue": "041a9bbe89160f604d72db92fc9c1fdce75d528706245c837d4d0ea71e96c1b5106e512ca37e075373ceaeda64e6dd42e02889edaee8dc3077718620a16b4f2e"
+           },
            "Darwin_x86_64-gcc3": {
              "alias": "Darwin_x86_64-gcc3-u-i386-x86_64"
            },
            "Darwin_x86_64-gcc3-u-i386-x86_64": {
-             "fileUrl": "https://redirector.gvt1.com/edgedl/widevine-cdm/1.4.9.1088-mac-x64.zip",
-             "filesize": 3220735,
-             "hashValue": "79cde6f9457f1b46f03ba5baade0852ad2a7d640930c3229a750deb37b5061a9e75e8d6410a138bbdd7c871f8310476ad4a6f295cd05235ea9f392de339ff83c"
-           },
-           "Linux_x86-gcc3": {
-             "fileUrl": "https://redirector.gvt1.com/edgedl/widevine-cdm/1.4.9.1088-linux-ia32.zip",
-             "filesize": 3062013,
-             "hashValue": "fb0207c6e24c05144ed345a6e37afc8e7bc2700c9bc4b536fa23503f08f2d258e10c4f1ef40f6ed0d6d8eaf495dbdcc924e71314cc1858f81fe6208cd210e8b5"
+             "fileUrl": "https://redirector.gvt1.com/edgedl/widevine-cdm/4.10.2391.0-mac-x64.zip",
+             "filesize": 6942023,
+             "hashValue": "2cf195a99dd13019c2f29e036f98e10905d1472f013970bd8b2f0ff65fe2b20a9058570c57b3595c1b9824326ac11a185a80008d618c673736323355345d69fe"
            },
            "Linux_x86_64-gcc3": {
-             "fileUrl": "https://redirector.gvt1.com/edgedl/widevine-cdm/1.4.9.1088-linux-x64.zip",
-             "filesize": 2921375,
-             "hashValue": "8038d142f14b8992db282003ed7bd7fcb6a11c556fdfe34d410d017c3d8d792c24f38a24f6f65fea1a979a4c697f50cca826d8a28ae4fa9740512c3291d52aaf"
+             "fileUrl": "https://redirector.gvt1.com/edgedl/widevine-cdm/4.10.2391.0-linux-x64.zip",
+             "filesize": 6328796,
+             "hashValue": "8ce16faae96274e1f5ec63f6f543fa33ab3b7d469e59fac2d8b45cb27d3c95820cf80cd362d6e972a1c3c27e5c1b28c018fbdc2bb7df50f095391a646e277a99"
            },
            "Linux_x86_64-gcc3-asan": {
              "alias": "Linux_x86_64-gcc3"
            },
+           "WINNT_aarch64-msvc-aarch64": {
+             "alias": "WINNT_x86-msvc"
+           },
            "WINNT_x86-msvc": {
-             "fileUrl": "https://redirector.gvt1.com/edgedl/widevine-cdm/1.4.9.1088-win-ia32.zip",
-             "filesize": 3389392,
-             "hashValue": "8e115f3f941663ac052570191acca09cb025388f82b232df5770aeb1781a611f002226de244ddd1b75553bbb5154068dca8913465b2c27ea28a1b4cae8359682"
+             "fileUrl": "https://redirector.gvt1.com/edgedl/widevine-cdm/4.10.2391.0-win-ia32.zip",
+             "filesize": 6331242,
+             "hashValue": "24569de210f6a6d47daf0e64441f0c575dcbb23e5ff2fcb705edcd6e0fce9378caafd84e81a1c0efd25056a686ab8cb47855f43230ee37ddabc97453b72024ff"
            },
            "WINNT_x86-msvc-x64": {
              "alias": "WINNT_x86-msvc"
@@ -122,44 +125,61 @@ Then open in an editor. It's small and should be like:
              "alias": "WINNT_x86-msvc"
            },
            "WINNT_x86_64-msvc": {
-             "fileUrl": "https://redirector.gvt1.com/edgedl/widevine-cdm/1.4.9.1088-win-x64.zip",
-             "filesize": 3351002,
-             "hashValue": "48b25b1a89ac07fa041c17ff4ae6ac43171a69a7fdcb226c09150b8ecc824dc3a7fa2f2a9f607c35fb5e1e234cfc0bd717a9a48883fc8084ac0743f2e695bbf8"
+             "fileUrl": "https://redirector.gvt1.com/edgedl/widevine-cdm/4.10.2391.0-win-x64.zip",
+             "filesize": 6537814,
+             "hashValue": "81b2329d38a9370afc490db805a05c4b506b113ebd00f4e488bca97fd96267d92cb477e3a635880464ca66ed32f448e46ad3645f6af072547b5f09100db2bf74"
            },
            "WINNT_x86_64-msvc-x64": {
              "alias": "WINNT_x86_64-msvc"
+           },
+           "WINNT_x86_64-msvc-x64-asan": {
+             "alias": "WINNT_x86_64-msvc"
            }
          },
-         "version": "1.4.9.1088"
+         "version": "4.10.2391.0"
        }
      }
    }
 
-From the above, edit the ``name``, ``version`` to match the current new
+From the above, edit the ``name`` and ``version`` to match the new
 version. Then under each platform, update the ``hashValue``,
 ``filesize``, and ``fileUrl`` based on the values provided to you in the
 widevine tracking bug. e.g. `bug
-1475260 <https://bugzilla.mozilla.org/show_bug.cgi?id=1475260#c0>`__.
+1758423 <https://bugzilla.mozilla.org/show_bug.cgi?id=1758423>`__.
+Save the new blob as a .json file.
 
-Finally, save that new release blob, upload it to Balrog via the “Add
-new release” button within https://aus4-admin.mozilla.org/releases, and
-save the release blob name to match the new version the blob is based
-on.
+Create the Balrog release
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Create the balrog rule
+Create a new release and upload the new blob to Balrog:
+    - on https://balrog.services.mozilla.com/releases click the “Add new release” button;
+    - on the Create Release page, select "Widevine" as the Product;
+    - on the Create Release page, click "Upload Release" and select the file containing the new release blob;
+    - verify that the new release blob has been uploaded and the "Release" name correctly identifies the release (eg. "Widevine-4.10.2391.0");
+    - on the Create Release page, click "Create Release" button in the lower right to create the release.
+
+Create the Balrog rule
 ~~~~~~~~~~~~~~~~~~~~~~
+
+Create a new rule to use the release you just created:
+    - on https://balrog.services.mozilla.com/rules click the “Add Rule" button
+    - on the Create Rule page, set Product = "Widevine", Channel = "nightlytest" (or as needed), Mapping = the release you just created, Background Rate = 100 (or as needed), and set the Priority as needed, typically the lowest priority for the default rule.
+    - on the Create Rule page, click "Create Rule" button in the lower right to create the rule.
+
+See https://mozilla-balrog.readthedocs.io/en/latest/database.html for
+general guidance on rule matching.
 
 Unlike Firefox updates, Widevine ones all happen in the same channel
 (except for the nightlytest, the internal testing channel). This means
 users are given a new widevine based on their Firefox version. For
-instance: if we provide a new widevine to 62.0 at the time 62.0b15
-ships, then users with 62.0b1-b14 will also get this version. Make sure
+instance: if we provide a new widevine to 98.0 at the time 98.0b15
+ships, then users with 98.0b1-b14 will also get this version. Make sure
 with the media team these betas are compatible! In the case it's not,
 please remember Firefox doesn't send which beta it's on to Balrog. You
 have to filter out based on the version **and** the buildID (the buildID
-alone doesn't work if a 61 dot release happens afterwards).
+alone doesn't work if a 97 dot release happens afterwards).
 
-In the end, a rule looks that filters on both like this one: |Balrog
+In the end, a rule that filters on both looks like this one: |Balrog
 rule|
 
 Testing
@@ -167,10 +187,10 @@ Testing
 
 You can use the nightlytest channel to test changes before sending them
 to production. A widevine request to balrog is like this one:
-https://aus5.mozilla.org/update/3/GMP/62.0/20180802174131/WINNT_x86_64-msvc-x64/en-US/nightlytest/default/default/default/update.xml
+https://aus5.mozilla.org/update/3/GMP/98.0/20180802174131/WINNT_x86_64-msvc-x64/en-US/nightlytest/default/default/default/update.xml
 
 :warning:
-  Reminder: In this URL, 62.0 can't be 62.0b14. Even though it
+  Reminder: In this URL, 98.0 can't be 98.0b14. Even though it
   works from Balrog's point of view, Firefox doesn't send this piece of
   data.
 
