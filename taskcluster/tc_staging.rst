@@ -103,7 +103,7 @@ Some tasks in the m-c graph need secrets to run. I was able to get a set of secr
 
 It's possible we just need the ``gecko/build`` and ``taskcluster/gecko/hg*`` secrets.
 
-`This script <https://hg.mozilla.org/build/braindump/file/tip/taskcluster/copy_secrets_to_staging.py>`__ copies that subset of secrets from fxci to staging. We need to do the following to use it::
+`This script <https://hg.mozilla.org/build/braindump/file/tip/taskcluster/copy_secrets_to_staging.py>`__ copies that subset of secrets from fxci to staging. We need to do the following to use it:
 
 - set the ``NOOP`` boolean to ``False`` in the script
 
