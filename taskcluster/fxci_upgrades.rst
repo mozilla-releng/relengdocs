@@ -53,5 +53,5 @@ If there is a major version upgrade, or other maintenance/migration that will ha
 - Send an email saying the upgrade is finished (Releaseduty)
 - Update the `changelog`_.
 
-.. _Public - FirefoxCI Cluster Taskcluster Upgrades calendar: https://calendar.google.com/calendar/u/0?cid=Y19mbWQ3YmZwZ3IzOTI5cnJtaWVqYmszdXM2OEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t
+.. _Public - FirefoxCI Cluster Taskcluster Upgrades calendar: https://calendar.google.com/calendar/embed?src=c_fmd7bfpgr3929rrmiejbk3us68%40group.calendar.google.com
 .. _changelog: https://github.com/mozilla/build-relengdocs/blob/main/releng_changelog.md
