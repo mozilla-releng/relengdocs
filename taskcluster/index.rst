@@ -32,6 +32,7 @@ Specifically for the FirefoxCI cluster.
     scopes
     known_problems
     ci_admin
+    fxci_upgrades
     tc_staging
     how_tasks_are_triggered
 
