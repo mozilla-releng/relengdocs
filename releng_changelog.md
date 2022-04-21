@@ -18,6 +18,7 @@ _**As releaseduty squirrels are the ones with the best context when it comes to 
 - `beetmover-geckoview` jobs (copying geckoview artifacts to maven) now [run as part of the `promote_firefox` graphs](https://bugzilla.mozilla.org/1758507) on release and beta instead of `push_firefox`
 - Switched SENTRY_DSN for Balrog -> sentry.io
 - SHA-256 signing of Windows Installers, bug 1745467
+- Widevine update, bug 1758423
 - Treescript merge day CLOBBER datestring
 
 ### During 99.0 >= 2022-02-07
