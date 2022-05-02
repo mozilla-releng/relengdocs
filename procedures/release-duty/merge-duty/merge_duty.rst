@@ -80,7 +80,7 @@ General steps
 4. Select “Custom push action…”
 5. Choose ``merge-automation``
 6. In Treeherder, you'll see a new push show up in Treeherder in the repo you will be merging to. It can take a few minutes for the push and task to appear.
-7. Click on the merge or bump tasks (not the Gecko decision task). A job details panel will pop up and from there you'll find a link to the diff file in the artifacts tab.
+7. Click on the merge or bump tasks (not the Gecko decision task). A job details panel will pop up and from there you'll find a link to the diff file in the artifacts tab. Note: There will be a cron job that kicks off another bump task with same th name, only one of them will contain the diff.
 
 
 mozilla-beta->mozilla-release migration no-op trial run
