@@ -340,6 +340,12 @@ Reply to the migration request with the template:
    * mozilla-esr has been version bumped
    * newly triggered nightlies will pick the version change on cron-based schedule
 
+Hint: verify current versions
+
+   - `beta <https://hg.mozilla.org/releases/mozilla-beta/file/tip/browser/config/version_display.txt>`__
+   - `central <https://hg.mozilla.org/mozilla-central/file/tip/browser/config/version_display.txt>`__
+   - `esr91 <https://hg.mozilla.org/releases/mozilla-esr91/file/tip/browser/config/version.txt>`__
+
 Update wiki versions
 ~~~~~~~~~~~~~~~~~~~~
 
