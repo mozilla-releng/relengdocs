@@ -48,8 +48,8 @@ UVNEXT* tasks (update verify next) will fail (run in promote phase) unless prope
 Merge
 -----
 
-Merge beta to release
-~~~~~~~~~~~~~~~~~~~~~
+Merge release to esr
+~~~~~~~~~~~~~~~~~~~~
 
 1. Run the ``m-r -> m-esrXX`` no-op trial run:
 
