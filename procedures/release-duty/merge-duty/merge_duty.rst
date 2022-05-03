@@ -399,6 +399,7 @@ as soon as reasonably possible after nightly is built. Note: the product details
    to CDNs: once the new nightly version appears at
    https://archive.mozilla.org/pub/firefox/nightly/latest-mozilla-central/
 8. Push ShipIt ``main`` branch to ``production``
+9. Monitor the `versions info page <https://product-details.mozilla.org/1.0/firefox_versions.json>`__. If it does not automatically update, you may need to click ``Rebuild product-details`` in the ShipIt UI.
 
 Close migration bug, file one for the next release
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
