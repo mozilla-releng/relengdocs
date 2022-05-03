@@ -349,7 +349,7 @@ Hint: verify current versions
 Update wiki versions
 ~~~~~~~~~~~~~~~~~~~~
 
-1. Edit the new values manually:
+1. Edit the new values manually: (ok to update a day early)
 
 -  `NEXT_VERSION <https://wiki.mozilla.org/Template:Version/Gecko/release/next>`__
 -  `CENTRAL_VERSION <https://wiki.mozilla.org/Template:Version/Gecko/central/current>`__
@@ -398,6 +398,7 @@ as soon as reasonably possible after nightly is built. Note: the product details
 7. Merge the pull request(s) *after* a new nightly version has been pushed
    to CDNs: once the new nightly version appears at
    https://archive.mozilla.org/pub/firefox/nightly/latest-mozilla-central/
+8. Push ShipIt ``main`` branch to ``production``
 
 Close migration bug, file one for the next release
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
