@@ -15,6 +15,14 @@ documentation. You might also be interested in our `main web site`_.
 Contents:
 
 .. toctree::
+    :maxdepth: 1
+
+   tutorials/index.rst
+   how-tos/index.rst
+   reference/index.rst
+   explanations/index.rst
+
+.. toctree::
    :caption: Other Useful Documentation
 
    Accessing CloudOps' Jenkins <https://github.com/mozilla-services/cloudops-deployment#accessing-jenkins>
@@ -24,7 +32,6 @@ Contents:
    Scriptworker Scripts <https://scriptworker-scripts.readthedocs.io/en/latest/index.html>
    Taskgraph <https://taskcluster-taskgraph.readthedocs.io/>
    Treeherder <https://treeherder.readthedocs.io/>
-
 
 .. toctree::
    :maxdepth: 4
