@@ -15,15 +15,12 @@ documentation. You might also be interested in our `main web site`_.
 Contents:
 
 .. toctree::
-   :caption: Other Useful Documentation
+   :maxdepth: 4
 
-   Accessing CloudOps' Jenkins <https://github.com/mozilla-services/cloudops-deployment#accessing-jenkins>
-   Balrog <https://mozilla-balrog.readthedocs.io/en/latest/index.html>
-   CloudOps Contact Info <https://mana.mozilla.org/wiki/display/SVCOPS/Contacting+Services+SRE>
-   Scriptworker <https://scriptworker.readthedocs.io/en/latest/index.html>
-   Scriptworker Scripts <https://scriptworker-scripts.readthedocs.io/en/latest/index.html>
-   Taskgraph <https://taskcluster-taskgraph.readthedocs.io/>
-   Treeherder <https://treeherder.readthedocs.io/>
+   tutorials/index.rst
+   how-tos/index.rst
+   reference/index.rst
+   explanations/index.rst
 
 
 .. toctree::
