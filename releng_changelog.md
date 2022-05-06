@@ -10,7 +10,7 @@ _**As releaseduty squirrels are the ones with the best context when it comes to 
 - Updated Mac certificates on all prod mac hosts. + Nightly builds now use the same keychain file as release.
 - FirefoxCI cluster upgraded from Taskcluster 44.8.4 to 44.11.1; Postgres DB instance doubled in RAM.
 - Updated all iOS apps in Bitrise to use new cert and provisioning profiles
-- https://pypi.org/project/mozilla-version/ updated to 1.0.1
+- https://pypi.org/project/mozilla-version/ updated to 1.0.1 -> beetmover, bouncer, pushapk, treescript deps updated
 - Experimental change to timestamp server for signing windows firefox, https://github.com/mozilla-releng/scriptworker-scripts/pull/501/
 - Allowed System Addons to be served from archive.m.o, https://github.com/mozilla-releng/balrog/pull/2520
 
