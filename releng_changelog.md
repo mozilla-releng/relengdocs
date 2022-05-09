@@ -6,7 +6,10 @@ This page best serves the people that have previously been into the releaseduty 
 
 _**As releaseduty squirrels are the ones with the best context when it comes to releases, they are the ones to edit this page and amend it accordingly. Keep in mind that changes should be in compliance with the other pieces of documentation.**_
 
-### During 101.0 >= 2022-05-03
+### During 102.0 >= 2022-05-02
+- (ahal) Updated dependencies in image-task docker image
+
+### During 101.0 >= 2022-04-05
 - Updated Mac certificates on all prod mac hosts. + Nightly builds now use the same keychain file as release.
 - FirefoxCI cluster upgraded from Taskcluster 44.8.4 to 44.11.1; Postgres DB instance doubled in RAM.
 - Updated all iOS apps in Bitrise to use new cert and provisioning profiles
