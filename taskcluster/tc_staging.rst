@@ -74,6 +74,8 @@ Diff
 Apply
 ~~~~~
 
+This will run every push to the ci-config repo; we only need to rerun if we want to update hooks or verify nothing has been changed manually since the last run.
+
 You'll need :ref:`taskcluster_cli` for this.
 
 .. code:: bash
@@ -84,28 +86,11 @@ You'll need :ref:`taskcluster_cli` for this.
    # Apply changes to the staging taskcluster cluster
    ci-admin apply --environment staging 2>&1 | tee staging.out
 
-Copy secrets to the Staging cluster
------------------------------------
+Push to try
+-----------
+Until we fix the `firefox-ci hardcode <https://bugzilla.mozilla.org/show_bug.cgi?id=1765661>`__, We want to push `this patch <https://bugzilla.mozilla.org/attachment.cgi?id=9275932>`__ to try using ``./mach try release --migration central-to-beta -v 102.0b1`` or similar.
 
-Some tasks in the m-c graph need secrets to run. I was able to get a set of secrets scopes from taskgraph, as of 2022-02-28::
-
-    secrets:get:gecko/gfx-github-sync/token
-    secrets:get:project/engwf/gecko/3/tokens
-    secrets:get:project/perftest/gecko/level-3/perftest-login
-    secrets:get:project/releng/gecko/build/level-3/*
-    secrets:get:project/releng/gecko/build/level-3/conditioned-profiles
-    secrets:get:project/releng/gecko/build/level-3/conditioned-profiles
-    secrets:get:project/releng/gecko/build/level-3/gecko-docs-upload
-    secrets:get:project/releng/gecko/build/level-3/gecko-generated-sources-upload
-    secrets:get:project/releng/gecko/build/level-3/gecko-symbol-upload
-    secrets:get:project/taskcluster/gecko/hgfingerprint
-    secrets:get:project/taskcluster/gecko/hgmointernal
-
-It's possible we just need the ``gecko/build`` and ``taskcluster/gecko/hg*`` secrets.
-
-`This script <https://hg.mozilla.org/build/braindump/file/tip/taskcluster/copy_secrets_to_staging.py>`__ copies that subset of secrets from fxci to staging. We need to do the following to use it:
-
-- set the ``NOOP`` boolean to ``False`` in the script
+We can cancel the graph as soon as it gets scheduled; we only need the try push, not the production firefox-ci tasks. You'll need the try revision below.
 
 Run fxci to send mozilla-central tasks to the staging cluster
 -------------------------------------------------------------
@@ -121,19 +106,6 @@ Run fxci to send mozilla-central tasks to the staging cluster
    # Log out in case we have previous tc creds
    unset TASKCLUSTER_CLIENT_ID; unset TASKCLUSTER_ACCESS_TOKEN
 
-Find a commit
-~~~~~~~~~~~~~
-
-Go to `Treeherder <https://treeherder.mozilla.org/jobs?repo=mozilla-central>`__ or the `pushlog <https://hg.mozilla.org/mozilla-central/pushloghtml>`__ to find the latest commit. This commit will need to be the latest commit in a given, non-``DONTBUILD`` push.
-
-.. image:: staging/treeherder1.png
-
-In the above treeherder screenshot, ``dde3e56805b9`` is the latest revision on the latest push, but is ``DONTBUILD``, resulting in zero tasks running other than the decision task. ``23f9ff7daa01`` is the tip revision of the latest push without ``DONTBUILD``. Clicking the ``copy`` button next to it will copy the long SHA to your clipboard.
-
-.. image:: staging/pushlog1.png
-
-Similarly, in the above pushlog screenshot, you can see the same information, with long revision SHAs.
-
 Run fxci
 ~~~~~~~~
 
@@ -142,13 +114,13 @@ Run fxci
    # Sign in via taskcluster cli
    eval $(taskcluster signin)
 
-   # Set REVISION to the above commit you found
-   REVISION=23f9ff7daa01b1273edb9c1df04436d895983b58
+   # Set REVISION to the try commit
+   REVISION=95f571f94f6d9c4e597d8a33fa27cf2fecf12f84
 
    # Run fxci
-   fxci replay-hg-push mozilla-central $REVISION
+   fxci replay-hg-push try $REVISION
 
-This will give you a URL like https://stage.taskcluster.nonprod.cloudops.mozgcp.net/tasks/PHY82PPMQmOz_qYucrSHOw . This is the `build-decision <https://hg.mozilla.org/ci/ci-configuration/file/tip/build-decision>`__ task URL, which will create a decision task.
+This will give you a URL like https://stage.taskcluster.nonprod.cloudops.mozgcp.net/tasks/J9WeztDYT4aQstuJUGOgIg . This is the `build-decision <https://hg.mozilla.org/ci/ci-configuration/file/tip/build-decision>`__ task URL, which will create a decision task.
 
 Monitor the build-decision task
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -165,9 +137,24 @@ Missing AMIs
 
 If you hit an error like ``Error calling AWS API: Not authorized for images: [ami-0fd21b9566eba5684]`` in `worker-manager <https://stage.taskcluster.nonprod.cloudops.mozgcp.net/worker-manager/infra%2Fbuild-decision/errors>`__, we probably need to share AMIs from the production FirefoxCI cluster to the staging cluster.
 
-Pete was able to share them using `these steps <https://mozilla-hub.atlassian.net/browse/FCP-53?focusedCommentId=520218>`__. If we automate this, we may want to use the `ci-config ami list <https://hg.mozilla.org/ci/ci-configuration/file/tip/worker-images.yml>`__ instead. We may future this work, since we may be able to share these AMIs when recreating them, and we may not recreate them frequently before migrating to GCP.
+Pete was able to share them using `these steps <https://mozilla-hub.atlassian.net/browse/FCP-53?focusedCommentId=520218>`__. If we automate this, we may want to use the `ci-config ami list <https://hg.mozilla.org/ci/ci-configuration/file/tip/worker-images.yml>`__ instead. We may future this work, since we may be able to share the untrusted AMIs when recreating them, and we may not recreate them frequently before migrating to GCP.
+
+Missing GCP workers
+~~~~~~~~~~~~~~~~~~~
+
+Relops should be able to share level 1 GCP worker images with the staging cluster.
+
+Missing hardware workers
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+This is expected. These tasks will hang and hit ``deadline-exceeded`` if you don't cancel them first.
 
 Scriptworkers
 ~~~~~~~~~~~~~
 
 We don't have scriptworkers pointed at the staging cluster, nor do we want to create those pools. That means that any scriptworker tasks will expire without being claimed, and downstreams won't run.
+
+Secrets
+~~~~~~~
+
+`This script <https://hg.mozilla.org/build/braindump/file/a16d4c026782aafd47539d01ac900b38456a33f1/taskcluster/copy_secrets_to_staging.py>`__ populates a subset of [fake] secrets from fxci to staging, and `this script <https://hg.mozilla.org/build/braindump/file/a16d4c026782aafd47539d01ac900b38456a33f1/taskcluster/remove_secrets_from_staging.py>`__ removes them. We should only need to use these scripts if tasks die because they can't access staging secrets.

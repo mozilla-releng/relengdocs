@@ -70,14 +70,15 @@ may be helpful:
 
    # To set your root URL to the production firefoxci or stage cluster
    tc-fxci='export TASKCLUSTER_ROOT_URL=https://firefox-ci-tc.services.mozilla.com/'
-   tc-staging='export TASKCLUSTER_ROOT_URL=https://stage.taskcluster.nonprod.cloudops.mozgcp.net/'
+   tc-staging='export TASKCLUSTER_ROOT_URL=https://stage.taskcluster.nonprod.cloudops.mozgcp.net'
+
 
    # To log out explicitly
    tc-logout='unset TASKCLUSTER_CLIENT_ID; unset TASKCLUSTER_ACCESS_TOKEN'
 
    # Rerunning and cancelling tasks are a common request/need in releaseduty;
    # grant this set of scopes for 1 hour
-   tc-relduty=$'eval `TASKCLUSTER_ROOT_URL=https://firefox-ci-tc.services.mozilla.com/ taskcluster signin --expires 1h -s "queue:rerun-task:*\nqueue:cancel-task:*"`'
+   tc-relduty=$'eval $(taskcluster signin --expires 1h -s "queue:rerun-task:*\nqueue:cancel-task:*")'
 
    # Up to root privs: only grant these for 15min
-   tc-signin='eval `TASKCLUSTER_ROOT_URL=https://firefox-ci-tc.services.mozilla.com/ taskcluster signin --expires 15m "$@"`'
+   tc-signin='eval $(taskcluster signin --expires 15m "$@")'
