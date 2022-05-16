@@ -9,6 +9,9 @@ _**As releaseduty squirrels are the ones with the best context when it comes to 
 ### During 102.0 >= 2022-05-02
 - (ahal) Updated dependencies in image-task docker image
 - Treestatus updated for esr-102 and deployed
+- signingscript update for authenticode timestamping
+- scriptworker-scripts and shipit updated for esr-102 and deployed
+- new docker-worker pools to fix ssl certs
 
 ### During 101.0 >= 2022-04-05
 - Updated Mac certificates on all prod mac hosts. + Nightly builds now use the same keychain file as release.
