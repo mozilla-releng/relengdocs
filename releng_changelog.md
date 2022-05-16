@@ -12,6 +12,7 @@ _**As releaseduty squirrels are the ones with the best context when it comes to 
 - signingscript update for authenticode timestamping
 - scriptworker-scripts and shipit updated for esr-102 and deployed
 - new docker-worker pools to fix ssl certs
+- Widevine 4.10.2449.0 final rollout
 
 ### During 101.0 >= 2022-04-05
 - Updated Mac certificates on all prod mac hosts. + Nightly builds now use the same keychain file as release.
