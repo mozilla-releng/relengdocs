@@ -1,3 +1,5 @@
+.. _fxci_upgrades:
+
 FirefoxCI cluster upgrades
 ==========================
 

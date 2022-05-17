@@ -11,6 +11,7 @@ More detailed information on specific ReleaseDuty topics:
     mobile/*
     merge-duty/*
     interrupt-duty
+    ../../taskcluster/fxci_upgrades
 
 ReleaseDuty is a role within the Release Engineering team. It is conducted on a rolling rotation matching one person
 against one release cycle (currently 4 weeks). Below you will find a description of the expectations and resources
