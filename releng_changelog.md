@@ -13,6 +13,7 @@ _**As releaseduty squirrels are the ones with the best context when it comes to 
 - scriptworker-scripts and shipit updated for esr-102 and deployed
 - new docker-worker pools to fix ssl certs
 - Widevine 4.10.2449.0 final rollout
+- aus5.mozilla.org (balrog prod client domain) certificate renewed (https://bugzilla.mozilla.org/show_bug.cgi?id=1768253)
 
 ### During 101.0 >= 2022-04-05
 - Updated Mac certificates on all prod mac hosts. + Nightly builds now use the same keychain file as release.
