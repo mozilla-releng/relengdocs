@@ -7,6 +7,7 @@ This page best serves the people that have previously been into the releaseduty 
 _**As releaseduty squirrels are the ones with the best context when it comes to releases, they are the ones to edit this page and amend it accordingly. Keep in mind that changes should be in compliance with the other pieces of documentation.**_
 
 ### During 102.0 >= 2022-05-02
+- (ahal) Deployed scriptworker pools to pick up new CoT private key
 - (ahal) Updated dependencies in image-task docker image
 - Treestatus updated for esr-102 and deployed
 - signingscript update for authenticode timestamping
