@@ -11,7 +11,9 @@ Reference
    Accessing CloudOps' Jenkins <https://github.com/mozilla-services/cloudops-deployment#accessing-jenkins>
    Balrog <https://mozilla-balrog.readthedocs.io/en/latest/index.html>
    CloudOps Contact Info <https://mana.mozilla.org/wiki/display/SRE/Contacting+Services+SRE>
+   Releng Mana <https://mana.mozilla.org/wiki/display/RelEng/Release+Engineering+Home>
    Scriptworker <https://scriptworker.readthedocs.io/en/latest/index.html>
    Scriptworker Scripts <https://scriptworker-scripts.readthedocs.io/en/latest/index.html>
+   Scriptworker-scripts Wiki (mac signing procedures) <https://github.com/mozilla-releng/scriptworker-scripts/wiki>
    Taskgraph <https://taskcluster-taskgraph.readthedocs.io/>
    Treeherder <https://treeherder.readthedocs.io/>
