@@ -61,11 +61,14 @@ There are 3 levels of commit access:
 ## Git & Github
 Please file a bug similar to [bug 1726348](https://bugzilla.mozilla.org/show_bug.cgi?id=1726348) and include the following teams to be added. Ask for your manager to vouch in the bug for these changes. The teams you need to be added are:
 1. [https://github.com/orgs/mozilla/teams/releng/members](https://github.com/orgs/mozilla/teams/releng/members)
-2. [https://github.com/orgs/mozilla-releng/people](https://github.com/orgs/mozilla-releng/people)
-3. [https://github.com/orgs/mozilla-releng/teams/releng/members](https://github.com/orgs/mozilla-releng/teams/releng/members)
-4. [https://github.com/orgs/mozilla-mobile/teams/releng/members](https://github.com/orgs/mozilla-mobile/teams/releng/members)
-5. [https://github.com/orgs/mozilla-services/teams/releng/members](https://github.com/orgs/mozilla-services/teams/releng/members)
-6. [https://github.com/mozilla-services/cloudops-infra](https://github.com/mozilla-services/cloudops-infra) via filing a ticket [here](https://github.com/mozilla-services/github-management/issues/new?assignees=&labels=&template=NewOrgMember.md&title=) similar to [this](https://github.com/mozilla-services/github-management/issues/129).
+2. [https://github.com/orgs/mozilla-releng/teams/releng/members](https://github.com/orgs/mozilla-releng/teams/releng/members)
+3. [https://github.com/orgs/mozilla-mobile/teams/releng/members](https://github.com/orgs/mozilla-mobile/teams/releng/members)
+4. [https://github.com/orgs/mozilla-services/teams/releng/members](https://github.com/orgs/mozilla-services/teams/releng/members)
+5. [https://github.com/orgs/mozilla-extensions/teams/releng/members](https://github.com/orgs/mozilla-extensions/teams/releng/members)
+6. [https://github.com/orgs/mozilla-l10n/teams/release-engineering/members](https://github.com/orgs/mozilla-l10n/teams/release-engineering/members)
+7. [https://github.com/orgs/taskcluster/teams/releng/members](https://github.com/orgs/taskcluster/teams/releng/members)
+
+Additionally, you'll need access to [https://github.com/mozilla-services/cloudops-infra](https://github.com/mozilla-services/cloudops-infra) which can be accomplished by filing a ticket [here](https://github.com/mozilla-services/github-management/issues/new?assignees=&labels=&template=NewOrgMember.md&title=) similar to [this](https://github.com/mozilla-services/github-management/issues/129).
 
 There are also a handful of git repos hosted directly by Mozilla. Your manager/mentor will let you know if you need access to one of these.
 
