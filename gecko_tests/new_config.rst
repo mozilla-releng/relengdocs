@@ -36,7 +36,7 @@ There are a few exceptions here:
   * duplicated jobs (i.e. fission, a11y-checks), you can just run those specific tasks:
       ``./mach try fuzzy --no-artifact -q 'test-windows fission --rebuild 5``
   * new OS/hardware (i.e. aarch64, os upgrade), you need to reference the new hardware, typically this is with ``--worker-override``:
-      ``./mach try fuzzy --no-artifact -q 'test-windows --rebuild 5 --worker-override t-win10-64=t-win10-64-1903``
+      ``./mach try fuzzy --no-artifact -q 'test-windows --rebuild 5 --worker-override t-win10-64=gecko-t/t-win10-64-1903``
 
     * the risk here is a scenario where hardware is limited, then ``--rebuild 5`` will create too many tasks and some will expire.
     * in low hardware situations, either run a subset of tests (i.e. web-platform-tests, mochitest), or ``--rebuild 2`` and repeat.

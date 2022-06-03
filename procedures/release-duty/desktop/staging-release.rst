@@ -99,7 +99,7 @@ amended. More information on this can be found in the
 `scriptworker-scripts documentation`_. One can either manually change
 the intree kind's config to that specific worker-type, or can simply pass an
 argument to aforementioned command to make the replacement,
-e.g. ``mach try scriptworker TASK-TYPE --release-type beta --worker-override <alias>=<suffix>``,
+e.g. ``mach try scriptworker TASK-TYPE --release-type beta --worker-suffix <alias>=<suffix>``,
 where ``TASK-TYPE`` is chosen from one of the
 ``mach try scriptworker list`` returns and ``alias`` comes from the
 taskcluster ci config `file`_). For example, running the beetmover jobs against the most recent beta
@@ -107,7 +107,7 @@ release, but on the DEV worker-type:
 
 ::
 
-   mach try scriptworker beetmover-candidates --release-type beta --worker-override beetmover=gecko-1-beetmover-dev
+   mach try scriptworker beetmover-candidates --release-type beta --worker-suffix beetmover=-dev
 
 .. _scriptworker selector: https://firefox-source-docs.mozilla.org/tools/try/selectors/scriptworker.html?highlight=scriptworker
 .. _here: https://hg.mozilla.org/mozilla-central/file/tip/tools/tryselect/selectors/scriptworker.py#l18
