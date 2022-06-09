@@ -8,6 +8,7 @@ _**As releaseduty squirrels are the ones with the best context when it comes to 
 ### During 103.0 >= 2022-05-31
 - FirefoxCI cluster upgraded to Taskcluster 44.14.0
 - https://github.com/mozilla/delivery-dashboard/ deployed (first time since 2018!)
+- Deployed balrog v3.18 to production (https://bugzilla.mozilla.org/show_bug.cgi?id=1772799)
 
 ### During 102.0 >= 2022-05-02
 - (ahal) Deployed scriptworker pools to pick up new CoT private key
