@@ -128,11 +128,8 @@ for how to get set up and started with connecting to the VPN.
 How to get Ship-it access
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You need to be added to the `vpn_cloudops_shipit` LDAP group, as well as be added to the allowedlist in the shipit
-config. Both of these can be done by filing a ticket requesting access.
-
-File a Release Engineering bug under the `Applications: Shipit (backend)
-<https://bugzilla.mozilla.org/enter_bug.cgi?format=__default__&cloned_bug_id=1626312&product=Release%20Engineering&component=Applications%3A%20Shipit%20%28backend%29>`__
+You just need to be added to the `vpn_cloudops_shipit` LDAP group. File a Release Engineering bug under the `Applications: Shipit (backend)
+<https://bugzilla.mozilla.org/enter_bug.cgi?format=__default__&cloned_bug_id=1773239&product=Release%20Engineering&component=Applications%3A%20Shipit%20%28backend%29>`__
 component requesting to be granted shipit access.
 
 Replace the email in the Summary field and have someone in Release Engineering vouch for you in the bug.
