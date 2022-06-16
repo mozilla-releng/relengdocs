@@ -5,10 +5,12 @@ Every time a new releaseduty cycle begins, new RelEng people are (re)ramping up.
 This page best serves the people that have previously been into the releaseduty cycle. Starting from the baseline, people coming back after `N` cycles can ramp up incrementally with the latest changes.
 
 _**As releaseduty squirrels are the ones with the best context when it comes to releases, they are the ones to edit this page and amend it accordingly. Keep in mind that changes should be in compliance with the other pieces of documentation.**_
+
 ### During 103.0 >= 2022-05-31
 - FirefoxCI cluster upgraded to Taskcluster 44.14.0
 - https://github.com/mozilla/delivery-dashboard/ deployed (first time since 2018!)
 - Deployed balrog v3.18 to production (https://bugzilla.mozilla.org/show_bug.cgi?id=1772799)
+- (ahal) Copied new scriptworker CoT private key to mac signers
 
 ### During 102.0 >= 2022-05-02
 - (ahal) Deployed scriptworker pools to pick up new CoT private key
