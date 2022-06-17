@@ -1,7 +1,7 @@
 OpenH264 updates
 ================
 
-Widevine is a codec plugin allowing Firefox users to use WebRTC.
+OpenH264 is a codec plugin allowing Firefox users to use WebRTC.
 We provide updates via Balrog.
 
 When
