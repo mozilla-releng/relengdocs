@@ -19,6 +19,17 @@ For in-tree changes, grepping for the old `esrXX` (e.g. `on searchfox
 starting point to figure out the necessary updates.  It can also be
 useful to compare with the changes from the previous ESR bump.
 
+Before the new build, rules should also be set up in balrog (stage and production):
+- a rule with alias `firefox-esrXX-localtest` on the `esr-localtest*` channel
+- a rule with alias `firefox-esrXX-cdntest` on the `esr-cdntest*` channel
+- a rule with alias `esrXX` on the `esr` channel
+
+The rules can initially point at the `No-Update` mapping and are then updated by automation.
+Rules on the `esr-localtest-next` and `esr-cdntest-next` channels should be
+adjusted so that updates to the new ESR are served (sometimes with a watershed
+on the previous ESR, depending on app requirements; otherwise the rules for the
+previous ESR can be changed to no longer apply to the `-next` channels).
+Each `esrXX` rule's `Version` field should be set to `<XY.0` where `XY == XX+1`.
 
 External systems
 ----------------
