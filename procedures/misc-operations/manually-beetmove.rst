@@ -15,7 +15,7 @@ Steps
 
   We're going to be pushing files to archive.m.o, which lends it some legitimacy: let's make sure this is a valid request.
 
-  Generally we want to upload to an existing directory structure, e.g. https://archive.mozilla.org/pub/firefox/nightly/ or https://archive.mozilla.org/pub/mobile/toolchains/ or the like. If we need a new directory structure, we should coordinate with Product Delivery to make sure we have the right permissions and the right cleanup rules set.
+  Generally we want to upload to an existing directory structure, e.g. https://archive.mozilla.org/pub/firefox/nightly/ or https://archive.mozilla.org/pub/mobile/toolchains/ or the like. If we need a new directory structure, we should coordinate with SRE Services to make sure we have the right permissions and the right cleanup rules set.
 
 2. Fork/clone the `repo <https://github.com/mozilla-releng/beetmove-telemetry>`_.
 
@@ -27,9 +27,9 @@ Steps
 
   Note: you probably want to use the appropriate staging bucket and staging id+key for testing first, so also grab those. These will be in use by the non-prod dep and/or dev pools.
 
-  Copy the `config_example.json <https://github.com/mozilla-releng/beetmove-telemetry/blob/main/config_example.json>`_ file to ``config.json`` and edit it. In the example, ``maven-staging`` and ``maven-production`` our the script's nicknames. The ``buckets`` dict contains the real bucket name, along with a 2nd nickname which is hardcoded in the script, and the ``credentials`` dict holds the AWS creds.
+  Copy the `config_example.json <https://github.com/mozilla-releng/beetmove-telemetry/blob/main/config_example.json>`_ file to ``config.json`` and edit it. In the example, ``maven-staging`` and ``maven-production`` are the script's nicknames. The ``buckets`` dict contains the real bucket name, along with a 2nd nickname which is hardcoded in the script, and the ``credentials`` dict holds the AWS creds.
 
-3. Hack the script. Adding a ``--noop`` or ``--dry-run`` flag so you can test as much as possible without moving any files is recommended. If you aren't confident in the script, a test push to the staging bucket is recommended.
+3. Hack the script, e.g. ``script.py`` and ``util.py``; Aki made `these changes <https://github.com/mozilla-releng/beetmove-telemetry/compare/main...mozilla-releng:beetmove-telemetry:apidoc?expand=1>`_ to beetmove an apidoc file rather than some glean files. Adding a ``--noop`` or ``--dry-run`` flag so you can test as much as possible without moving any files is recommended.
 
   Note: the script assumes you have the files downloaded locally. If you need to dynamically download a file, or if you need to download e.g. 6 months of nightlies a la `Bug 1727585 <https://bugzilla.mozilla.org/show_bug.cgi?id=1727585>`_, you may want to add automation to do that (and you probably want to verify the downloaded files' checksums via the chain-of-trust.json artifact for robustness and correctness).
 
