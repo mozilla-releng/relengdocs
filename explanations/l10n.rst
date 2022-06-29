@@ -84,3 +84,8 @@ Especially in Gecko, building 100x the number of installers and packages means w
 - l10n repack 5 locales at a time (l10n chunking), which means a single build fans out to ~20 l10n repack tasks
 - sign locales 1 at a time, so the ~20 l10n repack tasks fan out to ~100 signing tasks
 - reverse-chunk to dummy tasks: There is a max_dependencies limit of 100 dependencies, so if we want to trigger a task after all ~100 locales are finished for all ~5 platforms, we can't have a single task wait on all ~500 tasks. Instead, we create dummy tasks that each depend on 100 upstreams (reverse chunking), which allow us to wait on all the dummy tasks resolving before we proceed.
+
+Unrepack
+--------
+
+There is a push to get rid of repacks: see Slack #unrepack and `this doc <https://docs.google.com/document/d/1muouK8yKV14MFNqOqQ99G_ae834TJ6dGV0fZM1ilAx8/edit>`_. This effort may have lost steam and may require Releng to push for developers to make the Firefox-side changes needed to move forward.
