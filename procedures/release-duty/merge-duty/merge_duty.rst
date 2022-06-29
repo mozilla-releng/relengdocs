@@ -384,22 +384,19 @@ This way, we can be confident that the first nightly builds with the new version
 
 **WARNING: Do not bump the nightly version or release dates in ShipIt until the new nightly builds are available.**
 
-These are the steps to bump the nightly version and release dates in ShipIt:
+Follow these steps to bump the nightly version and release dates in ShipIt:
+
 1. ``git clone git@github.com:mozilla-releng/shipit.git``
 2. ``git checkout -b nightly_version_bump_${version}``
-3. Edit FIREFOX_NIGHTLY's major version in
-   `api/src/shipit_api/common/config.py <https://github.com/mozilla-releng/shipit/blob/f3d45d1dd1cc08cc466865f7d39305f1b2edbcf7/api/src/shipit_api/common/config.py#L49>`__
-4. Edit the `LAST` and `NEXT` known dates (all 6 of them) in
-   `api/src/shipit_api/common/config.py <https://github.com/mozilla-releng/shipit/blob/f3d45d1dd1cc08cc466865f7d39305f1b2edbcf7/api/src/shipit_api/common/config.py#L54-L59>`__
-   (The release dates can be found on `this Wiki page <https://wiki.mozilla.org/Release_Management/Calendar>`__)
+3. Edit FIREFOX_NIGHTLY's major version in `api/src/shipit_api/common/config.py <https://github.com/mozilla-releng/shipit/blob/f3d45d1dd1cc08cc466865f7d39305f1b2edbcf7/api/src/shipit_api/common/config.py#L49>`__
+4. Edit the `LAST` and `NEXT` known dates (all 6 of them) in `api/src/shipit_api/common/config.py <https://github.com/mozilla-releng/shipit/blob/f3d45d1dd1cc08cc466865f7d39305f1b2edbcf7/api/src/shipit_api/common/config.py#L54-L59>`__ (the release dates can be found on `this Wiki page <https://wiki.mozilla.org/Release_Management/Calendar>`__)
 5. Commit, then submit a pull request
 6. Someone on the Thunderbird team should open a similar PR in ShipIt the same day to bump the Thunderbird version.
    If there hasn't been a Thunderbird PR put up for review yet, please ping `#tbdrivers <https://matrix.to/#/#tbdrivers:mozilla.org>`__
 7. Merge the Firefox and Thunderbird pull requests onto main
-8. Push ShipIt's ``main`` branch to ``production``
-*after* a new nightly version has been pushed to `firefox/nightly/latest-mozilla-central/ <https://archive.mozilla.org/pub/firefox/nightly/latest-mozilla-central/>`__
-7. Log into ShipIt, click the gear icon on the top right, then click on "Rebuild product-details"
-9. Monitor the versions info page for `firefox <https://product-details.mozilla.org/1.0/firefox_versions.json>`__ and `thunderbird <https://product-details.mozilla.org/1.0/thunderbird_versions.json>`__ to make sure they are up to date.
+8. Push ShipIt's ``main`` branch to ``production`` **after** a new nightly version has been pushed to `firefox/nightly/latest-mozilla-central/ <https://archive.mozilla.org/pub/firefox/nightly/latest-mozilla-central/>`__
+9. Log into ShipIt, click the gear icon on the top right, then click on "Rebuild product-details"
+10. Monitor the versions info page for `firefox <https://product-details.mozilla.org/1.0/firefox_versions.json>`__ and `thunderbird <https://product-details.mozilla.org/1.0/thunderbird_versions.json>`__ to make sure they are up to date
 
 Close migration bug, file one for the next release
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
