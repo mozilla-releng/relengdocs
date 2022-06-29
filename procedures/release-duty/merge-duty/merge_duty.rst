@@ -376,7 +376,7 @@ Update the releng changelog
 Bump Nightly version and release dates in ShipIt
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In ShipIt, the Firefox nightly version and the release dates are hard-coded, and a human must update them when new nightly builds becomes available.
+In ShipIt, the Firefox nightly version and the release dates are hard-coded, and a human must update them when new nightly builds become available.
 The nightly builds trigger on the schedule defined in `.cron.yml <https://hg.mozilla.org/mozilla-central/file/8e5247451c9a83abe6f877f5f2c62332a84c9aaf/.cron.yml#l34>`__ (in UTC) and take a few hours to complete.
 Once the new nightly version appears in `firefox/nightly/latest-mozilla-central/ <https://archive.mozilla.org/pub/firefox/nightly/latest-mozilla-central/>`__, we can update the nightly version and release dates in ShipIt.
 **Bumping the Firefox nightly version and release dates in ShipIt should be done on release day.**
