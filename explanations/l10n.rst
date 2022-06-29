@@ -1,0 +1,86 @@
+L10n and Release Engineering
+============================
+
+Localization, or ``l10n``, at Mozilla involves a number of things: translating strings in the UI; including a locale's dictionary for spellcheck; and certain locale-specific prefs, e.g. default search engine or right-to-left UI.
+
+See the `l10n mana page <https://mana.mozilla.org/wiki/display/FIREFOX/Localization+%28l10n%29+and+Translation>`_ for more details from the l10n team's perspective.
+
+From the Release Engineering perspective, there are a number of touchpoints and overlaps:
+
+Extracting en-US strings for localizers
+---------------------------------------
+
+Firefox developers add US English (``en-US``) strings to the source code in such a way that we can both extract these strings and eventually replace them in the UI with strings from other languages and locales.
+
+So we extract all the strings from mozilla-central and we're done, yes? No.
+
+For Firefox Desktop, we follow the train model, so on merge day beta goes to release, and central goes to beta. Each of these repos can have different sets of strings: we have a set of strings, ideally frozen, on beta; but on central developers can change or land new strings for the next version of Firefox.
+
+Enter cross-channel (see the `cross-channel docs <https://firefox-source-docs.mozilla.org/l10n/crosschannel/index.html>`_). Cross-channel clones each of the active train repos for Firefox desktop and Thunderbird, extracts the strings, and combines them into a single set of strings for localizers to translate. (We include esr and release so we don't drop strings that are still in use.)
+
+For Android, it's similar: we use the `android-l10n-tooling repository <https://github.com/mozilla-l10n/android-l10n-tooling/>`_ and its associated pulse-driven hooks to extract strings every time that code lands in our mobile repos.
+
+Once we extract the strings, we push them to a repo or branch for the l10n team. The l10n team exposes those en-US strings in `Pontoon <https://pontoon.mozilla.org/>`_ for localizers to localize.
+
+Determine which strings to use
+------------------------------
+
+On the Firefox Desktop side, there are a `set of l10n repos <https://hg.mozilla.org/l10n-central/>`_ that contain the various translated strings and plugins for each locale.
+
+We have a set of cron tasks, l10n bumper, that call a Mozharness script that finds the latest revision of each of these repos, for any locales that we use on that branch. (Central has the largest set; beta has a subset, those locales that have active localizers and have passed some quality bar.) We land these revisions in `l10n-changesets.json <https://hg.mozilla.org/mozilla-central/file/96cc857300c367d1444fda0217f9073c0c8f0ae1/browser/locales/l10n-changesets.json>`_ for automation to use.
+
+These bumper tasks only run on central and beta, because we generally don't take new string changes on release or ESR. Any needed new string changes on those branches can be uplifted manually.
+
+I don't have a lot of visibility how we do things on the Mobile side in determining strings to use.
+
+Creating builds with the strings
+--------------------------------
+
+There are multiple approaches here, each with their benefits and downsides.
+
+L10n Repacks
+~~~~~~~~~~~~
+
+L10n Repacks are the oldest solution here. Essentially, we take Firefox Desktop tarballs, dmgs, exes, etc., we explode the contents, replace the strings, dictionary, search engine, etc., then repackage them and re-sign them.
+
+The benefits here: you can have a fully localized process, from the installer to the first run experience to using the browser. And this process is fully working and supported today.
+
+The downsides are many:
+
+- The l10n makefiles are archaic and add significant resistance to any efforts to fully modernize our build system. Even when they were new-ish, they used extremely convoluted logic that only a handful of people fully understood. Those people aren't at Mozilla today.
+- For Release Engineering and adjacent teams, the fact that we have 100 different installers, 100 different dmgs, etc., rather than 1 each, means that our release graphs are an order of magnitude or two larger and more complex than they would be if we didn't do l10n repacks. Similar for the amount of archive.m.o space we need.
+- For the user, you need to figure out which installer or package to download. Rather than just choose which platform (or have the website auto-detect it), you also need to choose which locale. If you want the browser in two different languages or more, you may need to install multiple copies of Firefox. If you want to switch languages, you may need to download and install a new Firefox.
+- For products that we want to submit to a store, the above point is even worse: imagine browsing your favorite app store and having to weed through 100 different Firefoxes to install the right locale app.
+
+Langpacks
+~~~~~~~~~
+
+We currently create langpacks, which are addons that contain strings for Firefox. We push these to addons.mozilla.org (AMO). If we want to ship a Firefox with multiple locales, we can ship multiple langpacks in that Firefox package (aiui this is how we handle MSIX currently).
+
+The benefits here: langpacks are relatively flexible and small. A user can install multiple langpacks in a single install of Firefox to support multiple languages, whether at install time or any other time they want.
+
+The downsides:
+- Until recently, AMO required Releng uplift any new langpacks manually, so whenever we add a new locale, Releng would have to go through a complex process to un-break the beta release graph. (There is now a new API to do this automatically, but Releng will need to `use it <https://mozilla-hub.atlassian.net/browse/RELENG-943>`_.)
+- Langpacks are not a complete solution; they need to be combined with some other solutions. For instance, aiui, langpacks don't localize the installer or 100% of the UI, so users may see en-US strings. Langpacks might not switch default search engines based off of locale, limiting our ability to benefit from contracts with search engine providers.
+
+Multilocale
+~~~~~~~~~~~
+
+Multilocale was seen as the sweet spot for a long time: a single installer or package that contains many locales. We can do this by including the strings at build time, a la Fenix; or by including various langpacks at package time, a la MSIX.
+
+The benefits here: a single package or installer can give the user access to multiple locales without having to download additional locales or search for the right package out of 100.
+
+The downsides:
+- each locale can add a significant amount of size to the package or installer: 2MB+ per for Android APKs, which can balloon the size of the package considerably if we want to include dozens of locales.
+- each installed locale can slow down performance for the browser noticeably.
+
+For those reasons we've limited the locale list for multilocale builds to the minimum set.
+
+Taskgraph considerations
+------------------------
+
+Especially in Gecko, building 100x the number of installers and packages means we need specialized automation to support them. We do a lot of chunking and reverse chunking:
+
+- l10n repack 5 locales at a time (l10n chunking), which means a single build fans out to ~20 l10n repack tasks
+- sign locales 1 at a time, so the ~20 l10n repack tasks fan out to ~100 signing tasks
+- reverse-chunk to dummy tasks: There is a max_dependencies limit of 100 dependencies, so if we want to trigger a task after all ~100 locales are finished for all ~5 platforms, we can't have a single task wait on all ~500 tasks. Instead, we create dummy tasks that each depend on 100 upstreams (reverse chunking), which allow us to wait on all the dummy tasks resolving before we proceed.
