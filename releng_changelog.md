@@ -7,6 +7,7 @@ This page best serves the people that have previously been into the releaseduty 
 _**As releaseduty squirrels are the ones with the best context when it comes to releases, they are the ones to edit this page and amend it accordingly. Keep in mind that changes should be in compliance with the other pieces of documentation.**_
 
 ### During 105.0 >= 2022-07-25
+- Deployed new iscript + scriptworker version to mac signers
 
 ### During 104.0 >= 2022-06-28
 - update-verify sends requests with "Cache-Control: max-stale=0" to avoid getting out of date responses from the CDN fronting balrog (https://bugzilla.mozilla.org/show_bug.cgi?id=1778728)
