@@ -1,3 +1,5 @@
+.. _l10n-bumper:
+
 L10n-Bumper
 ===========
 
@@ -9,6 +11,8 @@ How to adjust l10n-bumper timing + frequency
 --------------------------------------------
 
 The timing of the l10n-bumper cron tasks are specified in `.cron.yml <https://hg.mozilla.org/mozilla-central/file/f788858ac268c25b4bc573d4a2642df44af22daa/.cron.yml#l274>`_. Note, we intentionally scheduled these to have enough time for the l10n-bumper-triggered build tasks to complete before nightlies and daily betas trigger.
+
+.. _l10n_bumper_platform_locale_change:
 
 How to change the set of platforms or locales in l10n-bumper
 ------------------------------------------------------------
@@ -67,6 +71,8 @@ The second way is to create a new commit: set ``pin`` to ``false``, and populate
 
 .. _l10n repo: https://hg.mozilla.org/l10n-central/
 .. _l10n-changesets.json: https://hg.mozilla.org/mozilla-central/file/f788858ac268c25b4bc573d4a2642df44af22daa/browser/locales/l10n-changesets.json
+
+.. _manually_trigger_l10n_bumper:
 
 How to manually trigger l10n-bumper
 -----------------------------------
