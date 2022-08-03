@@ -67,3 +67,13 @@ The second way is to create a new commit: set ``pin`` to ``false``, and populate
 
 .. _l10n repo: https://hg.mozilla.org/l10n-central/
 .. _l10n-changesets.json: https://hg.mozilla.org/mozilla-central/file/f788858ac268c25b4bc573d4a2642df44af22daa/browser/locales/l10n-changesets.json
+
+How to manually trigger l10n-bumper
+-----------------------------------
+
+Because we list l10n-bumper in the set of `manually triggerable cron tasks <https://hg.mozilla.org/ci/ci-configuration/file/2813f0e845f1561dc50daec9a9318035eefa42f8/projects.yml#l247>`_ in both central and beta, we have two manually triggerable hooks we can trigger at will.
+
+- `Central hook <https://firefox-ci-tc.services.mozilla.com/hooks/project-releng/cron-task-mozilla-central%2Fl10n-bumper>`_
+- `Beta hook <https://firefox-ci-tc.services.mozilla.com/hooks/project-releng/cron-task-releases-mozilla-beta%2Fl10n-bumper>`_
+
+These will trigger a cron task which will schedule an l10n-bumper task. The l10n-bumper task should bump all unpinned locales' revisions to the latest, according to its in-tree configuration.
