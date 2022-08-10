@@ -27,12 +27,10 @@ Minor version upgrade process
 
 As of 2022.04.13, we have been successful rolling out minor version Taskcluster upgrades *without a tree closure*. We also managed to upgrade the database instance RAM during such a non-tree-closure window, which made the DB unavailable for ~10-15min. This only resulted in ~2 failed tasks, which went green on rerun. So if we want to roll out a minor version upgrade or other short-term outage maintenance tasks:
 
-- Send an email like this `dev-platform email`_ noting that this is a tree-closure-less upgrade several days before (Releaseduty)
 - Check with Relman in matrix #releaseduty before proceeding (Releaseduty)
 - Roll out the maintenance fixes and cluster upgrades (Cloudops team)
 - Check on smoketests (Taskcluster team)
 - Check treeherder and ask Sheriffs if there are any broken tasks (Releaseduty)
-- Respond to the first email saying the upgrade is finished (Releaseduty)
 - Update the `changelog`_.
 
 .. _major_tc_upgrade:
