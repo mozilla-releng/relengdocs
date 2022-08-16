@@ -11,6 +11,12 @@ _**As releaseduty squirrels are the ones with the best context when it comes to 
 
 ### During 104.0 >= 2022-06-28
 - update-verify sends requests with "Cache-Control: max-stale=0" to avoid getting out of date responses from the CDN fronting balrog (https://bugzilla.mozilla.org/show_bug.cgi?id=1778728)
+- Android:
+  - Android-Components gets released off of https://shipit.mozilla-releng.net/ instead of Github Releases ([RELENG-11](https://mozilla-hub.atlassian.net/browse/RELENG-11))
+  - Fenix/Focus are not immediately shipped anymore. We now have a 2-step process where builds are promoted and sent to our testing population before shipping them to Github or archive.mozilla.org ([bug 1776830](https://bugzilla.mozilla.org/show_bug.cgi?id=1776830) and [bug 1778056](https://bugzilla.mozilla.org/show_bug.cgi?id=1778056))
+  - Version number now follow the gecko scheme. This means 104.0.0-beta.1 will instead be called 104.0b1 ([bug 1777255](https://bugzilla.mozilla.org/show_bug.cgi?id=1777255))
+  - L10n string uplift are automatically approved by mergify ([bug 1779797](https://bugzilla.mozilla.org/show_bug.cgi?id=1779797))
+  - Android-Components bumps are also automatically approved ([bug 1780740](https://bugzilla.mozilla.org/show_bug.cgi?id=1780740))
 
 ### During 103.0 >= 2022-05-31
 - FirefoxCI cluster upgraded to Taskcluster 44.14.0
