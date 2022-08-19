@@ -11,6 +11,7 @@ _**As releaseduty squirrels are the ones with the best context when it comes to 
 ### During 105.0 >= 2022-07-25
 - Deployed new iscript + scriptworker version to mac signers
 - FirefoxCI cluster upgraded to Taskcluster 44.18.0
+  - relduty no longer announces minor upgrades on dev-platform
 
 ### During 104.0 >= 2022-06-28
 - update-verify sends requests with "Cache-Control: max-stale=0" to avoid getting out of date responses from the CDN fronting balrog (https://bugzilla.mozilla.org/show_bug.cgi?id=1778728)
