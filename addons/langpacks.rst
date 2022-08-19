@@ -1,3 +1,4 @@
+
 Langpack Submission Pipeline
 ============================
 
@@ -53,8 +54,10 @@ Process
 -  Beetmover moves the language packs to the release folder, allowing
    them to be easily downloaded by users not on AMO.
 
-How To…
--------
+.. _langpacks_how_to:
+
+Langpacks: How To…
+------------------
 
 How to handle New Languages for Release
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
