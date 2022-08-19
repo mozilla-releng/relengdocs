@@ -1,3 +1,5 @@
+.. _l10n_cross_channel:
+
 L10n Cross-channel
 ==================
 
