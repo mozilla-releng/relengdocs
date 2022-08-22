@@ -7,6 +7,9 @@ This page best serves the people that have previously been into the releaseduty 
 _**As releaseduty squirrels are the ones with the best context when it comes to releases, they are the ones to edit this page and amend it accordingly. Keep in mind that changes should be in compliance with the other pieces of documentation.**_
 
 ### During 106.0 >= 2022-08-22
+- Adding new `base_rev` and `base_ref` parameters in taskgraph ([bug 1784232](https://bugzilla.mozilla.org/show_bug.cgi?id=1784232))
+  - Deployed new `build-decision` image ([D155195](https://phabricator.services.mozilla.com/D155195))
+  - List to be expanded once new changes are deployed.
 
 ### During 105.0 >= 2022-07-25
 - Deployed new iscript + scriptworker version to mac signers
