@@ -286,7 +286,12 @@ instructions depict.
    pushlog <https://hg.mozilla.org/mozilla-central/pushloghtml>`__ and
    `Treeherder <https://treeherder.mozilla.org/#/jobs?repo=mozilla-central>`__.
    It may take a couple of minutes to appear.
-3. Trigger the `ship-geckoview <https://firefox-ci-tc.services.mozilla.com/hooks/project-releng/cron-task-mozilla-central%2Fship-geckoview>`__ hook after the decision task completes.
+
+Trigger ship-geckoview
+~~~~~~~~~~~~~~~~~~~~~~
+
+Trigger the `ship-geckoview <https://firefox-ci-tc.services.mozilla.com/hooks/project-releng/cron-task-mozilla-central%2Fship-geckoview>`__ hook after the decision task completes so android apps can pick up the new gecko major version.
+
 
 Bump ESR version
 ~~~~~~~~~~~~~~~~
