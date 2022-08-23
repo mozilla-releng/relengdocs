@@ -48,6 +48,8 @@ So when we run :ref:`ci-admin <ci-admin>`, we generate things like the `mozilla-
 
 The `mozilla-central scriptworker-canary cron hook <https://firefox-ci-tc.services.mozilla.com/hooks/project-releng/cron-task-mozilla-central%2Fscriptworker-canary>`__ similarly has no schedule, and has the ``'--force-run=scriptworker-canary'`` option. Because we allow for input, we set the ``HOOK_PAYLOAD`` env var to the payload that we send to the hook.
 
+.. _pulse_triggered_cron_hooks:
+
 Pulse-triggered cron hooks
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
