@@ -10,6 +10,7 @@ _**As releaseduty squirrels are the ones with the best context when it comes to 
 - Adding new `base_rev` and `base_ref` parameters in taskgraph ([bug 1784232](https://bugzilla.mozilla.org/show_bug.cgi?id=1784232))
   - Deployed new `build-decision` image ([D155195](https://phabricator.services.mozilla.com/D155195))
   - List to be expanded once new changes are deployed.
+- Balrog 3.20 deployed
 
 ### During 105.0 >= 2022-07-25
 - Deployed new iscript + scriptworker version to mac signers
