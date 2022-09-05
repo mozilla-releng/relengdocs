@@ -383,13 +383,12 @@ It doesn't get automatically updated because it would need to know when a new
 nightly was available, not just when the version had been updated in-tree.
 Everything up to merging this pull request can be done early, but the PR must
 not be merged before the first nightly has been built and published with the
-new version. However, it does need to be merged and deployed to `production <https://github.com/mozilla-releng/shipit#production>` 
+new version. However, it does need to be merged and deployed to `production <https://github.com/mozilla-releng/shipit#production>`
 as soon as reasonably possible after nightly is built. Note: the product details API needs to be manually updated by pressing the gear icon in shipit
 
 1. ``git clone git@github.com:mozilla-releng/shipit.git``
 2. ``git checkout -b nightly_version_bump_${version}``
-3. Edit FIREFOX_NIGHTLY's major version in
-   https://github.com/mozilla-releng/shipit/blob/f3d45d1dd1cc08cc466865f7d39305f1b2edbcf7/api/src/shipit_api/common/config.py#L49
+3. Edit the major version of ``FIREFOX_NIGHTLY`` and ``FENIX_NIGHTLY`` in TODO: ADD UPDATED URL ONCE https://github.com/mozilla-releng/shipit/pull/1153 IS MERGED.
 4. Edit the `LAST` and `NEXT` known dates (all 6 of them) at
    https://github.com/mozilla-releng/shipit/blob/f3d45d1dd1cc08cc466865f7d39305f1b2edbcf7/api/src/shipit_api/common/config.py#L54-L59
 5. Commit, and submit a pull request
