@@ -21,14 +21,14 @@ How do we add/remove partners?
 
 This is via manifest manipulation. If we're adding a new partner, we'll need to create a partner repo first, before pointing to it in the manifest.
 
-This has largely been out of Releng's hands, and we've only seen a reduction of the number of partners since the 2020 layoffs. These PRs have come from Kaply.
+This has largely been out of Releng's hands, and we've only seen a reduction of the number of partners since the 2020 layoffs. These PRs have come from Kaply, e.g. `Remove unused partners #26 <https://github.com/mozilla-partners/repack-manifests/pull/26>`__.
 
 How do I see partner tasks?
 ---------------------------
 
 There are a ton of ``release-partner-repack-*`` and ``release-eme-free-*`` tasks in a given Firefox desktop RC or dot-release promote graph. Also `Firefox desktop betas >= b5 <https://github.com/mozilla-releng/shipit/blob/79bbd4c5b30234c54b238d064074399ea45a8803/api/src/shipit_api/admin/release.py#L99-L106>`__.
 
-Many of these tasks might not visible in Treeherder. We intentionally hid them, then decided to show them, but haven't finished that process. We probably want to make them visible for easier sheriffing of failed release tasks.
+Many of these tasks might not be visible in Treeherder. We intentionally hid them, then decided to show them, but haven't finished that process. We probably want to make them visible for easier sheriffing of failed release tasks.
 
 How do I find partner release artifacts?
 ----------------------------------------
