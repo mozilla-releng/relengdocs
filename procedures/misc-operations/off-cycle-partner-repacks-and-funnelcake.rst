@@ -1,3 +1,5 @@
+.. _off_cycle_partner_repacks:
+
 Off-Cycle Partner Repacks and Funnelcakes
 =========================================
 

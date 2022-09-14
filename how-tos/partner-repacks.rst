@@ -38,6 +38,11 @@ Some partner repacks are public, and we push those binaries to, e.g. https://arc
 
 We can also find the partner tasks and download their private artifacts.
 
+How do I run partner repacks off-cycle?
+---------------------------------------
+
+See :ref:`off_cycle_partner_repacks`.
+
 Are there any known issues for partner repacks?
 -----------------------------------------------
 
