@@ -1,9 +1,9 @@
-Partner Repacks
-===============
+Partner Repacks and EME Free
+============================
 
 Partner Repacks are where we take a built and signed Firefox desktop build and modify things (branding, plugins, prefs), potentially also do so for l10n repacks, then re-sign the new files. The main point of contact here will be Mike Kaply.
 
-EME Free is a repacked Firefox without Encrypted Media Extensions, which allows you to run a Firefox without DRM (at the cost of broken video streaming).
+EME Free is a repacked Firefox without Encrypted Media Extensions, which allows you to run a Firefox without DRM (at the cost of broken video streaming). These use the same workflow and logic as partner repacks, but are not associated with an external partner.
 
 How do I find the manifests and scripts?
 ----------------------------------------
@@ -28,7 +28,7 @@ How do I see partner tasks?
 
 There are a ton of ``release-partner-repack-*`` and ``release-eme-free-*`` tasks in a given Firefox desktop RC or dot-release promote graph. Also `Firefox desktop betas >= b5 <https://github.com/mozilla-releng/shipit/blob/79bbd4c5b30234c54b238d064074399ea45a8803/api/src/shipit_api/admin/release.py#L99-L106>`__.
 
-Many of these tasks might not be visible in Treeherder. We intentionally hid them, then decided to show them, but haven't finished that process. We probably want to make them visible for easier sheriffing of failed release tasks.
+Many of these tasks `might not be visible in Treeherder <https://bugzilla.mozilla.org/show_bug.cgi?id=1568367>`__. We intentionally hid them, then decided to show them, but haven't finished that process. We probably want to make them visible for easier sheriffing of failed release tasks.
 
 How do I find partner release artifacts?
 ----------------------------------------
