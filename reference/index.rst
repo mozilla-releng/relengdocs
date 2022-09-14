@@ -12,6 +12,7 @@ Reference
    Balrog <https://mozilla-balrog.readthedocs.io/en/latest/index.html>
    CloudOps Contact Info <https://mana.mozilla.org/wiki/display/SRE/Contacting+Services+SRE>
    Firefox L10n <https://firefox-source-docs.mozilla.org/l10n/index.html>
+   Partner Repacks <https://firefox-source-docs.mozilla.org/taskcluster/partner-repacks.html>
    Releng Mana <https://mana.mozilla.org/wiki/display/RelEng/Release+Engineering+Home>
    Scriptworker <https://scriptworker.readthedocs.io/en/latest/index.html>
    Scriptworker Scripts <https://scriptworker-scripts.readthedocs.io/en/latest/index.html>

@@ -6,3 +6,4 @@ How-To's
 
    Adding a scriptworker-script <add-scriptworker-script.rst>
    l10n/index.rst
+   partner-repacks.rst
