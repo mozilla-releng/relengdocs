@@ -6,8 +6,7 @@ This page best serves the people that have previously been into the releaseduty 
 
 _**As releaseduty squirrels are the ones with the best context when it comes to releases, they are the ones to edit this page and amend it accordingly. Keep in mind that changes should be in compliance with the other pieces of documentation.**_
 
-### During 107.0 >= 2022-09-19
-
+### During 107.0 >= 2022-08-20
 
 ### During 106.0 >= 2022-08-22
 - Adding new `base_rev` and `base_ref` parameters in taskgraph ([bug 1784232](https://bugzilla.mozilla.org/show_bug.cgi?id=1784232))
@@ -75,7 +74,7 @@ _**As releaseduty squirrels are the ones with the best context when it comes to 
 
 ### During 98.0 >= 2022-01-10
 #### Changed
-- [RELENG-659](https://mozilla-hub.atlassian.net/browse/RELENG-659) - Py3 support on xpi/addons and updated the taskcluster version used 
+- [RELENG-659](https://mozilla-hub.atlassian.net/browse/RELENG-659) - Py3 support on xpi/addons and updated the taskcluster version used
 - Change ShipIt to point to xpi-manifest "main" branch
 - Deployed new version of iscript to mac signers
 - Deployed balrog v3.12 to production
