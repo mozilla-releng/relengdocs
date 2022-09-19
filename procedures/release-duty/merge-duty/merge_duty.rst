@@ -341,9 +341,10 @@ Reply to the migration request with the template:
 .. code:: text
 
    This is now complete:
-   * mozilla-central is merged to mozilla-beta, new version is XX.Y
-   * mozilla-central has been tagged and version bumped
-   * mozilla-esr has been version bumped
+   * mozilla-central is merged to mozilla-beta, new version is XXX.0b1
+   * mozilla-central has been tagged and version bumped to YYY.0a1
+   * mozilla-esr102 has been version bumped to ZZZ.A.0esr
+   * new geckoview nightly builds have been triggered
    * newly triggered nightlies will pick the version change on cron-based schedule
 
 Hint: verify current versions
