@@ -48,6 +48,8 @@ look at each bug in the tree and see if it is needed in the next ESR.  Most like
 Odd problems
 ------------
 
+The old esr branch needs to be updated to stop setting the esr-next-latest bouncer aliases before the first release from the new branch, e.g. https://bugzilla.mozilla.org/show_bug.cgi?id=1791744.
+
 mozilla-version needed an `update <https://github.com/mozilla-releng/mozilla-version/commit/3d9f3361505fbb485ea6103c2be6e2a8a4d41ec1>`__.
  * remember to push shipit changes that contain mozilla-version update to production branch, don't leave on master only
  * remember to update `treescript <https://github.com/mozilla-releng/scriptworker-scripts/commit/d0ffb3c1c0095798c50e0f126e47280404b720ed>`__
