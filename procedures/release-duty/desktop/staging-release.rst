@@ -1,11 +1,11 @@
 .. _staging-release:
 
+Run staging releases
+~~~~~~~~~~~~~~~~~~~~
+
 We have a number of tasks that _only_ run on Betas, Releases, and ESRs. Because of this, these tasks are at high risk of failure when we uplift a new Gecko version to `mozilla-beta`. Many scriptworkers fall into this category, but certain verification jobs, like update verify, are also notably included.
 
 When making changes to tasks like this staging releases are the most effective way to ensure that your changes are correct, and haven't regressed anything.
-
-Run staging releases
-~~~~~~~~~~~~~~~~~~~~
 
 Permissions
 ^^^^^^^^^^^
