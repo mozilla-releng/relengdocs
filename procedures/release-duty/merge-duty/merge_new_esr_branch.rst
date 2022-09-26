@@ -31,6 +31,11 @@ on the previous ESR, depending on app requirements; otherwise the rules for the
 previous ESR can be changed to no longer apply to the `-next` channels).
 Each `esrXX` rule's `Version` field should be set to `<XY.0` where `XY == XX+1`.
 
+Before the first release from the new ESR branch, the
+`release-bouncer-aliases` task on the previous ESR branch needs to be updated
+to not touch the `firefox-esr-next-*` aliases, to avoid issues like `bug
+1786507 <https://bugzilla.mozilla.org/show_bug.cgi?id=1786507>`__.
+
 External systems
 ----------------
 
