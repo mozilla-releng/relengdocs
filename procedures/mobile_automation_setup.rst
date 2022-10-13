@@ -241,7 +241,7 @@ specific gradle versions and are in charge of installing it locally.
     # On mac with homebrew
     brew install openjdk@8
 
-    # On Ubuntu  
+    # On Ubuntu
     sudo apt install openjdk-8-jdk
 
 ⚠️ Currently projects like Focus and Fenix need Java 11 to run, so you might need to install that version and set your $JAVA_HOME to that version.
@@ -261,10 +261,7 @@ specific gradle versions and are in charge of installing it locally.
 
     # In your .zshrc or .bashrc:
     # On mac
-    export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
-
-    # If java_home doesn't work, you can use this to get java home instead:
-    java -XshowSettings:properties -version 2>&1 | grep java.home
+    export JAVA_HOME="$(java -XshowSettings:properties -version 2>&1 | grep java.home | sed 's/.* //')"
 
     # On Ubuntu follow symlinks to find JAVA_HOME
     ls -l `which java`
