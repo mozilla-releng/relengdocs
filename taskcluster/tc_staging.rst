@@ -129,6 +129,24 @@ Once this goes green, the logs will link you to the decision task ID.
 
 Watch the task group. Ideally whatever you're concerned about (in this case it was docker-worker artifact uploads) will go green.
 
+Test the Github Integration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A `Github app`_ is connected to the Taskcluster staging instance and installed
+on the `stage-taskcluster-test`_ repository. Run some tasks by creating a pull
+request, verify that they are scheduled and show up in the Github checks
+interface. Merge the pull request to create a `github-push` event and verify the
+task is scheduled again.
+
+.. note::
+
+   This repo is not yet configured via `ci-configuration`, so you'll need to add scopes manually
+   by `creating the appropriate roles in the web ui`_.
+
+.. _Github app: https://github.com/apps/stage-taskcluster
+.. _stage-taskcluster-test: https://github.com/mozilla-releng/stage-taskcluster-test
+.. _creating the appropriate roles in the web ui: https://stage.taskcluster.nonprod.cloudops.mozgcp.net/auth/roles
+
 Known issues
 ------------
 
