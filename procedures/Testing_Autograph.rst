@@ -1,6 +1,7 @@
-.. _Testing_Autograph:
 .. index:: 
     single: Testing Autograph
+
+.. _Testing_Autograph:
 
 Testing Autograph
 =================
