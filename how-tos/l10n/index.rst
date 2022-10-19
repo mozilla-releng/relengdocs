@@ -1,3 +1,10 @@
+.. _how_to_l10n:
+
+How-To: L10n
+============
+
+(Also see :ref:`explanations_l10n`)
+
 .. toctree::
 
    l10n-bumper
