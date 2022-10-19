@@ -1,5 +1,9 @@
+.. _explanations_l10n:
+
 L10n and Release Engineering
 ============================
+
+(also see :ref:`how_to_l10n` .)
 
 Localization, or ``l10n``, at Mozilla involves a number of things: translating strings in the UI; including a locale's dictionary for spellcheck; and certain locale-specific prefs, e.g. default search engine or right-to-left UI.
 
