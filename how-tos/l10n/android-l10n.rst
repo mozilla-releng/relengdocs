@@ -1,6 +1,8 @@
 Android L10n
 ============
 
+Also see `Continuous Localization Setup Process for Android <https://mana.mozilla.org/wiki/pages/viewpage.action?spaceKey=FIREFOX&title=Continuous+Localization+Setup+Process+for+Android>`__.
+
 Similar to desktop's :ref:`l10n_cross_channel`, `android-l10n-tooling <https://github.com/mozilla-l10n/android-l10n-tooling/>`__ takes en-US strings from mobile repos and lands them in quarantine branches in the `android-l10n repo <https://github.com/mozilla-l10n/android-l10n>`__. (These are likely named ``-quarantine`` for similar reasons to the naming in :ref:`l10n_cross_channel`: there, a human looks at the quarantined changes and decides whether to uplift.) This is an `example PR <https://github.com/mozilla-l10n/android-l10n/pull/483>`__ created by android-l10n-tooling.
 
 It also takes localized strings and opens pull requests from the mobile repos (Fenix, Android-Components, and Focus-Android).
