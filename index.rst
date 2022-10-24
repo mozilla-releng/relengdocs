@@ -18,7 +18,7 @@ Contents:
    :maxdepth: 4
 
    tutorials/index.rst
-   how-tos/index.rst
+   how-to/index.rst
    reference/index.rst
    explanations/index.rst
 
