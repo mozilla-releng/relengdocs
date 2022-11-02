@@ -8,6 +8,7 @@ _**As releaseduty squirrels are the ones with the best context when it comes to 
 
 
 ### During 108.0 >= 2022-10-17
+- Android components moved to the new mono-repo, https://github.com/mozilla-mobile/firefox-android/
 
 ### During 107.0 >= 2022-08-20
 
