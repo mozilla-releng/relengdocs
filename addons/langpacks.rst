@@ -243,6 +243,14 @@ Intermittent errors
         'version': '81.0buildid20200824150741'
     }
 
+Permanent errors
+~~~~~~~~~~~~~~~~
+
+2022.11.28: All linux langpack tasks failed, but the osx langpack task succeeded. A rerun also failed.
+Logs showed amo_put() produced HTTP status 409; subsequent amo_get()'s returned 404 until retries 
+were exhausted and the task failed. Discussion with AMO devs on slack #addons resulted in a fix in AMO;
+then reruns succeeded.
+
 Refresh AMO API keys
 ~~~~~~~~~~~~~~~~~~~~
 In order to submit the langpacks, we use API tokens from the addon
