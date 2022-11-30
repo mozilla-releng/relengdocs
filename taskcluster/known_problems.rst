@@ -121,3 +121,32 @@ Second, as of 2022.01.26, we have had a number of issues with worker-manager. Th
 12. `Measure and improve performance of the worker query in provisioning loop <https://github.com/taskcluster/taskcluster/issues/3163>`__
 
 .. _ci-configuration: https://hg.mozilla.org/ci/ci-configuration/
+
+.. _workers not spawning:
+
+Workers Not Spawning After Image Bustage
+----------------------------------------
+
+If there's a problem in a worker image, worker-manager may not spawn any new
+workers even after the issue is fixed. This happens because the workers with
+the problematic image are still running, even though they are unable to claim
+tasks. However, worker-manager doesn't know this, so won't spawn any new
+workers until the broken ones expire or are terminated.
+
+These problematic workers *won't* show up in the Taskcluster Web UI, as the
+queue service is unaware of workers until they claim a task.
+
+Symptoms
+~~~~~~~~
+
+Backlogs will persist even after fixing a worker image. This will be most
+noticeable on pools with a low max capacity (like Decision pools), as they are
+more likely to get entirely filled with broken workers (in which cases no
+further tasks would run).
+
+Solution
+~~~~~~~~
+
+Run this script in braindump to automatically scan for and terminate these
+broken workers:
+https://hg.mozilla.org/build/braindump/file/tip/taskcluster/terminate_broken_workers.py
