@@ -145,7 +145,9 @@ From the above, edit the ``name`` and ``version`` to match the new
 version. Then under each platform, update the ``hashValue``,
 ``filesize``, and ``fileUrl`` based on the values provided to you in the
 widevine tracking bug. e.g. `bug
-1758423 <https://bugzilla.mozilla.org/show_bug.cgi?id=1758423>`__.
+1801201 <https://bugzilla.mozilla.org/show_bug.cgi?id=1801201>`__.
+(Recently, the media team has kindly provided the blob definition in the
+bug -- all the better!)
 Save the new blob as a .json file.
 
 Create the Balrog release
@@ -163,8 +165,17 @@ Create the Balrog rule
 
 Create a new rule to use the release you just created:
     - on https://balrog.services.mozilla.com/rules click the “Add Rule" button
-    - on the Create Rule page, set Product = "Widevine", Channel = "nightlytest" (or as needed), Mapping = the release you just created, Background Rate = 100 (or as needed), and set the Priority as needed, typically the lowest priority for the default rule.
+    - on the Create Rule page, set Product = "Widevine", Channel = "nightlytest" (or as specified in the bug), Mapping = the release you just created, Background Rate = 100 (or as specified in the bug), and set the Priority as needed, typically just a little higher than the priority for the default rule.
     - on the Create Rule page, click "Create Rule" button in the lower right to create the rule.
+
+Deployment usually proceeds in a series of steps over several days. Usually the Media team requests initial
+deployment to only the nightlytest channel, then the nightlytest and nightly channels, then also the beta channel, etc.
+To implement this (assuming an existing default Widevine rule with priority 420):
+    - create a rule for nightlytest with priority 425
+    - when requested to add nightly, create a new rule for the nightly channel with priority 425
+    - when requested to add beta, create a new rule for beta with priority 425
+    - when requested to add esr, create a new rule for esr* with priority 425
+    - when requested to make the new CDM the default, update the default rule's release, then delete the other rules (nightlytest, nightly, beta, esr*).
 
 See https://mozilla-balrog.readthedocs.io/en/latest/database.html for
 general guidance on rule matching.
