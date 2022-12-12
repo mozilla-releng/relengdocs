@@ -6,6 +6,8 @@ This page best serves the people that have previously been into the releaseduty 
 
 _**As releaseduty squirrels are the ones with the best context when it comes to releases, they are the ones to edit this page and amend it accordingly. Keep in mind that changes should be in compliance with the other pieces of documentation.**_
 
+### During 110.0 >= 2022-12-12
+
 ### During 109.0 >= 2022-11-14
 - Added repackage mac .pkg ([bug 1798589](https://bugzilla.mozilla.org/show_bug.cgi?id=1798589))
 - Widevine update, ([bug 1795749](https://bugzilla.mozilla.org/show_bug.cgi?id=1795749))
