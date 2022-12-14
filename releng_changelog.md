@@ -8,6 +8,7 @@ _**As releaseduty squirrels are the ones with the best context when it comes to 
 
 ### During 110.0 >= 2022-12-12
 - Focus moved to the new mono-repo, https://github.com/mozilla-mobile/firefox-android/ ([bug 1797704](https://bugzilla.mozilla.org/show_bug.cgi?id=1797704))
+- scriptworker 46.0.0 released which removes 2021 CoT public key
 
 ### During 109.0 >= 2022-11-14
 - Added repackage mac .pkg ([bug 1798589](https://bugzilla.mozilla.org/show_bug.cgi?id=1798589))
