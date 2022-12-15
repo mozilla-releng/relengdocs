@@ -140,7 +140,7 @@ under ``ubuntu-store.yml``.
 
    .. code-block:: bash
 
-      apt update && apt install devscripts dput rsync
+      apt update && DEBIAN_FRONTEND=noninteractive apt install -y devscripts dput rsync
       rsync -av /keychain/ /keychain2/
       export GNUPGHOME=/keychain2
       cd /packages
