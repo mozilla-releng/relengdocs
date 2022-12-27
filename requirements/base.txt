@@ -44,10 +44,6 @@ imagesize==1.3.0 \
     --hash=sha256:1db2f82529e53c3e929e8926a1fa9235aa82d0bd0c580359c67ec31b2fddaa8c \
     --hash=sha256:cd1750d452385ca327479d45b64d9c7729ecf0b3969a58148298c77092261f9d
     # via sphinx
-importlib-metadata==4.8.2 \
-    --hash=sha256:53ccfd5c134223e497627b9815d5030edf77d2ed573922f7a0b8f8bb81a1c100 \
-    --hash=sha256:75bdec14c397f528724c1bfd9709d660b33a4d2e77387a3358f20b848bb5e5fb
-    # via sphinxcontrib-spelling
 jinja2==3.0.3 \
     --hash=sha256:077ce6014f7b40d03b47d1f1ca4b0fc8328a692bd284016f806ed0eaca390ad8 \
     --hash=sha256:611bb273cd68f3b993fabdc4064fc858c5b47a973cb5aa7999ec1ba405c87cd7
@@ -189,7 +185,7 @@ pyyaml==6.0 \
 recommonmark==0.7.1 \
     --hash=sha256:1b1db69af0231efce3fa21b94ff627ea33dee7079a01dd0a7f8482c3da148b3f \
     --hash=sha256:bdb4db649f2222dcd8d2d844f0006b958d627f732415d399791ee436a3686d67
-    # via -r requirements/base.in
+    # via -r base.in
 requests==2.26.0 \
     --hash=sha256:6c1246513ecd5ecd4528a0906f910e8f0f9c6b8ec72030dc9fd154dc1a6efd24 \
     --hash=sha256:b8aa58f8cf793ffd8782d3d8cb19e66ef36f7aba4353eec859e74678b01b07a7
@@ -206,7 +202,7 @@ sphinx==4.3.0 \
     --hash=sha256:6d051ab6e0d06cba786c4656b0fe67ba259fe058410f49e95bee6e49c4052cbf \
     --hash=sha256:7e2b30da5f39170efcd95c6270f07669d623c276521fee27ad6c380f49d2bf5b
     # via
-    #   -r requirements/base.in
+    #   -r base.in
     #   pydata-sphinx-theme
     #   recommonmark
     #   sphinx-book-theme
@@ -214,7 +210,7 @@ sphinx==4.3.0 \
 sphinx-book-theme==0.3.3 \
     --hash=sha256:0ec36208ff14c6d6bf8aee1f1f8268e0c6e2bfa3cef6e41143312b25275a6217 \
     --hash=sha256:9685959dbbb492af005165ef1b9229fdd5d5431580ac181578beae3b4d012d91
-    # via -r requirements/base.in
+    # via -r base.in
 sphinxcontrib-applehelp==1.0.2 \
     --hash=sha256:806111e5e962be97c29ec4c1e7fe277bfd19e9652fb1a4392105b43e01af885a \
     --hash=sha256:a072735ec80e7675e3f432fcae8610ecf509c5f1869d17e2eecff44389cdbc58
@@ -242,23 +238,14 @@ sphinxcontrib-serializinghtml==1.1.5 \
 sphinxcontrib-spelling==7.2.1 \
     --hash=sha256:f09c1ddadf4f09ddbaef3ee210e6a18123c94fb5db5e11dfd5012208f73c35e0 \
     --hash=sha256:f2578653014931b32c8c30d1a9930d998ae053b0d8b7adfbea0eb95a63e7a737
-    # via -r requirements/base.in
-typing-extensions==3.10.0.2 \
-    --hash=sha256:49f75d16ff11f1cd258e1b988ccff82a3ca5570217d7ad8c5f48205dd99a677e \
-    --hash=sha256:d8226d10bc02a29bcc81df19a26e56a9647f8b0a6d4a83924139f4a8b01f17b7 \
-    --hash=sha256:f1d25edafde516b146ecd0613dabcc61409817af4766fbbcfb8d1ad4ec441a34
-    # via importlib-metadata
+    # via -r base.in
 urllib3==1.26.7 \
     --hash=sha256:4987c65554f7a2dbf30c18fd48778ef124af6fab771a377103da0585e2336ece \
     --hash=sha256:c4fdf4019605b6e5423637e01bc9fe4daef873709a7973e195ceba0a62bbc844
     # via requests
-zipp==3.6.0 \
-    --hash=sha256:71c644c5369f4a6e07636f0aa966270449561fcea2e3d6747b8d23efaa9d7832 \
-    --hash=sha256:9fe5ea21568a0a70e50f273397638d39b03353731e6cbbb3fd8502a33fec40bc
-    # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
-setuptools==58.5.3 \
-    --hash=sha256:a481fbc56b33f5d8f6b33dce41482e64c68b668be44ff42922903b03872590bf \
-    --hash=sha256:dae6b934a965c8a59d6d230d3867ec408bb95e73bd538ff77e71fedf1eaca729
+setuptools==65.5.1 \
+    --hash=sha256:d0b9a8433464d5800cbe05094acf5c6d52a91bfac9b52bcfc4d41382be5d5d31 \
+    --hash=sha256:e197a19aa8ec9722928f2206f8de752def0e4c9fc6953527360d1c36d94ddb2f
     # via sphinx
