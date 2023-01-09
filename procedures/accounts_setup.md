@@ -59,7 +59,7 @@ There are 3 levels of commit access:
 * Level 3 access is required to land code in [mozilla-central](https://hg.mozilla.org/mozilla-central) and its derived integration & release branches. At some point in your Mozilla contribution story, you may need Level 3 access but many contributors never do. Talk to your manager/mentor if you think you need this access. You should already have Level 2 access when you request Level 3
 
 ## Git & Github
-Please file a bug similar to [bug 1726348](https://bugzilla.mozilla.org/show_bug.cgi?id=1726348) and include the following teams to be added. Ask for your manager to vouch in the bug for these changes. The teams you need to be added are:
+Please file [a bug similar to this one](https://bugzilla.mozilla.org/show_bug.cgi?id=1805749) and include the following teams to be added. Ask for your manager to vouch in the bug for these changes. The teams you need to be added are:
 1. [https://github.com/orgs/mozilla/teams/releng/members](https://github.com/orgs/mozilla/teams/releng/members)
 2. [https://github.com/orgs/mozilla-releng/teams/releng/members](https://github.com/orgs/mozilla-releng/teams/releng/members)
 3. [https://github.com/orgs/mozilla-mobile/teams/releng/members](https://github.com/orgs/mozilla-mobile/teams/releng/members)
@@ -68,7 +68,7 @@ Please file a bug similar to [bug 1726348](https://bugzilla.mozilla.org/show_bug
 6. [https://github.com/orgs/mozilla-l10n/teams/release-engineering/members](https://github.com/orgs/mozilla-l10n/teams/release-engineering/members)
 7. [https://github.com/orgs/taskcluster/teams/releng/members](https://github.com/orgs/taskcluster/teams/releng/members)
 
-Additionally, you'll need access to [https://github.com/mozilla-services/cloudops-infra](https://github.com/mozilla-services/cloudops-infra) which can be accomplished by filing a ticket [here](https://github.com/mozilla-services/github-management/issues/new?assignees=&labels=&template=NewOrgMember.md&title=) similar to [this](https://github.com/mozilla-services/github-management/issues/129).
+(You will not be able to see any these links above until you've been added.)
 
 There are also a handful of git repos hosted directly by Mozilla. Your manager/mentor will let you know if you need access to one of these.
 
@@ -199,17 +199,18 @@ Google Drive access should be enabled with your email account when you start. If
 Some internal Mozilla systems (IT, HR) are documented on [mana](https://mana.mozilla.org/). That is behind SSO and you will be granted access to that as soon as LDAP is activated.
 
 ## Future access as you need it
-* You will need acccess to our GCP infrastructure. Talk to your manage to be added to the [team-releng@firefox.gcp.mozilla.com](mailto:team-releng@firefox.gcp.mozilla.com). Use a ticket similar to [this](https://mozilla-hub.atlassian.net/browse/SVCSE-136) in CloudOps.
-* Ship-it - follow procedure in [here](https://moz-releng-docs.readthedocs.io/en/latest/procedures/release-duty/index.html#how-to-get-ship-it-access) to get access.
-* Balrog - follow procedure in [here](https://moz-releng-docs.readthedocs.io/en/latest/procedures/release-duty/index.html#how-to-get-balrog-access) to get access. A similar related bug was [bug 1727341](https://bugzilla.mozilla.org/show_bug.cgi?id=1727341).
+* You will need acccess to our GCP infrastructure. Talk to your manage to be added to the [team-releng@firefox.gcp.mozilla.com](mailto:team-releng@firefox.gcp.mozilla.com). Use a ticket similar to [this](https://mozilla-hub.atlassian.net/browse/SVCSE-965) in CloudOps.
 * CultureAmp - talk to your manager to set your goals and run the logistics in there for the 1x1 tracking. You'll also need to be added to the RelEng team goals.
 * JIRA - access to JIRA is granted upon SSO access so please make sure to login via the main dashboard. Ask your manager to add you to the RELENG/FFXP boards.
-* Sentry logs - File a bug similar to [this one](https://bugzilla.mozilla.org/show_bug.cgi?id=1731311) to get access to debug various logs in Balrog and more.
-* CloudOps Jenkins - File a bug similar to [Bug 1721444](https://bugzilla.mozilla.org/show_bug.cgi?id=1721444) and talk to your manager to get access to Janekins CloudOps to be able to debug. You should already have access to [cloudops-infra repo](https://github.com/mozilla-services/cloudops-infra/) if you've done the Github section above.
+* Sentry logs - File a bug similar to [this one](https://bugzilla.mozilla.org/show_bug.cgi?id=1805981) to get access to debug various logs in Balrog and more.
+* CloudOps Jenkins - File a bug similar to [Bug 1721444](https://bugzilla.mozilla.org/show_bug.cgi?id=1721444) and talk to your manager to get access to CloudOps' Jenkins to be able to debug. You should already have access to [cloudops-infra repo](https://github.com/mozilla-services/cloudops-infra/) if you've done the Github section above.
 Once it's properly configured, you'll be able to access it by making some tweaks documented [here](https://github.com/mozilla-services/cloudops-deployment#accessing-jenkins).
 
 ### LDAP groups
-* RelEng LDAP flags to access various infrastructure pieces. File a bug similar to [this](https://bugzilla.mozilla.org/show_bug.cgi?id=1732846) and ask your manager for vouching. The flags needed are listed below:
+* RelEng LDAP flags to access various infrastructure pieces. File a bug similar to [this](https://bugzilla.mozilla.org/show_bug.cgi?id=1805972) and ask your manager for vouching. The flags needed are listed below:
+
+### Balrog ACLs
+In addition to LDAP access to Balrog, you will need to be granted ACLs in Balrog itself. File a bug similar to [this one](https://bugzilla.mozilla.org/show_bug.cgi?id=1806828) to have those granted.
 
 ```
 cn=active_scm_firefoxci,ou=groups,dc=mozilla
