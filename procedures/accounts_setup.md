@@ -90,7 +90,7 @@ $ gcloud init
 ###### RelEng currently has two SOPS repositories for holding off secrets.
 1. `moz-fx-releng-secrets-global` - this is dedicated for RelEng team secrets (3rd party accounts, certificates, etc).
 Basically it's our own private space for holding off any type of secrets. Your manager should be able to grant you access to this repo.
-2. `moz-fx-relengworker-prod-a67d` - this is dedicated for our scriptworkers [https://github.com/mozilla-releng/scriptworker-scripts](https://github.com/mozilla-releng/scriptworker-scripts).
+2. `moz-fx-relengworker-prod-a67d` - this is dedicated for our scriptworkers [https://github.com/mozilla-releng/scriptworker-scripts](https://github.com/mozilla-releng/scriptworker-scripts). You'll need a [pull request similar to this one](https://github.com/mozilla-services/cloudops-infra/pull/4622) to get access. You can do this yourself after getting access to the cloudops-infra repository (see below).
 It's mirrored to CloudOps infrastructure. This repo is owned by CloudOps, to get access create an issue similar to [SVCSE-242](https://mozilla-hub.atlassian.net/browse/SVCSE-242)
 
 The one that's most commonly used is the global one. The second one is needed only if a new type of scriptworker is added and/or
