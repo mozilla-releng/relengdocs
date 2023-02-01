@@ -9,6 +9,7 @@ _**As releaseduty squirrels are the ones with the best context when it comes to 
 ### During 111.0 >= 2023-01-16
 - [Jan 2023 rotation] Change all the things
 - tooltool.py synchronization and consolidation
+- Widevine native aarch64, bug 1812343 
 
 ### During 110.0 >= 2022-12-12
 - Focus moved to the new mono-repo, https://github.com/mozilla-mobile/firefox-android/ ([bug 1797704](https://bugzilla.mozilla.org/show_bug.cgi?id=1797704))
