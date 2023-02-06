@@ -148,6 +148,11 @@ under ``ubuntu-store.yml``.
       # for the next command for signing
       debsign -k Release --re-sign *.dsc *.buildinfo *.changes
       dput ppa:mozillacorp/mozillavpn mozillavpn*.changes
+   
+   An email will be sent by lauchpad to release+ubuntu-store@mozilla.com.
+
+   If the build fails for some reason (i.e.: GPG key rotated), and the server complains the package has already been
+   uploaded, then `dput`_ can be run with `-f`_ to force the upload/override.
 
 6. The build should eventually show up on `launchpad`_. You can also
    `watch the state of the builds here`_.
