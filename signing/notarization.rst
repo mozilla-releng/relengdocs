@@ -1,6 +1,39 @@
 Notarization
 ============
 
+❗ Apple is deprecating the usage of altool in favor of notarytool.
+
+❗ We are working on moving Apple notarization to signingscript using `rcodesign <https://github.com/indygreg/apple-platform-rs/tree/main/apple-codesign>`__.
+
+
+Signingscript (Not in use yet)
+==============================
+
+Signingscript uses rcodesign via fetch task.
+The credentials used are stored in k8s sops, and injected to the environment via env vars.
+
+Credentials
+-----------
+
+Issuing new notarization credentials
+
+1. Login to `App Store Connect <https://appstoreconnect.apple.com/access/api>`__ (preferably with your @mozilla.com account) and click on ``Keys``
+2. Click the ``+`` sign, give it a name, choose ``Developer`` access, and click ``Generate``.
+3. Download the API key. Note you can only do this once.
+4. Write down **Issuer ID** (above list of API keys) and the **Key ID** created.
+5. Save values to sops in ``secrets-sops-relengworker/projects/relengworker/k8s/values/signing.yaml``
+
+   Save only the contents of the key to SOPS. Handy command to extract key contents:
+
+    .. code:: sh
+        
+        # cat file | remove header and footer | remove new lines
+        cat AuthKey_XXXXXXX.p8 | sed 's/^\-.*\-$//g' | tr -d '\n'
+
+
+Original Documentation
+======================
+
 As of June 26, 2019, we started signing mac builds on the mac
 notarization pool (Fx69). These tasks also notarize the signed builds,
 and create signed pkg installers.
@@ -11,7 +44,7 @@ Machine and maintenance
 The machine list is
 `here <https://github.com/escapewindow/scriptworker-scripts/wiki/machines>`__.
 
-We’re working on adding deployment support to
+We're working on adding deployment support to
 `ronin-puppet <https://github.com/mozilla-platform-ops/ronin_puppet/>`__.
 We want to be able to fully automate rollout, from imaging to rollout. We also want to be able to bump dependency versions in ronin-puppet and have it Just Work. The todo list for those is `here <https://github.com/mozilla-releng/scriptworker-scripts/wiki/mac-todo>`__.
 
