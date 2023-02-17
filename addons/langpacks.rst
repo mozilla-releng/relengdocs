@@ -62,12 +62,17 @@ Langpacks: How To…
 How to handle New Languages for Release
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Context: the underlying issue for this lies within `issue-15353`_ and is on the roadmap to be fixed by the AMO team.
-Some related work is happening in H2 2021.
+Context: the underlying issue for this lies within `issue-15353`_ and can be
+fixed in addonscript by switching to the v5 AMO API for submission.  In the
+mean time:
 
+-  The channel (listed/unlisted) parameter on submission of new addons is
+   ignored by the v4 API, so new langpacks end up unlisted.
+-  Following releases will attempt to update these langpacks and set them to
+   listed, which will fail.
 -  Once the promote phase is kicked off, any new language packs will
    fail the addon submission task, and require human intervention.
--  Go to the failed task, and look for its dependency on a nightly-l10n
+-  Go to the failed task, and look for its dependency on a shippable-l10n
    task, locally download the .xpi for the language in question.
 -  Decrypt the AMO user/pass from our private repo, and in Firefox log
    into AMO’s Developer Hub (Private Browsing Mode recommended)
