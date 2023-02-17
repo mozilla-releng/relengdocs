@@ -176,7 +176,7 @@ confused with web extensions (they use a custom format to VPN).
 Promote Addons
 ~~~~~~~~~~~~~~
 
-1. :ref:`vpn relpro`.
+1. :ref:`vpn relpro`, using the lastest push from `main` (unless otherwise specified).
 2. Change the ``release_promotion_flavor`` to ``promote-addons``.
 3. Trigger the action. This will trigger beetmover tasks that will upload the addons
    plus the manifest to the `addons candidates directory`_. The path will have a pattern
@@ -188,7 +188,7 @@ Promote Addons
 Ship Addons
 ~~~~~~~~~~~
 
-1. :ref:`vpn relpro`.
+1. :ref:`vpn relpro`, using the same push as in the `promote` phase.
 2. Change the ``release_promotion_flavor`` to ``ship-addons``.
 3. Trigger the action. This will trigger beetmover tasks that will upload the
    addons plus the manifest to the `addons releases directory`_. The files will
