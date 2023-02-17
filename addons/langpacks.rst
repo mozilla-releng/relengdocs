@@ -69,7 +69,7 @@ mean time:
 -  The channel (listed/unlisted) parameter on submission of new addons is
    ignored by the v4 API, so new langpacks end up unlisted.
 -  Following releases will attempt to update these langpacks and set them to
-   listed, which will fail.
+   listed, which will fail because required metadata for a listed add-on (categories, license) is not set (and can't be set with the old API).
 -  Once the promote phase is kicked off, any new language packs will
    fail the addon submission task, and require human intervention.
 -  Go to the failed task, and look for its dependency on a shippable-l10n
