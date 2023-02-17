@@ -86,14 +86,14 @@ fixed in addonscript by switching to the v5 AMO API for submission (see
    `[Screenshot 8] <#08>`__
 -  Select to Upload a new version, to see the following page
    `[Screenshot 9] <#09>`__
--  **IMPORTANT** On this page be SURE TO CLICK **CHANGE** to make the
-   extension listed follow prompts to alter the input [Screenshots
-   `[10] <#10>`__, `[11] <#11>`__, and `[12] <#12>`__]
+-  **IMPORTANT** On the How to Distribute this Version page be SURE TO CLICK **CHANGE** to make the
+   extension listed (On this site) it defaults to unlisted (On your own) follow prompts to alter the input [Screenshots
+   `[10] <#10>`__ and `[11] <#11>`__]
 -  Finally upload the .xpi with “Select a file…” and then you’ll see
-   some results [Screenshots `[13] <#13>`__ and `[14] <#14>`__]
+   some results [Screenshots `[12] <#12>`__ and `[13] <#13>`__]
 -  Continue
 -  You’ll need to fill out a few required fields [Screenshots
-   `[15] <#15>`__, `[16] <#16>`__ and `[17] <#17>`__]
+   `[14] <#14>`__, `[15] <#15>`__ and `[16] <#16>`__]
 
    -  Summary can be simple “Language pack for ”
    -  License is to be set to MPL 2.0
@@ -101,9 +101,9 @@ fixed in addonscript by switching to the v5 AMO API for submission (see
 
 -  In the slim chance you get hit with AMO’s restriction of path length,
    feel free to edit it in an attempt to be descriptive but within the
-   limits, this is purely convenience. [Screenshot `[18] <#18>`__,
-   `[19] <#19>`__]
--  Success! `[Screenshot 20] <#20>`__
+   limits, this is purely convenience. [Screenshot `[17] <#17>`__,
+   `[18] <#18>`__]
+-  Success! `[Screenshot 19] <#19>`__
 -  Go back and rerun the addon submission task that failed, to unblock
    the release.
 
@@ -141,28 +141,26 @@ Langpack Flow 3| `Back to how to
 section <#how-to-handle-new-languages-for-release>`__ ### 08 |Details
 Page| `Back to how to
 section <#how-to-handle-new-languages-for-release>`__ ### 09 |Upload
-Version Flow 1| `Back to how to
-section <#how-to-handle-new-languages-for-release>`__ ### 10 |Upload
 Version Flow 2| `Back to how to
-section <#how-to-handle-new-languages-for-release>`__ ### 11 |Upload
+section <#how-to-handle-new-languages-for-release>`__ ### 10 |Upload
 Version Flow 3| `Back to how to
-section <#how-to-handle-new-languages-for-release>`__ ### 12 |Upload
+section <#how-to-handle-new-languages-for-release>`__ ### 11 |Upload
 Version Flow 4| `Back to how to
-section <#how-to-handle-new-languages-for-release>`__ ### 13 |Upload
+section <#how-to-handle-new-languages-for-release>`__ ### 12 |Upload
 Version Flow 5| `Back to how to
-section <#how-to-handle-new-languages-for-release>`__ ### 14 |Upload
+section <#how-to-handle-new-languages-for-release>`__ ### 13 |Upload
 Version Flow 6| `Back to how to
-section <#how-to-handle-new-languages-for-release>`__ ### 15 |Upload
+section <#how-to-handle-new-languages-for-release>`__ ### 14 |Upload
 Version Flow 7| `Back to how to
-section <#how-to-handle-new-languages-for-release>`__ ### 16 |Upload
+section <#how-to-handle-new-languages-for-release>`__ ### 15 |Upload
 Version Flow 8| `Back to how to
-section <#how-to-handle-new-languages-for-release>`__ ### 17 |Upload
+section <#how-to-handle-new-languages-for-release>`__ ### 16 |Upload
 Version Flow 9| `Back to how to
-section <#how-to-handle-new-languages-for-release>`__ ### 18 |Adjust
+section <#how-to-handle-new-languages-for-release>`__ ### 17 |Adjust
 Human URL 1| `Back to how to
-section <#how-to-handle-new-languages-for-release>`__ ### 19 |Adjust
+section <#how-to-handle-new-languages-for-release>`__ ### 18 |Adjust
 Human URL 2| `Back to how to
-section <#how-to-handle-new-languages-for-release>`__ ### 20 |Success|
+section <#how-to-handle-new-languages-for-release>`__ ### 19 |Success|
 `Back to how to section <#how-to-handle-new-languages-for-release>`__
 
 .. |Login Flow 1| image:: /addons/media/Screenshot_01.png
@@ -174,17 +172,16 @@ section <#how-to-handle-new-languages-for-release>`__ ### 20 |Success|
 .. |Find Langpack Flow 3| image:: /addons/media/Screenshot_07.png
 .. |Details Page| image:: /addons/media/Screenshot_08.png
 .. |Upload Version Flow 1| image:: /addons/media/Screenshot_09.png
-.. |Upload Version Flow 2| image:: /addons/media/Screenshot_10.png
-.. |Upload Version Flow 3| image:: /addons/media/Screenshot_11.png
-.. |Upload Version Flow 4| image:: /addons/media/Screenshot_12.png
-.. |Upload Version Flow 5| image:: /addons/media/Screenshot_13.png
-.. |Upload Version Flow 6| image:: /addons/media/Screenshot_14.png
-.. |Upload Version Flow 7| image:: /addons/media/Screenshot_15.png
-.. |Upload Version Flow 8| image:: /addons/media/Screenshot_16.png
-.. |Upload Version Flow 9| image:: /addons/media/Screenshot_17.png
-.. |Adjust Human URL 1| image:: /addons/media/Screenshot_18.png
-.. |Adjust Human URL 2| image:: /addons/media/Screenshot_19.png
-.. |Success| image:: /addons/media/Screenshot_20.png
+.. |Upload Version Flow 3| image:: /addons/media/Screenshot_10.png
+.. |Upload Version Flow 4| image:: /addons/media/Screenshot_11.png
+.. |Upload Version Flow 5| image:: /addons/media/Screenshot_12.png
+.. |Upload Version Flow 6| image:: /addons/media/Screenshot_13.png
+.. |Upload Version Flow 7| image:: /addons/media/Screenshot_14.png
+.. |Upload Version Flow 8| image:: /addons/media/Screenshot_15.png
+.. |Upload Version Flow 9| image:: /addons/media/Screenshot_16.png
+.. |Adjust Human URL 1| image:: /addons/media/Screenshot_17.png
+.. |Adjust Human URL 2| image:: /addons/media/Screenshot_18.png
+.. |Success| image:: /addons/media/Screenshot_19.png
 
 Troubleshooting
 ---------------
