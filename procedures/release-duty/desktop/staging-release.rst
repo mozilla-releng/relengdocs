@@ -26,13 +26,13 @@ try <https://firefox-source-docs.mozilla.org/tools/try/selectors/release.html>`_
 
 -  hop on ``central`` repository
 -  make sure you're up to date with the tip of the repo
--  ``mach try release --version <future-version.0b1> --migration central-to-beta --tasks release-sim``
+-  ``mach try release --version <future-version.0b1> --migration central-to-beta --tasks staging --disable-pgo``
 
 **For beta to release migration**
 
 -  hop on ``beta`` repository
 -  make sure you're up to date with the tip of the repo
--  ``mach try release --version <future-version.0> --migration beta-to-release --tasks release-sim``
+-  ``mach try release --version <future-version.0> --migration beta-to-release --tasks staging --disable-pgo``
 
 .. note:: Get ``future-version`` from `shipit-staging <https://shipit.staging.mozilla-releng.net/>`__. Ie.: If the version in shipit is ``94.0b14`` use ``94.0b15``
 
@@ -45,15 +45,15 @@ instance. For how to create a release via Shipit, refer to the
 just ensure you are using the staging instance
 (https://shipit.staging.mozilla-releng.net).
 
-One caveat here is the list of partials that needs to be filled-in.
-:warning: The partials need to exist in Ship It dev, Balrog stage, as well as the _production_ archive.mozilla.org server. There's a `helper script in the braindump repository <https://hg.mozilla.org/build/braindump/file/tip/releases-related/just-give-me-partials.sh>` that will help you find previous releases that meet this criteria.
+Unless you are specifically testing something to do with updates, it is recommended that you disable partials when submitting the release -- it is very, very tricky to get them working in staging, and is best avoided. If you *do* need partials, you must choose a version or versions that exist in Ship It dev, Balrog stage, as well as the *production* archive.mozilla.org server. There's a `helper script in the braindump repository <https://hg.mozilla.org/build/braindump/file/tip/releases-related/just-give-me-partials.sh>`__ that will help you find previous releases that meet this criteria (but it appears to not fully work these days...).
 
 Once the staging releases are being triggered, it's highly recommended
 that at least a comment is being dropped to Sheriffs team
-(e.g. ``Aryx``) to let them know these are happening in order to: \*
-avoid stepping on each others toes as they may run staging releases as
-well \* make sure we're up-to-date to recent patches that they may be
-aware of
+(e.g. ``Aryx``) to let them know these are happening in order to:
+
+- avoid stepping on each others toes as they may run staging releases as well
+- make sure we're up-to-date to recent patches that they may be aware of
+
 
 :warning:
    Allow yourself enough time to wait for these staging releases
