@@ -141,26 +141,24 @@ Langpack Flow 3| `Back to how to
 section <#how-to-handle-new-languages-for-release>`__ ### 08 |Details
 Page| `Back to how to
 section <#how-to-handle-new-languages-for-release>`__ ### 09 |Upload
-Version Flow 2| `Back to how to
-section <#how-to-handle-new-languages-for-release>`__ ### 10 |Upload
 Version Flow 3| `Back to how to
-section <#how-to-handle-new-languages-for-release>`__ ### 11 |Upload
+section <#how-to-handle-new-languages-for-release>`__ ### 10 |Upload
 Version Flow 4| `Back to how to
-section <#how-to-handle-new-languages-for-release>`__ ### 12 |Upload
+section <#how-to-handle-new-languages-for-release>`__ ### 11 |Upload
 Version Flow 5| `Back to how to
-section <#how-to-handle-new-languages-for-release>`__ ### 13 |Upload
+section <#how-to-handle-new-languages-for-release>`__ ### 12 |Upload
 Version Flow 6| `Back to how to
-section <#how-to-handle-new-languages-for-release>`__ ### 14 |Upload
+section <#how-to-handle-new-languages-for-release>`__ ### 13 |Upload
 Version Flow 7| `Back to how to
-section <#how-to-handle-new-languages-for-release>`__ ### 15 |Upload
+section <#how-to-handle-new-languages-for-release>`__ ### 14 |Upload
 Version Flow 8| `Back to how to
-section <#how-to-handle-new-languages-for-release>`__ ### 16 |Upload
+section <#how-to-handle-new-languages-for-release>`__ ### 15 |Upload
 Version Flow 9| `Back to how to
-section <#how-to-handle-new-languages-for-release>`__ ### 17 |Adjust
+section <#how-to-handle-new-languages-for-release>`__ ### 16 |Adjust
 Human URL 1| `Back to how to
-section <#how-to-handle-new-languages-for-release>`__ ### 18 |Adjust
+section <#how-to-handle-new-languages-for-release>`__ ### 17 |Adjust
 Human URL 2| `Back to how to
-section <#how-to-handle-new-languages-for-release>`__ ### 19 |Success|
+section <#how-to-handle-new-languages-for-release>`__ ### 18 |Success|
 `Back to how to section <#how-to-handle-new-languages-for-release>`__
 
 .. |Login Flow 1| image:: /addons/media/Screenshot_01.png
