@@ -75,7 +75,7 @@ we know that autograph-stage has signed the mar, and signingscript has verified
 that the signature matches the autograph-stage mar public key. Report back to
 ``#autograph`` on irc that it has passed.
 
-.. _Autograph: https://mana.mozilla.org/wiki/display/SVCOPS/Autograph
+.. _Autograph: https://mozilla-hub.atlassian.net/wiki/spaces/SECENGOPS/pages/27922135/Autograph
 
 Testing Autograph Prod
 ----------------------
