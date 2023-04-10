@@ -6,6 +6,8 @@ This page best serves the people that have previously been into the releaseduty 
 
 _**As releaseduty squirrels are the ones with the best context when it comes to releases, they are the ones to edit this page and amend it accordingly. Keep in mind that changes should be in compliance with the other pieces of documentation.**_
 
+### During 114.0 >= 2023-04-11
+
 ### During 113.0 >= 2023-03-14
 - langpack submission switched to v5 of the AMO API, so manual action is no longer needed when a new language is added
 
