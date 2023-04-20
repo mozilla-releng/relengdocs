@@ -50,6 +50,7 @@ Contents:
    machine-users.rst
    troubleshooting.rst
    gecko_tests/index.rst
+   apple/index.rst
 
 .. toctree::
    :caption: Meta
