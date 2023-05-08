@@ -365,7 +365,7 @@ Update wiki versions
 -  `Next release
    date <https://wiki.mozilla.org/index.php?title=Template:NextReleaseDate>`__.
    This can be found in the `release calendar
-   <https://wiki.mozilla.org/Release_Management/Calendar>`. This updates
+   <https://wiki.mozilla.org/Release_Management/Calendar>`__. This updates
 
    -  `The next ship
       date <https://wiki.mozilla.org/index.php?title=Template:FIREFOX_SHIP_DATE>`__
@@ -382,20 +382,17 @@ Update the releng changelog
 Bump Nightly version and release dates in ShipIt
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In ShipIt, the Firefox nightly version and the release dates are hard-coded, and a human must update them when new nightly builds become available.
-The nightly builds trigger on the schedule defined in `.cron.yml <https://hg.mozilla.org/mozilla-central/file/8e5247451c9a83abe6f877f5f2c62332a84c9aaf/.cron.yml#l34>`__ (in UTC) and take a few hours to complete.
-Once the new nightly version appears in `firefox/nightly/latest-mozilla-central/ <https://archive.mozilla.org/pub/firefox/nightly/latest-mozilla-central/>`__, we can update the nightly version and release dates in ShipIt.
-**Bumping the Firefox nightly version and release dates in ShipIt should be done on release day.**
-This way, we can be confident that the first nightly builds with the new version will be available to ShipIt.
+**note to whomever does this next: try doing this the day before release like the rest of the things above, and see if anything breaks. if any issues are hit, this should probably be moved to the subsequent part III section.**
 
-**WARNING: Do not bump the nightly version or release dates in ShipIt until the new nightly builds are available.**
+In ShipIt, the Firefox nightly version and the release dates are hard-coded, and a human must update them when new nightly builds become available. These steps can be done on release day (aka, the day after the merge was performed). By that time, there should be at least one new Nightly version available.
+
 
 Follow these steps to bump the nightly version and release dates in ShipIt:
 
 1. ``git clone git@github.com:mozilla-releng/shipit.git``
 2. ``git checkout -b nightly_version_bump_${version}``
 3. Edit FIREFOX_NIGHTLY's major version in `api/src/shipit_api/common/config.py <https://github.com/mozilla-releng/shipit/blob/f3d45d1dd1cc08cc466865f7d39305f1b2edbcf7/api/src/shipit_api/common/config.py#L49>`__
-4. Edit the `LAST` and `NEXT` known dates (all 6 of them) in `api/src/shipit_api/common/config.py <https://github.com/mozilla-releng/shipit/blob/f3d45d1dd1cc08cc466865f7d39305f1b2edbcf7/api/src/shipit_api/common/config.py#L54-L59>`__ (the release dates can be found on `this Wiki page <https://wiki.mozilla.org/Release_Management/Calendar>`__)
+4. Edit the `LAST` and `NEXT` known dates (all 6 of them) in `api/src/shipit_api/common/config.py <https://github.com/mozilla-releng/shipit/blob/f3d45d1dd1cc08cc466865f7d39305f1b2edbcf7/api/src/shipit_api/common/config.py#L54-L59>`__ (the release dates can be found on `the whaittrainisitnow website <https://whattrainisitnow.com/calendar/>`__)
 5. Commit, then submit a pull request
 6. Someone on the Thunderbird team should open a similar PR in ShipIt the same day to bump the Thunderbird version.
    If there hasn't been a Thunderbird PR put up for review yet, please ping `#tbdrivers <https://matrix.to/#/#tbdrivers:mozilla.org>`__
@@ -403,6 +400,9 @@ Follow these steps to bump the nightly version and release dates in ShipIt:
 8. Push ShipIt's ``main`` branch to ``production`` **after** a new nightly version has been pushed to `firefox/nightly/latest-mozilla-central/ <https://archive.mozilla.org/pub/firefox/nightly/latest-mozilla-central/>`__
 9. Log into ShipIt, click the gear icon on the top right, then click on "Rebuild product-details"
 10. Monitor the versions info page for `firefox <https://product-details.mozilla.org/1.0/firefox_versions.json>`__ and `thunderbird <https://product-details.mozilla.org/1.0/thunderbird_versions.json>`__ to make sure they are up to date
+
+Release Merge Day - part III - release day
+------------------------------------------
 
 Close migration bug, file one for the next release
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
