@@ -10,6 +10,7 @@ You should start this process at least a month prior to the current key expiring
 Process
 ~~~~~~~
 At a high level, the process is as follows:
+
 1) Generate a new signing subkey
 2) Publish the new public key
 3) Import the new private key into autograph
@@ -21,6 +22,101 @@ Here's slightly more detail on each step
 Generate a new signing subkey
 -----------------------------
 This is documented on https://mana.mozilla.org/wiki/display/SECURITY/Releng+Product+Signing%3A+GnuPG+key+generation+and+handling.
+
+The most important end result of this process will be a new private signing subkey that has been deployed to `Autograph`_, a new public signing subkey, and access to the private key through a new set of credentials that you will be provided.
+
+.. _Autograph: https://github.com/mozilla-services/autograph
+
+Deployment Part 1: Testing the new signing subkey
+-------------------------------------------------
+
+The new signing subkey will be deployed to the production instance of `Autograph`_, which means it must be tested through a production worker and repository. The best and safest way to do this is against the `Adhoc Signing`_ repository - which will not impact any users or developers if something goes wrong. You can do this as follows:
+
+1) Update the `gpgPubkey` entry for `firefoxci-adhoc-3` in the `cloudops-infra` repository.
+
+    a) Extract and decode the current base64 entry with a command such as::
+
+        echo "<base64 string>" | base64 -d > current.key
+
+    b) Create a new gpg keyring and import the current key::
+
+        mkdir new-keyring
+        gpg --homedir new-keyring --import current.key
+
+    c) Add the new public key to the keyring::
+
+        gpg --homedir new-keyring --import new-public.key
+
+    d) Export *all* the keys to a new armored file::
+
+        gpg --homedir new-keyring --export --armor > new.key
+
+    e) Add the header from the existing KEY file to `new.key`, with the new sub key information. For example, in the 2023 rotations we added the following (the last line is the new subkey information)::
+
+        This file contains the public PGP key that is used to sign builds and
+        artifacts of Mozilla projects (such as Firefox and Thunderbird).
+
+        Please realize that this file itself or the public key servers may be
+        compromised.  You are encouraged to validate the authenticity of these keys in
+        an out-of-band manner.
+
+        Mozilla users: pgp < KEY
+
+        pub   rsa4096 2015-07-17 [SC]
+              14F26682D0916CDD81E37B6D61B7B526D98F0353
+        uid           [  full  ] Mozilla Software Releases <release@mozilla.com>
+        sub   rsa4096 2015-07-17 [S] [expired: 2017-07-16]
+        sub   rsa4096 2017-06-22 [S] [expired: 2019-06-22]
+        sub   rsa4096 2019-05-30 [S] [expires: 2021-05-29]
+        sub   rsa4096 2021-05-17 [S] [expires: 2023-05-17]
+        sub   rsa4096 2023-05-05 [S] [expires: 2025-05-04]
+
+    f) base64 encode `new.key` and update the `gpgPubkey` entry in the `cloudops-infra` repo for `firefoxci-adhoc-3`::
+
+        cat new.key | base64 -w0
+
+    g) Open a Pull Request with the changes; wait for it to get merged.
+
+2) Update the GPG username and password for `firefoxci-adhoc-3` in the relengworker SOPS repository.
+3) Deploy production scriptworkers to pick up the changes you made above.
+4) Open a PR with a new signing manifest in the `Adhoc Signing`_ repository that will sign with GPG (note: when it does a test signing as part of opening a PR, it will not be using the new keys, because PRs use dep certs).
+5) Get your PR reviewed and merged.
+6) Use the `Promote an Adhoc Signature` action to kick off signing for your new manifest. *This* should sign successfully with the new subkey.
+7) Verify the `KEY` file and detached signature that the task publishes. This will look something like::
+
+    # Download the file that was signed, the detached signature, and the `KEY` to your local machine
+    # Create a new keyring and import the published KEY file
+    mkdir new
+    gpg --homedir new --import KEY
+    # Verify the detached signature
+    gpg --homedir new --verify *.asc
+    # You should see output like:
+    # gpg: Good signature from "Mozilla Software Releases <release@mozilla.com>"
+
+It can be helpful to see how this was done in the past before doing this yourself. You are encouraged to look through the `cloudops-infra` and relengworker SOPS repositories to find the appropriate changesets.
+
+You can also find an example of the adhoc signing manifest `in this PR`_. If that signing manifest still exists in the repository, you can even skip steps 4 and 5, and promote that manifest in step 6 instead.
+
+.. _Adhoc Signing: https://github.com/mozilla-releng/adhoc-signing
+.. _Autograph: https://github.com/mozilla-services/autograph
+.. _KEY file we publish: https://archive.mozilla.org/pub/firefox/releases/111.0/KEY
+.. _in this PR: https://github.com/mozilla-releng/adhoc-signing/pull/165
+
+Deployment Part 2: Everything else
+----------------------------------
+
+Now that you've verified that the autograph credentials work, and that the gpg signatures produced are correct, you can roll it out to the remaining signingscript pools. This will look nearly identical to the steps above -- and in fact, you can usually just copy and paste the credentials you already put in the SOPS repo, and the base64 key you put in the cloudops repo to other places in the same file. This must be done for each signing pool that uses our primary GPG key. At the time of writing this is the following (not including the adhoc one you just updated)::
+
+   firefoxci-gecko-3 prod
+   firefoxci-comm-3 prod
+   firefoxci-mobile-3 prod
+   firefoxci-app-services-3 prod
+   firefoxci-glean-3 prod
+   firefoxci-adhoc-3 prod
+
+**Do not take this list as complete.** Things have likely changed since these instruction were written. You should inspect both files and make a complete list of everything using the previous subkeys.
+
+Once you've updated both files again (and had the `cloudops-infra` PR merged) you're ready to deploy. Take caution to avoid doing this if there are releases in flight. If you do, files from the same release will get signed with different keys. This doesn't break anything, but it does cause confusion.
 
 Publish the new public key
 --------------------------
@@ -35,6 +131,7 @@ You will need to send the new private key and its passphrase to an autograph tea
 Update the public key
 ---------------------
 We publish our public key in a couple of places, and store it in others to verify some of our own signatures. Specifically, at least the following will need to be updated:
+
 * The `KEY` file in the signingscript config in CloudOps` repo. (Private repo, purposely not linked here)
 * Fenix and reference-browser's repositories. Eg: https://github.com/mozilla-mobile/fenix/pull/19691 and https://github.com/mozilla-mobile/reference-browser/pull/1610
 
