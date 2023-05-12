@@ -4,7 +4,7 @@ Mozilla VPN Release Process
 `Mozilla VPN`_ is shipped in two parts, the client and addons.
 
 The client is shipped on Windows, Mac and Linux, as well as Android and iOS.
-Ensure you are in the ``#mozilla-vpn-release`` channel in Slack.
+Ensure you are in the ``#releaseduty`` channel in Matrix.
 
 .. _vpn relpro:
 
@@ -25,7 +25,7 @@ Windows and Mac Clients
 Promote a Build
 ~~~~~~~~~~~~~~~
 
-You'll receive a ping in the ``#mozilla-vpn-release`` channel in Slack asking to
+You'll receive a ping in the ``#releaseduty`` channel in Matrix asking to
 "promote a build" or "push a build to candidates". The request should include a
 link to the commit they would like promoted.
 
@@ -43,7 +43,7 @@ link to the commit they would like promoted.
 Ship a Build
 ~~~~~~~~~~~~
 
-You'll receive a ping in the ``#mozilla-vpn-release`` channel in Slack asking to
+You'll receive a ping in the ``#releaseduty`` channel in Matrix asking to
 ship or release a build. The request should include a link to the commit they
 would like promoted.
 
@@ -59,7 +59,7 @@ would like promoted.
    builds from candidates, over to the `releases directory`_ on
    archive.mozilla.org.
 4. :ref:`vpn balrog`, making sure to use the ``FirefoxVPN: release`` channel.
-5. Reply both in-thread and to the main ``#mozilla-vpn-release`` channel that
+5. Reply in-thread in the ``#releaseduty`` channel that
    the release has been shipped on Windows and Mac.
 
 .. _vpn balrog:
@@ -183,8 +183,8 @@ Promote Addons
 3. Trigger the action. This will trigger beetmover tasks that will upload the addons
    plus the manifest to the `addons candidates directory`_. The path will have a pattern
    like:
-   ``pub/addons/candidates/<buildId>``
-4. Provide the link in a thread to the original request in ``#mozilla-vpn-release``.
+   ``pub/vpn/addons/candidates/<buildId>``
+4. Provide the link in a thread to the original request in ``#releaseduty``.
 
 
 Ship Addons
@@ -196,10 +196,10 @@ Ship Addons
    addons plus the manifest to the `addons releases directory`_. The files will
    be uploaded to two locations:
 
-   a. ``pub/addons/releases/<buildId>``
-   b. ``pub/addons/releases/latest``
+   a. ``pub/vpn/addons/releases/<buildId>``
+   b. ``pub/vpn/addons/releases/latest``
 
-4. Provide the link in a thread to the original request in ``#mozilla-vpn-release``.
+4. Provide the link in a thread to the original request in ``#releaseduty``.
 
 .. _Mozilla VPN: https://github.com/mozilla-mobile/mozilla-vpn-client
 .. _release promotion action:
