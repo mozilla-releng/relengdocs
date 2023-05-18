@@ -150,3 +150,28 @@ Solution
 Run this script in braindump to automatically scan for and terminate these
 broken workers:
 https://hg.mozilla.org/build/braindump/file/tip/taskcluster/terminate_broken_workers.py
+
+.. _push-msix fails:
+
+push(MSIX) fails: "push to Store aborted: pending submission found"
+-------------------------------------------------------------------
+
+pushmsixscript pushes Firefox to the Microsoft Store. The Store rejects
+any new submission if there is a pending submission (one which has been
+uploaded but not yet released). Release Management has asked that
+pushmsixscript not delete pending submissions, in case that pending submission
+was created manually.
+
+Symptoms
+~~~~~~~~
+The push(MSIX) task fails with Exception status. The task log shows
+"push to Store aborted: pending submission found" and "ERROR - There is
+a pending submission for this application on the Microsoft Store. Wait
+for the pending submission to complete, or delete the pending submission.
+Then retry this task."
+
+Solution
+~~~~~~~~
+Delete the pending submission from the Store manually; Release Management
+has access. Once the pending submission has been deleted, re-run the
+failed push(MSIX) task.
