@@ -32,26 +32,22 @@ Deployment Part 1: Testing the new signing subkey
 
 The new signing subkey will be deployed to the production instance of `Autograph`_, which means it must be tested through a production worker and repository. The best and safest way to do this is against the `Adhoc Signing`_ repository - which will not impact any users or developers if something goes wrong. You can do this as follows:
 
-1) Update the `gpgPubkey` entry for `firefoxci-adhoc-3` in the `cloudops-infra` repository.
+1) Update the `GPG_PUBKEY_PATH` entry for `firefoxci-adhoc-3` in the `scriptworker-scripts` repository.
 
-    a) Extract and decode the current base64 entry with a command such as::
-
-        echo "<base64 string>" | base64 -d > current.key
-
-    b) Create a new gpg keyring and import the current key::
+    a) Create a new gpg keyring and import the current key::
 
         mkdir new-keyring
         gpg --homedir new-keyring --import current.key
 
-    c) Add the new public key to the keyring::
+    b) Add the new public key to the keyring::
 
         gpg --homedir new-keyring --import new-public.key
 
-    d) Export *all* the keys to a new armored file::
+    c) Export *all* the keys to a new armored file::
 
         gpg --homedir new-keyring --export --armor > new.key
 
-    e) Add the header from the existing KEY file to `new.key`, with the new sub key information. For example, in the 2023 rotations we added the following (the last line is the new subkey information)::
+    d) Add the header from the existing KEY file to `new.key`, with the new sub key information (generated with e.g. `gpg --show-key --list-options show-unusable-subkeys < new.key`). For example, in the 2023 rotations we added the following (the last line is the new subkey information)::
 
         This file contains the public PGP key that is used to sign builds and
         artifacts of Mozilla projects (such as Firefox and Thunderbird).
@@ -71,11 +67,9 @@ The new signing subkey will be deployed to the production instance of `Autograph
         sub   rsa4096 2021-05-17 [S] [expires: 2023-05-17]
         sub   rsa4096 2023-05-05 [S] [expires: 2025-05-04]
 
-    f) base64 encode `new.key` and update the `gpgPubkey` entry in the `cloudops-infra` repo for `firefoxci-adhoc-3`::
+    e) Add new.key to signingscript and point the `firefoxci-adhoc-3` pool's `GPG_PUBKEY_PATH` variable at it.
 
-        cat new.key | base64 -w0
-
-    g) Open a Pull Request with the changes; wait for it to get merged.
+    f) Open a Pull Request with the changes; wait for it to get merged.
 
 2) Update the GPG username and password for `firefoxci-adhoc-3` in the relengworker SOPS repository.
 3) Deploy production scriptworkers to pick up the changes you made above.
@@ -105,7 +99,7 @@ You can also find an example of the adhoc signing manifest `in this PR`_. If tha
 Deployment Part 2: Everything else
 ----------------------------------
 
-Now that you've verified that the autograph credentials work, and that the gpg signatures produced are correct, you can roll it out to the remaining signingscript pools. This will look nearly identical to the steps above -- and in fact, you can usually just copy and paste the credentials you already put in the SOPS repo, and the base64 key you put in the cloudops repo to other places in the same file. This must be done for each signing pool that uses our primary GPG key. At the time of writing this is the following (not including the adhoc one you just updated)::
+Now that you've verified that the autograph credentials work, and that the gpg signatures produced are correct, you can roll it out to the remaining signingscript pools. This will look nearly identical to the steps above -- and in fact, you can usually just copy and paste the credentials you already put in the SOPS repo, and the `GPG_PUBKEY_PATH` variable in signingscript. This must be done for each signing pool that uses our primary GPG key. At the time of writing this is the following (not including the adhoc one you just updated)::
 
    firefoxci-gecko-3 prod
    firefoxci-comm-3 prod
