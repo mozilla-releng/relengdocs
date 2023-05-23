@@ -127,7 +127,7 @@ Update the public key
 We publish our public key in a couple of places, and store it in others to verify some of our own signatures. Specifically, at least the following will need to be updated:
 
 * The `KEY` file in the signingscript config in CloudOps` repo. (Private repo, purposely not linked here)
-* Fenix and reference-browser's repositories. Eg: https://github.com/mozilla-mobile/fenix/pull/19691 and https://github.com/mozilla-mobile/reference-browser/pull/1610
+* The reference-browser repository Eg: https://github.com/mozilla-mobile/reference-browser/pull/2326
 
 Start signing with the new private key
 --------------------------------------
