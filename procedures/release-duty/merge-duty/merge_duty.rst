@@ -382,10 +382,7 @@ Update the releng changelog
 Bump Nightly version and release dates in ShipIt
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**note to whomever does this next: try doing this the day before release like the rest of the things above, and see if anything breaks. if any issues are hit, this should probably be moved to the subsequent part III section.**
-
-In ShipIt, the Firefox nightly version and the release dates are hard-coded, and a human must update them when new nightly builds become available. These steps can be done on release day (aka, the day after the merge was performed). By that time, there should be at least one new Nightly version available.
-
+In ShipIt, the Firefox nightly version and the release dates are hard-coded, and we must update the config after the version bump on mozilla-central.
 
 Follow these steps to bump the nightly version and release dates in ShipIt:
 
@@ -397,7 +394,7 @@ Follow these steps to bump the nightly version and release dates in ShipIt:
 6. Someone on the Thunderbird team should open a similar PR in ShipIt the same day to bump the Thunderbird version.
    If there hasn't been a Thunderbird PR put up for review yet, please ping `#tbdrivers <https://matrix.to/#/#tbdrivers:mozilla.org>`__
 7. Merge the Firefox and Thunderbird pull requests onto main
-8. Push ShipIt's ``main`` branch to ``production`` **after** a new nightly version has been pushed to `firefox/nightly/latest-mozilla-central/ <https://archive.mozilla.org/pub/firefox/nightly/latest-mozilla-central/>`__
+8. Push ShipIt's ``main`` branch to ``production``
 9. Log into ShipIt, click the gear icon on the top right, then click on "Rebuild product-details"
 10. Monitor the versions info page for `firefox <https://product-details.mozilla.org/1.0/firefox_versions.json>`__ and `thunderbird <https://product-details.mozilla.org/1.0/thunderbird_versions.json>`__ to make sure they are up to date
 
