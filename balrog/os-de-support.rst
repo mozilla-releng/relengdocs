@@ -32,7 +32,6 @@ Create a new channel-switching mar
     xz -c -d updatev3.manifest
 
 * Sign the mar via adhoc_signing. See https://github.com/mozilla-releng/adhoc-signing/blob/main/signing-manifests/bug1835022.yml for a sample manifest. 
-* Upload the new signed mar to https://archive.mozilla.org/pub/firefox/releases/custom-updates/ via a bug like bug 
 
 Verify the channel-switching mar
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
