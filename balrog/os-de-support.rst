@@ -1,8 +1,7 @@
 Ending Firefox Support for an Operating System
 ==============================================
 
-From time to time, Firefox drops support for an OS: Firefox was once available on Windows XP, but it isn't today.
-Typically, de-support for an OS is timed to coincide with an ESR release and Firefox users on the de-supported OS
+From time to time, Firefox drops support for an OS: for example, Firefox was once available on Windows XP, but it isn't today. Typically, de-support for an OS is timed to coincide with an ESR release and Firefox users on the de-supported OS
 are migrated to the ESR channel.
 
 There are several Release Engineering activities required to ensure support is ended cleanly.
