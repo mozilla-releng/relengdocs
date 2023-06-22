@@ -1,8 +1,7 @@
 Ending Firefox Support for an Operating System
 ==============================================
 
-From time to time, Firefox drops support for an OS: for example, Firefox was once available on Windows XP, but it isn't today. Typically, de-support for an OS is timed to coincide with an ESR release and Firefox users on the de-supported OS
-are migrated to the ESR channel.
+From time to time, Firefox drops support for an OS: for example, Firefox was once available on Windows XP, but it isn't today. Typically, de-support for an OS is timed to coincide with an ESR release and Firefox users on the de-supported OS are migrated to the ESR channel.
 
 There are several Release Engineering activities required to ensure support is ended cleanly.
 
@@ -36,13 +35,12 @@ Create a new channel-switching mar
 Verify the channel-switching mar
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-TBD
+TBD 
 
 Copy the channel-switching mar to archive.mozilla.org
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Channel-switching mar files are typically copied to https://archive.mozilla.org/pub/firefox/releases/custom-updates/.
-You may want to file a bug like `bug 1839195 <https://bugzilla.mozilla.org/show_bug.cgi?id=1839195>`__.
+Channel-switching mar files are typically copied to https://archive.mozilla.org/pub/firefox/releases/custom-updates/. You may want to file a bug like `bug 1839195 <https://bugzilla.mozilla.org/show_bug.cgi?id=1839195>`__.
 
 Balrog updates
 ~~~~~~~~~~~~~~
@@ -62,15 +60,14 @@ Update Balrog rules for Nightly
 
 For the Nightly channel, we usually DE-SUPPORT.
 
-Just *before* the first nightly build (could be a few days earlier, if convenient) of the first unsupported version,
-pause Nightly updates for the affected OS version: 
+Just *before* the first nightly build (could be a few days earlier, if convenient) of the first unsupported version, pause Nightly updates for the affected OS version: 
 
-* Create a new rule matching the Firefox : Nightly* channel and the OS version to serve the NoUpdate release.
+* Create a new rule matching the ``Firefox : Nightly*`` channel and the OS version to serve the ``NoUpdate`` release.
 
 Shortly *after* the first nightly build of the first unsupported version:
 
 * Determine the build ID of the last build of the last supported version: You might check `archive.mozilla.org <https://archive.mozilla.org/pub/firefox/nightly/>`__ for instance.
-* Create a rule to pin Nightly* users to the most recent supported version: match the Firefox : Nightly* channel, the affected OS version and build ID < latest supported build ID determined above; serve the Release corresponding to that build ID.
+* Create a rule to pin Nightly* users to the most recent supported version: match the ``Firefox : Nightly*`` channel, the affected OS version and build ID < latest supported build ID determined above; serve the Release corresponding to that build ID.
 * Update the Release referenced by the new pinning rule, to include aliases (this is only required on Nightly, as it is caused by `bug 1810740 <https://bugzilla.mozilla.org/show_bug.cgi?id=1810740>`__): Update the Release blob by adding aliases like::
 
     "Darwin_aarch64-gcc3": {
@@ -85,6 +82,12 @@ Shortly *after* the first nightly build of the first unsupported version:
     "Darwin_x86_64-gcc3": {
       "alias": "Darwin_x86_64-gcc3-u-i386-x86_64"
     },
+    "WINNT_x86-msvc-x64": {
+      "alias": "WINNT_x86-msvc"
+    },
+    "WINNT_x86-msvc-x86": {
+      "alias": "WINNT_x86-msvc"
+    },    
     "WINNT_x86_64-msvc-x64": {
       "alias": "WINNT_x86_64-msvc"
     },    
@@ -99,8 +102,8 @@ Shortly *after* the first nightly build of the first unsupported version:
         "schema_version": 50
     }
 
-* Create a rule to serve the de-support notice: match the Firefox : Nightly* channel and the affected OS version with lower priority than the pinning rule (so probably those who have been updated to the last supported build); serve the new De-Support release.
-* Delete the NoUpdate rule created earlier.
+* Create a rule to serve the de-support notice: match the ``Firefox : Nightly*`` channel and the affected OS version with lower priority than the pinning rule (so probably those who have been updated to the last supported build); serve the new De-Support release.
+* Delete the ``NoUpdate`` rule created earlier.
 
 Update Balrog rules for Beta and Aurora
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -110,13 +113,14 @@ Check with the *Product* organization to verify per-channel requirements for Bet
 To implement DE-SUPPORT for DevEdition, follow the de-support procedure for Nightly, above, with these changes:
 
 * Make changes just before and after the Merge Day II merge of central to beta.
-* Use the Firefox : aurora* channel
+* Use the ``Firefox : aurora*`` channel
 * There should be no need to add aliases to the release blob.
 
 To implement ESR-SWITCH for Beta, follow the de-support procedure for Release, below, with these changes:
 
 * Make changes just before and after the Merge Day II merge of central to beta.
-* Use the Firefox : beta* channel
+* Use the ``Firefox : beta*`` channel
+* There should be no need to add aliases to the release blob.
 
 Update Balrog rules for Release
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -126,14 +130,14 @@ users on the affected OS move from the Release channel to the ESR channel.
 
 Just *before* the first release build of the first unsupported version, pause Release updates for the affected OS version. This will typically be just before the Merge Day I merge of Beta to Release, for the release after the Beta changes.
 
-* Create a new rule matching the Firefox : Release* channel and the OS version to serve the NoUpdate release.
+* Create a new rule matching the ``Firefox : Release*`` channel and the OS version to serve the ``NoUpdate`` release.
 
 Shortly *after* the first release build of the first unsupported version:
 
 * Create a new release to serve the channel-switching mar. *TBD: do we duplicate an existing release, then manually replace the url?*
-* Create a new rule matching the Firefox : Release* channel and the OS version to serve the channel-switching release.
+* Create a new rule matching the ``Firefox : Release*`` channel and the OS version to serve the channel-switching release.
 * *TBD: Is that all, or do we need pinning?*
-* Delete the NoUpdate rule created earlier.
+* Delete the ``NoUpdate`` rule created earlier.
  
 Update Balrog rules for ESR
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -180,7 +184,7 @@ and check that the response updates to the pinned build (eg. 20230605094751): ::
 Verify changes: Application behavior
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-TBD
+TBD: leave this to relman / QA / product, or should we try to do our own testing of Firefox updates?
 
 Stop running tests
 ~~~~~~~~~~~~~~~~~~
