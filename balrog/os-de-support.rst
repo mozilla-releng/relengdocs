@@ -62,12 +62,12 @@ For the Nightly channel, we usually DE-SUPPORT.
 
 Just *before* the first nightly build (could be a few days earlier, if convenient) of the first unsupported version, pause Nightly updates for the affected OS version: 
 
-* Create a new rule matching the ``Firefox : Nightly*`` channel and the OS version to serve the ``NoUpdate`` release.
+* Create a new rule matching the ``Firefox : nightly*`` product/channel and the OS version to serve the ``No-Update`` release.
 
 Shortly *after* the first nightly build of the first unsupported version:
 
 * Determine the build ID of the last build of the last supported version: You might check `archive.mozilla.org <https://archive.mozilla.org/pub/firefox/nightly/>`__ for instance.
-* Create a rule to pin Nightly* users to the most recent supported version: match the ``Firefox : Nightly*`` channel, the affected OS version and build ID < latest supported build ID determined above; serve the Release corresponding to that build ID.
+* Create a rule to pin `nightly*` users to the most recent supported version: match the ``Firefox : nightly*`` channel, the affected OS version and build ID < latest supported build ID determined above; serve the Release corresponding to that build ID.
 * Update the Release referenced by the new pinning rule, to include aliases (this is only required on Nightly, as it is caused by `bug 1810740 <https://bugzilla.mozilla.org/show_bug.cgi?id=1810740>`__): Update the Release blob by adding aliases like::
 
     "Darwin_aarch64-gcc3": {
@@ -102,8 +102,8 @@ Shortly *after* the first nightly build of the first unsupported version:
         "schema_version": 50
     }
 
-* Create a rule to serve the de-support notice: match the ``Firefox : Nightly*`` channel and the affected OS version with lower priority than the pinning rule (so probably those who have been updated to the last supported build); serve the new De-Support release.
-* Delete the ``NoUpdate`` rule created earlier.
+* Create a rule to serve the de-support notice: match the ``Firefox : nightly*`` channel and the affected OS version with lower priority than the pinning rule (so probably those who have been updated to the last supported build); serve the new De-Support release.
+* Delete the ``No-Update`` rule created earlier.
 
 Update Balrog rules for Beta and Aurora
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -130,7 +130,7 @@ users on the affected OS move from the Release channel to the ESR channel.
 
 Just *before* the first release build of the first unsupported version, pause Release updates for the affected OS version. This will typically be just before the Merge Day I merge of Beta to Release, for the release after the Beta changes.
 
-* Create a new rule matching the ``Firefox : Release*`` channel and the OS version to serve the ``NoUpdate`` release.
+* Create a new rule matching the ``Firefox : release*`` channel and the OS version to serve the ``No-Update`` release.
 
 Shortly *after* the first release build of the first unsupported version:
 
