@@ -8,3 +8,4 @@ How To
    Manage L10n <l10n/index>
    partner-repacks
    Release <release/index>
+   Manual update testing <update-testing>
