@@ -1,3 +1,5 @@
+.. _update-testing:
+
 Manual testing of dep-signed mar files
 ======================================
 
