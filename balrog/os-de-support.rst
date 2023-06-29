@@ -13,6 +13,7 @@ Preparation
 * If there is no meta-bug for the de-support work, `create one <https://bugzilla.mozilla.org/show_bug.cgi?id=1836375>`__.
 * There should be a bug for publishing a SUMO KB article announcing the end of support. Ensure the SUMO KB bug blocks the meta-bug.
 * Note the Firefox version when support is ending. For example, the `KB article announcing end of support for macOS 10.12 <https://support.mozilla.org/kb/firefox-users-macos-1012-1013-1014-moving-to-extended-support>`__ says "Firefox version 115 will be the last supported Firefox version for users of macOS 10.12".
+* In addition to the Balrog changes described here, changes to Bedrock and Bouncer will probably be needed; try to coordinate these as early as possible.
 * Until the SUMO KB article has been published, ensure any related bugs are **Confidential**.
 
 Create a new channel-switching mar
