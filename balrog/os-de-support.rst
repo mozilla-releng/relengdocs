@@ -30,12 +30,8 @@ Create a new channel-switching mar
     mar -x switch-to-esr115.0-eol-mac.mar
     xz -c -d updatev3.manifest
 
+* Verify your mar. :ref:`update-testing` describes how to apply a mar manually.
 * Sign the mar via adhoc_signing. See https://github.com/mozilla-releng/adhoc-signing/blob/main/signing-manifests/bug1835022.yml for a sample manifest. 
-
-Verify the channel-switching mar
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-TBD 
 
 Copy the channel-switching mar to archive.mozilla.org
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -62,13 +58,12 @@ For the Nightly channel, we usually DE-SUPPORT.
 
 Just *before* the first nightly build (could be a few days earlier, if convenient) of the first unsupported version, pause Nightly updates for the affected OS version: 
 
-* Create a new rule matching the ``Firefox : nightly*`` product/channel and the OS version to serve the ``No-Update`` release.
+* Create a new rule matching the ``Firefox : nightly*`` channel and the OS version to serve the ``No-Update`` release.
 
 Shortly *after* the first nightly build of the first unsupported version:
 
 * Determine the build ID of the last build of the last supported version: You might check `archive.mozilla.org <https://archive.mozilla.org/pub/firefox/nightly/>`__ for instance.
-* Create a rule to pin `nightly*` users to the most recent supported version: match the ``Firefox : nightly*`` channel, the affected OS version and build ID < latest supported build ID determined above; serve the Release corresponding to that build ID.
-* Update the Release referenced by the new pinning rule, to include aliases (this is only required on Nightly, as it is caused by `bug 1810740 <https://bugzilla.mozilla.org/show_bug.cgi?id=1810740>`__): Update the Release blob by adding aliases like::
+* Update the ``Firefox-mozilla-central-nightly-<buildid>`` Release blob, to include aliases (this is only required on the Nightly channel, as it is caused by `bug 1810740 <https://bugzilla.mozilla.org/show_bug.cgi?id=1810740>`__). Copy the list of aliases from the ``Firefox-mozilla-central-nightly-latest`` release; it should look something like::
 
     "Darwin_aarch64-gcc3": {
       "alias": "Darwin_x86_64-gcc3-u-i386-x86_64"
@@ -92,7 +87,8 @@ Shortly *after* the first nightly build of the first unsupported version:
       "alias": "WINNT_x86_64-msvc"
     },    
 
-* Create a new De-Support release referencing the SUMO KB article. Careful: Use a locale-agnostic link like https://support.mozilla.org/kb/firefox-users-macos-1012-1013-1014-moving-to-extended-support (instead of https://support.mozilla.org/en-US/kb/firefox-users-macos-1012-1013-1014-moving-to-extended-support). Example release blob: ::
+* Create a rule to pin `nightly*` users to the most recent supported version: match the ``Firefox : nightly*`` channel, the affected OS version and build ID < latest supported build ID determined above; serve the Release corresponding to that build ID, modified earlier, ``Firefox-mozilla-central-nightly-<buildid>``.
+* Create a new ``De-Support`` Release referencing the SUMO KB article. Careful: Use a locale-agnostic link like https://support.mozilla.org/kb/firefox-users-macos-1012-1013-1014-moving-to-extended-support (instead of https://support.mozilla.org/en-US/kb/firefox-users-macos-1012-1013-1014-moving-to-extended-support). Example release blob: ::
 
     {
         "detailsUrl": "https://support.mozilla.org/kb/firefox-users-macos-1012-1013-1014-moving-to-extended-support",
@@ -102,13 +98,13 @@ Shortly *after* the first nightly build of the first unsupported version:
         "schema_version": 50
     }
 
-* Create a rule to serve the de-support notice: match the ``Firefox : nightly*`` channel and the affected OS version with lower priority than the pinning rule (so probably those who have been updated to the last supported build); serve the new De-Support release.
+* Create a rule to serve the de-support notice: match the ``Firefox : nightly*`` channel and the affected OS version with lower priority than the pinning rule (so probably those who have been updated to the last supported build); serve the new ``De-Support`` release created earlier.
 * Delete the ``No-Update`` rule created earlier.
 
-Update Balrog rules for Beta and Aurora
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Update Balrog rules for Aurora
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Check with the *Product* organization to verify per-channel requirements for Beta and DevEdition.
+Check with the *Product* organization to verify per-channel requirements for DevEdition.
 
 To implement DE-SUPPORT for DevEdition, follow the de-support procedure for Nightly, above, with these changes:
 
@@ -116,37 +112,45 @@ To implement DE-SUPPORT for DevEdition, follow the de-support procedure for Nigh
 * Use the ``Firefox : aurora*`` channel
 * There should be no need to add aliases to the release blob.
 
-To implement ESR-SWITCH for Beta, follow the de-support procedure for Release, below, with these changes:
+Update Balrog rules for Beta and Release
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* Make changes just before and after the Merge Day II merge of central to beta.
-* Use the ``Firefox : beta*`` channel
-* There should be no need to add aliases to the release blob.
+Check with the *Product* organization to verify per-channel requirements for Beta and Release.
 
-Update Balrog rules for Release
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+For these channels, we generally ESR-SWITCH: serve an update referencing the channel-switching MAR, so that users on the affected OS move from the Beta or Release channel to the ESR channel.
 
-For the Release channel, we generally ESR-SWITCH: serve an update referencing the channel-switching MAR, so that
-users on the affected OS move from the Release channel to the ESR channel.
+First, create the channel-switching release, which will serve the channel-switching mar created earlier. To create the release blob:
 
-Just *before* the first release build of the first unsupported version, pause Release updates for the affected OS version. This will typically be just before the Merge Day I merge of Beta to Release, for the release after the Beta changes.
+* Get the `create_channel_switch_blob.py script <https://hg.mozilla.org/build/braindump/file/tip/releases-related/create_channel_switch_blob.py>`__
+* Use the script to create a local json file containing the blob; something like: ::
 
-* Create a new rule matching the ``Firefox : release*`` channel and the OS version to serve the ``No-Update`` release.
+    create_channel_switch_blob.py https://archive.mozilla.org/pub/firefox/releases/custom-updates/switch-to-esr115.0-eol-win.mar https://aus5.mozilla.org/api/v1/releases/Firefox-115.0b9-build1 WIN 115.0 20230630161221 win-channel-switch.json
 
-Shortly *after* the first release build of the first unsupported version:
+* Check the json file; it may require some hand editing.
+* In Balrog, create a new release using the generated json file.
 
-* Create a new release to serve the channel-switching mar. *TBD: do we duplicate an existing release, then manually replace the url?*
-* Create a new rule matching the ``Firefox : Release*`` channel and the OS version to serve the channel-switching release.
-* *TBD: Is that all, or do we need pinning?*
-* Delete the ``NoUpdate`` rule created earlier.
- 
+Shortly after Merge Day I (during RC week), create ``localtest`` rules so that QA can verify end-to-end behavior:
+
+* Create a new rule matching the ``Firefox : beta-localtest`` channel and the OS version to serve the channel-switching release. Do the same for ``Firefox : release-localtest``.
+* Coordinate with *QA* to verify that the channel-switch works on Firefox (when configured for ``beta-localtest``).
+
+Just before Merge Day II (central to beta merge), pause updates for affected OSes, on Beta.
+
+* Create a new rule matching the ``Firefox : beta`` channel and the OS version to serve the ``No-Update`` release, or to pin to the last supported beta.
+
+On Merge Day II:
+
+* Duplicate the ``beta-localtest`` rule for the ``Firefox : beta-cdntest`` and ``Firefox : release-cdntest`` channels.
+* Coordinate with *QA* if additional ``cdntest`` testing is desired.
+* Expand the ``beta-localtest`` rule to ``Firefox : beta*``.
+* If needed, delete the ``No-Update`` rule created earlier.
+
+Coordinate with *Product* to determine the timing for changes to the ``release`` channel. We might want to expand the channel-switch for ``Firefox : release*`` at the same time as ``beta``, or we may wait until the end of the next release cycle.
+
 Update Balrog rules for ESR
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-TBD
-
-* Like https://bugzilla.mozilla.org/show_bug.cgi?id=1275609 ?
-* Pin and de-support?
-* How do we remember to do this? File a bug now and .... ?
+When the ESR branch providing the last support for a de-supported OS goes EOL, we typically pin the ``Firefox : esr*`` channel to the latest supported release and de-support.
 
 Verify changes: Balrog responses
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -184,7 +188,8 @@ and check that the response updates to the pinned build (eg. 20230605094751): ::
 Verify changes: Application behavior
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-TBD: leave this to relman / QA / product, or should we try to do our own testing of Firefox updates?
+* :ref:`update-testing` describes how to apply a mar manually.
+* QA usually verifies Firefox update behavior on each affected platform using trial rules on the ``beta-localtest`` channel prior to Merge Day II.
 
 Stop running tests
 ~~~~~~~~~~~~~~~~~~
