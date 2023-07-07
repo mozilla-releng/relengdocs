@@ -5,6 +5,6 @@ Best Practices
     :maxdepth: 2
 
     coding
-    documentation
+    cross-training
     handoffs
     security
