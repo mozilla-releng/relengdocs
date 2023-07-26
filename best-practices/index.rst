@@ -4,7 +4,7 @@ Best Practices
 .. toctree::
     :maxdepth: 2
 
-    coding
+    project-standards
     cross-training
     handoffs
     security
