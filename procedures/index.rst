@@ -19,6 +19,7 @@ Procedures that don't easily fit elsewhere.
     accounts_setup
     mobile_automation_setup
     adding_package_format
+    releng_bug_triage
     misc-operations/*
 
 .. vim: nospell :
