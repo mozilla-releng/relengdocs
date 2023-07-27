@@ -174,10 +174,17 @@ Merge beta to release
 1. Upon successful run, ``mozilla-release`` should get a version bump
    and branding changes consisting of a ``commit`` like
    `this <https://hg.mozilla.org/releases/mozilla-release/rev/118aa10ac456d05606f113ade5c26ae4637081ce>`__
-   and a ``tag`` like
-   `this <https://hg.mozilla.org/releases/mozilla-release/rev/80431bd8e840dc52327d3c881e5e679f1002b0da>`__
-2. In the same time ``mozilla-beta`` should get a tag like
-   `this <https://hg.mozilla.org/releases/mozilla-beta/rev/f0415f3c8bc959f2ac8c6ded6f9c501a49a97e11>`__
+   and two new tags. The first tag should be
+   `in the form FIREFOX_RELEASE_xxx_END <https://hg.mozilla.org/releases/mozilla-release/rev/92e4f64aabfb73736f7e2486802d8deb54dbf111>`__
+   - where the xxx is the major Gecko version that Release had prior to the merge. The other tag
+   should be
+   `in the form FIREFOX_RELEASE_yyy_BASE <https://hg.mozilla.org/releases/mozilla-release/rev/c4ed5781ba9260b6a46b97be4c66f32a28eea1a6>`__
+   - where the yyy is the major Gecko version that Release now has.
+
+2. At the same time ``mozilla-beta`` should get a tag
+   `in the form FIREFOX_RELEASE_xxx_BASE <https://hg.mozilla.org/releases/mozilla-beta/rev/c4ed5781ba9260b6a46b97be4c66f32a28eea1a6>`__
+   - where the xxx is the major Gecko version that Beta had prior to the merge. (This should be
+   the exact same tag and revision as the second one that you saw in the Release repo in step 1.)
 3. Verify changesets are visible on `hg
    pushlog <https://hg.mozilla.org/releases/mozilla-release/pushloghtml>`__
    and
@@ -230,15 +237,26 @@ Merge central to beta
 1. Upon a successful run, ``mozilla-beta`` should get a version bump and
    branding changes consisting of a ``commit`` like
    `this <https://hg.mozilla.org/releases/mozilla-beta/rev/a724e117199b2bb42ece67dc0017f1b6cbf493df>`__
-   and a ``tag`` like
-   `this <https://hg.mozilla.org/releases/mozilla-beta/rev/f0415f3c8bc959f2ac8c6ded6f9c501a49a97e11>`__.
+   and two new tags. One tag should be
+   `in the form FIREFOX_BETA_xxx_END <https://hg.mozilla.org/releases/mozilla-beta/rev/789d06370703ec8dd4ce462a549390adf586a81a>`__
+   - where xxx is the major Gecko version that Beta had prior to the merge. The other tag should be
+   `in the form FIREFOX_BETA_yyy_BASE <https://hg.mozilla.org/releases/mozilla-beta/rev/592c2df16ac45a09c837b8a281e366c419c8b94d>`__
+   - where yyy is the major Gecko version that Beta now has.
+
    Click the first HG revision link (left side under date and timestamp) for the merge push to verify this.
 2. Verify that ``browser/locales/l10n-changesets.json`` has revisions, not
    ``default``, and/or verify that the merge task has l10n-bump in the logs. You'll need to click on the second HG revision link (commit message will be something like ``"no bug - Bumping Firefox |10n..."``) to verify this.
    The diff should look like `this
    <https://hg.mozilla.org/releases/mozilla-beta/rev/5f344535f8a3340fa51528be88e7104538b64b2e>`__
-3. In the same time ``mozilla-central`` should get a tag like
-   `this <https://hg.mozilla.org/mozilla-central/rev/110ed519838f7e667f19176516cceab742b6ad5e>`__
+3. At the same time ``mozilla-central`` should get two new tags. One that should be
+   `in the form FIREFOX_NIGHTLY_xxx_END <https://hg.mozilla.org/mozilla-central/rev/ffc39a5fbec9708c375cd9a6b978900f9f1b7b74>`__
+   - where xxx is the major Gecko version that mozilla-central had prior to the version bump. The
+   other tag should be
+   `in the form FIREFOX_BETA_xxx_BASE <https://hg.mozilla.org/mozilla-central/rev/592c2df16ac45a09c837b8a281e366c419c8b94d>`__
+   - where xxx is also the major Gecko version that mozilla-central had prior to the version bump.
+   (This should be the exact same tag and revision as the second one that you saw in the Beta repo
+   in step 1.) It's worth noting that we do not create `FIREFOX_NIGHTLY_yyy_BASE` tags, as we do
+   for Beta & Release repositories.
 4. Verify changesets are visible on `hg
    pushlog <https://hg.mozilla.org/releases/mozilla-beta/pushloghtml>`__
    and
