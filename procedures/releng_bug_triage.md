@@ -1,6 +1,6 @@
 # RelEng Bug Triage
 
-This document outlines the process for triaging open RelEng bugs in [Bugzilla](https://bugzilla.mozilla.org/home). The procedure ensures a well-organized bug database, where each bug is appropriately tagged and prioritized, making full use of the [Mozilla's Triage Center](https://mozilla.github.io/triage-center/) tool.
+This page outlines the process for triaging open RelEng bugs in [Bugzilla](https://bugzilla.mozilla.org/home). The procedure ensures a well-organized bug database, where each bug is appropriately tagged and prioritized, making full use of the [Mozilla's Triage Center](https://mozilla.github.io/triage-center/) tool.
 
 ## Goals of Bug Triage
 1. Close irrelevant bugs.
@@ -18,6 +18,7 @@ This field describes the impact of a bug and is utilized to determine the scope 
 
 | Value | Description |
 | --- | --- |
+
 | -- | This is the default value for new bugs. Bug triagers for components (i.e., engineers and other core project folks) are expected to update the bug's severity from this value. To avoid missing new bugs for triage, this default should not be altered when filing bugs. |
 | S1 | (Catastrophic) Halts releases from being shipped. This is the highest priority for releaseduty. |
 | S2 | (Serious) Hinders specific steps in the release pipeline but does not prevent a release from being shipped. |
@@ -30,6 +31,7 @@ This field describes the importance and order in which a bug should be fixed com
 
 | Value | Description |
 | --- | --- |
+
 | -- | No decision |
 | P1 | Fix in the current release cycle |
 | P2 | Fix in the next release cycle or the following (nightly + 1 or nightly + 2) |
