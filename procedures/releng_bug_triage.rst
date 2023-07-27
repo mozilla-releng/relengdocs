@@ -1,7 +1,7 @@
 RelEng Bug Triage
 =================
 
-This page outlines the process for triaging open RelEng bugs in `Bugzilla <https://bugzilla.mozilla.org/home>`_. The procedure ensures a well-organized bug database, where each bug is appropriately tagged and prioritized, making full use of the `Mozilla's Triage Center <https://mozilla.github.io/triage-center/>`_ tool.
+This page outlines the process for triaging open RelEng bugs in `Bugzilla <https://bugzilla.mozilla.org/home>`_. The procedure ensures a well-organized bug database, where each bug is appropriately tagged and prioritized, making full use of Mozilla's `Bugdash <https://bugdash.moz.tools/?component=Release+Engineering%3AApplications%3A+Mapper&component=Release+Engineering%3AApplications%3A+MozharnessCore&component=Release+Engineering%3AApplications%3A+Shipit&component=Release+Engineering%3AFirefox-CI+Administration&component=Release+Engineering%3AGeneral&component=Release+Engineering%3ARelease+Automation%3A+Bouncer&component=Release+Engineering%3ARelease+Automation%3A+L10N&component=Release+Engineering%3ARelease+Automation%3A+Other&component=Release+Engineering%3ARelease+Automation%3A+Signing&component=Release+Engineering%3ARelease+Automation%3A+Snap&component=Release+Engineering%3ARelease+Automation%3A+Updates&component=Release+Engineering%3ARelease+Automation%3A+Uploading&component=Release+Engineering%3ARelease+Requests#tab.triage>`_ triage tool.
 
 Goals of Bug Triage
 -------------------
