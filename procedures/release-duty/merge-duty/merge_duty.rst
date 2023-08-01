@@ -248,10 +248,7 @@ Merge central to beta
    ``default``, and/or verify that the merge task has l10n-bump in the logs. You'll need to click on the second HG revision link (commit message will be something like ``"no bug - Bumping Firefox |10n..."``) to verify this.
    The diff should look like `this
    <https://hg.mozilla.org/releases/mozilla-beta/rev/5f344535f8a3340fa51528be88e7104538b64b2e>`__
-3. At the same time ``mozilla-central`` should get two new tags. One that should be
-   `in the form FIREFOX_NIGHTLY_xxx_END <https://hg.mozilla.org/mozilla-central/rev/ffc39a5fbec9708c375cd9a6b978900f9f1b7b74>`__
-   - where xxx is the major Gecko version that mozilla-central had prior to the version bump. The
-   other tag should be
+3. At the same time ``mozilla-central`` should get a new tag
    `in the form FIREFOX_BETA_xxx_BASE <https://hg.mozilla.org/mozilla-central/rev/592c2df16ac45a09c837b8a281e366c419c8b94d>`__
    - where xxx is also the major Gecko version that mozilla-central had prior to the version bump.
    (This should be the exact same tag and revision as the second one that you saw in the Beta repo
@@ -298,8 +295,9 @@ instructions depict.
 1. Upon successful run, ``mozilla-central`` should get a version bump
    consisting of a ``commit`` like
    `this <https://hg.mozilla.org/mozilla-central/rev/d42e0ca4bb3e3d7fa475687da045300b07a20db1>`__
-   and a ``tag`` like
-   `this <https://hg.mozilla.org/mozilla-central/rev/ec207005e2f7e5493d1e9a3194a8bb012fe2e7f5>`__
+   and a new tag
+   `in the form FIREFOX_NIGHTLY_xxx_END <https://hg.mozilla.org/mozilla-central/rev/ffc39a5fbec9708c375cd9a6b978900f9f1b7b74>`__
+   - where xxx is the major Gecko version that mozilla-central had prior to the version bump.
 2. Verify changesets are visible on `hg
    pushlog <https://hg.mozilla.org/mozilla-central/pushloghtml>`__ and
    `Treeherder <https://treeherder.mozilla.org/#/jobs?repo=mozilla-central>`__.
