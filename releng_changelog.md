@@ -6,6 +6,8 @@ This page best serves the people that have previously been into the releaseduty 
 
 _**As releaseduty squirrels are the ones with the best context when it comes to releases, they are the ones to edit this page and amend it accordingly. Keep in mind that changes should be in compliance with the other pieces of documentation.**_
 
+### During 118.0 >= 2023-07-31
+
 ### During 117.0 >= 2023-07-04
 
 ### During 116.0 >= 2023-06-05
