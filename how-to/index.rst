@@ -9,3 +9,4 @@ How To
    partner-repacks
    Release <release/index>
    Manual update testing <update-testing>
+   Manually submit a release with the Ship It API <manual-release>
