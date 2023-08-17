@@ -91,6 +91,8 @@ cases, simply resubmitting the build will result in a faster turnaround.
 In this case, ``rerun (force)`` the ``notarization-part-1`` task, then
 ``rerun`` the poller task once the part 1 task finishes.
 
+.. _broken_dependencies_cancel_rerun:
+
 Release tasks with broken dependencies: cancel + rerun
 ------------------------------------------------------
 
