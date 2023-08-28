@@ -1,27 +1,7 @@
-.. _software:
-
-Software
-========
-
-Taskcluster
-~~~~~~~~~~~
-
-See :ref:`taskcluster`.
-
-hg pushlog
-----------
-Mozilla maintains a record of when changes are pushed into various
-repositories on `hg.mozilla.org`_.
-
-The pushlog has several interfaces of interest, the html view which is
-useful to developers, and the json format which is more useful for
-automated systems.
-
-.. _pushlog.py hook: http://hg.mozilla.org/hgcustom/hghooks/file/15e5831ab26b/mozhghooks/pushlog.py
-.. _hg.mozilla.org: https://hg.mozilla.org
+.. _mozharness:
 
 Mozharness
-----------
+==========
 
 Mozharness is a configuration driven script harness. It is a Script harness in that it knows
 how to automate a set of tasks. The scripts tend to not to need to know if you are running on Windows or
@@ -80,7 +60,7 @@ critical part of Mozharness:
      BaseScript -> mozharness/base/script.py
 
 BaseLogger
-~~~~~~~~~~
+----------
 
 BaseLogger provides a consistent logging for script runs::
 
@@ -226,7 +206,7 @@ for you if you avail of BaseScript (you pretty much always will want to). BaseSc
 core parts of Mozharness and we will dive into that shortly.
 
 BaseConfig
-~~~~~~~~~~
+----------
 
 This is the class that will interpret all of your configuration from many different sources. These
 sources could be CLI arguments, json or python (dict) files, remote url files,
@@ -352,7 +332,7 @@ have to call BaseConfig directly.
 
 
 BaseScript
-~~~~~~~~~~
+----------
 
 You may have an idea now that BaseScript is where everything comes together. By inheriting and
 instantiating BaseScript, you get your logging obj (self.log_obj),
@@ -429,7 +409,7 @@ BaseScript mozharness/base/script.py::
                 self._possibly_run_method(method_name, error_if_missing=True)
 
 Mozharness Example
-~~~~~~~~~~~~~~~~~~
+------------------
 
 Before we dive into the example, I'd like to outline some common built in CLI args you can use to
 explore the concepts mentioned above:
@@ -653,38 +633,3 @@ There is a lot more we can discuss, e.g. using pre and post listeners for settin
 tearing down actions, decorating pre_config_lock() to manipulate self.config before it locks for the
 whole script run, and passing more than one config file to a single script run. However I think
 that goes beyond the requirements for navigating or contributing to the Mozharness code base.
-
-.. _Treeherder:
-
-Treeherder
-----------
-https://wiki.mozilla.org/Auto-tools/Projects/Treeherder
-
-https://treeherder.mozilla.org/
-
-https://treeherder.readthedocs.io/
-
-https://github.com/mozilla/treeherder
-
-?showall=1
-?jobname=foo
-
-.. _buildapi:
-
-VCS Sync tools
---------------
-
-
-.. index:: single: vcs2vcs; legacy
-
-legacy
-~~~~~~
-
-The legacy (first implementation) code is in:
-    http://hg.mozilla.org/users/hwine_mozilla.com/repo-sync-tools/
-
-The legacy configurations are in:
-    http://hg.mozilla.org/users/hwine_mozilla.com/repo-sync-configs/
-
-Documentation is in the code repository, a rendered version of the
-latest is at https://people.mozilla.org/~hwine/tmp/vcs2vcs/index.html
