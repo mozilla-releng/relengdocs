@@ -204,7 +204,8 @@ Reply to the migration request with the template:
 .. code:: text
 
    This is now complete:
-   * mozilla-beta is merged to mozilla-release, new version is XX.Y
+   * mozilla-beta is merged to mozilla-release
+   * mozilla-release is tagged and version bumped to XX.Y
    * beta will stay closed until next week
 
 Release Merge Day - part II - a week after Merge day
@@ -348,16 +349,17 @@ Reply to the migration request with the template:
 .. code:: text
 
    This is now complete:
-   * mozilla-central is merged to mozilla-beta, new version is XXX.0b1
-   * mozilla-central has been tagged and version bumped to YYY.0a1
-   * mozilla-esr115 has been version bumped to ZZZ.A.0esr
+   * mozilla-central is merged to mozilla-beta
+   * mozilla-central is tagged and version bumped to XXX.0a1
+   * mozilla-beta is tagged and version bumped to YYY.0b1
+   * mozilla-esr115 is version bumped to ZZZ.A.0esr
    * new geckoview nightly builds have been triggered
    * newly triggered nightlies will pick the version change on cron-based schedule
 
 Hint: verify current versions
 
-   - `beta <https://hg.mozilla.org/releases/mozilla-beta/file/tip/browser/config/version_display.txt>`__
    - `central <https://hg.mozilla.org/mozilla-central/file/tip/browser/config/version_display.txt>`__
+   - `beta <https://hg.mozilla.org/releases/mozilla-beta/file/tip/browser/config/version_display.txt>`__
    - `esr115 <https://hg.mozilla.org/releases/mozilla-esr115/file/tip/browser/config/version.txt>`__
 
 Update wiki versions
