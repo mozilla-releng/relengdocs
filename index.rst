@@ -34,7 +34,6 @@ Contents:
    :glob:
 
    logs/index.rst
-   architecture/index.rst
    best-practices/index.rst
    taskcluster/index.rst
    mozharness.rst
