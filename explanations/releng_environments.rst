@@ -53,7 +53,7 @@ Autograph Stage
 ~~~~~~~~~~~~~~~
 https://autograph-external.stage.autograph.services.mozaws.net
 
-Only for testing Autograph changes, so we should have *zero* signingscript or iscript signing formats that target Autograph Stage, except for any formats that are explicitly for testing Autograph Stage functionality (see :ref:`Testing_Autograph`).
+Only for testing Autograph changes, so we should have *zero* signingscript or iscript signing formats that target Autograph Stage, except for any formats that are explicitly for testing Autograph Stage functionality (see :doc:`/how-to/test/autograph`).
 
 Staging Shipit
 ~~~~~~~~~~~~~~

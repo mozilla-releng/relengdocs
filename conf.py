@@ -16,8 +16,8 @@ import os
 
 # -- Project information -----------------------------------------------------
 
-project = 'RelEng Docs'
-copyright = '2020, Mozilla Release Engineering'
+project = 'RelEng'
+copyright = '2023, Mozilla Release Engineering'
 author = 'Mozilla Release Engineering'
 
 
@@ -56,4 +56,11 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
+html_title = "RelEng Docs"
 html_theme = 'sphinx_book_theme'
+html_theme_options = {
+    "logo": {
+        "image_light": "media/releng.png",
+        "image_dark": "media/releng-dark.png",
+    },
+}
