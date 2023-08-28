@@ -37,7 +37,7 @@ Contents:
    architecture/index.rst
    best-practices/index.rst
    taskcluster/index.rst
-   software.rst
+   mozharness.rst
    addons/index.rst
    Balrog & Updates <balrog/index.rst>
    Signing <signing/index.rst>
