@@ -22,14 +22,11 @@ Contents:
    reference/index.rst
    explanations/index.rst
 
-
 .. toctree::
    :maxdepth: 4
    :caption: Overview and Procedures
 
    procedures/index.rst
-   gecko_tests/new_config.rst
-
 
 .. toctree::
    :maxdepth: 4
@@ -49,7 +46,6 @@ Contents:
    future/index.rst
    machine-users.rst
    troubleshooting.rst
-   gecko_tests/index.rst
 
 .. toctree::
    :caption: Meta
