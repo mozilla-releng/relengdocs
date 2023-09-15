@@ -6,7 +6,7 @@ This procedure is based on the experience of `adding the pushmsixscript to scrip
 * Write your new script and `add it to scriptworker-scripts <https://github.com/mozilla-releng/scriptworker-scripts/>`__.
 
  - You may want to clone-and-modify `an existing script <https://github.com/mozilla-releng/scriptworker-scripts/tree/master/pushmsixscript>`__.
- - Consult the `documentation <https://scriptworker-scripts.readthedocs.io>`__.
+ - Consult the :external+scriptworker-scripts:doc:`documentation <index>`.
  - Write unit tests for your script; you can run them locally with tox.
 
 * Add clients to ci-configuration repo
@@ -31,7 +31,7 @@ This procedure is based on the experience of `adding the pushmsixscript to scrip
 
 * Add entries to k8s-autoscale like `this <https://github.com/mozilla-releng/k8s-autoscale/pull/123>`__.
 
- - The `docs <https://scriptworker-scripts.readthedocs.io/en/latest/scriptworkers-autoscaling.html>`__ may be helpful.
+ - The :external:doc:`docs <scriptworkers-autoscaling>` may be helpful.
  - Merging will automatically trigger a dev deploy.
  - Be sure to deploy k8s-autoscale to production as well.
 

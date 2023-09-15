@@ -58,8 +58,7 @@ Create a new rule to test the release on the nightlytest channel:
     - on the Create Rule page, set Product = "OpenH264", Channel = "nightlytest" (or as needed), Mapping = the release you just created, Background Rate = 100 (or as needed), and set the Priority as needed, typically the lowest priority for the default rule.
     - on the Create Rule page, click "Create Rule" button in the lower right to create the rule.
 
-See https://mozilla-balrog.readthedocs.io/en/latest/database.html for
-general guidance on rule matching.
+See :external+balrog:doc:`this page <database>` for general guidance on rule matching.
 
 OpenH264 updates are generally sent to all channels, though we can restrict by update channel (e.g. ``esr*`` to only target esr users or nightlytest, the internal testing channel). This means users are given a new OpenH264 plugin based on their Firefox version. For instance: if we provide a new OpenH264 to 98.0 at the time 98.0b15 ships, then users with 98.0b1-b14 will also get this version. Make sure with the media team these betas are compatible! In the case it's not, please remember Firefox doesn't send which beta it's on to Balrog. You have to filter out based on the version **and** the buildID (the buildID alone doesn't work if a 97 dot release happens afterwards).
 

@@ -4,16 +4,6 @@
 # list see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
-# -- Path setup --------------------------------------------------------------
-
-# If extensions (or modules to document with autodoc) are in another directory,
-# add these directories to sys.path here. If the directory is relative to the
-# documentation root, use os.path.abspath to make it absolute, like shown here.
-#
-
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
-
 # -- Project information -----------------------------------------------------
 
 project = "RelEng"
@@ -50,6 +40,18 @@ templates_path = ["_templates"]
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
+# Intersphinx allows linking to external Sphinx based documentation using the
+# standard roles and directives.
+intersphinx_mapping = {
+    "balrog": ("https://mozilla-balrog.readthedocs.io/en/latest", None),
+    "firefox": ("https://firefox-source-docs.mozilla.org", None),
+    "scriptworker": ("https://scriptworker.readthedocs.io/en/latest", None),
+    "scriptworker-scripts": (
+        "https://scriptworker-scripts.readthedocs.io/en/latest",
+        None,
+    ),
+    "taskgraph": ("https://taskcluster-taskgraph.readthedocs.io/en/latest", None),
+}
 
 # -- Options for HTML output -------------------------------------------------
 

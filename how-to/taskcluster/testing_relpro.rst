@@ -3,8 +3,7 @@ Testing and Customizing Release Promotion actions
 
 Actions in Taskgraph allow for adding, cancelling,
 retriggering/rerunning tasks in/to the graph. The action docs are
-currently
-`here <https://firefox-source-docs.mozilla.org/taskcluster/actions.html?highlight=action>`__.
+currently :external+taskgraph:doc:`here <howto/create-actions>`.
 
 We can test any available action with
 ``[./mach] taskgraph test-action-callback``, which takes input (schemas
@@ -196,7 +195,7 @@ Advanced relpro usage
 
 These two options allow for force-rebuilding certain tasks.
 
-``rebuild_kinds`` refers to a task `kind <https://firefox-source-docs.mozilla.org/taskcluster/kinds.html?highlight=kind>`__ that we want to make sure we rebuild. We use this in the `promote_firefox_partner_repack <https://hg.mozilla.org/mozilla-central/file/32a3cf57dd4396e123ebbba2f894e540528d0781/taskcluster/ci/config.yml#l220>`__ release promotion flavor; by listing the various ``release-partner-repack*`` kinds as ``rebuild_kinds``, we can:
+``rebuild_kinds`` refers to a task :external+firefox:doc:`kind <taskcluster/kinds>` that we want to make sure we rebuild. We use this in the `promote_firefox_partner_repack <https://hg.mozilla.org/mozilla-central/file/32a3cf57dd4396e123ebbba2f894e540528d0781/taskcluster/ci/config.yml#l220>`__ release promotion flavor; by listing the various ``release-partner-repack*`` kinds as ``rebuild_kinds``, we can:
 
 - use the exact same input for a given ``promote`` graph, adding the previous ``promote`` graph to the ``previous_graph_ids`` so we optimize away all the tasks in our new graph with the ``existing_tasks`` in the previous promote graph,
 - except we add the ``rebuild_kinds``, which means we end up just rebuilding the tasks with those kinds.

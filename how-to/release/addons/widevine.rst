@@ -178,8 +178,7 @@ To implement this (assuming an existing default Widevine rule with priority 420)
     - when requested to add esr, create a new rule for esr* with priority 425
     - when requested to make the new CDM the default, update the default rule's release, then delete the other rules (nightlytest, nightly, beta, esr*).
 
-See https://mozilla-balrog.readthedocs.io/en/latest/database.html for
-general guidance on rule matching.
+See :external+balrog:doc:`this page <database>` for general guidance on rule matching.
 
 Unlike Firefox updates, Widevine ones all happen in the same channel
 (except for the nightlytest, the internal testing channel). This means

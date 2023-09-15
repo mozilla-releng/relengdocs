@@ -12,7 +12,7 @@ Goals of Bug Triage
 4. Identify 'low-hanging-fruits' with quick resolutions.
 5. Ensure bugs are considered triaged according to the Firefox triage process.
 
-This process is influenced by the `Firefox triage process <https://firefox-source-docs.mozilla.org/bug-mgmt/policies/triage-bugzilla.html>`_. However, we've adapted the definitions of bug severity to suit our needs.
+This process is influenced by the :external:doc:`Firefox triage process <bug-mgmt/policies/triage-bugzilla>`. However, we've adapted the definitions of bug severity to suit our needs.
 
 Bug Fields
 ----------

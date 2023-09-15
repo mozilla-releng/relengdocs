@@ -7,7 +7,7 @@ How are tasks triggered in Taskcluster?
 
 - You can create arbitrary tasks through, e.g. `the create task API/UI <https://firefox-ci-tc.services.mozilla.com/tasks/create>`__.
 - Or you can encode one or more tasks in `.taskcluster.yml <https://github.com/mozilla-releng/scriptworker/blob/8d35c98f58f0fb54367da854560721beb53f8f18/.taskcluster.yml>`__
-- If you pass a certain threshold of complexity, you probably want your ``.taskcluster.yml`` to schedule a decision task, which will create a task graph via `taskcluster-taskgraph <https://taskcluster-taskgraph.readthedocs.io/en/latest/>`__.
+- If you pass a certain threshold of complexity, you probably want your ``.taskcluster.yml`` to schedule a decision task, which will create a task graph via :external+taskgraph:doc:`Taskgraph <index>`.
 
 ... But what generates the task(s) in ``.taskcluster.yml``?
 
