@@ -20,7 +20,7 @@ So we extract all the strings from mozilla-central and we're done, yes? No.
 
 For Firefox Desktop, we follow the train model, so on merge day beta goes to release, and central goes to beta. Each of these repos can have different sets of strings: we have a set of strings, ideally frozen, on beta; but on central developers can change or land new strings for the next version of Firefox.
 
-Enter cross-channel (see the `cross-channel docs <https://firefox-source-docs.mozilla.org/l10n/crosschannel/index.html>`_). Cross-channel clones each of the active train repos for Firefox desktop and Thunderbird, extracts the strings, and combines them into a single set of strings for localizers to translate. (We include esr and release so we don't drop strings that are still in use.)
+Enter cross-channel (see the :external+firefox:doc:`cross-channel docs <l10n/crosschannel/index>`). Cross-channel clones each of the active train repos for Firefox desktop and Thunderbird, extracts the strings, and combines them into a single set of strings for localizers to translate. (We include esr and release so we don't drop strings that are still in use.)
 
 For Android, it's similar: we use the `android-l10n-tooling repository <https://github.com/mozilla-l10n/android-l10n-tooling/>`_ and its associated pulse-driven hooks to extract strings every time that code lands in our mobile repos.
 

@@ -144,8 +144,8 @@ Taskcluster
 Firefox is released via the same tooling that's used to build and test Firefox. We use our Mozilla in-house continuous
 integration (CI) platform `Taskcluster <https://docs.taskcluster.net/docs>`_ to drive the tasks and workers. The main
 service in this platform is the Taskcluster Queue. The queue takes requests of tasks and coordinates with a pool of
-workers to actually conduct the task work. The various scheduling and dependency logic is defined in `taskgraph
-<https://firefox-source-docs.mozilla.org/taskcluster/taskgraph.html>`_. The workers are trusted, locked down, and owned
+workers to actually conduct the task work. The various scheduling and dependency logic is defined in :external+firefox:doc:`Taskgraph
+<taskcluster/taskgraph>`. The workers are trusted, locked down, and owned
 by Release Engineering. They are `scriptworker <https://github.com/mozilla-releng/scriptworker>`_ based and the various
 implementations live `here <https://github.com/mozilla-releng/scriptworker-scripts>`_
 
@@ -158,8 +158,8 @@ We use signing scriptworkers that interface with Mozilla's `autograph service
 Providing Updates
 ^^^^^^^^^^^^^^^^^
 
-We use balrog scriptworkers that interface with Mozilla's `updater service, Balrog
-<https://mozilla-balrog.readthedocs.io/en/latest/>`_ 
+We use balrog scriptworkers that interface with Mozilla's :external+balrog:doc:`updater service, Balrog
+<index>`.
 
 Shipit
 ^^^^^^

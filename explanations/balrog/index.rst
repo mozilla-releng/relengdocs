@@ -1,7 +1,7 @@
 Balrog Articles and Documentation
 =================================
 
-The main Balrog documentation can be found at https://mozilla-balrog.readthedocs.io/en/latest/.
+The main Balrog documentation can be found :external+balrog:doc:`here <index>`.
 
 Contents:
 
