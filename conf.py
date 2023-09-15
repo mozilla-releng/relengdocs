@@ -10,15 +10,15 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-import os
+
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'RelEng'
-copyright = '2023, Mozilla Release Engineering'
-author = 'Mozilla Release Engineering'
+project = "RelEng"
+copyright = "2023, Mozilla Release Engineering"
+author = "Mozilla Release Engineering"
 
 
 # -- General configuration ---------------------------------------------------
@@ -27,13 +27,13 @@ author = 'Mozilla Release Engineering'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.intersphinx',
-    'sphinx.ext.todo',
-    'sphinxcontrib.spelling',
-    'recommonmark',
+    "sphinx.ext.intersphinx",
+    "sphinx.ext.todo",
+    "sphinxcontrib.spelling",
+    "recommonmark",
 ]
 
-spelling_word_list_filename = ['releng_wordlist.txt']
+spelling_word_list_filename = ["releng_wordlist.txt"]
 
 # turn on todo output
 todo_include_todos = True
@@ -43,12 +43,12 @@ source_parsers = {".md": "recommonmark.parser.CommonMarkParser"}
 source_suffix = [".rst", ".md"]
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+templates_path = ["_templates"]
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -57,7 +57,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # a list of builtin themes.
 #
 html_title = "RelEng Docs"
-html_theme = 'sphinx_book_theme'
+html_theme = "sphinx_book_theme"
 html_theme_options = {
     "logo": {
         "image_light": "media/releng.png",
