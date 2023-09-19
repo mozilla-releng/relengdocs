@@ -111,10 +111,19 @@ Task list and known dependencies
 
 22. Before gtb for XX.3.0 (beginning of RC week for XX+3), update balrog rules
     on esr-localtest and esr-cdntest to allow updates to esrXX; check rules on
-    the release channel 
+    the release channel, and check with release management for any necessary
+    watershed and/or desupport rules.
 
-23. Some time later (maybe soon after the XX.3.0 release to avoid forgetting),
+23. At XX.3.0 release time, update the rules on balrog's esr channel (similar to 22).
+
+24. Around the same time, update shipit's `CURRENT_ESR` and `ESR_NEXT` config
+    variables, and rebuild product-details.
+
+25. Shortly after the XX.3.0 release, update the cron-bouncer-check task's
+    config on esrXX to look at `FIREFOX_ESR` instead of `FIREFOX_ESR_NEXT`.
+
+26. Some time later (maybe soon after the XX.3.0 release to avoid forgetting),
     stop running update-verify-next on esrXX, and stop updating the esr-next
     aliases
 
-24. Close the meta bug and have some tea. :)
+27. Close the meta bug and have some tea. :)
