@@ -8,6 +8,7 @@ More detailed information on specific ReleaseDuty topics:
     :glob:
 
     desktop/*
+    scheduled-deploys
     merge-duty/*
     interrupt-duty
 
