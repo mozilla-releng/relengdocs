@@ -10,17 +10,12 @@ When making changes to tasks like this staging releases are the most effective w
 Permissions
 ^^^^^^^^^^^
 
-To do a staging release, you need to be able to push to try, access to the Mozilla VPN, and have staging shipit read/write access.
+To do a staging release, you need to be able to push to try, access to the VPN, and have staging shipit read/write access.
 
 See the :ref:`production documentation for how to get Shipit and VPN access <release-duty-permissions>`.
 
 How-To
 ^^^^^^
-
-In order to prepare a smooth ``b1`` and ``RC``, staging releases should
-be run weekly or at least one week before RC week. In order for this to
-happen, we're using :external+firefox:doc:`staging releases submitted to
-try <tools/try/selectors/release>`.
 
 **For central to beta migration**
 
@@ -45,7 +40,7 @@ instance. For how to create a release via Shipit, refer to the
 just ensure you are using the staging instance
 (https://shipit.staging.mozilla-releng.net).
 
-Unless you are specifically testing something to do with updates, it is recommended that you disable partials when submitting the release -- it is very, very tricky to get them working in staging, and is best avoided. If you *do* need partials, you must choose a version or versions that exist in Ship It dev, Balrog stage, as well as the *production* archive.mozilla.org server. There's a `helper script in the braindump repository <https://hg.mozilla.org/build/braindump/file/tip/releases-related/just-give-me-partials.sh>`__ that will help you find previous releases that meet this criteria (but it appears to not fully work these days...).
+Unless you are specifically testing something to do with updates it is common and acceptable to disable partials when submitting the release. If you are enabling updates take care to choose a version that is listed in all of: Ship It Stage, Balrog Stage, Stage archive (ftp.stage.mozaws.net). There's a `helper script in the braindump repository <https://hg.mozilla.org/build/braindump/file/tip/releases-related/just-give-me-partials.sh>`__ that can assist you with this.
 
 Once the staging releases are being triggered, it's highly recommended
 that at least a comment is being dropped to Sheriffs team
