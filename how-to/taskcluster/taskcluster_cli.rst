@@ -59,26 +59,71 @@ avoid a) leaking scopes that can cause a lot of damage, and/or b)
 accidentally running the wrong command in a shell and doing damage to
 the production cluster.
 
-Aliases
-~~~~~~~
+Signin Helper
+~~~~~~~~~~~~~
 
-By setting aliases in our shells, we can perform common tasks without
-having to memorize the syntax every time. Here are a few aliases that
-may be helpful:
+Using this shell helper function is an easy way to ensure only the minimum
+amount of scopes are being used:
 
-::
+.. code-block:: shell
 
-   # To set your root URL to the production firefoxci or stage cluster
-   tc-fxci='export TASKCLUSTER_ROOT_URL=https://firefox-ci-tc.services.mozilla.com/'
-   tc-staging='export TASKCLUSTER_ROOT_URL=https://stage.taskcluster.nonprod.cloudops.mozgcp.net'
+   tc-signin () {
+       if [[ "$#" == "0" ]]; then
+           echo "error: must provide use case"
+           return 1
+       fi
+       purpose="$1"
+       shift
+   
+       case $purpose in
+           ciadmin)
+               expiry="60m"
+               scopes=(
+                   "hooks:list-hooks:*"
+               )
+               ;;
+           relduty)
+               expiry="60m"
+               scopes=(
+                   "queue:rerun-task:*"
+                   "queue:cancel-task:*"
+               )
+               ;;
+           hook)
+               expiry="15m"
+               scopes=(
+                   "hooks:trigger-hook:*"
+               )
+               ;;
+           root)
+               expiry="15m"
+               scopes=(
+                   "*"
+               )
+               ;;
+           *)
+               echo "error: invalid use case '$purpose'"
+               return 1
+       esac
+   
+       scope_str=$(IFS=$'\n' ; echo "${scopes[*]}")
+       tc_url="${TASKCLUSTER_ROOT_URL:-https://firefox-ci-tc.services.mozilla.com}"
+       eval "$(TASKCLUSTER_ROOT_URL=$tc_url taskcluster signin --expires=$expiry --scope="$scope_str")"
+   }
+   
+   tc-signout () {
+       unset TASKCLUSTER_CLIENT_ID
+       unset TASKCLUSTER_ACCESS_TOKEN
+   }
 
+Add this function to your ``~/.bashrc`` or equivalent. Feel free to edit the
+function and populate it with the use cases most relevant to your needs. It can
+be used like this:
 
-   # To log out explicitly
-   tc-logout='unset TASKCLUSTER_CLIENT_ID; unset TASKCLUSTER_ACCESS_TOKEN'
+.. code-block:: shell
 
-   # Rerunning and cancelling tasks are a common request/need in releaseduty;
-   # grant this set of scopes for 1 hour
-   tc-relduty=$'eval $(taskcluster signin --expires 1h -s "queue:rerun-task:*\nqueue:cancel-task:*")'
+   $ tc-signin ciadmin
+   # run ciadmin commands
+   $ tc-signout
 
-   # Up to root privs: only grant these for 15min
-   tc-signin='eval $(taskcluster signin --expires 15m "$@")'
+Using ``tc-signin root`` should be a method of last resort.
