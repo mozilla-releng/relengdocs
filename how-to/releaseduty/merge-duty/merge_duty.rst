@@ -383,10 +383,6 @@ Update wiki versions
    -  `The current
       cycle <https://wiki.mozilla.org/index.php?title=Template:CURRENT_CYCLE>`__
 
-Update the releng changelog
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-1. Edit the `changelog <https://github.com/mozilla/build-relengdocs/edit/main/releng_changelog.md>`__ by adding a new section for the current Nightly release. You can also delete the previous section if it is empty.
 
 Bump Nightly version and release dates in ShipIt
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

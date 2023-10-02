@@ -7,5 +7,4 @@ Reference
    access
    machine-users
    logs
-   /releng_changelog
    external
