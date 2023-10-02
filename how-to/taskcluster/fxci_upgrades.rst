@@ -31,7 +31,6 @@ As of 2022.04.13, we have been successful rolling out minor version Taskcluster 
 - Roll out the maintenance fixes and cluster upgrades (Cloudops team)
 - Check on smoketests (Taskcluster team)
 - Check treeherder and ask Sheriffs if there are any broken tasks (Releaseduty)
-- Update the `changelog`_.
 
 .. _major_tc_upgrade:
 
@@ -51,8 +50,6 @@ If there is a major version upgrade, or other maintenance/migration that will ha
 - Check treeherder and ask Sheriffs if there are any broken tasks (Releaseduty)
 - Reopen trees (Sheriffs or Releaseduty)
 - Respond to the first email saying the upgrade is finished (Releaseduty)
-- Update the `changelog`_.
 
 .. _Public - FirefoxCI Cluster Taskcluster Upgrades calendar: https://calendar.google.com/calendar/embed?src=c_fmd7bfpgr3929rrmiejbk3us68%40group.calendar.google.com
-.. _changelog: https://github.com/mozilla/build-relengdocs/blob/main/releng_changelog.md
 .. _dev-platform email: https://groups.google.com/a/mozilla.org/g/dev-platform/c/UGCNchYxVns>

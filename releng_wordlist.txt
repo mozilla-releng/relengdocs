@@ -59,7 +59,6 @@ cdn
 cdn
 cdntest
 chainoftrust
-changelog
 changesets
 chaonoftrust
 checkin

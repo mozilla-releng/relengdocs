@@ -250,8 +250,6 @@ Miscellaneous
 
  * Bugzilla issues regarding specific releases/WNP are filed under `Release Engineering:Release Requests <https://bugzilla.mozilla.org/enter_bug.cgi?format=__default__&product=Release%20Engineering&component=Release%20Requests>`__
  * Issues regarding automation are filed under `Release Engineering:Release Automation <https://bugzilla.mozilla.org/enter_bug.cgi?product=Release%20Engineering&component=Release%20Automation>`__
- * The `releng_changelog.md <https://github.com/mozilla/build-relengdocs/blob/master/releng_changelog.md>`__ in the `build-relengdocs <https://github.com/mozilla/build-relengdocs/tree/master>`__
-   repository contains a summary of larger changes made during the duty cycle.
 
 .. _release-duty-teams:
 
