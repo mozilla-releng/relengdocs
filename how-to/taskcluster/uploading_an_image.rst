@@ -59,7 +59,7 @@ can load them. The procedure is similar to the one above.
 build-decision image
 --------------------
 
-Usually this will only be needed for re-pinnning the requirements, or minor changes to the iamge running hooks.
+Usually this will only be needed for re-pinnning the requirements, or minor changes to the image running hooks.
 If you don't have a token, you will need to login to dockerhub and create a CLI token. The credentials for mozillareleases user is in sops.
 
 1. [optional] Re-pin the requirements **with python 3.8**::
