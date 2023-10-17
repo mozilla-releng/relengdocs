@@ -205,7 +205,7 @@ pygments==2.16.1 \
 recommonmark==0.7.1 \
     --hash=sha256:1b1db69af0231efce3fa21b94ff627ea33dee7079a01dd0a7f8482c3da148b3f \
     --hash=sha256:bdb4db649f2222dcd8d2d844f0006b958d627f732415d399791ee436a3686d67
-    # via -r requirements/base.in
+    # via -r base.in
 requests==2.31.0 \
     --hash=sha256:58cd2187c01e70e6e26505bca751777aa9f2ee0b7f4300988b709f44e013003f \
     --hash=sha256:942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1
@@ -222,7 +222,7 @@ sphinx==6.2.1 \
     --hash=sha256:6d56a34697bb749ffa0152feafc4b19836c755d90a7c59b72bc7dfd371b9cc6b \
     --hash=sha256:97787ff1fa3256a3eef9eda523a63dbf299f7b47e053cfcf684a1c2a8380c912
     # via
-    #   -r requirements/base.in
+    #   -r base.in
     #   pydata-sphinx-theme
     #   recommonmark
     #   sphinx-book-theme
@@ -235,7 +235,7 @@ sphinx==6.2.1 \
 sphinx-book-theme==1.0.1 \
     --hash=sha256:927b399a6906be067e49c11ef1a87472f1b1964075c9eea30fb82c64b20aedee \
     --hash=sha256:d15f8248b3718a9a6be0ba617a32d1591f9fa39c614469bface777ba06a73b75
-    # via -r requirements/base.in
+    # via -r base.in
 sphinxcontrib-applehelp==1.0.7 \
     --hash=sha256:094c4d56209d1734e7d252f6e0b3ccc090bd52ee56807a5d9315b19c122ab15d \
     --hash=sha256:39fdc8d762d33b01a7d8f026a3b7d71563ea3b72787d5f00ad8465bd9d6dfbfa
@@ -263,12 +263,12 @@ sphinxcontrib-serializinghtml==1.1.9 \
 sphinxcontrib-spelling==8.0.0 \
     --hash=sha256:199d0a16902ad80c387c2966dc9eb10f565b1fb15ccce17210402db7c2443e5c \
     --hash=sha256:b27e0a16aef00bcfc888a6490dc3f16651f901dc475446c6882834278c8dc7b3
-    # via -r requirements/base.in
+    # via -r base.in
 typing-extensions==4.7.1 \
     --hash=sha256:440d5dd3af93b060174bf433bccd69b0babc3b15b1a8dca43789fd7f61514b36 \
     --hash=sha256:b75ddc264f0ba5615db7ba217daeb99701ad295353c45f9e95963337ceeeffb2
     # via pydata-sphinx-theme
-urllib3==2.0.4 \
-    --hash=sha256:8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11 \
-    --hash=sha256:de7df1803967d2c2a98e4b11bb7d6bd9210474c46e8a0401514e3a42a75ebde4
+urllib3==2.0.7 \
+    --hash=sha256:c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84 \
+    --hash=sha256:fdb6d215c776278489906c2f8916e6e7d4f5a9b602ccbcfdf7f016fc8da0596e
     # via requests
