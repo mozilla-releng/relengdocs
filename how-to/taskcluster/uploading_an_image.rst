@@ -56,6 +56,8 @@ can load them. The procedure is similar to the one above.
 .. _checkout cache version: https://searchfox.org/mozilla-central/rev/1ca8ea11406642df4a2c6f81f21d683817af568d/.taskcluster.yml#217
 
 
+.. _build-decision-image:
+
 build-decision image
 --------------------
 
