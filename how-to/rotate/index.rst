@@ -8,4 +8,5 @@ This section outlines How-To guides on how to handle them.
    :maxdepth: 1
 
    Firefox GPG Signing Key <gpg_signing_key>
+   Github Apps <github-apps>
    hg-cert
