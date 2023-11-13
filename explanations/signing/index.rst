@@ -9,5 +9,5 @@ Contents:
     :maxdepth: 2
 
     cert_levels_and_best_practices.md
-    notarization
+    Apple_signing_and_notarization
     inventory_and_safe
