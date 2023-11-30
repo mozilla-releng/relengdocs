@@ -28,22 +28,31 @@ This will download public/image.tar.zst into docker.
 decision images
 ---------------
 
-At the time of writing, there are 2 decision images: a general one and mobile's. Both are built against the `taskgraph <https://treeherder.mozilla.org/jobs?repo=taskgraph>`__ repo.
-They are only rebuilt whenever a change is detected by the decision task of taskgraph. You may want to upload them on DockerHub so that decision tasks that are using these images
+At the time of writing, there are 2 decision images: a general one and gecko's. The former is built against the `taskgraph <https://treeherder.mozilla.org/jobs?repo=taskgraph>`__ repo, while `gecko_decision` is built `in mozilla-central <https://searchfox.org/mozilla-central/source/taskcluster/docker/decision/>`__
+They are only rebuilt whenever a change is detected by the respective decision task. You may want to upload them on DockerHub so that decision tasks that are using these images
 can load them. The procedure is similar to the one above.
 
 1. Load the image (see above)
-2. Tag the image. Remove ``-mobile`` in the following command if you're dealing with the regular image::
+2. Tag.  For the generic image::
 
-    docker tag $IMAGE_ID mozillareleases/taskgraph:decision-mobile-$TC_INDEX_HASH
+    docker tag decision:latest mozillareleases/taskgraph:decision-$TC_INDEX_HASH
 
-``$IMAGE_ID is ``decision:latest`` or ``decision-mobile:latest`` depending on which you are updating.
+where ``$TC_INDEX_HASH`` is found in the routes of the taskcluster task that generated the image. Eg: ``$TC_INDEX_HASH`` is `5a222cefd6dd1397487a7b70f450a4ab16cf5eed71e126e34928b26d4ccf7577` when the route is ``index.taskgraph.cache.level-3.docker-images.v2.decision.hash.5a222cefd6dd1397487a7b70f450a4ab16cf5eed71e126e34928b26d4ccf7577``.
 
-``$TC_INDEX_HASH`` is found in the routes of the taskcluster task that generated the image. Eg: ``$TC_INDEX_HASH`` is `5a222cefd6dd1397487a7b70f450a4ab16cf5eed71e126e34928b26d4ccf7577` when the route is ``index.taskgraph.cache.level-3.docker-images.v2.decision-mobile.hash.5a222cefd6dd1397487a7b70f450a4ab16cf5eed71e126e34928b26d4ccf7577``
+For the gecko-specific image::
+
+    docker tag decision:latest mozillareleases/gecko_decision:$VERSION
+
+where ``$VERSION`` is the contents of ``taskcluster/docker/decision/VERSION`` (which should have been updated ahead of the image build).
 
 3. Push the image::
 
-    docker push mozillareleases/taskgraph:decision-mobile-$TC_INDEX_HASH
+    docker push mozillareleases/taskgraph:decision-$TC_INDEX_HASH
+
+or::
+
+    docker push mozillareleases/gecko_decision:$VERSION
+
 
 4. Land the change in-tree. `See this example <https://github.com/mozilla-mobile/fenix/pull/16361/files#diff-a728f7e52d751b98eafa856e45594533339b44f229d7b83f930df335391e7e15R246>`__
 
