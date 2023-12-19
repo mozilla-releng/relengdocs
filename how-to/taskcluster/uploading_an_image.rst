@@ -73,9 +73,9 @@ build-decision image
 Usually this will only be needed for re-pinnning the requirements, or minor changes to the image running hooks.
 If you don't have a token, you will need to login to dockerhub and create a CLI token. The credentials for mozillareleases user is in sops.
 
-1. [optional] Re-pin the requirements **with python 3.8**::
+1. [optional] Re-pin the requirements::
 
-    docker run --rm -it -w /files/build-decision -v $(pwd):/files python:3.8 /bin/bash -c "pip install -qqqU pip pip-compile-multi && pip-compile-multi -g base -g test"
+    maintenance/pin.sh
 
 2. Commit your changes, submit a PR, merge, wait for build-decision task to show up in `treeherder <https://treeherder.mozilla.org/jobs?repo=ci-configuration>`__
 3. Load the image (see above).
