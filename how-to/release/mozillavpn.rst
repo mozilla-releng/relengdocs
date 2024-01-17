@@ -6,21 +6,10 @@ Mozilla VPN Release Process
 The client is shipped on Windows, Mac and Linux, as well as Android and iOS.
 Ensure you are in the ``#releaseduty`` channel in Matrix.
 
-.. _vpn relpro:
-
-Find the Release Promotion Action
----------------------------------
-
-Many of the steps below use a `release promotion action`_, these all share the
-same initial steps:
-
-1. Navigate to the Decision task of the push in Taskcluster. Ensure it is the
-   one for the ``github-push`` event, it will be called ``Decision (push)``.
-2. Navigate to the task group.
-3. From the three dot menu in the bottom right, select ``Release Promotion``.
-
 Windows and Mac Clients
 -----------------------
+
+Windows and Mac client relases are triggered via Shipit.
 
 Promote a Build
 ~~~~~~~~~~~~~~~
@@ -29,16 +18,19 @@ You'll receive a ping in the ``#releaseduty`` channel in Matrix asking to
 "promote a build" or "push a build to candidates". The request should include a
 link to the commit they would like promoted.
 
-1. :ref:`vpn relpro`.
-2. Change the ``release_promotion_flavor`` to ``promote-client``.
-3. Trigger the action. This will run beetmover tasks that uploads the signed
-   builds to the `candidates directory`_ on archive.mozilla.org. The builds
-   will be under the path with the following pattern:
-   ``pub/vpn/candidates/<version>-candidates/build<buildId>/``
-
-4. :ref:`vpn balrog`, making sure to use the ``FirefoxVPN: release-cdntest``
+1. Log in to `Shipit`_.
+2. From the ``Releases`` dropdown, select ``Security -> New Release``.
+3. Select ``mozilla-vpn-client`` as the product.
+4. Choose the release branch + commit mentioned in the request. The branch
+   should match ``releases/<version>``.
+5. Create the release and navigate to ``Security -> Pending Releases``.
+6. Trigger the ``promote-client`` phase. This will run beetmover tasks that
+   uploads the signed builds to the `candidates directory`_ on
+   archive.mozilla.org. The builds will be under the path with the following
+   pattern: ``pub/vpn/candidates/<version>-candidates/build<buildId>/``
+7. :ref:`vpn balrog`, making sure to use the ``FirefoxVPN: release-cdntest``
    channel.
-5. Reply in-thread that the candidate builds are ready for testing.
+8. Reply in-thread that the candidate builds are ready for testing.
 
 Ship a Build
 ~~~~~~~~~~~~
@@ -47,19 +39,15 @@ You'll receive a ping in the ``#releaseduty`` channel in Matrix asking to
 ship or release a build. The request should include a link to the commit they
 would like promoted.
 
-.. note::
-   As of this writing, the ship phase doesn't actually depend on the promote
-   phase as the build signing tasks run on-push. So for now the action can
-   simply be triggered from the `github-push` Decision task the same as the
-   promote phase. This will change in the future.
-
-1. :ref:`vpn relpro`.
-2. Change the ``release_promotion_flavor`` to ``ship-client``.
-3. Trigger the action. This will run beetmover tasks that copy the signed
-   builds from candidates, over to the `releases directory`_ on
-   archive.mozilla.org.
-4. :ref:`vpn balrog`, making sure to use the ``FirefoxVPN: release`` channel.
-5. Reply in-thread in the ``#releaseduty`` channel that
+1. Login to `Shipit`_.
+2. From the ``Releases`` dropdown, select ``Security -> Pending Releases``.
+3. Find the corresponding release that was created for the ``promote-client``
+   phase.
+4. Trigger the ``ship-client`` phase. This will run a beetmover task that
+   copies the signed builds from candidates, over to the `releases directory`_
+   on archive.mozilla.org.
+5. :ref:`vpn balrog`, making sure to use the ``FirefoxVPN: release`` channel.
+6. Reply in-thread in the ``#releaseduty`` channel that
    the release has been shipped on Windows and Mac.
 
 .. _vpn balrog:
@@ -100,6 +88,58 @@ created *in addition* to the release you created in the previous step.
    likely be the case that only certain platforms or version numbers will want
    to use this release, so be sure to work with the VPN team to determine what
    exactly is desired.
+
+Addons
+------
+
+Addons are shipped independently from the main client, they are akin to
+Firefox's "system addons". They live in the main repo and are not to be
+confused with web extensions (they use a custom format to VPN).
+
+Addons releases are also managed via Shipit.
+
+Promote Addons
+~~~~~~~~~~~~~~
+
+1. Login to `Shipit`_.
+2. From the ``Releases`` dropdown, select ``Security -> New Release``.
+3. Select ``mozilla-vpn-addons`` as the product.
+4. Choose the ``main`` branch + commit mentioned in the request. Addons should
+   always be released off of the ``main`` branch. If a branch other than
+   ``main`` is requested, please verify that this is intentional and not an
+   oversight.
+5. Create the release and navigate to ``Security -> Pending Releases``.
+6. Trigger the ``promote-addons`` phase. This will create beetmover tasks that
+   upload the addons plus the manifest to the `addons candidates
+   directory`_. The path will have a pattern like:
+   ``pub/vpn/addons/candidates/<buildId>``
+7. Reply in-thread that the candidate addons are ready for testing.
+
+.. warning::
+
+   Addons do not use version numbers and instead use the build date as their
+   version. Shipit is unable to handle this scenario, so will display the
+   client version instead. Please ignore this version number for the addons,
+   and keep a mental note of which build number in Shipit corresponds to which
+   build date in the release tasks.
+
+Ship Addons
+~~~~~~~~~~~
+
+1. Login to `Shipit`_.
+2. From the ``Releases`` dropdown, select ``Security -> Pending Releases``.
+3. Find the corresponding release that was created for the ``promote-addons``
+   phase.
+4. Trigger the ``ship-addons`` phase. This will run beetmover tasks that copy
+   the addons and signed manifest from candidates, over to the `addons releases
+   directory`_ on archive.mozilla.org. The files will be uploaded to two
+   locations:
+
+   a. ``pub/vpn/addons/releases/<buildId>``
+   b. ``pub/vpn/addons/releases/latest``
+
+5. Reply in-thread in the ``#releaseduty`` channel that
+   the release has been shipped on Windows and Mac.
 
 Linux Client
 ------------
@@ -169,39 +209,7 @@ Android and iOS Clients
 
 Releng is not involved with the mobile release process.
 
-Addons
-------
-
-Addons are shipped independently from the main client, they are akin to
-Firefox's "system addons". They live in the main repo and are not to be
-confused with web extensions (they use a custom format to VPN).
-
-Promote Addons
-~~~~~~~~~~~~~~
-
-1. :ref:`vpn relpro`, using the lastest push from `main` (unless otherwise specified).
-2. Change the ``release_promotion_flavor`` to ``promote-addons``.
-3. Trigger the action. This will trigger beetmover tasks that will upload the addons
-   plus the manifest to the `addons candidates directory`_. The path will have a pattern
-   like:
-   ``pub/vpn/addons/candidates/<buildId>``
-4. Provide the link in a thread to the original request in ``#releaseduty``.
-
-
-Ship Addons
-~~~~~~~~~~~
-
-1. :ref:`vpn relpro`, using the same push as in the `promote` phase.
-2. Change the ``release_promotion_flavor`` to ``ship-addons``.
-3. Trigger the action. This will trigger beetmover tasks that will upload the
-   addons plus the manifest to the `addons releases directory`_. The files will
-   be uploaded to two locations:
-
-   a. ``pub/vpn/addons/releases/<buildId>``
-   b. ``pub/vpn/addons/releases/latest``
-
-4. Provide the link in a thread to the original request in ``#releaseduty``.
-
+.. _Shipit: https://shipit.mozilla-releng.net/
 .. _Mozilla VPN: https://github.com/mozilla-mobile/mozilla-vpn-client
 .. _release promotion action:
 .. _candidates directory: https://archive.mozilla.org/pub/vpn/candidates/
