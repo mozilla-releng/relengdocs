@@ -101,6 +101,8 @@ releases. To address this, `an exception was made for langpacks <https://github.
 
 2023.06.08: One linux langpack task `failed <https://bugzilla.mozilla.org/show_bug.cgi?id=1837547>`_.  Reruns also failed.  Logs showed amo_get() returned `'status': 'disabled'` for that file.  Discussion with AMO devs revealed that the langpacks for 114.0.1 and 115.0b3 were submitted around the same time, and AMO only allows a single version in each channel to be awaiting approval at one time - if a new version is uploaded before the previous one is approved and signed, the previous version is skipped and disabled.  SRE had to make AMO forget about that "disabled" version before a rerun could succeed.  Note that this is typically not release blocking: in the case of a dot release, there's usually no l10n change, so the new langpacks are effectively the same as the previous version's, and we can proceed with the release, by :ref:`canceling and rerunning <broken_dependencies_cancel_rerun>` the release-balrog-scheduling task in the ship phase.
 
+2024.02.26: Some linux langpack tasks failed, with HTTP status 500 in `get_version`.  Logs showed creating the version returned 409 with `{'version': ['Version 124.0.20240226.91939 already exists.']}`.  See https://bugzilla.mozilla.org/show_bug.cgi?id=1882175#c1.  As with the previous issue, this was not release blocking and we could force the release-balrog-scheduling task to run without its failed dependencies.
+
 Refresh AMO API keys
 ~~~~~~~~~~~~~~~~~~~~
 In order to submit the langpacks, we use API tokens from the addon
