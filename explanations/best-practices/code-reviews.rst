@@ -4,7 +4,7 @@ Code reviews
 
 Writing code is a craft. There is no absolute right or wrong way of expressing thoughts into code. It's mainly contextual:
 
-- What the current needs?
+- What are the current needs?
 - What are the current constraints?
 - What is our current understanding of the problem?
 
@@ -13,8 +13,7 @@ Reviewing code is also contextual. Here below are some guidelines. They must not
 Requesting a review
 ===================
 
-- **Timing:** expect the reviewer to come back after a day or two, in order to take timezones into account.
-- **Load:** requests should be well balanced among team members so we don't overload a single individual.
+- **Load:** requests should be well balanced among team members so we don't overload a single individual. GitHub's CODEOWNERS files can help with this.
 - **Reminders:** the Slack channel `#releng-notifications <https://app.slack.com/client/T027LFU12/CN77C0BUG>`__ will remind the reviewer when there is an outstanding request.
 - **Cognitive load:** it's easier for the human brain to focus on several things, one by one, rather than one big thing. Split your review into several atomic commits. That will speed up the review.
 - **Context:** provide information about why you are proposing this change.
@@ -31,6 +30,7 @@ Requesting a review
 Performing a review
 ===================
 
+- **Timing:** Reviewers should endeavour to reply within one business day of the request, and are expected to reply within 2. If not, the reviewer should reach out to the author to extend the expected relay or redirect to another reviewer.
 - **Tone:** remain considerate. We all make mistakes and we can all learn from each other.
 - **Context:** feel free to ask more information from the author.
 - **Posterity:** when a conversation happens on a private or temporary medium, put information back in the review.
