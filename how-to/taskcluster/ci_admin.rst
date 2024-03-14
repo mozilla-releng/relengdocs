@@ -54,11 +54,8 @@ Run
 
 1. Diff::
 
+    eval $(taskcluster signin -s auth:list-clients)
     ci-admin diff --environment firefoxci 2>&1 | tee diff.out
-
-If you get a permissions issue here, try logging out of taskcluster::
-
-    unset TASKCLUSTER_CLIENT_ID; unset TASKCLUSTER_ACCESS_TOKEN
 
 If you get a mismatch in root url, set it to prod::
 
