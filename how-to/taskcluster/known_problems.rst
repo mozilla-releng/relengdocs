@@ -175,3 +175,20 @@ Solution
 Delete the pending submission from the Store manually; Release Management
 has access. Once the pending submission has been deleted, re-run the
 failed push(MSIX) task.
+
+.. _push-msix fails without explanation:
+
+push(MSIX) starts failing, or reports "Request it is not IngestionWeb or IngestionApi"
+--------------------------------------------------------------------------------------
+
+pushmsixscript pushes Firefox to the Microsoft Store; some push failures are caused by Store outages or changes to the Store API.
+
+Symptoms
+~~~~~~~~
+In general, if pushmsixscript suddenly starts failing, without any recent changes, the problem may be a change to the Store. Several such incidents have reported an error message "Request it is not IngestionWeb or IngestionApi". These errors tend to be permanent and only resolve after complaining to Microsoft.
+
+Solution
+~~~~~~~~
+Report the incident to the mozilla-microsoft-discuss mailing list, https://groups.google.com/a/mozilla.com/g/mozilla-microsoft-discuss. Also consider opening an issue on https://github.com/microsoft/StoreBroker.
+https://github.com/mozilla-releng/scriptworker-scripts/issues/923 documents one
+such incident.
