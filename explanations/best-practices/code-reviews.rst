@@ -13,9 +13,9 @@ Reviewing code is also contextual. Here below are some guidelines. They must not
 Requesting a review
 ===================
 
-- **Load:** requests should be well balanced among team members so we don't overload a single individual. GitHub's CODEOWNERS files can help with this.
-- **Reminders:** the Slack channel `#releng-notifications <https://app.slack.com/client/T027LFU12/CN77C0BUG>`__ will remind the reviewer when there is an outstanding request.
-- **Cognitive load:** it's easier for the human brain to focus on several things, one by one, rather than one big thing. Split your review into several atomic commits. That will speed up the review.
+- **Load:** requests should be well balanced among team members so we don't overload a single individual.
+- **Reminders:** the Slack channel `#releng-notifications <https://app.slack.com/client/T027LFU12/CN77C0BUG>`__ helps reminding the reviewer when there is an outstanding request in a tracked GitHub repo.
+- **Cognitive load:** it's easier for the human brain to focus on several things, one by one, rather than one big thing. Split your changes into several atomic commits. That will speed up the review.
 - **Context:** provide information about why you are proposing this change. It can either be the commit message, the Pull Request title, or the bug report itself.
 - **All green:** ensure required checks are passing before submitting review request by creating
 
