@@ -108,8 +108,10 @@ $ brew install sops
 
 ###### acquire new user credentials to talk to the Google Cloud API
 ```
-gcloud auth application-default login
+gcloud auth login --update-adc
 ```
+
+This command will login and update the "application-default login" at the same time.
 
 ###### celebrate by operating the sops credentials
 Have a look in the COOKBOOK in the global SOPS repo for more instructions on how to read encrypt/decrypt the files.
@@ -117,13 +119,9 @@ Have a look in the COOKBOOK in the global SOPS repo for more instructions on how
 :warning: Talk to your manager to add your fingerprint in the SOPS repo and also grant you access in both repos server-side.
 
 ###### Disclaimer: Changes ongoing after August 2021
-The max session for SOPS credentials has been reset to 24h so there's some commands
-that need rerunning in the shell in order to unblock using SOPS.
+The max session for SOPS credentials has been reset to 24h so the login command
+needs rerunning in the shell in order to unblock using SOPS.
 
-```
-$ gcloud auth login
-$ gcloud auth application-default login
-```
 
 ### Sharing secrets with a co-worker
 On a side-note, for sharing secrets between employees, [read these docs](https://mana.mozilla.org/wiki/display/SVCOPS/Sharing+a+secret+with+a+coworker).
