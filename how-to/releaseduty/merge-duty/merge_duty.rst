@@ -347,7 +347,6 @@ Reply to the migration request with the template:
    * mozilla-central is tagged and version bumped to XXX.0a1
    * mozilla-beta is tagged and version bumped to YYY.0b1
    * mozilla-esr115 is version bumped to ZZZ.A.0esr
-   * new geckoview nightly builds have been triggered
    * newly triggered nightlies will pick the version change on cron-based schedule
 
 Hint: verify current versions
