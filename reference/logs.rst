@@ -37,12 +37,11 @@ To request access to Google Cloud or Sentry logs, contact CloudOps.
   * `Production logs <https://console.cloud.google.com/logs/query?project=moz-fx-pollbot-prod-fc15>`__
   * `Staging logs <https://console.cloud.google.com/logs/query?project=moz-fx-pollbot-nonprod-4df4>`__
 
-* Tooltool & Treestatus
+* Tooltool:
 
   * `Production logs <https://console.cloud.google.com/logs/query?project=moz-fx-relengapi-prod-b398>`__
   * `Staging logs <https://console.cloud.google.com/logs/query?project=moz-fx-relengapi-nonprod-ed7b>`__
   * `Tooltool errors <https://sentry.prod.mozaws.net/operations/tooltool/>`__
-  * `Treestatus errors <https://sentry.prod.mozaws.net/operations/treestatus/>`__
 
 * Firefox CI Taskcluster
 

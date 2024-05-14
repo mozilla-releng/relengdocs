@@ -145,7 +145,7 @@ Merge beta to release
 ~~~~~~~~~~~~~~~~~~~~~
 
 1. `Close
-   mozilla-beta <https://treestatus.mozilla-releng.net/static/ui/treestatus/show/mozilla-beta>`__.
+   mozilla-beta <https://lando.services.mozilla.com/treestatus/mozilla-beta/>`__.
    Check *“Remember this change to undo later”*. Please enter a good
    message as the reason for the closure, such as “Mergeduty - closing
    beta for $VERSION RC week”.
@@ -274,7 +274,7 @@ Merge central to beta
 Re-opening the tree(s)
 ~~~~~~~~~~~~~~~~~~~~~~
 
-`Restore mozilla-beta tree <https://treestatus.mozilla-releng.net/static/ui/treestatus/show/mozilla-beta>`__
+`Restore mozilla-beta tree <https://lando.services.mozilla.com/treestatus/mozilla-beta/>`__
 to its previous state (`approval-required`) so that **l10n bumper can run**.
 
 Tag central and bump versions
