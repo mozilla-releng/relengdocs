@@ -167,4 +167,4 @@ After X.3.0esr is shipped
 .. _product-details: https://product-details.mozilla.org/1.0/firefox_versions.json
 .. _bedrock: https://product-details.mozilla.org/1.0/firefox_versions.json
 .. _here: https://github.com/mozilla-releng/shipit/pull/458
-.. _TreeStatus: https://treestatus.mozilla-releng.net/static/ui/treestatus/
+.. _TreeStatus: https://lando.services.mozilla.com/treestatus/
