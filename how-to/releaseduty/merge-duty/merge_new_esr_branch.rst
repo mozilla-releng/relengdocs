@@ -62,75 +62,77 @@ Task list and known dependencies
 
 6. Create the mozilla-esrXX and comm-esrXX mercurial repositories.
 
-7. After step 6 (and after beta has had a new push), push the tip of
+7. Add esrXX to the gecko-dev github repo.
+
+8. After step 6 (and after beta has had a new push), push the tip of
    mozilla-beta to mozilla-esrXX.  This ensures mozilla-esrXX's pushlog is not
    empty.
 
-8. After 7, add the mozilla-esrXX project to ci-configuration
+9. After 8, add the mozilla-esrXX project to ci-configuration
 
-9. After 8 (and after beta has had a new push), push the tip of mozilla-beta to
-   mozilla-esrXX (the goal is to get a first set of tasks, so pick a
-   non-DONTBUILD push :) )
+10. After 9 (and after beta has had a new push), push the tip of mozilla-beta to
+    mozilla-esrXX (the goal is to get a first set of tasks, so pick a
+    non-DONTBUILD push :) )
 
-10. After 6, add esrXX to cross-channel configuration
+11. After 6, add esrXX to cross-channel configuration
 
-11. Add esrXX to treeherder
+12. Add esrXX to treeherder
 
-12. Add esrXX to treestatus
+13. Add esrXX to treestatus / lando
 
-13. After 9, add esrXX to searchfox
+14. After 10, add esrXX to searchfox
 
-14. Add esrXX to bugherder
+15. Add esrXX to bugherder
 
-15. `File a GitHub issue <https://github.com/mozilla/code-review/issues/new>`__
+16. `File a GitHub issue <https://github.com/mozilla/code-review/issues/new>`__
     asking for mozilla-esrXX to be added to mozilla/code-review
 
-16. After 15, `file a bug <https://bugzilla.mozilla.org/enter_bug.cgi?product=Conduit&component=Phabricator>`__
+17. After 16, `file a bug <https://bugzilla.mozilla.org/enter_bug.cgi?product=Conduit&component=Phabricator>`__
     asking for the esrXX repository to be added to Phabricator, as
     mozilla-esrXX, tagged for uplifts, and hooked up to code-review-bot
 
-17. Run a beta as esr simulation to identify permanent build and test failures
+18. Run a beta as esr simulation to identify permanent build and test failures
 
-18. Run a ESRXX staging release to identify release automation failures (then
+19. Run a ESRXX staging release to identify release automation failures (then
     fix and repeat as necessary)
 
-19. Add esrXX status/tracking/approval flags to bugzilla (typically around RC
+20. Add esrXX status/tracking/approval flags to bugzilla (typically around RC
     week; they can be added earlier but should be kept disabled until release
     managers give a go ahead)
 
-20. Add mozilla-esrXX and comm-esrXX to the shipit frontend, pointing at the
+21. Add mozilla-esrXX and comm-esrXX to the shipit frontend, pointing at the
     previous major ESR version for partials
     (alternativeBranch/alternativeRepo), set ESR_NEXT to XX in the backend
     config, and deploy to production.
 
-21. After the beta-to-release merge (start of RC week for XX), push the
+22. After the beta-to-release merge (start of RC week for XX), push the
     mozilla-release tip to mozilla-esrXX, then run the release-to-esr migration
     (which sets the display version number)
 
-22. After the first esrXX release, enable the cron-bouncer-check job on
+23. After the first esrXX release, enable the cron-bouncer-check job on
     mozilla-esrXX (maybe trigger the hook manually first)
 
-23. After the last scheduled release from the previous ESR branch, and before
+24. After the last scheduled release from the previous ESR branch, and before
     the first standalone esrXX release (typically XX.3.0), make esrXX not
     next-esr: update the release-bouncer-aliases task to update the main esr
     bouncer aliases, and run update-verify from older major versions (adjust
     last-manifest)
 
-24. Before gtb for XX.3.0 (beginning of RC week for XX+3), update balrog rules
+25. Before gtb for XX.3.0 (beginning of RC week for XX+3), update balrog rules
     on esr-localtest and esr-cdntest to allow updates to esrXX; check rules on
     the release channel, and check with release management for any necessary
     watershed and/or desupport rules.
 
-25. At XX.3.0 release time, update the rules on balrog's esr channel (similar to 22).
+26. At XX.3.0 release time, update the rules on balrog's esr channel (similar to 22).
 
-26. Around the same time, update shipit's `CURRENT_ESR` and `ESR_NEXT` config
+27. Around the same time, update shipit's `CURRENT_ESR` and `ESR_NEXT` config
     variables, and rebuild product-details.
 
-27. Shortly after the XX.3.0 release, update the cron-bouncer-check task's
+28. Shortly after the XX.3.0 release, update the cron-bouncer-check task's
     config on esrXX to look at `FIREFOX_ESR` instead of `FIREFOX_ESR_NEXT`.
 
-28. Some time later (maybe soon after the XX.3.0 release to avoid forgetting),
+29. Some time later (maybe soon after the XX.3.0 release to avoid forgetting),
     stop running update-verify-next on esrXX, and stop updating the esr-next
     aliases
 
-29. Close the meta bug and have some tea. :)
+30. Close the meta bug and have some tea. :)
