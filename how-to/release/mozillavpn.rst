@@ -189,16 +189,19 @@ under ``ubuntu-store.yml``.
       # for the next command for signing
       debsign -k Release --re-sign *.dsc *.buildinfo *.changes
       dput ppa:mozillacorp/mozillavpn mozillavpn*.changes
-   
+
    An email will be sent by lauchpad to release+ubuntu-store@mozilla.com.
 
    If ``dput`` complains about the package had already been uploaded, then delete all files ``*.ppa.upload`` and try again.
-   
+
    If the build fails for some reason (i.e.: GPG key rotated), and the server complains the package has already been
    uploaded, then ``dput`` can be run with ``-f`` to force the upload/override.
 
 6. The build should eventually show up on `launchpad`_. You can also
    `watch the state of the builds here`_.
+
+   a. If the builds fail without a log, it could indicate an infra issue. Retrying the build (button in launchpad) is then recommended.
+
 7. Once the builds are successful, open the `edit section of launchpad`_ and
    check the ``Publish`` box. Click ``Save``.
 8. After the releases have been shipped and verified, go back and disable
