@@ -390,7 +390,7 @@ a message is sent to `#releaseduty <https://matrix.to/#/#releaseduty:mozilla.org
 The product-details API should be updated automatically, but sometimes messages are dropped,
 or intermittent errors keep the API from being updated.
 It is a good idea to check https://product-details.mozilla.org/1.0/firefox_versions.json
-and make sure `FIREFOX_NIGHTLY` is set to the current value.
+and make sure ``FIREFOX_NIGHTLY`` is set to the current value.
 If it is not, manually trigger a product-details rebuild from the ShipIt admin UI.
 
 Release Merge Day - part III - release day
