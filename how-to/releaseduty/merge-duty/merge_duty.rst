@@ -376,24 +376,22 @@ Update wiki versions
    -  `The current
       cycle <https://wiki.mozilla.org/index.php?title=Template:CURRENT_CYCLE>`__
 
+Do a manual check of product-details after the Nightly version bump
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+When Nightly builds with a new version number are uploaded to the Mozilla archive,
+the Nightly version in ShipIt is automatically updated. When the version is updated,
+a message is sent to `#releaseduty <https://matrix.to/#/#releaseduty:mozilla.org>`__:
 
-Bump Nightly version and release dates in ShipIt
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+::
 
-In ShipIt, the Firefox nightly version and the release dates are hard-coded, and we must update the config after the version bump on mozilla-central.
+   taskcluster-firefoxci
+   sheriffduty: ciduty: releaseduty: Updated firefox nightly version to `130.0a1`.
 
-Follow these steps to bump the nightly version and release dates in ShipIt:
-
-1. ``git clone git@github.com:mozilla-releng/shipit.git``
-2. ``git checkout -b nightly_version_bump_${version}``
-3. Edit FIREFOX_NIGHTLY's major version in `api/src/shipit_api/common/config.py <https://github.com/mozilla-releng/shipit/blob/f3d45d1dd1cc08cc466865f7d39305f1b2edbcf7/api/src/shipit_api/common/config.py#L49>`__
-4. Commit, then submit a pull request
-5. Someone on the Thunderbird team should open a similar PR in ShipIt the same day to bump the Thunderbird version.
-   If there hasn't been a Thunderbird PR put up for review yet, please ping `#tbdrivers <https://matrix.to/#/#tbdrivers:mozilla.org>`__
-6. Merge the Firefox and Thunderbird pull requests onto main
-7. Push ShipIt's ``main`` branch to ``production``
-8. Log into ShipIt, click the gear icon on the top right, then click on "Rebuild product-details"
-9. Monitor the versions info page for `firefox <https://product-details.mozilla.org/1.0/firefox_versions.json>`__ and `thunderbird <https://product-details.mozilla.org/1.0/thunderbird_versions.json>`__ to make sure they are up to date
+The product-details API should be updated automatically, but sometimes messages are dropped,
+or intermittent errors keep the API from being updated.
+It is a good idea to check https://product-details.mozilla.org/1.0/firefox_versions.json
+and make sure ``FIREFOX_NIGHTLY`` is set to the current value.
+If it is not, manually trigger a product-details rebuild from the ShipIt admin UI.
 
 Release Merge Day - part III - release day
 ------------------------------------------
