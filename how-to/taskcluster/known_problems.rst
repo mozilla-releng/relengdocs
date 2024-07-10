@@ -23,7 +23,7 @@ and will close the trees due to retriggers and backfills not working.
 Solution
 ~~~~~~~~
 
-Re-run ``ci-admin``. The easiest way is to land a change to the `ci-configuration`_
+Re-run ``ci-admin``. The easiest way is to land a change to the `fxci-config`_
 repo, though it can also be done manually (see :ref:`ci-admin`). Upon
 deployment complete in Jenkins (see #releng-notifications), actions will be working
 again.
@@ -58,7 +58,7 @@ Tasks start failing due to scopes errors.
 Solution
 ~~~~~~~~
 
-Scan the `ci-configuration`_ repo for your project and see if we were granting
+Scan the `fxci-config`_ repo for your project and see if we were granting
 any special scopes to the old branch. If so, update the name to the new
 branch and land.
 
@@ -120,7 +120,7 @@ Second, as of 2022.01.26, we have had a number of issues with worker-manager. Th
 11. `limited concurrency for worker scanning <https://github.com/taskcluster/taskcluster/issues/4810>`__
 12. `Measure and improve performance of the worker query in provisioning loop <https://github.com/taskcluster/taskcluster/issues/3163>`__
 
-.. _ci-configuration: https://hg.mozilla.org/ci/ci-configuration/
+.. _fxci-config: https://github.com/mozilla-releng/fxci-config
 
 .. _workers not spawning:
 

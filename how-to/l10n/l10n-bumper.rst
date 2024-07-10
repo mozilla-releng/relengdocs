@@ -77,7 +77,7 @@ The second way is to create a new commit: set ``pin`` to ``false``, and populate
 How to manually trigger l10n-bumper
 -----------------------------------
 
-Because we list l10n-bumper in the set of `manually triggerable cron tasks <https://hg.mozilla.org/ci/ci-configuration/file/2813f0e845f1561dc50daec9a9318035eefa42f8/projects.yml#l247>`_ in both central and beta, we have two manually triggerable hooks we can trigger at will.
+Because we list l10n-bumper in the set of `manually triggerable cron tasks <https://github.com/mozilla-releng/fxci-config/blob/944ea85da779ab430e932f9829f1f02bb11ee11c/projects.yml#L274>`_ in both central and beta, we have two manually triggerable hooks we can trigger at will.
 
 - `Central hook <https://firefox-ci-tc.services.mozilla.com/hooks/project-releng/cron-task-mozilla-central%2Fl10n-bumper>`_
 - `Beta hook <https://firefox-ci-tc.services.mozilla.com/hooks/project-releng/cron-task-releases-mozilla-beta%2Fl10n-bumper>`_

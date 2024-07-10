@@ -68,7 +68,7 @@ Task list and known dependencies
    mozilla-beta to mozilla-esrXX.  This ensures mozilla-esrXX's pushlog is not
    empty.
 
-9. After 8, add the mozilla-esrXX project to ci-configuration
+9. After 8, add the mozilla-esrXX project to fxci-config
 
 10. After 9 (and after beta has had a new push), push the tip of mozilla-beta to
     mozilla-esrXX (the goal is to get a first set of tasks, so pick a

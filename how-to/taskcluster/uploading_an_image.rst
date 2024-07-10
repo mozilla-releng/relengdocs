@@ -77,11 +77,11 @@ If you don't have a token, you will need to login to dockerhub and create a CLI 
 
     maintenance/pin.sh
 
-2. Commit your changes, submit a PR, merge, wait for build-decision task to show up in `treeherder <https://treeherder.mozilla.org/jobs?repo=ci-configuration>`__
+2. Commit your changes, submit a PR, merge, wait for build-decision task to show up in the Github checks UI.
 3. Load the image (see above).
 4. Tag the image with your commit hash (get the hash from treeherder or ``hg --debug id -i``)
 
     docker image tag build-decision mozillareleases/build-decision:86cc5419c32996b7d78422d7fed33ce79576f8eb
 
 5. Push the image to dockerhub
-6. Now you should be able to update the image URL in `hg-push-template <https://hg.mozilla.org/ci/ci-configuration/file/tip/hg-push-template.yml>`__ and `cron-task-template <https://hg.mozilla.org/ci/ci-configuration/file/tip/cron-task-template.yml>`__
+6. Now you should be able to update the image URL in `hg-push-template <https://github.com/mozilla-releng/fxci-config/blob/main/hg-push-template.yml>`__ and `cron-task-template <https://github.com/mozilla-releng/fxci-config/blob/main/cron-task-template.yml>`__

@@ -14,16 +14,16 @@ How are tasks triggered in Taskcluster?
 [Pulse ->] hooks -> build-decision
 ----------------------------------
 
-We have a python module named `build-decision`_ that knows how to trigger decision tasks for hg.m.o pushes and github+hg.m.o cron tasks. This is bundled in the `build-decision docker image <https://hg.mozilla.org/ci/ci-configuration/file/tip/taskcluster/docker/build-decision>`__.
+We have a python module named `build-decision`_ that knows how to trigger decision tasks for hg.m.o pushes and github+hg.m.o cron tasks. This is bundled in the `build-decision docker image <https://github.com/mozilla-releng/fxci-config/tree/main/taskcluster/docker/build-decision>`__.
 
-Once we build that image in `automation <https://treeherder.mozilla.org/jobs?repo=taskgraph>`__, Releng chooses a given build-decision image to use and uploads it to `docker-hub <https://hub.docker.com/repository/docker/mozillareleases/build-decision>`__. We then update the pinned image in the `hg push hook template <https://hg.mozilla.org/ci/ci-configuration/file/388e286a59bf134e053dd55264572dc9e36e2640/hg-push-template.yml#l35>`__ and the `cron hook template <https://hg.mozilla.org/ci/ci-configuration/file/388e286a59bf134e053dd55264572dc9e36e2640/cron-task-template.yml#l35>`__; the next time we run :ref:`ci-admin <ci-admin>`, ci-admin updates the various on-push (`e.g. <https://firefox-ci-tc.services.mozilla.com/hooks/hg-push/mozilla-central>`__) and cron (`e.g. <https://firefox-ci-tc.services.mozilla.com/hooks/project-releng/cron-task-mozilla-central>`__) hooks.
+Once we build that image in `automation <https://treeherder.mozilla.org/jobs?repo=taskgraph>`__, Releng chooses a given build-decision image to use and uploads it to `docker-hub <https://hub.docker.com/repository/docker/mozillareleases/build-decision>`__. We then update the pinned image in the `hg push hook template <https://github.com/mozilla-releng/fxci-config/blob/944ea85da779ab430e932f9829f1f02bb11ee11c/hg-push-template.yml#L35>`__ and the `cron hook template <https://github.com/mozilla-releng/fxci-config/blob/944ea85da779ab430e932f9829f1f02bb11ee11c/cron-task-template.yml#L35>`__; the next time we run :ref:`ci-admin <ci-admin>`, ci-admin updates the various on-push (`e.g. <https://firefox-ci-tc.services.mozilla.com/hooks/hg-push/mozilla-central>`__) and cron (`e.g. <https://firefox-ci-tc.services.mozilla.com/hooks/project-releng/cron-task-mozilla-central>`__) hooks.
 
 hg.m.o on-push
 ~~~~~~~~~~~~~~
 
 When we push a change to hg.m.o, we send a `pulse message <https://mozilla-version-control-tools.readthedocs.io/en/latest/hgmo/notifications.html?highlight=pulse#pulse-notifications>`__. The `mozilla-central hg-push hook <https://firefox-ci-tc.services.mozilla.com/hooks/hg-push/mozilla-central>`__ listens to ``exchange/hgpushes/v2 with mozilla-central``, creates a task using the build-decision image, and sets the ``PULSE_MESSAGE`` env var to the contents of the pulse message. This task then creates the decision task, which in turn creates a task graph as appropriate.
 
-We can replicate this later, using `fxci <https://hg.mozilla.org/ci/ci-configuration/file/tip/src/fxci>`__, via the ``fxci replay-hg-push`` subcommand.
+We can replicate this later, using `fxci <https://github.com/mozilla-releng/fxci-config/tree/main/src/fxci>`__, via the ``fxci replay-hg-push`` subcommand.
 
 Cron
 ~~~~
@@ -33,7 +33,7 @@ We have three types of cron hooks:
 Time-based cron hooks
 ^^^^^^^^^^^^^^^^^^^^^
 
-When we enable either `gecko-cron <https://hg.mozilla.org/ci/ci-configuration/file/388e286a59bf134e053dd55264572dc9e36e2640/projects.yml#l27>`__ (firefox desktop or thunderbird only), or `taskgraph-cron <https://hg.mozilla.org/ci/ci-configuration/file/388e286a59bf134e053dd55264572dc9e36e2640/projects.yml#l46>`__ for a project, and when there is a `.cron.yml <https://hg.mozilla.org/mozilla-central/file/d0676cb0864b870062fed21bc900d6fbb3cf5670/.cron.yml>`__ at the top of the repository, then we create a cron task `every 15 minutes <https://hg.mozilla.org/ci/ci-configuration/file/388e286a59bf134e053dd55264572dc9e36e2640/build-decision/src/build_decision/cron/schema.yml#l68>`__ to see if anything should run. This cron task runs `build-decision`_, which knows how to generate a cron decision task.
+When we enable either `gecko-cron <https://github.com/mozilla-releng/fxci-config/blob/a7099e554defe75c47f3de69f9ac19e23a138d05/projects.yml#L28>`__ (firefox desktop or thunderbird only), or `taskgraph-cron <https://github.com/mozilla-releng/fxci-config/blob/a7099e554defe75c47f3de69f9ac19e23a138d05/projects.yml#L51>`__ for a project, and when there is a `.cron.yml <https://hg.mozilla.org/mozilla-central/file/d0676cb0864b870062fed21bc900d6fbb3cf5670/.cron.yml>`__ at the top of the repository, then we create a cron task `every 15 minutes <https://github.com/mozilla-releng/fxci-config/blob/a7099e554defe75c47f3de69f9ac19e23a138d05/build-decision/src/build_decision/cron/schema.yml#L68>`__ to see if anything should run. This cron task runs `build-decision`_, which knows how to generate a cron decision task.
 
 For example, the `mozilla-central cron hook <https://firefox-ci-tc.services.mozilla.com/hooks/project-releng/cron-task-mozilla-central>`__ has a schedule of ``0 0,15,30,45 * * * *``, and runs the ``cron`` command entry point in the ``build-decision`` docker image.
 
@@ -42,7 +42,7 @@ Manually triggered cron hooks
 
 Sometimes we want to be able to trigger some of these cron tasks outside of the regularly scheduled times. (Sometimes we even have 0 regularly scheduled times for specific cron tasks, and we only trigger them manually.)
 
-To enable this, we specify the ``project.cron.targets``, like for mozilla-central `here <https://hg.mozilla.org/ci/ci-configuration/file/388e286a59bf134e053dd55264572dc9e36e2640/projects.yml#l209>`__; in ``cron.targets`` we enable the desktop nightlies to be triggered off-cycle, as well as l10n-bumper and others. The ``scriptworker-canary`` cron hook accepts input (``allow-input: true``).
+To enable this, we specify the ``project.cron.targets``, like for mozilla-central `here <https://github.com/mozilla-releng/fxci-config/blob/a7099e554defe75c47f3de69f9ac19e23a138d05/projects.yml#L249>`__; in ``cron.targets`` we enable the desktop nightlies to be triggered off-cycle, as well as l10n-bumper and others. The ``scriptworker-canary`` cron hook accepts input (``allow-input: true``).
 
 So when we run :ref:`ci-admin <ci-admin>`, we generate things like the `mozilla-central l10n-bumper cron hook <https://firefox-ci-tc.services.mozilla.com/hooks/project-releng/cron-task-mozilla-central%2Fl10n-bumper>`__, which has no schedule, and we have the ``'--force-run=l10n-bumper'`` option specified in the ``cron`` command. We can trigger these hooks manually.
 
@@ -55,7 +55,7 @@ Pulse-triggered cron hooks
 
 Sometimes we want to be able to trigger some of these cron hooks via some external, non-time-based, non-manually-triggered signal. In this case, we can add a pulse binding to a given cron hook.
 
-In the `android-l10n-tooling project <https://hg.mozilla.org/ci/ci-configuration/file/388e286a59bf134e053dd55264572dc9e36e2640/projects.yml#l868>`__, we have the ``update-l10n`` cron.target where we specify ``bindings`` as follows::
+This feature is not currently used, but an example can be found in the old `android-l10n-tooling project <https://github.com/mozilla-releng/fxci-config/blob/31f5317f800730c9b51803842c6f0743f223bc15/projects.yml#L849>`__, we have the ``update-l10n`` cron.target where we specify ``bindings`` as follows::
 
     - exchange: exchange/taskcluster-github/v1/push
       routing_key_pattern: primary.mozilla-mobile.fenix
@@ -97,7 +97,7 @@ Side note: ``taskcluster_yml_repo``
 
 In `Releng-RFC 36`_ we are trying to enable standard build/test workflows without having to land custom code in a given repository.
 
-One feature we already support in ci-configuration is ``taskcluster_yml_repo``. Before we combined the ci-configuration and ci-admin repos, ci-configuration specified ci-admin as its `taskcluster_yml_project <https://hg.mozilla.org/ci/ci-configuration/file/87e2deddad4df117704e77113aeceff533a5f1d0/projects.yml#l410>`__. We refer to this in the `ciadmin.generate.hg_pushes.make_hook function <https://hg.mozilla.org/ci/ci-configuration/file/7e8c1a39f2b3fb40ca19b0a5da39834fd3f6f32d/src/ciadmin/generate/hg_pushes.py#l20>`__; the `build-decision hg-push cli <https://hg.mozilla.org/ci/ci-configuration/file/7e8c1a39f2b3fb40ca19b0a5da39834fd3f6f32d/build-decision/src/build_decision/cli.py#l52>`__ supports that; the `build_decision.hg_push.build_decision function <https://hg.mozilla.org/ci/ci-configuration/file/7e8c1a39f2b3fb40ca19b0a5da39834fd3f6f32d/build-decision/src/build_decision/hg_push.py#l56>`__ then specifies the ``taskcluster_yml_repo``'s .taskcluster.yml as the URL to use to render the decision task.
+One feature we already support in fxci-config is ``taskcluster_yml_repo``. Before we combined the old ci-configuration and ci-admin repos, ci-configuration specified ci-admin as its `taskcluster_yml_project <https://hg.mozilla.org/ci/ci-configuration/file/87e2deddad4df117704e77113aeceff533a5f1d0/projects.yml#l410>`__. We refer to this in the `ciadmin.generate.hg_pushes.make_hook function <https://hg.mozilla.org/ci/ci-configuration/file/7e8c1a39f2b3fb40ca19b0a5da39834fd3f6f32d/src/ciadmin/generate/hg_pushes.py#l20>`__; the `build-decision hg-push cli <https://hg.mozilla.org/ci/ci-configuration/file/7e8c1a39f2b3fb40ca19b0a5da39834fd3f6f32d/build-decision/src/build_decision/cli.py#l52>`__ supports that; the `build_decision.hg_push.build_decision function <https://hg.mozilla.org/ci/ci-configuration/file/7e8c1a39f2b3fb40ca19b0a5da39834fd3f6f32d/build-decision/src/build_decision/hg_push.py#l56>`__ then specifies the ``taskcluster_yml_repo``'s .taskcluster.yml as the URL to use to render the decision task.
 
 This is pretty great: it's already supported; if you download the ``.taskcluster.yml`` from another repo, you can also clone it and use its ``taskcluster/`` directory; and if we didn't mind multiple template repos, we could create a ``taskcluster_yml_repo`` for every build/test workflow we want to support in a generic way.
 
@@ -109,5 +109,5 @@ This is pretty great: it's already supported; if you download the ``.taskcluster
 
 Depending on the answers to the above, ``taskcluster_yml_repo`` could be a good stopgap solution or a stepping stone on the way to `Releng-RFC 36`_.
 
-.. _`build-decision`: https://hg.mozilla.org/ci/ci-configuration/file/tip/build-decision
+.. _`build-decision`: https://github.com/mozilla-releng/fxci-config/tree/main/build-decision
 .. _`Releng-RFC 36`: https://github.com/mozilla-releng/releng-rfcs/pull/36

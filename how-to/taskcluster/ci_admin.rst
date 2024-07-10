@@ -10,7 +10,7 @@ Through cloudops-jenkins
 
 This is the best practice way to apply changes: we know we're running the check before we apply; we don't use root perms locally; we know we're running against the tip of the official repo.
 
-Once we land a change in `ci-configuration`_, cloudops-jenkins picks up that change through Pulse, and we run `this command <https://github.com/mozilla-services/cloudops-infra/blob/71f6992da04384f252c0e67ae55c527bd34ede85/projects/taskcluster/tasks#L114-L164>`__. After we landed `this fix <https://github.com/taskcluster/tc-admin/pull/195>`__ this has been fairly quick.
+Once we land a change in `fxci-config`_, cloudops-jenkins picks up that change through Pulse, and we run `this command <https://github.com/mozilla-services/cloudops-infra/blob/71f6992da04384f252c0e67ae55c527bd34ede85/projects/taskcluster/tasks#L114-L164>`__. After we landed `this fix <https://github.com/taskcluster/tc-admin/pull/195>`__ this has been fairly quick.
 
 We currently run against the ``staging`` cluster first, then the ``firefoxci`` cluster, but staging failures don't block the production run.
 
@@ -28,24 +28,22 @@ Sometimes you want to run ci-admin manually. Generally this is when cloudops-jen
 Setup
 ~~~~~
 
-1. Clone `ci-configuration`_.
+1. Clone `fxci-config`_.
 
 .. ATTENTION::
-   Make sure your local checkout of ci-configuration is clean, and at the tip revision!
+   Make sure your local checkout of fxci-config is clean, and at the tip revision!
 
 Otherwise you can apply an old or wip revision to the production cluster config.
 
 You can do this via::
 
-    hg status
-    hg checkout -r 'last(public())'  # make sure we're not on a wip revision
-    hg pull -u
-    hg ident  # verify against latest revision on hgweb
+    git checkout main
+    git pull upstream main
 
 2. Install ci-admin into a virtualenv::
 
     # activate virtualenv, py>=3.7
-    cd ci-configuration
+    cd fxci-config
     pip install -r requirements/local.txt
     python setup.py develop
 
@@ -94,4 +92,4 @@ Second, you can use the ``--grep`` option to various ``ci-admin`` commands, name
 .. Attention::
    Your local changes will be blown away the next full ci-admin run!
 
-.. _ci-configuration: https://hg.mozilla.org/ci/ci-configuration/
+.. _fxci-config: https://github.com/mozilla-releng/fxci-config

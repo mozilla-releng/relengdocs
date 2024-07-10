@@ -9,9 +9,9 @@ This procedure is based on the experience of `adding the pushmsixscript to scrip
  - Consult the :external+scriptworker-scripts:doc:`documentation <index>`.
  - Write unit tests for your script; you can run them locally with tox.
 
-* Add clients to ci-configuration repo
+* Add clients to fxci-config repo
 
- - `Example <https://hg.mozilla.org/ci/ci-configuration/rev/6870d0055a1d49e8d876010416b02e05b304b804>`__
+ - `Example <https://github.com/mozilla-releng/fxci-config/commit/e1d978249480518d84362c90b3392ae768bc3cde>`__
 
 * Add a new yaml file for your script's secrets to the `sops repo <https://source.developers.google.com/p/moz-fx-relengworker-prod-a67d/r/secrets-sops-relengworker>`__.
 

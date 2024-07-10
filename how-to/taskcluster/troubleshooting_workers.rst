@@ -17,7 +17,7 @@ Worker Manager errors
 
 The `worker manager UI <https://firefox-ci-tc.services.mozilla.com/worker-manager>`__ lists the various pools. It shows current capacity and pending tasks, as well as links to view the workers and recent worker manager error messages, for each pool.
 
-Drilling down into each workerType should show you the config. Generally this will be an expanded version of the `ci-configuration worker-pools config <https://hg.mozilla.org/ci/ci-configuration/file/tip/worker-pools.yml>`__.
+Drilling down into each workerType should show you the config. Generally this will be an expanded version of the `fxci-config worker-pools <https://github.com/mozilla-releng/fxci-config/blob/main/worker-pools.yml>`__.
 
 Common types of error messages
 ------------------------------
@@ -34,7 +34,7 @@ We get emails about this. This is also visible in the Worker Manager UI.
 
 This means this instanceType is not supported in this availability zone at all. We choose which availability zone to use randomly and retry on failure, so this is probably not fatal, but it can be noisy.
 
-To stop getting this error message, we can mark a given instanceType family as invalid in a given availability zone `here <https://hg.mozilla.org/ci/ci-configuration/file/ba8263985ad932759ce36430f095f8ac952c93a4/environments.yml#l91>`__.
+To stop getting this error message, we can mark a given instanceType family as invalid in a given availability zone `here <https://github.com/mozilla-releng/fxci-config/blob/944ea85da779ab430e932f9829f1f02bb11ee11c/environments.yml#L98>`__.
 
 Quarantining workers
 --------------------

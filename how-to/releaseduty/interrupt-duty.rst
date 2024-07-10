@@ -6,7 +6,7 @@ interrupts as best as possible. The idea is that no single person should be
 overwhelmed by interrupts, and by taking turns being held responsible for them
 (via ReleaseDuty), we can minimize the risk of burn out.
 
-Interrupts could be anything from a simple ~10min ci-configuration request, to
+Interrupts could be anything from a simple ~5 min fxci-config request, to
 larger requests that need to be triaged, to full scale emergencies.
 
 Run Book
