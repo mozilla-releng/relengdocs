@@ -20,7 +20,7 @@ Steps
 - Update treescript fingerprint, if applicable (releng team)
 - Create trusted and untrusted docker-worker AMIs. The trusted AMIs need to have the CoT key. (taskcluster team)
 - Create trusted and untrusted generic-worker AMIs. The trusted AMIs need to have the CoT key. (relops team)
-- Land ci-configuration patches to use the new AMIs (taskcluster, relops, releng teams)
+- Land fxci-config patches to use the new AMIs (taskcluster, relops, releng teams)
 - Test, deal with fallout, update docs
 
 We could use the opportunity to rotate CoT keys as well, in which case we would:

@@ -50,15 +50,15 @@ match between the build and the hook that starts the build.
        external source, like ``gradle`` or a ``.buildconfig.yml`` file)
     -  Define ``Dockerfiles`` in ``taskcluster/docker/``
 
-5.  Create and update permissions in ``ci-configuration``.
+5.  Create and update permissions in ``fxci-config``.
 
-    1. ``hg clone https://hg.mozilla.org/ci/ci-configuration/``
+    1. ``git clone https://github.com/mozilla-releng/fxci-config``
     2. Set up a ``virtualenv`` and install dependencies
     3. Update ``projects.yml`` and ``grants.yml`` to add permissions for ``$project``
 
         - If you have schedule-based automation, add the ``taskgraph-cron`` feature and set ``cron_targets`` in ``projects.yml``. Additionally, create
           a ``.cron.yml`` file to your repository like the one in `fenix <https://github.com/mozilla-mobile/fenix/blob/master/.cron.yml>`__
-    4. Submit your patch for review with `moz-phab <https://github.com/mozilla-conduit/review>`__
+    4. Create a pull request with your changes
     5. Once it's landed, update to the new revision and apply it
 
         1. ``ci-admin diff --environment=production``

@@ -15,26 +15,24 @@ Generally, the amount of testing we get in unit tests and the Staging, Community
 Setup
 -----
 
-1. clone
-   `ci-configuration <https://hg.mozilla.org/ci/ci-configuration/>`__
-   and make sure it’s up to date
+1. Fork `fxci-config <https://github.com/mozilla-releng/fxci-config>`__ to your personal Github account.
 
    .. code:: bash
 
-      # First time clone; if so, we can skip the other hg commands
-      hg clone https://hg.mozilla.org/ci/ci-configuration/
+      # First time clone; if so, we can skip the other git commands (replace <user> with your Github username)
+      git clone https://github.com/<user>/fxci-config
+
+      # Add an upstream remote
+      git remote add upstream https://github.com/mozilla-releng/fxci-config
 
       # Make sure we don't have local uncommitted changes
-      hg status
+      git status
 
       # Make sure we're not on a local committed change
-      hg checkout -r 'last(public())'
+      git checkout main
 
       # Get latest commit
-      hg pull -u
-
-      # Compare revision against latest revision in https://hg.mozilla.org/ci/ci-configuration/
-      hg log -r .
+      git pull upstream main
 
 2. Set up a python virtualenv, install ci-admin and fxci
 
@@ -68,7 +66,7 @@ Diff
 
 .. code:: bash
 
-   # Diff staging cluster's running config against ci-configuration on disk
+   # Diff staging cluster's running config against fxci-config on disk
    ci-admin diff --environment staging 2>&1 | tee staging.diff
 
 Apply
@@ -120,7 +118,7 @@ Run fxci
    # Run fxci
    fxci replay-hg-push try $REVISION
 
-This will give you a URL like https://stage.taskcluster.nonprod.cloudops.mozgcp.net/tasks/J9WeztDYT4aQstuJUGOgIg . This is the `build-decision <https://hg.mozilla.org/ci/ci-configuration/file/tip/build-decision>`__ task URL, which will create a decision task.
+This will give you a URL like https://stage.taskcluster.nonprod.cloudops.mozgcp.net/tasks/J9WeztDYT4aQstuJUGOgIg . This is the `build-decision <https://github.com/mozilla-releng/fxci-config/tree/main/build-decision>`__ task URL, which will create a decision task.
 
 Monitor the build-decision task
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -140,7 +138,7 @@ task is scheduled again.
 
 .. note::
 
-   This repo is not yet configured via `ci-configuration`, so you'll need to add scopes manually
+   This repo is not yet configured via `fxci-config`, so you'll need to add scopes manually
    by `creating the appropriate roles in the web ui`_.
 
 .. _Github app: https://github.com/apps/stage-taskcluster
@@ -155,7 +153,7 @@ Missing AMIs
 
 If you hit an error like ``Error calling AWS API: Not authorized for images: [ami-0fd21b9566eba5684]`` in `worker-manager <https://stage.taskcluster.nonprod.cloudops.mozgcp.net/worker-manager/infra%2Fbuild-decision/errors>`__, we probably need to share AMIs from the production FirefoxCI cluster to the staging cluster.
 
-Pete was able to share them using `these steps <https://mozilla-hub.atlassian.net/browse/FCP-53?focusedCommentId=520218>`__. If we automate this, we may want to use the `ci-config ami list <https://hg.mozilla.org/ci/ci-configuration/file/tip/worker-images.yml>`__ instead. We may future this work, since we may be able to share the untrusted AMIs when recreating them, and we may not recreate them frequently before migrating to GCP.
+Pete was able to share them using `these steps <https://mozilla-hub.atlassian.net/browse/FCP-53?focusedCommentId=520218>`__. If we automate this, we may want to use the `ci-config ami list <https://github.com/mozilla-releng/fxci-config/blob/main/worker-images.yml>`__ instead. We may future this work, since we may be able to share the untrusted AMIs when recreating them, and we may not recreate them frequently before migrating to GCP.
 
 Missing GCP workers
 ~~~~~~~~~~~~~~~~~~~

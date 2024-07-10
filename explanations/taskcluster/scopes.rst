@@ -17,12 +17,12 @@ And the required scopes are::
 
 Then you have the required scopes. However, if you need ``a-little-bit-secret/something-else``, you don't have the required scopes.
 
-Ci-configuration
-----------------
+Fxci-config
+-----------
 
-We grant scopes to clients and roles. These are defined in the `ci-configuration repo <https://hg.mozilla.org/ci/ci-configuration/>`__; view the `README <https://hg.mozilla.org/ci/ci-configuration/file/tip/README.md>`__.
+We grant scopes to clients and roles. These are defined in the `mozilla-releng/fxci-config repo <https://github.com/mozilla-releng/fxci-config>`__.
 
-The ci-configuration repo also contains the `ci-admin` management tool which we use to test, diff, and apply the configuration changes.
+This repo also contains the `ci-admin` management tool which we use to test, diff, and apply the configuration changes.
 
 Roles
 -----
@@ -41,7 +41,7 @@ Hg Pushes
 
 For hg.m.o, pushes go through hooks. (see :ref:`how_tasks_are_triggered`.) By default we'll assume the role e.g. ``hook-id:hg-push/mozilla-central`` in this hook. The ``create-task`` scopes limit what worker pools we can create tasks for, and we can only grant scopes to tasks within the set of scopes that the hook has been granted. (If the hook has scopes ``["foo", "bar"]``, it can schedule tasks with the scopes ``["foo"]``, ``["bar"]``, or ``["foo", "bar"]`` but not ``["foo", "baz"]``.)
 
-The `hg-push template <https://hg.mozilla.org/ci/ci-configuration/file/ef4fae54de4063ab072aa6c203d72de036817641/hg-push-template.yml>`__ grants the scope ``assume:${project_role_prefix}:branch:*``, e.g. `assume:repo:hg.mozilla.org/mozilla-central:branch:* <https://firefox-ci-tc.services.mozilla.com/auth/scopes/expansions?scopes%5B0%5D=assume%3Arepo%3Ahg.mozilla.org%2Fmozilla-central%3Abranch%3A%2A>`__ to the build-decision task, which means the decision task can have a subset of those scopes.
+The `hg-push template <https://github.com/mozilla-releng/fxci-config/blob/main/hg-push-template.yml>`__ grants the scope ``assume:${project_role_prefix}:branch:*``, e.g. `assume:repo:hg.mozilla.org/mozilla-central:branch:* <https://firefox-ci-tc.services.mozilla.com/auth/scopes/expansions?scopes%5B0%5D=assume%3Arepo%3Ahg.mozilla.org%2Fmozilla-central%3Abranch%3A%2A>`__ to the build-decision task, which means the decision task can have a subset of those scopes.
 
 The decision task itself will have the scopes defined in `.taskcluster.yml <https://hg.mozilla.org/mozilla-central/file/fb443d9a5f9cfaa17acc81c25473d7093d5cf696/.taskcluster.yml#l154>`__, which will be a subset of the build-decision task's scopes (or we'll fail due to insufficient scopes).
 
@@ -55,7 +55,7 @@ Cron
 
 Similar to hg pushes, cron goes through hooks (see :ref:`how_tasks_are_triggered`). By default we'll assume the role e.g. ``hook-id:project-releng/cron-task-mozilla-central`` in this hook.
 
-The `cron task template <https://hg.mozilla.org/ci/ci-configuration/file/ef4fae54de4063ab072aa6c203d72de036817641/cron-task-template.yml>`__ grants the scope ``assume:hook-id:${hookGroupId}/${hookId}``, so the resulting build-decision task will have the same set of scopes as the hook.
+The `cron task template <https://github.com/mozilla-releng/fxci-config/blob/main/cron-task-template.yml>`__ grants the scope ``assume:hook-id:${hookGroupId}/${hookId}``, so the resulting build-decision task will have the same set of scopes as the hook.
 
 The cron task itself will have the scopes defined in `.taskcluster.yml <https://hg.mozilla.org/mozilla-central/file/fb443d9a5f9cfaa17acc81c25473d7093d5cf696/.taskcluster.yml#l154>`__, which will be a subset of the build-decision task's scopes (or we'll fail due to insufficient scopes).
 
@@ -67,7 +67,7 @@ Actions check for a special scope, `assume:repo:{head_repository[8:]}:action:{ac
 Misc
 ~~~~
 
-We're able to target our scope grants fairly granularly. For example, `this block <https://hg.mozilla.org/ci/ci-configuration/file/ef4fae54de4063ab072aa6c203d72de036817641/grants.yml#l474>`__::
+We're able to target our scope grants fairly granularly. For example, `this block <https://github.com/mozilla-releng/fxci-config/blob/944ea85da779ab430e932f9829f1f02bb11ee11c/grants.yml#L504>`__::
 
     - grant:
       - project:releng:balrog:server:beta
@@ -106,7 +106,7 @@ Groups / teams
 ~~~~~~~~~~~~~~
 We try to tie most user scope grants to LDAP. Grants to ``mozilla-group:GROUP`` will assign the scopes to users that belong to that MoCo ldap group. Grants to ``mozillians-group:GROUP`` will grant scopes to users that belong to that Mozillians group (`people.mozilla.org <https://people.mozilla.org>`__).
 
-We also define ``ci-group`` roles like ``project:releng:ci-group:team_moco`` in `this block <https://hg.mozilla.org/ci/ci-configuration/file/307d8717f17e3916ebdfc54e58705230c5cf30a7/grants.yml#l2351>`__.
+We also define ``ci-group`` roles like ``project:releng:ci-group:team_moco`` in `this block <https://github.com/mozilla-releng/fxci-config/blob/944ea85da779ab430e932f9829f1f02bb11ee11c/grants.yml#L2638>`__.
 
 Levels
 ~~~~~~
