@@ -66,3 +66,7 @@ html_theme_options = {
         "image_dark": "media/releng-dark.png",
     },
 }
+
+# Set canonical URL from the Read the Docs Domain
+import os
+html_baseurl = os.environ.get("READTHEDOCS_CANONICAL_URL", "")
