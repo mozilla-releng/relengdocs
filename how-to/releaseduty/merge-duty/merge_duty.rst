@@ -153,7 +153,7 @@ Merge beta to release
    run <#do-migration-no-op-trial-runs>`__ one more time, and show the
    diff to another person on releaseduty.
 3. The diff for ``release`` should be fairly similar to
-   `this <https://hg.mozilla.org/releases/mozilla-release/rev/118aa10ac456d05606f113ade5c26ae4637081ce>`__,
+   `this <https://hg.mozilla.org/releases/mozilla-release/rev/f061d37ca7aea8d05d976908e376e649257f2151>`__,
    with updated the version change.
 4. Submit a new task with ``force-dry-run`` set to false:
 
