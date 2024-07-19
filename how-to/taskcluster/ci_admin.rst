@@ -5,24 +5,19 @@ CI-Admin
 
 This page contains some information about the ci-admin tool, and how to use it.
 
-Through cloudops-jenkins
-------------------------
+Through github actions
+----------------------
 
 This is the best practice way to apply changes: we know we're running the check before we apply; we don't use root perms locally; we know we're running against the tip of the official repo.
 
-Once we land a change in `fxci-config`_, cloudops-jenkins picks up that change through Pulse, and we run `this command <https://github.com/mozilla-services/cloudops-infra/blob/71f6992da04384f252c0e67ae55c527bd34ede85/projects/taskcluster/tasks#L114-L164>`__. After we landed `this fix <https://github.com/taskcluster/tc-admin/pull/195>`__ this has been fairly quick.
+Once we land a change in `fxci-config`_, a GHA `workflow <https://github.com/mozilla-releng/fxci-config/blob/main/.github/workflows/deploy.yml>`__ is triggered.
 
-We currently run against the ``staging`` cluster first, then the ``firefoxci`` cluster, but staging failures don't block the production run.
-
-Known Issues
-~~~~~~~~~~~~
-
-Twice in the past ~month (as of 2022.01.20), we've had issues with `pulse-go <https://github.com/taskcluster/pulse-go/issues/7>`__ dropping the Pulse connection and requiring a manual kick.
+We currently run against the ``staging`` cluster and the ``firefoxci`` cluster independently.
 
 Manually
 --------
 
-Sometimes you want to run ci-admin manually. Generally this is when cloudops-jenkins isn't responding and we have an urgent bustage fix.
+Sometimes you want to run ci-admin manually. Generally this is when we have an urgent bustage fix.
 
 
 Setup
