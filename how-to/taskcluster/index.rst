@@ -28,3 +28,4 @@ These external docs are relevant to Mozilla's Firefox-CI Taskcluster instance:
     ci_admin
     fxci_upgrades
     tc_staging
+    new_region
