@@ -6,6 +6,7 @@ Explanations
 
    best-practices/index.rst
    taskcluster/index.rst
+   fxci-etl.rst
    Balrog & Updates <balrog/index.rst>
    signing/index
    l10n.rst
