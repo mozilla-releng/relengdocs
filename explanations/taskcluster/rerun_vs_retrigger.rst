@@ -93,14 +93,15 @@ In this case, ``rerun (force)`` the ``notarization-part-1`` task, then
 
 .. _broken_dependencies_cancel_rerun:
 
-Release tasks with broken dependencies: cancel + rerun
-------------------------------------------------------
+Release tasks with broken dependencies: schedule
+------------------------------------------------
 
 If a release task fails repeatably, but for some reason shouldn’t
 actually block the release (the bustage is somehow expected, and none of
 the artifacts are used by downstream tasks), it’s possible to let the
-dependent tasks run anyway with a ``cancel`` followed by ``rerun``,
-after making sure all other dependencies completed successfully.
+dependent tasks run anyway with a ``schedule`` (using ``taskcluster api
+queue scheduleTask <taskId>``) after making sure all other dependencies
+completed successfully.
 
 .. _deadline_exceeded_release_task_retrigger:
 
