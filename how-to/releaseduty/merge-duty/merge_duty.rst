@@ -42,7 +42,6 @@ nearly three weeks, with *three* major days of activity:
    -  `Reply to RelMan that procedure is
       completed <#reply-to-relman-central-bump-completed>`__
    -  `Update wiki versions <#update-wiki-versions>`__
-   -  `Bump Nightly version in ShipIt <#bump-nightly-shipit>`__
    -  `Close migration bug, file one for the next release <#file-tracking-migration-bug>`__
 
 Historical context of this procedure:
