@@ -21,28 +21,28 @@ nearly three weeks, with *three* major days of activity:
 
 -  Do the prep work a week before the merge
 
-   -  `Assign to yourself the migration bug <#assign-to-yourself-the-migration-bug>`__
-   -  `Do migration no-op trial runs <#do-migration-no-op-trial-runs>`__
+   -  `Assign to yourself the migration bug <#assign-to-yourself-the-migration-bug>`__ (1 min)
+   -  `Do migration no-op trial runs <#do-migration-no-op-trial-runs>`__ (2 min of action, 15 min of wait)
    -  `Sanity check no blocking migration
-      bugs <#sanity-check-no-blocking-migration-bugs>`__
+      bugs <#sanity-check-no-blocking-migration-bugs>`__ (1 min)
 
 -  On Merge day:
 
-   -  `Merge beta to release <#merge-beta-to-release>`__
+   -  `Merge beta to release <#merge-beta-to-release>`__ (2 min of action, 20 min of wait)
    -  `Reply migrations are
-      complete <#reply-to-relman-migrations-are-complete>`__
+      complete <#reply-to-relman-migrations-are-complete>`__ (1 min)
 
 -  A week after Merge day, bump mozilla-central:
 
-   -  `Merge central to beta <#merge-central-to-beta>`__
-   -  `Re-open trees <#re-opening-the-trees>`__
-   -  `Verify the l10n bumper output <#verify-the-l10n-bumper-output>`__
-   -  `Tag central and bump versions <#tag-central-and-bump-versions>`__
-   -  `Bump mozilla-esr <#bump-esr-version>`__
+   -  `Merge central to beta <#merge-central-to-beta>`__ (2 min of action, 20 min of wait)
+   -  `Re-open trees <#re-opening-the-trees>`__ (2 min)
+   -  `Verify the l10n bumper output <#verify-the-l10n-bumper-output>`__ (2 min)
+   -  `Tag central and bump versions <#tag-central-and-bump-versions>`__ (2 min of action, 15 min of wait)
+   -  `Bump mozilla-esr <#bump-esr-version>`__ (In parallel, 2 min of action, 15 min of wait)
    -  `Reply to RelMan that procedure is
-      completed <#reply-to-relman-central-bump-completed>`__
-   -  `Update wiki versions <#update-wiki-versions>`__
-   -  `Close migration bug, file one for the next release <#file-tracking-migration-bug>`__
+      completed <#reply-to-relman-central-bump-completed>`__ (1 min)
+   -  `Update wiki versions <#update-wiki-versions>`__ (2 min)
+   -  `Close migration bug, file one for the next release <#file-tracking-migration-bug>`__ (2 min)
 
 Historical context of this procedure:
 
