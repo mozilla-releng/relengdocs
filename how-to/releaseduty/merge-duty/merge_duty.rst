@@ -21,10 +21,7 @@ nearly three weeks, with *three* major days of activity:
 
 -  Do the prep work a week before the merge
 
-   -  `Assign to yourself the migration bug <#assign-to-yourself-the-migration-bug>`__ (1 min)
    -  `Do migration no-op trial runs <#do-migration-no-op-trial-runs>`__ (2 min of action, 15 min of wait)
-   -  `Sanity check no blocking migration
-      bugs <#sanity-check-no-blocking-migration-bugs>`__ (1 min)
 
 -  On Merge day:
 
@@ -42,7 +39,6 @@ nearly three weeks, with *three* major days of activity:
    -  `Reply to RelMan that procedure is
       completed <#reply-to-relman-central-bump-completed>`__ (1 min)
    -  `Update wiki versions <#update-wiki-versions>`__ (2 min)
-   -  `Close migration bug, file one for the next release <#file-tracking-migration-bug>`__ (2 min)
 
 Historical context of this procedure:
 
@@ -55,13 +51,6 @@ first week and then ``m-c`` -> ``m-b`` in the follow-up week.
 
 Do the prep work a week before the merge
 ----------------------------------------
-
-Assign to yourself the migration bug
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-A tracking migration bug should've already been filed - please assign that to yourself. If there isn't one (e.g. `bug
-1694412 <https://bugzilla.mozilla.org/show_bug.cgi?id=1694412>`__), please contact the last
-releaseduty owner and file one. You can find more of this in `Release owners <https://wiki.mozilla.org/Release_Management/Release_owners>`__.
 
 Do migration no-op trial runs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -125,10 +114,6 @@ may need to substitute a different esr version number.
 Diff should be similar to
 `this esr115 one <https://hg.mozilla.org/releases/mozilla-esr115/rev/6a58ffb58ea554fd3a1c2276e5f9205a0e5c6bec>`__.
 
-Sanity check no blocking migration bugs
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Make sure the bug that tracks the migration has no blocking items.
 
 Release Merge Day - part I
 --------------------------
@@ -394,12 +379,6 @@ If it is not, manually trigger a product-details rebuild from the ShipIt admin U
 
 Release Merge Day - part III - release day
 ------------------------------------------
-
-Close migration bug, file one for the next release
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Once release is out of the door on Tuesday, close the existing bug tracking this release, from `initial step <#assign-migration-bug>`__ and clone that bug into a similar one,
-tracking the next release. Please CC all the RelEng team. One can find the next release date in `Release owners <https://wiki.mozilla.org/Release_Management/Release_owners>`__.
-
 
 Historical issues
 -----------------
