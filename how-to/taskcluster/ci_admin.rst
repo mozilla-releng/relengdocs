@@ -47,7 +47,13 @@ Run
 
 1. Diff::
 
+    # Ensure you have a GITHUB_TOKEN in your environment to avoid rate limiting
+    # when ci-admin queries github.com repositories.
+    export GITHUB_TOKEN=xxxxxxxxxx
+
+    # Setup Taskcluster credentials that have enough scopes to run a diff
     eval $(taskcluster signin -s auth:list-clients)
+
     ci-admin diff --environment firefoxci 2>&1 | tee diff.out
 
 If you get a mismatch in root url, set it to prod::
@@ -66,7 +72,13 @@ This runs through various tests of the configs. This takes time, and sometimes w
 
 3. Apply::
 
+    # Ensure you have a GITHUB_TOKEN in your environment to avoid rate limiting
+    # when ci-admin queries github.com repositories.
+    export GITHUB_TOKEN=xxxxxxxxxx
+
+    # Setup Taskcluster credentials that have enough scopes to run a diff
     eval $(taskcluster signin --expires 15m)
+
     ci-admin apply --environment firefoxci 2>&1 | tee apply.out
 
 You may want to log out explicitly after this to avoid hitting errors with expired creds::
