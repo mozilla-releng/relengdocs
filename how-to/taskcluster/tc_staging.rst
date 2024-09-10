@@ -66,6 +66,9 @@ Diff
 
 .. code:: bash
 
+   # Ensure you have a GITHUB_TOKEN in your environment to avoid rate limiting
+   # when ci-admin queries github.com repositories.
+   export GITHUB_TOKEN=xxxxxxxxxx
    # Diff staging cluster's running config against fxci-config on disk
    ci-admin diff --environment staging 2>&1 | tee staging.diff
 
@@ -77,6 +80,10 @@ This will run every push to the ci-config repo; we only need to rerun if we want
 You'll need :ref:`taskcluster_cli` for this.
 
 .. code:: bash
+
+   # Ensure you have a GITHUB_TOKEN in your environment to avoid rate limiting
+   # when ci-admin queries github.com repositories.
+   export GITHUB_TOKEN=xxxxxxxxxx
 
    # Sign in via taskcluster cli
    eval $(taskcluster signin)
