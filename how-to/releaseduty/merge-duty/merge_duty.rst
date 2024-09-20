@@ -66,7 +66,7 @@ General steps
 2. Select the repo depending on the merge you want to perform (central, beta or the ESR one).
 3. On the latest push, click on the down arrow at the top right corner.
 4. Select “Custom push action…”
-5. Choose ``merge-automation``
+5. Choose ``merge-automation`` from the dropdown and paste the payload provided in the sections below.
 6. In Treeherder, you'll see a new push show up in Treeherder in the repo you will be merging to. It can take a few minutes for the push and task to appear.
 7. Click on the merge or bump tasks (not the Gecko decision task). A job details panel will pop up and from there you'll find a link to the diff file in the artifacts tab. Note: There will be a cron job that kicks off another bump task with same th name, only one of them will contain the diff.
 
@@ -75,7 +75,7 @@ mozilla-beta->mozilla-release migration no-op trial run
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Follow the `general steps <#general-steps>`__ hopping on `beta <https://treeherder.mozilla.org/#/jobs?repo=mozilla-beta>`__
-2. Insert the following payload and click submit.
+2. Insert the following payload and click trigger.
 
 .. code:: yaml
 
@@ -87,7 +87,7 @@ mozilla-central->mozilla-beta migration no-op trial run
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Follow the `general steps <#general-steps>`__ hopping on `central <https://treeherder.mozilla.org/#/jobs?repo=mozilla-central>`__
-2. Insert the following payload and click submit.
+2. Insert the following payload and click trigger.
 
 .. code:: yaml
 
@@ -103,7 +103,7 @@ the current esr, and that is used in the discussion below; in the future, you
 may need to substitute a different esr version number.
 
 1. Follow the `general steps <#general-steps>`__ hopping on `esr115 <https://treeherder.mozilla.org/#/jobs?repo=mozilla-esr115>`__
-2. Insert the following payload and click submit.
+2. Insert the following payload and click trigger.
 
 .. code:: yaml
 
@@ -132,7 +132,8 @@ Merge beta to release
    mozilla-beta <https://lando.services.mozilla.com/treestatus/mozilla-beta/>`__.
    Check *“Remember this change to undo later”*. Please enter a good
    message as the reason for the closure, such as “Mergeduty - closing
-   beta for $VERSION RC week”.
+   beta for $VERSION RC week”. Note: You need to be in the `treestatus_users group <https://people.mozilla.org/a/treestatus_users/>`__
+   in order to change trees.
 2. Run the ``m-b -> m-r`` `no-op trial
    run <#do-migration-no-op-trial-runs>`__ one more time, and show the
    diff to another person on releaseduty.
