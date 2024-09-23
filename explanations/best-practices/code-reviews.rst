@@ -32,7 +32,7 @@ Performing a review
 - **Context:** feel free to ask more information from the author. Use "Request Changes" to put the review back in the author's queue.
 - **Posterity:** when a conversation happens on a private or temporary medium, put information back in the review.
 - **Knowledge:** do not feel obligated to review if you don’t have enough experience/context.
-- **Trust, but verify:** verify any non-obvious assertions made in the review request, or implied in changes to the code. Everyone makes mistakes, and an important part of reviewing is catch them before the cause issues!
+- **Trust, but verify:** verify any non-obvious assertions made in the review request, or implied in changes to the code. Everyone makes mistakes, and an important part of reviewing is to catch them before they cause issues!
 - **Pass:** if you know who the best person for review is, remove yourself/the review group and tag the right person directly
 - **Focus:** no need to review what CI already checks (linters, unchanged tests). New/changed tests must be read to ensure they check what the author intends.
 - **Changes needed:** you are empowered to push back when something important is missing (test coverage, lack of context, important cases not covered).
