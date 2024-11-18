@@ -158,9 +158,14 @@ You may eventually want to take a look at this information, but on day one hundr
 
 Like mail, we now use [Google calendar](https://www.google.com/calendar/)
 
+You should be added to these private calendars: 
+* RelEng (meetings and reminders)
+* RelEng Bug triage
+* RelEng PTO
+* RelEng Todo
+
 You'll want to subscribe to the following public calendars:
 * [RelEng MoCo calendar](https://calendar.google.com/calendar/u/0?cid=bW96aWxsYS5jb21fMmQzMjM0MzMzMzM1MzAzNjMxMmQzOTM3MzdAcmVzb3VyY2UuY2FsZW5kYXIuZ29vZ2xlLmNvbQ)
-* [RelEng PTO calendar](https://calendar.google.com/calendar/u/0?cid=Y190cWEzaHQ5bXB0ODN1djJzZDJsYjVsaTVva0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t)
 * [Releases Scheduling](https://calendar.google.com/calendar/embed?src=mozilla.com_dbq84anr9i8tcnmhabatstv5co%40group.calendar.google.com&ctz=Europe%2FLondon)
 
 Talk to your manager/mentor to get added to the various other private calendars as appropriate.
