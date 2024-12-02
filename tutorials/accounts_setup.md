@@ -124,7 +124,7 @@ needs rerunning in the shell in order to unblock using SOPS.
 
 
 ### Sharing secrets with a co-worker
-On a side-note, for sharing secrets between employees, [read these docs](https://mana.mozilla.org/wiki/display/SVCOPS/Sharing+a+secret+with+a+coworker).
+On a side-note, for sharing secrets between employees, [read these docs](https://mozilla-hub.atlassian.net/wiki/spaces/SECENGOPS/pages/378273870/How+to+share+a+secret+with+coworkers).
 
 ## Communication
 
