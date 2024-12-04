@@ -202,7 +202,7 @@ Google Drive access should be enabled with your email account when you start. If
 Some internal Mozilla systems (IT, HR) are documented on [mana](https://mana.mozilla.org/). That is behind SSO and you will be granted access to that as soon as LDAP is activated.
 
 ## Future access as you need it
-* You will need acccess to our GCP infrastructure. Talk to your manage to be added to the [team-releng@firefox.gcp.mozilla.com](mailto:team-releng@firefox.gcp.mozilla.com). Use a ticket similar to [this](https://mozilla-hub.atlassian.net/browse/SVCSE-965) in CloudOps.
+* You will need acccess to our GCP infrastructure. Talk to your manager to be added to the [team-releng@firefox.gcp.mozilla.com](mailto:team-releng@firefox.gcp.mozilla.com). Use a ticket similar to [this](https://mozilla-hub.atlassian.net/browse/SVCSE-965) in CloudOps.
 * CultureAmp - talk to your manager to set your goals and run the logistics in there for the 1x1 tracking. You'll also need to be added to the RelEng team goals.
 * JIRA - access to JIRA is granted upon SSO access so please make sure to login via the main dashboard. Ask your manager to add you to the RELENG/FFXP boards.
 * Sentry logs - File a bug similar to [this one](https://bugzilla.mozilla.org/show_bug.cgi?id=1805981) to get access to debug various logs in Balrog and more.
