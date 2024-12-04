@@ -208,6 +208,8 @@ Some internal Mozilla systems (IT, HR) are documented on [mana](https://mana.moz
 * Sentry logs - File a bug similar to [this one](https://bugzilla.mozilla.org/show_bug.cgi?id=1805981) to get access to debug various logs in Balrog and more.
 * CloudOps Jenkins - File a bug similar to [Bug 1721444](https://bugzilla.mozilla.org/show_bug.cgi?id=1721444) and talk to your manager to get access to CloudOps' Jenkins to be able to debug. You should already have access to [cloudops-infra repo](https://github.com/mozilla-services/cloudops-infra/) if you've done the Github section above.
 Once it's properly configured, you'll be able to access it by making some tweaks documented [here](https://github.com/mozilla-services/cloudops-deployment#accessing-jenkins).
+* App Store Connect - File a bug like [this one](https://bugzilla.mozilla.org/show_bug.cgi?id=1934941)
+* Google Play - File a bug like [this one](https://bugzilla.mozilla.org/show_bug.cgi?id=1935084)
 
 ### LDAP groups
 * RelEng LDAP flags to access various infrastructure pieces. File a bug similar to [this](https://bugzilla.mozilla.org/show_bug.cgi?id=1805972) and ask your manager for vouching. The flags needed are listed below:
