@@ -215,13 +215,12 @@ Once it's properly configured, you'll be able to access it by making some tweaks
 * RelEng LDAP flags to access various infrastructure pieces. File a bug similar to [this](https://bugzilla.mozilla.org/show_bug.cgi?id=1805972) and ask your manager for vouching. The flags needed are listed below:
 
 ### Balrog ACLs
-In addition to LDAP access to Balrog, you will need to be granted ACLs in Balrog itself. File a bug similar to [this one](https://bugzilla.mozilla.org/show_bug.cgi?id=1806828) to have those granted.
+In addition to LDAP access to Balrog, you will need to be granted ACLs in Balrog itself. File a bug similar to [this one](https://bugzilla.mozilla.org/show_bug.cgi?id=1934965) to have those granted.
 
 ```
 cn=active_scm_firefoxci,ou=groups,dc=mozilla
 cn=all_scm_firefoxci,ou=groups,dc=mozilla
 cn=releng,ou=groups,dc=mozilla
-cn=RelEngWiki,ou=groups,dc=mozilla
 cn=balrog,ou=groups,dc=mozilla
 cn=inventory,ou=groups,dc=mozilla
 cn=inventory_build,ou=groups,dc=mozilla
@@ -230,7 +229,6 @@ cn=vpn_cloudops_shipit,ou=groups,dc=mozilla
 cn=vpn_releng,ou=groups,dc=mozilla
 cn=tooltooleditor,ou=groups,dc=mozilla
 cn=scm_firefoxci,ou=groups,dc=mozilla
-cn=vpn_releng_loan,ou=groups,dc=mozilla
 ```
 You can view your LDAP groups by accessing the [SSO info page](https://sso.mozilla.com/info)
 
