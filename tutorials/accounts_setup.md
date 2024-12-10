@@ -178,6 +178,7 @@ Please talk to your manager about the private/public channels you should be in.
 ### Slack
 
 Some parts of Mozilla prefer Slack to Matrix, more info on [mana](https://mana.mozilla.org/wiki/display/SD/Slack).
+Open a bug like [this](https://mozilla-hub.atlassian.net/servicedesk/customer/portal/4/SDD-28133) to get added to the `@releng` slack group.
 
 ### Zoom
 
