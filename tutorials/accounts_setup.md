@@ -1,5 +1,5 @@
-Day 1 checklist
-===============
+Week 1 checklist
+================
 
 Welcome to Release Engineering!
 This page is meant to get new hires, interns, or interested community members up to speed with the right software,
