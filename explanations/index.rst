@@ -13,4 +13,3 @@ Explanations
    mozharness.rst
    slide_decks.rst
    releng_environments.rst
-   tree-closing-window.rst
