@@ -282,18 +282,6 @@ If a release is blocked. The normal flow is to:
    work, who is their manager, etc
 7. ask for help if you can’t determine the above.
 
-Good resources within releng:
- * general release configuration (taskgraph): aki
- * scopes / ciadmin: mtabara
- * chainoftrust (cot): aki
- * scriptworker (general): aki
- * beetmoverscript / bouncer / artifact related: mtabara/aki
- * signing / signingscript / autograph: aki
- * balrog / balrogscript / updates related: bhearsum/mtabara
- * l10n / treescript / addonscript: aki/mtabara
- * pushapkscript / mozapkpublisher: mtabara
- * shipit / shipitscript: bhearsum
-
 Other useful resources
 ----------------------
 
