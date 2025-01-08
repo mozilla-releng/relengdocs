@@ -207,7 +207,7 @@ Some internal Mozilla systems (IT, HR) are documented on [mana](https://mana.moz
 * CultureAmp - talk to your manager to set your goals and run the logistics in there for the 1x1 tracking. You'll also need to be added to the RelEng team goals.
 * JIRA - access to JIRA is granted upon SSO access so please make sure to login via the main dashboard. Ask your manager to add you to the RELENG/FFXP boards.
 * Sentry logs - File a bug similar to [this one](https://bugzilla.mozilla.org/show_bug.cgi?id=1805981) to get access to debug various logs in Balrog and more.
-* CloudOps Jenkins - File a bug similar to [Bug 1721444](https://bugzilla.mozilla.org/show_bug.cgi?id=1721444) and talk to your manager to get access to CloudOps' Jenkins to be able to debug. You should already have access to [cloudops-infra repo](https://github.com/mozilla-services/cloudops-infra/) if you've done the Github section above.
+* CloudOps Jenkins - Once you've got added to the [mozilla-services](https://github.com/mozilla-services) org (see the github section above), open a pull request similar to [this one](https://github.com/mozilla-services/cloudops-deployment/pull/5037)
 Once it's properly configured, you'll be able to access it by making some tweaks documented [here](https://github.com/mozilla-services/cloudops-deployment#accessing-jenkins).
 * App Store Connect - File a bug like [this one](https://bugzilla.mozilla.org/show_bug.cgi?id=1934941)
 * Google Play - File a bug like [this one](https://bugzilla.mozilla.org/show_bug.cgi?id=1935084)
