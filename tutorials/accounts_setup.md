@@ -180,6 +180,10 @@ Please talk to your manager about the private/public channels you should be in.
 Some parts of Mozilla prefer Slack to Matrix, more info on [mana](https://mana.mozilla.org/wiki/display/SD/Slack).
 Open a bug like [this](https://mozilla-hub.atlassian.net/servicedesk/customer/portal/4/SDD-28133) to get added to the `@releng` slack group.
 
+### Todoist
+
+We use [todoist](https://app.todoist.com/) as a way to track scheduled deployments and renewals. Ask your manager to be added the the RelEng team there.
+
 ### Zoom
 
 For video communication we use Zoom. More details can be found on [mana](https://mana.mozilla.org/wiki/display/AVSE/Getting+Started+With+Zoom).
