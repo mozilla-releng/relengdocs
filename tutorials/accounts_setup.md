@@ -212,6 +212,7 @@ Some internal Mozilla systems (IT, HR) are documented on [mana](https://mana.moz
 * JIRA - access to JIRA is granted upon SSO access so please make sure to login via the main dashboard. Ask your manager to add you to the RELENG/FFXP boards.
 * Sentry logs - File a bug similar to [this one](https://bugzilla.mozilla.org/show_bug.cgi?id=1805981) to get access to debug various logs in Balrog and more.
 * CloudOps Jenkins - Once you've got added to the [mozilla-services](https://github.com/mozilla-services) org (see the github section above), open a pull request similar to [this one](https://github.com/mozilla-services/cloudops-deployment/pull/5037)
+In addition, cloudops will need to add you to the `Release Engineering` group on jenkins, see [this bug](https://mozilla-hub.atlassian.net/browse/SVCSE-2443).
 Once it's properly configured, you'll be able to access it by making some tweaks documented [here](https://github.com/mozilla-services/cloudops-deployment#accessing-jenkins).
 * App Store Connect - File a bug like [this one](https://bugzilla.mozilla.org/show_bug.cgi?id=1934941)
 * Google Play - File a bug like [this one](https://bugzilla.mozilla.org/show_bug.cgi?id=1935084)
