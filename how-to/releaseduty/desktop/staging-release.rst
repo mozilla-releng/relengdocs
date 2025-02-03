@@ -56,6 +56,35 @@ that at least a comment is being dropped to Sheriffs team
    priority even on the staging workers so it usually takes longer for them
    to complete.
 
+Faster staging release thanks to existing `try` builds
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Sometimes, RelEng needs to test quick fixes that are unrelated to the builds themselves.
+Thus,  ``mach try release`` adds unnecessary delays. If the fix is not in-tree then it's
+a matter of rerunning an existing task. However, when the fix is in-tree, it's not clear
+that you can reuse and tweak the action task that scheduled release promotion.
+
+1. Copy-paste the input payload in ``task.extra.action.context.input`` of the action
+task you can to schedule again.
+
+2. Submit a new try push with your in-tree fixes.
+
+3. Load the Treeherder link you got from your try-push. Make sure you are logged into
+   Treeherder. In the top-right corner of the UI for the push locate the small triangle,
+   select ``Custom Push Action...`` from the dropdown list.
+
+4. From the ``Action`` dropdown select ``Release Promotion``.
+
+5. Paste the contents of the input payload (step 1) into the ``Payload`` box, and
+   click the ``Trigger`` button.
+
+The new release promotion graph will be attached to your new try-push while using tasks
+from your old one.
+
+:warning:
+   This method by-passes Shipit which can make some release promotion tasks.
+
+
 Staging scriptworkers
 ^^^^^^^^^^^^^^^^^^^^^
 
@@ -108,5 +137,3 @@ release, but on the DEV worker-type:
 
 .. _here: https://hg.mozilla.org/mozilla-central/file/tip/tools/tryselect/selectors/scriptworker.py#l18
 .. _file: https://hg.mozilla.org/mozilla-central/file/tip/taskcluster/ci/config.yml#l437
-
-
