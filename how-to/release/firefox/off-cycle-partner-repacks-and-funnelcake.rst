@@ -1,7 +1,7 @@
 .. _off_cycle_partner_repacks:
 
-Off-Cycle Partner Repacks and Funnelcakes
-=========================================
+Off-Cycle Partner Repacks, Funnelcakes, and partner-attributed builds
+=====================================================================
 
 Original docs are
 `here <https://mana.mozilla.org/wiki/display/RelEng/Partner+Repack+Creation>`__.
@@ -80,22 +80,39 @@ or update your existing clone.
    # to ./input.yml
    ./off-cycle-parter-respin.py -v 65.0.2 -b release -p seznam > input.yml
 
-5. Load the Treeherder link from stderr. Make sure you are logged into Treeherder.
+5. If dealing with partner-attributed build, you will have to manually edit ``input.yml``
+   (until `Bug 1943617 <https://bugzilla.mozilla.org/show_bug.cgi?id=1943617>`__) is done.
+   Change the following fields:
+
+.. code-block:: yaml
+
+   rebuild_kinds:
+   - release-partner-repack-bouncer-sub
+   - release-partner-attribution
+   - release-partner-attribution-beetmover
+
+   release_enable_emefree: false
+   release_enable_partner_attribution: true
+   release_enable_partner_repack: true # Still set to true until bug 1943599 is done
+
+   release_partner_build_number: 1  # Cannot be another value until bug 1943594 is fixed
+
+6. Load the Treeherder link from stderr. Make sure you are logged into Treeherder.
    In the top-right corner of the UI for the push locate the small triangle, select
    ``Custom Push Action...`` from the dropdown list.
 
-6. From the ``Action`` dropdown select ``Release Promotion``.
+7. From the ``Action`` dropdown select ``Release Promotion``.
 
-7. Paste the contents of ``./input.yml`` into the ``Payload`` box, and
+8. Paste the contents of ``./input.yml`` into the ``Payload`` box, and
    click the ``Trigger`` button.
 
-8. Treeherder will display a link to the Taskcluster task for a few
+9. Treeherder will display a link to the Taskcluster task for a few
    seconds, otherwise look for the ``firefox_promote_partners`` job in
    the ``Gecko Decision Task`` line. The graphs are small enough they
    can be monitored in a browser tab, but you can also use
    ``braindump//taskcluster/graph-progress.sh``.
 
-9. When the graph is done, resolve the bug. If there are tasks in the
+10. When the graph is done, resolve the bug. If there are tasks in the
    graph matching ``release-partner-repack-beetmover-*-public``, add the
    link to the candidates directory which the
    ``off-cycle-parter-respin.py`` script provides; otherwise the repacks
