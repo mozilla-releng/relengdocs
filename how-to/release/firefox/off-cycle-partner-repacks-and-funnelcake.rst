@@ -128,6 +128,43 @@ For funnelcake, we still need to deal with bouncer. See the
 bouncer-related docs
 `here <https://mana.mozilla.org/wiki/display/RelEng/Partner+Repack+Creation#PartnerRepackCreation-Funnelcakebuilds>`__.
 
+Shipping partner-attributed builds
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For requests like `bug 1941537 <https://bugzilla.mozilla.org/show_bug.cgi?id=1941537>`__,
+you will need to push partner-attributed builds to releases and create bouncer entries.
+You won't have to do all these manual steps once
+`bug 1943599 <https://bugzilla.mozilla.org/show_bug.cgi?id=1943599>`__ is done.
+
+1. Repeat preparation steps 1 to 4.
+
+2. Change the following fields in ``input.yml``:
+
+.. code-block:: yaml
+
+   rebuild_kinds:
+  - release-beetmover-push-to-release
+  - release-bouncer-aliases
+
+   release_enable_emefree: false
+   release_enable_partner_attribution: true
+   release_enable_partner_repack: true # Still set to true until bug 1943599 is done
+
+   release_partner_build_number: 1  # Cannot be another value until bug 1943594 is fixed
+   release_promotion_flavor: ship_firefox
+
+3. Before going further, be aware that you have to IMMEDIATELY CANCEL THE TASK GROUP you
+   are about to create. That's because the action task will generate more tasks than
+   necessary (notably ``release-notify-ship-firefox`` that will email Release
+   Management).
+
+4. Repeat preparation steps 6 to 8 and IMMEDIATELY CANCEL the spawned task group.
+
+5. Rerun ``firefox-push-to-release`` and ``release-bouncer-aliases-firefox``.
+
+Now URLs like https://download.mozilla.org/?product=partner-firefox-release-PARTNER-SUBPARTNER-stub&lang=en-GB
+should be pointing to the expected binaries.
+
 Stub installers
 ~~~~~~~~~~~~~~~
 
