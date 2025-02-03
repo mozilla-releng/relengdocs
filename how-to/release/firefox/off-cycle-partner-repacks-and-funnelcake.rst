@@ -76,9 +76,9 @@ or update your existing clone.
 
 .. code-block:: bash
 
-   # This will send instructions to stderr (console) and the input yaml
-   # to ./input.yaml
-   ./off-cycle-parter-respin.py -v 65.0.2 -b release -p seznam > input.yaml
+   # This will send instructions to stderr (console) and the input.yml
+   # to ./input.yml
+   ./off-cycle-parter-respin.py -v 65.0.2 -b release -p seznam > input.yml
 
 5. Load the Treeherder link from stderr. Make sure you are logged into Treeherder.
    In the top-right corner of the UI for the push locate the small triangle, select
@@ -86,7 +86,7 @@ or update your existing clone.
 
 6. From the ``Action`` dropdown select ``Release Promotion``.
 
-7. Paste the contents of ``./input.yaml`` into the ``Payload`` box, and
+7. Paste the contents of ``./input.yml`` into the ``Payload`` box, and
    click the ``Trigger`` button.
 
 8. Treeherder will display a link to the Taskcluster task for a few
