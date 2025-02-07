@@ -9,3 +9,4 @@ This section outlines various guides on how to test changes prior to deploying.
    autograph
    Build Decision <build-decision>
    Updates <updates>
+   Run Update Verify Locally <update-verify>
