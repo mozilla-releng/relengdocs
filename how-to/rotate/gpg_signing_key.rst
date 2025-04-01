@@ -1,7 +1,7 @@
 How to rotate the Firefox Release signing GPG Key
 =================================================
 
-This is a rough guide, and is likely going to be out of date every time we have to rotate the keys. It is likely you will have to take different or additional steps than described here. It's always a good idea to look at the most recent rotation bug (like https://bugzilla.mozilla.org/show_bug.cgi?id=1703397) before getting started.
+This is a rough guide, and is likely going to be out of date every time we have to rotate the keys. It is likely you will have to take different or additional steps than described here. It's always a good idea to look at the most recent rotation bug (like https://bugzilla.mozilla.org/show_bug.cgi?id=1947765) before getting started.
 
 When
 ~~~~
@@ -30,9 +30,11 @@ The most important end result of this process will be a new private signing subk
 
 Publish the new public key
 --------------------------
-The new key needs to be published on keys.openpgp.org. Be sure to "verify" the key after publishing, by having them send an e-mail link to click on, to make sure users will see an identity associated with it (otherwise it's useless).
+The new key needs to be published on keys.openpgp.org. When rotating the primary key, be sure to "verify" the key after publishing, by having them send an e-mail link to click on, to make sure users will see an identity associated with it (otherwise it's useless).
 
-A blog post like https://blog.mozilla.org/security/2019/06/13/updated-firefox-gpg-key/ should also be made.
+It should also be added to the `scriptworker-scripts` repository's `GPG_PUBKEY_PATH` (while keeping the old keys so current and previous releases can still be verified).
+
+After https://archive.mozilla.org/pub/firefox/nightly/latest-mozilla-central/KEY is updated, a blog post like https://blog.mozilla.org/security/2025/04/01/updated-gpg-key-for-signing-firefox-releases-2/ should be made.
 
 Import the new private key into autograph
 -----------------------------------------
@@ -43,46 +45,8 @@ Test the new key in adhoc-signing
 
 The new signing subkey will be deployed to the production instance of `Autograph`_, which means it must be tested through a production worker and repository. The best and safest way to do this is against the `Adhoc Signing`_ repository - which will not impact any users or developers if something goes wrong. You can do this as follows:
 
-1) Update the `GPG_PUBKEY_PATH` entry for `firefoxci-adhoc-3` in the `scriptworker-scripts` repository.
-
-    a) Create a new gpg keyring and import the current key::
-
-        mkdir new-keyring
-        gpg --homedir new-keyring --import current.key
-
-    b) Add the new public key to the keyring::
-
-        gpg --homedir new-keyring --import new-public.key
-
-    c) Export *all* the keys to a new armored file::
-
-        gpg --homedir new-keyring --export --armor > new.key
-
-    d) Add the header from the existing KEY file to `new.key`, with the new sub key information (generated with e.g. `gpg --show-key --list-options show-unusable-subkeys < new.key`). For example, in the 2023 rotations we added the following (the last line is the new subkey information)::
-
-        This file contains the public PGP key that is used to sign builds and
-        artifacts of Mozilla projects (such as Firefox and Thunderbird).
-
-        Please realize that this file itself or the public key servers may be
-        compromised.  You are encouraged to validate the authenticity of these keys in
-        an out-of-band manner.
-
-        Mozilla users: pgp < KEY
-
-        pub   rsa4096 2015-07-17 [SC]
-              14F26682D0916CDD81E37B6D61B7B526D98F0353
-        uid           [  full  ] Mozilla Software Releases <release@mozilla.com>
-        sub   rsa4096 2015-07-17 [S] [expired: 2017-07-16]
-        sub   rsa4096 2017-06-22 [S] [expired: 2019-06-22]
-        sub   rsa4096 2019-05-30 [S] [expires: 2021-05-29]
-        sub   rsa4096 2021-05-17 [S] [expires: 2023-05-17]
-        sub   rsa4096 2023-05-05 [S] [expires: 2025-05-04]
-
-    e) Add new.key to signingscript and point the `firefoxci-adhoc-3` pool's `GPG_PUBKEY_PATH` variable at it.
-
-    f) Open a Pull Request with the changes; wait for it to get merged.
-
-2) Update the GPG username and password for `firefoxci-adhoc-3` in the relengworker SOPS repository (if necessary).
+1) Update the GPG username and password for `firefoxci-adhoc-3` in the relengworker SOPS repository (if necessary).
+2) Update the GPG keyid for adhoc prod in `scriptworker-scripts`.
 3) Deploy production scriptworkers to pick up the changes you made above.
 4) Open a PR with a new signing manifest in the `Adhoc Signing`_ repository that will sign with GPG (note: when it does a test signing as part of opening a PR, it will not be using the new keys, because PRs use dep certs).
 5) Get your PR reviewed and merged.
@@ -97,6 +61,7 @@ The new signing subkey will be deployed to the production instance of `Autograph
     gpg --homedir new --verify *.asc
     # You should see output like:
     # gpg: Good signature from "Mozilla Software Releases <release@mozilla.com>"
+    # and a "Subkey fingerprint" that matches the new key
 
 You can also find an example of the adhoc signing manifest `in this PR`_. If that signing manifest still exists in the repository, you can even skip steps 4 and 5, and promote that manifest in step 6 instead.
 
@@ -117,7 +82,7 @@ You may discover other places that need to be updated that aren't in this list! 
 Start signing with the new private key
 --------------------------------------
 
-Now that you've verified that the autograph credentials work, and that the gpg signatures produced are correct, you can roll it out to the remaining signingscript pools. This will look nearly identical to what you did when testing adhoc-signing.. This must be done for each signing pool that uses our primary GPG key. At the time of writing this is the following (not including the adhoc one you just updated)::
+Now that you've verified that the autograph credentials work, and that the gpg signatures produced are correct, you can roll it out to the remaining signingscript pools. This will look nearly identical to what you did when testing adhoc-signing. This must be done for each signing pool that uses our primary GPG key. At the time of writing this is the following (not including the adhoc one you just updated)::
 
    firefoxci-gecko-3 prod
    firefoxci-comm-3 prod
