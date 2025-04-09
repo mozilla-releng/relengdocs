@@ -23,7 +23,7 @@ Steps
 
   For the bucket, look at the appropriate `production beetmoverscript configs <https://github.com/mozilla-releng/scriptworker-scripts/blob/e1609f9a0e384b870871717fa0306212b152b2e4/beetmoverscript/docker.d/worker.yml>`_. For instance, as of this writing, Firefox files go in the `net-mozaws-prod-delivery-firefox <https://github.com/mozilla-releng/scriptworker-scripts/blob/e1609f9a0e384b870871717fa0306212b152b2e4/beetmoverscript/docker.d/worker.yml#L54-L74>`_ bucket.
 
-  Then go to the appropriate worker in k8s-sops (e.g. firefoxci-gecko-3), and grab the appropriate id and key. You'll need these to have write access to the bucket.
+  Then go to the appropriate worker in k8s-sops (e.g. firefoxci-gecko-3), and grab the appropriate id and key. You'll need these to have write access to the bucket. In some cases (such as ``apilint``) there is no account used by deployed beetmover instances that has access to the bucket or path needed. In these cases look in the ``passwords/manual-beetmover`` directory in the secrets repository for credentials, bucket names, and paths they have access to.
 
   Note: you probably want to use the appropriate staging bucket and staging id+key for testing first, so also grab those. These will be in use by the non-prod dep and/or dev pools.
 
