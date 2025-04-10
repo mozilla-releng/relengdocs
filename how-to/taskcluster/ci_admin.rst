@@ -19,6 +19,7 @@ Manually
 
 Sometimes you want to run ci-admin manually. Generally this is when we have an urgent bustage fix.
 
+If possible you should avoid running tc-admin locally and re-run the latest `apply (firefoxci)` workflow on the repo's main branch instead.
 
 Setup
 ~~~~~
