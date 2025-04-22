@@ -168,7 +168,7 @@ Merge beta to release
 
 2. At the same time ``mozilla-beta`` should get a tag
    `in the form FIREFOX_RELEASE_yyy_BASE <https://hg.mozilla.org/releases/mozilla-beta/rev/c4ed5781ba9260b6a46b97be4c66f32a28eea1a6>`__
-   - where the yyy is the major Gecko version that Beta now has. (This should be
+   - where the yyy is the major Gecko version that Release now has. (This should be
    the exact same tag and revision as the second one that you saw in the Release repo in step 1.)
 3. Verify changesets are visible on `hg
    pushlog <https://hg.mozilla.org/releases/mozilla-release/pushloghtml>`__
