@@ -167,8 +167,8 @@ Merge beta to release
    - where the yyy is the major Gecko version that Release now has.
 
 2. At the same time ``mozilla-beta`` should get a tag
-   `in the form FIREFOX_RELEASE_xxx_BASE <https://hg.mozilla.org/releases/mozilla-beta/rev/c4ed5781ba9260b6a46b97be4c66f32a28eea1a6>`__
-   - where the xxx is the major Gecko version that Beta had prior to the merge. (This should be
+   `in the form FIREFOX_RELEASE_yyy_BASE <https://hg.mozilla.org/releases/mozilla-beta/rev/c4ed5781ba9260b6a46b97be4c66f32a28eea1a6>`__
+   - where the yyy is the major Gecko version that Release now has. (This should be
    the exact same tag and revision as the second one that you saw in the Release repo in step 1.)
 3. Verify changesets are visible on `hg
    pushlog <https://hg.mozilla.org/releases/mozilla-release/pushloghtml>`__
@@ -235,8 +235,8 @@ Merge central to beta
    The diff should look like `this
    <https://hg.mozilla.org/releases/mozilla-beta/rev/5f344535f8a3340fa51528be88e7104538b64b2e>`__
 3. At the same time ``mozilla-central`` should get a new tag
-   `in the form FIREFOX_BETA_xxx_BASE <https://hg.mozilla.org/mozilla-central/rev/592c2df16ac45a09c837b8a281e366c419c8b94d>`__
-   - where xxx is also the major Gecko version that mozilla-central had prior to the version bump.
+   `in the form FIREFOX_BETA_yyy_BASE <https://hg.mozilla.org/mozilla-central/rev/592c2df16ac45a09c837b8a281e366c419c8b94d>`__
+   - where yyy is the major Gecko version that Beta now has.
    (This should be the exact same tag and revision as the second one that you saw in the Beta repo
    in step 1.) It's worth noting that we do not create `FIREFOX_NIGHTLY_yyy_BASE` tags, as we do
    for Beta & Release repositories.
