@@ -235,7 +235,7 @@ Merge central to beta
    The diff should look like `this
    <https://hg.mozilla.org/releases/mozilla-beta/rev/5f344535f8a3340fa51528be88e7104538b64b2e>`__
 3. At the same time ``mozilla-central`` should get a new tag
-   `in the form FIREFOX_BETA_yyy_BASE <https://hg.mozilla.org/releases/mozilla-beta/rev/592c2df16ac45a09c837b8a281e366c419c8b94d>`__
+   `in the form FIREFOX_BETA_yyy_BASE <https://hg.mozilla.org/mozilla-central/rev/592c2df16ac45a09c837b8a281e366c419c8b94d>`__
    - where yyy is the major Gecko version that Beta now has.
    (This should be the exact same tag and revision as the second one that you saw in the Beta repo
    in step 1.) It's worth noting that we do not create `FIREFOX_NIGHTLY_yyy_BASE` tags, as we do
