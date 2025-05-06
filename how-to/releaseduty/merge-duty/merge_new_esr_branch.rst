@@ -74,7 +74,7 @@ Task list and known dependencies
     mozilla-esrXX (the goal is to get a first set of tasks, so pick a
     non-DONTBUILD push :) )
 
-11. After 6, add esrXX to cross-channel configuration
+11. After 6, add esrXX to `l10n automation <https://github.com/mozilla-l10n/firefox-l10n-source/blob/main/.github/update-config.json>`__ configuration
 
 12. Add esrXX to treeherder
 
