@@ -1,3 +1,5 @@
+.. _merge_duty:
+
 Merge Duty
 ==========
 
