@@ -31,12 +31,12 @@ nearly three weeks, with *three* major days of activity:
    -  `Reply migrations are
       complete <#reply-to-relman-migrations-are-complete>`__ (1 min)
 
--  A week after Merge day, bump mozilla-central:
+-  A week after Merge day, bump mozilla-central / the `main` branch:
 
-   -  `Merge central to beta <#merge-central-to-beta>`__ (2 min of action, 20 min of wait)
+   -  `Merge main to beta <#merge-main-to-beta>`__ (2 min of action, 20 min of wait)
    -  `Re-open trees <#re-opening-the-trees>`__ (2 min)
    -  `Verify the l10n bumper output <#verify-the-l10n-bumper-output>`__ (2 min)
-   -  `Tag central and bump versions <#tag-central-and-bump-versions>`__ (2 min of action, 15 min of wait)
+   -  `Tag main and bump versions <#tag-main-and-bump-versions>`__ (2 min of action, 15 min of wait)
    -  `Bump mozilla-esr <#bump-esr-version>`__ (In parallel, 2 min of action, 15 min of wait)
    -  `Reply to RelMan that procedure is
       completed <#reply-to-relman-central-bump-completed>`__ (1 min)
@@ -94,7 +94,7 @@ mozilla-central->mozilla-beta migration no-op trial run
 .. code:: yaml
 
    force-dry-run: true
-   behavior: central-to-beta
+   behavior: main-to-beta
    push: true
 
 mozilla-esr bump no-op trial run
@@ -203,7 +203,7 @@ date, see `Release Scheduling
 calendar <https://calendar.google.com/calendar/embed?src=bW96aWxsYS5jb21fZGJxODRhbnI5aTh0Y25taGFiYXRzdHY1Y29AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ>`__
 or check with relman
 
-Merge central to beta
+Merge main to beta
 ~~~~~~~~~~~~~~~~~~~~~
 
 1. Run the ``m-c -> m-b`` `no-op trial
@@ -216,7 +216,7 @@ Merge central to beta
 .. code:: yaml
 
    force-dry-run: false
-   behavior: central-to-beta
+   behavior: main-to-beta
    push: true
 
 :warning:
@@ -264,7 +264,7 @@ Re-opening the tree(s)
 `Restore mozilla-beta tree <https://lando.services.mozilla.com/treestatus/mozilla-beta/>`__
 to its previous state (`approval-required`) so that **l10n bumper can run**.
 
-Tag central and bump versions
+Tag main and bump versions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **What happens**: A new tag is needed to specify the end of the nightly
@@ -278,7 +278,7 @@ instructions depict.
 
    force-dry-run: false
    push: true
-   behavior: bump-central
+   behavior: bump-main
 
 1. Upon successful run, ``mozilla-central`` should get a version bump
    consisting of a ``commit`` like
