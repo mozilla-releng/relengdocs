@@ -41,7 +41,7 @@ Load docker image using mach and a task
 ::
 
     # Replace TASK-ID with the ID of a docker-image-update-verify task
-    ./mach taskcluster-load-image --task-id=<TASK-ID>
+    ./mach taskgraph load-image --task-id=<TASK-ID>
 
 ~~~~~~~~~~~~~~~~~~~~
 Update Verify Config
