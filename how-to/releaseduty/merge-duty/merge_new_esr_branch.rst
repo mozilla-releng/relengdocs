@@ -28,6 +28,32 @@ in advance to make sure other teams have enough time to address the
 issue. Usually starting the whole process 2 weeks in advance of release
 builds (3 weeks before the release), gives enough time to everybody.
 
+Pushing to the esr branch
+-------------------------
+
+There are several steps in the following list that require you to push to the
+esr branch directly. For this, you have to use the `lando CLI <https://github.com/mozilla-conduit/lando-cli>`__
+
+You can install it by doing the following:
+
+.. code-block:: bash
+
+    git clone https://github.com/mozilla-conduit/lando-cli.git
+    pip install . --user --break-system-packages
+    # As long as `~/.local/bin` is in your path you can now run the lando command
+
+To push a commit to the firefox repository, first navigate to a local clone of it.
+You can now do something along the line of this:
+
+.. code-block:: bash
+
+   LANDO_URL="..." LANDO_USER_EMAIL="..." LANDO_HEADLESS_API_TOKEN="..." lando push-merge --lando-repo staging-firefox-esrXX --target-commit $hash --commit-message "Merge beta -> ESRXX"
+
+Until `bug 1971515 <https://bugzilla.mozilla.org/show_bug.cgi?id=1971515>`__ is
+fixed, this will say it's going to create a merge commit even when it's a fast
+forward merge. Do not ommit the `--commit-message` parameter or it will take
+the current HEAD of your repository as the commit to push and ignore `--target-commit`.
+
 Task list and known dependencies
 --------------------------------
 
@@ -38,7 +64,9 @@ Task list and known dependencies
 2. Add new ESR to scriptworker constants, and make a new release
 
 3. After steps 1 and 2, pull new mozilla-version and scriptworker releases in
-   scriptworker-scripts, shipit, anywhere else they're used.
+   scriptworker-scripts, shipit, `ronin_puppet
+   <https://github.com/mozilla-releng/scriptworker-scripts/wiki/mac-maintenance#updating-python-packages>`__,
+   anywhere else they're used.
 
 4. Set up new rules in balrog staging and production instances:
 
@@ -58,7 +86,7 @@ Task list and known dependencies
    to not touch the `firefox-esr-next-*` aliases, to avoid issues like `bug
    1786507 <https://bugzilla.mozilla.org/show_bug.cgi?id=1786507>`__.
 
-5. Add esrXX support in `gecko_taskgraph`
+5. After 4, add esrXX support in `gecko_taskgraph`
 
 6. Create the mozilla-esrXX and comm-esrXX mercurial repositories.
 
@@ -91,48 +119,57 @@ Task list and known dependencies
     asking for the esrXX repository to be added to Phabricator, as
     mozilla-esrXX, tagged for uplifts, and hooked up to code-review-bot
 
-18. Run a beta as esr simulation to identify permanent build and test failures
+18. Once XX becomes the current beta, run a beta as esr simulation to
+    identify permanent build and test failures. (`./mach try release
+    --disable-pgo -v XX.0esr --migration beta-to-release --migration
+    release-to-esr --tasks release-sim`). Don't hesitate to ask sheriffs for
+    help with classification of tests failures.
 
-19. Run a ESRXX staging release to identify release automation failures (then
-    fix and repeat as necessary)
+19. Early in the XX nightly cycle, run a ESRXX staging release to identify
+    release automation failures (then fix and repeat as necessary). (`./mach
+    try release --version XX.0esr --migration central-to-beta --migration
+    beta-to-release --migration release-to-esr --disable-pgo`)
 
-20. Add esrXX status/tracking/approval flags to bugzilla (typically around RC
+20. Add esrXX to the `legacy approval mapping for bmo.
+    <https://github.com/mozilla-bteam/bmo/blob/ed603350fcf9822672555d1822f2d9f51db305e5/extensions/PhabBugz/lib/Util.pm#L46-L52>`__
+
+21. Add esrXX status/tracking/approval flags to bugzilla (typically around RC
     week; they can be added earlier but should be kept disabled until release
     managers give a go ahead)
 
-21. Add mozilla-esrXX and comm-esrXX to the shipit frontend, pointing at the
+22. Add mozilla-esrXX and comm-esrXX to the shipit frontend, pointing at the
     previous major ESR version for partials
     (alternativeBranch/alternativeRepo), set ESR_NEXT to XX in the backend
     config, and deploy to production.
 
-22. After the beta-to-release merge (start of RC week for XX), push the
+23. After the beta-to-release merge (start of RC week for XX), push the
     mozilla-release tip to mozilla-esrXX, then run the release-to-esr migration
     (which sets the display version number)
 
-23. After the first esrXX release, enable the cron-bouncer-check job on
+24. After the first esrXX release, enable the cron-bouncer-check job on
     mozilla-esrXX (maybe trigger the hook manually first)
 
-24. After the last scheduled release from the previous ESR branch, and before
+25. After the last scheduled release from the previous ESR branch, and before
     the first standalone esrXX release (typically XX.3.0), make esrXX not
     next-esr: update the release-bouncer-aliases task to update the main esr
     bouncer aliases, and run update-verify from older major versions (adjust
     last-manifest)
 
-25. Before gtb for XX.3.0 (beginning of RC week for XX+3), update balrog rules
+26. Before gtb for XX.3.0 (beginning of RC week for XX+3), update balrog rules
     on esr-localtest and esr-cdntest to allow updates to esrXX; check rules on
     the release channel, and check with release management for any necessary
     watershed and/or desupport rules.
 
-26. At XX.3.0 release time, update the rules on balrog's esr channel (similar to 22).
+27. At XX.3.0 release time, update the rules on balrog's esr channel (similar to 25).
 
-27. Around the same time, update shipit's `CURRENT_ESR` and `ESR_NEXT` config
+28. Around the same time, update shipit's `CURRENT_ESR` and `ESR_NEXT` config
     variables, and rebuild product-details.
 
-28. Shortly after the XX.3.0 release, update the cron-bouncer-check task's
+29. Shortly after the XX.3.0 release, update the cron-bouncer-check task's
     config on esrXX to look at `FIREFOX_ESR` instead of `FIREFOX_ESR_NEXT`.
 
-29. Some time later (maybe soon after the XX.3.0 release to avoid forgetting),
+30. Some time later (maybe soon after the XX.3.0 release to avoid forgetting),
     stop running update-verify-next on esrXX, and stop updating the esr-next
     aliases
 
-30. Close the meta bug and have some tea. :)
+31. Close the meta bug and have some tea. :)
