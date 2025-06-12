@@ -53,7 +53,7 @@ You can now do something along the line of this:
 
 Until `bug 1971515 <https://bugzilla.mozilla.org/show_bug.cgi?id=1971515>`__ is
 fixed, this will say it's going to create a merge commit even when it's a fast
-forward merge. Do not ommit the `--commit-message` parameter or it will take
+forward merge. Do not omit the `--commit-message` parameter or it will take
 the current HEAD of your repository as the commit to push and ignore `--target-commit`.
 
 Task list and known dependencies
@@ -162,7 +162,7 @@ Task list and known dependencies
     the release channel, and check with release management for any necessary
     watershed and/or desupport rules.
 
-27. At XX.3.0 release time, update the rules on balrog's esr channel (similar to 25).
+27. At XX.3.0 release time, update the rules on balrog's esr channel (similar to 26).
 
 28. Around the same time, update shipit's `CURRENT_ESR` and `ESR_NEXT` config
     variables, and rebuild product-details.
