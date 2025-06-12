@@ -39,8 +39,10 @@ You can install it by doing the following:
 .. code-block:: bash
 
     git clone https://github.com/mozilla-conduit/lando-cli.git
-    pip install . --user --break-system-packages
-    # As long as `~/.local/bin` is in your path you can now run the lando command
+    cd lando-cli
+    uv venv
+    uv pip install .
+    export PATH="$(pwd)/.venv/bin:$PATH"
 
 To push a commit to the firefox repository, first navigate to a local clone of it.
 You can now do something along the line of this:
