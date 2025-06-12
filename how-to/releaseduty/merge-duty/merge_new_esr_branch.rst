@@ -121,16 +121,16 @@ Task list and known dependencies
     asking for the esrXX repository to be added to Phabricator, as
     mozilla-esrXX, tagged for uplifts, and hooked up to code-review-bot
 
-18. Once XX becomes the current beta, run a beta as esr simulation to
+18. Early in the XX nightly cycle, run a ESRXX staging release to identify
+    release automation failures (then fix and repeat as necessary). (`./mach
+    try release --version XX.0esr --migration central-to-beta --migration
+    beta-to-release --migration release-to-esr --disable-pgo`)
+
+19. Once XX becomes the current beta, run a beta as esr simulation to
     identify permanent build and test failures. (`./mach try release
     --disable-pgo -v XX.0esr --migration beta-to-release --migration
     release-to-esr --tasks release-sim`). Don't hesitate to ask sheriffs for
     help with classification of tests failures.
-
-19. Early in the XX nightly cycle, run a ESRXX staging release to identify
-    release automation failures (then fix and repeat as necessary). (`./mach
-    try release --version XX.0esr --migration central-to-beta --migration
-    beta-to-release --migration release-to-esr --disable-pgo`)
 
 20. Add esrXX to the `legacy approval mapping for bmo.
     <https://github.com/mozilla-bteam/bmo/blob/ed603350fcf9822672555d1822f2d9f51db305e5/extensions/PhabBugz/lib/Util.pm#L46-L52>`__
