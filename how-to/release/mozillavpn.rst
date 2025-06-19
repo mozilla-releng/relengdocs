@@ -160,7 +160,7 @@ under ``ubuntu-store.yml``.
 
    a. Click the ``Actions`` tab in Github.
    b. Click ``PPA Automated Releases`` workflow on the left.
-   c. Under the branch filter, type in the version tag (e.g ``v2.10.0``).
+   c. Find the run for the ``vX.Y.Z`` tag. (The link in the second column should be for a ``/tags/`` URL, not a ``/heads/`` URL.)
    d. Click the task and download the ``Sources.zip`` at the bottom.
 
 3. Extract the zip to a temporary directory:
