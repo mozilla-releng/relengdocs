@@ -79,7 +79,7 @@ If you don't have a token, you will need to login to dockerhub and create a CLI 
 
 2. Commit your changes, submit a PR, merge, wait for build-decision task to show up in the Github checks UI.
 3. Load the image (see above).
-4. Tag the image with your commit hash (get the hash from treeherder or ``hg --debug id -i``)
+4. Tag the image with your commit hash
 
     docker image tag build-decision mozillareleases/build-decision:86cc5419c32996b7d78422d7fed33ce79576f8eb
 
