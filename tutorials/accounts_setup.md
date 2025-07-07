@@ -25,8 +25,6 @@ You'll need a few tweaks to your account to get access to everything releng-rela
 
 The product to use is **"Release Engineering."** There are multiple possible components under that product, so take your best guess or ask for guidance from the team.
 
-**TODO** - to revisit once we reorg Bugzilla in November 2022.
-
 :warning: Please speak with your manager to be added to the [releng-security](https://bugzilla.mozilla.org/page.cgi?id=group_admins.html) confidential group.
 
 ### Misc
@@ -46,17 +44,22 @@ You will be granted access to this via SSO. Please ask your manager to be added 
 * [releng-reviewers](https://phabricator.services.mozilla.com/tag/releng-reviewers/)
 * (optional) [taskgraph-reviewers](https://phabricator.services.mozilla.com/project/view/140/)
 
-## Mercurial
+## Gecko Development
 
-Most development in releng (and at Mozilla writ-large) is stored in version control using [hg](http://mercurial.selenic.com/). There is an excellent step-by-step guide for setting up and using hg: [Mercurial for Mozillians](https://mozilla-version-control-tools.readthedocs.org/en/latest/hgmozilla/index.html). More information on this can be found in [here](https://firefox-source-docs.mozilla.org/contributing/vcs/mercurial.html) and [here](https://firefox-source-docs.mozilla.org/contributing/contribution_quickref.html).
+Some of your work will involve making changes to the [Gecko Repository](https://github.com/mozilla-firefox/firefox). This repository is hosted on GitHub, but we do not open pull requests against it. Instead, these changes flow through [Phabricator](https://phabricator.services.mozilla.com/) for review, and [Lando](https://lando.moz.tools/) for merging.
 
-The root webview of the Mozilla hg repositories is here: [hg.mozilla.org](https://hg.mozilla.org/) while most releng code lives in repos under [hg.mozilla.org/build](https://hg.mozilla.org/build).
-Please fill out the [Commit Access form](https://www.mozilla.org/en-US/about/governance/policies/commit/access-policy/) and submit it via a bug on file such as [this](https://bugzilla.mozilla.org/show_bug.cgi?id=1734247). Make sure to include (comment) your SSH public key and request 2 peers to vouch for you.
+You should have a read over the [Firefox Contributors' Quick Reference](https://firefox-source-docs.mozilla.org/contributing/contribution_quickref.html) for additional details on how to write and submit patches to this repository.
 
 There are 3 levels of commit access:
-* Level 1 access allows you to use the [Try Server](https://wiki.mozilla.org/ReleaseEngineering/TryServer) and setup user repos. As a new contributor, you should request this on day one.
-* Level 2 access is required to land code in the build and project repos. Once you have a proven track record of successful patches, you can ask your manager/mentor to vouch for your Level 2 access. Your manager/mentor can also land patches for you until you receive Level 2 access
-* Level 3 access is required to land code in [mozilla-central](https://hg.mozilla.org/mozilla-central) and its derived integration & release branches. At some point in your Mozilla contribution story, you may need Level 3 access but many contributors never do. Talk to your manager/mentor if you think you need this access. You should already have Level 2 access when you request Level 3
+* Level 1 access allows you to use the [Try Server](https://wiki.mozilla.org/ReleaseEngineering/TryServer).
+* Level 2 access is required to land code in certain project repositories.
+* Level 3 access is required to land code in [the Gecko Repository](https://github.com/mozilla-firefox/firefox).
+
+Your work will often require you to have level 3 access, so you should request it on Day 1 (see below). Other members of the team will provide the necessary vouching.
+
+You will also need to fill out the [Commit Access form](https://www.mozilla.org/en-US/about/governance/policies/commit/access-policy/) and submit it via a bug on file such as [this](https://bugzilla.mozilla.org/show_bug.cgi?id=1734247). Make sure to include (comment) your SSH public key and request 2 peers to vouch for you. This is required to grant you commit access to the Gecko repository.
+
+At the time of writing, we are in a halfway state when it comes to migrating to GitHub. Although all commits flow through GitHub, all of our CI and Automation responds to events from read-only mirrors on https://hg.mozilla.org. This has little impact on how you interact with the repository, but it is good to be aware of.
 
 ## Git & Github
 Please file [a bug similar to this one](https://bugzilla.mozilla.org/show_bug.cgi?id=1805749) and include the following teams to be added. Ask for your manager to vouch in the bug for these changes. The teams you need to be added are:
