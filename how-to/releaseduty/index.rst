@@ -64,7 +64,6 @@ You ought to be present and pay attention to conversations happening in:
 * **#sheriffs:mozilla.org** (where CIDuty team helps with various hiccups that infra might encounter))
 * **#releaseduty:mozilla.org** (main RelEng dedicated communication channel for releaseduty)
 * **#firefox-ci:mozilla.org**
-* **#tbdrivers:mozilla.org** (This is the Thunderbird release drivers Matrix channel. **@rjl:mozilla.org** (Rob) should be able to invite you)
 
 Relduty Notifications
 ~~~~~~~~~~~~~~~~~~~~~
