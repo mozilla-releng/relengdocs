@@ -204,7 +204,8 @@ under ``ubuntu-store.yml``.
 
 7. Once the builds are successful, open the `edit section of launchpad`_ and
    check the ``Publish`` box. Click ``Save``.
-8. After the releases have been shipped and verified, go back and disable
+
+8. Wait for the release to be published. You can `find the publishing status here`_, then go back and disable
    ``Publish`` again.
 
 Android and iOS Clients
@@ -224,3 +225,4 @@ Releng is not involved with the mobile release process.
 .. _watch the state of the builds here: https://launchpad.net/~mozillacorp/+archive/ubuntu/mozillavpn/+builds?build_text=&build_state=all
 .. _addons candidates directory: https://archive.mozilla.org/pub/vpn/addons/candidates/
 .. _addons releases directory: https://archive.mozilla.org/pub/vpn/addons/releases/
+.. _find the publishing status here: https://launchpad.net/~mozillacorp/+archive/ubuntu/mozillavpn/+packages
