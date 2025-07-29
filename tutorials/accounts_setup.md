@@ -68,10 +68,9 @@ Please file [a bug similar to this one](https://bugzilla.mozilla.org/show_bug.cg
 3. [https://github.com/orgs/mozilla-mobile/teams/releng/members](https://github.com/orgs/mozilla-mobile/teams/releng/members)
 4. [https://github.com/orgs/mozilla-services/teams/releng/members](https://github.com/orgs/mozilla-services/teams/releng/members)
 5. [https://github.com/orgs/mozilla-extensions/teams/releng/members](https://github.com/orgs/mozilla-extensions/teams/releng/members)
-6. [https://github.com/orgs/mozilla-l10n/teams/release-engineering/members](https://github.com/orgs/mozilla-l10n/teams/release-engineering/members)
-7. [https://github.com/orgs/taskcluster/teams/releng/members](https://github.com/orgs/taskcluster/teams/releng/members)
-8. [https://github.com/orgs/mozilla-it/teams/releng/members](https://github.com/orgs/mozilla-it/teams/releng/members)
-9. [https://github.com/orgs/mozilla-platform-ops/teams/releng/members](https://github.com/orgs/mozilla-platform-ops/teams/releng/members)
+6. [https://github.com/orgs/taskcluster/teams/releng/members](https://github.com/orgs/taskcluster/teams/releng/members)
+7. [https://github.com/orgs/mozilla-it/teams/releng/members](https://github.com/orgs/mozilla-it/teams/releng/members)
+8. [https://github.com/orgs/mozilla-platform-ops/teams/releng/members](https://github.com/orgs/mozilla-platform-ops/teams/releng/members)
 
 (You will not be able to see any these links above until you've been added.)
 
