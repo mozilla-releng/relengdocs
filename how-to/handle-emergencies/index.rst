@@ -13,3 +13,4 @@ help in such circumstances.
    manually-generate-partials
    purge-partials-cache
    expired-artifacts
+   manual-ios-app-upload
