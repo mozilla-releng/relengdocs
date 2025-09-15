@@ -23,7 +23,7 @@ Upload options:
 1. altool (simple CLI - deprecated, but still works and is available in XCode):
 
 .. code-block:: bash
-    xcrun altool --upload-app -f /path/to/Client.ipa -t ios --verbose -u "<YOUR APPLE ID EMAIL>" -p "<YOUR APP PASSWORD>"
+    xcrun altool --upload-app -f /path/to/Client.ipa -t ios --verbose -u "<APPLE_ID>" -p "<APP_SPECIFIC_PASSWORD>"
 
 2. iTMSTransporter (might require installing):
 
@@ -32,7 +32,7 @@ Upload options:
 
         .. code-block:: bash
 
-            xcrun iTMSTransporter -m upload -u "APPLE_ID" -p "APP_SPECIFIC_PASSWORD" -f /path/to/Client.ipa -v detailed -itc_provider MozillaCorporation
+            xcrun iTMSTransporter -m upload -u "<APPLE_ID>" -p "<APP_SPECIFIC_PASSWORD>" -f /path/to/Client.ipa -v detailed -itc_provider MozillaCorporation
 
         Install iTMSTransporter if not already installed:
 
@@ -43,7 +43,7 @@ Upload options:
 
         .. code-block:: bash
 
-            /usr/local/itms/bin/iTMSTransporter -m upload -u "APPLE_ID" -p "APP_SPECIFIC_PASSWORD" -f /path/to/Client.ipa -v detailed -itc_provider MozillaCorporation
+            /usr/local/itms/bin/iTMSTransporter -m upload -u "<APPLE_ID>" -p "<APP_SPECIFIC_PASSWORD>" -f /path/to/Client.ipa -v detailed -itc_provider MozillaCorporation
 
 3. Transporter App (GUI):
 
