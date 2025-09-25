@@ -5,6 +5,9 @@ The Firefox-CI ETL is a data pipeline designed to expose data such as cost and
 worker metrics to Firefox-CI stakeholders, to help them make informed decisions
 about the operation and configuration of the Taskcluster instance.
 
+See :doc:`this page </how-to/test/fxci-etl>` for more information on testing the
+ETL.
+
 Data
 ----
 
