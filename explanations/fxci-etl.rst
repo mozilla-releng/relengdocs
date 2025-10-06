@@ -11,19 +11,19 @@ Data
 This ETL stores data into a number of tables in the ``moz-fx-data-shared-prod``
 project. They are:
 
-* `moz-fx-data-shared-prod.fxci.tasks_v1`_
+* `moz-fx-data-shared-prod.fxci_derived.tasks_v2`_
    * Primary key: ``task_id``
-* `moz-fx-data-shared-prod.fxci.task_runs_v1`_
+* `moz-fx-data-shared-prod.fxci_derived.task_runs_v1`_
    * Primary key: ``task_id``, ``run_id``
-* `moz-fx-data-shared-prod.fxci.worker_metrics_v1`_
+* `moz-fx-data-shared-prod.fxci_derived.worker_metrics_v1`_
    * Primary key: ``project``, ``zone``, ``instance_id``
 * `moz-fx-data-shared-prod.fxci_derived.worker_costs_v1`_
    * Primary key: ``project``, ``zone``, ``instance_id``
 
-.. _moz-fx-data-shared-prod.fxci.tasks_v1: https://console.cloud.google.com/bigquery?project=moz-fx-data-shared-prod&ws=!1m5!1m4!4m3!1smoz-fx-data-shared-prod!2sfxci!3stask_runs_v1
-.. _moz-fx-data-shared-prod.fxci.task_runs_v1: https://console.cloud.google.com/bigquery?project=moz-fx-data-shared-prod&ws=!1m5!1m4!4m3!1smoz-fx-data-shared-prod!2sfxci!3stask_runs_v1
+.. _moz-fx-data-shared-prod.fxci_derived.tasks_v2: https://console.cloud.google.com/bigquery?project=moz-fx-data-shared-prod&ws=!1m5!1m4!4m3!1smoz-fx-data-shared-prod!2sfxci_derived!3stasks_v2
+.. _moz-fx-data-shared-prod.fxci_derived.task_runs_v1: https://console.cloud.google.com/bigquery?project=moz-fx-data-shared-prod&ws=!1m5!1m4!4m3!1smoz-fx-data-shared-prod!2sfxci_derived!3stask_runs_v1
 .. _moz-fx-data-shared-prod.fxci_derived.worker_costs_v1: https://console.cloud.google.com/bigquery?project=moz-fx-data-shared-prod&ws=!1m5!1m4!4m3!1smoz-fx-data-shared-prod!2sfxci_derived!3sworker_costs_v1
-.. _moz-fx-data-shared-prod.fxci.worker_metrics_v1: https://console.cloud.google.com/bigquery?project=moz-fx-data-shared-prod&ws=!1m5!1m4!4m3!1smoz-fx-data-shared-prod!2sfxci!3sworker_metrics_v1
+.. _moz-fx-data-shared-prod.fxci_derived.worker_metrics_v1: https://console.cloud.google.com/bigquery?project=moz-fx-data-shared-prod&ws=!1m5!1m4!4m3!1smoz-fx-data-shared-prod!2sfxci_derived!3sworker_metrics_v1
 
 Components
 ----------
@@ -62,7 +62,7 @@ to run an `fxci-etl`_ command on a cron schedule. The DAGs are:
 
 1. `fxci_pulse_export`_ - This DAG is
 responsible for draining some Taskcluster pulse queues and inserting records
-into the ``tasks_v1`` and ``task_runs_v1`` BigQuery tables.
+into the ``tasks_v2`` and ``task_runs_v1`` BigQuery tables.
 
 2. `fxci_metric_export`_ - This DAG is
 responsible for querying metrics from Google Cloud Monitoring (namely worker
