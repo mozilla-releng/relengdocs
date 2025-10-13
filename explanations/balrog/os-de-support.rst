@@ -200,5 +200,5 @@ Does CI run tests on the deprecated OS? Coordinate with the CI Automation team t
 Update docs
 ~~~~~~~~~~~
 
-File a `bug <https://bugzilla.mozilla.org/show_bug.cgi?id=1837652>`__ blocking the meta-bug to update the `docs <https://hg.mozilla.org/mozilla-central/file/tip/docs/update-infrastructure/index.md>`__. Once the ESR-SWITCH is implemented for the Release channel, add a bullet to the list of "desupports".
+File a `bug <https://bugzilla.mozilla.org/show_bug.cgi?id=1837652>`__ blocking the meta-bug to update the `docs <https://hg.mozilla.org/mozilla-central/file/default/docs/update-infrastructure/index.md>`__. Once the ESR-SWITCH is implemented for the Release channel, add a bullet to the list of "desupports".
 
