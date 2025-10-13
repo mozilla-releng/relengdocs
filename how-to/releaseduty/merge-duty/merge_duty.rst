@@ -331,9 +331,9 @@ Reply to the migration request with the template:
 
 Hint: verify current versions
 
-   - `central <https://hg.mozilla.org/mozilla-central/file/tip/browser/config/version_display.txt>`__
-   - `beta <https://hg.mozilla.org/releases/mozilla-beta/file/tip/browser/config/version_display.txt>`__
-   - `esr115 <https://hg.mozilla.org/releases/mozilla-esr115/file/tip/browser/config/version.txt>`__
+   - `central <https://hg.mozilla.org/mozilla-central/file/default/browser/config/version_display.txt>`__
+   - `beta <https://hg.mozilla.org/releases/mozilla-beta/file/default/browser/config/version_display.txt>`__
+   - `esr115 <https://hg.mozilla.org/releases/mozilla-esr115/file/default/browser/config/version.txt>`__
 
 Update wiki versions
 ~~~~~~~~~~~~~~~~~~~~

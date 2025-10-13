@@ -137,5 +137,5 @@ release, but on the DEV worker-type:
 
    mach try scriptworker beetmover-candidates --release-type beta --worker-suffix beetmover=-dev
 
-.. _here: https://hg.mozilla.org/mozilla-central/file/tip/tools/tryselect/selectors/scriptworker.py#l18
-.. _file: https://hg.mozilla.org/mozilla-central/file/tip/taskcluster/ci/config.yml#l437
+.. _here: https://hg.mozilla.org/mozilla-central/file/default/tools/tryselect/selectors/scriptworker.py
+.. _file: https://hg.mozilla.org/mozilla-central/file/default/taskcluster/config.yml
