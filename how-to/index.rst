@@ -13,4 +13,5 @@ How To
    test/index
    create/index
    Manage L10n <l10n/index>
+   profiling/index
    Upload to Internal Pypi <https://wiki.mozilla.org/ReleaseEngineering/How_To/Upload_to_internal_Pypi>
