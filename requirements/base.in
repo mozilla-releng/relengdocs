@@ -1,6 +1,0 @@
-# packages needed for building on readthedocs.org
-
-recommonmark>=0.6
-Sphinx>=3
-sphinxcontrib-spelling
-sphinx-book-theme>=0.3.3

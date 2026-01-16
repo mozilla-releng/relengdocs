@@ -1,0 +1,20 @@
+[project]
+name = "relengdocs"
+description = "Mozilla Release Engineering documentation"
+version = "0.1"
+authors = [
+  { name = "Mozilla Release Engineering", email = "release@mozilla.com" },
+]
+# packages needed for building on readthedocs.org
+dependencies = [
+  "recommonmark>=0.6",
+  "Sphinx>=3",
+  "sphinxcontrib-spelling",
+  "sphinx-book-theme>=0.3.3",
+]
+requires-python = ">=3.11"
+
+[dependency-groups]
+dev = [
+  "sphinx-autobuild",
+]
