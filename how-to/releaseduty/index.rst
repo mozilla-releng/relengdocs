@@ -10,7 +10,6 @@ More detailed information on specific ReleaseDuty topics:
     desktop/*
     scheduled-deploys
     merge-duty/*
-    interrupt-duty
 
 ReleaseDuty is a role within the Release Engineering team. It is conducted on a rolling rotation matching one person
 against one release cycle (currently 4 weeks). Below you will find a description of the expectations and resources
