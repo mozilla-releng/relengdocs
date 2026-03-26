@@ -188,11 +188,12 @@ under ``ubuntu-store.yml``.
       # have the passphrase at hand in keys/mozillavpn-launchpad-gpg.passphrase
       # for the next command for signing
       debsign -k Release --re-sign *.dsc *.buildinfo *.changes
+      # delete any cached upload references that might be present
+      # not doing this will mean dput does nothing
+      rm *.ppa.upload
       dput ppa:mozillacorp/mozillavpn mozillavpn*.changes
 
    An email will be sent by lauchpad to release+ubuntu-store@mozilla.com.
-
-   If ``dput`` complains about the package had already been uploaded, then delete all files ``*.ppa.upload`` and try again.
 
    If the build fails for some reason (i.e.: GPG key rotated), and the server complains the package has already been
    uploaded, then ``dput`` can be run with ``-f`` to force the upload/override.
