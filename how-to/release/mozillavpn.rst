@@ -207,7 +207,8 @@ under ``ubuntu-store.yml``.
    check the ``Publish`` box. Click ``Save``.
 
 8. Wait for the release to be published. You can `find the publishing status here`_, then go back and disable
-   ``Publish`` again.
+   ``Publish`` again. You must wait for both the "Status" to read "Published" *and* the "Build Status" to be a
+   green check mark before doing this.
 
 Android and iOS Clients
 -----------------------
