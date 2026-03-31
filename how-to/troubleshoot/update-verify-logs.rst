@@ -191,7 +191,7 @@ These tests are a subset of the complete tests. Specifically, they download:
     Got this response:
     <?xml version="1.0"?>
     <updates>
-        <update actions="showURL" appVersion="142.0" buildID="20250207232657" detailsURL="https://www.mozilla.org/en-CA/firefox/142.0/releasenotes/" displayVersion="142.0 Beta 5" openURL="https://www.mozilla.org/en-CA/firefox/142.0beta/whatsnew/?oldversion=%OLD_VERSION%&amp;utm_medium=firefox-desktop&amp;utm_source=update&amp;utm_campaign=142.0beta" type="minor">
+        <update actions="showURL" appVersion="142.0" buildID="20250207232657" detailsURL="https://www.firefox.com/en-CA/firefox/142.0/releasenotes/" displayVersion="142.0 Beta 5" openURL="https://www.firefox.com/en-CA/whatsnew/142.0beta/?oldversion=%OLD_VERSION%&amp;utm_medium=firefox-desktop&amp;utm_source=update&amp;utm_campaign=142.0beta" type="minor">
             <patch type="complete" URL="https://ftp.stage.mozaws.net/pub/firefox/candidates/142.0b5-candidates/build1/update/linux-x86_64/en-CA/firefox-142.0b5.complete.mar" hashFunction="sha512" hashValue="657e9e6b802bd879428dd608924198018f690db28afedbf42b964835571ae4dcd692559f93c4da82ac532b74e97bf9d25fb4041c1e8df63717c1e26fd28c37b9" size="69608506"/>
         </update>
     </updates>

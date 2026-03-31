@@ -21,7 +21,7 @@ How-To
 
 -  hop on ``central`` repository
 -  make sure you're up to date with the tip of the repo
--  ``mach try release --version <future-version.0b1> --migration central-to-beta --tasks staging --disable-pgo``
+-  ``mach try release --version "$(cat browser/config/version.txt | sed 's/a/b/')" --migration main-to-beta --tasks staging --disable-pgo``
 
 **For beta to release migration**
 
@@ -29,7 +29,20 @@ How-To
 -  make sure you're up to date with the tip of the repo
 -  ``mach try release --version <future-version.0> --migration beta-to-release --tasks staging --disable-pgo``
 
+**For a release simulation starting from main (both migrations)**
+
+-  hop on ``main`` repository
+-  ``mach try release --migration main-to-beta --migration beta-to-release --version "$(cat browser/config/version.txt | sed 's/a1//')" --tasks staging --disable-pgo``
+
 .. note:: Get ``future-version`` from `shipit-staging <https://shipit.staging.mozilla-releng.net/>`__. Ie.: If the version in shipit is ``94.0b14`` use ``94.0b15``
+
+The ``--tasks`` flag controls how many tasks are included in the try push:
+
+- ``staging`` (default): only shippable build-phase tasks — the minimal set
+  needed before triggering a staging release via
+  `ShipIt staging <https://shipit.staging.mozilla-releng.net/>`_.
+- ``release-sim``: simulates a full release branch push, including tests —
+  used by sheriffs to check for branch-dependent test failures.
 
 These will create try pushes that look-alike the repos once they are
 merged. Once the decision tasks of the newly created CI graphs are
