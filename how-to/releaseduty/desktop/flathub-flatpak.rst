@@ -47,12 +47,19 @@ For any urgent changes, Flathub administrators have leverage and can be
 contacted to help. Details on how to contact them ca be found in the
 private repo within the ``flathub-store.txt`` file.
 
-## Refresh Flathub credentials
-------------------------------
+Refresh Flathub credentials
+---------------------------
 
-In order to publish to both channels, we use the flatpak
-`scriptworker`_. The procedure to push is the same for both channels.
-When the token expires, one needs to refresh it. Specific instructions on how
-to do that lie within the ``flathub-store.yml`` in the SOPS global releng repo.
+In order to publish to both channels, we use the pushflatpak `scriptworker`_. The procedure to push is the same for both channels.
+
+Credentials refreshes are done through flathub.org. To rotate, do the following::
+
+1. Visit https://flathub.org/en/apps/manage/org.mozilla.firefox, sign in with GitHub credentials.
+2. Near the bottom of the page, click "New beta token" or "New stable token" (depending on which you're rotating).
+3. In the modal that pops up, use a name such as "pushflatpak-gecko-beta-20260529". Allow all scopes (Create/access, upload, publish, view).
+4. Click "Create Token"
+5. Copy the token, run it through `echo -n "..." | base64 -w0` paste it into the appropriate place in the pushflatpak sops 
+6. Commit the updated file
+7. Deploy pushflatpak to production to pick up the change.
 
 .. _scriptworker: https://github.com/mozilla-releng/scriptworker-scripts/tree/master/pushflatpakscript
