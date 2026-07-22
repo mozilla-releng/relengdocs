@@ -5,8 +5,8 @@ Overview
 --------
 
 When an ESR version is end-of-life'd we need to update still supported users to
-the next ESR version. This usually happens with the x.3.0 release of the new ESR
-version, eg: 78.3.0esr. The general steps to this process are the same every time
+the next ESR version. This usually happens with the x.5.0 release of the new ESR
+version, eg: 153.5.0esr. The general steps to this process are the same every time
 but the specifics change -- so it's important to check your work with other members
 of the team, as well as RelMan, and for QA to test.
 
@@ -86,9 +86,9 @@ have been superceded by the new ``esr*`` rules.
 Bouncer and EOL'ing the old ESR branch
 --------------------------------------
 
-This includes a couple of things, before and after building/shipping X.3.0esr.
+This includes a couple of things, before and after building/shipping X.5.0esr. (Note that some of the examples date from a time when X.3.0esr was the cut over, which is the reason for the version difference.)
 
-Before GTB of the X.3.0esr release
+Before GTB of the X.5.0esr release
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. The new ESR branch needs to become the new default in a couple of
@@ -104,7 +104,7 @@ Before GTB of the X.3.0esr release
    `this <https://phabricator.services.mozilla.com/D88618>`__ to remove
    all occurrences of esr68 and adjust configuration.
 
-After X.3.0esr is shipped
+After X.5.0esr is shipped
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Ship-it holds information that gets propagated to `product-details`_
@@ -119,8 +119,9 @@ After X.3.0esr is shipped
    singular release so it needs to be properly updated to reflect the
    one one. For example once we shipped esr78, we pushed
    `this <https://phabricator.services.mozilla.com/D88619>`__ on esr78.
+   `esr-next` entries should also stop being checked at this time.
 
-3. EOL-ing the old ESR branch. Once X.3.0 is shipped, we can stop
+3. EOL-ing the old ESR branch. Once X.5.0 is shipped, we can stop
    generating CI for the old branch. That includes removing all the cron
    jobs, including but not limited to: periodic updates, nightlies,
    bouncer checks, searchfox, etc. For retiring and EOL-ing esr68 we’ve
