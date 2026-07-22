@@ -157,26 +157,26 @@ Task list and known dependencies
     mozilla-esrXX (maybe trigger the hook manually first)
 
 28. After the last scheduled release from the previous ESR branch, and before
-    the first standalone esrXX release (typically XX.3.0), make esrXX not
+    the first standalone esrXX release (typically XX.5.0), make esrXX not
     next-esr: update the release-bouncer-aliases task to update the main esr
     bouncer aliases, and run update-verify from older major versions (adjust
     last-manifest)
 
-29. Before gtb for XX.3.0 (beginning of RC week for XX+3), update balrog rules
+29. Before gtb for XX.5.0 (beginning of RC week for XX+5), update balrog rules
     on esr-localtest and esr-cdntest to allow updates to esrXX; check rules on
     the release channel, and check with release management for any necessary
     watershed and/or desupport rules.
 
-30. At XX.3.0 release time, update the rules on balrog's esr channel (similar to 26).
+30. At XX.5.0 release time, update the rules on balrog's esr channel (similar to 26).
 
 31. Around the same time, update shipit's `CURRENT_ESR` and `ESR_NEXT` config
     variables, and rebuild product-details.
 
-32. Shortly after the XX.3.0 release, update the cron-bouncer-check task's
+32. Shortly after the XX.5.0 release, update the cron-bouncer-check task's
     config on esrXX to look at `FIREFOX_ESR` instead of `FIREFOX_ESR_NEXT`.
 
-33. Some time later (maybe soon after the XX.3.0 release to avoid forgetting),
-    stop running update-verify-next on esrXX, and stop updating the esr-next
-    aliases
+33. Some time later (maybe soon after the XX.5.0 release to avoid forgetting),
+    stop running update-verify-next on esrXX, stop updating the esr-next
+    aliases, and remove them from bouncer check.
 
 34. Close the meta bug and have some tea. :)
