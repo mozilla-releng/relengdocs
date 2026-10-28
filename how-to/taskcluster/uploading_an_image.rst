@@ -22,24 +22,17 @@ This will download public/image.tar.zst into docker.
 
     docker push mozillareleases/image_builder:5.0.0
 
-- land the change in-tree. This will look like [this](https://searchfox.org/mozilla-central/rev/ce21a13035623c1d349980057d09000e70669802/taskcluster/taskgraph/transforms/docker_image.py#36-40): note that the format is ``<account>/<name>:<version>@sha256:<image_digest_sha256>``.
+- land the change in-tree, in both firefox and taskgraph. This will look like [this](https://searchfox.org/mozilla-central/rev/ce21a13035623c1d349980057d09000e70669802/taskcluster/taskgraph/transforms/docker_image.py#36-40): note that the format is ``<account>/<name>:<version>@sha256:<image_digest_sha256>``.
 
 
 decision images
 ---------------
 
-At the time of writing, there are 2 decision images: a general one and gecko's. The former is built against the `taskgraph <https://treeherder.mozilla.org/jobs?repo=taskgraph>`__ repo, while `gecko_decision` is built `in mozilla-central <https://searchfox.org/mozilla-central/source/taskcluster/docker/decision/>`__
-They are only rebuilt whenever a change is detected by the respective decision task. You may want to upload them on DockerHub so that decision tasks that are using these images
-can load them. The procedure is similar to the one above.
+At the time of writing, there are 2 decision images: a general one and gecko's. The former is built against the `taskgraph <https://treeherder.mozilla.org/jobs?repo=taskgraph>`__ repo, while `gecko_decision` is built `in firefox <https://searchfox.org/firefox-main/source/taskcluster/docker/decision/>`__
+They are only rebuilt whenever a change is detected by the respective decision task.  The upstream taskgraph image is uploaded automatically on each taskgraph release.  The `gecko_decision` image is uploaded periodically to DockerHub so that `.taskcluster.yml` can reference it.  The procedure is similar to the one above.
 
 1. Load the image (see above)
-2. Tag.  For the generic image::
-
-    docker tag decision:latest mozillareleases/taskgraph:decision-$TC_INDEX_HASH
-
-where ``$TC_INDEX_HASH`` is found in the routes of the taskcluster task that generated the image. Eg: ``$TC_INDEX_HASH`` is `5a222cefd6dd1397487a7b70f450a4ab16cf5eed71e126e34928b26d4ccf7577` when the route is ``index.taskgraph.cache.level-3.docker-images.v2.decision.hash.5a222cefd6dd1397487a7b70f450a4ab16cf5eed71e126e34928b26d4ccf7577``.
-
-For the gecko-specific image::
+2. Tag::
 
     docker tag decision:latest mozillareleases/gecko_decision:$VERSION
 
@@ -47,14 +40,10 @@ where ``$VERSION`` is the contents of ``taskcluster/docker/decision/VERSION`` (w
 
 3. Push the image::
 
-    docker push mozillareleases/taskgraph:decision-$TC_INDEX_HASH
-
-or::
-
     docker push mozillareleases/gecko_decision:$VERSION
 
 
-4. Land the change in-tree. `See this example <https://github.com/mozilla-mobile/fenix/pull/16361/files#diff-a728f7e52d751b98eafa856e45594533339b44f229d7b83f930df335391e7e15R246>`__
+4. Land the change in-tree. `See this example <https://github.com/mozilla-firefox/firefox/commit/9d75bf09384526297757675ec03a604000c657a5>`__
 
 .. warning::
 
