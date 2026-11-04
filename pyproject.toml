@@ -12,7 +12,7 @@ dependencies = [
   "sphinxcontrib-spelling",
   "sphinx-book-theme>=0.3.3",
 ]
-requires-python = ">=3.11"
+requires-python = ">=3.13"
 
 [dependency-groups]
 dev = [
