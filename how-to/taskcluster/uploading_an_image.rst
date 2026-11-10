@@ -1,16 +1,16 @@
 .. _uploading_an_image:
 
-Uploading an image
-==================
+Uploading a docker image
+========================
 
 image_builder
 -------------
 
-This assumes you have taskgraph installed in a virtualenv, you have docker installed and are logged in via ``docker login``, and you've already built the trusted docker image via a level 3 docker image task.
+This assumes you have docker installed and are logged in via ``docker login``, and you've already built the trusted docker image via a level 3 docker image task (typically on autoland).
 
-- load the image. Docker should be running; you should be logged into docker. Activate your taskgraph virtualenv and download+load the image::
+- Download+load the image::
 
-    taskgraph load-image --task-id CDDoj06lSTSQ6qs5teT-CA
+    ./mach taskgraph load-image --task-id CDDoj06lSTSQ6qs5teT-CA
 
 This will download public/image.tar.zst into docker.
 
@@ -64,7 +64,7 @@ If you don't have a token, you will need to login to dockerhub and create a CLI 
 
 1. [optional] Re-pin the requirements::
 
-    maintenance/pin.sh
+    uv lock --upgrade
 
 2. Commit your changes, submit a PR, merge, wait for build-decision task to show up in the Github checks UI.
 3. Load the image (see above).
